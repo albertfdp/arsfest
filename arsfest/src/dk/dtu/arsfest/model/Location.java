@@ -13,30 +13,46 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package dk.dtu.arsfest;
+package dk.dtu.arsfest.model;
 
-import dk.dtu.arsfest.rest.RestClient;
-import android.os.Bundle;
-import android.app.Activity;
-import android.content.Intent;
-import android.view.Menu;
-
-public class MainActivity extends Activity {
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		
-		Intent i = new Intent(this, dk.dtu.arsfest.maps.MapActivity.class);
-		startActivity(i);
+public class Location {
+	
+	private int id;
+	private String name;
+	private double latitude;
+	private double longitude;
+	
+	public Location(String name, double latitude, double longitude) {
+		this.name = name;
+		this.latitude = latitude;
+		this.longitude = longitude;
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+	
+	public int getId() {
+		return id;
 	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+	public double getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+	
+	
 
 }
