@@ -21,13 +21,43 @@ public class Location {
 	private String name;
 	private double latitude;
 	private double longitude;
+	private String address;
+	private String image;
 	
-	public Location(String name, double latitude, double longitude) {
+	public Location(String name, double latitude, double longitude, String address, String image) {
 		this.name = name;
 		this.latitude = latitude;
 		this.longitude = longitude;
+		this.address = address;
+		this.image = image;
 	}
 	
+	
+	
+	public String getAddress() {
+		return address;
+	}
+
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+
+	public String getImage() {
+		return image;
+	}
+
+
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

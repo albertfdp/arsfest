@@ -41,8 +41,8 @@ public class MapActivity extends FragmentActivity {
 		setContentView(R.layout.map);
 		
 		locations = new ArrayList<Location>();
-		locations.add(new Location("Opticon Salen", 55.786902,12.525932));
-		locations.add(new Location("Library", 55.786908, 12.523352));
+		//locations.add(new Location("Opticon Salen", 55.786902,12.525932));
+		//locations.add(new Location("Library", 55.786908, 12.523352));
 		
 		setUpMapIfNeeded();
 	}
