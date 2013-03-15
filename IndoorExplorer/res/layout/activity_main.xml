@@ -9,8 +9,85 @@
     tools:context=".MainActivity" >
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:text="Where are you, dude?"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <RadioButton
+        android:id="@+id/radioButtonLibrary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:text="Library" />
+
+    <RadioButton
+        android:id="@+id/radioButtonOticon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioButtonLibrary"
+        android:layout_below="@+id/radioButtonLibrary"
+        android:layout_marginTop="20dp"
+        android:text="Otticon" />
+
+    <RadioButton
+        android:id="@+id/radioButtonCanteen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioButtonOticon"
+        android:layout_below="@+id/radioButtonOticon"
+        android:layout_marginTop="20dp"
+        android:text="Canteen" />
+
+    <RadioButton
+        android:id="@+id/radioButtonSportsHall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioButtonCanteen"
+        android:layout_below="@+id/radioButtonCanteen"
+        android:layout_marginTop="20dp"
+        android:text="Sports Hall" />
+
+    <RadioButton
+        android:id="@+id/radioButtonCellar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioButtonSportsHall"
+        android:layout_below="@+id/radioButtonSportsHall"
+        android:layout_marginTop="20dp"
+        android:text="Cellar" />
+
+    <ToggleButton
+        android:id="@+id/toggleButtonOnOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewScan"
+        android:layout_toRightOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textViewScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/radioButtonLibrary"
+        android:layout_toRightOf="@+id/textView"
+        android:text="Scanning?"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/radioButtonCellar"
+        android:text="a"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
