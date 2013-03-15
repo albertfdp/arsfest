@@ -11,14 +11,19 @@ package dk.dtu.indoor;
  * set to 0. The universal/local bit of the address is set to 1.
  */
 
-import android.net.wifi.WifiInfo;
+import java.util.List;
+
+import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
+import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class MainActivity extends Activity {
@@ -26,7 +31,10 @@ public class MainActivity extends Activity {
 	private final Handler mHandler = new Handler();
 	private ToggleButton scanningOnOff;
 	private TextView status;
-	int i = 0;
+	private String location;
+	private String bSSID;
+	private String networkName = "wireless";
+	private int count = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +43,7 @@ public class MainActivity extends Activity {
 
 		scanningOnOff = (ToggleButton) findViewById(R.id.toggleButtonOnOff);
 		status = (TextView) findViewById(R.id.textViewStatus);
+		status.setText("Not scanning.");
 
 		scanningOnOff.setChecked(false);
 		scanningOnOff.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -50,16 +59,63 @@ public class MainActivity extends Activity {
 		});
 	}
 
+	public void onRadioButtonClicked(View view) {
+		boolean checked = ((RadioButton) view).isChecked();
+		switch (view.getId()) {
+		case R.id.radioButtonLibrary:
+			if (checked) {
+				location = "Library";
+				Toast.makeText(getApplicationContext(), location,
+						Toast.LENGTH_SHORT).show();
+				break;
+			}
+		case R.id.radioButtonOticon:
+			if (checked) {
+				location = "Otticon";
+				Toast.makeText(getApplicationContext(), location,
+						Toast.LENGTH_SHORT).show();
+				break;
+			}
+		case R.id.radioButtonSportsHall:
+			if (checked) {
+				location = "Sports Hall";
+				Toast.makeText(getApplicationContext(), location,
+						Toast.LENGTH_SHORT).show();
+				break;
+			}
+		case R.id.radioButtonCanteen:
+			if (checked) {
+				location = "Canteen";
+				Toast.makeText(getApplicationContext(), location,
+						Toast.LENGTH_SHORT).show();
+				break;
+			}
+		case R.id.radioButtonCellar:
+			if (checked) {
+				location = "Cellar";
+				Toast.makeText(getApplicationContext(), location,
+						Toast.LENGTH_SHORT).show();
+				break;
+			}
+		}
+	}
+
 	private Runnable RepeatingThread = new Runnable() {
 
 		public void run() {
-			i++;
 			WifiManager wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
-			WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-			status.setText("Scanning? " + scanningOnOff.isEnabled()
-					+ ". SSID: " + wifiInfo.getSSID() + ". #: " + i
-					+ ". Info: " + wifiInfo.toString());
-			mHandler.postDelayed(this, 1000);
+			List<ScanResult> results = wifiManager.getScanResults();
+			for (ScanResult result : results) {
+				if (result.SSID.toString().equals(networkName)) {
+					Toast.makeText(getApplicationContext(), result.SSID,
+							Toast.LENGTH_SHORT).show();
+					bSSID = result.BSSID;
+					break;
+				}
+			}
+			status.setText("Scanning.\nNumber of counts: " + ++count
+					+ ".\nSSID: " + networkName + ".\nBSSID: " + bSSID);
+			mHandler.postDelayed(this, 10000);
 		}
 	};
 }
