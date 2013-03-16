@@ -16,15 +16,17 @@ package dk.dtu.indoor;
  * This is needed as a documentation for DTU ArsFest 2013 App Project
  */
 
+import java.io.File;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.app.Activity;
-import android.content.Context;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -39,11 +41,6 @@ public class MainActivity extends Activity {
 	private ToggleButton scanningOnOff;
 	private TextView status;
 	private String location;
-	private String bSSID1;
-	private String bSSID2;
-	private String networkName1 = "dtu";
-	private String networkName2 = "eduroam";
-	private int count = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -121,42 +118,20 @@ public class MainActivity extends Activity {
 		public void run() {
 			WifiManager wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
 			List<ScanResult> results = wifiManager.getScanResults();
+			ArrayList<Ssids> ssids = new ArrayList<Ssids>();
 			for (ScanResult result : results) {
-				if (result.SSID.toString().equals(networkName1)) {
-					bSSID1 = result.BSSID;
-					break;
-				}
+				ssids.add(new Ssids(result.BSSID, result.SSID));
 			}
-
-			for (ScanResult result : results) {
-				if (result.SSID.toString().equals(networkName2)) {
-					bSSID2 = result.BSSID;
-					break;
-				}
-			}
-
-			String dots = ".";
-			for (int a = 0; a <= count % 15; a++) {
-				dots += ".";
-			}
-
-			status.setText("Scanning" + dots + "\nNumber of counts: " + ++count
-					+ ".\n" + networkName1 + ", BSSID: " + bSSID1 + ".\n"
-					+ networkName2 + ", BSSID: " + bSSID2 + ".");
+			status.setText("Scanning ...");
 			mHandler.postDelayed(this, 1000);
-
-			// TODO Some problems with file creation... need to take a look on
-			// this
-			/* Saving to the .txt file */
-			// File file = new File(getApplicationContext().getCacheDir(),
-			// filename);
-
+			
 			try {
-				String filename = "resultsOfInternalScanning.txt";
-				String string = networkName1 + ";" + location + ";" + bSSID1
-						+ ";<\n" + networkName2 + ";" + location + ";" + bSSID2
-						+ ".\n";
-				saveToFile(filename, string);
+				String filename = "result.txt";
+				String string = "";
+				for (Ssids ssid : ssids) {
+					string = location + ";" + ssid.getBSSID() + ";" + ssid.getSSID() + ";\n";
+					saveToFile(filename, string);
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -165,12 +140,23 @@ public class MainActivity extends Activity {
 
 	public void saveToFile(String filename, String data) throws Exception {
 		try {
-			FileOutputStream outStream = openFileOutput(filename,
-					Context.MODE_PRIVATE);
-			outStream.write(data.toString().getBytes());
-			outStream.close();
+			if (isExternalStorageWritable()) {
+				File file = new File(Environment.getExternalStorageDirectory(), filename);
+				FileOutputStream outStream = new FileOutputStream(file, true);
+				outStream.write(data.toString().getBytes());
+				outStream.close();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	/* Checks if external storage is available for read and write */
+	public boolean isExternalStorageWritable() {
+		String state = Environment.getExternalStorageState();
+		if (Environment.MEDIA_MOUNTED.equals(state)) {
+			return true;
+		}
+		return false;
 	}
 }
