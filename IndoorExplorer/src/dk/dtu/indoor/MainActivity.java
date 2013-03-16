@@ -11,6 +11,12 @@ package dk.dtu.indoor;
  * set to 0. The universal/local bit of the address is set to 1.
  */
 
+/*
+ * This app is an Indoor Access Point Explorer in order to map Access Points and locations at DTU building 101.
+ * This is needed as a documentation for DTU ArsFest 2013 App Project
+ */
+
+import java.io.FileOutputStream;
 import java.util.List;
 
 import android.net.wifi.ScanResult;
@@ -18,6 +24,7 @@ import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
+import android.content.Context;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -32,8 +39,10 @@ public class MainActivity extends Activity {
 	private ToggleButton scanningOnOff;
 	private TextView status;
 	private String location;
-	private String bSSID;
-	private String networkName = "wireless";
+	private String bSSID1;
+	private String bSSID2;
+	private String networkName1 = "dtu";
+	private String networkName2 = "eduroam";
 	private int count = 0;
 
 	@Override
@@ -58,6 +67,10 @@ public class MainActivity extends Activity {
 			}
 		});
 	}
+
+	/*
+	 * changing the location depending on radio button state
+	 */
 
 	public void onRadioButtonClicked(View view) {
 		boolean checked = ((RadioButton) view).isChecked();
@@ -100,22 +113,64 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	private Runnable RepeatingThread = new Runnable() {
+	/*
+	 * repeating thread which reads the current BSSID
+	 */
 
+	private Runnable RepeatingThread = new Runnable() {
 		public void run() {
 			WifiManager wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
 			List<ScanResult> results = wifiManager.getScanResults();
 			for (ScanResult result : results) {
-				if (result.SSID.toString().equals(networkName)) {
-					Toast.makeText(getApplicationContext(), result.SSID,
-							Toast.LENGTH_SHORT).show();
-					bSSID = result.BSSID;
+				if (result.SSID.toString().equals(networkName1)) {
+					bSSID1 = result.BSSID;
 					break;
 				}
 			}
-			status.setText("Scanning.\nNumber of counts: " + ++count
-					+ ".\nSSID: " + networkName + ".\nBSSID: " + bSSID);
-			mHandler.postDelayed(this, 10000);
+
+			for (ScanResult result : results) {
+				if (result.SSID.toString().equals(networkName2)) {
+					bSSID2 = result.BSSID;
+					break;
+				}
+			}
+
+			String dots = ".";
+			for (int a = 0; a <= count % 15; a++) {
+				dots += ".";
+			}
+
+			status.setText("Scanning" + dots + "\nNumber of counts: " + ++count
+					+ ".\n" + networkName1 + ", BSSID: " + bSSID1 + ".\n"
+					+ networkName2 + ", BSSID: " + bSSID2 + ".");
+			mHandler.postDelayed(this, 1000);
+
+			// TODO Some problems with file creation... need to take a look on
+			// this
+			/* Saving to the .txt file */
+			// File file = new File(getApplicationContext().getCacheDir(),
+			// filename);
+
+			try {
+				String filename = "resultsOfInternalScanning.txt";
+				String string = networkName1 + ";" + location + ";" + bSSID1
+						+ ";<\n" + networkName2 + ";" + location + ";" + bSSID2
+						+ ".\n";
+				saveToFile(filename, string);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	};
+
+	public void saveToFile(String filename, String data) throws Exception {
+		try {
+			FileOutputStream outStream = openFileOutput(filename,
+					Context.MODE_PRIVATE);
+			outStream.write(data.toString().getBytes());
+			outStream.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
