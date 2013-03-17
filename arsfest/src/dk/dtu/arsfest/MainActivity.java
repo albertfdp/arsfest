@@ -15,8 +15,6 @@
  ******************************************************************************/
 package dk.dtu.arsfest;
 
-import dk.dtu.arsfest.rest.RestClient;
-import dk.dtu.arsfest.services.CallRestServiceTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;

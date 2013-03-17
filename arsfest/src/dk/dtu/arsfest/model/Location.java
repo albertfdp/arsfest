@@ -15,6 +15,8 @@
  ******************************************************************************/
 package dk.dtu.arsfest.model;
 
+import java.util.ArrayList;
+
 public class Location {
 	
 	private int id;
@@ -22,14 +24,15 @@ public class Location {
 	private double latitude;
 	private double longitude;
 	private String address;
-	private String image;
+	private int image;
 	
-	public Location(String name, double latitude, double longitude, String address, String image) {
+	public Location(String name, double latitude, double longitude, String address, int image) {
 		this.name = name;
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.address = address;
 		this.image = image;
+		//this.setEvents(new ArrayList<Event>());
 	}
 	
 	
@@ -46,18 +49,16 @@ public class Location {
 
 
 
-	public String getImage() {
+	public int getImage() {
 		return image;
 	}
 
 
 
-	public void setImage(String image) {
+	public void setImage(int image) {
 		this.image = image;
 	}
-
-
-
+	
 	public int getId() {
 		return id;
 	}
@@ -82,7 +83,5 @@ public class Location {
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
-	
-	
 
 }

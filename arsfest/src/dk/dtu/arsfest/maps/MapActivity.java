@@ -16,24 +16,32 @@
 package dk.dtu.arsfest.maps;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.widget.Toast;
 
-public class MapActivity extends FragmentActivity {
+public class MapActivity extends FragmentActivity implements OnInfoWindowClickListener {
 	
 	private static final LatLng DTU_101 = new LatLng(55.786365, 12.524393);
 	private ArrayList<Location> locations;
 	
 	private GoogleMap map;
+	private Map<Marker, Location> spotMap;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +49,12 @@ public class MapActivity extends FragmentActivity {
 		setContentView(R.layout.map);
 		
 		locations = new ArrayList<Location>();
-		//locations.add(new Location("Opticon Salen", 55.786902,12.525932));
-		//locations.add(new Location("Library", 55.786908, 12.523352));
+		locations.add(new Location("Oticon Salen", 55.786902,12.525932, "nfaf", R.drawable.fastfood));
+		locations.add(new Location("Library", 55.786908, 12.523352, "afaf", R.drawable.restaurant));
+		
+		// add events for restaurant
+		ArrayList<Event> events = new ArrayList<Event>();
+		events.add(new Event(0, "Official dinner", "img/library.jpg", 1367618400, 1367618400 + 3000, locations, "baafafkan"));
 		
 		setUpMapIfNeeded();
 	}
@@ -64,17 +76,31 @@ public class MapActivity extends FragmentActivity {
 				// enable my-location button
 				map.setMyLocationEnabled(true);
 				
+				spotMap = new HashMap<Marker, Location>();
+				
 				for (Location location : locations) {
-					showMarker(location.getName(), location.getLatitude(), location.getLongitude());
+					
+					Marker marker = map.addMarker(new MarkerOptions()
+						.position(new LatLng(location.getLatitude(), location.getLongitude()))
+						.title(location.getName())
+						.snippet(location.getAddress())
+						.icon(BitmapDescriptorFactory.fromResource(location.getImage()))
+					);
+					marker.showInfoWindow();
+					spotMap.put(marker, location);
 				}
+				
+				// setting a custom info window adapter for the google maps marker
+				map.setInfoWindowAdapter(new CustomInfoWindowAdapter(this.getLayoutInflater()));
+				map.setOnInfoWindowClickListener(this);
 			}
 		}
 	}
-	
-	private void showMarker(String title, double lat, double lon) {
-		map.addMarker(new MarkerOptions()
-			.position(new LatLng(lat, lon))
-			.title(title));
+
+	@Override
+	public void onInfoWindowClick(Marker marker) {
+		Location location = (Location) spotMap.get(marker);
+		Toast.makeText(this, location.getName(), Toast.LENGTH_SHORT).show();
 	}
 		
 
