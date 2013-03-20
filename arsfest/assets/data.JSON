@@ -1,0 +1,402 @@
+{
+    "locations": [
+                    {
+                        'id': l0,
+                        'latitude': '55.785949',
+                        'longitude': '12.525475',
+                        'name': 'Sportshal',
+                        'description': '',
+                        'image': ''
+                    },
+                    {
+                        'id': l1,
+                        'latitude': '55.786893',
+                        'longitude': '12.523265',
+                        'name': 'Biblioteket',
+                        'description': '',
+                        'image': ''
+                    },
+                    {
+                        'id': l2,
+                        'latitude': '55.78683',
+                        'longitude': '12.525871',
+                        'name': 'Oticon',
+                        'description': '',
+                        'image': ''
+                    },
+                    {
+                        'id': l3,
+                        'latitude': '55.786489',
+                        'longitude': '12.524634',
+                        'name': 'Glassalen',
+                        'description': '',
+                        'image': ''
+                    }
+                  ],
+    "events": [
+                {
+                    'id': e0,
+                    'name': 'Official_Event',
+                    'image': '',
+                    'startTime': '17:30',
+                    'endTime': '18:45',
+                    'locations': [
+                                    {
+                                        'id': l0
+                                    }
+                    ],
+                    'description': 'Offical Event'
+                },
+                {
+                    'id': e1,
+                    'name': 'Sportshal_Open',
+                    'image': '',
+                    'startTime': '22:00',
+                    'endTime': '',
+                    'locations': [
+                                    {
+                                        'id': l0
+                                    }
+                    ],
+                    'description': 'Open bar,DJ'
+                },
+                {
+                    'id': e2,
+                    'name': 'Sportshal_Lanciers1',
+                    'image': '',
+                    'startTime': '22:10',
+                    'endTime': '22:25',
+                    'locations': [
+                                    {
+                                        'id': l0
+                                    }
+                    ],
+                    'description': 'Les Lanciers'
+                },
+                {
+                    'id': e3,
+                    'name': 'Sportshal_DJ1',
+                    'image': '',
+                    'startTime': '22:25',
+                    'endTime': '23:00',
+                    'locations': [
+                                    {
+                                        'id': l0
+                                    }
+                    ],
+                    'description': 'DJ'
+                },
+                {
+                    'id': e4,
+                    'name': 'Sportshal_Lanciers2',
+                    'image': '',
+                    'startTime': '23:00',
+                    'endTime': '23:15',
+                    'locations': [
+                                    {
+                                        'id': l0
+                                    }
+                    ],
+                    'description': 'Les Lanciers'
+                },
+                {
+                    'id': e5,
+                    'name': 'Sportshal_Nebiha',
+                    'image': '',
+                    'startTime': '23:15',
+                    'endTime': '00:15',
+                    'locations': [
+                                    {
+                                        'id': l0
+                                    }
+                    ],
+                    'description': 'Nebiha'
+                },
+                {
+                    'id': e6,
+                    'name': 'Sportshal_Lanciers3',
+                    'image': '',
+                    'startTime': '00:15',
+                    'endTime': '00:30',
+                    'locations': [
+                                    {
+                                        'id': l0
+                                    }
+                    ],
+                    'description': 'Les Lanciers'
+                },
+                {
+                    'id': e7,
+                    'name': 'Sportshal_DJ2',
+                    'image': '',
+                    'startTime': '00:30',
+                    'endTime': '01:15',
+                    'locations': [
+                                    {
+                                        'id': l0
+                                    }
+                    ],
+                    'description': 'DJ'
+                },
+                {
+                    'id': e8,
+                    'name': 'Sportshal_Rune_RK',
+                    'image': '',
+                    'startTime': '01:15',
+                    'endTime': '02:15',
+                    'locations': [
+                                    {
+                                        'id': l0
+                                    }
+                    ],
+                    'description': 'Rune RK'
+                },
+                {
+                    'id': e9,
+                    'name': 'Sportshal_DJ3',
+                    'image': '',
+                    'startTime': '02:15',
+                    'endTime': '03:00',
+                    'locations': [
+                                    {
+                                        'id': l0
+                                    }
+                    ],
+                    'description': 'DJ'
+                },
+                {
+                    'id': e10,
+                    'name': 'Sportshal_Finish',
+                    'image': '',
+                    'startTime': '03:00',
+                    'endTime': '',
+                    'locations': [
+                                    {
+                                        'id': l0
+                                    }
+                    ],
+                    'description': 'The party is over in Sportshal, continue the party in Oticon'
+                },
+                {
+                    'id': e11,
+                    'name': 'Biblioteket_Open',
+                    'image': '',
+                    'startTime': '18:30',
+                    'endTime': '',
+                    'locations': [
+                                    {
+                                        'id': l1
+                                    }
+                    ],
+                    'description': 'Bar Open'
+                },
+                {
+                    'id': e12,
+                    'name': 'Dinner',
+                    'image': '',
+                    'startTime': '19:15',
+                    'endTime': '22:00',
+                    'locations': [
+                                    {
+                                        'id': l1
+                                    },
+                                    {
+                                        'id': l3
+                                    }
+                    ],
+                    'description': 'Dinner in Biblioteket and Kantine'
+                },
+                {
+                    'id': e13,
+                    'name': 'Biblioteket_Lanciers1',
+                    'image': '',
+                    'startTime': '22:15',
+                    'endTime': '22:30',
+                    'locations': [
+                                    {
+                                        'id': l1
+                                    }
+                    ],
+                    'description': 'Les Lanciers'
+                },
+                {
+                    'id': e14,
+                    'name': 'Biblioteket_Veto1',
+                    'image': '',
+                    'startTime': '22:40',
+                    'endTime': '23:40',
+                    'locations': [
+                                    {
+                                        'id': l1
+                                    }
+                    ],
+                    'description': 'Veto'
+                },
+                {
+                    'id': e15,
+                    'name': 'Biblioteket_Lanciers2',
+                    'image': '',
+                    'startTime': '22:40',
+                    'endTime': '00:00',
+                    'locations': [
+                                    {
+                                        'id': l1
+                                    }
+                    ],
+                    'description': 'Les Lanciers'
+                },
+                {
+                    'id': e16,
+                    'name': 'Biblioteket_Veto2',
+                    'image': '',
+                    'startTime': '00:00',
+                    'endTime': '01:00',
+                    'locations': [
+                                    {
+                                        'id': l1
+                                    }
+                    ],
+                    'description': 'Veto'
+                },
+                {
+                    'id': e17,
+                    'name': 'Biblioteket_Lanciers3',
+                    'image': '',
+                    'startTime': '01:00',
+                    'endTime': '01:15',
+                    'locations': [
+                                    {
+                                        'id': l1
+                                    }
+                    ],
+                    'description': 'Les Lanciers'
+                },
+                {
+                    'id': e18,
+                    'name': 'Biblioteket_Close',
+                    'image': '',
+                    'startTime': '01:15',
+                    'endTime': '',
+                    'locations': [
+                                    {
+                                        'id': l1
+                                    }
+                    ],
+                    'description': 'The party is over in Biblioteket, continue the party in Sportshal or Oticon'
+                },
+                {
+                    'id': e19,
+                    'name': 'Oticon_Open',
+                    'image': '',
+                    'startTime': '21:00',
+                    'endTime': '',
+                    'locations': [
+                                    {
+                                        'id': l2
+                                    }
+                    ],
+                    'description': 'Bar Open'
+                },
+                {
+                    'id': e20,
+                    'name': 'Oticon_DJ1',
+                    'image': '',
+                    'startTime': '21:00',
+                    'endTime': '22:30',
+                    'locations': [
+                                    {
+                                        'id': l2
+                                    }
+                    ],
+                    'description': 'DJ'
+                },
+                {
+                    'id': e21,
+                    'name': 'Oticon_Concert1',
+                    'image': '',
+                    'startTime': '22:30',
+                    'endTime': '23:30',
+                    'locations': [
+                                    {
+                                        'id': l2
+                                    }
+                    ],
+                    'description': 'Concert (TFH Experience)'
+                },
+                {
+                    'id': e22,
+                    'name': 'Oticon_DJ2',
+                    'image': '',
+                    'startTime': '23:30',
+                    'endTime': '23:50',
+                    'locations': [
+                                    {
+                                        'id': l2
+                                    }
+                    ],
+                    'description': 'DJ'
+                },
+                {
+                    'id': e23,
+                    'name': 'Oticon_Concert2',
+                    'image': '',
+                    'startTime': '23:50',
+                    'endTime': '00:50',
+                    'locations': [
+                                    {
+                                        'id': l2
+                                    }
+                    ],
+                    'description': 'Concert (TFH Experience)'
+                },
+                {
+                    'id': e24,
+                    'name': 'Oticon_DJ3',
+                    'image': '',
+                    'startTime': '23:50',
+                    'endTime': '05:00',
+                    'locations': [
+                                    {
+                                        'id': l2
+                                    }
+                    ],
+                    'description': 'DJ'
+                },
+                {
+                    'id': e25,
+                    'name': 'Oticon_Close',
+                    'image': '',
+                    'startTime': '05:00',
+                    'endTime': '',
+                    'locations': [
+                                    {
+                                        'id': l2
+                                    }
+                    ],
+                    'description': 'Congratulations you survived until the end of the party. GO HOME'
+                },
+                {
+                    'id': e26,
+                    'name': 'Jazzband',
+                    'image': '23:15',
+                    'startTime': '00:15',
+                    'endTime': '',
+                    'locations': [
+                                    {
+                                        'id': l3
+                                    }
+                    ],
+                    'description': 'Jazzband'
+                }
+              ],
+    'ssids': [
+                {
+                    'ssid': '',
+                    'bssid': '',
+                    'location': 0
+                }
+        ]
+
+
+
+}
