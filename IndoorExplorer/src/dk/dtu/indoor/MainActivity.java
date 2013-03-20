@@ -1,5 +1,13 @@
 package dk.dtu.indoor;
 
+/**
+ * @author Adrian Pol, 
+ * @author Albert Fernandez de la Peña
+ * @author Javier Calvo
+ * @version 0.1.2
+ * @since 2013
+ */
+
 /*
  * BSSID: Basic Service Set Identifier
  * 
@@ -12,8 +20,9 @@ package dk.dtu.indoor;
  */
 
 /*
- * This app is an Indoor Access Point Explorer in order to map Access Points and locations at DTU building 101.
- * This is needed as a documentation for DTU ArsFest 2013 App Project
+ * This app is an Indoor Access Point Explorer in order 
+ * to map Access Points and locations at DTU building 101.
+ * This is needed as a documentation for DTU ArsFest 2013 Project
  */
 
 import java.io.File;
@@ -41,6 +50,7 @@ public class MainActivity extends Activity {
 	private ToggleButton scanningOnOff;
 	private TextView status;
 	private String location;
+	private int frequencyOfScanning = 1000;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +61,17 @@ public class MainActivity extends Activity {
 		status = (TextView) findViewById(R.id.textViewStatus);
 		status.setText("Not scanning.");
 
+		/*
+		 * OnChangeListner to check if the scanning is enabled or disabled
+		 */
 		scanningOnOff.setChecked(false);
 		scanningOnOff.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+				/*
+				 * When ON, the RepeatingThread scans BSSIDs every
+				 * frequencyOfScanning
+				 */
 				if (scanningOnOff.isChecked()) {
 					RepeatingThread.run();
 				} else {
@@ -66,7 +83,7 @@ public class MainActivity extends Activity {
 	}
 
 	/*
-	 * changing the location depending on radio button state
+	 * Changing the location name depending on radio button state
 	 */
 
 	public void onRadioButtonClicked(View view) {
@@ -74,35 +91,35 @@ public class MainActivity extends Activity {
 		switch (view.getId()) {
 		case R.id.radioButtonLibrary:
 			if (checked) {
-				location = "Library";
+				location = "library";
 				Toast.makeText(getApplicationContext(), location,
 						Toast.LENGTH_SHORT).show();
 				break;
 			}
 		case R.id.radioButtonOticon:
 			if (checked) {
-				location = "Otticon";
+				location = "otticon";
 				Toast.makeText(getApplicationContext(), location,
 						Toast.LENGTH_SHORT).show();
 				break;
 			}
 		case R.id.radioButtonSportsHall:
 			if (checked) {
-				location = "Sports Hall";
+				location = "sportshall";
 				Toast.makeText(getApplicationContext(), location,
 						Toast.LENGTH_SHORT).show();
 				break;
 			}
 		case R.id.radioButtonCanteen:
 			if (checked) {
-				location = "Canteen";
+				location = "canteen";
 				Toast.makeText(getApplicationContext(), location,
 						Toast.LENGTH_SHORT).show();
 				break;
 			}
 		case R.id.radioButtonCellar:
 			if (checked) {
-				location = "Cellar";
+				location = "cellar";
 				Toast.makeText(getApplicationContext(), location,
 						Toast.LENGTH_SHORT).show();
 				break;
@@ -111,7 +128,7 @@ public class MainActivity extends Activity {
 	}
 
 	/*
-	 * repeating thread which reads the current BSSID
+	 * Repeating thread which reads the current SSIDs and BSSIDs
 	 */
 
 	private Runnable RepeatingThread = new Runnable() {
@@ -119,17 +136,26 @@ public class MainActivity extends Activity {
 			WifiManager wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
 			List<ScanResult> results = wifiManager.getScanResults();
 			ArrayList<Ssids> ssids = new ArrayList<Ssids>();
+			String eduBSSID = "";
 			for (ScanResult result : results) {
 				ssids.add(new Ssids(result.BSSID, result.SSID));
+				if (result.SSID.equals("eduroam")) {
+					eduBSSID = result.BSSID;
+				}
 			}
-			status.setText("Scanning ...");
-			mHandler.postDelayed(this, 1000);
-			
+			status.setText("Scanning ... \n eduroam BSSID: " + eduBSSID);
+			mHandler.postDelayed(this, frequencyOfScanning);
+
+			/*
+			 * Saving results to .txt file
+			 */
+
 			try {
 				String filename = "result.txt";
 				String string = "";
 				for (Ssids ssid : ssids) {
-					string = location + ";" + ssid.getBSSID() + ";" + ssid.getSSID() + ";\n";
+					string = location + ";" + ssid.getBSSID() + ";"
+							+ ssid.getSSID() + ";\n";
 					saveToFile(filename, string);
 				}
 			} catch (Exception e) {
@@ -138,10 +164,14 @@ public class MainActivity extends Activity {
 		}
 	};
 
+	/*
+	 * Saving to file
+	 */
 	public void saveToFile(String filename, String data) throws Exception {
 		try {
 			if (isExternalStorageWritable()) {
-				File file = new File(Environment.getExternalStorageDirectory(), filename);
+				File file = new File(Environment.getExternalStorageDirectory(),
+						filename);
 				FileOutputStream outStream = new FileOutputStream(file, true);
 				outStream.write(data.toString().getBytes());
 				outStream.close();
@@ -150,8 +180,10 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		}
 	}
-	
-	/* Checks if external storage is available for read and write */
+
+	/*
+	 * Checks if external storage is available for read and write
+	 */
 	public boolean isExternalStorageWritable() {
 		String state = Environment.getExternalStorageState();
 		if (Environment.MEDIA_MOUNTED.equals(state)) {
