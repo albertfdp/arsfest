@@ -1,10 +1,11 @@
 package dk.dtu.indoor;
 
 /**
+ * @author Team AVOCADO
  * @author Adrian Pol, 
  * @author Albert Fernandez de la Peña
  * @author Javier Calvo
- * @version 0.1.2
+ * @version 0.2
  * @since 2013
  */
 
@@ -51,6 +52,7 @@ public class MainActivity extends Activity {
 	private TextView status;
 	private String location;
 	private int frequencyOfScanning = 1000;
+	private long dots = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -128,7 +130,7 @@ public class MainActivity extends Activity {
 	}
 
 	/*
-	 * Repeating thread which reads the current SSIDs and BSSIDs
+	 * Repeating thread which reads the current SSIDs, BSSIDs, RSS and MAC
 	 */
 
 	private Runnable RepeatingThread = new Runnable() {
@@ -136,14 +138,17 @@ public class MainActivity extends Activity {
 			WifiManager wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
 			List<ScanResult> results = wifiManager.getScanResults();
 			ArrayList<Ssids> ssids = new ArrayList<Ssids>();
-			String eduBSSID = "";
 			for (ScanResult result : results) {
-				ssids.add(new Ssids(result.BSSID, result.SSID));
-				if (result.SSID.equals("eduroam")) {
-					eduBSSID = result.BSSID;
-				}
+				ssids.add(new Ssids(result.SSID, result.BSSID, result.level));
 			}
-			status.setText("Scanning ... \n eduroam BSSID: " + eduBSSID);
+			
+			String showDots = "";
+			for (int i=0; i<dots%15; i++) {
+				showDots += ". ";
+			}
+			dots++;
+			
+			status.setText("Scanning" + showDots);
 			mHandler.postDelayed(this, frequencyOfScanning);
 
 			/*
@@ -155,7 +160,7 @@ public class MainActivity extends Activity {
 				String string = "";
 				for (Ssids ssid : ssids) {
 					string = location + ";" + ssid.getBSSID() + ";"
-							+ ssid.getSSID() + ";\n";
+							+ ssid.getSSID() + ";" + ssid.getRSS() +";\n";
 					saveToFile(filename, string);
 				}
 			} catch (Exception e) {
