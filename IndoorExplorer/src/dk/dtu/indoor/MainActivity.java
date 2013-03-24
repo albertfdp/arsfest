@@ -5,7 +5,7 @@ package dk.dtu.indoor;
  * @author Adrian Pol, 
  * @author Albert Fernandez de la Peña
  * @author Javier Calvo
- * @version 0.2
+ * @version 0.2.1
  * @since 2013
  */
 
@@ -37,6 +37,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.app.Activity;
+import android.content.Context;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -50,7 +51,7 @@ public class MainActivity extends Activity {
 	private final Handler mHandler = new Handler();
 	private ToggleButton scanningOnOff;
 	private TextView status;
-	private String location;
+	private String location = "";
 	private int frequencyOfScanning = 1000;
 	private long dots = 0;
 
@@ -63,6 +64,15 @@ public class MainActivity extends Activity {
 		status = (TextView) findViewById(R.id.textViewStatus);
 		status.setText("Not scanning.");
 
+		getApplicationContext();
+		final WifiManager wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+		if (wifi.isWifiEnabled()) {
+			scanningOnOff.setVisibility(View.VISIBLE);
+		} else {
+			status.setText("Turn your WiFi first!");
+			scanningOnOff.setVisibility(View.INVISIBLE);
+		}
+
 		/*
 		 * OnChangeListner to check if the scanning is enabled or disabled
 		 */
@@ -70,15 +80,23 @@ public class MainActivity extends Activity {
 		scanningOnOff.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+
 				/*
 				 * When ON, the RepeatingThread scans BSSIDs every
 				 * frequencyOfScanning
 				 */
-				if (scanningOnOff.isChecked()) {
-					RepeatingThread.run();
+				if (location != "") {
+					if (scanningOnOff.isChecked()) {
+						RepeatingThread.run();
+					} else {
+						mHandler.removeCallbacks(RepeatingThread);
+						status.setText("Not scanning.");
+					}
 				} else {
-					mHandler.removeCallbacks(RepeatingThread);
-					status.setText("Not scanning.");
+					scanningOnOff.setChecked(false);
+					Toast.makeText(getApplicationContext(),
+							"Hey Dude, you forgot to set the location!",
+							Toast.LENGTH_LONG).show();
 				}
 			}
 		});
@@ -141,13 +159,13 @@ public class MainActivity extends Activity {
 			for (ScanResult result : results) {
 				ssids.add(new Ssids(result.SSID, result.BSSID, result.level));
 			}
-			
+
 			String showDots = "";
-			for (int i=0; i<dots%15; i++) {
+			for (int i = 0; i < dots % 15; i++) {
 				showDots += ". ";
 			}
 			dots++;
-			
+
 			status.setText("Scanning" + showDots);
 			mHandler.postDelayed(this, frequencyOfScanning);
 
@@ -160,7 +178,7 @@ public class MainActivity extends Activity {
 				String string = "";
 				for (Ssids ssid : ssids) {
 					string = location + ";" + ssid.getBSSID() + ";"
-							+ ssid.getSSID() + ";" + ssid.getRSS() +";\n";
+							+ ssid.getSSID() + ";" + ssid.getRSS() + ";\n";
 					saveToFile(filename, string);
 				}
 			} catch (Exception e) {
