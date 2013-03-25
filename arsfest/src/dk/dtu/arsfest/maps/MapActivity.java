@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2013 Albert Fernández de la Peña
+ * Copyright 2013 Albert Fernï¿½ndez de la Peï¿½a
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,12 +49,12 @@ public class MapActivity extends FragmentActivity implements OnInfoWindowClickLi
 		setContentView(R.layout.map);
 		
 		locations = new ArrayList<Location>();
-		locations.add(new Location("Oticon Salen", 55.786902,12.525932, "nfaf", R.drawable.fastfood));
-		locations.add(new Location("Library", 55.786908, 12.523352, "afaf", R.drawable.restaurant));
+		locations.add(new Location("l1","Oticon Salen", 55.786902,12.525932, "nfaf", R.drawable.fastfood));
+		locations.add(new Location("l2","Library", 55.786908, 12.523352, "afaf", R.drawable.restaurant));
 		
 		// add events for restaurant
 		ArrayList<Event> events = new ArrayList<Event>();
-		events.add(new Event(0, "Official dinner", "img/library.jpg", 1367618400, 1367618400 + 3000, locations, "baafafkan"));
+		events.add(new Event("e0", "Official dinner", "img/library.jpg", 1367618400, 1367618400 + 3000, locations, "baafafkan"));
 		
 		setUpMapIfNeeded();
 	}
@@ -83,7 +83,7 @@ public class MapActivity extends FragmentActivity implements OnInfoWindowClickLi
 					Marker marker = map.addMarker(new MarkerOptions()
 						.position(new LatLng(location.getLatitude(), location.getLongitude()))
 						.title(location.getName())
-						.snippet(location.getAddress())
+						.snippet(location.getDescription())
 						.icon(BitmapDescriptorFactory.fromResource(location.getImage()))
 					);
 					marker.showInfoWindow();

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2013 Albert Fernández de la Peña
+ * Copyright 2013 Albert Fernï¿½ndez de la Peï¿½a
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,71 +15,68 @@
  ******************************************************************************/
 package dk.dtu.arsfest.model;
 
-import java.util.ArrayList;
-
 public class Location {
 	
-	private int id;
+	private String id;
 	private String name;
 	private double latitude;
 	private double longitude;
-	private String address;
+	private String description;
 	private int image;
 	
-	public Location(String name, double latitude, double longitude, String address, int image) {
+	public Location(String id, String name, double latitude, double longitude, String description, int image) {
+		this.id = id;
 		this.name = name;
 		this.latitude = latitude;
 		this.longitude = longitude;
-		this.address = address;
+		this.description = description;
 		this.image = image;
-		//this.setEvents(new ArrayList<Event>());
 	}
 	
-	
-	
-	public String getAddress() {
-		return address;
+	public String getDescription() {
+		return this.description;
 	}
 
-
-
-	public void setAddress(String address) {
-		this.address = address;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-
-
 
 	public int getImage() {
-		return image;
+		return this.image;
 	}
-
-
 
 	public void setImage(int image) {
 		this.image = image;
 	}
 	
-	public int getId() {
-		return id;
+	public String getId() {
+		return this.id;
 	}
-	public void setId(int id) {
+	
+	public void setId(String id) {
 		this.id = id;
 	}
+	
 	public String getName() {
-		return name;
+		return this.name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public double getLatitude() {
-		return latitude;
+		return this.latitude;
 	}
+	
 	public void setLatitude(double latitude) {
 		this.latitude = latitude;
 	}
+	
 	public double getLongitude() {
-		return longitude;
+		return this.longitude;
 	}
+	
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
