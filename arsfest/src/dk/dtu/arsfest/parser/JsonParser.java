@@ -9,6 +9,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
+import dk.dtu.arsfest.model.*;
+
 public class JsonParser {
 	
 	private String jsonStr;
@@ -31,11 +35,12 @@ public class JsonParser {
 	}
 	
 	/*
-	 * Not finished, just reads, it is necessary to store 
-	 * Get every location
+	 * Read data.JSON and stores the information of each location 
 	 * @Return ArrayList<Locations>
 	 */
-	public void readLocations(){
+	public ArrayList<Location> readLocations(){
+		
+		ArrayList<Location> location_list = new ArrayList<Location>();
 		
 		try {
 	        JSONObject rootObject = new JSONObject(jsonStr); // Parse the JSON to a JSONObject
@@ -49,26 +54,31 @@ public class JsonParser {
 	            Double latitude = location.getDouble("latitude");
 	            Double longitude = location.getDouble("longitude");
 	            String description = location.getString("description");
-	            String image = location.getString("image");
-	            // HERE Should be the constructor of location
+	            int image = location.getInt("image");
 	            
+	            // Create location
+	            Location loc = new Location(id,name,latitude,longitude,description,image);
 
-	            // Here the location should be added to an arrayList
+	            // Add new location to arraylist
+	            location_list.add(loc);
+	            
 	        }
 	    } catch (JSONException e) {
 	        // JSON Parsing error
 	        e.printStackTrace();
 	    }	
 		
-        // return the array list
+        return location_list;
 	}
 	
 	/*
-	 * Not finished, just reads, it is necessary to store 
-	 * Get every event
-	 * @Return ArrayList<Events>
+	 * Read data.JSON and stores the information of each event
+	 * times are set to 0
+	 * @Return ArrayList<Event>
 	 */
-	public void readEvents(){
+	public ArrayList<Event> readEvents(){
+		
+		ArrayList<Event> event_list = new ArrayList<Event>();
 		
 		try {
 	        JSONObject rootObject = new JSONObject(jsonStr); // Parse the JSON to a JSONObject
@@ -80,18 +90,27 @@ public class JsonParser {
 	            String id = event.getString("id"); 
 	            String name = event.getString("name"); 
 	            String image = event.getString("image");
-	            int startTime = event.getInt("startTime");
-	            int endTime = event.getInt("endTime");
 	            
+	            /*Rethink the types for the times
+	            int startTime = event.getInt("startTime");
+	            int endTime = event.getInt("endTime");*/
+	            String description = event.getString("description");
 	            //get all locations of the events
+	            ArrayList<Location> event_location_list = new ArrayList<Location>();
+	            
 	            JSONArray locations = event.getJSONArray("locations");
 	            for(int j=0; j < locations.length(); j++) {
 	            	
 	            	JSONObject location =  locations.getJSONObject(j);
 	            	String location_id = location.getString("id");
-	            	//Add location_id to the ArrayList of locations of the event
+	            	Location loc_event = new Location(location_id);
+	            	event_location_list.add(loc_event);
+	            	
 	            }
 	            
+	            Event new_event = new Event(id,name,image,0,0,event_location_list,description);
+	            
+	            event_list.add(new_event);
 	        }
 	        
 	     // Here the event should be added to an arrayList
@@ -101,7 +120,7 @@ public class JsonParser {
 	        e.printStackTrace();
 	    }
 		
-        // return the array list
+		return event_list;
 	}
 
 }

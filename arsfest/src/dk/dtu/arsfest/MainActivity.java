@@ -15,6 +15,12 @@
  ******************************************************************************/
 package dk.dtu.arsfest;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
+import dk.dtu.arsfest.model.Event;
+import dk.dtu.arsfest.model.Location;
+import dk.dtu.arsfest.parser.JsonParser;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 import android.net.ConnectivityManager;
@@ -41,6 +47,10 @@ public class MainActivity extends Activity {
 	private TextView daysLabel;
 	private TextView hoursLabel;
 	private TextView minsLabel;
+	
+	private ArrayList<Location> locations;
+	private ArrayList<Event> events;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +78,15 @@ public class MainActivity extends Activity {
 					Constants.TYPEFONT_WELLFLEET));
 			minsLabel.setTypeface(Utils.getTypeface(this,
 					Constants.TYPEFONT_WELLFLEET));
-
+			
+			// Read from data.JSON
+			try {
+				readJson();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 			// set countdown to arsfest start
 			showCountdown();
 
@@ -126,6 +144,15 @@ public class MainActivity extends Activity {
 		new CustomCounter(millisOnFuture, 1000).start();
 	}
 
+	private void readJson() throws IOException{
+		
+		JsonParser jsonParser = new JsonParser();
+		
+		this.locations = jsonParser.readLocations();
+		this.events = jsonParser.readEvents();
+	}
+	
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

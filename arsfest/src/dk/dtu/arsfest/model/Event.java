@@ -18,7 +18,7 @@ public class Event {
 		this.image = image;
 		this.startTime = startTime;
 		this.endTime = endTime;
-		this.locations = locations; // new array list and copy one by one
+		this.locations = locations; // new array list, copy one by one
 		this.description = description;
 	}
 	

@@ -24,6 +24,10 @@ public class Location {
 	private String description;
 	private int image;
 	
+	public Location(String id){
+		this.id = id;
+	}
+	
 	public Location(String id, String name, double latitude, double longitude, String description, int image) {
 		this.id = id;
 		this.name = name;
