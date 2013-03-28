@@ -6,7 +6,7 @@
                         'longitude': 12.525475,
                         'name': 'Sportshal',
                         'description': '',
-                        'image': ''
+                        'image': 0x7f020001
                     },
                     {
                         'id': 'l1',
@@ -14,7 +14,7 @@
                         'longitude': 12.523265,
                         'name': 'Biblioteket',
                         'description': '',
-                        'image': ''
+                        'image': 0x7f020001
                     },
                     {
                         'id': 'l2',
@@ -22,7 +22,7 @@
                         'longitude': 12.525871,
                         'name': 'Oticon',
                         'description': '',
-                        'image': ''
+                        'image': 0x7f020001
                     },
                     {
                         'id': 'l3',
@@ -30,7 +30,7 @@
                         'longitude': 12.524634,
                         'name': 'Glassalen',
                         'description': '',
-                        'image': ''
+                        'image': 0x7f020001
                     }
                   ],
     "events": [
@@ -38,8 +38,8 @@
                     'id': 'e0',
                     'name': 'Official_Event',
                     'image': '',
-                    'startTime': '17:30',
-                    'endTime': '18:45',
+                    'startTime': '03-05-2013:17:30',
+                    'endTime': '03-05-2013:18:45',
                     'locations': [
                                     {
                                         'id': 'l0'
@@ -51,8 +51,8 @@
                     'id': 'e1',
                     'name': 'Sportshal_Open',
                     'image': '',
-                    'startTime': '22:00',
-                    'endTime': '',
+                    'startTime': '03-05-2013:22:00',
+                    'endTime': '03-05-2013:22:00',
                     'locations': [
                                     {
                                         'id': 'l0'
@@ -64,8 +64,8 @@
                     'id': 'e2',
                     'name': 'Sportshal_Lanciers1',
                     'image': '',
-                    'startTime': '22:10',
-                    'endTime': '22:25',
+                    'startTime': '03-05-2013:22:10',
+                    'endTime': '03-05-2013:22:25',
                     'locations': [
                                     {
                                         'id': l0
@@ -77,8 +77,8 @@
                     'id': 'e3',
                     'name': 'Sportshal_DJ1',
                     'image': '',
-                    'startTime': '22:25',
-                    'endTime': '23:00',
+                    'startTime': '03-05-2013:22:25',
+                    'endTime': '03-05-2013:23:00',
                     'locations': [
                                     {
                                         'id': l0
@@ -90,8 +90,8 @@
                     'id': 'e4',
                     'name': 'Sportshal_Lanciers2',
                     'image': '',
-                    'startTime': '23:00',
-                    'endTime': '23:15',
+                    'startTime': '03-05-2013:23:00',
+                    'endTime': '03-05-2013:23:15',
                     'locations': [
                                     {
                                         'id': l0
@@ -103,8 +103,8 @@
                     'id': 'e5',
                     'name': 'Sportshal_Nebiha',
                     'image': '',
-                    'startTime': '23:15',
-                    'endTime': '00:15',
+                    'startTime': '03-05-2013:23:15',
+                    'endTime': '04-05-2013:00:15',
                     'locations': [
                                     {
                                         'id': l0
@@ -116,8 +116,8 @@
                     'id': 'e6',
                     'name': 'Sportshal_Lanciers3',
                     'image': '',
-                    'startTime': '00:15',
-                    'endTime': '00:30',
+                    'startTime': '04-05-2013:00:15',
+                    'endTime': '04-05-2013:00:30',
                     'locations': [
                                     {
                                         'id': 'l0'
@@ -129,8 +129,8 @@
                     'id': 'e7',
                     'name': 'Sportshal_DJ2',
                     'image': '',
-                    'startTime': '00:30',
-                    'endTime': '01:15',
+                    'startTime': '04-05-2013:00:30',
+                    'endTime': '04-05-2013:01:15',
                     'locations': [
                                     {
                                         'id': 'l0'
@@ -142,8 +142,8 @@
                     'id': 'e8',
                     'name': 'Sportshal_Rune_RK',
                     'image': '',
-                    'startTime': '01:15',
-                    'endTime': '02:15',
+                    'startTime': '04-05-2013:01:15',
+                    'endTime': '04-05-2013:02:15',
                     'locations': [
                                     {
                                         'id': 'l0'
@@ -155,8 +155,8 @@
                     'id': 'e9',
                     'name': 'Sportshal_DJ3',
                     'image': '',
-                    'startTime': '02:15',
-                    'endTime': '03:00',
+                    'startTime': '04-05-2013:02:15',
+                    'endTime': '04-05-2013:03:00',
                     'locations': [
                                     {
                                         'id': 'l0'
@@ -168,8 +168,8 @@
                     'id': 'e10',
                     'name': 'Sportshal_Finish',
                     'image': '',
-                    'startTime': '03:00',
-                    'endTime': '',
+                    'startTime': '04-05-2013:03:00',
+                    'endTime': '04-05-2013:03:00',
                     'locations': [
                                     {
                                         'id': 'l0'
@@ -181,8 +181,8 @@
                     'id': 'e11',
                     'name': 'Biblioteket_Open',
                     'image': '',
-                    'startTime': '18:30',
-                    'endTime': '',
+                    'startTime': '03-05-2013:18:30',
+                    'endTime': '03-05-2013:18:30',
                     'locations': [
                                     {
                                         'id': 'l1'
@@ -194,8 +194,8 @@
                     'id': 'e12',
                     'name': 'Dinner',
                     'image': '',
-                    'startTime': '19:15',
-                    'endTime': '22:00',
+                    'startTime': '03-05-2013:19:15',
+                    'endTime': '03-05-2013:22:00',
                     'locations': [
                                     {
                                         'id': 'l1'                                   },
@@ -209,8 +209,8 @@
                     'id': 'e13',
                     'name': 'Biblioteket_Lanciers1',
                     'image': '',
-                    'startTime': '22:15',
-                    'endTime': '22:30',
+                    'startTime': '03-05-2013:22:15',
+                    'endTime': '03-05-2013:22:30',
                     'locations': [
                                     {
                                         'id': 'l1'
@@ -222,8 +222,8 @@
                     'id': 'e14',
                     'name': 'Biblioteket_Veto1',
                     'image': '',
-                    'startTime': '22:40',
-                    'endTime': '23:40',
+                    'startTime': '03-05-2013:22:40',
+                    'endTime': '03-05-2013:23:40',
                     'locations': [
                                     {
                                         'id': 'l1'
@@ -235,8 +235,8 @@
                     'id': 'e15',
                     'name': 'Biblioteket_Lanciers2',
                     'image': '',
-                    'startTime': '22:40',
-                    'endTime': '00:00',
+                    'startTime': '03-05-2013:22:40',
+                    'endTime': '04-05-2013:00:00',
                     'locations': [
                                     {
                                         'id': 'l1'
@@ -248,8 +248,8 @@
                     'id': 'e16',
                     'name': 'Biblioteket_Veto2',
                     'image': '',
-                    'startTime': '00:00',
-                    'endTime': '01:00',
+                    'startTime': '04-05-2013:00:00',
+                    'endTime': '04-05-2013:01:00',
                     'locations': [
                                     {
                                         'id': 'l1'
@@ -261,8 +261,8 @@
                     'id': 'e17',
                     'name': 'Biblioteket_Lanciers3',
                     'image': '',
-                    'startTime': '01:00',
-                    'endTime': '01:15',
+                    'startTime': '04-05-2013:01:00',
+                    'endTime': '04-05-2013:01:15',
                     'locations': [
                                     {
                                         'id': 'l1'
@@ -274,8 +274,8 @@
                     'id': 'e18',
                     'name': 'Biblioteket_Close',
                     'image': '',
-                    'startTime': '01:15',
-                    'endTime': '',
+                    'startTime': '04-05-2013:01:15',
+                    'endTime': '04-05-2013:01:15',
                     'locations': [
                                     {
                                         'id': 'l1'
@@ -287,8 +287,8 @@
                     'id': 'e19',
                     'name': 'Oticon_Open',
                     'image': '',
-                    'startTime': '21:00',
-                    'endTime': '',
+                    'startTime': '03-05-2013:21:00',
+                    'endTime': '03-05-2013:21:00',
                     'locations': [
                                     {
                                         'id': 'l2'
@@ -300,8 +300,8 @@
                     'id': 'e20',
                     'name': 'Oticon_DJ1',
                     'image': '',
-                    'startTime': '21:00',
-                    'endTime': '22:30',
+                    'startTime': '03-05-2013:21:00',
+                    'endTime': '03-05-2013:22:30',
                     'locations': [
                                     {
                                         'id': 'l2'
@@ -313,8 +313,8 @@
                     'id': 'e21',
                     'name': 'Oticon_Concert1',
                     'image': '',
-                    'startTime': '22:30',
-                    'endTime': '23:30',
+                    'startTime': '03-05-2013:22:30',
+                    'endTime': '03-05-2013:23:30',
                     'locations': [
                                     {
                                         'id': 'l2'
@@ -326,8 +326,8 @@
                     'id': 'e22',
                     'name': 'Oticon_DJ2',
                     'image': '',
-                    'startTime': '23:30',
-                    'endTime': '23:50',
+                    'startTime': '03-05-2013:23:30',
+                    'endTime': '03-05-2013:23:50',
                     'locations': [
                                     {
                                         'id': 'l2'
@@ -339,8 +339,8 @@
                     'id': 'e23',
                     'name': 'Oticon_Concert2',
                     'image': '',
-                    'startTime': '23:50',
-                    'endTime': '00:50',
+                    'startTime': '03-05-2013:23:50',
+                    'endTime': '04-05-2013:00:50',
                     'locations': [
                                     {
                                         'id': 'l2'
@@ -352,8 +352,8 @@
                     'id': 'e24',
                     'name': 'Oticon_DJ3',
                     'image': '',
-                    'startTime': '23:50',
-                    'endTime': '05:00',
+                    'startTime': '03-05-2013:23:50',
+                    'endTime': '04-05-2013:05:00',
                     'locations': [
                                     {
                                         'id': 'l2'
@@ -365,8 +365,8 @@
                     'id': 'e25',
                     'name': 'Oticon_Close',
                     'image': '',
-                    'startTime': '05:00',
-                    'endTime': '',
+                    'startTime': '04-05-2013:05:00',
+                    'endTime': '04-05-2013:05:00',
                     'locations': [
                                     {
                                         'id': 'l2'
@@ -377,9 +377,9 @@
                 {
                     'id': 'e26',
                     'name': 'Jazzband',
-                    'image': '23:15',
-                    'startTime': '00:15',
-                    'endTime': '',
+                    'image': '',
+                    'startTime': '03-05-2013:23:15',
+                    'endTime': '04-05-2013:00:15',
                     'locations': [
                                     {
                                         'id': 'l3'

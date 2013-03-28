@@ -1,7 +1,6 @@
 package dk.dtu.arsfest.parser;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -9,7 +8,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import dk.dtu.arsfest.model.*;
 
@@ -73,12 +75,14 @@ public class JsonParser {
 	
 	/*
 	 * Read data.JSON and stores the information of each event
-	 * times are set to 0
 	 * @Return ArrayList<Event>
 	 */
 	public ArrayList<Event> readEvents(){
 		
 		ArrayList<Event> event_list = new ArrayList<Event>();
+		SimpleDateFormat formatter = null;
+        
+
 		
 		try {
 	        JSONObject rootObject = new JSONObject(jsonStr); // Parse the JSON to a JSONObject
@@ -90,27 +94,41 @@ public class JsonParser {
 	            String id = event.getString("id"); 
 	            String name = event.getString("name"); 
 	            String image = event.getString("image");
+	            String startTime_string = event.getString("startTime");
+	            formatter = new SimpleDateFormat("dd-MM-yyyy:HH:mm");
+	            Date startTime_Date;
+				try {
+					startTime_Date = (Date) formatter.parse(startTime_string);
+				 
+		            String endTime_string = event.getString("endTime");
+		            formatter = new SimpleDateFormat("dd-MM-yyyy:HH:mm");
+		            Date endTime_Date = (Date) formatter.parse(endTime_string);
+					
+					
+		            
+		            String description = event.getString("description");
+	
+		            //get all locations of the events
+		            ArrayList<Location> event_location_list = new ArrayList<Location>();
+		            
+		            JSONArray locations = event.getJSONArray("locations");
+		            for(int j=0; j < locations.length(); j++) {
+		            	
+		            	JSONObject location =  locations.getJSONObject(j);
+		            	String location_id = location.getString("id");
+		            	Location loc_event = new Location(location_id);
+		            	event_location_list.add(loc_event);
+		            	
+		            }
+		            
+		            Event new_event = new Event(id,name,image,startTime_Date,endTime_Date,event_location_list,description);
+		            
+		            event_list.add(new_event);
 	            
-	            /*Rethink the types for the times
-	            int startTime = event.getInt("startTime");
-	            int endTime = event.getInt("endTime");*/
-	            String description = event.getString("description");
-	            //get all locations of the events
-	            ArrayList<Location> event_location_list = new ArrayList<Location>();
-	            
-	            JSONArray locations = event.getJSONArray("locations");
-	            for(int j=0; j < locations.length(); j++) {
-	            	
-	            	JSONObject location =  locations.getJSONObject(j);
-	            	String location_id = location.getString("id");
-	            	Location loc_event = new Location(location_id);
-	            	event_location_list.add(loc_event);
-	            	
-	            }
-	            
-	            Event new_event = new Event(id,name,image,0,0,event_location_list,description);
-	            
-	            event_list.add(new_event);
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 	        }
 	        
 	     // Here the event should be added to an arrayList

@@ -1,24 +1,26 @@
 package dk.dtu.arsfest.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Event {
 	
 	private String id;
 	private String name;
 	private String image;
-	private int startTime;
-	private int endTime;
+	private Date startTime;
+	private Date endTime;
 	private ArrayList<Location> locations;
 	private String description;
+	//private String Type;
 	
-	public Event (String id, String name, String image, int startTime, int endTime, ArrayList<Location> locations, String description) {
+	public Event (String id, String name, String image, Date startTime, Date endTime, ArrayList<Location> locations, String description) {
 		this.id = id;
 		this.name = name;
 		this.image = image;
 		this.startTime = startTime;
 		this.endTime = endTime;
-		this.locations = locations; // new array list, copy one by one
+		this.locations = locations; 
 		this.description = description;
 	}
 	
@@ -40,16 +42,16 @@ public class Event {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public int getStartTime() {
+	public Date getStartTime() {
 		return startTime;
 	}
-	public void setStartTime(int startTime) {
+	public void setStartTime(Date startTime) {
 		this.startTime = startTime;
 	}
-	public int getEndTime() {
+	public Date getEndTime() {
 		return endTime;
 	}
-	public void setEndTime(int endTime) {
+	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
 	public ArrayList<Location> getLocations() {

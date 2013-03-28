@@ -16,6 +16,7 @@
 package dk.dtu.arsfest.maps;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,6 +38,10 @@ import android.widget.Toast;
 
 public class MapActivity extends FragmentActivity implements OnInfoWindowClickListener {
 	
+	/********************dummie date**************/
+	Date startTime;
+	Date endTime;
+	/*********************************************/
 	private static final LatLng DTU_101 = new LatLng(55.786365, 12.524393);
 	private ArrayList<Location> locations;
 	
@@ -54,7 +59,7 @@ public class MapActivity extends FragmentActivity implements OnInfoWindowClickLi
 		
 		// add events for restaurant
 		ArrayList<Event> events = new ArrayList<Event>();
-		events.add(new Event("e0", "Official dinner", "img/library.jpg", 1367618400, 1367618400 + 3000, locations, "baafafkan"));
+		events.add(new Event("e0", "Official dinner", "img/library.jpg", startTime, endTime, locations, "baafafkan"));
 		
 		setUpMapIfNeeded();
 	}
