@@ -1,12 +1,15 @@
 package dk.dtu.arsfest.parser;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import android.util.Log;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -22,9 +25,9 @@ public class JsonParser {
 	/*
 	 * Transforms the JSON file into a String. Stores this String in jsonStr
 	 */
-	public JsonParser() throws IOException{
+	public JsonParser(InputStream is) throws IOException{
 		
-		BufferedReader reader = new BufferedReader( new FileReader ("/arsfest/assets/data.JSON"));
+		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 	    String         line = null;
 	    StringBuilder  stringBuilder = new StringBuilder();
 	    String         ls = System.getProperty("line.separator");
@@ -33,7 +36,9 @@ public class JsonParser {
 	        stringBuilder.append( line );
 	        stringBuilder.append( ls );
 	    }
-		this.jsonStr = stringBuilder.toString(); 
+	    this.jsonStr = stringBuilder.toString(); 
+	    
+	    Log.i("ARSFEST", this.jsonStr);
 	}
 	
 	/*
@@ -57,8 +62,7 @@ public class JsonParser {
 	            Double longitude = location.getDouble("longitude");
 	            String description = location.getString("description");
 	            int image = location.getInt("image");
-	            
-	            // Create location
+	           // Create location
 	            Location loc = new Location(id,name,latitude,longitude,description,image);
 
 	            // Add new location to arraylist
