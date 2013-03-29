@@ -164,6 +164,10 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
+		/*
+		 * Here in onResume() WiFi connection. User is prompted with dialog box
+		 * to enable WiFi
+		 */
 		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 		boolean popUpSettings = settings.getBoolean("popUpConnectivityDiscard",
 				false);
@@ -171,8 +175,7 @@ public class MainActivity extends Activity {
 			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
 					this);
 			alertDialogBuilder.setTitle(R.string.wifi_title);
-			alertDialogBuilder
-					.setMessage(R.string.wifi_txt);
+			alertDialogBuilder.setMessage(R.string.wifi_txt);
 			alertDialogBuilder.setPositiveButton(R.string.wifi_option1,
 					new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int id) {
@@ -201,6 +204,14 @@ public class MainActivity extends Activity {
 		}
 	}
 
+	/**
+	 * Method checking current state of the WiFi card
+	 * 
+	 * @param applicationContext
+	 *            : Application Context
+	 * @return false: WiFi off
+	 * @return true: WiFi on
+	 */
 	private boolean haveITurnedOnMyWiFi(Context applicationContext) {
 		ConnectivityManager myConnectivityManager = (ConnectivityManager) applicationContext
 				.getSystemService(CONNECTIVITY_SERVICE);
