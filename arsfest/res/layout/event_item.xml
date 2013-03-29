@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dip"
+    android:orientation="vertical"
+    android:padding="5dip"
+    android:layout_marginLeft="10dip"
+    android:layout_marginRight="10dip"
+    android:layout_marginTop="8dip"
+    android:layout_marginBottom="2dip"
+    android:background="@drawable/border" >
+
+    <ImageView
+        android:id="@+id/imageIcon"
+        android:contentDescription="@string/ico"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:src="@drawable/restaurant" />
+
+    <TextView
+        android:id="@+id/textTimeAndLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageIcon"
+        android:layout_toRightOf="@+id/imageIcon"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:text="21:00, Library" />
+
+    <TextView
+        android:id="@+id/textNameOfTheEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dip"
+        android:layout_alignBottom="@+id/imageIcon"
+        android:layout_below="@+id/textTimeAndLocation"
+        android:layout_toRightOf="@+id/imageIcon"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:text="Harlem Shake" />
+
+</RelativeLayout>

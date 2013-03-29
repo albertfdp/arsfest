@@ -29,5 +29,6 @@
     <string name="countdown_hours_value">99</string>
     <string name="countdown_mins">MINS</string>
     <string name="countdown_mins_value">99</string>
+    <string name="ico">.ico</string>
 
 </resources>
