@@ -1,14 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-  	android:layout_width="fill_parent"
-  	android:layout_height="fill_parent">
-  	
-  	<ListView
-  	    android:id="@+id/eventsListView"
-  	    android:layout_width="fill_parent"
-  	    android:layout_height="fill_parent"
-  	/>
-  	
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/header_menu" />
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/countdown" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <TabHost
+                android:id="@android:id/tabhost"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/lilla" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TabWidget
+                        android:id="@android:id/tabs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                    </TabWidget>
+
+                    <FrameLayout
+                        android:id="@android:id/tabcontent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <LinearLayout
+                            android:id="@+id/All"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+
+                            <ListView
+                                android:id="@+id/listViewAll"
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" >
+                            </ListView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/Kantine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+                            
+                            <ListView
+                                android:id="@+id/listViewKantine"
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" >
+                            </ListView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/Oticon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+                             
+                            <ListView
+                                android:id="@+id/listViewOticon"
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" >
+                            </ListView>
+                        </LinearLayout>
+                        
+                        <LinearLayout
+                            android:id="@+id/Biblioteket"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+                             
+                            <ListView
+                                android:id="@+id/listViewBiblioteket"
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" >
+                            </ListView>
+                        </LinearLayout>
+                        
+                        <LinearLayout
+                            android:id="@+id/Sportshall"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+                             
+                            <ListView
+                                android:id="@+id/listViewSportshall"
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" >
+                            </ListView>
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </TabHost>
+
+        </LinearLayout>
+    </HorizontalScrollView>
 </LinearLayout>

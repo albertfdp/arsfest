@@ -23,7 +23,15 @@ public class Event {
 		this.locations = locations; 
 		this.description = description;
 	}
-	
+
+	public Event (String id, String name, String image, Date startTime, Date endTime, String description) {
+		this.id = id;
+		this.name = name;
+		this.image = image;
+		this.startTime = startTime;
+		this.endTime = endTime; 
+		this.description = description;
+	}
 	public String getId() {
 		return id;
 	}

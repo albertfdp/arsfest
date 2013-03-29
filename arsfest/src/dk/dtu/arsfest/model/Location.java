@@ -3,6 +3,8 @@
  ******************************************************************************/
 package dk.dtu.arsfest.model;
 
+import java.util.ArrayList;
+
 public class Location {
 	
 	private String id;
@@ -11,9 +13,20 @@ public class Location {
 	private double longitude;
 	private String description;
 	private int image;
+	private ArrayList<Event> events;
 	
 	public Location(String id){
 		this.id = id;
+	}
+	
+	public Location(String id, String name, double latitude, double longitude, String description, int image, ArrayList<Event> events) {
+		this.id = id;
+		this.name = name;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.description = description;
+		this.image = image;
+		this.events = events;
 	}
 	
 	public Location(String id, String name, double latitude, double longitude, String description, int image) {
