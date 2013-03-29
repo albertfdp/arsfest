@@ -1,35 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Copyright 2013 Albert Fernández de la Peña
-  
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-  
-    http://www.apache.org/licenses/LICENSE-2.0
-  
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
--->
 <resources>
 
     <string name="app_name">DTU’s årsfest</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    
     <string name="rest_task_title">Calling</string>
     <string name="rest_task_message">Loading ...</string>
-    
     <string name="countdown_days">DAYS</string>
     <string name="countdown_days_value">99</string>
     <string name="countdown_hours">HOURS</string>
     <string name="countdown_hours_value">99</string>
     <string name="countdown_mins">MINS</string>
     <string name="countdown_mins_value">99</string>
-    
-    <string name="event_image_description">Image of the event</string>
 
+	<string name="event_image_description">Image of the event</string>
+    <string name="ico">.ico</string>
+    <string name="wifi_title">WiFi Disabled</string>
+    <string name="wifi_option1">Change WiFi Settings</string>
+    <string name="wifi_option2">Don\'t remind</string>
+    <string name="wifi_txt">There is no WiFi enabled right now. The application you want to use was aimed to use information provided by your WiFi card. Please enable your WiFi connection and try again later</string>
+    
 </resources>
