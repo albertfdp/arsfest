@@ -29,16 +29,7 @@
     <string name="countdown_hours_value">99</string>
     <string name="countdown_mins">MINS</string>
     <string name="countdown_mins_value">99</string>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    <string name="ico">.ico</string>
-=======
     
     <string name="event_image_description">Image of the event</string>
->>>>>>> Stashed changes
-=======
-    
-    <string name="event_image_description">Image of the event</string>
->>>>>>> Stashed changes
 
 </resources>
