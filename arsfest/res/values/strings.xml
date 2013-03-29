@@ -15,7 +15,7 @@
     <string name="ico">.ico</string>
     <string name="wifi_title">WiFi Disabled</string>
     <string name="wifi_option1">Change WiFi Settings</string>
-    <string name="wifi_option2">Don't remind</string>
+    <string name="wifi_option2">Don\'t remind</string>
     <string name="wifi_txt">There is no WiFi enabled right now. The application you want to use was aimed to use information provided by your WiFi card. Please enable your WiFi connection and try again later</string>
 
 </resources>
