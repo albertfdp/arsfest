@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/header_bar" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="35dip"
+        android:background="@color/black" 
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/imageIconAlarm"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:contentDescription="@string/setAlarm"
+            android:background="@android:color/transparent"
+            android:src="@drawable/alarm" />
+        
+        <ImageButton
+            android:id="@+id/imageIconMap"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_marginLeft="120dip"
+            android:contentDescription="@string/viewMap"
+            android:background="@android:color/transparent"
+            android:src="@drawable/map" />
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="100dip"
+        android:background="@drawable/background" >
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="90dip"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:padding="5dip"
+        android:background="@color/lilla" >
+
+        <TextView
+            android:id="@+id/textViewEventName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="25sp" />
+        
+        <ImageView
+            android:id="@+id/imageIconTime"
+            android:contentDescription="@string/time"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_below="@+id/textViewEventName"
+            android:layout_marginTop="0dip"
+            android:src="@drawable/time" />
+        
+        <TextView
+            android:id="@+id/textViewTime"
+            android:layout_width="fill_parent"
+            android:layout_height="20dip"
+            android:layout_below="@+id/textViewEventName"
+            android:layout_toRightOf="@+id/imageIconTime"            
+            android:layout_marginTop="5dip"
+            android:layout_marginLeft="10dip"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/imageIconPlace"
+            android:contentDescription="@string/place"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_below="@+id/imageIconTime"
+            android:layout_marginTop="0dip"
+            android:src="@drawable/location" />
+
+        <TextView
+            android:id="@+id/textViewPlace"
+            android:layout_width="fill_parent"
+            android:layout_height="20dip"
+            android:layout_below="@+id/textViewTime"
+            android:layout_toRightOf="@+id/imageIconPlace"            
+            android:layout_marginTop="5dip"
+            android:layout_marginLeft="10dip"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+     
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:padding="10dip" >
+
+        <TextView
+            android:id="@+id/textViewEventDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:textSize="13sp"/>
+    </LinearLayout>
+
+   
+
+</LinearLayout>

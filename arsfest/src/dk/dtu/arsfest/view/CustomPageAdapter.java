@@ -2,6 +2,8 @@ package dk.dtu.arsfest.view;
 
 import java.util.ArrayList;
 
+import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 
 import android.app.Activity;
@@ -11,6 +13,7 @@ import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -21,6 +24,9 @@ public class CustomPageAdapter extends PagerAdapter {
 	private ArrayList<Location> locations;
 	private int mBackgroundColor = 0xFFFFFFFF;
 	private int mTextColor = 0xFF000000;
+
+	private EventAdapter eventAdapter;
+	private ArrayList<Event> events;
 	
 	public CustomPageAdapter(Activity context, ArrayList<Location> locations, int backgroundColor, int textColor) {
 		this.mContext = context;
@@ -36,6 +42,14 @@ public class CustomPageAdapter extends PagerAdapter {
 	
 	@Override
 	public Object instantiateItem(View container, int position) {
+		
+		ListView listView = new ListView (mContext);
+		
+		events = this.locations.get(position).getEvents();		
+		eventAdapter = new EventAdapter(mContext, R.layout.event_item, events);
+		listView.setAdapter(eventAdapter);
+		
+		/*
 		RelativeLayout v = new RelativeLayout(mContext);
 		
 		TextView t = new TextView(mContext);
@@ -51,6 +65,9 @@ public class CustomPageAdapter extends PagerAdapter {
 		((ViewPager) container).addView(v, 0);
 		
 		return v;
+		*/
+		((ViewPager) container).addView(listView, 0);
+		return listView;
 	}
 	
 	@Override
