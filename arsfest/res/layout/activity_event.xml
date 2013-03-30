@@ -15,19 +15,21 @@
         android:background="@color/black" 
         android:gravity="center">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/imageIconAlarm"
             android:layout_width="25dip"
             android:layout_height="25dip"
             android:contentDescription="@string/setAlarm"
+            android:background="@android:color/transparent"s
             android:src="@drawable/alarm" />
         
-        <ImageView
+        <ImageButton
             android:id="@+id/imageIconMap"
             android:layout_width="25dip"
             android:layout_height="25dip"
             android:layout_marginLeft="120dip"
             android:contentDescription="@string/viewMap"
+            android:background="@android:color/transparent"
             android:src="@drawable/map" />
     </RelativeLayout>
     
