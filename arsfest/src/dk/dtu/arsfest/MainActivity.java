@@ -4,13 +4,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+import com.astuetz.viewpager.extensions.ScrollingTabsView;
+import com.astuetz.viewpager.extensions.TabsAdapter;
+
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.parser.JsonParser;
+import dk.dtu.arsfest.view.CustomPageAdapter;
 import dk.dtu.arsfest.view.EventAdapter;
+import dk.dtu.arsfest.view.LocationTabs;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -29,6 +36,12 @@ public class MainActivity extends Activity {
 	private EventAdapter eventAdapter;
 	private ListView eventListView;
 	private ArrayList<Event> events;
+	
+	private ViewPager viewPager;
+	private PagerAdapter pageAdapter;
+	private ScrollingTabsView scrollingTabs;
+	private TabsAdapter scrollingTabsAdapter;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,14 +51,12 @@ public class MainActivity extends Activity {
 		// Read from data.JSON
 		readJson();
 		
-		Log.i("ARSFEST", "List of events");
-		if (this.events != null) {
-			for (Event event : this.events) {
-				Log.i("ARSFEST", event.getName());
+		if (this.locations != null) {
+			for (Location location : this.locations) {
+				Log.i("ARSFEST", location.getName());
 			}
-		} else {
-			Log.i("ARSFEST", "Events null!!");
 		}
+		
 		// inflate the list view with the events
 		inflateView();
 		
@@ -65,13 +76,21 @@ public class MainActivity extends Activity {
 		
 	}
 	
+	private void initViewPager(int pageCount, int backgroundColor, int textColor) {
+		viewPager = (ViewPager) findViewById(R.id.pager);
+		pageAdapter = new CustomPageAdapter(this, this.locations, backgroundColor, textColor);
+		viewPager.setAdapter(pageAdapter);
+		viewPager.setCurrentItem(1);
+		viewPager.setPageMargin(1);
+		
+		scrollingTabs = (ScrollingTabsView) findViewById(R.id.scrolling_tabs);
+		scrollingTabsAdapter = new LocationTabs(this, this.locations);
+		scrollingTabs.setAdapter(scrollingTabsAdapter);
+		scrollingTabs.setViewPager(viewPager);
+	}
+	
 	private void inflateView() {
-		// check if the list of locations and events are not null
-		if (this.locations != null && this.events != null) {
-			eventAdapter = new EventAdapter(this, R.layout.event_item, this.events);
-			eventListView = (ListView) findViewById(R.id.eventsListView);
-			eventListView.setAdapter(eventAdapter);
-		}
+		initViewPager(this.locations.size(), 0xFF000000, 0xFFFFFFFF);
 	}
 
 	@Override

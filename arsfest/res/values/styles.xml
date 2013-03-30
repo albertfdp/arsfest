@@ -13,7 +13,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -30,6 +30,11 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <style name="titleBarHeading" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">#ff8000</item>
+        <item name="android:gravity">center</item>
     </style>
 
 </resources>

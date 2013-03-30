@@ -48,6 +48,7 @@ public class JsonParser {
 	public ArrayList<Location> readLocations(){
 		
 		ArrayList<Location> location_list = new ArrayList<Location>();
+		SimpleDateFormat formatter = null;
 		
 		try {
 	        JSONObject rootObject = new JSONObject(jsonStr); // Parse the JSON to a JSONObject
@@ -62,8 +63,42 @@ public class JsonParser {
 	            Double longitude = location.getDouble("longitude");
 	            String description = location.getString("description");
 	            int image = location.getInt("image");
+	           
+	            //get all locations of the events
+	            ArrayList<Event> event_location_list = new ArrayList<Event>();
+	            
+	            JSONArray events = location.getJSONArray("events");
+	            for(int j=0; j < events.length(); j++) {
+	            	
+	            	JSONObject event = events.getJSONObject(j); 
+	 	           
+		            String event_id = event.getString("id"); 
+		            String event_name = event.getString("name"); 
+		            String event_image = event.getString("image");
+		            String startTime_string = event.getString("startTime");
+		            formatter = new SimpleDateFormat("dd-MM-yyyy:HH:mm");
+		            Date startTime_Date;
+					try {
+						startTime_Date = (Date) formatter.parse(startTime_string);
+					 
+			            String endTime_string = event.getString("endTime");
+			            formatter = new SimpleDateFormat("dd-MM-yyyy:HH:mm");
+			            Date endTime_Date = (Date) formatter.parse(endTime_string);
+						
+			            String event_description = event.getString("description");
+					            
+			            Event new_event = new Event(event_id,event_name,event_image,startTime_Date,endTime_Date,event_description);
+			            
+			            event_location_list.add(new_event);
+		            
+					} catch (ParseException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+	            	
+	            }
 	           // Create location
-	            Location loc = new Location(id,name,latitude,longitude,description,image);
+	            Location loc = new Location(id,name,latitude,longitude,description,image,event_location_list);
 
 	            // Add new location to arraylist
 	            location_list.add(loc);
