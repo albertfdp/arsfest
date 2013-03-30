@@ -33,8 +33,6 @@ public class MainActivity extends Activity {
 
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
 	private ArrayList<Location> locations;
-	private EventAdapter eventAdapter;
-	private ListView eventListView;
 	private ArrayList<Event> events;
 	
 	private ViewPager viewPager;

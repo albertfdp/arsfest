@@ -6,10 +6,12 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.astuetz.viewpager.extensions.TabsAdapter;
 
 import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 
 public class LocationTabs implements TabsAdapter {
