@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
 		// check if the list of locations and events are not null
 		if (this.locations != null && this.events != null) {
 			eventAdapter = new EventAdapter(this, R.layout.event_row_item, this.events);
-			eventListView = (ListView) findViewById(R.id.eventsListView);
+			//eventListView = (ListView) findViewById(R.id.eventsListView);
 			eventListView.setAdapter(eventAdapter);
 		}
 	}

@@ -70,7 +70,7 @@ public class JsonParser {
 	            JSONArray events = location.getJSONArray("events");
 	            for(int j=0; j < events.length(); j++) {
 	            	
-	            	JSONObject event = events.getJSONObject(i); 
+	            	JSONObject event = events.getJSONObject(j); 
 	 	           
 		            String event_id = event.getString("id"); 
 		            String event_name = event.getString("name"); 

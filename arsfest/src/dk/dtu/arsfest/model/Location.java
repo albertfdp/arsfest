@@ -85,5 +85,14 @@ public class Location {
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
+	
+	public ArrayList<Event> getEvents(){
+		return this.events;
+	}
+	
+	@Override
+	public String toString(){
+		return id+' '+name+' '+longitude+' '+latitude+' '+description+' '+image;
+	}
 
 }
