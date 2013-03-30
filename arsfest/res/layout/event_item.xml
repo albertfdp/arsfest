@@ -8,33 +8,36 @@
     android:layout_marginRight="10dip"
     android:layout_marginTop="8dip"
     android:layout_marginBottom="2dip"
-    android:background="@drawable/border" >
+    android:background="@color/event_item_color" >
 
     <ImageView
-        android:id="@+id/imageIcon"
+        android:id="@+id/eventImage"
         android:contentDescription="aa"
         android:layout_width="60dip"
         android:layout_height="60dip"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="10dp"
         android:src="@drawable/restaurant" />
 
     <TextView
-        android:id="@+id/textTimeAndLocation"
+        android:id="@+id/eventTimeAndLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageIcon"
-        android:layout_toRightOf="@+id/imageIcon"
+        android:layout_alignTop="@+id/eventImage"
+        android:layout_toRightOf="@+id/eventImage"
         android:textColor="@color/black"
         android:textSize="15sp"
         android:text="21:00, Library" />
 
     <TextView
-        android:id="@+id/textNameOfTheEvent"
+        android:id="@+id/eventName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dip"
-        android:layout_alignBottom="@+id/imageIcon"
-        android:layout_below="@+id/textTimeAndLocation"
-        android:layout_toRightOf="@+id/imageIcon"
+        android:layout_alignBottom="@+id/eventImage"
+        android:layout_below="@+id/eventTimeAndLocation"
+        android:layout_toRightOf="@+id/eventImage"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:text="Harlem Shake" />
