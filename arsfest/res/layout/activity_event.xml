@@ -20,7 +20,7 @@
             android:layout_width="25dip"
             android:layout_height="25dip"
             android:contentDescription="@string/setAlarm"
-            android:background="@android:color/transparent"s
+            android:background="@android:color/transparent"
             android:src="@drawable/alarm" />
         
         <ImageButton
