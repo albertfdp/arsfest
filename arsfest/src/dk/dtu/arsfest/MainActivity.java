@@ -2,7 +2,12 @@ package dk.dtu.arsfest;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import com.astuetz.viewpager.extensions.ScrollingTabsView;
 import com.astuetz.viewpager.extensions.TabsAdapter;
@@ -18,6 +23,7 @@ import dk.dtu.arsfest.view.LocationTabs;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
@@ -32,6 +38,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -44,6 +51,10 @@ public class MainActivity extends Activity {
 	private PagerAdapter pageAdapter;
 	private ScrollingTabsView scrollingTabs;
 	private TabsAdapter scrollingTabsAdapter;
+	
+	private Date currentDate;
+	private String arsfest_start_s = new String("03-05-2013:17:30");
+	private Date arsfest_start;
 
 	
 	@Override
@@ -60,6 +71,7 @@ public class MainActivity extends Activity {
 				Log.i("ARSFEST", location.getName());
 			}
 		}
+		
 		//create menu
 		
 		findViewById(R.id.actionBarAccordeon).setOnClickListener(
@@ -74,6 +86,21 @@ public class MainActivity extends Activity {
 					}
 				});
 
+		// If it is before the start of arsfest shows countdown
+		
+		this.currentDate = getCurrentDate();
+		this.arsfest_start = getStartDate(this.arsfest_start_s);
+		
+		if (currentDate.before(arsfest_start)){
+			showCountdown(this.currentDate, this.arsfest_start);
+		}
+		
+		/* if it is in the middle shows events
+		else {
+		
+		} */
+		
+		
 		
 		// inflate the list view with the events
 		inflateView();
@@ -180,4 +207,67 @@ public class MainActivity extends Activity {
 		}
 		return false;
 	}
+	
+	private Date getCurrentDate() {
+		
+		Date date = null;
+		Calendar c = Calendar.getInstance();
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd:HH:mm:ss");
+        String formattedDate = df.format(c.getTime());
+        try {
+			date = (Date) df.parse(formattedDate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return date;
+	}
+	
+	private Date getStartDate(String date){
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy:HH:mm");
+		Date start = null;
+		try {
+			start = (Date) formatter.parse(arsfest_start_s);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return start;
+        	
+	}
+	
+	private void showCountdown(Date current, Date start){
+		
+		
+	    CountDownTimer cdt = new CountDownTimer(start.getTime() - current.getTime(), 1000) {
+
+	    	@Override
+	        public void onTick(long millisUntilFinished) {
+	            
+	        	TextView days = (TextView) findViewById(R.id.textDays);
+	        	TextView hours = (TextView) findViewById(R.id.textHours);
+	        	TextView mins = (TextView) findViewById(R.id.textMinutes);
+	        	int daysValue = (int) (millisUntilFinished / 86400000);
+	        	int hoursValue = (int) (((millisUntilFinished / 1000) - (daysValue * 86400)) / 3600);
+	        	int minsValue = (int) (((millisUntilFinished / 1000) - ((daysValue * 86400) + (hoursValue * 3600))) / 60);
+	        	days.setText(String.valueOf(daysValue));
+	        	hours.setText(String.valueOf(hoursValue));
+	        	mins.setText(String.valueOf(minsValue));
+
+	        }
+
+			@Override
+			public void onFinish() {
+				// TODO Auto-generated method stub
+				
+			}
+	    };
+		
+	    cdt.start();
+		 
+	}
+	
 }
