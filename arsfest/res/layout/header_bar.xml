@@ -8,12 +8,14 @@
 
     <ImageButton
         android:id="@+id/actionBarAccordeon"
+        style="@android:style/Widget.Button.Small"
         android:layout_width="40dip"
         android:layout_height="40dip"
         android:layout_gravity="left"
         android:layout_marginRight="10dp"
         android:background="@android:color/transparent"
-        android:src="@drawable/list" />
+        android:src="@drawable/list"
+        android:text="Menu" />
 
     <TextView
         android:id="@+id/actionBarTitle"
@@ -26,7 +28,7 @@
         android:textSize="25sp"
         android:textStyle="bold" />
 
-    <ImageButton
+    <Button style="@android:style/Widget.Button.Small"
         android:id="@+id/actionBarPreferences"
         android:layout_width="40dip"
         android:layout_height="40dip"

@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 import com.astuetz.viewpager.extensions.ScrollingTabsView;
 import com.astuetz.viewpager.extensions.TabsAdapter;
+import com.korovyansk.android.slideout.SlideoutActivity;
+import com.korovyansk.android.slideout.SlideoutHelper;
 
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
@@ -19,13 +21,16 @@ import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.util.TypedValue;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -39,6 +44,7 @@ public class MainActivity extends Activity {
 	private PagerAdapter pageAdapter;
 	private ScrollingTabsView scrollingTabs;
 	private TabsAdapter scrollingTabsAdapter;
+
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +60,23 @@ public class MainActivity extends Activity {
 				Log.i("ARSFEST", location.getName());
 			}
 		}
+		//create menu
+		
+		findViewById(R.id.actionBarAccordeon).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						int width = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics());
+						SlideoutActivity.prepare(MainActivity.this, R.id.MainLayout, width);
+						startActivity(new Intent(MainActivity.this,
+								MenuActivity.class));
+						overridePendingTransition(0, 0);
+					}
+				});
+
 		
 		// inflate the list view with the events
 		inflateView();
-		
 	}
 	
 	private void readJson() {
@@ -91,6 +110,7 @@ public class MainActivity extends Activity {
 		initViewPager(this.locations.size(), 0xFF000000, 0xFFFFFFFF);
 	}
 
+		
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
