@@ -3,7 +3,10 @@ package dk.dtu.arsfest.model;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Event {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Event implements Parcelable {
 	
 	private String id;
 	private String name;
@@ -78,6 +81,33 @@ public class Event {
 	@Override
 	public String toString(){
 		return id+' '+name+' '+startTime+' '+endTime+' '+description+' '+image;
+	}
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeString(name);
+	}
+	
+	public static final Parcelable.Creator<Event> CREATOR = new Parcelable.Creator<Event>() {
+
+		@Override
+		public Event createFromParcel(Parcel source) {
+			return new Event(source);
+		}
+
+		@Override
+		public Event[] newArray(int size) {
+			return new Event[size];
+		}
+	};
+	
+	private Event(Parcel in) {
+		this.name = in.readString();
 	}
 	
 

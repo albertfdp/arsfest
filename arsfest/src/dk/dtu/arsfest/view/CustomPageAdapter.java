@@ -3,36 +3,34 @@ package dk.dtu.arsfest.view;
 import java.util.ArrayList;
 
 import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.event.EventActivity;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 public class CustomPageAdapter extends PagerAdapter {
 	
 	protected transient Activity mContext;
 	
 	private ArrayList<Location> locations;
-	private int mBackgroundColor = 0xFFFFFFFF;
-	private int mTextColor = 0xFF000000;
 
 	private EventAdapter eventAdapter;
 	private ArrayList<Event> events;
 	
-	public CustomPageAdapter(Activity context, ArrayList<Location> locations, int backgroundColor, int textColor) {
+	public CustomPageAdapter(Activity context, ArrayList<Location> locations) {
 		this.mContext = context;
 		this.locations = locations;
-		this.mBackgroundColor = backgroundColor;
-		this.mTextColor = textColor;
 	}
 
 	@Override
@@ -48,24 +46,22 @@ public class CustomPageAdapter extends PagerAdapter {
 		events = this.locations.get(position).getEvents();		
 		eventAdapter = new EventAdapter(mContext, R.layout.event_item, events);
 		listView.setAdapter(eventAdapter);
-		
-		/*
-		RelativeLayout v = new RelativeLayout(mContext);
-		
-		TextView t = new TextView(mContext);
-		t.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
-		t.setText(this.locations.get(position).getName());
-		t.setTextSize(120);
-		t.setGravity(Gravity.CENTER);
-		t.setTextColor(mTextColor);
-		t.setBackgroundColor(mBackgroundColor);
-		
-		v.addView(t);
-		
-		((ViewPager) container).addView(v, 0);
-		
-		return v;
-		*/
+		listView.setPadding(10, 10, 10, 10);
+		listView.setBackgroundDrawable(mContext.getResources().getDrawable(R.drawable.textured_paper));
+		listView.setDivider(mContext.getResources().getDrawable(R.drawable.textured_paper));
+		listView.setDividerHeight(30); // always after setDivider()
+		listView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int itemPosition,
+					long id) {
+				Event clickedEvent = events.get(itemPosition);
+				Intent intent = new Intent(mContext, EventActivity.class);
+				intent.putExtra("dk.dtu.arsfest.Event", clickedEvent);
+				mContext.startActivity(intent);
+			}
+			
+		});
 		((ViewPager) container).addView(listView, 0);
 		return listView;
 	}

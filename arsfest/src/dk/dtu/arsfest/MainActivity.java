@@ -120,9 +120,9 @@ public class MainActivity extends Activity {
 		
 	}
 	
-	private void initViewPager(int pageCount, int backgroundColor, int textColor) {
+	private void initViewPager(int pageCount) {
 		viewPager = (ViewPager) findViewById(R.id.pager);
-		pageAdapter = new CustomPageAdapter(this, this.locations, backgroundColor, textColor);
+		pageAdapter = new CustomPageAdapter(this, this.locations);
 		viewPager.setAdapter(pageAdapter);
 		viewPager.setCurrentItem(1);
 		viewPager.setPageMargin(1);
@@ -134,7 +134,7 @@ public class MainActivity extends Activity {
 	}
 	
 	private void inflateView() {
-		initViewPager(this.locations.size(), 0xFF000000, 0xFFFFFFFF);
+		initViewPager(this.locations.size());
 	}
 
 		

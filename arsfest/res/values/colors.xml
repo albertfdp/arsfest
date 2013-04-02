@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<color name="black">#232323</color>
-    <color name="lilla">#bf00ff</color>
+    <color name="lilla">#662c92</color>
 	<color name="lightblue">#54ffff</color>
     <color name="green">#bfff00</color>
     <color name="pink">#ff00ff</color>
     <color name="orange">#ff8000</color>
     <color name="white">#fefefe</color>
+    <color name="grey">#bbbbbb</color>
 </resources>
