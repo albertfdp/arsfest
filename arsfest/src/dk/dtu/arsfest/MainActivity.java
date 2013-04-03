@@ -41,6 +41,7 @@ public class MainActivity extends Activity {
 
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
 	private ArrayList<Location> locations;
+	private ArrayList<Event> happeningNow;
 	
 	private ViewPager viewPager;
 	private PagerAdapter pageAdapter;
@@ -50,7 +51,10 @@ public class MainActivity extends Activity {
 	private Date currentDate;
 	private String arsfest_start_s = new String("03-05-2013:17:30");
 	private Date arsfest_start;
-
+	
+	private String currentTime_test_s = new String("03-05-2013:16:10");
+	private Date currentTime_test;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -91,14 +95,21 @@ public class MainActivity extends Activity {
 		this.currentDate = getCurrentDate();
 		this.arsfest_start = getStartDate(this.arsfest_start_s);
 		
+		
+		
 		if (currentDate.before(arsfest_start)){
 			showCountdown(this.currentDate, this.arsfest_start);
 		}
-		
-		/* if it is in the middle shows events
+		// if it is in the middle shows events happening now
 		else {
+			
+			happeningNow = happeningNow_List(currentDate);
+			//happeningNow = happeningNow_List(currentTime_test);
+			for(Event ev : happeningNow){
+				Log.i("ARSFEST", ev.toString());
+			}
 		
-		} */
+		} 
 		
 		
 		
@@ -106,6 +117,7 @@ public class MainActivity extends Activity {
 		inflateView();
 	}
 	
+
 	private void readJson() {
 			
 		JsonParser jsonParser;
@@ -228,7 +240,7 @@ public class MainActivity extends Activity {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy:HH:mm");
 		Date start = null;
 		try {
-			start = (Date) formatter.parse(arsfest_start_s);
+			start = (Date) formatter.parse(date);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -267,6 +279,18 @@ public class MainActivity extends Activity {
 		
 	    cdt.start();
 		 
+	}
+	
+	private ArrayList<Event> happeningNow_List(Date currentTime) {
+		
+		ArrayList<Event> now = new ArrayList<Event>();
+		
+		for(Location loc : this.locations){
+			Log.i("ARSFEST", "Aqui2");
+			now.addAll(loc.happeningNow(currentTime));
+		}
+		
+		return now;
 	}
 	
 }

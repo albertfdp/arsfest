@@ -4,6 +4,7 @@
 package dk.dtu.arsfest.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Location {
 	
@@ -93,6 +94,18 @@ public class Location {
 	@Override
 	public String toString(){
 		return id+' '+name+' '+longitude+' '+latitude+' '+description+' '+image;
+	}
+	
+	public ArrayList<Event> happeningNow(Date currentTime){
+		
+		ArrayList<Event> now = new ArrayList<Event>();
+		
+		for(Event event : this.getEvents()){
+			
+			if (event.happeningNow(currentTime))
+				now.add(event);
+		}
+		return now;
 	}
 
 }
