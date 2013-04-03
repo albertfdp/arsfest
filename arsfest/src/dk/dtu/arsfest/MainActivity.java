@@ -43,6 +43,7 @@ public class MainActivity extends Activity {
 
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
 	private ArrayList<Location> locations;
+	private ArrayList<Event> happeningNow;
 	
 	private ViewPager viewPager;
 	private PagerAdapter pageAdapter;
@@ -54,6 +55,9 @@ public class MainActivity extends Activity {
 	private Date arsfest_start;
 	
 	private TextView headerTitle;
+	
+	private String currentTime_test_s = new String("03-05-2013:16:10");
+	private Date currentTime_test;
 
 	
 	@Override
@@ -100,10 +104,16 @@ public class MainActivity extends Activity {
 			showCountdown(this.currentDate, this.arsfest_start);
 		}
 		
-		/* if it is in the middle shows events
+		// if it is in the middle shows events
 		else {
+			
+			happeningNow = happeningNow_List(currentDate);
+			//happeningNow = happeningNow_List(currentTime_test);
+			for(Event ev : happeningNow){
+				Log.i("ARSFEST", ev.toString());
+			}
 		
-		} */
+		} 
 		
 		
 		
@@ -243,7 +253,7 @@ public class MainActivity extends Activity {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy:HH:mm");
 		Date start = null;
 		try {
-			start = (Date) formatter.parse(arsfest_start_s);
+			start = (Date) formatter.parse(date);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -282,6 +292,18 @@ public class MainActivity extends Activity {
 		
 	    cdt.start();
 		 
+	}
+	
+	private ArrayList<Event> happeningNow_List(Date currentTime) {
+		
+		ArrayList<Event> now = new ArrayList<Event>();
+		
+		for(Location loc : this.locations){
+			Log.i("ARSFEST", "Aqui2");
+			now.addAll(loc.happeningNow(currentTime));
+		}
+		
+		return now;
 	}
 	
 }

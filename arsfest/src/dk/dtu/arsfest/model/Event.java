@@ -5,6 +5,7 @@ import java.util.Date;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 public class Event implements Parcelable {
 	
@@ -110,5 +111,15 @@ public class Event implements Parcelable {
 		this.name = in.readString();
 	}
 	
-
+	public boolean happeningNow(Date currentTime){
+		
+		if((currentTime.after(this.getStartTime())) && (currentTime.before(this.getEndTime()))){
+			
+			return true;
+		}
+			
+		
+		return false;
+	}
+	
 }
