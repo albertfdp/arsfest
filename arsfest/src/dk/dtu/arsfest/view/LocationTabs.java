@@ -14,6 +14,8 @@ import com.astuetz.viewpager.extensions.TabsAdapter;
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
+import dk.dtu.arsfest.utils.Constants;
+import dk.dtu.arsfest.utils.Utils;
 
 public class LocationTabs implements TabsAdapter {
 	
@@ -33,7 +35,8 @@ public class LocationTabs implements TabsAdapter {
 		tab = (Button) inflater.inflate(R.layout.tab_scrolling, null);
 		
 		if (position < this.locations.size()) {
-			tab.setText(position + " : " + this.locations.get(position).getName());
+			tab.setText(this.locations.get(position).getName().toUpperCase());
+			tab.setTypeface(Utils.getTypeface(context, Constants.TYPEFONT_PROXIMANOVA));
 		}
 		return tab;
 	}

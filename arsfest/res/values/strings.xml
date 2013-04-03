@@ -24,4 +24,9 @@
     <string name="place">Place</string>
     <string name="setAlarm">Set Alarm</string>
     <string name="viewMap">View Map</string>
+    
+    <string name="default_event_location">Sports Hall</string>
+    <string name="default_event_time">21:00</string>
+    <string name="default_event_name">Event name</string>
+    <string name="event_image_description">Description</string>
 </resources>

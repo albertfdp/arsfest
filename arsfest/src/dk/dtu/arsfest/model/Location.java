@@ -19,6 +19,11 @@ public class Location {
 		this.id = id;
 	}
 	
+	public Location(String id, String name, ArrayList<Event> events) {
+		this.id = id;
+		this.name = name;
+		this.events = events;
+	}
 	public Location(String id, String name, double latitude, double longitude, String description, int image, ArrayList<Event> events) {
 		this.id = id;
 		this.name = name;

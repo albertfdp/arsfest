@@ -9,6 +9,7 @@ import dk.dtu.arsfest.model.Location;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -47,8 +48,8 @@ public class CustomPageAdapter extends PagerAdapter {
 		listView.setTag(position);
 		listView.setAdapter(eventAdapter);
 		listView.setPadding(10, 10, 10, 10);
-		listView.setBackgroundDrawable(mContext.getResources().getDrawable(R.drawable.textured_paper));
-		listView.setDivider(mContext.getResources().getDrawable(R.drawable.textured_paper));
+		listView.setBackgroundColor(mContext.getResources().getColor(R.color.flat_black));
+		listView.setDivider(new ColorDrawable(mContext.getResources().getColor(R.color.flat_black)));
 		listView.setDividerHeight(30); // always after setDivider()
 		listView.setOnItemClickListener(new OnItemClickListener() {
 

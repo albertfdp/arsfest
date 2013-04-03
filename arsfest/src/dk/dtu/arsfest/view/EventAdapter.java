@@ -33,13 +33,14 @@ public class EventAdapter extends ArrayAdapter <Event>{
 		}
 		Event event = events.get(position);
 		if (event != null) {
-			TextView eventTitle = (TextView) view.findViewById(R.id.eventName);
-			TextView eventTimeAndLocation = (TextView) view.findViewById(R.id.eventTimeAndLocation);
+			TextView eventTitle = (TextView) view.findViewById(R.id.event_title);
+			TextView eventTimeAndLocation = (TextView) view.findViewById(R.id.event_location);
 			Typeface typeface = Utils.getTypeface(this.context, Constants.TYPEFONT_NEOSANS);
 			if (eventTitle != null) {
 				eventTitle.setText(event.getName());
 				eventTitle.setTypeface(typeface);
 				eventTimeAndLocation.setTypeface(typeface);
+				eventTimeAndLocation.setText("Sports Hall");
 			}
 		}
 		return view;

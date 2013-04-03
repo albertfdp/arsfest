@@ -2,6 +2,8 @@ package dk.dtu.arsfest.event;
 
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.model.Event;
+import dk.dtu.arsfest.utils.Constants;
+import dk.dtu.arsfest.utils.Utils;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -16,6 +18,7 @@ public class EventActivity extends Activity {
 	private TextView textViewTime;
 	private TextView textViewPlace;
 	private TextView textViewEventDescription;
+	private TextView headerTitle;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,11 @@ public class EventActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_event);
 		Typeface myNeoSans = Typeface.createFromAsset(getAssets(), "fonts/NeoSans.ttf");
+		
+		// update the font type of the header
+		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
+		headerTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
+		headerTitle.setText(Constants.APP_NAME);
 		
 		// Read event info from intent
 		Intent intent = getIntent();

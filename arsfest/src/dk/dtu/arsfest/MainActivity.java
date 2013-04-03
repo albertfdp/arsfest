@@ -15,6 +15,8 @@ import com.korovyansk.android.slideout.SlideoutActivity;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.parser.JsonParser;
+import dk.dtu.arsfest.utils.Constants;
+import dk.dtu.arsfest.utils.Utils;
 import dk.dtu.arsfest.view.CustomPageAdapter;
 import dk.dtu.arsfest.view.LocationTabs;
 import android.net.ConnectivityManager;
@@ -50,6 +52,8 @@ public class MainActivity extends Activity {
 	private Date currentDate;
 	private String arsfest_start_s = new String("03-05-2013:17:30");
 	private Date arsfest_start;
+	
+	private TextView headerTitle;
 
 	
 	@Override
@@ -58,18 +62,19 @@ public class MainActivity extends Activity {
 		
 		// hide title bar
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
 		setContentView(R.layout.activity_main);
 		
+		// update the font type of the header
+		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
+		headerTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
+		headerTitle.setText(Constants.APP_NAME);
 		
 		
 		// Read from data.JSON
 		readJson();
 		
-		if (this.locations != null) {
-			for (Location location : this.locations) {
-				Log.i("ARSFEST", location.getName());
-			}
+		for (Location location : this.locations) {
+			Log.i("ARSFEST", location.getName());
 		}
 		
 		//create menu
@@ -113,6 +118,16 @@ public class MainActivity extends Activity {
 			InputStream is = getAssets().open("data.JSON");
 			jsonParser = new JsonParser(is);
 			this.locations = jsonParser.readLocations();
+			
+			// all events
+			ArrayList<Event> allEvents = new ArrayList<Event>();
+			for (Location location : this.locations) {
+				for (Event event : location.getEvents()) {
+					allEvents.add(event);
+				}
+			}
+			this.locations.add(new Location("0", "ALL", allEvents));
+			
 		} catch (IOException e) {
 			Log.i("ARSFEST", e.getMessage());
 		}

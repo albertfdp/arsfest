@@ -8,6 +8,6 @@
     android:paddingLeft="40dip"
     android:paddingRight="40dip"
     android:paddingTop="15dip"
-    android:textColor="@color/black"
-    android:textSize="11sp"
+    android:textColor="@color/flat_white"
+    android:textSize="15sp"
     android:textStyle="bold" />

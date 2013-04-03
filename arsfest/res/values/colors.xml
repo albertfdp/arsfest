@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    
+    <color name="flat_red">#fb3838</color>
+    <color name="flat_black">#2e2e2e</color>
+    <color name="flat_white">#ebebeb</color>
+    <color name="flat_grey">#454545</color>
+    <color name="flat_blue">#3bbede</color>
+    
 	<color name="black">#232323</color>
     <color name="lilla">#662c92</color>
 	<color name="lightblue">#54ffff</color>
