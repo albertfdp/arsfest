@@ -7,12 +7,17 @@
     <color name="flat_grey">#454545</color>
     <color name="flat_blue">#3bbede</color>
     
+    <color name="flat_lila">#662c92</color>
+    
+    <color name="dtu_yellow">#d0d044</color>
+    <color name="dtu_blue">#6bd1f7</color>
+    
 	<color name="black">#232323</color>
     <color name="lilla">#662c92</color>
 	<color name="lightblue">#54ffff</color>
     <color name="green">#bfff00</color>
     <color name="pink">#ff00ff</color>
     <color name="orange">#ff8000</color>
-    <color name="white">#fefefe</color>
-    <color name="grey">#bbbbbb</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#c0c0c0</color>
 </resources>

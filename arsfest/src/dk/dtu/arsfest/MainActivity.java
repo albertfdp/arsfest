@@ -87,23 +87,6 @@ public class MainActivity extends Activity {
 		this.currentDate = getCurrentDate();
 		this.arsfest_start = getStartDate(this.arsfest_start_s);
 
-		if (currentDate.before(arsfest_start)){
-			setContentView(R.layout.activity_main_countdown);
-			showCountdown(this.currentDate, this.arsfest_start);
-
-		}
-		
-		// if it is in the middle shows events
-		else {
-			setContentView(R.layout.activity_main_happening_now);
-			happeningNow = happeningNow_List(currentDate);
-			//happeningNow = happeningNow_List(currentTime_test);
-			for(Event ev : happeningNow){
-				Log.i("ARSFEST", ev.toString());
-			}
-		
-		} 
-		
 		//create menu
 		
 				findViewById(R.id.actionBarAccordeon).setOnClickListener(
@@ -165,14 +148,6 @@ public class MainActivity extends Activity {
 	}
 
 		
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
-
 	@Override
 	protected void onResume() {
 		super.onResume();

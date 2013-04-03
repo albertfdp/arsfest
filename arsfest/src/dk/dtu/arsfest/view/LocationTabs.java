@@ -3,6 +3,7 @@ package dk.dtu.arsfest.view;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -36,6 +37,7 @@ public class LocationTabs implements TabsAdapter {
 		
 		if (position < this.locations.size()) {
 			tab.setText(this.locations.get(position).getName().toUpperCase());
+			tab.setTypeface(null, Typeface.BOLD);
 			tab.setTypeface(Utils.getTypeface(context, Constants.TYPEFONT_PROXIMANOVA));
 		}
 		return tab;
