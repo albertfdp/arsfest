@@ -62,10 +62,6 @@ public class MainActivity extends Activity {
 		
 		// hide title bar
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
-		setContentView(R.layout.activity_main);
-		
-		
 		
 		// Read from data.JSON
 		readJson();
@@ -76,33 +72,20 @@ public class MainActivity extends Activity {
 			}
 		}
 		
-		//create menu
 		
-		findViewById(R.id.actionBarAccordeon).setOnClickListener(
-				new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						int width = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics());
-						SlideoutActivity.prepare(MainActivity.this, R.id.MainLayout, width);
-						startActivity(new Intent(MainActivity.this,
-								MenuActivity.class));
-						overridePendingTransition(0, 0);
-					}
-				});
-
 		// If it is before the start of arsfest shows countdown
 		
 		this.currentDate = getCurrentDate();
 		this.arsfest_start = getStartDate(this.arsfest_start_s);
-		
-		
-		
+
 		if (currentDate.before(arsfest_start)){
+			setContentView(R.layout.activity_main_countdown);
 			showCountdown(this.currentDate, this.arsfest_start);
+
 		}
 		// if it is in the middle shows events happening now
 		else {
-			
+			setContentView(R.layout.activity_main_happening_now);
 			happeningNow = happeningNow_List(currentDate);
 			//happeningNow = happeningNow_List(currentTime_test);
 			for(Event ev : happeningNow){
@@ -110,6 +93,20 @@ public class MainActivity extends Activity {
 			}
 		
 		} 
+		
+		//create menu
+		
+				findViewById(R.id.actionBarAccordeon).setOnClickListener(
+						new View.OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								int width = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics());
+								SlideoutActivity.prepare(MainActivity.this, R.id.MainLayout, width);
+								startActivity(new Intent(MainActivity.this,
+										MenuActivity.class));
+								overridePendingTransition(0, 0);
+							}
+						});
 		
 		
 		
