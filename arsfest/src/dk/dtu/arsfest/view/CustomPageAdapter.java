@@ -13,7 +13,6 @@ import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
@@ -43,8 +42,9 @@ public class CustomPageAdapter extends PagerAdapter {
 		
 		ListView listView = new ListView (mContext);
 		
-		events = this.locations.get(position).getEvents();		
+		events = this.locations.get(position).getEvents();
 		eventAdapter = new EventAdapter(mContext, R.layout.event_item, events);
+		listView.setTag(position);
 		listView.setAdapter(eventAdapter);
 		listView.setPadding(10, 10, 10, 10);
 		listView.setBackgroundDrawable(mContext.getResources().getDrawable(R.drawable.textured_paper));
@@ -55,7 +55,9 @@ public class CustomPageAdapter extends PagerAdapter {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int itemPosition,
 					long id) {
-				Event clickedEvent = events.get(itemPosition);
+				
+				int tabPos = (Integer) parent.getTag();
+				Event clickedEvent = locations.get(tabPos).getEvents().get(itemPosition);
 				Intent intent = new Intent(mContext, EventActivity.class);
 				intent.putExtra("dk.dtu.arsfest.Event", clickedEvent);
 				mContext.startActivity(intent);
@@ -68,7 +70,7 @@ public class CustomPageAdapter extends PagerAdapter {
 	
 	@Override
 	public void destroyItem(View container, int position, Object view) {
-		((ViewPager) container).removeView((View) view);
+		//((ViewPager) container).removeView((View) view);
 	}
 
 	@Override
@@ -89,5 +91,6 @@ public class CustomPageAdapter extends PagerAdapter {
 	
 	@Override
 	public void startUpdate(View container) {}
+
 
 }

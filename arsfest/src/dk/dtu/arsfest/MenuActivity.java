@@ -3,6 +3,7 @@ package dk.dtu.arsfest;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.KeyEvent;
+import android.view.Window;
 
 import com.korovyansk.android.slideout.SlideoutHelper;
 
@@ -14,6 +15,10 @@ public class MenuActivity extends FragmentActivity{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
+	    
+	    // hide title bar
+	 	this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+	    
 	    mSlideoutHelper = new SlideoutHelper(this);
 	    mSlideoutHelper.activate();
 	    getSupportFragmentManager().beginTransaction().add(com.korovyansk.android.slideout.R.id.slideout_placeholder, new MenuFragment(), "menu").commit();

@@ -2,7 +2,6 @@ package dk.dtu.arsfest;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -12,13 +11,11 @@ import java.util.Date;
 import com.astuetz.viewpager.extensions.ScrollingTabsView;
 import com.astuetz.viewpager.extensions.TabsAdapter;
 import com.korovyansk.android.slideout.SlideoutActivity;
-import com.korovyansk.android.slideout.SlideoutHelper;
 
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.parser.JsonParser;
 import dk.dtu.arsfest.view.CustomPageAdapter;
-import dk.dtu.arsfest.view.EventAdapter;
 import dk.dtu.arsfest.view.LocationTabs;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -34,10 +31,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ListView;
+import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,7 +41,6 @@ public class MainActivity extends Activity {
 
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
 	private ArrayList<Location> locations;
-	private ArrayList<Event> events;
 	
 	private ViewPager viewPager;
 	private PagerAdapter pageAdapter;
@@ -60,8 +55,13 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		// hide title bar
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 		setContentView(R.layout.activity_main);
+		
+		
 		
 		// Read from data.JSON
 		readJson();
@@ -113,7 +113,6 @@ public class MainActivity extends Activity {
 			InputStream is = getAssets().open("data.JSON");
 			jsonParser = new JsonParser(is);
 			this.locations = jsonParser.readLocations();
-			this.events = jsonParser.readEvents();
 		} catch (IOException e) {
 			Log.i("ARSFEST", e.getMessage());
 		}

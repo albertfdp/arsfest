@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.astuetz.viewpager.extensions.TabsAdapter;
 
@@ -31,7 +32,9 @@ public class LocationTabs implements TabsAdapter {
 		LayoutInflater inflater = context.getLayoutInflater();
 		tab = (Button) inflater.inflate(R.layout.tab_scrolling, null);
 		
-		if (position < this.locations.size()) tab.setText(this.locations.get(position).getName());
+		if (position < this.locations.size()) {
+			tab.setText(position + " : " + this.locations.get(position).getName());
+		}
 		return tab;
 	}
 
