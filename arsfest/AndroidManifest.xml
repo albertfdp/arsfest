@@ -1,19 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Copyright 2013 Albert Fernández de la Peña
-  
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-  
-    http://www.apache.org/licenses/LICENSE-2.0
-  
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
--->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dk.dtu.arsfest"
     android:versionCode="1"
@@ -22,22 +7,22 @@
     <uses-sdk
         android:minSdkVersion="7"
         android:targetSdkVersion="10" />
-    
+
     <permission
-    	android:name="dk.dtu.arsfest.permission.MAPS_RECEIVE" 
-    	android:protectionLevel="signature"
-   	/>
-    
+        android:name="dk.dtu.arsfest.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
     <uses-permission android:name="dk.dtu.arsfest.permission.MAPS_RECEIVE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    
-    <uses-feature android:glEsVersion="0x00020000"
-        android:required="true"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -53,22 +38,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-         <activity
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="dk.dtu.arsfest.maps.MapActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="dk.dtu.arsfest.event.EventActivity"
             android:label="@string/app_name"
-            android:name=".MenuActivity" >
-        </activity>        
-        <activity 
-           android:name="dk.dtu.arsfest.maps.MapActivity"
-           android:label="@string/app_name">
+            android:screenOrientation="portrait" >
         </activity>
-        
-        <activity 
-           android:name="dk.dtu.arsfest.event.EventActivity"
-           android:label="@string/app_name">
-        </activity>
-        
-        <meta-data android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyD8T9OKMXJDbhJtPpOQPRQdrAhU0v33xl4"/>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyD8T9OKMXJDbhJtPpOQPRQdrAhU0v33xl4" />
     </application>
 
 </manifest>

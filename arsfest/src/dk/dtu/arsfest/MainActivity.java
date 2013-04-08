@@ -36,6 +36,7 @@ import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,6 +59,11 @@ public class MainActivity extends Activity {
 	
 	private String currentTime_test_s = new String("03-05-2013:16:10");
 	private Date currentTime_test;
+	
+	private TextView closeEventTitle;
+	private TextView closeEventLocation;
+	private TextView closeEventTime;
+	private ImageView closeEventPicture;
 
 	
 	@Override
@@ -68,14 +74,15 @@ public class MainActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 		setContentView(R.layout.activity_main);
+		initView();
 		
-		// update the font type of the header
-		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
-		headerTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
-		headerTitle.setText(Constants.APP_NAME);
 		
 		// Read from data.JSON
 		readJson();
+		
+		// start listener for happeningNow
+		startContextAwareness();
+		
 		
 		for (Location location : this.locations) {
 			Log.i("ARSFEST", location.getName());
@@ -105,6 +112,30 @@ public class MainActivity extends Activity {
 		
 		// inflate the list view with the events
 		inflateView();
+	}
+	
+	private void initView() {
+		
+		// update the font type of the header
+		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
+		headerTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
+		headerTitle.setText(Constants.APP_NAME);
+		
+		closeEventTitle = (TextView) findViewById(R.id.card_title);
+		closeEventLocation = (TextView) findViewById(R.id.card_location);
+		closeEventTime = (TextView) findViewById(R.id.card_time);
+	}
+	
+	private void startContextAwareness() {
+		// get current location
+		
+		// get best event
+		Event closeEvent = this.locations.get(0).getEvents().get(0);
+		
+		// inflate card with event data
+		closeEventTitle.setText(closeEvent.getName());
+		closeEventLocation.setText("Location");
+		closeEventTime.setText("21:00");
 	}
 	
 	private void readJson() {

@@ -7,13 +7,13 @@
 
     <include
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         layout="@layout/header_bar" />
 
     <include
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/countdown" />
+        android:layout_height="160dp"
+        layout="@layout/happening_now" />
     
     <include
         android:layout_width="fill_parent"
