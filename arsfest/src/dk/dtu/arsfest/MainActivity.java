@@ -15,6 +15,7 @@ import com.korovyansk.android.slideout.SlideoutActivity;
 
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
+import dk.dtu.arsfest.model.Bssid;
 import dk.dtu.arsfest.parser.JsonParser;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
@@ -46,6 +47,7 @@ public class MainActivity extends Activity {
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
 	private ArrayList<Location> locations;
 	private ArrayList<Event> happeningNow;
+	private ArrayList<Bssid> bssids;
 	
 	private ViewPager viewPager;
 	private PagerAdapter pageAdapter;
@@ -153,6 +155,7 @@ public class MainActivity extends Activity {
 			InputStream is = getAssets().open("data.JSON");
 			jsonParser = new JsonParser(is);
 			this.locations = jsonParser.readLocations();
+			this.bssids = jsonParser.readBssid();
 			
 			// all events
 			ArrayList<Event> allEvents = new ArrayList<Event>();

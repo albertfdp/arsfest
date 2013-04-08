@@ -3,10 +3,10 @@ package dk.dtu.arsfest.model;
 public class Bssid {
 	
 	private String bssid;
-	private Location location;
+	private String location;
 	//private int rssid; optional
 	
-	public Bssid (String bssid, Location location) {
+	public Bssid (String bssid, String location) {
 		this.bssid = bssid;
 		this.location = location;
 	}
@@ -19,12 +19,17 @@ public class Bssid {
 		this.bssid = ssid;
 	}
 
-	public Location getLocation() {
+	public String getLocation() {
 		return location;
 	}
 
-	public void setLocation(Location location) {
+	public void setLocation(String location) {
 		this.location = location;
+	}
+	
+	@Override
+	public String toString(){
+		return this.bssid+ ' ' + this.location;
 	}
 
 }
