@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">DTU’s årsfest</string>
+    <string name="app_name">DTU ARSFEST 2013</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="rest_task_title">Calling</string>
