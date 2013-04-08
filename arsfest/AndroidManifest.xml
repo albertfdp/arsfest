@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="7"
-        android:targetSdkVersion="10" />
+        android:targetSdkVersion="14" />
 
     <permission
         android:name="dk.dtu.arsfest.permission.MAPS_RECEIVE"
