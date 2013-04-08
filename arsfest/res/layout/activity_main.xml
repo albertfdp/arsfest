@@ -13,6 +13,7 @@
     <include
         android:layout_width="fill_parent"
         android:layout_height="160dp"
+        android:background="@color/grey"
         layout="@layout/happening_now" />
     
     <include

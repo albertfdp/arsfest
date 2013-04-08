@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 
 import com.astuetz.viewpager.extensions.ScrollingTabsView;
@@ -64,6 +65,7 @@ public class MainActivity extends Activity {
 	private TextView closeEventLocation;
 	private TextView closeEventTime;
 	private ImageView closeEventPicture;
+	private TextView closeEventHappening;
 
 	
 	@Override
@@ -124,6 +126,7 @@ public class MainActivity extends Activity {
 		closeEventTitle = (TextView) findViewById(R.id.card_title);
 		closeEventLocation = (TextView) findViewById(R.id.card_location);
 		closeEventTime = (TextView) findViewById(R.id.card_time);
+		closeEventHappening = (TextView) findViewById(R.id.card_happening_now);
 	}
 	
 	private void startContextAwareness() {
@@ -136,6 +139,11 @@ public class MainActivity extends Activity {
 		closeEventTitle.setText(closeEvent.getName());
 		closeEventLocation.setText("Location");
 		closeEventTime.setText("21:00");
+		closeEventHappening.setText("Happening now".toUpperCase());
+		closeEventHappening.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
+		
+		// sort events
+		
 	}
 	
 	private void readJson() {
@@ -154,6 +162,10 @@ public class MainActivity extends Activity {
 				}
 			}
 			this.locations.add(new Location("0", "ALL", allEvents));
+			
+			// get position of 'all'
+			int allPos = this.locations.size() - 1;
+			Collections.swap(this.locations, allPos, 0);
 			
 		} catch (IOException e) {
 			Log.i("ARSFEST", e.getMessage());

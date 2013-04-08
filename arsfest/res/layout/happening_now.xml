@@ -2,8 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
+    android:background="@color/grey"
     android:padding="10dp" >
+    
+    <TextView 
+        android:id="@+id/card_happening_now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_event_name"
+        android:textColor="@color/flat_black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:layout_marginBottom="5dp" />
+    
+    <LinearLayout
+        android:id="@+id/card_happening_now"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:background="@color/flat_white"
+        android:padding="10dip" >
 
     <!-- ListRow Left sied Thumbnail image -->
 
@@ -79,6 +99,8 @@
             android:textColor="@color/flat_blue"
             android:textSize="12sp"
             android:textStyle="bold" />
+    </LinearLayout>
+    
     </LinearLayout>
 
 </LinearLayout>
