@@ -23,6 +23,7 @@ import dk.dtu.arsfest.view.CustomPageAdapter;
 import dk.dtu.arsfest.view.LocationTabs;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.view.PagerAdapter;
@@ -45,118 +46,162 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
+	private AlarmManagerBroadcastReceiver myBSSIDAlarm;
+
 	private ArrayList<Location> locations;
 	private ArrayList<Event> happeningNow;
 	private ArrayList<Bssid> bssids;
-	
+
 	private ViewPager viewPager;
 	private PagerAdapter pageAdapter;
 	private ScrollingTabsView scrollingTabs;
 	private TabsAdapter scrollingTabsAdapter;
-	
+
 	private Date currentDate;
 	private String arsfest_start_s = new String("03-05-2013:17:30");
 	private Date arsfest_start;
-	
+
 	private TextView headerTitle;
-	
+
 	private String currentTime_test_s = new String("03-05-2013:16:10");
 	private Date currentTime_test;
-	
+
 	private TextView closeEventTitle;
 	private TextView closeEventLocation;
 	private TextView closeEventTime;
 	private ImageView closeEventPicture;
 	private TextView closeEventHappening;
 
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		// Scan the BSSIDs every 60 seconds
+		registerAlarmManager(60);
+
 		// hide title bar
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 		setContentView(R.layout.activity_main);
 		initView();
-		
-		
+
 		// Read from data.JSON
 		readJson();
-		
+
 		// start listener for happeningNow
 		startContextAwareness();
-		
-		
+
 		for (Location location : this.locations) {
 			Log.i("ARSFEST", location.getName());
 		}
-		
-		
+
 		// If it is before the start of arsfest shows countdown
-		
+
 		this.currentDate = getCurrentDate();
 		this.arsfest_start = getStartDate(this.arsfest_start_s);
 
-		//create menu
-		
-				findViewById(R.id.actionBarAccordeon).setOnClickListener(
-						new View.OnClickListener() {
-							@Override
-							public void onClick(View v) {
-								int width = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics());
-								SlideoutActivity.prepare(MainActivity.this, R.id.MainLayout, width);
-								startActivity(new Intent(MainActivity.this,
-										MenuActivity.class));
-								overridePendingTransition(0, 0);
-							}
-						});
-		
-		
-		
+		// create menu
+
+		findViewById(R.id.actionBarAccordeon).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						int width = (int) TypedValue.applyDimension(
+								TypedValue.COMPLEX_UNIT_DIP, 40, getResources()
+										.getDisplayMetrics());
+						SlideoutActivity.prepare(MainActivity.this,
+								R.id.MainLayout, width);
+						startActivity(new Intent(MainActivity.this,
+								MenuActivity.class));
+						overridePendingTransition(0, 0);
+					}
+				});
+
 		// inflate the list view with the events
 		inflateView();
 	}
-	
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		//Prompts user to enable WiFi
+		enableYourWiFiGotDammIt();
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onStop();
+		//Cancels the Broadcast Receiver
+		unregisterAlarmManager();
+	}
+
+	/**
+	 * Method setting alarm manager for location awareness
+	 * 
+	 * @author AA
+	 * @param alarmFrequency
+	 *            frequency of the updates
+	 */
+	private void registerAlarmManager(int alarmFrequency) {
+		myBSSIDAlarm = new AlarmManagerBroadcastReceiver();
+		Context appContext = this.getApplicationContext();
+		if (myBSSIDAlarm != null) {
+			myBSSIDAlarm.SetAlarm(appContext, alarmFrequency);
+		}
+	}
+
+	/**
+	 * Method to unregister alarm manager for location awareness
+	 * 
+	 * @author AA
+	 */
+	private void unregisterAlarmManager() {
+		Context appContext = this.getApplicationContext();
+		if (myBSSIDAlarm != null) {
+			myBSSIDAlarm.CancelAlarm(appContext);
+		}
+	}
+
 	private void initView() {
-		
+
 		// update the font type of the header
 		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
-		headerTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
+		headerTitle.setTypeface(Utils.getTypeface(this,
+				Constants.TYPEFONT_PROXIMANOVA));
 		headerTitle.setText(Constants.APP_NAME);
-		
+
 		closeEventTitle = (TextView) findViewById(R.id.card_title);
 		closeEventLocation = (TextView) findViewById(R.id.card_location);
 		closeEventTime = (TextView) findViewById(R.id.card_time);
 		closeEventHappening = (TextView) findViewById(R.id.card_happening_now);
 	}
-	
+
 	private void startContextAwareness() {
 		// get current location
-		
+
 		// get best event
 		Event closeEvent = this.locations.get(0).getEvents().get(0);
-		
+
 		// inflate card with event data
 		closeEventTitle.setText(closeEvent.getName());
 		closeEventLocation.setText("Location");
 		closeEventTime.setText("21:00");
 		closeEventHappening.setText("Happening now".toUpperCase());
-		closeEventHappening.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
-		
+		closeEventHappening.setTypeface(Utils.getTypeface(this,
+				Constants.TYPEFONT_PROXIMANOVA));
+
 		// sort events
-		
+
 	}
-	
+
 	private void readJson() {
-			
+
 		JsonParser jsonParser;
 		try {
 			InputStream is = getAssets().open("data.JSON");
 			jsonParser = new JsonParser(is);
 			this.locations = jsonParser.readLocations();
 			this.bssids = jsonParser.readBssid();
-			
+
 			// all events
 			ArrayList<Event> allEvents = new ArrayList<Event>();
 			for (Location location : this.locations) {
@@ -165,42 +210,40 @@ public class MainActivity extends Activity {
 				}
 			}
 			this.locations.add(new Location("0", "ALL", allEvents));
-			
+
 			// get position of 'all'
 			int allPos = this.locations.size() - 1;
 			Collections.swap(this.locations, allPos, 0);
-			
+
 		} catch (IOException e) {
 			Log.i("ARSFEST", e.getMessage());
 		}
-		
+
 	}
-	
+
 	private void initViewPager(int pageCount) {
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		pageAdapter = new CustomPageAdapter(this, this.locations);
 		viewPager.setAdapter(pageAdapter);
 		viewPager.setCurrentItem(1);
 		viewPager.setPageMargin(1);
-		
+
 		scrollingTabs = (ScrollingTabsView) findViewById(R.id.scrolling_tabs);
 		scrollingTabsAdapter = new LocationTabs(this, this.locations);
 		scrollingTabs.setAdapter(scrollingTabsAdapter);
 		scrollingTabs.setViewPager(viewPager);
 	}
-	
+
 	private void inflateView() {
 		initViewPager(this.locations.size());
 	}
 
-		
-	@Override
-	protected void onResume() {
-		super.onResume();
-		/*
-		 * Here in onResume() WiFi connection. User is prompted with dialog box
-		 * to enable WiFi
-		 */
+	/**
+	 * Method prompting user to enable WiFi
+	 * 
+	 * @author AA
+	 */
+	private void enableYourWiFiGotDammIt() {
 		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 		boolean popUpSettings = settings.getBoolean("popUpConnectivityDiscard",
 				false);
@@ -233,13 +276,13 @@ public class MainActivity extends Activity {
 						}
 					});
 			alertDialogBuilder.create().show();
-
 		}
 	}
 
 	/**
 	 * Method checking current state of the WiFi card
 	 * 
+	 * @author AA
 	 * @param applicationContext
 	 *            : Application Context
 	 * @return false: WiFi off
@@ -255,15 +298,15 @@ public class MainActivity extends Activity {
 		}
 		return false;
 	}
-	
+
 	private Date getCurrentDate() {
-		
+
 		Date date = null;
 		Calendar c = Calendar.getInstance();
 
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd:HH:mm:ss");
-        String formattedDate = df.format(c.getTime());
-        try {
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd:HH:mm:ss");
+		String formattedDate = df.format(c.getTime());
+		try {
 			date = (Date) df.parse(formattedDate);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
@@ -271,9 +314,9 @@ public class MainActivity extends Activity {
 		}
 		return date;
 	}
-	
-	private Date getStartDate(String date){
-		
+
+	private Date getStartDate(String date) {
+
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy:HH:mm");
 		Date start = null;
 		try {
@@ -282,52 +325,52 @@ public class MainActivity extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return start;
-        	
+
 	}
-	
-	private void showCountdown(Date current, Date start){
-		
-		
-	    CountDownTimer cdt = new CountDownTimer(start.getTime() - current.getTime(), 1000) {
 
-	    	@Override
-	        public void onTick(long millisUntilFinished) {
-	            
-	        	TextView days = (TextView) findViewById(R.id.textDays);
-	        	TextView hours = (TextView) findViewById(R.id.textHours);
-	        	TextView mins = (TextView) findViewById(R.id.textMinutes);
-	        	int daysValue = (int) (millisUntilFinished / 86400000);
-	        	int hoursValue = (int) (((millisUntilFinished / 1000) - (daysValue * 86400)) / 3600);
-	        	int minsValue = (int) (((millisUntilFinished / 1000) - ((daysValue * 86400) + (hoursValue * 3600))) / 60);
-	        	days.setText(String.valueOf(daysValue));
-	        	hours.setText(String.valueOf(hoursValue));
-	        	mins.setText(String.valueOf(minsValue));
+	private void showCountdown(Date current, Date start) {
 
-	        }
+		CountDownTimer cdt = new CountDownTimer(start.getTime()
+				- current.getTime(), 1000) {
+
+			@Override
+			public void onTick(long millisUntilFinished) {
+
+				TextView days = (TextView) findViewById(R.id.textDays);
+				TextView hours = (TextView) findViewById(R.id.textHours);
+				TextView mins = (TextView) findViewById(R.id.textMinutes);
+				int daysValue = (int) (millisUntilFinished / 86400000);
+				int hoursValue = (int) (((millisUntilFinished / 1000) - (daysValue * 86400)) / 3600);
+				int minsValue = (int) (((millisUntilFinished / 1000) - ((daysValue * 86400) + (hoursValue * 3600))) / 60);
+				days.setText(String.valueOf(daysValue));
+				hours.setText(String.valueOf(hoursValue));
+				mins.setText(String.valueOf(minsValue));
+
+			}
 
 			@Override
 			public void onFinish() {
 				// TODO Auto-generated method stub
-				
+
 			}
-	    };
-		
-	    cdt.start();
-		 
+		};
+
+		cdt.start();
+
 	}
-	
+
 	private ArrayList<Event> happeningNow_List(Date currentTime) {
-		
+
 		ArrayList<Event> now = new ArrayList<Event>();
-		
-		for(Location loc : this.locations){
+
+		for (Location loc : this.locations) {
 			Log.i("ARSFEST", "Aqui2");
 			now.addAll(loc.happeningNow(currentTime));
 		}
-		
+
 		return now;
 	}
-	
+
 }
