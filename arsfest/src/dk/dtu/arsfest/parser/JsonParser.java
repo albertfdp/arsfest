@@ -180,4 +180,33 @@ public class JsonParser {
 		return event_list;
 	}
 
-}
+
+
+	public ArrayList<Bssid> readBssid(){
+		
+		ArrayList<Bssid> bssid_list = new ArrayList<Bssid>();
+		
+		try {
+	        JSONObject rootObject = new JSONObject(jsonStr); // Parse the JSON to a JSONObject
+	        JSONArray bssids = rootObject.getJSONArray("bssids"); // Get all JSONArray bssids
+		
+	        for(int i=0; i < bssids.length(); i++) { // Loop over each each location
+	            JSONObject bssid = bssids.getJSONObject(i); 
+	           
+	            String bssid_name = bssid.getString("bssid"); 
+	            String location = bssid.getString("location");
+	            
+	            Bssid new_bssid = new Bssid(bssid_name,location);
+	            
+	            bssid_list.add(new_bssid);
+	        }
+		
+		} catch (JSONException e) {
+	        // JSON Parsing error
+	        e.printStackTrace();
+	    }
+		
+		return bssid_list;
+		
+	}
+}	
