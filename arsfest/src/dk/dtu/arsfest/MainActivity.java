@@ -57,6 +57,7 @@ public class MainActivity extends Activity {
 	private ScrollingTabsView scrollingTabs;
 	private TabsAdapter scrollingTabsAdapter;
 
+	private String currentLocation;
 	private Date currentDate;
 	private String arsfest_start_s = new String("03-05-2013:17:30");
 	private Date arsfest_start;
@@ -177,7 +178,20 @@ public class MainActivity extends Activity {
 
 	private void startContextAwareness() {
 		// get current location
-
+		
+		ArrayList<String> ps = new ArrayList<String>(); //should be the list of bssids recieved
+		
+		ArrayList<String> posLocations = new ArrayList<String>();
+		
+		for(String s : ps){
+			for (Bssid bssid : this.bssids){
+				if(bssid.compareBssid(s))
+					posLocations.add(bssid.getLocation());
+			}
+		}
+		
+		currentLocation = chooseLocation(posLocations);
+		
 		// get best event
 		Event closeEvent = this.locations.get(0).getEvents().get(0);
 
@@ -371,6 +385,31 @@ public class MainActivity extends Activity {
 		}
 
 		return now;
+	}
+	
+	private String chooseLocation(ArrayList<String> posLocations){
+		
+		int final_count = -1;
+		int count = 0,i = 0, j = 0;
+		String loc = "", elem = "", elem_j = "";
+		
+		for(i=0; i< posLocations.size() ; i++){
+			count = 0;
+			elem = posLocations.get(i);
+			for(j=i; j < posLocations.size(); j++){
+				elem_j = posLocations.get(j);
+				if(elem.equals(elem_j))
+					count++;
+			}
+			
+			if (count > final_count){
+				loc = elem;
+			}
+		}
+		
+		
+		return loc;
+		
 	}
 
 }

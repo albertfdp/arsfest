@@ -31,5 +31,11 @@ public class Bssid {
 	public String toString(){
 		return this.bssid+ ' ' + this.location;
 	}
+	
+	public boolean compareBssid(String s){
+		if(bssid.regionMatches(true, 0, s, 0, bssid.length()))
+			return true;
+		return false;
+	}
 
 }
