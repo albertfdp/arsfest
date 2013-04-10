@@ -4,6 +4,7 @@
 package dk.dtu.arsfest.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 import android.os.Parcel;
@@ -93,6 +94,10 @@ public class Location implements Parcelable {
 	
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
+	}
+	
+	public void sortEventsByTime() {
+		Collections.sort(this.events);
 	}
 	
 	public ArrayList<Event> getEvents(){

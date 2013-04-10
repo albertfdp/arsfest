@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 
+import com.astuetz.viewpager.extensions.IndicatorLineView;
 import com.astuetz.viewpager.extensions.ScrollingTabsView;
 import com.astuetz.viewpager.extensions.TabsAdapter;
 import com.korovyansk.android.slideout.SlideoutActivity;
@@ -16,6 +17,7 @@ import dk.dtu.arsfest.model.Bssid;
 import dk.dtu.arsfest.parser.JSONParser;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
+import dk.dtu.arsfest.view.CustomLinePagerAdapter;
 import dk.dtu.arsfest.view.CustomPageAdapter;
 import dk.dtu.arsfest.view.LocationTabs;
 import android.net.ConnectivityManager;
@@ -32,6 +34,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -49,6 +52,9 @@ public class MainActivity extends Activity {
 	
 	private ViewPager viewPager;
 	private PagerAdapter pageAdapter;
+	private ViewPager lineViewPager;
+	private PagerAdapter linePageAdapter;
+	private IndicatorLineView mLine;
 	private ScrollingTabsView scrollingTabs;
 	private TabsAdapter scrollingTabsAdapter;
 	private TextView headerTitle;
@@ -57,6 +63,7 @@ public class MainActivity extends Activity {
 	private TextView closeEventTitle;
 	private TextView closeEventLocation;
 	private TextView closeEventTime;
+	private TextView closeEventDistance;
 	private ImageView closeEventPicture;
 	private TextView closeEventHappening;
 
@@ -84,7 +91,6 @@ public class MainActivity extends Activity {
 		
 		Date currentDate = Utils.getCurrentDate();
 		Date arsfest_start = Utils.getStartDate(Constants.FEST_START_TIME);
-		closeEventLocation.setText("Now: " + currentDate + " start: " + arsfest_start);
 		
 		//create menu
 		
@@ -153,12 +159,18 @@ public class MainActivity extends Activity {
 		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
 		headerTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
 		headerTitle.setText(Constants.APP_NAME);
-		
-		closeEventTitle = (TextView) findViewById(R.id.card_title);
-		closeEventLocation = (TextView) findViewById(R.id.card_location);
-		closeEventTime = (TextView) findViewById(R.id.card_time);
+		/*
+		closeEventTitle = (TextView) findViewById(R.id.event_title);
+		closeEventLocation = (TextView) findViewById(R.id.event_location);
+		closeEventTime = (TextView) findViewById(R.id.event_time);
 		closeEventHappening = (TextView) findViewById(R.id.card_happening_now);
-		
+		closeEventDistance = (TextView) findViewById(R.id.event_status);
+		Typeface neoType = Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS);
+		closeEventTitle.setTypeface(neoType);
+		closeEventLocation.setTypeface(neoType);
+		closeEventTime.setTypeface(neoType);
+		closeEventHappening.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
+		*/
 	}
 	
 	private void startContextAwareness() {
@@ -186,14 +198,16 @@ public class MainActivity extends Activity {
 		
 		
 		// get best event
-		Event closeEvent = this.locations.get(0).getEvents().get(0);
+		Event closeEvent = this.locations.get(1).getEvents().get(0);
 
 		// inflate card with event data
+		/*
 		closeEventTitle.setText(closeEvent.getName());
-		closeEventLocation.setText("Location");
-		closeEventTime.setText("21:00");
+		closeEventLocation.setText(this.locations.get(1).getName());
+		closeEventTime.setText(Utils.getEventStringTime(closeEvent.getStartTime()));
+		closeEventDistance.setText("10 m");
 		closeEventHappening.setText("Happening now".toUpperCase());
-		closeEventHappening.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
+		*/
 		
 		// sort events
 		
@@ -219,10 +233,14 @@ public class MainActivity extends Activity {
 				}
 			}
 			this.locations.add(new Location("0", "ALL", allEvents));
-			
+						
 			// get position of 'all'
 			int allPos = this.locations.size() - 1;
 			Collections.swap(this.locations, allPos, 0);
+			
+			for (Location location : locations) {
+				location.sortEventsByTime();
+			}
 			
 		} catch (IOException e) {
 			Log.i("ARSFEST", e.getMessage());
@@ -241,6 +259,18 @@ public class MainActivity extends Activity {
 		scrollingTabsAdapter = new LocationTabs(this, this.locations);
 		scrollingTabs.setAdapter(scrollingTabsAdapter);
 		scrollingTabs.setViewPager(viewPager);
+		
+		// happening now
+		this.happeningNow = this.locations.get(1).getEvents();
+		
+		lineViewPager = (ViewPager) findViewById(R.id.linepager);
+		linePageAdapter = new CustomLinePagerAdapter(this, this.happeningNow);
+		lineViewPager.setAdapter(linePageAdapter);
+		lineViewPager.setCurrentItem(1);
+		lineViewPager.setPageMargin(1);
+		
+		mLine = (IndicatorLineView) findViewById(R.id.line);
+		mLine.setViewPager(lineViewPager);
 	}
 	
 	private void inflateView() {
