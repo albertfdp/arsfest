@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class EventAdapter extends ArrayAdapter <Event>{
@@ -39,6 +40,8 @@ public class EventAdapter extends ArrayAdapter <Event>{
 			TextView eventTitle = (TextView) view.findViewById(R.id.event_title);
 			TextView eventLocation = (TextView) view.findViewById(R.id.event_location);
 			TextView eventTime = (TextView) view.findViewById(R.id.event_time);
+			TextView eventStatus = (TextView) view.findViewById(R.id.event_status);
+			ImageView eventImage = (ImageView) view.findViewById(R.id.event_image);
 			Typeface typeface = Utils.getTypeface(this.context, Constants.TYPEFONT_NEOSANS);
 			if (eventTitle != null) {
 				eventTitle.setText(event.getName());
@@ -48,7 +51,22 @@ public class EventAdapter extends ArrayAdapter <Event>{
 				eventLocation.setText(getLocationName(event.getLocation()));
 				eventTime.setText(Utils.getEventStringTime(event.getStartTime()));
 				if (event.hasFinished(Utils.getCurrentDate())) {
-					view.setBackgroundColor(context.getResources().getColor(R.color.flat_grey));
+					view.setBackgroundColor(context.getResources().getColor(R.color.flat_white));
+					eventStatus.setText(context.getResources().getString(R.string.event_finished));
+				} else {
+					view.setBackgroundColor(context.getResources().getColor(R.color.white));
+					eventStatus.setText("");
+				}
+				if (event.getTheme().equals(Constants.EVENT_TYPE_MUSIC)) {
+					eventImage.setImageResource(R.drawable.music);
+				} else if (event.getTheme().equals(Constants.EVENT_TYPE_OFFICIAL)) {
+					eventImage.setImageResource(R.drawable.prize);
+				} else if (event.getTheme().equals(Constants.EVENT_TYPE_FOOD)) {
+					eventImage.setImageResource(R.drawable.shop);
+				} else if (event.getTheme().equals(Constants.EVENT_TYPE_DANCE)) {
+					eventImage.setImageResource(R.drawable.ticket);
+				} else {
+					eventImage.setImageResource(R.drawable.bar);
 				}
 			}
 		}
