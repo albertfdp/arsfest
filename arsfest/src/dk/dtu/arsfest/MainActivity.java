@@ -178,8 +178,7 @@ public class MainActivity extends Activity {
 	private void startContextAwareness() {
 		
 		// get current location
-		
-		/*JAVIER do it like this:*/
+
 		
 		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 		String result = settings.getString("SSIDs", null);
@@ -200,9 +199,12 @@ public class MainActivity extends Activity {
 			}
 		}
 		
-		if(posLocations.size()!=0)
+		if(posLocations.size()!=0){
 			currentLocation = chooseLocation(posLocations);
-		
+			headerTitle.setText(currentLocation);
+		}
+		else
+			headerTitle.setText("CACAFUTI");
 		
 		// get best event
 		Event closeEvent = this.locations.get(1).getEvents().get(0);
