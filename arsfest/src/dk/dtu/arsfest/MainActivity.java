@@ -3,8 +3,10 @@ package dk.dtu.arsfest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 import com.astuetz.viewpager.extensions.ScrollingTabsView;
 import com.astuetz.viewpager.extensions.TabsAdapter;
@@ -162,27 +164,32 @@ public class MainActivity extends Activity {
 	}
 	
 	private void startContextAwareness() {
+		
 		// get current location
 		
-		/*JAVIER do it like this:
-		 * SharedPreferences settings = appContext.getSharedPreferences(PREFS_NAME, 0);
-			String result = settings.getString("SSIDs", null);
-			result is a String i cannot put array list in shared preferences, check with toast how it looks like
-			Toast.makeText(appContext, popUpSettings, Toast.LENGTH_SHORT).show();
-		 */
+		/*JAVIER do it like this:*/
 		
-		/*ArrayList<String> ps = new ArrayList<String>(); //should be the list of bssids recieved
+		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+		String result = settings.getString("SSIDs", null);
+		
+		result = result.substring(1, result.length()-1);
+		
+		Log.i("Arsfest",result);
+		List<String> myWifiList = new ArrayList<String>(Arrays.asList(result.split(", ")));
+		
+		//ArrayList<String> ps = new ArrayList<String>(); //should be the list of bssids recieved
 		
 		ArrayList<String> posLocations = new ArrayList<String>();
 		
-		for(String s : ps){
+		for(String s : myWifiList){
 			for (Bssid bssid : this.bssids){
 				if(bssid.compareBssid(s))
 					posLocations.add(bssid.getLocation());
 			}
 		}
 		
-		currentLocation = chooseLocation(posLocations);*/
+		if(posLocations.size()!=0)
+			currentLocation = chooseLocation(posLocations);
 		
 		
 		// get best event
@@ -377,5 +384,6 @@ public class MainActivity extends Activity {
 		return loc;
 		
 	}
+	
 	
 }
