@@ -14,7 +14,9 @@
 					    'startTime': '03-05-2013:17:30',
 					    'endTime': '03-05-2013:18:45',
 					    'location': 'l0',
-					   'description': 'Offical Event'
+					    'description': 'Offical Event'
+					    'type': 'official'
+					    'theme': 'official'
 				    },
 				    {
 					      'id': 'e1',
@@ -24,6 +26,7 @@
 					      'endTime': '03-05-2013:22:00',
 					      'location': 'l0',
 					      'description': 'Open bar,DJ'
+					      'type': 'nonofficial'
 					  },
 					  {
 					      'id': 'e2',
@@ -33,6 +36,7 @@
 					      'endTime': '03-05-2013:22:25',
 					      'location': 'l0',
 					      'description': 'Les Lanciers'
+					      'type': 'official'
 					  },
 					  {
 					      'id': 'e3',
@@ -42,6 +46,7 @@
 					      'endTime': '03-05-2013:23:00',
 					      'location': 'l0',
 					      'description': 'DJ'
+					      'type': 'nonofficial'
 					  },
 					  {
 					      'id': 'e4',
@@ -51,6 +56,7 @@
 					      'endTime': '03-05-2013:23:15',
 					      'location': 'l0',
 					      'description': 'Les Lanciers'
+					      'type': 'official'
 					  },
 					  {
 					      'id': 'e5',
@@ -60,6 +66,7 @@
 					      'endTime': '04-05-2013:00:15',
 					      'location': 'l0',
 					      'description': 'Nebiha'
+					      'type': 'nonofficial'
 					  },
 					  {
 					      'id': 'e6',
@@ -69,6 +76,7 @@
 					      'endTime': '04-05-2013:00:30',
 					      'location': 'l0',
 					      'description': 'Les Lanciers'
+					      'type': 'official'
 					  },
 					  {
 					      'id': 'e7',
@@ -78,6 +86,7 @@
 					      'endTime': '04-05-2013:01:15',
 					      'location': 'l0',
 					      'description': 'DJ'
+					      'type': 'nonofficial'
 					  },
 					  {
 					      'id': 'e8',
@@ -87,6 +96,7 @@
 					      'endTime': '04-05-2013:02:15',
 					      'location': 'l0',
 					      'description': 'Rune RK'
+					      'type': 'nonofficial'
 					  },
 					  {
 					      'id': 'e9',
@@ -96,6 +106,7 @@
 					      'endTime': '04-05-2013:03:00',
 					      'location': 'l0',
 					      'description': 'DJ'
+					      'type': 'nonofficial'
 					  },
 					  {
 					      'id': 'e10',
@@ -105,6 +116,7 @@
 					      'endTime': '04-05-2013:03:00',
 					      'location': 'l0',
 					      'description': 'The party is over in Sportshal, continue the party in Oticon'
+					      'type': 'nonofficial'
 					  }
 				 ]
 					
@@ -124,6 +136,7 @@
 					'endTime': '03-05-2013:18:30',
 					'location': 'l1',
 					'description': 'Bar Open'
+					'type': 'nonofficial'
 				    },
 				    {
 					'id': 'e12',
@@ -133,6 +146,7 @@
 					'endTime': '03-05-2013:22:00',
 					'location': 'l1',
 					'description': 'Dinner in Biblioteket and Kantine'
+					'type': 'official'
 				    },
 				    {
 					'id': 'e13',
@@ -142,6 +156,7 @@
 					'endTime': '03-05-2013:22:30',
 					'location': 'l1',
 					'description': 'Les Lanciers'
+					'type': 'official'
 				    },
 				    {
 					'id': 'e14',
@@ -151,6 +166,7 @@
 					'endTime': '03-05-2013:23:40',
 					'location': 'l1',
 					'description': 'Veto'
+					'type': 'official'
 				    },
 				    {
 					'id': 'e15',
@@ -160,6 +176,7 @@
 					'endTime': '04-05-2013:00:00',
 					'location': 'l1',
 					'description': 'Les Lanciers'
+					'type': 'official'
 				    },
 				    {
 					'id': 'e16',
@@ -169,6 +186,7 @@
 					'endTime': '04-05-2013:01:00',
 					'location': 'l1',
 					'description': 'Veto'
+					'type': 'official'
 				    },
 				    {
 					'id': 'e17',
@@ -178,6 +196,7 @@
 					'endTime': '04-05-2013:01:15',
 					'location': 'l1',
 					'description': 'Les Lanciers'
+					'type': 'official'
 				    },
 				    {
 					'id': 'e18',
@@ -187,6 +206,7 @@
 					'endTime': '04-05-2013:01:15',
 					'location': 'l1',
 					'description': 'The party is over in Biblioteket, continue the party in Sportshal or Oticon'
+					'type': 'official'
 				    }
 				  ]
                     },
@@ -205,6 +225,7 @@
 				      'endTime': '03-05-2013:21:00',
 				      'location': 'l2',
 				      'description': 'Bar Open'
+				      'type': 'nonofficial'
 				  },
 				  {
 				      'id': 'e20',
@@ -214,6 +235,7 @@
 				      'endTime': '03-05-2013:22:30',
 				      'location': 'l2',
 				      'description': 'DJ'
+				      'type': 'nonofficial'
 				  },
 				  {
 				      'id': 'e21',
@@ -223,6 +245,7 @@
 				      'endTime': '03-05-2013:23:30',
 				      'location': 'l2',
 				      'description': 'Concert (TFH Experience)'
+				      'type': 'nonofficial'
 				  },
 				  {
 				      'id': 'e22',
@@ -232,6 +255,7 @@
 				      'endTime': '03-05-2013:23:50',
 				      'location': 'l2',
 				      'description': 'DJ'
+				      'type': 'nonofficial'
 				  },
 				  {
 				      'id': 'e23',
@@ -241,6 +265,7 @@
 				      'endTime': '04-05-2013:00:50',
 				      'location': 'l2'
 				      'description': 'Concert (TFH Experience)'
+				      'type': 'nonofficial'
 				  },
 				  {
 				      'id': 'e24',
@@ -250,6 +275,7 @@
 				      'endTime': '04-05-2013:05:00',
 				      'location': 'l2'
 				      'description': 'DJ'
+				      'type': 'nonofficial'
 				  },
 				  {
 				      'id': 'e25',
@@ -259,6 +285,7 @@
 				      'endTime': '04-05-2013:05:00',
 				      'location': 'l2'
 				      'description': 'Congratulations you survived until the end of the party. GO HOME'
+				      'type': 'nonofficial'
 				  }
 				 ]
                     },
@@ -277,6 +304,7 @@
 					'endTime': '03-05-2013:22:00',
 					'location': 'l3'
 					'description': 'Dinner in Biblioteket and Kantine'
+					'type': 'official'
 				    },
 				    {
 				      'id': 'e26',
@@ -286,6 +314,7 @@
 				      'endTime': '04-05-2013:00:15',
 				      'location': 'l3'
 				      'description': 'Jazzband'
+				      'type': 'nonofficial'
 				    }
 				    
 				  ]

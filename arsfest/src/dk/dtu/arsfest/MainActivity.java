@@ -186,7 +186,7 @@ public class MainActivity extends Activity {
 			Toast.makeText(appContext, popUpSettings, Toast.LENGTH_SHORT).show();
 		 */
 		
-		ArrayList<String> ps = new ArrayList<String>(); //should be the list of bssids recieved
+		/*ArrayList<String> ps = new ArrayList<String>(); //should be the list of bssids recieved
 		
 		ArrayList<String> posLocations = new ArrayList<String>();
 		
@@ -197,18 +197,18 @@ public class MainActivity extends Activity {
 			}
 		}
 		
-		currentLocation = chooseLocation(posLocations);
+		currentLocation = chooseLocation(posLocations);*/
 		
 		// get best event
-		Event closeEvent = this.locations.get(0).getEvents().get(0);
+		//Event closeEvent = this.locations.get(0).getEvents().get(0);
 
 		// inflate card with event data
-		closeEventTitle.setText(closeEvent.getName());
+		/*closeEventTitle.setText(closeEvent.getName());
 		closeEventLocation.setText("Location");
 		closeEventTime.setText("21:00");
 		closeEventHappening.setText("Happening now".toUpperCase());
 		closeEventHappening.setTypeface(Utils.getTypeface(this,
-				Constants.TYPEFONT_PROXIMANOVA));
+				Constants.TYPEFONT_PROXIMANOVA));*/
 
 		// sort events
 
