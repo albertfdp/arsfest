@@ -61,7 +61,7 @@ public class EventActivity extends Activity {
 
 		setEventName(event.getName());
 		setEventTime(event.getStartTime().toString());
-		setEventPlace("Somewhere");
+		setEventPlace(event.getLocation());
 		setEventDescription(event.getDescription());
 	}
 

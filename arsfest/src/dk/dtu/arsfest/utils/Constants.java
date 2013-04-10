@@ -30,7 +30,7 @@ public class Constants {
 	public static final String JSON_TAG_EVENT_START_TIME = "startTime";
 	public static final String JSON_TAG_EVENT_END_TIME = "endTime";
 	public static final String JSON_TAG_EVENT_DESCRIPTION = "description";
-	public static final String JSON_TAG_EVENT_LOCATIONS = "locations";
+	public static final String JSON_TAG_EVENT_LOCATION = "location";
 
 	public static final String JSON_TAG_BSSID_LOCATION = "location";
 	public static final String JSON_TAG_BSSIDS = "bssids";
@@ -38,5 +38,6 @@ public class Constants {
 
 	public static final String FEST_START_TIME = FEST_START_TIME_DAY + "-" + FEST_START_TIME_MONTH + "-" + 
 			FEST_START_TIME_YEAR + ":" + FEST_START_TIME_HOURS + ":" + FEST_START_TIME_MINS;
+
 
 }

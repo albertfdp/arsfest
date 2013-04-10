@@ -59,7 +59,7 @@ public class MapActivity extends FragmentActivity implements OnInfoWindowClickLi
 		
 		// add events for restaurant
 		ArrayList<Event> events = new ArrayList<Event>();
-		events.add(new Event("e0", "Official dinner", "img/library.jpg", startTime, endTime, locations, "baafafkan"));
+		//events.add(new Event("e0", "Official dinner", "img/library.jpg", startTime, endTime, locations, "baafafkan"));
 		
 		setUpMapIfNeeded();
 	}

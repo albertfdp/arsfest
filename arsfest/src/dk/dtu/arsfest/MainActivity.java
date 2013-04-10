@@ -2,10 +2,7 @@ package dk.dtu.arsfest;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 
@@ -16,8 +13,7 @@ import com.korovyansk.android.slideout.SlideoutActivity;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
-import dk.dtu.arsfest.parser.JSONParser2;
-import dk.dtu.arsfest.parser.JsonParser;
+import dk.dtu.arsfest.parser.JSONParser;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 import dk.dtu.arsfest.view.CustomPageAdapter;
@@ -36,7 +32,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -46,7 +41,10 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
+	private AlarmManagerBroadcastReceiver myBSSIDAlarm;
+	
 	private ArrayList<Location> locations;
+	private ArrayList<Event> happeningNow;
 	private ArrayList<Bssid> bssids;
 	
 	private ViewPager viewPager;
@@ -54,6 +52,7 @@ public class MainActivity extends Activity {
 	private ScrollingTabsView scrollingTabs;
 	private TabsAdapter scrollingTabsAdapter;
 	private TextView headerTitle;
+	private String currentLocation;
 	
 	private TextView closeEventTitle;
 	private TextView closeEventLocation;
@@ -65,6 +64,9 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		// Scan the BSSIDs every 60 seconds
+		registerAlarmManager(60);
 		
 		// hide title bar
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -104,6 +106,47 @@ public class MainActivity extends Activity {
 		inflateView();
 	}
 	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		//Prompts user to enable WiFi
+		enableYourWiFiGotDammIt();
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onStop();
+		//Cancels the Broadcast Receiver
+		unregisterAlarmManager();
+	}
+
+	/**
+	 * Method setting alarm manager for location awareness
+	 * 
+	 * @author AA
+	 * @param alarmFrequency
+	 *            frequency of the updates
+	 */
+	private void registerAlarmManager(int alarmFrequency) {
+		myBSSIDAlarm = new AlarmManagerBroadcastReceiver();
+		Context appContext = this.getApplicationContext();
+		if (myBSSIDAlarm != null) {
+			myBSSIDAlarm.SetAlarm(appContext, alarmFrequency);
+		}
+	}
+
+	/**
+	 * Method to unregister alarm manager for location awareness
+	 * 
+	 * @author AA
+	 */
+	private void unregisterAlarmManager() {
+		Context appContext = this.getApplicationContext();
+		if (myBSSIDAlarm != null) {
+			myBSSIDAlarm.CancelAlarm(appContext);
+		}
+	}
+	
 	private void initView() {
 		
 		// update the font type of the header
@@ -121,6 +164,27 @@ public class MainActivity extends Activity {
 	private void startContextAwareness() {
 		// get current location
 		
+		/*JAVIER do it like this:
+		 * SharedPreferences settings = appContext.getSharedPreferences(PREFS_NAME, 0);
+			String result = settings.getString("SSIDs", null);
+			result is a String i cannot put array list in shared preferences, check with toast how it looks like
+			Toast.makeText(appContext, popUpSettings, Toast.LENGTH_SHORT).show();
+		 */
+		
+		ArrayList<String> ps = new ArrayList<String>(); //should be the list of bssids recieved
+		
+		ArrayList<String> posLocations = new ArrayList<String>();
+		
+		for(String s : ps){
+			for (Bssid bssid : this.bssids){
+				if(bssid.compareBssid(s))
+					posLocations.add(bssid.getLocation());
+			}
+		}
+		
+		currentLocation = chooseLocation(posLocations);
+		
+		
 		// get best event
 		Event closeEvent = this.locations.get(0).getEvents().get(0);
 		
@@ -137,11 +201,11 @@ public class MainActivity extends Activity {
 	
 	private void readJson() {
 		
-		JSONParser2 jsonParser;
+		JSONParser jsonParser;
 		
 		try {
 			InputStream is = getAssets().open("data.JSON");
-			jsonParser = new JSONParser2(is);
+			jsonParser = new JSONParser(is);
 			
 			this.locations = jsonParser.readLocations();
 			this.bssids = jsonParser.readBssid();
@@ -184,13 +248,12 @@ public class MainActivity extends Activity {
 	}
 
 		
-	@Override
-	protected void onResume() {
-		super.onResume();
-		/*
-		 * Here in onResume() WiFi connection. User is prompted with dialog box
-		 * to enable WiFi
-		 */
+	/**
+	 * Method prompting user to enable WiFi
+	 * 
+	 * @author AA
+	 */
+	private void enableYourWiFiGotDammIt() {
 		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 		boolean popUpSettings = settings.getBoolean("popUpConnectivityDiscard",
 				false);
@@ -223,7 +286,6 @@ public class MainActivity extends Activity {
 						}
 					});
 			alertDialogBuilder.create().show();
-
 		}
 	}
 
@@ -289,6 +351,31 @@ public class MainActivity extends Activity {
 		}
 		
 		return now;
+	}
+	
+	private String chooseLocation(ArrayList<String> posLocations){
+		
+		int final_count = -1;
+		int count = 0,i = 0, j = 0;
+		String loc = "", elem = "", elem_j = "";
+		
+		for(i=0; i< posLocations.size() ; i++){
+			count = 0;
+			elem = posLocations.get(i);
+			for(j=i; j < posLocations.size(); j++){
+				elem_j = posLocations.get(j);
+				if(elem.equals(elem_j))
+					count++;
+			}
+			
+			if (count > final_count){
+				loc = elem;
+			}
+		}
+		
+		
+		return loc;
+		
 	}
 	
 }

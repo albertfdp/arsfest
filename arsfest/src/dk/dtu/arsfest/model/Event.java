@@ -1,6 +1,5 @@
 package dk.dtu.arsfest.model;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 import dk.dtu.arsfest.utils.Constants;
@@ -16,17 +15,17 @@ public class Event implements Parcelable, Comparable<Event> {
 	private String image;
 	private Date startTime;
 	private Date endTime;
-	private ArrayList<Location> locations;
+	private String location;
 	private String description;
 	//private String Type;
 	
-	public Event (String id, String name, String image, Date startTime, Date endTime, ArrayList<Location> locations, String description) {
+	public Event (String id, String name, String image, Date startTime, Date endTime, String location, String description) {
 		this.id = id;
 		this.name = name;
 		this.image = image;
 		this.startTime = startTime;
 		this.endTime = endTime;
-		this.locations = locations; 
+		this.location = location; 
 		this.description = description;
 	}
 
@@ -68,11 +67,11 @@ public class Event implements Parcelable, Comparable<Event> {
 	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
-	public ArrayList<Location> getLocations() {
-		return locations;
+	public String getLocation() {
+		return location;
 	}
-	public void setLocations(ArrayList<Location> locations) {
-		this.locations = locations;
+	public void setLocations(String location) {
+		this.location = location;
 	}
 	public String getDescription() {
 		return description;
@@ -98,7 +97,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		dest.writeString(image);
 		dest.writeLong(startTime.getTime());
 		dest.writeLong(endTime.getTime());
-		// dest.writeString(location);
+		dest.writeString(location);
 		dest.writeString(description);
 	}
 	
@@ -121,7 +120,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.image = in.readString();
 		this.startTime = new Date(in.readLong());
 		this.endTime = new Date(in.readLong());
-		// this.location = in.readString();
+		this.location = in.readString();
 		this.description = in.readString();
 	}
 	
