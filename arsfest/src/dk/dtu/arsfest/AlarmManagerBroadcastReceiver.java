@@ -41,7 +41,7 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 		SharedPreferences settings = appContext.getSharedPreferences(PREFS_NAME, 0);
 		//SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 		SharedPreferences.Editor editor = settings.edit();
-		editor.clear();
+		//editor.clear();
 		editor.putString("SSIDs", sSIDs.toString());
 		editor.commit();
 	}
