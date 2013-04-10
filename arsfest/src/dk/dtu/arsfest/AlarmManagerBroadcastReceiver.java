@@ -8,6 +8,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
@@ -15,20 +16,37 @@ import android.os.Bundle;
 public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 
 	final public static String ONE_TIME = "showThisOneTimeOnly";
+	public static final String PREFS_NAME = "ArsFestPrefsFile";
 	public ArrayList<String> sSIDs = new ArrayList<String>();
 
 	@Override
 	public void onReceive(Context appContext, Intent myIntent) {
 		Bundle extras = myIntent.getExtras();
-		if (extras != null && extras.getBoolean(ONE_TIME, Boolean.TRUE)) {
+		if (extras != null && !extras.getBoolean(ONE_TIME, Boolean.TRUE)) {
 			scanTheNetForMeBaby(appContext);
+			saveTheResultInSharedPreferences(appContext);
 		} else {
-			// TODO If we want one time scan (refresh)
+			// TODO If we want one time scan (e.g. refresh).
 		}
 	}
 
 	/**
-	 * Function broadcasts intent which will result with one time action
+	 * Method saves WiFi scan results to shared preferences file
+	 * 
+	 * @author AA
+	 * @param appContext
+	 *            Sets the application context
+	 */
+	private void saveTheResultInSharedPreferences(Context appContext) {
+		SharedPreferences settings = appContext.getSharedPreferences(
+				PREFS_NAME, 0);
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putString("SSIDs", sSIDs.toString());
+		editor.commit();
+	}
+
+	/**
+	 * Method broadcasts intent which will result with one time action
 	 * 
 	 * @author AA
 	 * @param appContext
@@ -47,7 +65,7 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 	}
 
 	/**
-	 * Function broadcasts intent which will result with repeated action
+	 * Method broadcasts intent which will result with repeated action
 	 * 
 	 * @author AA
 	 * @param appContext
@@ -68,7 +86,7 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 	}
 
 	/**
-	 * Function broadcasts intent which will result with canceling the alarm
+	 * Method broadcasts intent which will result with canceling the alarm
 	 * 
 	 * @author AA
 	 * @param appContext
@@ -85,7 +103,7 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 	}
 
 	/**
-	 * Function get the WiFi scan results
+	 * Method get the WiFi scan results
 	 * 
 	 * @author AA
 	 * @param wifiManager
@@ -97,10 +115,11 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 		for (ScanResult result : resultsOfTheScan) {
 			sSIDs.add(result.BSSID);
 		}
+
 	}
 
 	/**
-	 * Function checks if WiFi card is enabled and performs one time or frequent
+	 * Method checks if WiFi card is enabled and performs one time or frequent
 	 * scanning. The results are stored in sSIDs list as Strings
 	 * 
 	 * @author AA
@@ -113,7 +132,8 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 		WifiManager wifi = (WifiManager) appContext
 				.getSystemService(Context.WIFI_SERVICE);
 		if (wifi.isWifiEnabled()) {
-			wifi.startScan();
+			// wifi.startScan(); TODO think if we need this REQUIRES change wifi
+			// state permission
 			BSSIDScan(wifi);
 		}
 	}

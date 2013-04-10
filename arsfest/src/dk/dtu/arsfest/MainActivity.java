@@ -179,6 +179,13 @@ public class MainActivity extends Activity {
 	private void startContextAwareness() {
 		// get current location
 		
+		/*JAVIER do it like this:
+		 * SharedPreferences settings = appContext.getSharedPreferences(PREFS_NAME, 0);
+			String result = settings.getString("SSIDs", null);
+			result is a String i cannot put array list in shared preferences, check with toast how it looks like
+			Toast.makeText(appContext, popUpSettings, Toast.LENGTH_SHORT).show();
+		 */
+		
 		ArrayList<String> ps = new ArrayList<String>(); //should be the list of bssids recieved
 		
 		ArrayList<String> posLocations = new ArrayList<String>();
