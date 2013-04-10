@@ -1,389 +1,414 @@
 {
-    "location": [
-                    {
-                        'id': 'l0',
-                        'latitude': 55.785949,
-                        'longitude': 12.525475,
-                        'name': 'Sportshal',
-                        'description': '',
-                        'image': 0x7f020001,
-			 'events': [ {
-					    'id': 'e0',
-					    'name': 'Official_Event',
-					    'image': '',
-					    'startTime': '03-05-2013:17:30',
-					    'endTime': '03-05-2013:18:45',
-					    'location': 'l0',
-					    'description': 'Offical Event'
-					    'type': 'official'
-					    'theme': 'official'
-				    },
-				    {
-					      'id': 'e1',
-					      'name': 'Sportshal_Open',
-					      'image': '',
-					      'startTime': '03-05-2013:22:00',
-					      'endTime': '03-05-2013:22:00',
-					      'location': 'l0',
-					      'description': 'Open bar,DJ'
-					      'type': 'nonofficial'
-					  },
-					  {
-					      'id': 'e2',
-					      'name': 'Sportshal_Lanciers1',
-					      'image': '',
-					      'startTime': '03-05-2013:22:10',
-					      'endTime': '03-05-2013:22:25',
-					      'location': 'l0',
-					      'description': 'Les Lanciers'
-					      'type': 'official'
-					  },
-					  {
-					      'id': 'e3',
-					      'name': 'Sportshal_DJ1',
-					      'image': '',
-					      'startTime': '03-05-2013:22:25',
-					      'endTime': '03-05-2013:23:00',
-					      'location': 'l0',
-					      'description': 'DJ'
-					      'type': 'nonofficial'
-					  },
-					  {
-					      'id': 'e4',
-					      'name': 'Sportshal_Lanciers2',
-					      'image': '',
-					      'startTime': '03-05-2013:23:00',
-					      'endTime': '03-05-2013:23:15',
-					      'location': 'l0',
-					      'description': 'Les Lanciers'
-					      'type': 'official'
-					  },
-					  {
-					      'id': 'e5',
-					      'name': 'Sportshal_Nebiha',
-					      'image': '',
-					      'startTime': '03-05-2013:23:15',
-					      'endTime': '04-05-2013:00:15',
-					      'location': 'l0',
-					      'description': 'Nebiha'
-					      'type': 'nonofficial'
-					  },
-					  {
-					      'id': 'e6',
-					      'name': 'Sportshal_Lanciers3',
-					      'image': '',
-					      'startTime': '04-05-2013:00:15',
-					      'endTime': '04-05-2013:00:30',
-					      'location': 'l0',
-					      'description': 'Les Lanciers'
-					      'type': 'official'
-					  },
-					  {
-					      'id': 'e7',
-					      'name': 'Sportshal_DJ2',
-					      'image': '',
-					      'startTime': '04-05-2013:00:30',
-					      'endTime': '04-05-2013:01:15',
-					      'location': 'l0',
-					      'description': 'DJ'
-					      'type': 'nonofficial'
-					  },
-					  {
-					      'id': 'e8',
-					      'name': 'Sportshal_Rune_RK',
-					      'image': '',
-					      'startTime': '04-05-2013:01:15',
-					      'endTime': '04-05-2013:02:15',
-					      'location': 'l0',
-					      'description': 'Rune RK'
-					      'type': 'nonofficial'
-					  },
-					  {
-					      'id': 'e9',
-					      'name': 'Sportshal_DJ3',
-					      'image': '',
-					      'startTime': '04-05-2013:02:15',
-					      'endTime': '04-05-2013:03:00',
-					      'location': 'l0',
-					      'description': 'DJ'
-					      'type': 'nonofficial'
-					  },
-					  {
-					      'id': 'e10',
-					      'name': 'Sportshal_Finish',
-					      'image': '',
-					      'startTime': '04-05-2013:03:00',
-					      'endTime': '04-05-2013:03:00',
-					      'location': 'l0',
-					      'description': 'The party is over in Sportshal, continue the party in Oticon'
-					      'type': 'nonofficial'
-					  }
-				 ]
-					
-                    },
-                    {
-                        'id': 'l1',
-                        'latitude': 55.786893,
-                        'longitude': 12.523265,
-                        'name': 'Biblioteket',
-                        'description': '',
-                        'image': 0x7f020001,
-                        'events':[{
-					'id': 'e11',
-					'name': 'Biblioteket_Open',
-					'image': '',
-					'startTime': '03-05-2013:18:30',
-					'endTime': '03-05-2013:18:30',
-					'location': 'l1',
-					'description': 'Bar Open'
-					'type': 'nonofficial'
-				    },
-				    {
-					'id': 'e12',
-					'name': 'Dinner',
-					'image': '',
-					'startTime': '03-05-2013:19:15',
-					'endTime': '03-05-2013:22:00',
-					'location': 'l1',
-					'description': 'Dinner in Biblioteket and Kantine'
-					'type': 'official'
-				    },
-				    {
-					'id': 'e13',
-					'name': 'Biblioteket_Lanciers1',
-					'image': '',
-					'startTime': '03-05-2013:22:15',
-					'endTime': '03-05-2013:22:30',
-					'location': 'l1',
-					'description': 'Les Lanciers'
-					'type': 'official'
-				    },
-				    {
-					'id': 'e14',
-					'name': 'Biblioteket_Veto1',
-					'image': '',
-					'startTime': '03-05-2013:22:40',
-					'endTime': '03-05-2013:23:40',
-					'location': 'l1',
-					'description': 'Veto'
-					'type': 'official'
-				    },
-				    {
-					'id': 'e15',
-					'name': 'Biblioteket_Lanciers2',
-					'image': '',
-					'startTime': '03-05-2013:22:40',
-					'endTime': '04-05-2013:00:00',
-					'location': 'l1',
-					'description': 'Les Lanciers'
-					'type': 'official'
-				    },
-				    {
-					'id': 'e16',
-					'name': 'Biblioteket_Veto2',
-					'image': '',
-					'startTime': '04-05-2013:00:00',
-					'endTime': '04-05-2013:01:00',
-					'location': 'l1',
-					'description': 'Veto'
-					'type': 'official'
-				    },
-				    {
-					'id': 'e17',
-					'name': 'Biblioteket_Lanciers3',
-					'image': '',
-					'startTime': '04-05-2013:01:00',
-					'endTime': '04-05-2013:01:15',
-					'location': 'l1',
-					'description': 'Les Lanciers'
-					'type': 'official'
-				    },
-				    {
-					'id': 'e18',
-					'name': 'Biblioteket_Close',
-					'image': '',
-					'startTime': '04-05-2013:01:15',
-					'endTime': '04-05-2013:01:15',
-					'location': 'l1',
-					'description': 'The party is over in Biblioteket, continue the party in Sportshal or Oticon'
-					'type': 'official'
-				    }
-				  ]
-                    },
-                    {
-                        'id': 'l2',
-                        'latitude': 55.78683,
-                        'longitude': 12.525871,
-                        'name': 'Oticon',
-                        'description': '',
-                        'image': 0x7f020001,
-                        'events':[{
-				      'id': 'e19',
-				      'name': 'Oticon_Open',
-				      'image': '',
-				      'startTime': '03-05-2013:21:00',
-				      'endTime': '03-05-2013:21:00',
-				      'location': 'l2',
-				      'description': 'Bar Open'
-				      'type': 'nonofficial'
-				  },
-				  {
-				      'id': 'e20',
-				      'name': 'Oticon_DJ1',
-				      'image': '',
-				      'startTime': '03-05-2013:21:00',
-				      'endTime': '03-05-2013:22:30',
-				      'location': 'l2',
-				      'description': 'DJ'
-				      'type': 'nonofficial'
-				  },
-				  {
-				      'id': 'e21',
-				      'name': 'Oticon_Concert1',
-				      'image': '',
-				      'startTime': '03-05-2013:22:30',
-				      'endTime': '03-05-2013:23:30',
-				      'location': 'l2',
-				      'description': 'Concert (TFH Experience)'
-				      'type': 'nonofficial'
-				  },
-				  {
-				      'id': 'e22',
-				      'name': 'Oticon_DJ2',
-				      'image': '',
-				      'startTime': '03-05-2013:23:30',
-				      'endTime': '03-05-2013:23:50',
-				      'location': 'l2',
-				      'description': 'DJ'
-				      'type': 'nonofficial'
-				  },
-				  {
-				      'id': 'e23',
-				      'name': 'Oticon_Concert2',
-				      'image': '',
-				      'startTime': '03-05-2013:23:50',
-				      'endTime': '04-05-2013:00:50',
-				      'location': 'l2'
-				      'description': 'Concert (TFH Experience)'
-				      'type': 'nonofficial'
-				  },
-				  {
-				      'id': 'e24',
-				      'name': 'Oticon_DJ3',
-				      'image': '',
-				      'startTime': '03-05-2013:23:50',
-				      'endTime': '04-05-2013:05:00',
-				      'location': 'l2'
-				      'description': 'DJ'
-				      'type': 'nonofficial'
-				  },
-				  {
-				      'id': 'e25',
-				      'name': 'Oticon_Close',
-				      'image': '',
-				      'startTime': '04-05-2013:05:00',
-				      'endTime': '04-05-2013:05:00',
-				      'location': 'l2'
-				      'description': 'Congratulations you survived until the end of the party. GO HOME'
-				      'type': 'nonofficial'
-				  }
-				 ]
-                    },
-                    {
-                        'id': 'l3',
-                        'latitude': 55.786489,
-                        'longitude': 12.524634,
-                        'name': 'Glassalen',
-                        'description': '',
-                        'image': 0x7f020001,
-                        'events':[{
-					'id': 'e12',
-					'name': 'Dinner',
-					'image': '',
-					'startTime': '03-05-2013:19:15',
-					'endTime': '03-05-2013:22:00',
-					'location': 'l3'
-					'description': 'Dinner in Biblioteket and Kantine'
-					'type': 'official'
-				    },
-				    {
-				      'id': 'e26',
-				      'name': 'Jazzband',
-				      'image': '',
-				      'startTime': '03-05-2013:23:15',
-				      'endTime': '04-05-2013:00:15',
-				      'location': 'l3'
-				      'description': 'Jazzband'
-				      'type': 'nonofficial'
-				    }
-				    
-				  ]
-                    }
-            ],
-   
-    'bssids': [
+    "locations": [
+        {
+            "id": "l0",
+            "latitude": 55.785949,
+            "longitude": 12.525475,
+            "name": "Sportshal",
+            "description": "",
+            "image": 0x7f020001,
+            "events": [
                 {
-                    'ssid': '',
-                    'bssid': '00:27:0d:5f:17',
-                    'location': 'l1'
+                    "id": "e0",
+                    "name": "Official_Event",
+                    "image": "",
+                    "startTime": "03-05-2013:17:30",
+                    "endTime": "03-05-2013:18:45",
+                    "location": "l0",
+                    "description": "Offical Event",
+                    "type": "official",
+                    "theme": "official"
                 },
                 {
-                    'ssid': '',
-                    'bssid': '00:27:0d:48',
-                    'location': 'l1'
+                    "id": "e1",
+                    "name": "Sportshal_Open",
+                    "image": "",
+                    "startTime": "03-05-2013:22:00",
+                    "endTime": "03-05-2013:22:00",
+                    "location": "l0",
+                    "description": "Open bar,DJ",
+                    "type": "nonofficial",
+                    "theme": "official"
                 },
                 {
-                    'ssid': '',
-                    'bssid': '00:27:0d:ed:18',
-                    'location': 'l0'
+                    "id": "e2",
+                    "name": "Sportshal_Lanciers1",
+                    "image": "",
+                    "startTime": "03-05-2013:22:10",
+                    "endTime": "03-05-2013:22:25",
+                    "location": "l0",
+                    "description": "Les Lanciers",
+                    "type": "official",
+                    "theme": "dance"
                 },
                 {
-                    'ssid': '',
-                    'bssid': '00:27:0d:ed:1a',
-                    'location': 'l0'
+                    "id": "e3",
+                    "name": "Sportshal_DJ1",
+                    "image": "",
+                    "startTime": "03-05-2013:22:25",
+                    "endTime": "03-05-2013:23:00",
+                    "location": "l0",
+                    "description": "DJ",
+                    "type": "nonofficial",
+                    "theme": "music"
                 },
                 {
-                    'ssid': '',
-                    'bssid': '00:27:0d:5f:42',
-                    'location': 'l0'
+                    "id": "e4",
+                    "name": "Sportshal_Lanciers2",
+                    "image": "",
+                    "startTime": "03-05-2013:23:00",
+                    "endTime": "03-05-2013:23:15",
+                    "location": "l0",
+                    "description": "Les Lanciers",
+                    "type": "official",
+                    "theme": "dance"
                 },
                 {
-                    'ssid': '',
-                    'bssid': '00:27:0d:5f:4c',
-                    'location': 'l0'
+                    "id": "e5",
+                    "name": "Sportshal_Nebiha",
+                    "image": "",
+                    "startTime": "03-05-2013:23:15",
+                    "endTime": "04-05-2013:00:15",
+                    "location": "l0",
+                    "description": "Nebiha",
+                    "type": "nonofficial",
+                    "theme": "music"
                 },
                 {
-                    'ssid': '',
-                    'bssid': '00:1c:0e:42:70',
-                    'location': 'l2'
+                    "id": "e6",
+                    "name": "Sportshal_Lanciers3",
+                    "image": "",
+                    "startTime": "04-05-2013:00:15",
+                    "endTime": "04-05-2013:00:30",
+                    "location": "l0",
+                    "description": "Les Lanciers",
+                    "type": "official",
+                    "theme": "dance"
                 },
                 {
-                    'ssid': '',
-                    'bssid': '00:1c:0e:42:d4',
-                    'location': 'l2'
+                    "id": "e7",
+                    "name": "Sportshal_DJ2",
+                    "image": "",
+                    "startTime": "04-05-2013:00:30",
+                    "endTime": "04-05-2013:01:15",
+                    "location": "l0",
+                    "description": "DJ",
+                    "type": "nonofficial",
+                    "theme": "music"
                 },
                 {
-                    'ssid': '',
-                    'bssid': '00:1a:30:7d:89',
-                    'location': 'l3'
+                    "id": "e8",
+                    "name": "Sportshal_Rune_RK",
+                    "image": "",
+                    "startTime": "04-05-2013:01:15",
+                    "endTime": "04-05-2013:02:15",
+                    "location": "l0",
+                    "description": "Rune RK",
+                    "type": "nonofficial",
+                    "theme": "music"
                 },
                 {
-                    'ssid': '',
-                    'bssid': '00:1c:0e:42:7e',
-                    'location': 'l3'
+                    "id": "e9",
+                    "name": "Sportshal_DJ3",
+                    "image": "",
+                    "startTime": "04-05-2013:02:15",
+                    "endTime": "04-05-2013:03:00",
+                    "location": "l0",
+                    "description": "DJ",
+                    "type": "nonofficial",
+                    "theme": "music"
                 },
                 {
-                    'ssid': '',
-                    'bssid': '00:23:5e:1f:20',
-                    'location': 'l3'
-                },
-                {
-                    'ssid': '',
-                    'bssid': '00:1c:0e:42:d4',
-                    'location': 'l3'
+                    "id": "e10",
+                    "name": "Sportshal_Finish",
+                    "image": "",
+                    "startTime": "04-05-2013:03:00",
+                    "endTime": "04-05-2013:03:00",
+                    "location": "l0",
+                    "description": "The party is over in Sportshal, continue the party in Oticon",
+                    "type": "nonofficial",
+                    "theme": "official"
                 }
-        ]
-
-
-
+            ]
+        },
+        {
+            "id": "l1",
+            "latitude": 55.786893,
+            "longitude": 12.523265,
+            "name": "Biblioteket",
+            "description": "",
+            "image": 0x7f020001,
+            "events": [
+                {
+                    "id": "e11",
+                    "name": "Biblioteket_Open",
+                    "image": "",
+                    "startTime": "03-05-2013:18:30",
+                    "endTime": "03-05-2013:18:30",
+                    "location": "l1",
+                    "description": "Bar Open",
+                    "type": "nonofficial",
+                    "theme": "food"
+                },
+                {
+                    "id": "e12",
+                    "name": "Dinner",
+                    "image": "",
+                    "startTime": "03-05-2013:19:15",
+                    "endTime": "03-05-2013:22:00",
+                    "location": "l1",
+                    "description": "Dinner in Biblioteket and Kantine",
+                    "type": "official",
+                    "theme": "food"
+                },
+                {
+                    "id": "e13",
+                    "name": "Biblioteket_Lanciers1",
+                    "image": "",
+                    "startTime": "03-05-2013:22:15",
+                    "endTime": "03-05-2013:22:30",
+                    "location": "l1",
+                    "description": "Les Lanciers",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e14",
+                    "name": "Biblioteket_Veto1",
+                    "image": "",
+                    "startTime": "03-05-2013:22:40",
+                    "endTime": "03-05-2013:23:40",
+                    "location": "l1",
+                    "description": "Veto",
+                    "type": "official",
+                    "theme": "music"
+                },
+                {
+                    "id": "e15",
+                    "name": "Biblioteket_Lanciers2",
+                    "image": "",
+                    "startTime": "03-05-2013:22:40",
+                    "endTime": "04-05-2013:00:00",
+                    "location": "l1",
+                    "description": "Les Lanciers",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e16",
+                    "name": "Biblioteket_Veto2",
+                    "image": "",
+                    "startTime": "04-05-2013:00:00",
+                    "endTime": "04-05-2013:01:00",
+                    "location": "l1",
+                    "description": "Veto",
+                    "type": "official",
+                    "theme": "music"
+                },
+                {
+                    "id": "e17",
+                    "name": "Biblioteket_Lanciers3",
+                    "image": "",
+                    "startTime": "04-05-2013:01:00",
+                    "endTime": "04-05-2013:01:15",
+                    "location": "l1",
+                    "description": "Les Lanciers",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e18",
+                    "name": "Biblioteket_Close",
+                    "image": "",
+                    "startTime": "04-05-2013:01:15",
+                    "endTime": "04-05-2013:01:15",
+                    "location": "l1",
+                    "description": "The party is over in Biblioteket, continue the party in Sportshal or Oticon",
+                    "type": "official",
+                    "theme": "official"
+                }
+            ]
+        },
+        {
+            "id": "l2",
+            "latitude": 55.78683,
+            "longitude": 12.525871,
+            "name": "Oticon",
+            "description": "",
+            "image": 0x7f020001,
+            "events": [
+                {
+                    "id": "e19",
+                    "name": "Oticon_Open",
+                    "image": "",
+                    "startTime": "03-05-2013:21:00",
+                    "endTime": "03-05-2013:21:00",
+                    "location": "l2",
+                    "description": "Bar Open",
+                    "type": "nonofficial",
+                    "theme": "official"
+                },
+                {
+                    "id": "e20",
+                    "name": "Oticon_DJ1",
+                    "image": "",
+                    "startTime": "03-05-2013:21:00",
+                    "endTime": "03-05-2013:22:30",
+                    "location": "l2",
+                    "description": "DJ",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e21",
+                    "name": "Oticon_Concert1",
+                    "image": "",
+                    "startTime": "03-05-2013:22:30",
+                    "endTime": "03-05-2013:23:30",
+                    "location": "l2",
+                    "description": "Concert (TFH Experience)",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e22",
+                    "name": "Oticon_DJ2",
+                    "image": "",
+                    "startTime": "03-05-2013:23:30",
+                    "endTime": "03-05-2013:23:50",
+                    "location": "l2",
+                    "description": "DJ",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e23",
+                    "name": "Oticon_Concert2",
+                    "image": "",
+                    "startTime": "03-05-2013:23:50",
+                    "endTime": "04-05-2013:00:50",
+                    "location": "l2",
+                    "description": "Concert (TFH Experience)",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e24",
+                    "name": "Oticon_DJ3",
+                    "image": "",
+                    "startTime": "03-05-2013:23:50",
+                    "endTime": "04-05-2013:05:00",
+                    "location": "l2",
+                    "description": "DJ",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e25",
+                    "name": "Oticon_Close",
+                    "image": "",
+                    "startTime": "04-05-2013:05:00",
+                    "endTime": "04-05-2013:05:00",
+                    "location": "l2",
+                    "description": "Congratulations you survived until the end of the party. GO HOME",
+                    "type": "nonofficial",
+                    "theme": "official"
+                }
+            ]
+        },
+        {
+            "id": "l3",
+            "latitude": 55.786489,
+            "longitude": 12.524634,
+            "name": "Glassalen",
+            "description": "",
+            "image": 0x7f020001,
+            "events": [
+                {
+                    "id": "e12",
+                    "name": "Dinner",
+                    "image": "",
+                    "startTime": "03-05-2013:19:15",
+                    "endTime": "03-05-2013:22:00",
+                    "location": "l3",
+                    "description": "Dinner in Biblioteket and Kantine",
+                    "type": "official",
+                    "theme": "food"
+                },
+                {
+                    "id": "e26",
+                    "name": "Jazzband",
+                    "image": "",
+                    "startTime": "03-05-2013:23:15",
+                    "endTime": "04-05-2013:00:15",
+                    "location": "l3",
+                    "description": "Jazzband",
+                    "type": "nonofficial",
+                    "theme": "music"
+                }
+            ]
+        }
+    ],
+    "bssids": [
+        {
+            "ssid": "",
+            "bssid": "00:27:0d:5f:17",
+            "location": "l1"
+        },
+        {
+            "ssid": "",
+            "bssid": "00:27:0d:48",
+            "location": "l1"
+        },
+        {
+            "ssid": "",
+            "bssid": "00:27:0d:ed:18",
+            "location": "l0"
+        },
+        {
+            "ssid": "",
+            "bssid": "00:27:0d:ed:1a",
+            "location": "l0"
+        },
+        {
+            "ssid": "",
+            "bssid": "00:27:0d:5f:42",
+            "location": "l0"
+        },
+        {
+            "ssid": "",
+            "bssid": "00:27:0d:5f:4c",
+            "location": "l0"
+        },
+        {
+            "ssid": "",
+            "bssid": "00:1c:0e:42:70",
+            "location": "l2"
+        },
+        {
+            "ssid": "",
+            "bssid": "00:1c:0e:42:d4",
+            "location": "l2"
+        },
+        {
+            "ssid": "",
+            "bssid": "00:1a:30:7d:89",
+            "location": "l3"
+        },
+        {
+            "ssid": "",
+            "bssid": "00:1c:0e:42:7e",
+            "location": "l3"
+        },
+        {
+            "ssid": "",
+            "bssid": "00:23:5e:1f:20",
+            "location": "l3"
+        },
+        {
+            "ssid": "",
+            "bssid": "00:1c:0e:42:d4",
+            "location": "l3"
+        }
+    ]
 }

@@ -186,26 +186,15 @@ public class MainActivity extends Activity {
 		
 		
 		// get best event
-<<<<<<< HEAD
 		Event closeEvent = this.locations.get(0).getEvents().get(0);
-		
-=======
-		//Event closeEvent = this.locations.get(0).getEvents().get(0);
 
->>>>>>> branch 'master' of https://github.com/ullfoll/arsfest.git
 		// inflate card with event data
-		/*closeEventTitle.setText(closeEvent.getName());
+		closeEventTitle.setText(closeEvent.getName());
 		closeEventLocation.setText("Location");
 		closeEventTime.setText("21:00");
 		closeEventHappening.setText("Happening now".toUpperCase());
-<<<<<<< HEAD
 		closeEventHappening.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
 		
-=======
-		closeEventHappening.setTypeface(Utils.getTypeface(this,
-				Constants.TYPEFONT_PROXIMANOVA));*/
-
->>>>>>> branch 'master' of https://github.com/ullfoll/arsfest.git
 		// sort events
 		
 	}
