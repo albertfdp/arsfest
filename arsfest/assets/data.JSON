@@ -1,5 +1,5 @@
 {
-    "locations": [
+    "location": [
                     {
                         'id': 'l0',
                         'latitude': 55.785949,
@@ -13,12 +13,7 @@
 					    'image': '',
 					    'startTime': '03-05-2013:17:30',
 					    'endTime': '03-05-2013:18:45',
-					    'locations': [
-						            {
-						                'id': 'l0'
-						            }
-						       
-							 ],
+					    'location': 'l0',
 					   'description': 'Offical Event'
 				    },
 				    {
@@ -27,11 +22,7 @@
 					      'image': '',
 					      'startTime': '03-05-2013:22:00',
 					      'endTime': '03-05-2013:22:00',
-					      'locations': [
-							      {
-								  'id': 'l0'
-							      }
-					      ],
+					      'location': 'l0',
 					      'description': 'Open bar,DJ'
 					  },
 					  {
@@ -40,11 +31,7 @@
 					      'image': '',
 					      'startTime': '03-05-2013:22:10',
 					      'endTime': '03-05-2013:22:25',
-					      'locations': [
-							      {
-								  'id': l0
-							      }
-					      ],
+					      'location': 'l0',
 					      'description': 'Les Lanciers'
 					  },
 					  {
@@ -53,11 +40,7 @@
 					      'image': '',
 					      'startTime': '03-05-2013:22:25',
 					      'endTime': '03-05-2013:23:00',
-					      'locations': [
-							      {
-								  'id': l0
-							      }
-					      ],
+					      'location': 'l0',
 					      'description': 'DJ'
 					  },
 					  {
@@ -66,11 +49,7 @@
 					      'image': '',
 					      'startTime': '03-05-2013:23:00',
 					      'endTime': '03-05-2013:23:15',
-					      'locations': [
-							      {
-								  'id': l0
-							      }
-					      ],
+					      'location': 'l0',
 					      'description': 'Les Lanciers'
 					  },
 					  {
@@ -79,11 +58,7 @@
 					      'image': '',
 					      'startTime': '03-05-2013:23:15',
 					      'endTime': '04-05-2013:00:15',
-					      'locations': [
-							      {
-								  'id': l0
-							      }
-					      ],
+					      'location': 'l0',
 					      'description': 'Nebiha'
 					  },
 					  {
@@ -92,11 +67,7 @@
 					      'image': '',
 					      'startTime': '04-05-2013:00:15',
 					      'endTime': '04-05-2013:00:30',
-					      'locations': [
-							      {
-								  'id': 'l0'
-							      }
-					      ],
+					      'location': 'l0',
 					      'description': 'Les Lanciers'
 					  },
 					  {
@@ -105,11 +76,7 @@
 					      'image': '',
 					      'startTime': '04-05-2013:00:30',
 					      'endTime': '04-05-2013:01:15',
-					      'locations': [
-							      {
-								  'id': 'l0'
-							      }
-					      ],
+					      'location': 'l0',
 					      'description': 'DJ'
 					  },
 					  {
@@ -118,11 +85,7 @@
 					      'image': '',
 					      'startTime': '04-05-2013:01:15',
 					      'endTime': '04-05-2013:02:15',
-					      'locations': [
-							      {
-								  'id': 'l0'
-							      }
-					      ],
+					      'location': 'l0',
 					      'description': 'Rune RK'
 					  },
 					  {
@@ -131,11 +94,7 @@
 					      'image': '',
 					      'startTime': '04-05-2013:02:15',
 					      'endTime': '04-05-2013:03:00',
-					      'locations': [
-							      {
-								  'id': 'l0'
-							      }
-					      ],
+					      'location': 'l0',
 					      'description': 'DJ'
 					  },
 					  {
@@ -144,11 +103,7 @@
 					      'image': '',
 					      'startTime': '04-05-2013:03:00',
 					      'endTime': '04-05-2013:03:00',
-					      'locations': [
-							      {
-								  'id': 'l0'
-							      }
-					      ],
+					      'location': 'l0',
 					      'description': 'The party is over in Sportshal, continue the party in Oticon'
 					  }
 				 ]
@@ -167,11 +122,7 @@
 					'image': '',
 					'startTime': '03-05-2013:18:30',
 					'endTime': '03-05-2013:18:30',
-					'locations': [
-							{
-							    'id': 'l1'
-							}
-					],
+					'location': 'l1',
 					'description': 'Bar Open'
 				    },
 				    {
@@ -180,13 +131,7 @@
 					'image': '',
 					'startTime': '03-05-2013:19:15',
 					'endTime': '03-05-2013:22:00',
-					'locations': [
-							{
-							    'id': 'l1'                                   },
-							{
-							    'id': 'l3'
-							}
-					],
+					'location': 'l1',
 					'description': 'Dinner in Biblioteket and Kantine'
 				    },
 				    {
@@ -195,11 +140,7 @@
 					'image': '',
 					'startTime': '03-05-2013:22:15',
 					'endTime': '03-05-2013:22:30',
-					'locations': [
-							{
-							    'id': 'l1'
-							}
-					],
+					'location': 'l1',
 					'description': 'Les Lanciers'
 				    },
 				    {
@@ -208,11 +149,7 @@
 					'image': '',
 					'startTime': '03-05-2013:22:40',
 					'endTime': '03-05-2013:23:40',
-					'locations': [
-							{
-							    'id': 'l1'
-							}
-					],
+					'location': 'l1',
 					'description': 'Veto'
 				    },
 				    {
@@ -221,11 +158,7 @@
 					'image': '',
 					'startTime': '03-05-2013:22:40',
 					'endTime': '04-05-2013:00:00',
-					'locations': [
-							{
-							    'id': 'l1'
-							}
-					],
+					'location': 'l1',
 					'description': 'Les Lanciers'
 				    },
 				    {
@@ -234,11 +167,7 @@
 					'image': '',
 					'startTime': '04-05-2013:00:00',
 					'endTime': '04-05-2013:01:00',
-					'locations': [
-							{
-							    'id': 'l1'
-							}
-					],
+					'location': 'l1',
 					'description': 'Veto'
 				    },
 				    {
@@ -247,11 +176,7 @@
 					'image': '',
 					'startTime': '04-05-2013:01:00',
 					'endTime': '04-05-2013:01:15',
-					'locations': [
-							{
-							    'id': 'l1'
-							}
-					],
+					'location': 'l1',
 					'description': 'Les Lanciers'
 				    },
 				    {
@@ -260,11 +185,7 @@
 					'image': '',
 					'startTime': '04-05-2013:01:15',
 					'endTime': '04-05-2013:01:15',
-					'locations': [
-							{
-							    'id': 'l1'
-							}
-					],
+					'location': 'l1',
 					'description': 'The party is over in Biblioteket, continue the party in Sportshal or Oticon'
 				    }
 				  ]
@@ -282,11 +203,7 @@
 				      'image': '',
 				      'startTime': '03-05-2013:21:00',
 				      'endTime': '03-05-2013:21:00',
-				      'locations': [
-						      {
-							  'id': 'l2'
-						      }
-				      ],
+				      'location': 'l2',
 				      'description': 'Bar Open'
 				  },
 				  {
@@ -295,11 +212,7 @@
 				      'image': '',
 				      'startTime': '03-05-2013:21:00',
 				      'endTime': '03-05-2013:22:30',
-				      'locations': [
-						      {
-							  'id': 'l2'
-						      }
-				      ],
+				      'location': 'l2',
 				      'description': 'DJ'
 				  },
 				  {
@@ -308,11 +221,7 @@
 				      'image': '',
 				      'startTime': '03-05-2013:22:30',
 				      'endTime': '03-05-2013:23:30',
-				      'locations': [
-						      {
-							  'id': 'l2'
-						      }
-				      ],
+				      'location': 'l2',
 				      'description': 'Concert (TFH Experience)'
 				  },
 				  {
@@ -321,11 +230,7 @@
 				      'image': '',
 				      'startTime': '03-05-2013:23:30',
 				      'endTime': '03-05-2013:23:50',
-				      'locations': [
-						      {
-							  'id': 'l2'
-						      }
-				      ],
+				      'location': 'l2',
 				      'description': 'DJ'
 				  },
 				  {
@@ -334,11 +239,7 @@
 				      'image': '',
 				      'startTime': '03-05-2013:23:50',
 				      'endTime': '04-05-2013:00:50',
-				      'locations': [
-						      {
-							  'id': 'l2'
-						      }
-				      ],
+				      'location': 'l2'
 				      'description': 'Concert (TFH Experience)'
 				  },
 				  {
@@ -347,11 +248,7 @@
 				      'image': '',
 				      'startTime': '03-05-2013:23:50',
 				      'endTime': '04-05-2013:05:00',
-				      'locations': [
-						      {
-							  'id': 'l2'
-						      }
-				      ],
+				      'location': 'l2'
 				      'description': 'DJ'
 				  },
 				  {
@@ -360,11 +257,7 @@
 				      'image': '',
 				      'startTime': '04-05-2013:05:00',
 				      'endTime': '04-05-2013:05:00',
-				      'locations': [
-						      {
-							  'id': 'l2'
-						      }
-				      ],
+				      'location': 'l2'
 				      'description': 'Congratulations you survived until the end of the party. GO HOME'
 				  }
 				 ]
@@ -382,13 +275,7 @@
 					'image': '',
 					'startTime': '03-05-2013:19:15',
 					'endTime': '03-05-2013:22:00',
-					'locations': [
-							{
-							    'id': 'l1'                                   },
-							{
-							    'id': 'l3'
-							}
-					],
+					'location': 'l3'
 					'description': 'Dinner in Biblioteket and Kantine'
 				    },
 				    {
@@ -397,11 +284,7 @@
 				      'image': '',
 				      'startTime': '03-05-2013:23:15',
 				      'endTime': '04-05-2013:00:15',
-				      'locations': [
-						      {
-							  'id': 'l3'
-						      }
-				      ],
+				      'location': 'l3'
 				      'description': 'Jazzband'
 				    }
 				    
