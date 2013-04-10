@@ -3,6 +3,7 @@ package dk.dtu.arsfest.utils;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
 
 
@@ -26,7 +27,8 @@ public class Utils {
 	}
 	
 	public static Date getFormattedDate(String stringDate) {
-		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy:HH:mm");
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy:HH:mm", Locale.FRANCE);
+		//formatter.setTimeZone(TimeZone.getTimeZone("CEST"));
 		Date startDate;
 		try {
 			startDate = (Date) formatter.parse(stringDate);
@@ -39,7 +41,7 @@ public class Utils {
 	}
 	
 	public static String getEventStringTime(Date date) {
-		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.FRANCE);
 		return sdf.format(date);
 	}
 

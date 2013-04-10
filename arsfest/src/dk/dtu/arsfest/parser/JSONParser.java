@@ -78,6 +78,7 @@ public class JSONParser {
 			
 		} catch (JSONException e) {
 			Log.e(Constants.TAG, "Error parsing data " + e.toString());
+			e.printStackTrace();
 		}
 		return locations;
 	}
@@ -96,8 +97,10 @@ public class JSONParser {
 			String location = event.getString(Constants.JSON_TAG_EVENT_LOCATION);
 			Date startTimeDate = Utils.getFormattedDate(startTime);
 			Date endTimeDate = Utils.getFormattedDate(endTime);
+			String theme = event.getString(Constants.JSON_TAG_EVENT_THEME);
+			String type = event.getString(Constants.JSON_TAG_EVENT_TYPE);
 			
-			events.add(new Event(id, name, image, startTimeDate, endTimeDate, location, description));
+			events.add(new Event(id, name, image, startTimeDate, endTimeDate, location, description, type, theme));
 		}
 		return events;
 	}
@@ -114,6 +117,7 @@ public class JSONParser {
 			}
 		} catch (JSONException e) {
 			Log.e(Constants.TAG, "Error parsing data " + e.toString());
+			e.printStackTrace();
 		}
 		return bssids;
 	}

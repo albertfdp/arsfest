@@ -8,6 +8,7 @@ import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.event.EventActivity;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
+import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 
 import android.app.Activity;
@@ -48,7 +49,8 @@ public class CustomPageAdapter extends PagerAdapter {
 		
 		events = this.locations.get(position).getEvents();
 		Collections.sort(events);
-		eventAdapter = new EventAdapter(mContext, R.layout.event_item, events);
+				
+		eventAdapter = new EventAdapter(mContext, R.layout.event_item, events, this.locations);
 		listView.setTag(position);
 		listView.setAdapter(eventAdapter);
 		listView.setSelection(getNextEvent());
@@ -64,8 +66,13 @@ public class CustomPageAdapter extends PagerAdapter {
 				
 				int tabPos = (Integer) parent.getTag();
 				Event clickedEvent = locations.get(tabPos).getEvents().get(itemPosition);
+				
+				// get location of the clicked event
+				Location clickedLocation = locations.get(tabPos);
+				
 				Intent intent = new Intent(mContext, EventActivity.class);
-				intent.putExtra("dk.dtu.arsfest.Event", clickedEvent);
+				intent.putExtra(Constants.EXTRA_EVENT, clickedEvent);
+				intent.putExtra(Constants.EXTRA_LOCATION, clickedLocation);
 				mContext.startActivity(intent);
 			}
 			
@@ -76,11 +83,9 @@ public class CustomPageAdapter extends PagerAdapter {
 	
 	private int getNextEvent() {
 		int index = 0;
-		boolean found = false;
 		Date currentTime = Utils.getCurrentDate();
-		while (found == false && index < events.size()) {
-			if (events.get(index).isHappeningNow(currentTime)) {
-				found = true;
+		while (index < events.size()) {
+			if (!events.get(index).hasFinished(currentTime)) {
 				break;
 			}
 			index++;
@@ -90,7 +95,7 @@ public class CustomPageAdapter extends PagerAdapter {
 	
 	@Override
 	public void destroyItem(View container, int position, Object view) {
-		//((ViewPager) container).removeView((View) view);
+		((ViewPager) container).removeView((View) view);
 	}
 
 	@Override

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.model.Event;
+import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 import android.content.Context;
@@ -17,12 +18,14 @@ import android.widget.TextView;
 public class EventAdapter extends ArrayAdapter <Event>{
 	
 	private ArrayList<Event> events;
+	private ArrayList<Location> locations;
 	private Context context;
 	
-	public EventAdapter (Context context, int layoutResourceId, ArrayList<Event> events) {
+	public EventAdapter (Context context, int layoutResourceId, ArrayList<Event> events, ArrayList<Location> locations) {
 		super(context, layoutResourceId, events);
 		this.context = context;
 		this.events = events;
+		this.locations = locations;
 	}
 	
 	@Override
@@ -42,14 +45,22 @@ public class EventAdapter extends ArrayAdapter <Event>{
 				eventTitle.setTypeface(typeface);
 				eventTime.setTypeface(typeface);
 				eventLocation.setTypeface(typeface);
-				eventLocation.setText("Sports Hall");
+				eventLocation.setText(getLocationName(event.getLocation()));
 				eventTime.setText(Utils.getEventStringTime(event.getStartTime()));
 				if (event.hasFinished(Utils.getCurrentDate())) {
-					// do nothing
+					view.setBackgroundColor(context.getResources().getColor(R.color.flat_grey));
 				}
 			}
 		}
 		return view;
+	}
+	
+	private String getLocationName(String locationId) {
+		for (Location location : locations) {
+			if (location.getId().equalsIgnoreCase(locationId))
+				return location.getName();
+		}
+		return "Unknown";
 	}
 
 }

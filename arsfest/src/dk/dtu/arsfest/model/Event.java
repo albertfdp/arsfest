@@ -17,9 +17,31 @@ public class Event implements Parcelable, Comparable<Event> {
 	private Date endTime;
 	private String location;
 	private String description;
-	//private String Type;
+	private String type;
+	private String theme;
 	
-	public Event (String id, String name, String image, Date startTime, Date endTime, String location, String description) {
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getTheme() {
+		return theme;
+	}
+
+	public void setTheme(String theme) {
+		this.theme = theme;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public Event (String id, String name, String image, Date startTime, Date endTime, 
+			String location, String description, String type, String theme) {
 		this.id = id;
 		this.name = name;
 		this.image = image;
@@ -27,16 +49,10 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.endTime = endTime;
 		this.location = location; 
 		this.description = description;
+		this.type = type;
+		this.theme = theme;
 	}
-
-	public Event (String id, String name, String image, Date startTime, Date endTime, String description) {
-		this.id = id;
-		this.name = name;
-		this.image = image;
-		this.startTime = startTime;
-		this.endTime = endTime; 
-		this.description = description;
-	}
+	
 	public String getId() {
 		return id;
 	}
@@ -99,6 +115,8 @@ public class Event implements Parcelable, Comparable<Event> {
 		dest.writeLong(endTime.getTime());
 		dest.writeString(location);
 		dest.writeString(description);
+		dest.writeString(type);
+		dest.writeString(theme);
 	}
 	
 	public static final Parcelable.Creator<Event> CREATOR = new Parcelable.Creator<Event>() {
@@ -122,6 +140,8 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.endTime = new Date(in.readLong());
 		this.location = in.readString();
 		this.description = in.readString();
+		this.type = in.readString();
+		this.theme = in.readString();
 	}
 	
 	public boolean hasStarted(Date currentTime) {
@@ -129,12 +149,18 @@ public class Event implements Parcelable, Comparable<Event> {
 	}
 	
 	public boolean hasFinished(Date currentTime) {
-		Log.i(Constants.TAG, currentTime.toLocaleString() + " " + endTime.toString());
 		return (currentTime.after(endTime));
 	}
 	
 	public boolean isHappeningNow(Date currentTime){
-		return (hasStarted(currentTime) && !hasFinished(currentTime));
+		//return (hasStarted(currentTime) && !hasFinished(currentTime));
+		if (hasStarted(currentTime) && !hasFinished(currentTime)) {
+			Log.i(Constants.TAG, this.name + " hasStarted, but not finished");
+			return true;
+		} else if (hasStarted(currentTime) && hasFinished(currentTime)) {
+			Log.i(Constants.TAG, this.name + " hasStarted, and finished");
+		}
+		return false;
 	}
 
 	@Override

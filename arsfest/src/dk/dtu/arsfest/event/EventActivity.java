@@ -2,6 +2,7 @@ package dk.dtu.arsfest.event;
 
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.model.Event;
+import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 import android.app.Activity;
@@ -41,7 +42,8 @@ public class EventActivity extends Activity {
 
 		// Read event info from intent
 		Intent intent = getIntent();
-		Event event = (Event) intent.getParcelableExtra("dk.dtu.arsfest.Event");
+		Event event = (Event) intent.getParcelableExtra(Constants.EXTRA_EVENT);
+		Location eventLocation = (Location) intent.getParcelableExtra(Constants.EXTRA_LOCATION);
 
 		Log.i("ARSFEST", event.getName() + " " + event.getStartTime());
 
@@ -56,12 +58,13 @@ public class EventActivity extends Activity {
 		textViewPlace = (TextView) findViewById(R.id.textViewPlace);
 		textViewPlace.setTypeface(myNeoSans);
 		textViewEventDescription = (WebView) findViewById(R.id.textViewEventDescription);
+		textViewEventDescription.setBackgroundColor(0x00000000);
 		textViewEventDescription.setVerticalScrollBarEnabled(true);
 		textViewEventDescription.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
 
 		setEventName(event.getName());
 		setEventTime(event.getStartTime().toString());
-		setEventPlace(event.getLocation());
+		setEventPlace(eventLocation.getName());
 		setEventDescription(event.getDescription());
 	}
 
