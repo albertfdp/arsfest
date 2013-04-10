@@ -1,11 +1,14 @@
 package dk.dtu.arsfest.view;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
 
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.event.EventActivity;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
+import dk.dtu.arsfest.utils.Utils;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -44,9 +47,11 @@ public class CustomPageAdapter extends PagerAdapter {
 		ListView listView = new ListView (mContext);
 		
 		events = this.locations.get(position).getEvents();
+		Collections.sort(events);
 		eventAdapter = new EventAdapter(mContext, R.layout.event_item, events);
 		listView.setTag(position);
 		listView.setAdapter(eventAdapter);
+		listView.setSelection(getNextEvent());
 		listView.setPadding(15, 10, 15, 10);
 		listView.setBackgroundColor(mContext.getResources().getColor(R.color.grey));
 		listView.setDivider(new ColorDrawable(mContext.getResources().getColor(R.color.grey)));
@@ -67,6 +72,20 @@ public class CustomPageAdapter extends PagerAdapter {
 		});
 		((ViewPager) container).addView(listView, 0);
 		return listView;
+	}
+	
+	private int getNextEvent() {
+		int index = 0;
+		boolean found = false;
+		Date currentTime = Utils.getCurrentDate();
+		while (found == false && index < events.size()) {
+			if (events.get(index).isHappeningNow(currentTime)) {
+				found = true;
+				break;
+			}
+			index++;
+		}
+		return index;
 	}
 	
 	@Override

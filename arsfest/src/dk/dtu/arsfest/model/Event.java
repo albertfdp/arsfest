@@ -3,10 +3,13 @@ package dk.dtu.arsfest.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import dk.dtu.arsfest.utils.Constants;
+
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
-public class Event implements Parcelable {
+public class Event implements Parcelable, Comparable<Event> {
 	
 	private String id;
 	private String name;
@@ -90,7 +93,13 @@ public class Event implements Parcelable {
 
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeString(id);
 		dest.writeString(name);
+		dest.writeString(image);
+		dest.writeLong(startTime.getTime());
+		dest.writeLong(endTime.getTime());
+		// dest.writeString(location);
+		dest.writeString(description);
 	}
 	
 	public static final Parcelable.Creator<Event> CREATOR = new Parcelable.Creator<Event>() {
@@ -107,18 +116,30 @@ public class Event implements Parcelable {
 	};
 	
 	private Event(Parcel in) {
+		this.id = in.readString();
 		this.name = in.readString();
+		this.image = in.readString();
+		this.startTime = new Date(in.readLong());
+		this.endTime = new Date(in.readLong());
+		// this.location = in.readString();
+		this.description = in.readString();
 	}
 	
-	public boolean happeningNow(Date currentTime){
-		
-		if((currentTime.after(this.getStartTime())) && (currentTime.before(this.getEndTime()))){
-			
-			return true;
-		}
-			
-		
-		return false;
+	public boolean hasStarted(Date currentTime) {
+		return (currentTime.after(startTime));
 	}
 	
+	public boolean hasFinished(Date currentTime) {
+		Log.i(Constants.TAG, currentTime.toLocaleString() + " " + endTime.toString());
+		return (currentTime.after(endTime));
+	}
+	
+	public boolean isHappeningNow(Date currentTime){
+		return (hasStarted(currentTime) && !hasFinished(currentTime));
+	}
+
+	@Override
+	public int compareTo(Event anotherInstance) {
+		return this.getStartTime().compareTo(anotherInstance.getStartTime());
+	}
 }

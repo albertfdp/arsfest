@@ -107,7 +107,7 @@ public class Location {
 		
 		for(Event event : this.getEvents()){
 			
-			if (event.happeningNow(currentTime))
+			if (event.isHappeningNow(currentTime))
 				now.add(event);
 		}
 		return now;

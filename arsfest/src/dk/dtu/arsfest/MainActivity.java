@@ -16,6 +16,7 @@ import com.korovyansk.android.slideout.SlideoutActivity;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
+import dk.dtu.arsfest.parser.JSONParser2;
 import dk.dtu.arsfest.parser.JsonParser;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
@@ -46,22 +47,13 @@ public class MainActivity extends Activity {
 
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
 	private ArrayList<Location> locations;
-	private ArrayList<Event> happeningNow;
 	private ArrayList<Bssid> bssids;
 	
 	private ViewPager viewPager;
 	private PagerAdapter pageAdapter;
 	private ScrollingTabsView scrollingTabs;
 	private TabsAdapter scrollingTabsAdapter;
-	
-	private Date currentDate;
-	private String arsfest_start_s = new String("03-05-2013:17:30");
-	private Date arsfest_start;
-	
 	private TextView headerTitle;
-	
-	private String currentTime_test_s = new String("03-05-2013:16:10");
-	private Date currentTime_test;
 	
 	private TextView closeEventTitle;
 	private TextView closeEventLocation;
@@ -78,26 +70,20 @@ public class MainActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 		setContentView(R.layout.activity_main);
-		initView();
-		
+		initView();		
 		
 		// Read from data.JSON
 		readJson();
 		
 		// start listener for happeningNow
-		startContextAwareness();
-		
-		
-		for (Location location : this.locations) {
-			Log.i("ARSFEST", location.getName());
-		}
-		
+		startContextAwareness();		
 		
 		// If it is before the start of arsfest shows countdown
 		
-		this.currentDate = getCurrentDate();
-		this.arsfest_start = getStartDate(this.arsfest_start_s);
-
+		Date currentDate = Utils.getCurrentDate();
+		Date arsfest_start = Utils.getStartDate(Constants.FEST_START_TIME);
+		closeEventLocation.setText("Now: " + currentDate + " start: " + arsfest_start);
+		
 		//create menu
 		
 				findViewById(R.id.actionBarAccordeon).setOnClickListener(
@@ -129,6 +115,7 @@ public class MainActivity extends Activity {
 		closeEventLocation = (TextView) findViewById(R.id.card_location);
 		closeEventTime = (TextView) findViewById(R.id.card_time);
 		closeEventHappening = (TextView) findViewById(R.id.card_happening_now);
+		
 	}
 	
 	private void startContextAwareness() {
@@ -149,11 +136,13 @@ public class MainActivity extends Activity {
 	}
 	
 	private void readJson() {
-			
-		JsonParser jsonParser;
+		
+		JSONParser2 jsonParser;
+		
 		try {
 			InputStream is = getAssets().open("data.JSON");
-			jsonParser = new JsonParser(is);
+			jsonParser = new JSONParser2(is);
+			
 			this.locations = jsonParser.readLocations();
 			this.bssids = jsonParser.readBssid();
 			
@@ -161,7 +150,8 @@ public class MainActivity extends Activity {
 			ArrayList<Event> allEvents = new ArrayList<Event>();
 			for (Location location : this.locations) {
 				for (Event event : location.getEvents()) {
-					allEvents.add(event);
+					if (event != null) 
+						allEvents.add(event);
 				}
 			}
 			this.locations.add(new Location("0", "ALL", allEvents));
@@ -256,36 +246,7 @@ public class MainActivity extends Activity {
 		return false;
 	}
 	
-	private Date getCurrentDate() {
-		
-		Date date = null;
-		Calendar c = Calendar.getInstance();
-
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd:HH:mm:ss");
-        String formattedDate = df.format(c.getTime());
-        try {
-			date = (Date) df.parse(formattedDate);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return date;
-	}
 	
-	private Date getStartDate(String date){
-		
-		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy:HH:mm");
-		Date start = null;
-		try {
-			start = (Date) formatter.parse(date);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return start;
-        	
-	}
 	
 	private void showCountdown(Date current, Date start){
 		
