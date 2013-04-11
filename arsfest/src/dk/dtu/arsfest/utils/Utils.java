@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.util.TimeZone;
 
 import dk.dtu.arsfest.R;
 
@@ -58,7 +57,7 @@ public class Utils {
 		} else if (theme.equals(Constants.EVENT_TYPE_DANCE)) {
 			return context.getResources().getDrawable(R.drawable.ticket);
 		} else {
-			return context.getResources().getDrawable(R.drawable.bar);
+			return context.getResources().getDrawable(R.drawable.music);
 		}
 	}
 
