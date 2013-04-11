@@ -48,7 +48,6 @@ public class MainActivity extends Activity {
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
 	
 	private ArrayList<Location> locations;
-	private ArrayList<Event> happeningNow;
 	private ArrayList<Bssid> bssids;
 
 	private ViewPager viewPager;
@@ -92,7 +91,7 @@ public class MainActivity extends Activity {
 		// create menu
 
 		// inflate the list view with the events
-		inflateView();
+		initViewPager(1,contextAwareHelper.getEventsHappeningNow());
 	}
 	
 	@Override
@@ -107,12 +106,10 @@ public class MainActivity extends Activity {
 		
 		//get Location Awareness
 		currentLocation = contextAwareHelper.getCurrentLocation();
-		headerTitle.setText(currentLocation);
 		
-		//get Time Awareness
-		happeningNow = contextAwareHelper.getEventsHappeningNow();
+		//get Time && Location Awareness
+		initViewPager(contextAwareHelper.getLocationArrayPosition(currentLocation),contextAwareHelper.getEventsHappeningNow());
 		
-				
 		// inflate card with event data
 		happeningNowTitle.setText(this.getResources().getString(R.string.event_happening_now));
 				
@@ -184,11 +181,11 @@ public class MainActivity extends Activity {
 
 	}
 
-	private void initViewPager(int pageCount) {
+	private void initViewPager(int pos, ArrayList<Event> happeningNow) {
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		pageAdapter = new CustomPageAdapter(this, this.locations);
 		viewPager.setAdapter(pageAdapter);
-		viewPager.setCurrentItem(1);
+		viewPager.setCurrentItem(pos);
 		viewPager.setPageMargin(1);
 
 		scrollingTabs = (ScrollingTabsView) findViewById(R.id.scrolling_tabs);
@@ -198,10 +195,11 @@ public class MainActivity extends Activity {
 
 		// happening now
 		//this.happeningNow = this.locations.get(1).getEvents();
-		happeningNow = contextAwareHelper.getEventsHappeningNow();
+		
+		happeningNow = contextAwareHelper.getEventsHappeningNow();			
 
 		lineViewPager = (ViewPager) findViewById(R.id.linepager);
-		linePageAdapter = new CustomLinePagerAdapter(this, this.locations, this.happeningNow);
+		linePageAdapter = new CustomLinePagerAdapter(this, this.locations, happeningNow);
 		lineViewPager.setAdapter(linePageAdapter);
 		lineViewPager.setCurrentItem(0);
 		lineViewPager.setPageMargin(1);
@@ -210,10 +208,6 @@ public class MainActivity extends Activity {
 		mLine.setFadeOutDelay(0);
 		mLine.setBackgroundColor(this.getResources().getColor(R.color.flat_lila));
 		mLine.setViewPager(lineViewPager);
-	}
-
-	private void inflateView() {
-		initViewPager(this.locations.size());
 	}
 
 	/**

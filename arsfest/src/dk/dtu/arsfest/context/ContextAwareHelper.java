@@ -20,18 +20,24 @@ public class ContextAwareHelper {
 	ArrayList<Bssid> bssids;
 	ArrayList<Location> locations;
 	String currentLocation;
+	ArrayList<Event> eventsNow;
 	
 	public ContextAwareHelper(Context context,ArrayList<Bssid> bssids,ArrayList<Location> locations){
 		
 		this.context = context;
 		this.bssids = bssids;
 		this.locations = locations;
-		this.currentLocation = "l1";
+		this.currentLocation = "l2";
+		
 		
 	}
 	
 	public String getCurrentLocation(){
 		return currentLocation;
+	}
+	
+	public ArrayList<Event> getEventsNow(){
+		return eventsNow;
 	}
 	
 	public void startContextAwareness() {
@@ -49,6 +55,14 @@ public class ContextAwareHelper {
 		}
 		
 		//Time Awareness
+		/*if(isBeforeArsfest()){
+			eventsNow = 
+		}
+		else if(isAfterArsfest()){
+			
+		}
+		else
+			eventsNow = getEventsHappeningNow();*/
 		
 	}
 	
@@ -123,6 +137,44 @@ public class ContextAwareHelper {
 
 		return loc;
 
+	}
+	
+	private boolean isBeforeArsfest(){
+		
+		Date currentTime = Utils.getCurrentDate();
+		
+		for(Location loc : locations){
+			ArrayList<Event> events = loc.getEvents();
+			for(Event e : events){
+				if(currentTime.after(e.getStartTime()))
+					return true;
+			}
+		}
+		return false;
+	}
+	
+	private boolean isAfterArsfest(){
+		
+		Date currentTime = Utils.getCurrentDate();
+		
+		for(Location loc : locations){
+			ArrayList<Event> events = loc.getEvents();
+			for(Event e : events){
+				if(currentTime.before(e.getEndTime()))
+					return false;
+			}
+		}
+		return true;
+	}
+	
+	public int getLocationArrayPosition(String location_id){
+		
+		int i=0;
+		
+		while(!locations.get(i).getId().equals(location_id))
+			i++;
+		
+		return i;
 	}
 	
 
