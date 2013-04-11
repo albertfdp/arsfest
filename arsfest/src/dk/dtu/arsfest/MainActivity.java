@@ -80,7 +80,7 @@ public class MainActivity extends Activity {
 		readJson();
 		
 		// Create a new AlarmHelper
-		alarmHelper =  new AlarmHelper(this.getApplicationContext(),Constants.ALARM_FREQUENCY);
+		alarmHelper =  new AlarmHelper(this.getApplicationContext());
 
 		// Create a new ContextAwareHelper
 		contextAwareHelper = new ContextAwareHelper(this.getApplicationContext(), bssids, locations);
