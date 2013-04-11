@@ -68,7 +68,7 @@ public class CustomPageAdapter extends PagerAdapter {
 				Event clickedEvent = locations.get(tabPos).getEvents().get(itemPosition);
 				
 				// get location of the clicked event
-				Location clickedLocation = locations.get(tabPos);
+				Location clickedLocation = getClickedLocation(clickedEvent.getLocation());
 				
 				Intent intent = new Intent(mContext, EventActivity.class);
 				intent.putExtra(Constants.EXTRA_EVENT, clickedEvent);
@@ -79,6 +79,14 @@ public class CustomPageAdapter extends PagerAdapter {
 		});
 		((ViewPager) container).addView(listView, 0);
 		return listView;
+	}
+	
+	private Location getClickedLocation(String locationId) {
+		for (Location location : locations) {
+			if (location.getId().equals(locationId))
+				return location;
+		}
+		return locations.get(0);
 	}
 	
 	private int getNextEvent() {
