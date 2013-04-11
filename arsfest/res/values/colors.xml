@@ -3,9 +3,12 @@
     
     <color name="flat_red">#fb3838</color>
     <color name="flat_black">#2e2e2e</color>
-    <color name="flat_white">#ebebeb</color>
+   <!--  <color name="flat_white">#ebebeb</color> -->
+   	<color name="flat_white">#ffffff</color>
     <color name="flat_grey">#454545</color>
     <color name="flat_blue">#3bbede</color>
+    <color name="flat_light_grey">#e5e5e5</color>
+    <color name="flat_greyed">#ebebeb</color>
     
     <color name="flat_lila">#662c92</color>
     
