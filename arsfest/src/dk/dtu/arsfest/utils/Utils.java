@@ -6,9 +6,12 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
+import dk.dtu.arsfest.R;
+
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 public class Utils {
@@ -43,6 +46,20 @@ public class Utils {
 	public static String getEventStringTime(Date date) {
 		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.FRANCE);
 		return sdf.format(date);
+	}
+	
+	public static Drawable getDrawable(Context context, String theme) {
+		if (theme.equals(Constants.EVENT_TYPE_MUSIC)) {
+			return context.getResources().getDrawable(R.drawable.music);
+		} else if (theme.equals(Constants.EVENT_TYPE_OFFICIAL)) {
+			return context.getResources().getDrawable(R.drawable.prize);
+		} else if (theme.equals(Constants.EVENT_TYPE_FOOD)) {
+			return context.getResources().getDrawable(R.drawable.shop);
+		} else if (theme.equals(Constants.EVENT_TYPE_DANCE)) {
+			return context.getResources().getDrawable(R.drawable.ticket);
+		} else {
+			return context.getResources().getDrawable(R.drawable.bar);
+		}
 	}
 
 }

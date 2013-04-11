@@ -13,7 +13,7 @@
     <com.astuetz.viewpager.extensions.IndicatorLineView
         android:id="@+id/line"
         android:layout_width="fill_parent"
-        android:layout_height="1dip"
+        android:layout_height="5dip"
         android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

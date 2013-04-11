@@ -60,14 +60,8 @@ public class MainActivity extends Activity {
 	private ScrollingTabsView scrollingTabs;
 	private TabsAdapter scrollingTabsAdapter;
 	private TextView headerTitle;
+	private TextView happeningNowTitle;
 	private String currentLocation;
-
-	private TextView closeEventTitle;
-	private TextView closeEventLocation;
-	private TextView closeEventTime;
-	private TextView closeEventDistance;
-	private ImageView closeEventPicture;
-	private TextView closeEventHappening;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -162,20 +156,9 @@ public class MainActivity extends Activity {
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
 		headerTitle.setText(Constants.APP_NAME);
-		/*
-		 * closeEventTitle = (TextView) findViewById(R.id.event_title);
-		 * closeEventLocation = (TextView) findViewById(R.id.event_location);
-		 * closeEventTime = (TextView) findViewById(R.id.event_time);
-		 * closeEventHappening = (TextView)
-		 * findViewById(R.id.card_happening_now); closeEventDistance =
-		 * (TextView) findViewById(R.id.event_status); Typeface neoType =
-		 * Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS);
-		 * closeEventTitle.setTypeface(neoType);
-		 * closeEventLocation.setTypeface(neoType);
-		 * closeEventTime.setTypeface(neoType);
-		 * closeEventHappening.setTypeface(Utils.getTypeface(this,
-		 * Constants.TYPEFONT_PROXIMANOVA));
-		 */
+		
+		happeningNowTitle = (TextView) findViewById(R.id.card_happening_now);
+		happeningNowTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
 	}
 
 	private void startContextAwareness() {
@@ -215,17 +198,10 @@ public class MainActivity extends Activity {
 
 		// get best event
 		Event closeEvent = this.locations.get(1).getEvents().get(0);
-
+		
 		// inflate card with event data
-		/*
-		 * closeEventTitle.setText(closeEvent.getName());
-		 * closeEventLocation.setText(this.locations.get(1).getName());
-		 * closeEventTime
-		 * .setText(Utils.getEventStringTime(closeEvent.getStartTime()));
-		 * closeEventDistance.setText("10 m");
-		 * closeEventHappening.setText("Happening now".toUpperCase());
-		 */
-
+		happeningNowTitle.setText(this.getResources().getString(R.string.event_happening_now));
+		
 		// sort events
 
 	}
@@ -281,12 +257,13 @@ public class MainActivity extends Activity {
 		this.happeningNow = this.locations.get(1).getEvents();
 
 		lineViewPager = (ViewPager) findViewById(R.id.linepager);
-		linePageAdapter = new CustomLinePagerAdapter(this, this.happeningNow);
+		linePageAdapter = new CustomLinePagerAdapter(this, this.locations, this.happeningNow);
 		lineViewPager.setAdapter(linePageAdapter);
-		lineViewPager.setCurrentItem(1);
+		lineViewPager.setCurrentItem(0);
 		lineViewPager.setPageMargin(1);
 
 		mLine = (IndicatorLineView) findViewById(R.id.line);
+		mLine.setFadeOutDelay(0);
 		mLine.setViewPager(lineViewPager);
 	}
 

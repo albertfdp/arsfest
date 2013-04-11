@@ -51,23 +51,19 @@ public class EventAdapter extends ArrayAdapter <Event>{
 				eventLocation.setText(getLocationName(event.getLocation()));
 				eventTime.setText(Utils.getEventStringTime(event.getStartTime()));
 				if (event.hasFinished(Utils.getCurrentDate())) {
+					eventTitle.setTextColor(context.getResources().getColor(R.color.grey));
+					eventLocation.setTextColor(context.getResources().getColor(R.color.grey));
+					eventTime.setTextColor(context.getResources().getColor(R.color.grey));
 					view.setBackgroundColor(context.getResources().getColor(R.color.flat_white));
 					eventStatus.setText(context.getResources().getString(R.string.event_finished));
 				} else {
+					eventTitle.setTextColor(context.getResources().getColor(R.color.flat_grey));
+					eventLocation.setTextColor(context.getResources().getColor(R.color.flat_grey));
+					eventTime.setTextColor(context.getResources().getColor(R.color.flat_blue));
 					view.setBackgroundColor(context.getResources().getColor(R.color.white));
 					eventStatus.setText("");
 				}
-				if (event.getTheme().equals(Constants.EVENT_TYPE_MUSIC)) {
-					eventImage.setImageResource(R.drawable.music);
-				} else if (event.getTheme().equals(Constants.EVENT_TYPE_OFFICIAL)) {
-					eventImage.setImageResource(R.drawable.prize);
-				} else if (event.getTheme().equals(Constants.EVENT_TYPE_FOOD)) {
-					eventImage.setImageResource(R.drawable.shop);
-				} else if (event.getTheme().equals(Constants.EVENT_TYPE_DANCE)) {
-					eventImage.setImageResource(R.drawable.ticket);
-				} else {
-					eventImage.setImageResource(R.drawable.bar);
-				}
+				eventImage.setImageDrawable(Utils.getDrawable(context, event.getTheme()));
 			}
 		}
 		return view;
