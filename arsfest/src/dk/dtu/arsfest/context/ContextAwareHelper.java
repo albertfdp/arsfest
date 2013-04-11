@@ -2,6 +2,7 @@ package dk.dtu.arsfest.context;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import android.content.Context;
@@ -11,6 +12,7 @@ import dk.dtu.arsfest.model.Bssid;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.utils.Constants;
+import dk.dtu.arsfest.utils.Utils;
 
 public class ContextAwareHelper {
 	
@@ -28,25 +30,39 @@ public class ContextAwareHelper {
 		
 	}
 	
+	public String getCurrentLocation(){
+		return currentLocation;
+	}
 	
-	public String startContextAwareness() {
+	public void startContextAwareness() {
 
 		String result = "";
-		String location = currentLocation;
 		List<String> myWifiList;
 		
-		
-		// get current location
+		//Location Awareness
 		result = readWifi();
 		
 		if (result != null){
 			myWifiList = stringSsidsToList(result);
-			location = findLocation(myWifiList, bssids);
+			currentLocation = findLocation(myWifiList, bssids);
 			
 		}
 		
-		return location;
+		//Time Awareness
 		
+	}
+	
+	public ArrayList<Event> getEventsHappeningNow(){
+		
+		ArrayList<Event> happeningNow = new ArrayList<Event>();
+		Date currentDate = Utils.getCurrentDate();
+		
+		for (Location loc : this.locations) {
+			if(!loc.getName().equals("ALL"))
+				happeningNow.addAll(loc.happeningNow(currentDate));
+		}
+
+		return happeningNow;
 	}
 	
 	private String readWifi(){
@@ -108,5 +124,7 @@ public class ContextAwareHelper {
 		return loc;
 
 	}
+	
+
 
 }

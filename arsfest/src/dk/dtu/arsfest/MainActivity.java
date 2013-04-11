@@ -3,10 +3,8 @@ package dk.dtu.arsfest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
-import java.util.List;
 
 import com.astuetz.viewpager.extensions.IndicatorLineView;
 import com.astuetz.viewpager.extensions.ScrollingTabsView;
@@ -104,12 +102,16 @@ public class MainActivity extends Activity {
 		// Scan the BSSIDs every 60 seconds
 		alarmHelper.registerAlarmManager();
 		
-		// start listener for happeningNow
-		currentLocation = contextAwareHelper.startContextAwareness();
+		// start Context Awareness
+		contextAwareHelper.startContextAwareness();
+		
+		//get Location Awareness
+		currentLocation = contextAwareHelper.getCurrentLocation();
 		headerTitle.setText(currentLocation);
 		
-		// get best event
-		Event closeEvent = this.locations.get(1).getEvents().get(0);
+		//get Time Awareness
+		happeningNow = contextAwareHelper.getEventsHappeningNow();
+		
 				
 		// inflate card with event data
 		happeningNowTitle.setText(this.getResources().getString(R.string.event_happening_now));
@@ -195,7 +197,8 @@ public class MainActivity extends Activity {
 		scrollingTabs.setViewPager(viewPager);
 
 		// happening now
-		this.happeningNow = this.locations.get(1).getEvents();
+		//this.happeningNow = this.locations.get(1).getEvents();
+		happeningNow = contextAwareHelper.getEventsHappeningNow();
 
 		lineViewPager = (ViewPager) findViewById(R.id.linepager);
 		linePageAdapter = new CustomLinePagerAdapter(this, this.locations, this.happeningNow);
@@ -302,18 +305,6 @@ public class MainActivity extends Activity {
 
 		cdt.start();
 
-	}
-
-	private ArrayList<Event> happeningNow_List(Date currentTime) {
-
-		ArrayList<Event> now = new ArrayList<Event>();
-
-		for (Location loc : this.locations) {
-			Log.i("ARSFEST", "Aqui2");
-			now.addAll(loc.happeningNow(currentTime));
-		}
-
-		return now;
 	}
 	
 	private void startMenu(){
