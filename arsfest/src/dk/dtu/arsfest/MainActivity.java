@@ -13,6 +13,7 @@ import com.astuetz.viewpager.extensions.ScrollingTabsView;
 import com.astuetz.viewpager.extensions.TabsAdapter;
 import com.korovyansk.android.slideout.SlideoutActivity;
 
+import dk.dtu.arsfest.alarms.AlarmHelper;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
@@ -46,8 +47,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
-	private AlarmManagerBroadcastReceiver myBSSIDAlarm;
-
+	
 	private ArrayList<Location> locations;
 	private ArrayList<Event> happeningNow;
 	private ArrayList<Bssid> bssids;
@@ -62,13 +62,13 @@ public class MainActivity extends Activity {
 	private TextView headerTitle;
 	private TextView happeningNowTitle;
 	private String currentLocation;
+	
+	//After refactoring
+	private AlarmHelper alarmHelper;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		// Scan the BSSIDs every 60 seconds
-		registerAlarmManager(60);
 
 		// hide title bar
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -78,34 +78,30 @@ public class MainActivity extends Activity {
 
 		// Read from data.JSON
 		readJson();
-
-		// start listener for happeningNow
-		startContextAwareness();
+		
+		// Create a new AlarmHelper
+		alarmHelper =  new AlarmHelper(this.getApplicationContext(),Constants.ALARM_FREQUENCY);
 
 		// If it is before the start of arsfest shows countdown
-
+		/*
 		Date currentDate = Utils.getCurrentDate();
-		Date arsfest_start = Utils.getStartDate(Constants.FEST_START_TIME);
-
+		Date arsfest_start = Utils.getStartDate(Constants.FEST_START_TIME);*/
 		// create menu
-
-		findViewById(R.id.actionBarAccordeon).setOnClickListener(
-				new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						int width = (int) TypedValue.applyDimension(
-								TypedValue.COMPLEX_UNIT_DIP, 40, getResources()
-										.getDisplayMetrics());
-						SlideoutActivity.prepare(MainActivity.this,
-								R.id.MainLayout, width);
-						startActivity(new Intent(MainActivity.this,
-								MenuActivity.class));
-						overridePendingTransition(0, 0);
-					}
-				});
 
 		// inflate the list view with the events
 		inflateView();
+	}
+	
+	@Override
+	protected void onStart(){
+		super.onStart();
+		
+		// Scan the BSSIDs every 60 seconds
+		alarmHelper.registerAlarmManager();
+		
+		// start listener for happeningNow
+		startContextAwareness();
+		
 	}
 
 	@Override
@@ -119,35 +115,9 @@ public class MainActivity extends Activity {
 	protected void onDestroy() {
 		super.onStop();
 		// Cancels the Broadcast Receiver
-		unregisterAlarmManager();
+		alarmHelper.unregisterAlarmManager();
 	}
 
-	/**
-	 * Method setting alarm manager for location awareness
-	 * 
-	 * @author AA
-	 * @param alarmFrequency
-	 *            frequency of the updates
-	 */
-	private void registerAlarmManager(int alarmFrequency) {
-		myBSSIDAlarm = new AlarmManagerBroadcastReceiver();
-		Context appContext = this.getApplicationContext();
-		if (myBSSIDAlarm != null) {
-			myBSSIDAlarm.SetAlarm(appContext, alarmFrequency);
-		}
-	}
-
-	/**
-	 * Method to unregister alarm manager for location awareness
-	 * 
-	 * @author AA
-	 */
-	private void unregisterAlarmManager() {
-		Context appContext = this.getApplicationContext();
-		if (myBSSIDAlarm != null) {
-			myBSSIDAlarm.CancelAlarm(appContext);
-		}
-	}
 
 	private void initView() {
 
@@ -159,6 +129,8 @@ public class MainActivity extends Activity {
 		
 		happeningNowTitle = (TextView) findViewById(R.id.card_happening_now);
 		happeningNowTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
+		
+		startMenu();
 	}
 
 	private void startContextAwareness() {
@@ -397,6 +369,25 @@ public class MainActivity extends Activity {
 
 		return loc;
 
+	}
+	
+	private void startMenu(){
+		
+		findViewById(R.id.actionBarAccordeon).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						int width = (int) TypedValue.applyDimension(
+								TypedValue.COMPLEX_UNIT_DIP, 40, getResources()
+										.getDisplayMetrics());
+						SlideoutActivity.prepare(MainActivity.this,
+								R.id.MainLayout, width);
+						startActivity(new Intent(MainActivity.this,
+								MenuActivity.class));
+						overridePendingTransition(0, 0);
+					}
+				});
+		
 	}
 
 }

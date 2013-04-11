@@ -42,6 +42,8 @@ public class Constants {
 	public static final Object EVENT_TYPE_OFFICIAL = "official";
 	public static final Object EVENT_TYPE_FOOD = "food";
 	public static final Object EVENT_TYPE_DANCE = "dance";
+	
+	public static final int ALARM_FREQUENCY = 60;
 
 
 }
