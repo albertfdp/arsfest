@@ -264,6 +264,7 @@ public class MainActivity extends Activity {
 
 		mLine = (IndicatorLineView) findViewById(R.id.line);
 		mLine.setFadeOutDelay(0);
+		mLine.setBackgroundColor(this.getResources().getColor(R.color.flat_lila));
 		mLine.setViewPager(lineViewPager);
 	}
 

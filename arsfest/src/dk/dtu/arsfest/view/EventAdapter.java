@@ -54,7 +54,7 @@ public class EventAdapter extends ArrayAdapter <Event>{
 					eventTitle.setTextColor(context.getResources().getColor(R.color.grey));
 					eventLocation.setTextColor(context.getResources().getColor(R.color.grey));
 					eventTime.setTextColor(context.getResources().getColor(R.color.grey));
-					view.setBackgroundColor(context.getResources().getColor(R.color.flat_white));
+					view.setBackgroundColor(context.getResources().getColor(R.color.flat_greyed));
 					eventStatus.setText(context.getResources().getString(R.string.event_finished));
 				} else {
 					eventTitle.setTextColor(context.getResources().getColor(R.color.flat_grey));
