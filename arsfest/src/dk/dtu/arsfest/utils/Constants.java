@@ -43,6 +43,7 @@ public class Constants {
 	public static final Object EVENT_TYPE_FOOD = "food";
 	public static final Object EVENT_TYPE_DANCE = "dance";
 	
+	public static final String PREFS_NAME = "ArsFestPrefsFile";
 	public static final int ALARM_FREQUENCY = 60;
 
 

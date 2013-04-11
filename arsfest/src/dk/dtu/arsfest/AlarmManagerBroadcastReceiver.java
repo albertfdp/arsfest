@@ -3,6 +3,8 @@ package dk.dtu.arsfest;
 import java.util.ArrayList;
 import java.util.List;
 
+import dk.dtu.arsfest.utils.Constants;
+
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -16,7 +18,6 @@ import android.os.Bundle;
 public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 
 	final public static String ONE_TIME = "showThisOneTimeOnly";
-	public static final String PREFS_NAME = "ArsFestPrefsFile";
 	public ArrayList<String> sSIDs = new ArrayList<String>();
 
 	@Override
@@ -38,10 +39,8 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 	 *            Sets the application context
 	 */
 	private void saveTheResultInSharedPreferences(Context appContext) {
-		SharedPreferences settings = appContext.getSharedPreferences(PREFS_NAME, 0);
-		//SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+		SharedPreferences settings = appContext.getSharedPreferences(Constants.PREFS_NAME, 0);
 		SharedPreferences.Editor editor = settings.edit();
-		//editor.clear();
 		editor.putString("SSIDs", sSIDs.toString());
 		editor.commit();
 	}

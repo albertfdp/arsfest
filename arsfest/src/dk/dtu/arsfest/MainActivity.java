@@ -14,6 +14,7 @@ import com.astuetz.viewpager.extensions.TabsAdapter;
 import com.korovyansk.android.slideout.SlideoutActivity;
 
 import dk.dtu.arsfest.alarms.AlarmHelper;
+import dk.dtu.arsfest.context.ContextAwareHelper;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
@@ -65,6 +66,7 @@ public class MainActivity extends Activity {
 	
 	//After refactoring
 	private AlarmHelper alarmHelper;
+	private ContextAwareHelper contextAwareHelper;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +84,9 @@ public class MainActivity extends Activity {
 		// Create a new AlarmHelper
 		alarmHelper =  new AlarmHelper(this.getApplicationContext(),Constants.ALARM_FREQUENCY);
 
+		// Create a new ContextAwareHelper
+		contextAwareHelper = new ContextAwareHelper(this.getApplicationContext(), bssids, locations);
+		
 		// If it is before the start of arsfest shows countdown
 		/*
 		Date currentDate = Utils.getCurrentDate();
@@ -100,7 +105,16 @@ public class MainActivity extends Activity {
 		alarmHelper.registerAlarmManager();
 		
 		// start listener for happeningNow
-		startContextAwareness();
+		currentLocation = contextAwareHelper.startContextAwareness();
+		headerTitle.setText(currentLocation);
+		
+		// get best event
+		Event closeEvent = this.locations.get(1).getEvents().get(0);
+				
+		// inflate card with event data
+		happeningNowTitle.setText(this.getResources().getString(R.string.event_happening_now));
+				
+		// sort events
 		
 	}
 
@@ -131,51 +145,6 @@ public class MainActivity extends Activity {
 		happeningNowTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
 		
 		startMenu();
-	}
-
-	private void startContextAwareness() {
-
-		// get current location
-
-		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-		String result = settings.getString("SSIDs", null);
-
-		if (result != null) {
-			result = result.substring(1, result.length() - 1);
-
-			List<String> myWifiList = new ArrayList<String>(
-					Arrays.asList(result.split(", ")));
-
-			ArrayList<String> posLocations = new ArrayList<String>();
-
-			for (String s : myWifiList) {
-				for (Bssid bssid : this.bssids) {
-					if (bssid.compareBssid(s))
-						posLocations.add(bssid.getLocation());
-				}
-			}
-
-			if (posLocations.size() != 0) {
-				currentLocation = chooseLocation(posLocations);
-			}
-			if(posLocations.size()!=0){
-				currentLocation = chooseLocation(posLocations);
-				headerTitle.setText(currentLocation);
-			}
-			else
-				headerTitle.setText("CACAFUTI");
-		}
-		
-		
-
-		// get best event
-		Event closeEvent = this.locations.get(1).getEvents().get(0);
-		
-		// inflate card with event data
-		happeningNowTitle.setText(this.getResources().getString(R.string.event_happening_now));
-		
-		// sort events
-
 	}
 
 	private void readJson() {
@@ -345,30 +314,6 @@ public class MainActivity extends Activity {
 		}
 
 		return now;
-	}
-
-	private String chooseLocation(ArrayList<String> posLocations) {
-
-		int final_count = -1;
-		int count = 0, i = 0, j = 0;
-		String loc = "", elem = "", elem_j = "";
-
-		for (i = 0; i < posLocations.size(); i++) {
-			count = 0;
-			elem = posLocations.get(i);
-			for (j = i; j < posLocations.size(); j++) {
-				elem_j = posLocations.get(j);
-				if (elem.equals(elem_j))
-					count++;
-			}
-
-			if (count > final_count) {
-				loc = elem;
-			}
-		}
-
-		return loc;
-
 	}
 	
 	private void startMenu(){
