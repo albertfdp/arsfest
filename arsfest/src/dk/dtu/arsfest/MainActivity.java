@@ -47,11 +47,11 @@ public class MainActivity extends Activity {
 
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
 	private AlarmManagerBroadcastReceiver myBSSIDAlarm;
-	
+
 	private ArrayList<Location> locations;
 	private ArrayList<Event> happeningNow;
 	private ArrayList<Bssid> bssids;
-	
+
 	private ViewPager viewPager;
 	private PagerAdapter pageAdapter;
 	private ViewPager lineViewPager;
@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
 	private TabsAdapter scrollingTabsAdapter;
 	private TextView headerTitle;
 	private String currentLocation;
-	
+
 	private TextView closeEventTitle;
 	private TextView closeEventLocation;
 	private TextView closeEventTime;
@@ -69,62 +69,62 @@ public class MainActivity extends Activity {
 	private ImageView closeEventPicture;
 	private TextView closeEventHappening;
 
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		// Scan the BSSIDs every 60 seconds
 		registerAlarmManager(60);
-		
+
 		// hide title bar
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 		setContentView(R.layout.activity_main);
-		initView();		
-		
+		initView();
+
 		// Read from data.JSON
 		readJson();
-		
+
 		// start listener for happeningNow
-		startContextAwareness();		
-		
+		startContextAwareness();
+
 		// If it is before the start of arsfest shows countdown
-		
+
 		Date currentDate = Utils.getCurrentDate();
 		Date arsfest_start = Utils.getStartDate(Constants.FEST_START_TIME);
-		
-		//create menu
-		
-				findViewById(R.id.actionBarAccordeon).setOnClickListener(
-						new View.OnClickListener() {
-							@Override
-							public void onClick(View v) {
-								int width = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics());
-								SlideoutActivity.prepare(MainActivity.this, R.id.MainLayout, width);
-								startActivity(new Intent(MainActivity.this,
-										MenuActivity.class));
-								overridePendingTransition(0, 0);
-							}
-						});
-		
-		
-		
+
+		// create menu
+
+		findViewById(R.id.actionBarAccordeon).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						int width = (int) TypedValue.applyDimension(
+								TypedValue.COMPLEX_UNIT_DIP, 40, getResources()
+										.getDisplayMetrics());
+						SlideoutActivity.prepare(MainActivity.this,
+								R.id.MainLayout, width);
+						startActivity(new Intent(MainActivity.this,
+								MenuActivity.class));
+						overridePendingTransition(0, 0);
+					}
+				});
+
 		// inflate the list view with the events
 		inflateView();
 	}
-	
+
 	@Override
 	protected void onResume() {
 		super.onResume();
-		//Prompts user to enable WiFi
+		// Prompts user to enable WiFi
 		enableYourWiFiGotDammIt();
 	}
 
 	@Override
 	protected void onDestroy() {
 		super.onStop();
-		//Cancels the Broadcast Receiver
+		// Cancels the Broadcast Receiver
 		unregisterAlarmManager();
 	}
 
@@ -154,139 +154,146 @@ public class MainActivity extends Activity {
 			myBSSIDAlarm.CancelAlarm(appContext);
 		}
 	}
-	
+
 	private void initView() {
-		
+
 		// update the font type of the header
 		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
-		headerTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
+		headerTitle.setTypeface(Utils.getTypeface(this,
+				Constants.TYPEFONT_PROXIMANOVA));
 		headerTitle.setText(Constants.APP_NAME);
 		/*
-		closeEventTitle = (TextView) findViewById(R.id.event_title);
-		closeEventLocation = (TextView) findViewById(R.id.event_location);
-		closeEventTime = (TextView) findViewById(R.id.event_time);
-		closeEventHappening = (TextView) findViewById(R.id.card_happening_now);
-		closeEventDistance = (TextView) findViewById(R.id.event_status);
-		Typeface neoType = Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS);
-		closeEventTitle.setTypeface(neoType);
-		closeEventLocation.setTypeface(neoType);
-		closeEventTime.setTypeface(neoType);
-		closeEventHappening.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
-		*/
+		 * closeEventTitle = (TextView) findViewById(R.id.event_title);
+		 * closeEventLocation = (TextView) findViewById(R.id.event_location);
+		 * closeEventTime = (TextView) findViewById(R.id.event_time);
+		 * closeEventHappening = (TextView)
+		 * findViewById(R.id.card_happening_now); closeEventDistance =
+		 * (TextView) findViewById(R.id.event_status); Typeface neoType =
+		 * Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS);
+		 * closeEventTitle.setTypeface(neoType);
+		 * closeEventLocation.setTypeface(neoType);
+		 * closeEventTime.setTypeface(neoType);
+		 * closeEventHappening.setTypeface(Utils.getTypeface(this,
+		 * Constants.TYPEFONT_PROXIMANOVA));
+		 */
 	}
-	
+
 	private void startContextAwareness() {
-		
+
 		// get current location
 
-		
 		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 		String result = settings.getString("SSIDs", null);
-		
-		result = result.substring(1, result.length()-1);
-		
-		Log.i("Arsfest",result);
-		List<String> myWifiList = new ArrayList<String>(Arrays.asList(result.split(", ")));
-		
-		//ArrayList<String> ps = new ArrayList<String>(); //should be the list of bssids recieved
-		
-		ArrayList<String> posLocations = new ArrayList<String>();
-		
-		for(String s : myWifiList){
-			for (Bssid bssid : this.bssids){
-				if(bssid.compareBssid(s))
-					posLocations.add(bssid.getLocation());
+
+		if (result != null) {
+			result = result.substring(1, result.length() - 1);
+
+			List<String> myWifiList = new ArrayList<String>(
+					Arrays.asList(result.split(", ")));
+
+			ArrayList<String> posLocations = new ArrayList<String>();
+
+			for (String s : myWifiList) {
+				for (Bssid bssid : this.bssids) {
+					if (bssid.compareBssid(s))
+						posLocations.add(bssid.getLocation());
+				}
 			}
+
+			if (posLocations.size() != 0) {
+				currentLocation = chooseLocation(posLocations);
+			}
+			if(posLocations.size()!=0){
+				currentLocation = chooseLocation(posLocations);
+				headerTitle.setText(currentLocation);
+			}
+			else
+				headerTitle.setText("CACAFUTI");
 		}
 		
-		if(posLocations.size()!=0){
-			currentLocation = chooseLocation(posLocations);
-			headerTitle.setText(currentLocation);
-		}
-		else
-			headerTitle.setText("CACAFUTI");
 		
+
 		// get best event
 		Event closeEvent = this.locations.get(1).getEvents().get(0);
 
 		// inflate card with event data
 		/*
-		closeEventTitle.setText(closeEvent.getName());
-		closeEventLocation.setText(this.locations.get(1).getName());
-		closeEventTime.setText(Utils.getEventStringTime(closeEvent.getStartTime()));
-		closeEventDistance.setText("10 m");
-		closeEventHappening.setText("Happening now".toUpperCase());
-		*/
-		
+		 * closeEventTitle.setText(closeEvent.getName());
+		 * closeEventLocation.setText(this.locations.get(1).getName());
+		 * closeEventTime
+		 * .setText(Utils.getEventStringTime(closeEvent.getStartTime()));
+		 * closeEventDistance.setText("10 m");
+		 * closeEventHappening.setText("Happening now".toUpperCase());
+		 */
+
 		// sort events
-		
+
 	}
-	
+
 	private void readJson() {
-		
+
 		JSONParser jsonParser;
-		
+
 		try {
 			InputStream is = getAssets().open("data.JSON");
 			jsonParser = new JSONParser(is);
-			
+
 			this.locations = jsonParser.readLocations();
 			this.bssids = jsonParser.readBssid();
-			
+
 			// all events
 			ArrayList<Event> allEvents = new ArrayList<Event>();
 			for (Location location : this.locations) {
 				for (Event event : location.getEvents()) {
-					if (event != null) 
+					if (event != null)
 						allEvents.add(event);
 				}
 			}
 			this.locations.add(new Location("0", "ALL", allEvents));
-						
+
 			// get position of 'all'
 			int allPos = this.locations.size() - 1;
 			Collections.swap(this.locations, allPos, 0);
-			
+
 			for (Location location : locations) {
 				location.sortEventsByTime();
 			}
-			
+
 		} catch (IOException e) {
 			Log.i("ARSFEST", e.getMessage());
 		}
-		
+
 	}
-	
+
 	private void initViewPager(int pageCount) {
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		pageAdapter = new CustomPageAdapter(this, this.locations);
 		viewPager.setAdapter(pageAdapter);
 		viewPager.setCurrentItem(1);
 		viewPager.setPageMargin(1);
-		
+
 		scrollingTabs = (ScrollingTabsView) findViewById(R.id.scrolling_tabs);
 		scrollingTabsAdapter = new LocationTabs(this, this.locations);
 		scrollingTabs.setAdapter(scrollingTabsAdapter);
 		scrollingTabs.setViewPager(viewPager);
-		
+
 		// happening now
 		this.happeningNow = this.locations.get(1).getEvents();
-		
+
 		lineViewPager = (ViewPager) findViewById(R.id.linepager);
 		linePageAdapter = new CustomLinePagerAdapter(this, this.happeningNow);
 		lineViewPager.setAdapter(linePageAdapter);
 		lineViewPager.setCurrentItem(1);
 		lineViewPager.setPageMargin(1);
-		
+
 		mLine = (IndicatorLineView) findViewById(R.id.line);
 		mLine.setViewPager(lineViewPager);
 	}
-	
+
 	private void inflateView() {
 		initViewPager(this.locations.size());
 	}
 
-		
 	/**
 	 * Method prompting user to enable WiFi
 	 * 
@@ -346,76 +353,72 @@ public class MainActivity extends Activity {
 		}
 		return false;
 	}
-	
-	
-	
-	private void showCountdown(Date current, Date start){
-		
-		
-	    CountDownTimer cdt = new CountDownTimer(start.getTime() - current.getTime(), 1000) {
 
-	    	@Override
-	        public void onTick(long millisUntilFinished) {
-	            
-	        	TextView days = (TextView) findViewById(R.id.textDays);
-	        	TextView hours = (TextView) findViewById(R.id.textHours);
-	        	TextView mins = (TextView) findViewById(R.id.textMinutes);
-	        	int daysValue = (int) (millisUntilFinished / 86400000);
-	        	int hoursValue = (int) (((millisUntilFinished / 1000) - (daysValue * 86400)) / 3600);
-	        	int minsValue = (int) (((millisUntilFinished / 1000) - ((daysValue * 86400) + (hoursValue * 3600))) / 60);
-	        	days.setText(String.valueOf(daysValue));
-	        	hours.setText(String.valueOf(hoursValue));
-	        	mins.setText(String.valueOf(minsValue));
+	private void showCountdown(Date current, Date start) {
 
-	        }
+		CountDownTimer cdt = new CountDownTimer(start.getTime()
+				- current.getTime(), 1000) {
+
+			@Override
+			public void onTick(long millisUntilFinished) {
+
+				TextView days = (TextView) findViewById(R.id.textDays);
+				TextView hours = (TextView) findViewById(R.id.textHours);
+				TextView mins = (TextView) findViewById(R.id.textMinutes);
+				int daysValue = (int) (millisUntilFinished / 86400000);
+				int hoursValue = (int) (((millisUntilFinished / 1000) - (daysValue * 86400)) / 3600);
+				int minsValue = (int) (((millisUntilFinished / 1000) - ((daysValue * 86400) + (hoursValue * 3600))) / 60);
+				days.setText(String.valueOf(daysValue));
+				hours.setText(String.valueOf(hoursValue));
+				mins.setText(String.valueOf(minsValue));
+
+			}
 
 			@Override
 			public void onFinish() {
 				// TODO Auto-generated method stub
-				
+
 			}
-	    };
-		
-	    cdt.start();
-		 
+		};
+
+		cdt.start();
+
 	}
-	
+
 	private ArrayList<Event> happeningNow_List(Date currentTime) {
-		
+
 		ArrayList<Event> now = new ArrayList<Event>();
-		
-		for(Location loc : this.locations){
+
+		for (Location loc : this.locations) {
 			Log.i("ARSFEST", "Aqui2");
 			now.addAll(loc.happeningNow(currentTime));
 		}
-		
+
 		return now;
 	}
-	
-	private String chooseLocation(ArrayList<String> posLocations){
-		
+
+	private String chooseLocation(ArrayList<String> posLocations) {
+
 		int final_count = -1;
-		int count = 0,i = 0, j = 0;
+		int count = 0, i = 0, j = 0;
 		String loc = "", elem = "", elem_j = "";
-		
-		for(i=0; i< posLocations.size() ; i++){
+
+		for (i = 0; i < posLocations.size(); i++) {
 			count = 0;
 			elem = posLocations.get(i);
-			for(j=i; j < posLocations.size(); j++){
+			for (j = i; j < posLocations.size(); j++) {
 				elem_j = posLocations.get(j);
-				if(elem.equals(elem_j))
+				if (elem.equals(elem_j))
 					count++;
 			}
-			
-			if (count > final_count){
+
+			if (count > final_count) {
 				loc = elem;
 			}
 		}
-		
-		
+
 		return loc;
-		
+
 	}
-	
-	
+
 }
