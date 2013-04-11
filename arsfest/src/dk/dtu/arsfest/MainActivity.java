@@ -3,16 +3,16 @@ package dk.dtu.arsfest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
-import java.util.List;
 
 import com.astuetz.viewpager.extensions.IndicatorLineView;
 import com.astuetz.viewpager.extensions.ScrollingTabsView;
 import com.astuetz.viewpager.extensions.TabsAdapter;
 import com.korovyansk.android.slideout.SlideoutActivity;
 
+import dk.dtu.arsfest.alarms.AlarmHelper;
+import dk.dtu.arsfest.context.ContextAwareHelper;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
@@ -46,8 +46,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
-	private AlarmManagerBroadcastReceiver myBSSIDAlarm;
-
+	
 	private ArrayList<Location> locations;
 	private ArrayList<Event> happeningNow;
 	private ArrayList<Bssid> bssids;
@@ -62,13 +61,14 @@ public class MainActivity extends Activity {
 	private TextView headerTitle;
 	private TextView happeningNowTitle;
 	private String currentLocation;
+	
+	//After refactoring
+	private AlarmHelper alarmHelper;
+	private ContextAwareHelper contextAwareHelper;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		// Scan the BSSIDs every 60 seconds
-		registerAlarmManager(60);
 
 		// hide title bar
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -78,34 +78,46 @@ public class MainActivity extends Activity {
 
 		// Read from data.JSON
 		readJson();
+		
+		// Create a new AlarmHelper
+		alarmHelper =  new AlarmHelper(this.getApplicationContext(),Constants.ALARM_FREQUENCY);
 
-		// start listener for happeningNow
-		startContextAwareness();
-
+		// Create a new ContextAwareHelper
+		contextAwareHelper = new ContextAwareHelper(this.getApplicationContext(), bssids, locations);
+		
 		// If it is before the start of arsfest shows countdown
-
+		/*
 		Date currentDate = Utils.getCurrentDate();
-		Date arsfest_start = Utils.getStartDate(Constants.FEST_START_TIME);
-
+		Date arsfest_start = Utils.getStartDate(Constants.FEST_START_TIME);*/
 		// create menu
-
-		findViewById(R.id.actionBarAccordeon).setOnClickListener(
-				new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						int width = (int) TypedValue.applyDimension(
-								TypedValue.COMPLEX_UNIT_DIP, 40, getResources()
-										.getDisplayMetrics());
-						SlideoutActivity.prepare(MainActivity.this,
-								R.id.MainLayout, width);
-						startActivity(new Intent(MainActivity.this,
-								MenuActivity.class));
-						overridePendingTransition(0, 0);
-					}
-				});
 
 		// inflate the list view with the events
 		inflateView();
+	}
+	
+	@Override
+	protected void onStart(){
+		super.onStart();
+		
+		// Scan the BSSIDs every 60 seconds
+		alarmHelper.registerAlarmManager();
+		
+		// start Context Awareness
+		contextAwareHelper.startContextAwareness();
+		
+		//get Location Awareness
+		currentLocation = contextAwareHelper.getCurrentLocation();
+		headerTitle.setText(currentLocation);
+		
+		//get Time Awareness
+		happeningNow = contextAwareHelper.getEventsHappeningNow();
+		
+				
+		// inflate card with event data
+		happeningNowTitle.setText(this.getResources().getString(R.string.event_happening_now));
+				
+		// sort events
+		
 	}
 
 	@Override
@@ -119,35 +131,9 @@ public class MainActivity extends Activity {
 	protected void onDestroy() {
 		super.onStop();
 		// Cancels the Broadcast Receiver
-		unregisterAlarmManager();
+		alarmHelper.unregisterAlarmManager();
 	}
 
-	/**
-	 * Method setting alarm manager for location awareness
-	 * 
-	 * @author AA
-	 * @param alarmFrequency
-	 *            frequency of the updates
-	 */
-	private void registerAlarmManager(int alarmFrequency) {
-		myBSSIDAlarm = new AlarmManagerBroadcastReceiver();
-		Context appContext = this.getApplicationContext();
-		if (myBSSIDAlarm != null) {
-			myBSSIDAlarm.SetAlarm(appContext, alarmFrequency);
-		}
-	}
-
-	/**
-	 * Method to unregister alarm manager for location awareness
-	 * 
-	 * @author AA
-	 */
-	private void unregisterAlarmManager() {
-		Context appContext = this.getApplicationContext();
-		if (myBSSIDAlarm != null) {
-			myBSSIDAlarm.CancelAlarm(appContext);
-		}
-	}
 
 	private void initView() {
 
@@ -159,51 +145,8 @@ public class MainActivity extends Activity {
 		
 		happeningNowTitle = (TextView) findViewById(R.id.card_happening_now);
 		happeningNowTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
-	}
-
-	private void startContextAwareness() {
-
-		// get current location
-
-		/* JAVIER do it like this: */
-
-		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-		String result = settings.getString("SSIDs", null);
-
-		if (result != null) {
-			result = result.substring(1, result.length() - 1);
-
-			Log.i("Arsfest", result);
-			List<String> myWifiList = new ArrayList<String>(
-					Arrays.asList(result.split(", ")));
-
-			// ArrayList<String> ps = new ArrayList<String>(); //should be the
-			// list of bssids recieved
-
-			ArrayList<String> posLocations = new ArrayList<String>();
-
-			for (String s : myWifiList) {
-				for (Bssid bssid : this.bssids) {
-					if (bssid.compareBssid(s))
-						posLocations.add(bssid.getLocation());
-				}
-			}
-
-			if (posLocations.size() != 0) {
-				currentLocation = chooseLocation(posLocations);
-			}
-		} else {
-			currentLocation = "l0";
-		}
-
-		// get best event
-		Event closeEvent = this.locations.get(1).getEvents().get(0);
 		
-		// inflate card with event data
-		happeningNowTitle.setText(this.getResources().getString(R.string.event_happening_now));
-		
-		// sort events
-
+		startMenu();
 	}
 
 	private void readJson() {
@@ -254,7 +197,8 @@ public class MainActivity extends Activity {
 		scrollingTabs.setViewPager(viewPager);
 
 		// happening now
-		this.happeningNow = this.locations.get(1).getEvents();
+		//this.happeningNow = this.locations.get(1).getEvents();
+		happeningNow = contextAwareHelper.getEventsHappeningNow();
 
 		lineViewPager = (ViewPager) findViewById(R.id.linepager);
 		linePageAdapter = new CustomLinePagerAdapter(this, this.locations, this.happeningNow);
@@ -362,41 +306,24 @@ public class MainActivity extends Activity {
 		cdt.start();
 
 	}
-
-	private ArrayList<Event> happeningNow_List(Date currentTime) {
-
-		ArrayList<Event> now = new ArrayList<Event>();
-
-		for (Location loc : this.locations) {
-			Log.i("ARSFEST", "Aqui2");
-			now.addAll(loc.happeningNow(currentTime));
-		}
-
-		return now;
-	}
-
-	private String chooseLocation(ArrayList<String> posLocations) {
-
-		int final_count = -1;
-		int count = 0, i = 0, j = 0;
-		String loc = "", elem = "", elem_j = "";
-
-		for (i = 0; i < posLocations.size(); i++) {
-			count = 0;
-			elem = posLocations.get(i);
-			for (j = i; j < posLocations.size(); j++) {
-				elem_j = posLocations.get(j);
-				if (elem.equals(elem_j))
-					count++;
-			}
-
-			if (count > final_count) {
-				loc = elem;
-			}
-		}
-
-		return loc;
-
+	
+	private void startMenu(){
+		
+		findViewById(R.id.actionBarAccordeon).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						int width = (int) TypedValue.applyDimension(
+								TypedValue.COMPLEX_UNIT_DIP, 40, getResources()
+										.getDisplayMetrics());
+						SlideoutActivity.prepare(MainActivity.this,
+								R.id.MainLayout, width);
+						startActivity(new Intent(MainActivity.this,
+								MenuActivity.class));
+						overridePendingTransition(0, 0);
+					}
+				});
+		
 	}
 
 }
