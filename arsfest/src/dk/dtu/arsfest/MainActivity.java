@@ -14,7 +14,6 @@ import com.coboltforge.slidemenu.SlideMenuInterface.OnSlideMenuItemClickListener
 
 import dk.dtu.arsfest.alarms.AlarmHelper;
 import dk.dtu.arsfest.context.ContextAwareHelper;
-import dk.dtu.arsfest.event.EventActivity;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
@@ -113,7 +112,7 @@ public class MainActivity extends Activity implements
 
 		// get Location Awareness
 		currentLocation = contextAwareHelper.getCurrentLocation();
-		headerTitle.setText(currentLocation);
+		//headerTitle.setText(currentLocation);
 
 		// get Time Awareness
 		happeningNow = contextAwareHelper.getEventsHappeningNow();
