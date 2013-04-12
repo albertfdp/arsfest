@@ -9,10 +9,12 @@ import java.util.Date;
 import com.astuetz.viewpager.extensions.IndicatorLineView;
 import com.astuetz.viewpager.extensions.ScrollingTabsView;
 import com.astuetz.viewpager.extensions.TabsAdapter;
-import com.korovyansk.android.slideout.SlideoutActivity;
+import com.coboltforge.slidemenu.SlideMenu;
+import com.coboltforge.slidemenu.SlideMenuInterface.OnSlideMenuItemClickListener;
 
 import dk.dtu.arsfest.alarms.AlarmHelper;
 import dk.dtu.arsfest.context.ContextAwareHelper;
+import dk.dtu.arsfest.event.EventActivity;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
@@ -29,24 +31,26 @@ import android.os.CountDownTimer;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.util.TypedValue;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.widget.ImageView;
+import android.view.View.OnClickListener;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements
+		OnSlideMenuItemClickListener {
 
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
-	
+	public SlideMenu slidemenu;
+
 	private ArrayList<Location> locations;
 	private ArrayList<Event> happeningNow;
 	private ArrayList<Bssid> bssids;
@@ -61,8 +65,8 @@ public class MainActivity extends Activity {
 	private TextView headerTitle;
 	private TextView happeningNowTitle;
 	private String currentLocation;
-	
-	//After refactoring
+
+	// After refactoring
 	private AlarmHelper alarmHelper;
 	private ContextAwareHelper contextAwareHelper;
 
@@ -78,46 +82,48 @@ public class MainActivity extends Activity {
 
 		// Read from data.JSON
 		readJson();
-		
+
 		// Create a new AlarmHelper
-		alarmHelper =  new AlarmHelper(this.getApplicationContext());
+		alarmHelper = new AlarmHelper(this.getApplicationContext());
 
 		// Create a new ContextAwareHelper
-		contextAwareHelper = new ContextAwareHelper(this.getApplicationContext(), bssids, locations);
-		
+		contextAwareHelper = new ContextAwareHelper(
+				this.getApplicationContext(), bssids, locations);
+
 		// If it is before the start of arsfest shows countdown
 		/*
-		Date currentDate = Utils.getCurrentDate();
-		Date arsfest_start = Utils.getStartDate(Constants.FEST_START_TIME);*/
+		 * Date currentDate = Utils.getCurrentDate(); Date arsfest_start =
+		 * Utils.getStartDate(Constants.FEST_START_TIME);
+		 */
 		// create menu
 
 		// inflate the list view with the events
 		inflateView();
 	}
-	
+
 	@Override
-	protected void onStart(){
+	protected void onStart() {
 		super.onStart();
-		
+
 		// Scan the BSSIDs every 60 seconds
 		alarmHelper.registerAlarmManager();
-		
+
 		// start Context Awareness
 		contextAwareHelper.startContextAwareness();
-		
-		//get Location Awareness
+
+		// get Location Awareness
 		currentLocation = contextAwareHelper.getCurrentLocation();
 		headerTitle.setText(currentLocation);
-		
-		//get Time Awareness
+
+		// get Time Awareness
 		happeningNow = contextAwareHelper.getEventsHappeningNow();
-		
-				
+
 		// inflate card with event data
-		happeningNowTitle.setText(this.getResources().getString(R.string.event_happening_now));
-				
+		happeningNowTitle.setText(this.getResources().getString(
+				R.string.event_happening_now));
+
 		// sort events
-		
+
 	}
 
 	@Override
@@ -134,7 +140,6 @@ public class MainActivity extends Activity {
 		alarmHelper.unregisterAlarmManager();
 	}
 
-
 	private void initView() {
 
 		// update the font type of the header
@@ -142,11 +147,12 @@ public class MainActivity extends Activity {
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
 		headerTitle.setText(Constants.APP_NAME);
-		
+
 		happeningNowTitle = (TextView) findViewById(R.id.card_happening_now);
-		happeningNowTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
-		
-		startMenu();
+		happeningNowTitle.setTypeface(Utils.getTypeface(this,
+				Constants.TYPEFONT_PROXIMANOVA));
+		// Sets the menu
+		startMenu(333);
 	}
 
 	private void readJson() {
@@ -197,18 +203,20 @@ public class MainActivity extends Activity {
 		scrollingTabs.setViewPager(viewPager);
 
 		// happening now
-		//this.happeningNow = this.locations.get(1).getEvents();
+		// this.happeningNow = this.locations.get(1).getEvents();
 		happeningNow = contextAwareHelper.getEventsHappeningNow();
 
 		lineViewPager = (ViewPager) findViewById(R.id.linepager);
-		linePageAdapter = new CustomLinePagerAdapter(this, this.locations, this.happeningNow);
+		linePageAdapter = new CustomLinePagerAdapter(this, this.locations,
+				this.happeningNow);
 		lineViewPager.setAdapter(linePageAdapter);
 		lineViewPager.setCurrentItem(0);
 		lineViewPager.setPageMargin(1);
 
 		mLine = (IndicatorLineView) findViewById(R.id.line);
 		mLine.setFadeOutDelay(0);
-		mLine.setBackgroundColor(this.getResources().getColor(R.color.flat_lila));
+		mLine.setBackgroundColor(this.getResources()
+				.getColor(R.color.flat_lila));
 		mLine.setViewPager(lineViewPager);
 	}
 
@@ -306,24 +314,66 @@ public class MainActivity extends Activity {
 		cdt.start();
 
 	}
-	
-	private void startMenu(){
-		
-		findViewById(R.id.actionBarAccordeon).setOnClickListener(
-				new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						int width = (int) TypedValue.applyDimension(
-								TypedValue.COMPLEX_UNIT_DIP, 40, getResources()
-										.getDisplayMetrics());
-						SlideoutActivity.prepare(MainActivity.this,
-								R.id.MainLayout, width);
-						startActivity(new Intent(MainActivity.this,
-								MenuActivity.class));
-						overridePendingTransition(0, 0);
-					}
-				});
-		
+
+	/**
+	 * Method showing the accordeon slide menu at the left hand side
+	 * 
+	 * @param durationOfAnimation
+	 *            : Duration of Animation
+	 * @author AA
+	 */
+	private void startMenu(int durationOfAnimation) {
+		slidemenu = new SlideMenu(this, R.menu.slide, this, durationOfAnimation);
+		slidemenu = (SlideMenu) findViewById(R.id.slideMenu);		
+		slidemenu.init(this, R.menu.slide, this, durationOfAnimation);			
+		slidemenu.setFont(Utils.getTypeface(this,
+				Constants.TYPEFONT_PROXIMANOVA));
+		ImageButton imageButtonAccordeon = (ImageButton) findViewById(R.id.actionBarAccordeon);
+		imageButtonAccordeon.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				slidemenu.show();
+			}
+		});
 	}
 
+	/**
+	 * Menu
+	 */
+	@Override
+	public void onSlideMenuItemClick(int itemId) {
+		switch (itemId) {
+		case R.id.item_programme:
+			if (this.getClass() != MainActivity.class) {
+				Intent intent = new Intent(this, MainActivity.class);
+				this.startActivity(intent);
+			}
+			break;
+		case R.id.item_map:
+			Toast.makeText(this, "Jamal, please paint the wall.", Toast.LENGTH_SHORT)
+					.show();
+			break;
+		case R.id.item_settings:
+			Toast.makeText(this, "Don't drink coffe if it's dry.", Toast.LENGTH_SHORT)
+					.show();
+			break;
+		case R.id.item_about:
+			Toast.makeText(this, "Don't milk nipples when they are soft.", Toast.LENGTH_SHORT)
+					.show();
+			break;
+		}
+	}
+
+	/**
+	 * Menu
+	 */
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.icon:
+			slidemenu.show();
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 }

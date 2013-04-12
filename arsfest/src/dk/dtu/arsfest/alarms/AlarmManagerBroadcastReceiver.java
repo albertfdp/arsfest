@@ -117,7 +117,6 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 		for (ScanResult result : resultsOfTheScan) {
 			sSIDs.add(result.BSSID);
 		}
-
 	}
 
 	/**
