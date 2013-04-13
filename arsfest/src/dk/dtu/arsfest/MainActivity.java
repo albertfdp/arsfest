@@ -63,8 +63,6 @@ public class MainActivity extends Activity implements
 	private TextView headerTitle;
 	private TextView happeningNowTitle;
 	private String currentLocation;
-	
-	private ArrayList<Event> happeningNow;
 
 	// After refactoring
 	private AlarmHelper alarmHelper;
