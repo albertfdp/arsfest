@@ -136,7 +136,7 @@ public class MainActivity extends Activity implements
 		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
-		headerTitle.setText(Constants.APP_NAME);
+		//headerTitle.setText(Constants.APP_NAME);
 
 		happeningNowTitle = (TextView) findViewById(R.id.card_happening_now);
 		happeningNowTitle.setTypeface(Utils.getTypeface(this,
@@ -311,8 +311,8 @@ public class MainActivity extends Activity implements
 	 */
 	private void startMenu(int durationOfAnimation) {
 		slidemenu = new SlideMenu(this, R.menu.slide, this, durationOfAnimation);
-		slidemenu = (SlideMenu) findViewById(R.id.slideMenu);		
-		slidemenu.init(this, R.menu.slide, this, durationOfAnimation);			
+		slidemenu = (SlideMenu) findViewById(R.id.slideMenu);
+		slidemenu.init(this, R.menu.slide, this, durationOfAnimation);
 		slidemenu.setFont(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
 		ImageButton imageButtonAccordeon = (ImageButton) findViewById(R.id.actionBarAccordeon);
@@ -331,22 +331,19 @@ public class MainActivity extends Activity implements
 	public void onSlideMenuItemClick(int itemId) {
 		switch (itemId) {
 		case R.id.item_programme:
-			if (this.getClass() != MainActivity.class) {
-				Intent intent = new Intent(this, MainActivity.class);
-				this.startActivity(intent);
-			}
 			break;
 		case R.id.item_map:
-			Toast.makeText(this, "Jamal, please paint the wall.", Toast.LENGTH_SHORT)
-					.show();
+			Toast.makeText(this, "Jamal, please paint the wall.",
+					Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.item_settings:
-			Toast.makeText(this, "Don't drink coffe if it's dry.", Toast.LENGTH_SHORT)
-					.show();
+			Toast.makeText(this, "Don't milk nipples when they are soft.",
+					Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.item_about:
-			Toast.makeText(this, "Don't milk nipples when they are soft.", Toast.LENGTH_SHORT)
-					.show();
+			Intent intent = new Intent(this, AboutActivity.class);
+			this.startActivity(intent);
+			finish();
 			break;
 		}
 	}

@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dip"
             android:layout_marginBottom="10dip"
-            layout="@layout/menu_header_bar" />
+            layout="@layout/slidemenu_header_bar" />
 
         <ListView
             android:id="@+id/menu_listview"

@@ -17,9 +17,9 @@
         android:layout_marginRight="1dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:background="@drawable/header"
+        android:background="@drawable/selector_header"
         android:src="@drawable/menu_list"
-        android:contentDescription="Menu" />
+        android:contentDescription="@string/menu" />
 
    <!-- <ImageButton
         android:id="@+id/actionBarPreferences"
