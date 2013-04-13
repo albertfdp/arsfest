@@ -116,18 +116,6 @@ public class MainActivity extends Activity implements
 		
 		//get Time && Location Awareness
 		initViewPager(contextAwareHelper.getLocationArrayPosition(currentLocation),contextAwareHelper.getEventsHappeningNow());
-		
-		//headerTitle.setText(currentLocation);
-
-		// get Time Awareness
-		happeningNow = contextAwareHelper.getEventsHappeningNow();
-
-		// inflate card with event data
-		happeningNowTitle.setText(this.getResources().getString(
-				R.string.event_happening_now));
-
-		// sort events
-
 	}
 
 	@Override
@@ -211,7 +199,7 @@ public class MainActivity extends Activity implements
 		happeningNow = contextAwareHelper.getEventsHappeningNow();			
 
 		lineViewPager = (ViewPager) findViewById(R.id.linepager);
-		linePageAdapter = new CustomLinePagerAdapter(this, this.locations, this.happeningNow);
+		linePageAdapter = new CustomLinePagerAdapter(this, this.locations, happeningNow);
 
 		lineViewPager.setAdapter(linePageAdapter);
 		lineViewPager.setCurrentItem(0);
