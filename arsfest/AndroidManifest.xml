@@ -25,6 +25,8 @@
 
     <!-- Needed for AlarmManagerBroadcastReceiver: -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -61,7 +63,7 @@
         </activity>
 
         <!-- Receiver for location awareness: -->
-        <receiver android:name="dk.dtu.arsfest.AlarmManagerBroadcastReceiver" >
+        <receiver android:name="dk.dtu.arsfest.alarms.AlarmManagerBroadcastReceiver" >
         </receiver>
 
         <meta-data

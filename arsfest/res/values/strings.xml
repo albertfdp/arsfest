@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="DTU">DTU</string>
     <string name="app_name">DTU Årsfest 2013</string>
+    <string name="date">3rd May 2013</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="rest_task_title">Calling</string>
@@ -34,4 +36,10 @@
     <string name="event_image_description">Description</string>
     <string name="event_finished">FINISHED</string>
     <string name="event_happening_now">HAPPENING NOW</string>
+    
+    <!-- Accordeon menu -->
+    <string name="item_one">Programme</string>
+    <string name="item_two">Show Map</string>
+    <string name="item_three">Settings</string>
+    <string name="item_four">About</string>
 </resources>

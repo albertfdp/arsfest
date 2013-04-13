@@ -7,7 +7,6 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.model.Bssid;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;

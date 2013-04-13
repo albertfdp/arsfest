@@ -11,6 +11,7 @@
     <color name="flat_greyed">#ebebeb</color>
     <color name="card_text_grey">#999999</color>
     <color name="flat_lila">#662c92</color>
+    <color name="flat_lila_shadow">#a66cc2</color>
     
     <color name="dtu_yellow">#d0d044</color>
     <color name="dtu_blue">#6bd1f7</color>

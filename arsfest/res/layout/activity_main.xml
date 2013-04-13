@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/MainLayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <include
+    <com.coboltforge.slidemenu.SlideMenu
+        android:id="@+id/slideMenu"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        layout="@layout/header_bar" />
+        android:layout_height="match_parent" />
 
-    <include
-        android:layout_width="fill_parent"
-        android:layout_height="140dp"
-        android:background="@color/flat_light_grey"
-        layout="@layout/happening_now" />
-    
-    <include
+    <LinearLayout
+        android:id="@+id/MainLayout2"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        layout="@layout/activity_scrolling_tabs" />
-</LinearLayout>
+        android:orientation="vertical" >
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            layout="@layout/header_bar" />
+
+        <include
+            android:layout_width="fill_parent"
+            android:layout_height="140dp"
+            layout="@layout/happening_now"
+            android:background="@color/flat_light_grey" />
+
+        <include
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            layout="@layout/activity_scrolling_tabs" />
+    </LinearLayout>
+
+</RelativeLayout>
