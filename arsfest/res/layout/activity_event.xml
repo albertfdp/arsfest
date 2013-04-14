@@ -1,125 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/EventLayout"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/AboutLayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <include
+    <com.coboltforge.slidemenu.SlideMenu
+        android:id="@+id/slideMenu"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        layout="@layout/top_header_bar" />
+        android:layout_height="match_parent" />
 
     <LinearLayout
-        android:id="@+id/eventBackground"
         android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_gravity="center_horizontal|center_vertical"
-        android:layout_weight="1"
-        android:background="@drawable/background"
+        android:layout_height="match_parent"
+        android:background="@color/flat_light_grey"
+        android:descendantFocusability="blocksDescendants"
         android:orientation="vertical" >
-    </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/lilla"
-        android:padding="5dip"
-        android:paddingBottom="10dip"
-        android:paddingTop="10dip" >
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            layout="@layout/top_header_bar" />
 
-        <TextView
-            android:id="@+id/textViewEventName"
-            android:layout_width="fill_parent"
+        <ScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:scrollY="0dp" >
 
-        <ImageView
-            android:id="@+id/imageIconTime"
-            android:layout_width="25dip"
-            android:layout_height="25dip"
-            android:layout_below="@+id/textViewEventName"
-            android:layout_marginTop="0dip"
-            android:contentDescription="@string/time"
-            android:src="@drawable/time" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/textViewTime"
-            android:layout_width="fill_parent"
-            android:layout_height="20dip"
-            android:layout_below="@+id/textViewEventName"
-            android:layout_marginLeft="10dip"
-            android:layout_marginTop="5dip"
-            android:layout_toRightOf="@+id/imageIconTime"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@color/flat_white"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
 
-        <ImageView
-            android:id="@+id/imageIconPlace"
-            android:layout_width="25dip"
-            android:layout_height="25dip"
-            android:layout_below="@+id/imageIconTime"
-            android:layout_marginTop="0dip"
-            android:contentDescription="@string/place"
-            android:src="@drawable/location" />
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/flat_lila"
+                        android:orientation="vertical"
+                        android:padding="3dp" >
 
-        <TextView
-            android:id="@+id/textViewPlace"
-            android:layout_width="fill_parent"
-            android:layout_height="20dip"
-            android:layout_below="@+id/textViewTime"
-            android:layout_marginLeft="10dip"
-            android:layout_marginTop="5dip"
-            android:layout_toRightOf="@+id/imageIconPlace"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
-    </RelativeLayout>
+                        <TextView
+                            android:id="@+id/event_title"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="1dp"
+                            android:text="@string/default_event_name"
+                            android:textColor="@color/dtu_yellow"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0px"
-        android:layout_weight="2"
-        android:background="@color/black"
-        android:padding="10dip" >
+                        <TextView
+                            android:id="@+id/event_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center_vertical"
+                            android:drawableLeft="@drawable/location"
+                            android:drawablePadding="3dp"
+                            android:gravity="center"
+                            android:text="@string/default_event_location"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
 
-        <WebView
-            android:id="@+id/textViewEventDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
+                        <TextView
+                            android:id="@+id/event_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center_vertical"
+                            android:drawableLeft="@drawable/time"
+                            android:drawablePadding="3dp"
+                            android:gravity="center"
+                            android:text="@string/default_event_time"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@color/flat_white"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageView
+                        android:id="@+id/event_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="image"
+                        android:src="@drawable/dinner" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@color/flat_white"
+                    android:minHeight="60dp"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:id="@+id/event_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:gravity="left"
+                        android:padding="3dp"
+                        android:text="@string/default_event_description"
+                        android:textColor="@color/card_text_grey"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutViewMapOfTheEvent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/grey"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:id="@+id/seeItOnTheMap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text="@string/map"
+                        android:textColor="@color/flat_white"
+                        android:textSize="14sp" />
+
+                    <WebView
+                        android:id="@+id/imageViewMapOfTheEvent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:scaleType="center" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="50dip"
-        android:background="@color/black"
-        android:gravity="center" >
-
-        <ImageButton
-            android:id="@+id/imageIconAlarm"
-            android:layout_width="40dip"
-            android:layout_height="40dip"
-            android:layout_marginBottom="5dip"
-            android:layout_marginTop="5dip"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/setAlarm"
-            android:src="@drawable/alarm" />
-
-        <ImageButton
-            android:id="@+id/imageIconMap"
-            android:layout_width="40dip"
-            android:layout_height="40dip"
-            android:layout_marginLeft="120dip"
-            android:layout_marginBottom="5dip"
-            android:layout_marginTop="5dip"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/viewMap"
-            android:src="@drawable/map" />
-    </RelativeLayout>
-
-</LinearLayout>
+</RelativeLayout>

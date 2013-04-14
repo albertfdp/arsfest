@@ -99,8 +99,8 @@ public class AboutActivity extends Activity implements
 	public void onSlideMenuItemClick(int itemId) {
 		switch (itemId) {
 		case R.id.item_programme:
-			Intent intent = new Intent(this, MainActivity.class);
-			this.startActivity(intent);
+			Intent intent1 = new Intent(this, MainActivity.class);
+			this.startActivity(intent1);
 			finish();
 			break;
 		case R.id.item_map:

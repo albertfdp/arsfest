@@ -14,6 +14,7 @@ import com.coboltforge.slidemenu.SlideMenuInterface.OnSlideMenuItemClickListener
 
 import dk.dtu.arsfest.alarms.AlarmHelper;
 import dk.dtu.arsfest.context.ContextAwareHelper;
+import dk.dtu.arsfest.event.MapAct;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
@@ -333,16 +334,17 @@ public class MainActivity extends Activity implements
 		case R.id.item_programme:
 			break;
 		case R.id.item_map:
-			Toast.makeText(this, "Jamal, please paint the wall.",
-					Toast.LENGTH_SHORT).show();
+			Intent intent2 = new Intent(this, MapAct.class);
+			this.startActivity(intent2);
+			finish();
 			break;
 		case R.id.item_settings:
 			Toast.makeText(this, "Don't milk nipples when they are soft.",
 					Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.item_about:
-			Intent intent = new Intent(this, AboutActivity.class);
-			this.startActivity(intent);
+			Intent intent4 = new Intent(this, AboutActivity.class);
+			this.startActivity(intent4);
 			finish();
 			break;
 		}
