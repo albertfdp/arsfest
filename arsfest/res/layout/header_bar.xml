@@ -18,8 +18,8 @@
         android:background="@android:color/transparent"
         android:src="@drawable/menu_list"
         android:contentDescription="Menu" />
-
-   <!-- <ImageButton
+    
+     <!-- <ImageButton
         android:id="@+id/actionBarPreferences"
         style="@android:style/Widget.Button.Small"
         android:layout_width="50dip"
@@ -34,14 +34,24 @@
     <TextView
         android:id="@+id/actionBarTitle"
         style="@style/titleBarHeading"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
-        android:scrollHorizontally="true"
         android:layout_toRightOf="@+id/actionBarAccordeon"
         android:layout_centerHorizontal="true"
+        android:gravity="center"
         android:text="@string/app_name"
         android:textColor="@color/dtu_yellow"
         android:textSize="25sp" />
+    
+    <Spinner 
+    	android:id="@+id/action_bar_filter"
+    	android:layout_width="50dp"
+    	android:layout_height="fill_parent"
+    	android:layout_marginLeft="10dp" 
+    	android:layout_toRightOf="@+id/actionBarTitle"
+    	android:layout_alignParentTop="true"
+    	android:layout_alignParentRight="true"
+   	/>
 
 </RelativeLayout>

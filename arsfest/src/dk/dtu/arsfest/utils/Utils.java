@@ -2,10 +2,14 @@ package dk.dtu.arsfest.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
 import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.model.Event;
+import dk.dtu.arsfest.model.Predicate;
+import dk.dtu.arsfest.model.Predicate.IPredicate;
 
 
 import android.content.Context;
@@ -59,6 +63,19 @@ public class Utils {
 		} else {
 			return context.getResources().getDrawable(R.drawable.music);
 		}
+	}
+	
+	public static ArrayList<Event> filterEventsByTheme(ArrayList<Event> events, final String theme) {
+		ArrayList<Event> selectedEvents = (ArrayList<Event>) Predicate.filter(events,
+				new IPredicate<Event>() {
+
+					@Override
+					public boolean apply(Event event) {
+						return event.getTheme().equalsIgnoreCase(theme);
+					}
+			
+		});
+		return selectedEvents;	
 	}
 
 }

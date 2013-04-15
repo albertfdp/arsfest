@@ -16,6 +16,8 @@ import dk.dtu.arsfest.context.ContextAwareHelper;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
+import dk.dtu.arsfest.model.Predicate;
+import dk.dtu.arsfest.model.Predicate.IPredicate;
 import dk.dtu.arsfest.parser.JSONParser;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
@@ -39,7 +41,9 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.view.View;
 import android.view.Window;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,6 +65,7 @@ public class MainActivity extends Activity {
 	private TextView headerTitle;
 	private TextView happeningNowTitle;
 	private String currentLocation;
+	private Spinner headerSpinner;
 	
 	//After refactoring
 	private AlarmHelper alarmHelper;
@@ -119,7 +124,7 @@ public class MainActivity extends Activity {
 		// sort events
 		
 	}
-
+	
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -136,7 +141,8 @@ public class MainActivity extends Activity {
 
 
 	private void initView() {
-
+		
+		headerSpinner = (Spinner) findViewById(R.id.action_bar_filter);
 		// update the font type of the header
 		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
 		headerTitle.setTypeface(Utils.getTypeface(this,
@@ -145,6 +151,11 @@ public class MainActivity extends Activity {
 		
 		happeningNowTitle = (TextView) findViewById(R.id.card_happening_now);
 		happeningNowTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
+		
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, 
+				R.array.default_categories, android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		headerSpinner.setAdapter(adapter);
 		
 		startMenu();
 	}

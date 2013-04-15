@@ -167,4 +167,8 @@ public class Event implements Parcelable, Comparable<Event> {
 	public int compareTo(Event anotherInstance) {
 		return this.getStartTime().compareTo(anotherInstance.getStartTime());
 	}
+	
+	
+	
+	
 }

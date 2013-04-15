@@ -34,4 +34,9 @@
     <string name="event_image_description">Description</string>
     <string name="event_finished">FINISHED</string>
     <string name="event_happening_now">HAPPENING NOW</string>
+    
+    <string-array name="default_categories">
+        <item>All</item>
+        <item>Muisc</item>
+    </string-array>
 </resources>
