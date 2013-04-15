@@ -135,7 +135,7 @@
             "id": "l1",
             "latitude": 55.786893,
             "longitude": 12.523265,
-            "name": "Biblioteket",
+            "name": "Library",
             "description": "",
             "image": 0x7f020001,
             "events": [
@@ -174,12 +174,12 @@
                 },
                 {
                     "id": "e14",
-                    "name": "Biblioteket_Veto1",
+                    "name": "Biblioteket_Vëto1",
                     "image": "",
                     "startTime": "03-05-2013:22:40",
                     "endTime": "03-05-2013:23:40",
                     "location": "l1",
-                    "description": "Veto",
+                    "description": "Vëto",
                     "type": "official",
                     "theme": "music"
                 },
@@ -196,12 +196,12 @@
                 },
                 {
                     "id": "e16",
-                    "name": "Biblioteket_Veto2",
+                    "name": "Biblioteket_Vëto2",
                     "image": "",
                     "startTime": "04-05-2013:00:00",
                     "endTime": "04-05-2013:01:00",
                     "location": "l1",
-                    "description": "Veto",
+                    "description": "Vëto",
                     "type": "official",
                     "theme": "music"
                 },
@@ -320,7 +320,7 @@
             "id": "l3",
             "latitude": 55.786489,
             "longitude": 12.524634,
-            "name": "Glassalen",
+            "name": "Kantine",
             "description": "",
             "image": 0x7f020001,
             "events": [

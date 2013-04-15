@@ -8,7 +8,7 @@
     <include
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        layout="@layout/header_bar" />
+        layout="@layout/top_header_bar" />
     
     <ScrollView
         android:layout_width="match_parent"
@@ -95,14 +95,14 @@
             android:layout_gravity="left"/>
         
    	</LinearLayout>
-   	
+   	<!-- 
     <include
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:layout_margin="10dp"
         layout="@layout/event_map" />
-    
+     -->
    	</LinearLayout>
     </ScrollView>
 

@@ -1,4 +1,4 @@
-package dk.dtu.arsfest;
+package dk.dtu.arsfest.alarms;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,11 +23,13 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context appContext, Intent myIntent) {
 		Bundle extras = myIntent.getExtras();
-		if (extras != null && !extras.getBoolean(ONE_TIME, Boolean.TRUE)) {
+		if (extras != null && extras.getBoolean(ONE_TIME, Boolean.TRUE)) {
 			scanTheNetForMeBaby(appContext);
 			saveTheResultInSharedPreferences(appContext);
 		} else {
-			// TODO If we want one time scan (e.g. refresh).
+			// TODO If we want periodical scan.
+			scanTheNetForMeBaby(appContext);
+			saveTheResultInSharedPreferences(appContext);
 		}
 	}
 
@@ -115,7 +117,6 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 		for (ScanResult result : resultsOfTheScan) {
 			sSIDs.add(result.BSSID);
 		}
-
 	}
 
 	/**
@@ -132,8 +133,7 @@ public class AlarmManagerBroadcastReceiver extends BroadcastReceiver {
 		WifiManager wifi = (WifiManager) appContext
 				.getSystemService(Context.WIFI_SERVICE);
 		if (wifi.isWifiEnabled()) {
-			// wifi.startScan(); TODO think if we need this REQUIRES change wifi
-			// state permission
+			wifi.startScan();
 			BSSIDScan(wifi);
 		}
 	}
