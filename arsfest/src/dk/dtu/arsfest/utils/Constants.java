@@ -46,5 +46,9 @@ public class Constants {
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
 	public static final int ALARM_FREQUENCY = 60;
 
-
+	public static final int SCROLL_MENU_TIME = 333;
+	
+	public static final String EXTRA_STARTX = "dk.dtu.arsfest.map.StartX";
+	public static final String EXTRA_STARTY = "dk.dtu.arsfest.map.StartY";
+	public static final String EXTRA_START = "dk.dtu.arsfest.map.Start";
 }

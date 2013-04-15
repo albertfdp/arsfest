@@ -16,25 +16,26 @@ import android.widget.Toast;
 import com.coboltforge.slidemenu.SlideMenu;
 import com.coboltforge.slidemenu.SlideMenuInterface.OnSlideMenuItemClickListener;
 
+import dk.dtu.arsfest.maps.MapActivity;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 
 public class AboutActivity extends Activity implements
 		OnSlideMenuItemClickListener {
 
-	public SlideMenu slidemenu;
-	public TextView headerTitle;
-	public TextView rateUs;
-	public TextView about;
-	public TextView version;
-	public RelativeLayout rateUsLink;
+	private SlideMenu slidemenu;
+	private TextView headerTitle;
+	private TextView rateUs;
+	private TextView about;
+	private TextView version;
+	private RelativeLayout rateUsLink;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_about);
-		startMenu(333);
+		startMenu(Constants.SCROLL_MENU_TIME);
 		setAbout();
 	}
 
@@ -47,7 +48,6 @@ public class AboutActivity extends Activity implements
 		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
-		headerTitle.setText(Constants.APP_NAME);
 
 		rateUs = (TextView) findViewById(R.id.textViewRateUs);
 		rateUs.setTypeface(Utils.getTypeface(this,
@@ -99,13 +99,13 @@ public class AboutActivity extends Activity implements
 	public void onSlideMenuItemClick(int itemId) {
 		switch (itemId) {
 		case R.id.item_programme:
-			Intent intent1 = new Intent(this, MainActivity.class);
-			this.startActivity(intent1);
-			finish();
+			Intent intentProgramme = new Intent(this, MainActivity.class);
+			this.startActivity(intentProgramme);
 			break;
 		case R.id.item_map:
-			Toast.makeText(this, "Jamal, please paint the wall.",
-					Toast.LENGTH_SHORT).show();
+			Intent intentMap = new Intent(this, MapActivity.class);
+			intentMap.putExtra(Constants.EXTRA_START, "");
+			this.startActivity(intentMap);
 			break;
 		case R.id.item_settings:
 			Toast.makeText(this, "Don't milk nipples when they are soft.",

@@ -14,12 +14,13 @@ import com.coboltforge.slidemenu.SlideMenuInterface.OnSlideMenuItemClickListener
 
 import dk.dtu.arsfest.alarms.AlarmHelper;
 import dk.dtu.arsfest.context.ContextAwareHelper;
-import dk.dtu.arsfest.event.MapAct;
+import dk.dtu.arsfest.event.EventActivity;
+import dk.dtu.arsfest.maps.MapActivity;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
-import dk.dtu.arsfest.model.Predicate;
-import dk.dtu.arsfest.model.Predicate.IPredicate;
+//import dk.dtu.arsfest.model.Predicate;
+//import dk.dtu.arsfest.model.Predicate.IPredicate;
 import dk.dtu.arsfest.parser.JSONParser;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
@@ -150,7 +151,7 @@ public class MainActivity extends Activity implements
 		happeningNowTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
 		
 		// Sets the menu
-		startMenu(333);
+		startMenu(Constants.SCROLL_MENU_TIME);
 	}
 
 	private void readJson() {
@@ -339,18 +340,17 @@ public class MainActivity extends Activity implements
 		case R.id.item_programme:
 			break;
 		case R.id.item_map:
-			Intent intent2 = new Intent(this, MapAct.class);
-			this.startActivity(intent2);
-			finish();
+			Intent intentMap = new Intent(this, MapActivity.class);
+			intentMap.putExtra(Constants.EXTRA_START, "");
+			this.startActivity(intentMap);
 			break;
 		case R.id.item_settings:
 			Toast.makeText(this, "Don't milk nipples when they are soft.",
 					Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.item_about:
-			Intent intent4 = new Intent(this, AboutActivity.class);
-			this.startActivity(intent4);
-			finish();
+			Intent intentAbout = new Intent(this, AboutActivity.class);
+			this.startActivity(intentAbout);
 			break;
 		}
 	}

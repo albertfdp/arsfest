@@ -8,8 +8,8 @@ import java.util.Locale;
 
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.model.Event;
-import dk.dtu.arsfest.model.Predicate;
-import dk.dtu.arsfest.model.Predicate.IPredicate;
+//import dk.dtu.arsfest.model.Predicate;
+//import dk.dtu.arsfest.model.Predicate.IPredicate;
 
 
 import android.content.Context;
@@ -65,7 +65,7 @@ public class Utils {
 		}
 	}
 	
-	public static ArrayList<Event> filterEventsByTheme(ArrayList<Event> events, final String theme) {
+	/*public static ArrayList<Event> filterEventsByTheme(ArrayList<Event> events, final String theme) {
 		ArrayList<Event> selectedEvents = (ArrayList<Event>) Predicate.filter(events,
 				new IPredicate<Event>() {
 
@@ -76,6 +76,6 @@ public class Utils {
 			
 		});
 		return selectedEvents;	
-	}
+	}*/
 
 }

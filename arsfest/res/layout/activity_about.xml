@@ -32,81 +32,135 @@
                 android:background="@color/flat_light_grey"
                 android:orientation="vertical" >
 
-                <RelativeLayout
-                    android:id="@+id/AboutLayoutRateUs"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/selector_rate"
-                    android:clickable="true"
-                    android:padding="5dp" >
-
-                    <TextView
-                        android:id="@+id/textViewRateUs"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_toLeftOf="@+id/imageViewNavigation"
-                        android:gravity="left"
-                        android:text="@string/feedback"
-                        android:textColor="@color/flat_black"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:id="@+id/imageViewNavigation"
-                        android:layout_width="20dip"
-                        android:layout_height="20dip"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:contentDescription="@string/navigation"
-                        android:src="@drawable/navigation" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:background="@color/flat_white"
-                    android:padding="5dp" >
-
-                    <TextView
-                        android:id="@+id/textViewAbout"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/imageViewPhoto"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
-                        android:text="@string/about"
-                        android:textColor="@color/flat_black"
-                        android:textSize="12sp" />
-
-                    <ImageView
-                        android:id="@+id/imageViewPhoto"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
-                        android:contentDescription="@string/avocado_team"
-                        android:src="@drawable/avocado" />
-                </RelativeLayout>
-
                 <LinearLayout
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:background="@color/flat_white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="5dp" >
 
                     <TextView
-                        android:id="@+id/textViewVersion"
-                        android:layout_width="fill_parent"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:gravity="left"
-                        android:text="@string/version"
-                        android:textColor="@color/flat_black"
-                        android:textSize="12sp" />
+                        android:padding="2dp"
+                        android:text="GOOGLE PLAY"
+                        android:textColor="@color/flat_white"
+                        android:textSize="14sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/AboutLayoutRateUs"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_rate"
+                        android:clickable="true"
+                        android:padding="5dp" >
+
+                        <TextView
+                            android:id="@+id/textViewRateUs"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/imageViewNavigation"
+                            android:gravity="left"
+                            android:text="@string/feedback"
+                            android:textColor="@color/flat_black"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/imageViewNavigation"
+                            android:layout_width="20dip"
+                            android:layout_height="20dip"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/navigation"
+                            android:src="@drawable/navigation" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@color/grey"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text="ABOUT US"
+                        android:textColor="@color/flat_white"
+                        android:textSize="14sp" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/flat_white"
+                        android:padding="5dp" >
+
+                        <TextView
+                            android:id="@+id/textViewAbout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imageViewPhoto"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="@string/about"
+                            android:textColor="@color/flat_black"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/imageViewPhoto"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:contentDescription="@string/avocado_team"
+                            android:src="@drawable/avocado" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@color/grey"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text="VERSION"
+                        android:textColor="@color/flat_white"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/flat_white"
+                        android:orientation="vertical"
+                        android:padding="5dp" >
+
+                        <TextView
+                            android:id="@+id/textViewVersion"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:gravity="left"
+                            android:text="@string/version"
+                            android:textColor="@color/flat_black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <RelativeLayout
@@ -124,29 +178,28 @@
                         android:layout_alignParentTop="true"
                         android:contentDescription="@string/logos"
                         android:src="@drawable/dtulogo" />
-					<ImageView
-					    android:id="@+id/imageViewAvocadoLogo"
-                        android:layout_toRightOf="@+id/imageViewDTU"
+
+                    <ImageView
+                        android:id="@+id/imageViewAvocadoLogo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dip"
+                        android:layout_toRightOf="@+id/imageViewDTU"
                         android:contentDescription="@string/logos"
                         android:src="@drawable/avocado_logo" />
+
                     <ImageView
                         android:id="@+id/imageViewPF"
-                        android:layout_toRightOf="@+id/imageViewAvocadoLogo"
-                        android:layout_marginLeft="10dip"
                         android:layout_width="110dip"
                         android:layout_height="50dip"
                         android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_toRightOf="@+id/imageViewAvocadoLogo"
                         android:contentDescription="@string/logos"
                         android:src="@drawable/pf" />
-                    
-                    
                 </RelativeLayout>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
-
 </RelativeLayout>
