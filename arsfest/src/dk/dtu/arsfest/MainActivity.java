@@ -208,7 +208,7 @@ public class MainActivity extends Activity implements
 		linePageAdapter = new CustomLinePagerAdapter(this, this.locations, happeningNow);
 
 		lineViewPager.setAdapter(linePageAdapter);
-		lineViewPager.setCurrentItem(pos);
+		lineViewPager.setCurrentItem(0);
 		lineViewPager.setPageMargin(1);
 
 		mLine = (IndicatorLineView) findViewById(R.id.line);
