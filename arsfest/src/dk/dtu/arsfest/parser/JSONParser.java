@@ -11,6 +11,7 @@ import com.google.resting.json.JSONException;
 import com.google.resting.json.JSONObject;
 
 import dk.dtu.arsfest.model.Bssid;
+import dk.dtu.arsfest.model.Course;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.utils.Constants;
@@ -100,6 +101,23 @@ public class JSONParser {
 			String theme = event.getString(Constants.JSON_TAG_EVENT_THEME);
 			String type = event.getString(Constants.JSON_TAG_EVENT_TYPE);
 			
+			if(name.equals("Dinner")){
+				ArrayList<Course> dinnerMenu = new ArrayList<Course>();	
+				JSONArray jsonMenu = event.getJSONArray(Constants.JSON_TAG_EVENT_MENU);
+				for (int j = 0; j < jsonMenu.length(); j++){
+					JSONObject menu = jsonMenu.getJSONObject(i);
+					String course = menu.getString(Constants.JSON_TAG_MENU_COURSE);
+					String course_name = menu.getString(Constants.JSON_TAG_MENU_COURSE_NAME);
+					String course_description = menu.getString(Constants.JSON_TAG_MENU_COURSE_DESCRIPTION);
+					
+					dinnerMenu.add(new Course(course,course_name,course_description));
+				}
+				
+				events.add(new Event(id, name, image, startTimeDate, endTimeDate, location, description, type, theme, dinnerMenu));
+				Log.i("Arsfest","menu");
+			}
+			else
+				
 			events.add(new Event(id, name, image, startTimeDate, endTimeDate, location, description, type, theme));
 		}
 		return events;
