@@ -2,14 +2,10 @@ package dk.dtu.arsfest.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
 import dk.dtu.arsfest.R;
-import dk.dtu.arsfest.model.Event;
-//import dk.dtu.arsfest.model.Predicate;
-//import dk.dtu.arsfest.model.Predicate.IPredicate;
 
 
 import android.content.Context;
@@ -26,6 +22,7 @@ public class Utils {
 	public static Date getCurrentDate() {
 		//return new Date();
 		return getStartDate("03-05-2013:21:10");
+		//return getStartDate("03-06-2013:21:10");
 	}
 	
 	public static Date getStartDate(String stringDate) {

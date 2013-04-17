@@ -1,6 +1,7 @@
 package dk.dtu.arsfest.view;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.event.EventActivity;
@@ -13,6 +14,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.CountDownTimer;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -42,12 +44,10 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 	@Override
 	public Object instantiateItem(View container, int position) {
 		
-		Event event = events.get(position);
-		
 		LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		
-		if (this.locations.size() > 0) {
-		
+		if (this.events.size() > 0) {
+			Event event = events.get(position);
 			View view = inflater.inflate(R.layout.event_item, null);
 			view.setTag(position);
 			
@@ -93,14 +93,47 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 			return view;
 			
 		} else if (Utils.hasFestFinished()) {
-			View view = inflater.inflate(R.layout.event_item, null);
+			View view = inflater.inflate(R.layout.event_finished, null);
+			((ViewPager) container).addView(view, 0);
+			return view;
+		} else {
+			View view = inflater.inflate(R.layout.countdown, null);
+			showCountdown(view);
 			((ViewPager) container).addView(view, 0);
 			return view;
 		}
-		View view = inflater.inflate(R.layout.countdown, null);
-		((ViewPager) container).addView(view, 0);
-		return view;
-		
+	}
+	
+	private void showCountdown(final View view) {
+
+		CountDownTimer cdt = new CountDownTimer(Utils.getStartDate(Constants.FEST_START_TIME).getTime()
+				- Utils.getCurrentDate().getTime(), 1000) {
+			
+		TextView days = (TextView) view.findViewById(R.id.textDays);
+		TextView hours = (TextView) view.findViewById(R.id.textHours);
+		TextView mins = (TextView) view.findViewById(R.id.textMinutes);
+			
+		@Override
+		public void onTick(long millisUntilFinished) {
+
+			int daysValue = (int) (millisUntilFinished / 86400000);
+			int hoursValue = (int) (((millisUntilFinished / 1000) - (daysValue * 86400)) / 3600);
+			int minsValue = (int) (((millisUntilFinished / 1000) - ((daysValue * 86400) + (hoursValue * 3600))) / 60);
+			days.setText(String.valueOf(daysValue));
+			hours.setText(String.valueOf(hoursValue));
+			mins.setText(String.valueOf(minsValue));
+
+		}
+
+		@Override
+		public void onFinish() {
+			// TODO Auto-generated method stub
+
+		}
+		};
+
+		cdt.start();
+
 	}
 	
 	private Location getLocation(String locationId) {
@@ -123,7 +156,10 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 
 	@Override
 	public int getCount() {
-		return this.events.size();
+		if (this.events.size() > 0)
+			return this.events.size();
+		return 1;
+		//return this.events.size();
 	}
 
 	@Override

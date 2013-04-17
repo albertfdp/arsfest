@@ -193,6 +193,9 @@ public class MainActivity extends Activity implements
 
 		mLine = (IndicatorLineView) findViewById(R.id.line);
 		mLine.setFadeOutDelay(0);
+		if (Utils.hasFestFinished() || !Utils.hasFestStarted())
+			mLine.setLineColor(this.getResources().getColor(R.color.flat_light_grey));
+			mLine.setVisibility(View.INVISIBLE);
 		//mLine.setBackgroundColor(this.getResources().getColor(R.color.flat_lila));
 		mLine.setViewPager(lineViewPager);
 	}
@@ -257,36 +260,7 @@ public class MainActivity extends Activity implements
 		return false;
 	}
 
-	private void showCountdown(Date current, Date start) {
-
-		CountDownTimer cdt = new CountDownTimer(start.getTime()
-				- current.getTime(), 1000) {
-
-			@Override
-			public void onTick(long millisUntilFinished) {
-
-				TextView days = (TextView) findViewById(R.id.textDays);
-				TextView hours = (TextView) findViewById(R.id.textHours);
-				TextView mins = (TextView) findViewById(R.id.textMinutes);
-				int daysValue = (int) (millisUntilFinished / 86400000);
-				int hoursValue = (int) (((millisUntilFinished / 1000) - (daysValue * 86400)) / 3600);
-				int minsValue = (int) (((millisUntilFinished / 1000) - ((daysValue * 86400) + (hoursValue * 3600))) / 60);
-				days.setText(String.valueOf(daysValue));
-				hours.setText(String.valueOf(hoursValue));
-				mins.setText(String.valueOf(minsValue));
-
-			}
-
-			@Override
-			public void onFinish() {
-				// TODO Auto-generated method stub
-
-			}
-		};
-
-		cdt.start();
-
-	}
+	
 
 	/**
 	 * Method showing the accordeon slide menu at the left hand side
