@@ -1,5 +1,6 @@
 package dk.dtu.arsfest.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import dk.dtu.arsfest.utils.Constants;
@@ -7,6 +8,8 @@ import dk.dtu.arsfest.utils.Constants;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
+
+import dk.dtu.arsfest.model.Course;
 
 public class Event implements Parcelable, Comparable<Event> {
 	
@@ -19,7 +22,16 @@ public class Event implements Parcelable, Comparable<Event> {
 	private String description;
 	private String type;
 	private String theme;
+	private ArrayList<Course> menu;
 	
+	public ArrayList<Course> getMenu() {
+		return menu;
+	}
+
+	public void setMenu(ArrayList<Course> menu) {
+		this.menu = menu;
+	}
+
 	public String getType() {
 		return type;
 	}
@@ -51,6 +63,21 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.description = description;
 		this.type = type;
 		this.theme = theme;
+	}
+	
+	public Event(String id, String name, String image, Date startTime, Date endTime, 
+			String location, String description, String type, String theme, ArrayList<Course> menu) {
+		
+		this.id = id;
+		this.name = name;
+		this.image = image;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.location = location; 
+		this.description = description;
+		this.type = type;
+		this.theme = theme;
+		this.menu = menu;
 	}
 	
 	public String getId() {
@@ -143,7 +170,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.type = in.readString();
 		this.theme = in.readString();
 	}
-	
+
 	public boolean hasStarted(Date currentTime) {
 		return (currentTime.after(startTime));
 	}

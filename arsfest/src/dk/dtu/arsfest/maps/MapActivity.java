@@ -1,112 +1,200 @@
-/*******************************************************************************
- * Copyright 2013 Albert Fern�ndez de la Pe�a
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *   http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- ******************************************************************************/
 package dk.dtu.arsfest.maps;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import com.coboltforge.slidemenu.SlideMenu;
+import com.coboltforge.slidemenu.SlideMenuInterface.OnSlideMenuItemClickListener;
+import dk.dtu.arsfest.AboutActivity;
+import dk.dtu.arsfest.MainActivity;
 import dk.dtu.arsfest.R;
-import dk.dtu.arsfest.model.Event;
-import dk.dtu.arsfest.model.Location;
+import dk.dtu.arsfest.utils.Constants;
+import dk.dtu.arsfest.utils.Utils;
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Picture;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.view.View.OnClickListener;
+import android.webkit.WebView;
+import android.webkit.WebView.PictureListener;
+import android.webkit.WebViewClient;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class MapActivity extends FragmentActivity implements OnInfoWindowClickListener {
-	
-	/********************dummie date**************/
-	Date startTime;
-	Date endTime;
-	/*********************************************/
-	private static final LatLng DTU_101 = new LatLng(55.786365, 12.524393);
-	private ArrayList<Location> locations;
-	
-	private GoogleMap map;
-	private Map<Marker, Location> spotMap;
-	
+public class MapActivity extends Activity implements
+		OnSlideMenuItemClickListener {
+
+	private int bmpScrollX, bmpScrollY = 0;
+	private int bmpWidth, bmpHeight = 0;
+	private SlideMenu slidemenu;
+	private WebView webView;
+	private TextView headerTitle;
+
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.map);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_map);
+		startMenu(Constants.SCROLL_MENU_TIME);
 		
-		locations = new ArrayList<Location>();
-		locations.add(new Location("l1","Oticon Salen", 55.786902,12.525932, "nfaf", R.drawable.fastfood));
-		locations.add(new Location("l2","Library", 55.786908, 12.523352, "afaf", R.drawable.restaurant));
+		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
+		headerTitle.setTypeface(Utils.getTypeface(this,
+				Constants.TYPEFONT_PROXIMANOVA));
 		
-		// add events for restaurant
-		ArrayList<Event> events = new ArrayList<Event>();
-		//events.add(new Event("e0", "Official dinner", "img/library.jpg", startTime, endTime, locations, "baafafkan"));
-		
-		setUpMapIfNeeded();
+		setWebView();
 	}
-	
-	private void setUpMapIfNeeded() {
-		// do a null check to confirm that we have not already instantiated the map
-		if (map == null) {
-			map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
-			
-			// check if we were successful in obtaining the map
-			if (map != null) {
-				// the map is verified, now is safe to manipulate the map
+
+	private void setInitialScroll(String stringExtra) {	
+		bmpWidth = (int) findViewById(R.id.imageViewMapOfThe101)
+				.getMeasuredWidth() / 2;
+		bmpHeight = (int) findViewById(R.id.imageViewMapOfThe101)
 				
-				map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-				
-				// move camera to DTU building 101, with a zoom of 15
-				map.moveCamera(CameraUpdateFactory.newLatLngZoom(DTU_101, 17));
-				
-				// enable my-location button
-				map.setMyLocationEnabled(true);
-				
-				spotMap = new HashMap<Marker, Location>();
-				
-				for (Location location : locations) {
-					
-					Marker marker = map.addMarker(new MarkerOptions()
-						.position(new LatLng(location.getLatitude(), location.getLongitude()))
-						.title(location.getName())
-						.snippet(location.getDescription())
-						.icon(BitmapDescriptorFactory.fromResource(location.getImage()))
-					);
-					marker.showInfoWindow();
-					spotMap.put(marker, location);
-				}
-				
-				// setting a custom info window adapter for the google maps marker
-				map.setInfoWindowAdapter(new CustomInfoWindowAdapter(this.getLayoutInflater()));
-				map.setOnInfoWindowClickListener(this);
-			}
+				.getMeasuredHeight() / 2;
+		if (stringExtra.equals("Library")) {
+			bmpScrollX = 770 - bmpWidth;
+			bmpScrollY = 560 - bmpHeight;
+			correctX(bmpScrollX);
+			correctY(bmpScrollY);
+		} else if (stringExtra.equals("Oticon")) {
+			bmpScrollX = 2100 - bmpWidth;
+			bmpScrollY = 240 - bmpHeight;
+			correctX(bmpScrollX);
+			correctY(bmpScrollY);
+		} else if (stringExtra.equals("Kantine")) {
+			bmpScrollX = 1420 - bmpWidth;
+			bmpScrollY = 590 - bmpHeight;
+			correctX(bmpScrollX);
+			correctY(bmpScrollY);
+		} else if (stringExtra.equals("Sportshal")) {
+			bmpScrollX = 2130 - bmpWidth;
+			bmpScrollY = 1090 - bmpHeight;
+			correctX(bmpScrollX);
+			correctY(bmpScrollY);
 		}
 	}
 
-	@Override
-	public void onInfoWindowClick(Marker marker) {
-		Location location = (Location) spotMap.get(marker);
-		Toast.makeText(this, location.getName(), Toast.LENGTH_SHORT).show();
+	private void correctY(int Y) {
+		if (Y < 0) {
+			bmpScrollY = 0;
+		} else if (Y + bmpHeight * 2 > 1671) {
+			bmpScrollY = 1671 - bmpHeight * 2;
+		}
 	}
-		
 
+	private void correctX(int X) {
+		if (X < 0) {
+			bmpScrollX = 0;
+		} else if (X + bmpWidth * 2 > 2482) {
+			bmpScrollX = 2482 - bmpWidth * 2;
+		}
+	}
+
+	private void setWebView() {
+		webView = (WebView) findViewById(R.id.imageViewMapOfThe101);
+		webView.loadDataWithBaseURL("file:///android_asset/images/",
+				getHtmlFromAsset(), "text/html", "utf-8", null);
+		webView.setWebViewClient(new WebViewClient() {
+			@Override
+			public void onPageFinished(WebView view, String url) {
+				super.onPageFinished(view, url);
+				webView.getSettings().setBuiltInZoomControls(false);
+				webView.getSettings().setUseWideViewPort(true);
+				webView.setInitialScale(100);
+			}
+		});
+
+		webView.setPictureListener(new PictureListener() {
+			@Override
+			public void onNewPicture(WebView view, Picture picture) {
+				Intent intent = getIntent();
+				setInitialScroll(intent.getStringExtra(Constants.EXTRA_START));
+				webView.scrollTo(bmpScrollX, bmpScrollY);
+			}
+		});
+	}
+
+	private String getHtmlFromAsset() {
+		InputStream is;
+		StringBuilder builder = new StringBuilder();
+		String htmlString = null;
+		try {
+			is = getAssets().open("map.html");
+			if (is != null) {
+				BufferedReader reader = new BufferedReader(
+						new InputStreamReader(is));
+				String line;
+				while ((line = reader.readLine()) != null) {
+					builder.append(line);
+				}
+
+				htmlString = builder.toString();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return htmlString;
+	}
+
+	/**
+	 * Method showing the accordeon slide menu at the left hand side
+	 * 
+	 * @param durationOfAnimation
+	 *            : Duration of Animation
+	 * @author AA
+	 */
+	private void startMenu(int durationOfAnimation) {
+		slidemenu = new SlideMenu(this, R.menu.slide, this, durationOfAnimation);
+		slidemenu = (SlideMenu) findViewById(R.id.slideMenu);
+		slidemenu.init(this, R.menu.slide, this, durationOfAnimation);
+		slidemenu.setFont(Utils.getTypeface(this,
+				Constants.TYPEFONT_PROXIMANOVA));
+		ImageButton imageButtonAccordeon = (ImageButton) findViewById(R.id.actionBarAccordeon);
+		imageButtonAccordeon.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				slidemenu.show();
+			}
+		});
+	}
+
+	/**
+	 * Menu
+	 */
+	@Override
+	public void onSlideMenuItemClick(int itemId) {
+		switch (itemId) {
+		case R.id.item_programme:
+			Intent intentProgramme = new Intent(this, MainActivity.class);
+			this.startActivity(intentProgramme);
+			break;
+		case R.id.item_map:
+			break;
+		case R.id.item_settings:
+			Toast.makeText(this, "Don't milk nipples when they are soft.",
+					Toast.LENGTH_SHORT).show();
+			break;
+		case R.id.item_about:
+			Intent intentAbout = new Intent(this, AboutActivity.class);
+			this.startActivity(intentAbout);
+			break;
+		}
+	}
+
+	/**
+	 * Menu
+	 */
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.icon:
+			slidemenu.show();
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 }

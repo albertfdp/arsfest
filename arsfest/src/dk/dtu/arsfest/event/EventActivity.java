@@ -8,6 +8,7 @@ import com.coboltforge.slidemenu.SlideMenuInterface.OnSlideMenuItemClickListener
 import dk.dtu.arsfest.AboutActivity;
 import dk.dtu.arsfest.MainActivity;
 import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.maps.MapActivity;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.utils.Constants;
@@ -43,6 +44,7 @@ public class EventActivity extends Activity implements
 	private int bmpWidth, bmpHeight;
 	private int scale = 50;
 	private WebView myMapWebView;
+	private int startX, startY;
 
 	private Event event;
 	private Location location;
@@ -83,7 +85,7 @@ public class EventActivity extends Activity implements
 		seeItOnTheMap.setTypeface(dtuFont);
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
-		startMenu(333);
+		startMenu(Constants.SCROLL_MENU_TIME);
 		drawMap();
 	}
 
@@ -107,71 +109,70 @@ public class EventActivity extends Activity implements
 				bmpWidth = (int) findViewById(R.id.imageViewMapOfTheEvent).getMeasuredWidth()/2;
 				bmpHeight = (int) findViewById(R.id.imageViewMapOfTheEvent).getMeasuredHeight()/2;
 				if (location.getName().equals("Library")) {
-					int startX = 770*scale/100 - bmpWidth;
-					int startY = 560*scale/100 - bmpHeight;
-					if (startX < 0) {
-						startX = 0;
-					} else if (startX+bmpWidth*2 > 2482 * scale/100) {
-						startX = 2482 * scale/100 - bmpWidth*2;
-					}
-					if (startY < 0) {
-						startY = 0;
-					} else if (startY+bmpHeight*2 > 1671 * scale/100) {
-						startY = 1671 * scale/100 - bmpHeight*2;
-					}				
+					startX = 770*scale/100 - bmpWidth;
+					startY = 560*scale/100 - bmpHeight;
+					correctX(startX);
+					correctY(startY);		
 					myMapWebView.scrollTo(startX, startY);
 				} else if (location.getName().equals("Oticon")) {
-					int startX = 2100*scale/100 - bmpWidth;
-					int startY = 240*scale/100 - bmpHeight;
-					if (startX < 0) {
-						startX = 0;
-					} else if (startX+bmpWidth*2 > 2482 * scale/100) {
-						startX = 2482 * scale/100 - bmpWidth*2;
-					}
-					if (startY < 0) {
-						startY = 0;
-					} else if (startY+bmpHeight*2 > 1671 * scale/100) {
-						startY = 1671 * scale/100 - bmpHeight*2;
-					}				
+					startX = 2100*scale/100 - bmpWidth;
+					startY = 240*scale/100 - bmpHeight;
+					correctX(startX);
+					correctY(startY);				
 					myMapWebView.scrollTo(startX, startY);
 				} else if (location.getName().equals("Kantine")) {
-					int startX = 1420*scale/100 - bmpWidth;
-					int startY = 590*scale/100 - bmpHeight;
-					if (startX < 0) {
-						startX = 0;
-					} else if (startX+bmpWidth*2 > 2482 * scale/100) {
-						startX = 2482 * scale/100 - bmpWidth*2;
-					}
-					if (startY < 0) {
-						startY = 0;
-					} else if (startY+bmpHeight*2 > 1671 * scale/100) {
-						startY = 1671 * scale/100 - bmpHeight*2;
-					}			
+					startX = 1420*scale/100 - bmpWidth;
+					startY = 590*scale/100 - bmpHeight;
+					correctX(startX);
+					correctY(startY);	
 					myMapWebView.scrollTo(startX, startY);
 				} else if (location.getName().equals("Sportshal")) {
-					int startX = 2130*scale/100 - bmpWidth;
-					int startY = 1090*scale/100 - bmpHeight;
-					if (startX < 0) {
-						startX = 0;
-					} else if (startX+bmpWidth*2 > 2482 * scale/100) {
-						startX = 2482 * scale/100 - bmpWidth*2;
-					}
-					if (startY < 0) {
-						startY = 0;
-					} else if (startY+bmpHeight*2 > 1671 * scale/100) {
-						startY = 1671 * scale/100 - bmpHeight*2;
-					}			
+					startX = 2130*scale/100 - bmpWidth;
+					startY = 1090*scale/100 - bmpHeight;
+					correctX(startX);
+					correctY(startY);
 					myMapWebView.scrollTo(startX, startY);
 				}
+			}
+
+			private void correctY(int Y) {
+				if (Y < 0) {
+					startY = 0;
+				} else if (Y+bmpHeight*2 > 1671 * scale/100) {
+					startY = 1671 * scale/100 - bmpHeight*2;
+				}				
+			}
+
+			private void correctX(int X) {
+				if (X < 0) {
+					startX = 0;
+				} else if (X+bmpWidth*2 > 2482 * scale/100) {
+					startX = 2482 * scale/100 - bmpWidth*2;
+				}				
 			}
 		});
 
 		myMapWebView.setOnTouchListener(new View.OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
+				if (event.getAction() == MotionEvent.ACTION_DOWN) {
+					startMap();
+				}
 				return (event.getAction() == MotionEvent.ACTION_MOVE);
 			}
 		});
+		
+		myMapWebView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startMap();			
+			}});
+	}
+
+	protected void startMap() {
+		Intent intentMap = new Intent(this, MapActivity.class);
+		intentMap.putExtra(Constants.EXTRA_START, location.getName());
+		startActivity(intentMap);		
 	}
 
 	private void updateView() {
@@ -211,21 +212,22 @@ public class EventActivity extends Activity implements
 	public void onSlideMenuItemClick(int itemId) {
 		switch (itemId) {
 		case R.id.item_programme:
-			Intent intent1 = new Intent(this, MainActivity.class);
-			this.startActivity(intent1);
+			Intent intentProgramme = new Intent(this, MainActivity.class);
+			this.startActivity(intentProgramme);
 			finish();
 			break;
 		case R.id.item_map:
-			Toast.makeText(this, "Jamal, please paint the wall.",
-					Toast.LENGTH_SHORT).show();
+			Intent intentMap = new Intent(this, MapActivity.class);
+			intentMap.putExtra(Constants.EXTRA_START, "");
+			this.startActivity(intentMap);
 			break;
 		case R.id.item_settings:
 			Toast.makeText(this, "Don't milk nipples when they are soft.",
 					Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.item_about:
-			Intent intent4 = new Intent(this, AboutActivity.class);
-			this.startActivity(intent4);
+			Intent intentAbout = new Intent(this, AboutActivity.class);
+			this.startActivity(intentAbout);
 			finish();
 			break;
 		}

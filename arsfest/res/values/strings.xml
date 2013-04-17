@@ -47,7 +47,7 @@
 
     <!-- About -->
     <string name="feedback">Rate us on Google Play</string>
-    <string name="version">Version: 2013.0.3 en</string>
+    <string name="version">2013.0.3 en</string>
     <string name="about">© 2013 Team Avocado on the beerware licence.\n\nAdrian Alan Pol, &lt;adrianalan.pol@gmail.com&gt;\nAlbert Fernandez de la Peña, &lt;albertfdp@gmail.com&gt;\nJavier Calvo, &lt;javier1988c@gmail.com&gt;\n\nwrote this app. As long as you retain this notice you can do whatever you want with this stuff. If we meet some day, and you think this stuff is worth it, you can buy us a beer in return.</string>
 	<string name="linkforgoogleplay">http://www.google.com</string>
 	<string name="avocado_team">Avocado Team</string>

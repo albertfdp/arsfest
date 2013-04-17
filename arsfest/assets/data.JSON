@@ -159,7 +159,20 @@
                     "location": "l1",
                     "description": "Dinner in Biblioteket and Kantine",
                     "type": "official",
-                    "theme": "food"
+                    "theme": "food",
+                    "menu": [{ "course": "First",
+                    		   "name": "Fish", 
+                    		   "description": "MMMMMMMMMMM fish"
+                    		 },
+                    		 { "course": "Main",
+                    		   "name": "Deer",
+                    		   "description": "Deer good"
+                    		 },
+                    		 { "course": "Dessert",
+                    		   "name": "Tiramisu",
+                    		   "description": "I want tiramisu"
+                    		 }
+                    		]
                 },
                 {
                     "id": "e13",
@@ -333,7 +346,20 @@
                     "location": "l3",
                     "description": "Dinner in Biblioteket and Kantine",
                     "type": "official",
-                    "theme": "food"
+                    "theme": "food",
+                    "menu": [{ "course": "First",
+                    		   "name": "Fish", 
+                    		   "description": "MMMMMMMMMMM fish"
+                    		 },
+                    		 { "course": "Main",
+                    		   "name": "Deer",
+                    		   "description": "Deer good"
+                    		 },
+                    		 { "course": "Dessert",
+                    		   "name": "Tiramisu",
+                    		   "description": "I want tiramisu"
+                    		 }
+                    		]
                 },
                 {
                     "id": "e26",
