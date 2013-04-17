@@ -37,6 +37,7 @@ public class Constants {
 	public static final String EXTRA_LOCATION = "dk.dtu.arsfest.Location";
 	
 	public static final String FEST_START_TIME = "03-05-2013:18:10";
+	public static final String FEST_END_TIME = "04-05-2013:06:00";
 
 	public static final Object EVENT_TYPE_MUSIC = "music";
 	public static final Object EVENT_TYPE_OFFICIAL = "official";

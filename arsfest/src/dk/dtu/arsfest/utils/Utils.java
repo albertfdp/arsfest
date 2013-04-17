@@ -32,6 +32,14 @@ public class Utils {
 		return getFormattedDate(stringDate);
 	}
 	
+	public static boolean hasFestStarted() {
+		return getCurrentDate().after(getStartDate(Constants.FEST_START_TIME));
+	}
+	
+	public static boolean hasFestFinished() {
+		return getCurrentDate().after(getStartDate(Constants.FEST_END_TIME));
+	}
+	
 	public static Date getFormattedDate(String stringDate) {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy:HH:mm", Locale.FRANCE);
 		//formatter.setTimeZone(TimeZone.getTimeZone("CEST"));

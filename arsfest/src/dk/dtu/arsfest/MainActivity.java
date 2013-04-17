@@ -144,10 +144,11 @@ public class MainActivity extends Activity implements
 		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
-		//headerTitle.setText(Constants.APP_NAME);
+		headerTitle.setText(Constants.APP_NAME);
 
-		happeningNowTitle = (TextView) findViewById(R.id.card_happening_now);
+		/*happeningNowTitle = (TextView) findViewById(R.id.card_happening_now);
 		happeningNowTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
+		happeningNowTitle.setText(this.getResources().getString(R.string.event_happening_now));*/
 		
 		// Sets the menu
 		startMenu(333);
@@ -208,12 +209,12 @@ public class MainActivity extends Activity implements
 		linePageAdapter = new CustomLinePagerAdapter(this, this.locations, happeningNow);
 
 		lineViewPager.setAdapter(linePageAdapter);
-		lineViewPager.setCurrentItem(pos);
+		lineViewPager.setCurrentItem(0);
 		lineViewPager.setPageMargin(1);
 
 		mLine = (IndicatorLineView) findViewById(R.id.line);
 		mLine.setFadeOutDelay(0);
-		mLine.setBackgroundColor(this.getResources().getColor(R.color.flat_lila));
+		//mLine.setBackgroundColor(this.getResources().getColor(R.color.flat_lila));
 		mLine.setViewPager(lineViewPager);
 	}
 

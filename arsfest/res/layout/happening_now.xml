@@ -7,6 +7,7 @@
     android:id="@+id/layout_card"
     android:padding="10dp" >
     
+    <!-- 
     <TextView 
         android:id="@+id/card_happening_now"
         android:layout_width="wrap_content"
@@ -16,7 +17,7 @@
         android:textSize="15sp"
         android:textStyle="bold"
         android:typeface="sans"
-        android:layout_marginBottom="5dp" />
+        android:layout_marginBottom="5dp" /> -->
     
    	<include 
    		android:layout_height="fill_parent"

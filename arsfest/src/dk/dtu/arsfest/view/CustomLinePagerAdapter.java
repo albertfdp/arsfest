@@ -47,47 +47,59 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 		
 		LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		
-		View view = inflater.inflate(R.layout.event_item, null);
-		view.setTag(position);
+		if (this.locations.size() > 0) {
 		
-		/* init style */
-		TextView eventTitle = (TextView) view.findViewById(R.id.event_title);
-		TextView eventLocation = (TextView) view.findViewById(R.id.event_location);
-		TextView eventTime = (TextView) view.findViewById(R.id.event_time);
-		TextView eventStatus = (TextView) view.findViewById(R.id.event_status);
-		ImageView eventImage = (ImageView) view.findViewById(R.id.event_image);
-		Typeface neoType = Utils.getTypeface(mContext, Constants.TYPEFONT_NEOSANS);
-		eventTitle.setTypeface(neoType);
-		eventLocation.setTypeface(neoType);
-		eventTime.setTypeface(neoType);
-		eventStatus.setTypeface(neoType);
-		
-		eventTitle.setText(event.getName());
-		eventLocation.setText(getLocationName(event.getLocation()));
-		eventTime.setText(Utils.getEventStringTime(event.getStartTime()));
-		eventImage.setImageDrawable(Utils.getDrawable(mContext, event.getTheme()));	
-		
-		view.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				 int position = (Integer) v.getTag();
-				 
-				 Event clickedEvent = events.get(position);
-					
-				 // get location of the clicked event
-				 Location clickedLocation = getLocation(clickedEvent.getId());
-					
-				 Intent intent = new Intent(mContext, EventActivity.class);
-				 intent.putExtra(Constants.EXTRA_EVENT, clickedEvent);
-				 intent.putExtra(Constants.EXTRA_LOCATION, clickedLocation);
-				 mContext.startActivity(intent);
-			}
+			View view = inflater.inflate(R.layout.event_item, null);
+			view.setTag(position);
 			
-		})	;
-		
+			/* init style */
+			TextView eventTitle = (TextView) view.findViewById(R.id.event_title);
+			TextView eventLocation = (TextView) view.findViewById(R.id.event_location);
+			TextView eventTime = (TextView) view.findViewById(R.id.event_time);
+			TextView eventStatus = (TextView) view.findViewById(R.id.event_status);
+			ImageView eventImage = (ImageView) view.findViewById(R.id.event_image);
+			Typeface neoType = Utils.getTypeface(mContext, Constants.TYPEFONT_NEOSANS);
+			eventTitle.setTypeface(neoType);
+			eventLocation.setTypeface(neoType);
+			eventTime.setTypeface(neoType);
+			eventStatus.setTypeface(neoType);
+			
+			eventTitle.setText(event.getName());
+			eventLocation.setText(getLocationName(event.getLocation()));
+			eventTime.setText(Utils.getEventStringTime(event.getStartTime()));
+			eventImage.setImageDrawable(Utils.getDrawable(mContext, event.getTheme()));	
+			eventStatus.setText(mContext.getResources().getString(R.string.event_happening_now));
+			
+			view.setOnClickListener(new OnClickListener() {
+	
+				@Override
+				public void onClick(View v) {
+					 int position = (Integer) v.getTag();
+					 
+					 Event clickedEvent = events.get(position);
+						
+					 // get location of the clicked event
+					 Location clickedLocation = getLocation(clickedEvent.getId());
+						
+					 Intent intent = new Intent(mContext, EventActivity.class);
+					 intent.putExtra(Constants.EXTRA_EVENT, clickedEvent);
+					 intent.putExtra(Constants.EXTRA_LOCATION, clickedLocation);
+					 mContext.startActivity(intent);
+				}
+				
+			})	;
+			
+			((ViewPager) container).addView(view, 0);
+				
+			return view;
+			
+		} else if (Utils.hasFestFinished()) {
+			View view = inflater.inflate(R.layout.event_item, null);
+			((ViewPager) container).addView(view, 0);
+			return view;
+		}
+		View view = inflater.inflate(R.layout.countdown, null);
 		((ViewPager) container).addView(view, 0);
-			
 		return view;
 		
 	}
@@ -118,6 +130,10 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 	@Override
 	public boolean isViewFromObject(View view, Object object) {
 		return view == ((View) object);
+	}
+	
+	public float getPageWidth(int position) {
+		return 1f;
 	}
 	
 	@Override
