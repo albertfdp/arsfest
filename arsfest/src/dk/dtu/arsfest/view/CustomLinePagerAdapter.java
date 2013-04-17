@@ -21,7 +21,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class CustomLinePagerAdapter extends PagerAdapter {
 	
@@ -79,7 +78,7 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 					 Event clickedEvent = events.get(position);
 						
 					 // get location of the clicked event
-					 Location clickedLocation = getLocation(clickedEvent.getId());
+					 Location clickedLocation = getLocation(clickedEvent.getLocation());
 						
 					 Intent intent = new Intent(mContext, EventActivity.class);
 					 intent.putExtra(Constants.EXTRA_EVENT, clickedEvent);

@@ -48,6 +48,7 @@ public class AboutActivity extends Activity implements
 		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
+		headerTitle.setText(Constants.APP_NAME);
 
 		rateUs = (TextView) findViewById(R.id.textViewRateUs);
 		rateUs.setTypeface(Utils.getTypeface(this,
