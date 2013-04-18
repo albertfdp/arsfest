@@ -29,6 +29,7 @@
     <string name="default_event_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo faucibus nisi, id rhoncus tellus pretium eget. Curabitur vitae orci eu tortor ultricies porttitor. </string>
    	<string name="event_finished">FINISHED</string>
     <string name="event_happening_now">HAPPENING NOW</string>
+    <string name="happening_now">NOW</string>
     
     <string-array name="default_categories">
         <item>All</item>

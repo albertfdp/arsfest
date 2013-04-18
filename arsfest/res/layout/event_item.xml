@@ -51,6 +51,7 @@
         android:textColor="@color/flat_grey"
         android:textSize="12sp"
         android:layout_marginTop="1dip"
+        android:layout_marginRight="3dp"
         android:layout_toRightOf="@+id/thumbnail"
         android:text="@string/default_event_location" />
  
@@ -63,7 +64,8 @@
         android:layout_alignTop="@id/event_title"
         android:gravity="right"
         android:text="@string/default_event_time"
-        android:layout_marginRight="5dip"
+        android:layout_marginLeft="3dip"
+        android:layout_marginRight="1dip"
         android:textSize="12sp"
         android:textColor="@color/flat_blue"
         android:textStyle="bold"/>
@@ -77,7 +79,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignBottom="@id/event_time"
         android:text=""
-        android:layout_marginRight="5dip"
+        android:layout_marginLeft="3dip"
+        android:layout_marginRight="1dip"
         android:textSize="12sp"
         android:textColor="@color/flat_blue"
         android:textStyle="bold"/>

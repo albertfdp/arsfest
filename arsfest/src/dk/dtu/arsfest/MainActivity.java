@@ -14,13 +14,10 @@ import com.coboltforge.slidemenu.SlideMenuInterface.OnSlideMenuItemClickListener
 
 import dk.dtu.arsfest.alarms.AlarmHelper;
 import dk.dtu.arsfest.context.ContextAwareHelper;
-import dk.dtu.arsfest.event.EventActivity;
 import dk.dtu.arsfest.maps.MapActivity;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
-//import dk.dtu.arsfest.model.Predicate;
-//import dk.dtu.arsfest.model.Predicate.IPredicate;
 import dk.dtu.arsfest.parser.JSONParser;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
@@ -34,7 +31,6 @@ import android.os.CountDownTimer;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.util.TypedValue;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -45,10 +41,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,7 +52,6 @@ public class MainActivity extends Activity implements
 	public SlideMenu slidemenu;
 
 	private ArrayList<Location> locations;
-	private ArrayList<Event> happeningNow;
 	private ArrayList<Bssid> bssids;
 
 	private ViewPager viewPager;
@@ -70,7 +62,6 @@ public class MainActivity extends Activity implements
 	private ScrollingTabsView scrollingTabs;
 	private TabsAdapter scrollingTabsAdapter;
 	private TextView headerTitle;
-	private TextView happeningNowTitle;
 	private String currentLocation;
 	
 	//After refactoring
@@ -96,13 +87,6 @@ public class MainActivity extends Activity implements
 		// Create a new ContextAwareHelper
 		contextAwareHelper = new ContextAwareHelper(
 				this.getApplicationContext(), bssids, locations);
-
-		// If it is before the start of arsfest shows countdown
-		/*
-		 * Date currentDate = Utils.getCurrentDate(); Date arsfest_start =
-		 * Utils.getStartDate(Constants.FEST_START_TIME);
-		 */
-		// create menu
 
 		// inflate the list view with the events
 		initViewPager(1,contextAwareHelper.getEventsHappeningNow());
@@ -145,10 +129,7 @@ public class MainActivity extends Activity implements
 		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
-		//headerTitle.setText(Constants.APP_NAME);
-
-		happeningNowTitle = (TextView) findViewById(R.id.card_happening_now);
-		happeningNowTitle.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_PROXIMANOVA));
+		headerTitle.setText(Constants.APP_NAME);
 		
 		// Sets the menu
 		startMenu(Constants.SCROLL_MENU_TIME);
@@ -213,7 +194,10 @@ public class MainActivity extends Activity implements
 
 		mLine = (IndicatorLineView) findViewById(R.id.line);
 		mLine.setFadeOutDelay(0);
-		mLine.setBackgroundColor(this.getResources().getColor(R.color.flat_lila));
+		if (Utils.hasFestFinished() || !Utils.hasFestStarted())
+			mLine.setLineColor(this.getResources().getColor(R.color.flat_light_grey));
+			mLine.setVisibility(View.INVISIBLE);
+		//mLine.setBackgroundColor(this.getResources().getColor(R.color.flat_lila));
 		mLine.setViewPager(lineViewPager);
 	}
 
@@ -277,36 +261,7 @@ public class MainActivity extends Activity implements
 		return false;
 	}
 
-	private void showCountdown(Date current, Date start) {
-
-		CountDownTimer cdt = new CountDownTimer(start.getTime()
-				- current.getTime(), 1000) {
-
-			@Override
-			public void onTick(long millisUntilFinished) {
-
-				TextView days = (TextView) findViewById(R.id.textDays);
-				TextView hours = (TextView) findViewById(R.id.textHours);
-				TextView mins = (TextView) findViewById(R.id.textMinutes);
-				int daysValue = (int) (millisUntilFinished / 86400000);
-				int hoursValue = (int) (((millisUntilFinished / 1000) - (daysValue * 86400)) / 3600);
-				int minsValue = (int) (((millisUntilFinished / 1000) - ((daysValue * 86400) + (hoursValue * 3600))) / 60);
-				days.setText(String.valueOf(daysValue));
-				hours.setText(String.valueOf(hoursValue));
-				mins.setText(String.valueOf(minsValue));
-
-			}
-
-			@Override
-			public void onFinish() {
-				// TODO Auto-generated method stub
-
-			}
-		};
-
-		cdt.start();
-
-	}
+	
 
 	/**
 	 * Method showing the accordeon slide menu at the left hand side

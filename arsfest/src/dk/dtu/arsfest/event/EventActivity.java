@@ -85,6 +85,7 @@ public class EventActivity extends Activity implements
 		seeItOnTheMap.setTypeface(dtuFont);
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
+		headerTitle.setText(Constants.APP_NAME);
 		startMenu(Constants.SCROLL_MENU_TIME);
 		drawMap();
 	}
