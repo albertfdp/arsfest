@@ -202,7 +202,6 @@ public class MainActivity extends Activity implements
 		scrollingTabs.setViewPager(viewPager);
 
 		// happening now
-		//this.happeningNow = this.locations.get(1).getEvents();
 		happeningNow = contextAwareHelper.getEventsHappeningNow();			
 
 		lineViewPager = (ViewPager) findViewById(R.id.linepager);
