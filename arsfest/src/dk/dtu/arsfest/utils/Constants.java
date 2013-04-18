@@ -29,6 +29,7 @@ public class Constants {
 	public static final String JSON_TAG_EVENT_TYPE = "type";
 	public static final String JSON_TAG_EVENT_THEME = "theme";
 	public static final String JSON_TAG_EVENT_MENU = "menu";
+	public static final Object JSON_TAG_MENU_DINNER = "Dinner";
 	
 	public static final String JSON_TAG_MENU_COURSE = "course";
 	public static final String JSON_TAG_MENU_COURSE_NAME = "name";
@@ -57,6 +58,5 @@ public class Constants {
 	public static final String EXTRA_STARTX = "dk.dtu.arsfest.map.StartX";
 	public static final String EXTRA_STARTY = "dk.dtu.arsfest.map.StartY";
 	public static final String EXTRA_START = "dk.dtu.arsfest.map.Start";
-
 
 }

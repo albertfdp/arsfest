@@ -100,9 +100,9 @@ public class JSONParser {
 			Date endTimeDate = Utils.getFormattedDate(endTime);
 			String theme = event.getString(Constants.JSON_TAG_EVENT_THEME);
 			String type = event.getString(Constants.JSON_TAG_EVENT_TYPE);
-			
-			if(name.equals("Dinner")){
-				ArrayList<Course> dinnerMenu = new ArrayList<Course>();	
+			ArrayList<Course> dinnerMenu = null;
+			if(name.equals(Constants.JSON_TAG_MENU_DINNER)){
+				dinnerMenu = new ArrayList<Course>();	
 				JSONArray jsonMenu = event.getJSONArray(Constants.JSON_TAG_EVENT_MENU);
 				for (int j = 0; j < jsonMenu.length(); j++){
 					JSONObject menu = jsonMenu.getJSONObject(i);
@@ -112,13 +112,10 @@ public class JSONParser {
 					
 					dinnerMenu.add(new Course(course,course_name,course_description));
 				}
-				
-				events.add(new Event(id, name, image, startTimeDate, endTimeDate, location, description, type, theme, dinnerMenu));
-				Log.i("Arsfest","menu");
 			}
 			else
 				
-			events.add(new Event(id, name, image, startTimeDate, endTimeDate, location, description, type, theme));
+			events.add(new Event(id, name, image, startTimeDate, endTimeDate, location, description, type, theme,dinnerMenu));
 		}
 		return events;
 	}

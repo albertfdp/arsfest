@@ -52,7 +52,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.location = location;
 	}
 
-	public Event (String id, String name, String image, Date startTime, Date endTime, 
+	/*public Event (String id, String name, String image, Date startTime, Date endTime, 
 			String location, String description, String type, String theme) {
 		this.id = id;
 		this.name = name;
@@ -63,7 +63,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.description = description;
 		this.type = type;
 		this.theme = theme;
-	}
+	}*/
 	
 	public Event(String id, String name, String image, Date startTime, Date endTime, 
 			String location, String description, String type, String theme, ArrayList<Course> menu) {
