@@ -194,10 +194,10 @@ public class MainActivity extends Activity implements
 
 		mLine = (IndicatorLineView) findViewById(R.id.line);
 		mLine.setFadeOutDelay(0);
-		if (Utils.hasFestFinished() || !Utils.hasFestStarted())
+		if (Utils.hasFestFinished() || !Utils.hasFestStarted()) {
 			mLine.setLineColor(this.getResources().getColor(R.color.flat_light_grey));
 			mLine.setVisibility(View.INVISIBLE);
-		//mLine.setBackgroundColor(this.getResources().getColor(R.color.flat_lila));
+		}
 		mLine.setViewPager(lineViewPager);
 	}
 

@@ -156,10 +156,11 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 
 	@Override
 	public int getCount() {
-		if (this.events.size() > 0)
+		if (this.events.size() > 0) {
 			return this.events.size();
-		return 1;
-		//return this.events.size();
+		} else {
+			return 1;
+		}
 	}
 
 	@Override
