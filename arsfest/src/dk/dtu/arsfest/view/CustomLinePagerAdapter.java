@@ -61,7 +61,7 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 			eventTitle.setTypeface(neoType);
 			eventLocation.setTypeface(neoType);
 			eventTime.setTypeface(neoType);
-			eventStatus.setTypeface(neoType);
+			//eventStatus.setTypeface(neoType);
 			
 			eventTitle.setText(event.getName());
 			eventLocation.setText(getLocationName(event.getLocation()));

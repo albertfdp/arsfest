@@ -20,9 +20,9 @@ public class Utils {
   	}
 	
 	public static Date getCurrentDate() {
-		return getStartDate("03-05-2013:18:09");
+		//return getStartDate("03-05-2013:18:09");
 		//return new Date();
-		//return getStartDate("03-05-2013:21:10");
+		return getStartDate("03-05-2013:21:10");
 		//return getStartDate("03-06-2013:21:10");
 	}
 	
