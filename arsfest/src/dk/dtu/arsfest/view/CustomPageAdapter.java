@@ -54,10 +54,12 @@ public class CustomPageAdapter extends PagerAdapter {
 		listView.setTag(position);
 		listView.setAdapter(eventAdapter);
 		listView.setSelection(getNextEvent());
-		listView.setPadding(15, 10, 15, 10);
+		//listView.setPadding(15, 10, 15, 10);
+		final float scale = mContext.getResources().getDisplayMetrics().density;
+		listView.setPadding((int) (15 * scale), (int) (10 * scale), (int) (15 * scale), (int) (10 * scale));
 		listView.setBackgroundColor(mContext.getResources().getColor(R.color.flat_light_grey));
 		listView.setDivider(new ColorDrawable(mContext.getResources().getColor(R.color.flat_light_grey)));
-		listView.setDividerHeight(15); // always after setDivider()
+		listView.setDividerHeight((int) (10 * scale)); // always after setDivider()
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
