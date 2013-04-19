@@ -36,6 +36,9 @@
     <string name="default_course_type">Course Type</string>
     <string name="menu_name">MENU</string>
     
+    <string name="card_finished_message">The Årsfest 2013 is over</string>
+    <string name="card_finished_submessage">Thank you for your attendance</string>
+    
     <string-array name="default_categories">
         <item>All</item>
         <item>Muisc</item>

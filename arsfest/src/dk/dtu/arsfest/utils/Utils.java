@@ -20,10 +20,10 @@ public class Utils {
   	}
 	
 	public static Date getCurrentDate() {
-		//return getStartDate("03-05-2013:18:09");
-		//return new Date();
-		return getStartDate("03-05-2013:21:10");
-		//return getStartDate("03-06-2013:21:10");
+		//return getStartDate("03-05-2013:18:09"); // just before
+		//return new Date(); // now
+		//return getStartDate("03-05-2013:21:10"); // during
+		return getStartDate("03-06-2013:21:10"); // over
 	}
 	
 	public static Date getStartDate(String stringDate) {

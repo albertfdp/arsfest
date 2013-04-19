@@ -93,6 +93,13 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 			
 		} else if (Utils.hasFestFinished()) {
 			View view = inflater.inflate(R.layout.event_finished, null);
+			
+			TextView message = (TextView) view.findViewById(R.id.card_finished_message);
+			TextView submessage = (TextView) view.findViewById(R.id.card_finished_submessage);
+			
+			message.setTypeface(Utils.getTypeface(mContext, Constants.TYPEFONT_WELLFLEET));
+			submessage.setTypeface(Utils.getTypeface(mContext, Constants.TYPEFONT_NEOSANS));
+			
 			((ViewPager) container).addView(view, 0);
 			return view;
 		} else {
