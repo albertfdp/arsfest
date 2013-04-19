@@ -33,6 +33,9 @@
     <string name="event_happening_now">HAPPENING NOW</string>
     <string name="happening_now">NOW</string>
     
+    <string name="card_finished_message">The Årsfest 2013 is over</string>
+    <string name="card_finished_submessage">Thank you for your attendance</string>
+    
     <string-array name="default_categories">
         <item>All</item>
         <item>Muisc</item>

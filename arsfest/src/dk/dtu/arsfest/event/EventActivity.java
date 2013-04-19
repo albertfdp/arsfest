@@ -233,7 +233,7 @@ public class EventActivity extends Activity implements
 			break;
 		}
 	}
-
+	
 	/**
 	 * Menu
 	 */
