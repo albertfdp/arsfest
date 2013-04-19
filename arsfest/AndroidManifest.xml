@@ -59,6 +59,11 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name="dk.dtu.arsfest.preferences.UserSettings"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name="dk.dtu.arsfest.maps.MapActivity2"
             android:label="@string/app_name" >
         </activity>

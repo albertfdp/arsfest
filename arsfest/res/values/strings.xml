@@ -36,6 +36,9 @@
     <string name="default_course_type">Course Type</string>
     <string name="menu_name">MENU</string>
     
+    <string name="card_finished_message">The Årsfest 2013 is over</string>
+    <string name="card_finished_submessage">Thank you for your attendance</string>
+    
     <string-array name="default_categories">
         <item>All</item>
         <item>Muisc</item>
@@ -58,4 +61,9 @@
 	<string name="avocado_team">Avocado Team</string>
 	<string name="navigation">Go</string>
 	<string name="logos">Logos</string>
+	
+	<!-- Preferences -->
+	<string name="pref_ask_wifi">Ask the user to turn on WiFi</string>
+	<string name="pref_ask_wifi_title">Check WiFi connectivity</string>
+	<string name="pref_update_wifi_setting">WiFi</string>
 </resources>

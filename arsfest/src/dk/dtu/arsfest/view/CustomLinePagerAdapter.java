@@ -20,6 +20,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -93,6 +94,13 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 			
 		} else if (Utils.hasFestFinished()) {
 			View view = inflater.inflate(R.layout.event_finished, null);
+			
+			TextView message = (TextView) view.findViewById(R.id.card_finished_message);
+			TextView submessage = (TextView) view.findViewById(R.id.card_finished_submessage);
+			
+			message.setTypeface(Utils.getTypeface(mContext, Constants.TYPEFONT_NEOSANS));
+			submessage.setTypeface(Utils.getTypeface(mContext, Constants.TYPEFONT_NEOSANS));
+			
 			((ViewPager) container).addView(view, 0);
 			return view;
 		} else {
@@ -146,8 +154,8 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 
 		@Override
 		public void onFinish() {
-			// TODO Auto-generated method stub
-
+			mContext.finish();
+			mContext.startActivity(mContext.getIntent());
 		}
 		};
 
