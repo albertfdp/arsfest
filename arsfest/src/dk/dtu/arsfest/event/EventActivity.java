@@ -1,6 +1,5 @@
 package dk.dtu.arsfest.event;
 
-
 import java.util.Locale;
 
 import com.coboltforge.slidemenu.SlideMenu;
@@ -13,6 +12,7 @@ import dk.dtu.arsfest.maps.MapActivity;
 import dk.dtu.arsfest.model.Course;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
+import dk.dtu.arsfest.preferences.UserSettings;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 import android.app.Activity;
@@ -23,14 +23,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebView.PictureListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class EventActivity extends Activity implements
 		OnSlideMenuItemClickListener {
@@ -130,29 +128,31 @@ public class EventActivity extends Activity implements
 		myMapWebView.setPictureListener(new PictureListener() {
 			@Override
 			public void onNewPicture(WebView view, Picture picture) {
-				bmpWidth = (int) findViewById(R.id.imageViewMapOfTheEvent).getMeasuredWidth()/2;
-				bmpHeight = (int) findViewById(R.id.imageViewMapOfTheEvent).getMeasuredHeight()/2;
+				bmpWidth = (int) findViewById(R.id.imageViewMapOfTheEvent)
+						.getMeasuredWidth() / 2;
+				bmpHeight = (int) findViewById(R.id.imageViewMapOfTheEvent)
+						.getMeasuredHeight() / 2;
 				if (location.getName().equals("Library")) {
-					startX = 770*scale/100 - bmpWidth;
-					startY = 560*scale/100 - bmpHeight;
+					startX = 770 * scale / 100 - bmpWidth;
+					startY = 560 * scale / 100 - bmpHeight;
 					correctX(startX);
-					correctY(startY);		
+					correctY(startY);
 					myMapWebView.scrollTo(startX, startY);
 				} else if (location.getName().equals("Oticon")) {
-					startX = 2100*scale/100 - bmpWidth;
-					startY = 240*scale/100 - bmpHeight;
+					startX = 2100 * scale / 100 - bmpWidth;
+					startY = 240 * scale / 100 - bmpHeight;
 					correctX(startX);
-					correctY(startY);				
+					correctY(startY);
 					myMapWebView.scrollTo(startX, startY);
 				} else if (location.getName().equals("Kantine")) {
-					startX = 1420*scale/100 - bmpWidth;
-					startY = 590*scale/100 - bmpHeight;
+					startX = 1420 * scale / 100 - bmpWidth;
+					startY = 590 * scale / 100 - bmpHeight;
 					correctX(startX);
-					correctY(startY);	
+					correctY(startY);
 					myMapWebView.scrollTo(startX, startY);
 				} else if (location.getName().equals("Sportshal")) {
-					startX = 2130*scale/100 - bmpWidth;
-					startY = 1090*scale/100 - bmpHeight;
+					startX = 2130 * scale / 100 - bmpWidth;
+					startY = 1090 * scale / 100 - bmpHeight;
 					correctX(startX);
 					correctY(startY);
 					myMapWebView.scrollTo(startX, startY);
@@ -162,41 +162,42 @@ public class EventActivity extends Activity implements
 			private void correctY(int Y) {
 				if (Y < 0) {
 					startY = 0;
-				} else if (Y+bmpHeight*2 > 1671 * scale/100) {
-					startY = 1671 * scale/100 - bmpHeight*2;
-				}				
+				} else if (Y + bmpHeight * 2 > 1671 * scale / 100) {
+					startY = 1671 * scale / 100 - bmpHeight * 2;
+				}
 			}
 
 			private void correctX(int X) {
 				if (X < 0) {
 					startX = 0;
-				} else if (X+bmpWidth*2 > 2482 * scale/100) {
-					startX = 2482 * scale/100 - bmpWidth*2;
-				}				
+				} else if (X + bmpWidth * 2 > 2482 * scale / 100) {
+					startX = 2482 * scale / 100 - bmpWidth * 2;
+				}
 			}
 		});
 
 		myMapWebView.setOnTouchListener(new View.OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				if (event.getAction() == MotionEvent.ACTION_DOWN) {
+				if (event.getAction() == MotionEvent.ACTION_UP) {
 					startMap();
 				}
 				return (event.getAction() == MotionEvent.ACTION_MOVE);
 			}
 		});
-		
+
 		myMapWebView.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startMap();			
-			}});
+				startMap();
+			}
+		});
 	}
 
 	protected void startMap() {
 		Intent intentMap = new Intent(this, MapActivity.class);
 		intentMap.putExtra(Constants.EXTRA_START, location.getName());
-		startActivity(intentMap);		
+		startActivity(intentMap);
 	}
 
 	private void updateView() {
@@ -204,30 +205,27 @@ public class EventActivity extends Activity implements
 		eventTime.setText(Utils.getEventStringTime(event.getStartTime())
 				+ "\t-\t" + Utils.getEventStringTime(event.getEndTime()));
 		eventLocation.setText(location.getName());
-		if(!event.getName().equals(Constants.JSON_TAG_MENU_DINNER)){
+		if (!event.getName().equals(Constants.JSON_TAG_MENU_DINNER)) {
 			eventMenu.setVisibility(View.GONE);
-		}
-		else{
-			for(Course c : event.getMenu()){
-				
-				if(c.getCourse().equals(Constants.MENU_TYPE_FIRST)){
+		} else {
+			for (Course c : event.getMenu()) {
+
+				if (c.getCourse().equals(Constants.MENU_TYPE_FIRST)) {
 					courseFirst.setText(c.getCourse());
 					courseFirstName.setText(c.getName());
-				}
-				else if(c.getCourse().equals(Constants.MENU_TYPE_MAIN)){
+				} else if (c.getCourse().equals(Constants.MENU_TYPE_MAIN)) {
 					courseMain.setText(c.getCourse());
 					courseMainName.setText(c.getName());
-				}	
-				else if(c.getCourse().equals(Constants.MENU_TYPE_DESSERT)){
+				} else if (c.getCourse().equals(Constants.MENU_TYPE_DESSERT)) {
 					courseDessert.setText(c.getCourse());
 					courseDessertName.setText(c.getName());
-				
+
 				}
 			}
 		}
-						
+
 		// eventDescription.setText(event.getDescription());
-		
+
 	}
 
 	/**
@@ -269,8 +267,9 @@ public class EventActivity extends Activity implements
 			this.startActivity(intentMap);
 			break;
 		case R.id.item_settings:
-			Toast.makeText(this, "Don't milk nipples when they are soft.",
-					Toast.LENGTH_SHORT).show();
+			Intent intentSettings = new Intent(this, UserSettings.class);
+			this.startActivityForResult(intentSettings,
+					Constants.RESULT_SETTINGS);
 			break;
 		case R.id.item_about:
 			Intent intentAbout = new Intent(this, AboutActivity.class);
@@ -279,7 +278,7 @@ public class EventActivity extends Activity implements
 			break;
 		}
 	}
-	
+
 	/**
 	 * Menu
 	 */
