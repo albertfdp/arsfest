@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/MapLayout"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical" >
 
     <com.coboltforge.slidemenu.SlideMenu
@@ -19,21 +19,54 @@
 
         <include
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             layout="@layout/top_header_bar" />
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:background="@color/flat_white"
+            android:background="@color/grey"
             android:orientation="vertical"
             android:padding="5dp" >
 
-            <WebView
-                android:id="@+id/imageViewMapOfThe101"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/mapTextViewMap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:gravity="left"
+                android:padding="2dp"
+                android:text="@string/mapview"
+                android:textColor="@color/flat_white"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <WebView
+                    android:id="@+id/mapWebViewMapOfThe101"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/flat_white" />
+  
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/map_filter_background" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonLocateMe"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_alignParentRight="true"
+                        android:background="#00000000"
+                        android:contentDescription="@string/showmylocation"
+                        android:src="@drawable/map_locate_me" />
+                </RelativeLayout>
+            </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
+
 </RelativeLayout>

@@ -2,7 +2,7 @@ package dk.dtu.arsfest.utils;
 
 public class Constants {
 	
-	public final static String APP_NAME = "DTU ARSFEST 2013";
+	public final static String APP_NAME = "DTU ÅRSFEST 2013";
 	
 	public final static String TYPEFONT_WELLFLEET = "Wellfleet-Regular.ttf";
 	public final static String TYPEFONT_NEOSANS = "NeoSans.ttf";
