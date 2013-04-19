@@ -59,15 +59,15 @@ public class Utils {
 	
 	public static Drawable getDrawable(Context context, String theme) {
 		if (theme.equals(Constants.EVENT_TYPE_MUSIC)) {
-			return context.getResources().getDrawable(R.drawable.music);
+			return context.getResources().getDrawable(R.drawable.guitar);
 		} else if (theme.equals(Constants.EVENT_TYPE_OFFICIAL)) {
-			return context.getResources().getDrawable(R.drawable.prize);
+			return context.getResources().getDrawable(R.drawable.official);
 		} else if (theme.equals(Constants.EVENT_TYPE_FOOD)) {
-			return context.getResources().getDrawable(R.drawable.shop);
+			return context.getResources().getDrawable(R.drawable.dinner_icon2);
 		} else if (theme.equals(Constants.EVENT_TYPE_DANCE)) {
-			return context.getResources().getDrawable(R.drawable.ticket);
+			return context.getResources().getDrawable(R.drawable.dancing);
 		} else {
-			return context.getResources().getDrawable(R.drawable.music);
+			return context.getResources().getDrawable(R.drawable.note);
 		}
 	}
 }
