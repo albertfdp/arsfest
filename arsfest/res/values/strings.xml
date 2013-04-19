@@ -32,6 +32,9 @@
    	<string name="event_finished">FINISHED</string>
     <string name="event_happening_now">HAPPENING NOW</string>
     <string name="happening_now">NOW</string>
+    <string name="default_course_name">Course Name</string>
+    <string name="default_course_type">Course Type</string>
+    <string name="menu_name">MENU</string>
     
     <string-array name="default_categories">
         <item>All</item>

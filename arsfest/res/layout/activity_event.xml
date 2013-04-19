@@ -124,6 +124,48 @@
                         android:textColor="@color/card_text_grey"
                         android:textSize="14sp" />
                 </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/event_menu"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@color/grey"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+                    
+                    <TextView
+                        android:id="@+id/event_menu_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text="@string/menu_name"
+                        android:textColor="@color/flat_white"
+                        android:textSize="14sp" />
+
+                    <include
+                        android:id="@+id/menu_first_course"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        layout="@layout/course_menu"
+                        android:layout_marginBottom="5dp" />
+                    
+                    <include
+                        android:id="@+id/menu_main_course"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        layout="@layout/course_menu"
+                        android:layout_marginBottom="5dp" />
+                    
+                    <include
+                        android:id="@+id/menu_dessert"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        layout="@layout/course_menu" />
+                    
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/layoutViewMapOfTheEvent"

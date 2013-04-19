@@ -1,5 +1,6 @@
 package dk.dtu.arsfest.event;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 import com.coboltforge.slidemenu.SlideMenu;
@@ -9,6 +10,7 @@ import dk.dtu.arsfest.AboutActivity;
 import dk.dtu.arsfest.MainActivity;
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.maps.MapActivity;
+import dk.dtu.arsfest.model.Course;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.utils.Constants;
@@ -39,7 +41,15 @@ public class EventActivity extends Activity implements
 	private TextView eventDescription;
 	private TextView headerTitle;
 	private TextView seeItOnTheMap;
+	/*private TextView courseFirst;
+	private TextView courseFirstName;
+	private TextView courseMain;
+	private TextView courseMainName;
+	private TextView courseDessert;
+	private TextView courseDessertName;*/
+	private TextView menuName;
 	private SlideMenu slidemenu;
+	private View eventMenu;
 
 	private int bmpWidth, bmpHeight;
 	private int scale = 50;
@@ -76,6 +86,11 @@ public class EventActivity extends Activity implements
 		eventDescription = (TextView) findViewById(R.id.event_description);
 		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
 		seeItOnTheMap = (TextView) findViewById(R.id.seeItOnTheMap);
+		//courseFirst = (TextView) findViewById(R.id.menu_first_course);
+		//courseMain = (TextView) findViewById(R.id.menu_main_course);
+		//courseDessert = (TextView) findViewById(R.id.menu_main_course);
+		menuName = (TextView) findViewById(R.id.event_menu_name);
+		eventMenu = findViewById(R.id.event_menu);
 
 		Typeface dtuFont = Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS);
 		eventTitle.setTypeface(dtuFont, Typeface.BOLD);
@@ -83,6 +98,9 @@ public class EventActivity extends Activity implements
 		eventLocation.setTypeface(dtuFont);
 		eventDescription.setTypeface(dtuFont);
 		seeItOnTheMap.setTypeface(dtuFont);
+		//courseType.setTypeface(dtuFont);
+		//courseName.setTypeface(dtuFont);
+		menuName.setTypeface(dtuFont);
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
 		headerTitle.setText(Constants.APP_NAME);
@@ -181,7 +199,12 @@ public class EventActivity extends Activity implements
 		eventTime.setText(Utils.getEventStringTime(event.getStartTime())
 				+ "\t-\t" + Utils.getEventStringTime(event.getEndTime()));
 		eventLocation.setText(location.getName());
+		if(!event.getName().equals(Constants.JSON_TAG_MENU_DINNER)){
+			eventMenu.setVisibility(View.GONE);
+		}
+						
 		// eventDescription.setText(event.getDescription());
+		
 	}
 
 	/**

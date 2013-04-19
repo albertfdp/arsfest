@@ -160,7 +160,8 @@
                     "description": "Dinner in Biblioteket and Kantine",
                     "type": "official",
                     "theme": "food",
-                    "menu": [{ "course": "First",
+                    "menu": [
+                    		 { "course": "First",
                     		   "name": "Fish", 
                     		   "description": "MMMMMMMMMMM fish"
                     		 },
