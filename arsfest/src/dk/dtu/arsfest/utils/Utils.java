@@ -70,18 +70,4 @@ public class Utils {
 			return context.getResources().getDrawable(R.drawable.music);
 		}
 	}
-	
-	/*public static ArrayList<Event> filterEventsByTheme(ArrayList<Event> events, final String theme) {
-		ArrayList<Event> selectedEvents = (ArrayList<Event>) Predicate.filter(events,
-				new IPredicate<Event>() {
-
-					@Override
-					public boolean apply(Event event) {
-						return event.getTheme().equalsIgnoreCase(theme);
-					}
-			
-		});
-		return selectedEvents;	
-	}*/
-
 }

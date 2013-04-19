@@ -1,7 +1,6 @@
 package dk.dtu.arsfest.view;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.event.EventActivity;

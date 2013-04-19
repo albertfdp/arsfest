@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 
 import com.astuetz.viewpager.extensions.IndicatorLineView;
 import com.astuetz.viewpager.extensions.ScrollingTabsView;
@@ -27,7 +26,6 @@ import dk.dtu.arsfest.view.LocationTabs;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
