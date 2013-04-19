@@ -18,6 +18,7 @@ import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
 import dk.dtu.arsfest.parser.JSONParser;
+import dk.dtu.arsfest.preferences.UserSettings;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 import dk.dtu.arsfest.view.CustomLinePagerAdapter;
@@ -297,13 +298,23 @@ public class MainActivity extends Activity implements
 			this.startActivity(intentMap);
 			break;
 		case R.id.item_settings:
-			Toast.makeText(this, "Don't milk nipples when they are soft.",
-					Toast.LENGTH_SHORT).show();
+			Intent intentSettings = new Intent(this, UserSettings.class);
+			this.startActivityForResult(intentSettings, Constants.RESULT_SETTINGS);
 			break;
 		case R.id.item_about:
 			Intent intentAbout = new Intent(this, AboutActivity.class);
 			this.startActivity(intentAbout);
 			break;
+		}
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		switch (requestCode) {
+			case Constants.RESULT_SETTINGS:
+				// do something
+				break;
 		}
 	}
 
