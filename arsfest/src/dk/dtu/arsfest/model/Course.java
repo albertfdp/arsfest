@@ -1,6 +1,9 @@
 package dk.dtu.arsfest.model;
 
-public class Course {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Course implements Parcelable {
 	
 	private String course;
 	private String name;
@@ -36,6 +39,39 @@ public class Course {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public Course (Parcel read) {
+		this.course = read.readString();
+		this.name = read.readString();
+		this.description = read.readString();
+	}
+	
+	public static final Parcelable.Creator<Course> CREATOR = 
+			new Parcelable.Creator<Course>() {
+
+				@Override
+				public Course createFromParcel(Parcel source) {
+					return new Course(source);
+				}
+
+				@Override
+				public Course[] newArray(int size) {
+					return new Course[size];
+				}
+		
+			};
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeString(course);
+		dest.writeString(name);
+		dest.writeString(description);
 	}
 
 
