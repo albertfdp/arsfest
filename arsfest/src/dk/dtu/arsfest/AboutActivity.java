@@ -33,7 +33,6 @@ public class AboutActivity extends Activity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_about);
 		startMenu(Constants.SCROLL_MENU_TIME);
 		setAbout();

@@ -70,10 +70,7 @@ public class MainActivity extends Activity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		// hide title bar
-		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
+		
 		setContentView(R.layout.activity_main);
 		initView();
 
