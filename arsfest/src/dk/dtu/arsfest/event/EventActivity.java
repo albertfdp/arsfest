@@ -1,6 +1,6 @@
 package dk.dtu.arsfest.event;
 
-import java.util.ArrayList;
+
 import java.util.Locale;
 
 import com.coboltforge.slidemenu.SlideMenu;
@@ -41,12 +41,12 @@ public class EventActivity extends Activity implements
 	private TextView eventDescription;
 	private TextView headerTitle;
 	private TextView seeItOnTheMap;
-	/*private TextView courseFirst;
+	private TextView courseFirst;
 	private TextView courseFirstName;
 	private TextView courseMain;
 	private TextView courseMainName;
 	private TextView courseDessert;
-	private TextView courseDessertName;*/
+	private TextView courseDessertName;
 	private TextView menuName;
 	private SlideMenu slidemenu;
 	private View eventMenu;
@@ -86,9 +86,12 @@ public class EventActivity extends Activity implements
 		eventDescription = (TextView) findViewById(R.id.event_description);
 		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
 		seeItOnTheMap = (TextView) findViewById(R.id.seeItOnTheMap);
-		//courseFirst = (TextView) findViewById(R.id.menu_first_course);
-		//courseMain = (TextView) findViewById(R.id.menu_main_course);
-		//courseDessert = (TextView) findViewById(R.id.menu_main_course);
+		courseFirst = (TextView) findViewById(R.id.first_course_type);
+		courseFirstName = (TextView) findViewById(R.id.first_course_name);
+		courseMain = (TextView) findViewById(R.id.main_course_type);
+		courseMainName = (TextView) findViewById(R.id.main_course_name);
+		courseDessert = (TextView) findViewById(R.id.dessert_course_type);
+		courseDessertName = (TextView) findViewById(R.id.dessert_course_name);
 		menuName = (TextView) findViewById(R.id.event_menu_name);
 		eventMenu = findViewById(R.id.event_menu);
 
@@ -98,8 +101,12 @@ public class EventActivity extends Activity implements
 		eventLocation.setTypeface(dtuFont);
 		eventDescription.setTypeface(dtuFont);
 		seeItOnTheMap.setTypeface(dtuFont);
-		//courseType.setTypeface(dtuFont);
-		//courseName.setTypeface(dtuFont);
+		courseFirst.setTypeface(dtuFont);
+		courseFirstName.setTypeface(dtuFont);
+		courseMain.setTypeface(dtuFont);
+		courseMainName.setTypeface(dtuFont);
+		courseDessert.setTypeface(dtuFont);
+		courseDessertName.setTypeface(dtuFont);
 		menuName.setTypeface(dtuFont);
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
@@ -201,6 +208,24 @@ public class EventActivity extends Activity implements
 		eventLocation.setText(location.getName());
 		if(!event.getName().equals(Constants.JSON_TAG_MENU_DINNER)){
 			eventMenu.setVisibility(View.GONE);
+		}
+		else{
+			for(Course c : event.getMenu()){
+				
+				if(c.getCourse().equals(Constants.MENU_TYPE_FIRST)){
+					courseFirst.setText(c.getCourse());
+					courseFirstName.setText(c.getName());
+				}
+				else if(c.getCourse().equals(Constants.MENU_TYPE_MAIN)){
+					courseMain.setText(c.getCourse());
+					courseMainName.setText(c.getName());
+				}	
+				else if(c.getCourse().equals(Constants.MENU_TYPE_DESSERT)){
+					courseDessert.setText(c.getCourse());
+					courseDessertName.setText(c.getName());
+				
+				}
+			}
 		}
 						
 		// eventDescription.setText(event.getDescription());

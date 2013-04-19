@@ -38,6 +38,10 @@ public class Constants {
 	public static final String JSON_TAG_BSSID_LOCATION = "location";
 	public static final String JSON_TAG_BSSIDS = "bssids";
 	public static final String JSON_TAG_BSSID_NAME = "bssid";
+	
+	public static final String MENU_TYPE_FIRST = "First";
+	public static final String MENU_TYPE_MAIN = "Main";
+	public static final String MENU_TYPE_DESSERT = "Dessert";
 
 	public static final String EXTRA_EVENT = "dk.dtu.arsfest.Event";
 	public static final String EXTRA_LOCATION = "dk.dtu.arsfest.Location";
