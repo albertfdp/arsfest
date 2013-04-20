@@ -18,6 +18,7 @@ import dk.dtu.arsfest.model.Bssid;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.parser.JSONParser;
+import dk.dtu.arsfest.preferences.UserSettings;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 import android.app.Activity;
@@ -44,6 +45,7 @@ public class MapActivity extends Activity implements
 
 	private int bmpScrollX, bmpScrollY = 0;
 	private int bmpWidth, bmpHeight = 0;
+	private float scale = 1;
 	private ImageButton imageButtonLocateMe;
 	private SlideMenu slideMenu;
 	private TextView headerTitle, mapView;
@@ -113,7 +115,6 @@ public class MapActivity extends Activity implements
 				alarmHelper.registerAlarmManager();
 				contextAwareHelper.startContextAwareness();
 				myCurrentLocation = contextAwareHelper.getCurrentLocation();
-				myCurrentLocation = "a";
 				if (myCurrentLocation.equals("l1")) {
 					setInitialScroll("Library");					
 					webView.scrollTo(bmpScrollX, bmpScrollY);
@@ -141,18 +142,16 @@ public class MapActivity extends Activity implements
 				.getMeasuredWidth() / 2;
 		bmpHeight = (int) findViewById(R.id.mapWebViewMapOfThe101)
 				.getMeasuredHeight() / 2;
+		scale = webView.getScale();
+		
 		if (stringExtra.equals("Library")) {
-			bmpScrollX = 770 - bmpWidth;
-			bmpScrollY = 560 - bmpHeight;
-			Toast.makeText(
-					getApplicationContext(),
-					"1:" + bmpScrollX + "&" + bmpScrollY,
-					Toast.LENGTH_SHORT).show();
+			bmpScrollX = (int) ((770 - bmpWidth) * scale);
+			bmpScrollY = (int) ((560 - bmpHeight) * scale);
 			correctX(bmpScrollX);
 			correctY(bmpScrollY);
 		} else if (stringExtra.equals("Oticon")) {
-			bmpScrollX = 2100 - bmpWidth;
-			bmpScrollY = 240 - bmpHeight;
+			bmpScrollX = (int) ((2100 - bmpWidth) * scale);
+			bmpScrollY = (int) ((240 - bmpHeight) * scale);
 			correctX(bmpScrollX);
 			correctY(bmpScrollY);
 		} else if (stringExtra.equals("Kantine")) {
@@ -171,16 +170,16 @@ public class MapActivity extends Activity implements
 	private void correctY(int Y) {
 		if (Y < 0) {
 			bmpScrollY = 0;
-		} else if (Y + bmpHeight * 2 > 1671) {
-			bmpScrollY = 1671 - bmpHeight * 2;
+		} else if (Y + bmpHeight * 2 > 1671 * scale) {
+			bmpScrollY = (int) ((1671 * scale) - bmpHeight * 2);
 		}
 	}
 
 	private void correctX(int X) {
 		if (X < 0) {
 			bmpScrollX = 0;
-		} else if (X + bmpWidth * 2 > 2482) {
-			bmpScrollX = 2482 - bmpWidth * 2;
+		} else if (X + bmpWidth * 2 > 2482 * scale) {
+			bmpScrollX = (int) ((2482 * scale) - bmpWidth * 2);
 		}
 	}
 
@@ -192,7 +191,7 @@ public class MapActivity extends Activity implements
 			@Override
 			public void onPageFinished(WebView view, String url) {
 				super.onPageFinished(view, url);
-				webView.getSettings().setBuiltInZoomControls(false);
+				webView.getSettings().setBuiltInZoomControls(true);
 				webView.getSettings().setUseWideViewPort(true);
 				webView.setInitialScale(100);
 			}
@@ -300,8 +299,8 @@ public class MapActivity extends Activity implements
 		case R.id.item_map:
 			break;
 		case R.id.item_settings:
-			Toast.makeText(this, "Don't milk nipples when they are soft.",
-					Toast.LENGTH_SHORT).show();
+			Intent intentSettings = new Intent(this, UserSettings.class);
+			this.startActivityForResult(intentSettings, Constants.RESULT_SETTINGS);
 			break;
 		case R.id.item_about:
 			Intent intentAbout = new Intent(this, AboutActivity.class);
