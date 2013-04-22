@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
@@ -24,11 +23,10 @@ public class AboutActivity extends Activity implements
 		OnSlideMenuItemClickListener {
 
 	private SlideMenu slidemenu;
-	private TextView headerTitle;
-	private TextView rateUs;
-	private TextView about;
-	private TextView version;
-	private RelativeLayout rateUsLink;
+	private TextView textViewHeaderTitle, textViewGooglePlay, textViewAboutUs,
+			textViewRateUs, textViewAbout, textViewVersion,
+			textViewVersionTitle;
+	private RelativeLayout relativeLayoutRateUsLink;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,28 +37,42 @@ public class AboutActivity extends Activity implements
 	}
 
 	/**
-	 * Method setting the about activity
+	 * Method setting the about activity (fonts and listeners)
 	 * 
 	 * @author AA
 	 */
 	private void setAbout() {
-		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
-		headerTitle.setTypeface(Utils.getTypeface(this,
+		textViewHeaderTitle = (TextView) findViewById(R.id.actionBarTitle);
+		textViewHeaderTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
-		headerTitle.setText(Constants.APP_NAME);
+		textViewHeaderTitle.setText(Constants.APP_NAME);
 
-		rateUs = (TextView) findViewById(R.id.textViewRateUs);
-		rateUs.setTypeface(Utils.getTypeface(this,
+		textViewRateUs = (TextView) findViewById(R.id.textViewRateUs);
+		textViewRateUs.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
 
-		about = (TextView) findViewById(R.id.textViewAbout);
-		about.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS));
+		textViewAbout = (TextView) findViewById(R.id.textViewAbout);
+		textViewAbout.setTypeface(Utils.getTypeface(this,
+				Constants.TYPEFONT_NEOSANS));
 
-		version = (TextView) findViewById(R.id.textViewVersion);
-		version.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS));
+		textViewVersion = (TextView) findViewById(R.id.textViewVersion);
+		textViewVersion.setTypeface(Utils.getTypeface(this,
+				Constants.TYPEFONT_NEOSANS));
 
-		rateUsLink = (RelativeLayout) findViewById(R.id.AboutLayoutRateUs);
-		rateUsLink.setOnClickListener(new View.OnClickListener() {
+		textViewGooglePlay = (TextView) findViewById(R.id.AboutGooglePlay);
+		textViewGooglePlay.setTypeface(Utils.getTypeface(this,
+				Constants.TYPEFONT_NEOSANS));
+
+		textViewAboutUs = (TextView) findViewById(R.id.textViewAboutUs);
+		textViewAboutUs.setTypeface(Utils.getTypeface(this,
+				Constants.TYPEFONT_NEOSANS));
+
+		textViewVersionTitle = (TextView) findViewById(R.id.textViewVersion2);
+		textViewVersionTitle.setTypeface(Utils.getTypeface(this,
+				Constants.TYPEFONT_NEOSANS));
+
+		relativeLayoutRateUsLink = (RelativeLayout) findViewById(R.id.AboutLayoutRateUs);
+		relativeLayoutRateUsLink.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri
