@@ -9,6 +9,7 @@ import dk.dtu.arsfest.AboutActivity;
 import dk.dtu.arsfest.MainActivity;
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.maps.MapActivity;
+import dk.dtu.arsfest.maps.MapScroller;
 import dk.dtu.arsfest.model.Course;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
@@ -49,11 +50,8 @@ public class EventActivity extends Activity implements
 	private SlideMenu slidemenu;
 	private View eventMenu;
 
-	private int bmpWidth, bmpHeight;
 	private int scale = 50;
 	private WebView myMapWebView;
-	private int startX, startY;
-
 	private Event event;
 	private Location location;
 
@@ -128,51 +126,8 @@ public class EventActivity extends Activity implements
 		myMapWebView.setPictureListener(new PictureListener() {
 			@Override
 			public void onNewPicture(WebView view, Picture picture) {
-				bmpWidth = (int) findViewById(R.id.imageViewMapOfTheEvent)
-						.getMeasuredWidth() / 2;
-				bmpHeight = (int) findViewById(R.id.imageViewMapOfTheEvent)
-						.getMeasuredHeight() / 2;
-				if (location.getName().equals("Library")) {
-					startX = 770 * scale / 100 - bmpWidth;
-					startY = 560 * scale / 100 - bmpHeight;
-					correctX(startX);
-					correctY(startY);
-					myMapWebView.scrollTo(startX, startY);
-				} else if (location.getName().equals("Oticon")) {
-					startX = 2100 * scale / 100 - bmpWidth;
-					startY = 240 * scale / 100 - bmpHeight;
-					correctX(startX);
-					correctY(startY);
-					myMapWebView.scrollTo(startX, startY);
-				} else if (location.getName().equals("Kantine")) {
-					startX = 1420 * scale / 100 - bmpWidth;
-					startY = 590 * scale / 100 - bmpHeight;
-					correctX(startX);
-					correctY(startY);
-					myMapWebView.scrollTo(startX, startY);
-				} else if (location.getName().equals("Sportshal")) {
-					startX = 2130 * scale / 100 - bmpWidth;
-					startY = 1090 * scale / 100 - bmpHeight;
-					correctX(startX);
-					correctY(startY);
-					myMapWebView.scrollTo(startX, startY);
-				}
-			}
-
-			private void correctY(int Y) {
-				if (Y < 0) {
-					startY = 0;
-				} else if (Y + bmpHeight * 2 > 1671 * scale / 100) {
-					startY = 1671 * scale / 100 - bmpHeight * 2;
-				}
-			}
-
-			private void correctX(int X) {
-				if (X < 0) {
-					startX = 0;
-				} else if (X + bmpWidth * 2 > 2482 * scale / 100) {
-					startX = 2482 * scale / 100 - bmpWidth * 2;
-				}
+				MapScroller myMapScroll = new MapScroller(location.getName(), myMapWebView.getMeasuredWidth(), myMapWebView.getMeasuredHeight(), myMapWebView.getScale());
+				myMapWebView.scrollTo(myMapScroll.getBmpScrollX(), myMapScroll.getBmpScrollY());
 			}
 		});
 

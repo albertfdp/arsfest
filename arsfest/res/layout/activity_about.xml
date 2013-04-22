@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/AboutLayout"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical" >
 
     <com.coboltforge.slidemenu.SlideMenu
@@ -12,8 +12,8 @@
 
     <LinearLayout
         android:id="@+id/AboutLayout2"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/flat_light_grey"
         android:orientation="vertical" >
 
@@ -41,18 +41,19 @@
                     android:padding="5dp" >
 
                     <TextView
+                        android:id="@+id/AboutGooglePlay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:gravity="left"
                         android:padding="2dp"
-                        android:text="GOOGLE PLAY"
+                        android:text="@string/googleplay"
                         android:textColor="@color/flat_white"
                         android:textSize="14sp" />
 
                     <RelativeLayout
                         android:id="@+id/AboutLayoutRateUs"
-                        android:layout_width="fill_parent"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/selector_rate"
                         android:clickable="true"
@@ -60,7 +61,7 @@
 
                         <TextView
                             android:id="@+id/textViewRateUs"
-                            android:layout_width="fill_parent"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_toLeftOf="@+id/imageViewNavigation"
@@ -89,24 +90,25 @@
                     android:padding="5dp" >
 
                     <TextView
+                        android:id="@+id/textViewAboutUs"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:gravity="left"
                         android:padding="2dp"
-                        android:text="ABOUT US"
+                        android:text="@string/aboutus"
                         android:textColor="@color/flat_white"
                         android:textSize="14sp" />
 
                     <RelativeLayout
-                        android:layout_width="fill_parent"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/flat_white"
                         android:padding="5dp" >
 
                         <TextView
                             android:id="@+id/textViewAbout"
-                            android:layout_width="fill_parent"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/imageViewPhoto"
                             android:layout_marginTop="5dp"
@@ -117,12 +119,13 @@
 
                         <ImageView
                             android:id="@+id/imageViewPhoto"
-                            android:layout_width="fill_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
-                            android:contentDescription="@string/avocado_team"
-                            android:src="@drawable/avocado" />
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@string/avocado"
+                            android:src="@drawable/avocado_logo" />
                     </RelativeLayout>
                 </LinearLayout>
 
@@ -135,17 +138,18 @@
                     android:padding="5dp" >
 
                     <TextView
+                        android:id="@+id/textViewVersion2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:gravity="left"
                         android:padding="2dp"
-                        android:text="VERSION"
+                        android:text="@string/version2"
                         android:textColor="@color/flat_white"
                         android:textSize="14sp" />
 
                     <LinearLayout
-                        android:layout_width="fill_parent"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/flat_white"
                         android:orientation="vertical"
@@ -153,7 +157,7 @@
 
                         <TextView
                             android:id="@+id/textViewVersion"
-                            android:layout_width="fill_parent"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
                             android:gravity="left"
@@ -164,42 +168,24 @@
                 </LinearLayout>
 
                 <RelativeLayout
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:background="@color/flat_white"
-                    android:gravity="center"
                     android:padding="5dp" >
 
                     <ImageView
                         android:id="@+id/imageViewDTU"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:contentDescription="@string/logos"
-                        android:src="@drawable/dtulogo" />
-
-                    <ImageView
-                        android:id="@+id/imageViewAvocadoLogo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dip"
-                        android:layout_toRightOf="@+id/imageViewDTU"
+                        android:adjustViewBounds="true"
                         android:contentDescription="@string/logos"
-                        android:src="@drawable/avocado_logo" />
-
-                    <ImageView
-                        android:id="@+id/imageViewPF"
-                        android:layout_width="110dip"
-                        android:layout_height="50dip"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dip"
-                        android:layout_toRightOf="@+id/imageViewAvocadoLogo"
-                        android:contentDescription="@string/logos"
-                        android:src="@drawable/pf" />
+                        android:src="@drawable/sponsors" />
                 </RelativeLayout>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
+
 </RelativeLayout>

@@ -18,12 +18,12 @@ import dk.dtu.arsfest.model.Bssid;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.parser.JSONParser;
+import dk.dtu.arsfest.preferences.UserSettings;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Picture;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -42,8 +42,6 @@ import android.widget.Toast;
 public class MapActivity extends Activity implements
 		OnSlideMenuItemClickListener {
 
-	private int bmpScrollX, bmpScrollY = 0;
-	private int bmpWidth, bmpHeight = 0;
 	private ImageButton imageButtonLocateMe;
 	private SlideMenu slideMenu;
 	private TextView headerTitle, mapView;
@@ -53,6 +51,8 @@ public class MapActivity extends Activity implements
 	private ContextAwareHelper contextAwareHelper;
 	private ArrayList<Location> locations;
 	private ArrayList<Bssid> bssids;
+	private MapScroller myMapScroll;
+	private int scale = 80;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -62,32 +62,50 @@ public class MapActivity extends Activity implements
 		startMenu(Constants.SCROLL_MENU_TIME);
 
 		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
-		mapView = (TextView) findViewById(R.id.mapTextViewMap);
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
 		headerTitle.setText(Constants.APP_NAME);
-		Typeface dtuFont = Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS);
-		mapView.setTypeface(dtuFont);
-		init();
-		setWebView();
-		setLocateMe();
+
+		mapView = (TextView) findViewById(R.id.mapTextViewMap);
+		mapView.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS));
+
+		initiateLocationAwarness();
+		Intent intent = getIntent();
+		setWebView("mapDefault.html", intent.getStringExtra(Constants.EXTRA_START));
+		setLocateMeFuction();
 	}
 
-	private void init() {
-		readJson();
-		alarmHelper = new AlarmHelper(this.getApplicationContext());
-		contextAwareHelper = new ContextAwareHelper(
-				this.getApplicationContext(), bssids, locations);
-	}
-
+	/**
+	 * Destroys broadcast receiver
+	 * 
+	 * @author AA
+	 */
 	@Override
 	protected void onDestroy() {
 		super.onStop();
 		alarmHelper.unregisterAlarmManager();
 	}
 
-	private void setLocateMe() {
+	/**
+	 * Initiates location awareness
+	 * 
+	 * @author AA
+	 */
+	private void initiateLocationAwarness() {
+		readJson();
+		alarmHelper = new AlarmHelper(this.getApplicationContext());
+		contextAwareHelper = new ContextAwareHelper(
+				this.getApplicationContext(), bssids, locations);
+	}
+
+	/**
+	 * Function scrolls to current location of the user
+	 * 
+	 * @author AA
+	 */
+	private void setLocateMeFuction() {
 		imageButtonLocateMe = (ImageButton) findViewById(R.id.imageButtonLocateMe);
+
 		imageButtonLocateMe.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
@@ -113,19 +131,12 @@ public class MapActivity extends Activity implements
 				alarmHelper.registerAlarmManager();
 				contextAwareHelper.startContextAwareness();
 				myCurrentLocation = contextAwareHelper.getCurrentLocation();
-				myCurrentLocation = "a";
-				if (myCurrentLocation.equals("l1")) {
-					setInitialScroll("Library");					
-					webView.scrollTo(bmpScrollX, bmpScrollY);
-				} else if (myCurrentLocation.equals("l2")) {
-					setInitialScroll("Oticon");
-					webView.scrollTo(bmpScrollX, bmpScrollY);
-				} else if (myCurrentLocation.equals("l3")) {
-					setInitialScroll("Kantine");
-					webView.scrollTo(bmpScrollX, bmpScrollY);
-				} else if (myCurrentLocation.equals("l0")) {
-					setInitialScroll("Sportshal");
-					webView.scrollTo(bmpScrollX, bmpScrollY);
+				scale = (int) (webView.getScale() * 100);
+				if (myCurrentLocation != null) {
+					myMapScroll = new MapScroller(myCurrentLocation, webView
+							.getMeasuredWidth(), webView.getMeasuredHeight(),
+							webView.getScale());
+					setWebView(myMapScroll.getCurrentHTML(), myCurrentLocation);
 				} else {
 					Toast.makeText(
 							getApplicationContext(),
@@ -136,84 +147,60 @@ public class MapActivity extends Activity implements
 		});
 	}
 
-	private void setInitialScroll(String stringExtra) {
-		bmpWidth = (int) findViewById(R.id.mapWebViewMapOfThe101)
-				.getMeasuredWidth() / 2;
-		bmpHeight = (int) findViewById(R.id.mapWebViewMapOfThe101)
-				.getMeasuredHeight() / 2;
-		if (stringExtra.equals("Library")) {
-			bmpScrollX = 770 - bmpWidth;
-			bmpScrollY = 560 - bmpHeight;
-			Toast.makeText(
-					getApplicationContext(),
-					"1:" + bmpScrollX + "&" + bmpScrollY,
-					Toast.LENGTH_SHORT).show();
-			correctX(bmpScrollX);
-			correctY(bmpScrollY);
-		} else if (stringExtra.equals("Oticon")) {
-			bmpScrollX = 2100 - bmpWidth;
-			bmpScrollY = 240 - bmpHeight;
-			correctX(bmpScrollX);
-			correctY(bmpScrollY);
-		} else if (stringExtra.equals("Kantine")) {
-			bmpScrollX = 1420 - bmpWidth;
-			bmpScrollY = 590 - bmpHeight;
-			correctX(bmpScrollX);
-			correctY(bmpScrollY);
-		} else if (stringExtra.equals("Sportshal")) {
-			bmpScrollX = 2130 - bmpWidth;
-			bmpScrollY = 1090 - bmpHeight;
-			correctX(bmpScrollX);
-			correctY(bmpScrollY);
-		}
-	}
-
-	private void correctY(int Y) {
-		if (Y < 0) {
-			bmpScrollY = 0;
-		} else if (Y + bmpHeight * 2 > 1671) {
-			bmpScrollY = 1671 - bmpHeight * 2;
-		}
-	}
-
-	private void correctX(int X) {
-		if (X < 0) {
-			bmpScrollX = 0;
-		} else if (X + bmpWidth * 2 > 2482) {
-			bmpScrollX = 2482 - bmpWidth * 2;
-		}
-	}
-
-	private void setWebView() {
+	/**
+	 * Function scrolls to desired initial location
+	 * 
+	 * @author AA
+	 */
+	private void setWebView(String fileName, final String initialScroll) {
+		// Setting basic parameters
 		webView = (WebView) findViewById(R.id.mapWebViewMapOfThe101);
 		webView.loadDataWithBaseURL("file:///android_asset/images/",
-				getHtmlFromAsset(), "text/html", "utf-8", null);
+				getHtmlFromAsset(fileName), "text/html", "utf-8", null);
 		webView.setWebViewClient(new WebViewClient() {
 			@Override
 			public void onPageFinished(WebView view, String url) {
 				super.onPageFinished(view, url);
-				webView.getSettings().setBuiltInZoomControls(false);
+				webView.getSettings().setBuiltInZoomControls(true);
 				webView.getSettings().setUseWideViewPort(true);
-				webView.setInitialScale(100);
+				webView.setInitialScale(scale);
 			}
 		});
 
+		// When content is loaded, scroll map to desired location
 		webView.setPictureListener(new PictureListener() {
 			@Override
 			public void onNewPicture(WebView view, Picture picture) {
-				Intent intent = getIntent();
-				setInitialScroll(intent.getStringExtra(Constants.EXTRA_START));
-				webView.scrollTo(bmpScrollX, bmpScrollY);
+				myMapScroll = new MapScroller(initialScroll, webView
+						.getMeasuredWidth(), webView.getMeasuredHeight(),
+						webView.getScale());
+				webView.scrollTo(myMapScroll.getBmpScrollX(),
+						myMapScroll.getBmpScrollY());
+			}
+		});
+
+		// When scroll is finished, any gesture user makes should not scroll
+		// back to initial location
+		webView.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				webView.setPictureListener(null);
+				return false;
 			}
 		});
 	}
 
-	private String getHtmlFromAsset() {
+	/**
+	 * 
+	 * @return Function returns the content of the HTML file
+	 * @author AA
+	 */
+	private String getHtmlFromAsset(String fileName) {
 		InputStream is;
 		StringBuilder builder = new StringBuilder();
 		String htmlString = null;
 		try {
-			is = getAssets().open("map.html");
+			is = getAssets().open(fileName);
 			if (is != null) {
 				BufferedReader reader = new BufferedReader(
 						new InputStreamReader(is));
@@ -300,8 +287,9 @@ public class MapActivity extends Activity implements
 		case R.id.item_map:
 			break;
 		case R.id.item_settings:
-			Toast.makeText(this, "Don't milk nipples when they are soft.",
-					Toast.LENGTH_SHORT).show();
+			Intent intentSettings = new Intent(this, UserSettings.class);
+			this.startActivityForResult(intentSettings,
+					Constants.RESULT_SETTINGS);
 			break;
 		case R.id.item_about:
 			Intent intentAbout = new Intent(this, AboutActivity.class);
