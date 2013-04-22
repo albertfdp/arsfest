@@ -34,7 +34,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends SlideMenuSuper{
+public class MainActivity extends SlideMenuSuper {
 
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
 
@@ -74,6 +74,9 @@ public class MainActivity extends SlideMenuSuper{
 
 		// inflate the list view with the events
 		initViewPager(1, contextAwareHelper.getEventsHappeningNow());
+
+		// Prompts user to enable WiFi
+		enableYourWiFiGotDammIt();
 	}
 
 	@Override
@@ -93,13 +96,6 @@ public class MainActivity extends SlideMenuSuper{
 		initViewPager(
 				contextAwareHelper.getLocationArrayPosition(currentLocation),
 				contextAwareHelper.getEventsHappeningNow());
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-		// Prompts user to enable WiFi
-		enableYourWiFiGotDammIt();
 	}
 
 	@Override
@@ -203,29 +199,43 @@ public class MainActivity extends SlideMenuSuper{
 					this);
 			alertDialogBuilder.setTitle(R.string.wifi_title);
 			alertDialogBuilder.setMessage(R.string.wifi_txt);
-			alertDialogBuilder.setPositiveButton(R.string.wifi_option1,
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog, int id) {
-							startActivityForResult(new Intent(
-									android.provider.Settings.ACTION_SETTINGS),
-									id);
-							dialog.cancel();
-						}
-					}).setNegativeButton(R.string.wifi_option2,
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog, int id) {
-							SharedPreferences settings = getSharedPreferences(
-									PREFS_NAME, 0);
-							SharedPreferences.Editor editor = settings.edit();
-							editor.putBoolean("popUpConnectivityDiscard", true);
-							editor.commit();
+			alertDialogBuilder
+					.setPositiveButton(R.string.wifi_option1,
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int id) {
+									startActivityForResult(
+											new Intent(
+													android.provider.Settings.ACTION_SETTINGS),
+											id);
+									dialog.cancel();
+								}
+							})
+					.setNegativeButton(R.string.wifi_option2,
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int id) {
+									SharedPreferences settings = getSharedPreferences(
+											PREFS_NAME, 0);
+									SharedPreferences.Editor editor = settings
+											.edit();
+									editor.putBoolean(
+											"popUpConnectivityDiscard", true);
+									editor.commit();
 
-							Toast.makeText(getApplicationContext(),
-									"WiFi card is off", Toast.LENGTH_SHORT)
-									.show();
-							dialog.cancel();
-						}
-					});
+									Toast.makeText(getApplicationContext(),
+											"WiFi card is off",
+											Toast.LENGTH_SHORT).show();
+									dialog.cancel();
+								}
+							})
+					.setNeutralButton(R.string.wifi_option3,
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int id) {
+									dialog.cancel();
+								}
+							});
 			alertDialogBuilder.create().show();
 		}
 	}
