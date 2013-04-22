@@ -17,6 +17,7 @@ import dk.dtu.arsfest.maps.MapActivity;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
+import dk.dtu.arsfest.notification.NotificationHelper;
 import dk.dtu.arsfest.parser.JSONParser;
 import dk.dtu.arsfest.preferences.UserSettings;
 import dk.dtu.arsfest.utils.Constants;
@@ -75,6 +76,10 @@ public class MainActivity extends Activity implements
 
 		// Read from data.JSON
 		readJson();
+		
+		Event e = this.locations.get(0).getEvents().get(0);
+		Toast.makeText(this, "Setting event for " + e.getName() + " " + e.getStartTime(), Toast.LENGTH_SHORT).show();
+		NotificationHelper.showEventAlert(getApplicationContext(), e, Utils.getLocationById(locations, e.getLocation()));
 
 		// Create a new AlarmHelper
 		alarmHelper = new AlarmHelper(this.getApplicationContext());
@@ -179,7 +184,7 @@ public class MainActivity extends Activity implements
 
 		// happening now
 		happeningNow = contextAwareHelper.getEventsHappeningNow();			
-
+		
 		lineViewPager = (ViewPager) findViewById(R.id.linepager);
 		linePageAdapter = new CustomLinePagerAdapter(this, this.locations, happeningNow);
 

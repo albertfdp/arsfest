@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">DTU Årsfest</string>
+    <string name="app_name">DTU \u00C5rsfest</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="rest_task_title">Calling</string>
@@ -36,7 +36,7 @@
     <string name="default_course_type">Course Type</string>
     <string name="menu_name">MENU</string>
     
-    <string name="card_finished_message">The Årsfest 2013 is over</string>
+    <string name="card_finished_message">The \u00C5rsfest 2013 is over</string>
     <string name="card_finished_submessage">Thank you for your attendance</string>
     
     <string-array name="default_categories">

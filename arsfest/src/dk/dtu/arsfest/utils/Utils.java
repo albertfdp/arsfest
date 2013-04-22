@@ -2,10 +2,12 @@ package dk.dtu.arsfest.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
 import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.model.Location;
 
 
 import android.content.Context;
@@ -57,6 +59,20 @@ public class Utils {
 		return sdf.format(date);
 	}
 	
+	public static int getDrawable(String theme) {
+		if (theme.equals(Constants.EVENT_TYPE_MUSIC)) {
+			return R.drawable.guitar;
+		} else if (theme.equals(Constants.EVENT_TYPE_OFFICIAL)) {
+			return R.drawable.official;
+		} else if (theme.equals(Constants.EVENT_TYPE_FOOD)) {
+			return R.drawable.dinner_icon2;
+		} else if (theme.equals(Constants.EVENT_TYPE_DANCE)) {
+			return R.drawable.dancing;
+		} else {
+			return R.drawable.note;
+		}
+	}
+	
 	public static Drawable getDrawable(Context context, String theme) {
 		if (theme.equals(Constants.EVENT_TYPE_MUSIC)) {
 			return context.getResources().getDrawable(R.drawable.guitar);
@@ -69,5 +85,13 @@ public class Utils {
 		} else {
 			return context.getResources().getDrawable(R.drawable.note);
 		}
+	}
+	
+	public static Location getLocationById(ArrayList<Location> locations, String id) {
+		for (Location location : locations) {
+			if (location.getId().equals(id))
+				return location;
+		}
+		return null;
 	}
 }
