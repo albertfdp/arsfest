@@ -8,6 +8,7 @@ import com.coboltforge.slidemenu.SlideMenuInterface.OnSlideMenuItemClickListener
 import dk.dtu.arsfest.AboutActivity;
 import dk.dtu.arsfest.MainActivity;
 import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.SlideMenuSuper;
 import dk.dtu.arsfest.maps.MapActivity;
 import dk.dtu.arsfest.maps.MapScroller;
 import dk.dtu.arsfest.model.Course;
@@ -31,8 +32,7 @@ import android.webkit.WebView.PictureListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class EventActivity extends Activity implements
-		OnSlideMenuItemClickListener {
+public class EventActivity extends SlideMenuSuper {
 
 	private TextView eventTitle;
 	private TextView eventTime;
@@ -47,7 +47,6 @@ public class EventActivity extends Activity implements
 	private TextView courseDessert;
 	private TextView courseDessertName;
 	private TextView menuName;
-	private SlideMenu slidemenu;
 	private View eventMenu;
 
 	private int scale = 50;
@@ -105,7 +104,7 @@ public class EventActivity extends Activity implements
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
 		headerTitle.setText(Constants.APP_NAME);
-		startMenu(Constants.SCROLL_MENU_TIME);
+		super.startMenu(Constants.SCROLL_MENU_TIME);
 		drawMap();
 	}
 
@@ -126,8 +125,11 @@ public class EventActivity extends Activity implements
 		myMapWebView.setPictureListener(new PictureListener() {
 			@Override
 			public void onNewPicture(WebView view, Picture picture) {
-				MapScroller myMapScroll = new MapScroller(location.getName(), myMapWebView.getMeasuredWidth(), myMapWebView.getMeasuredHeight(), myMapWebView.getScale());
-				myMapWebView.scrollTo(myMapScroll.getBmpScrollX(), myMapScroll.getBmpScrollY());
+				MapScroller myMapScroll = new MapScroller(location.getName(),
+						myMapWebView.getMeasuredWidth(), myMapWebView
+								.getMeasuredHeight(), myMapWebView.getScale());
+				myMapWebView.scrollTo(myMapScroll.getBmpScrollX(),
+						myMapScroll.getBmpScrollY());
 			}
 		});
 
@@ -181,69 +183,5 @@ public class EventActivity extends Activity implements
 
 		// eventDescription.setText(event.getDescription());
 
-	}
-
-	/**
-	 * Method showing the accordeon slide menu at the left hand side
-	 * 
-	 * @param durationOfAnimation
-	 *            : Duration of Animation
-	 * @author AA
-	 */
-	private void startMenu(int durationOfAnimation) {
-		slidemenu = new SlideMenu(this, R.menu.slide, this, durationOfAnimation);
-		slidemenu = (SlideMenu) findViewById(R.id.slideMenu);
-		slidemenu.init(this, R.menu.slide, this, durationOfAnimation);
-		slidemenu.setFont(Utils.getTypeface(this,
-				Constants.TYPEFONT_PROXIMANOVA));
-		ImageButton imageButtonAccordeon = (ImageButton) findViewById(R.id.actionBarAccordeon);
-		imageButtonAccordeon.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				slidemenu.show();
-			}
-		});
-	}
-
-	/**
-	 * Menu
-	 */
-	@Override
-	public void onSlideMenuItemClick(int itemId) {
-		switch (itemId) {
-		case R.id.item_programme:
-			Intent intentProgramme = new Intent(this, MainActivity.class);
-			this.startActivity(intentProgramme);
-			finish();
-			break;
-		case R.id.item_map:
-			Intent intentMap = new Intent(this, MapActivity.class);
-			intentMap.putExtra(Constants.EXTRA_START, "");
-			this.startActivity(intentMap);
-			break;
-		case R.id.item_settings:
-			Intent intentSettings = new Intent(this, UserSettings.class);
-			this.startActivityForResult(intentSettings,
-					Constants.RESULT_SETTINGS);
-			break;
-		case R.id.item_about:
-			Intent intentAbout = new Intent(this, AboutActivity.class);
-			this.startActivity(intentAbout);
-			finish();
-			break;
-		}
-	}
-
-	/**
-	 * Menu
-	 */
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.icon:
-			slidemenu.show();
-			break;
-		}
-		return super.onOptionsItemSelected(item);
 	}
 }
