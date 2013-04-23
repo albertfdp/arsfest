@@ -7,26 +7,20 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import com.coboltforge.slidemenu.SlideMenu;
-import com.coboltforge.slidemenu.SlideMenuInterface.OnSlideMenuItemClickListener;
-import dk.dtu.arsfest.AboutActivity;
-import dk.dtu.arsfest.MainActivity;
 import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.SlideMenuSuper;
 import dk.dtu.arsfest.alarms.AlarmHelper;
 import dk.dtu.arsfest.context.ContextAwareHelper;
 import dk.dtu.arsfest.model.Bssid;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.parser.JSONParser;
-import dk.dtu.arsfest.preferences.UserSettings;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Picture;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
@@ -39,11 +33,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MapActivity extends Activity implements
-		OnSlideMenuItemClickListener {
+public class MapActivity extends SlideMenuSuper {
 
 	private ImageButton imageButtonLocateMe;
-	private SlideMenu slideMenu;
 	private TextView headerTitle, mapView;
 	private WebView webView;
 	private String myCurrentLocation;
@@ -59,7 +51,7 @@ public class MapActivity extends Activity implements
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_map);
-		startMenu(Constants.SCROLL_MENU_TIME);
+		super.startMenu(Constants.SCROLL_MENU_TIME);
 
 		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
 		headerTitle.setTypeface(Utils.getTypeface(this,
@@ -71,7 +63,12 @@ public class MapActivity extends Activity implements
 
 		initiateLocationAwarness();
 		Intent intent = getIntent();
-		setWebView("mapDefault.html", intent.getStringExtra(Constants.EXTRA_START));
+		if (intent.getStringExtra(Constants.EXTRA_START) == null) {
+			setWebView("mapDefault.html", "");
+		} else {
+			setWebView("mapDefault.html",
+					intent.getStringExtra(Constants.EXTRA_START));
+		}
 		setLocateMeFuction();
 	}
 
@@ -250,64 +247,5 @@ public class MapActivity extends Activity implements
 			Log.i("ARSFEST", e.getMessage());
 		}
 
-	}
-
-	/**
-	 * Method showing the accordeon slide menu at the left hand side
-	 * 
-	 * @param durationOfAnimation
-	 *            : Duration of Animation
-	 * @author AA
-	 */
-	private void startMenu(int durationOfAnimation) {
-		slideMenu = new SlideMenu(this, R.menu.slide, this, durationOfAnimation);
-		slideMenu = (SlideMenu) findViewById(R.id.slideMenu);
-		slideMenu.init(this, R.menu.slide, this, durationOfAnimation);
-		slideMenu.setFont(Utils.getTypeface(this,
-				Constants.TYPEFONT_PROXIMANOVA));
-		ImageButton imageButtonAccordeon = (ImageButton) findViewById(R.id.actionBarAccordeon);
-		imageButtonAccordeon.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				slideMenu.show();
-			}
-		});
-	}
-
-	/**
-	 * Menu
-	 */
-	@Override
-	public void onSlideMenuItemClick(int itemId) {
-		switch (itemId) {
-		case R.id.item_programme:
-			Intent intentProgramme = new Intent(this, MainActivity.class);
-			this.startActivity(intentProgramme);
-			break;
-		case R.id.item_map:
-			break;
-		case R.id.item_settings:
-			Intent intentSettings = new Intent(this, UserSettings.class);
-			this.startActivityForResult(intentSettings,
-					Constants.RESULT_SETTINGS);
-			break;
-		case R.id.item_about:
-			Intent intentAbout = new Intent(this, AboutActivity.class);
-			this.startActivity(intentAbout);
-			break;
-		}
-	}
-
-	/**
-	 * Menu
-	 */
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.icon:
-			slideMenu.show();
-			break;
-		}
-		return super.onOptionsItemSelected(item);
 	}
 }

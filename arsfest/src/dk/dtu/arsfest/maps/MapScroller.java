@@ -2,7 +2,7 @@ package dk.dtu.arsfest.maps;
 
 public class MapScroller {
 
-	private int bmpWidth, bmpHeight, bmpScrollX, bmpScrollY = 0;
+	private int bmpWidth = 0, bmpHeight = 0, bmpScrollX = 0, bmpScrollY = 0;
 	private double currentScale = 1;
 	private String currentHTML = "mapDefault.html";
 	

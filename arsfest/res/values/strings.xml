@@ -17,8 +17,9 @@
     <string name="event_image_description">Image of the event</string>
     <string name="ico">.ico</string>
     <string name="wifi_title">WiFi Disabled</string>
-    <string name="wifi_option1">Change settings</string>
+    <string name="wifi_option1">Enable</string>
     <string name="wifi_option2">Don\'t remind</string>
+    <string name="wifi_option3">OK</string>
     <string name="wifi_txt">There is no WiFi enabled right now. The application you want to use was aimed to use information provided by your WiFi card. Please enable your WiFi connection.</string>
     <string name="time">Time</string>
     <string name="place">Place</string>

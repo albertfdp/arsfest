@@ -49,6 +49,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class SlideMenu extends LinearLayout {
@@ -336,9 +337,16 @@ public class SlideMenu extends LinearLayout {
 		parent.addView(menu);
 		
 		TextView header = (TextView) act.findViewById(dk.dtu.arsfest.R.id.textViewDateSlideBar);
-		header.setTypeface(font, Typeface.BOLD);
+		header.setTypeface(font);
 		TextView header2 = (TextView) act.findViewById(dk.dtu.arsfest.R.id.textViewNameSlideBar);
-		header2.setTypeface(font, Typeface.BOLD);
+		header2.setTypeface(font);
+		RelativeLayout layoutSlideMenuHeader = (RelativeLayout) act.findViewById(dk.dtu.arsfest.R.id.layoutSlideMenuHeader);
+		layoutSlideMenuHeader.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				hide();
+			}
+		});
 		
 		// connect the menu's listview
 		ListView list = (ListView) act

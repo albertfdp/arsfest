@@ -8,18 +8,12 @@ import java.util.Collections;
 import com.astuetz.viewpager.extensions.IndicatorLineView;
 import com.astuetz.viewpager.extensions.ScrollingTabsView;
 import com.astuetz.viewpager.extensions.TabsAdapter;
-import com.coboltforge.slidemenu.SlideMenu;
-import com.coboltforge.slidemenu.SlideMenuInterface.OnSlideMenuItemClickListener;
-
 import dk.dtu.arsfest.alarms.AlarmHelper;
 import dk.dtu.arsfest.context.ContextAwareHelper;
-import dk.dtu.arsfest.maps.MapActivity;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
-import dk.dtu.arsfest.notification.NotificationHelper;
 import dk.dtu.arsfest.parser.JSONParser;
-import dk.dtu.arsfest.preferences.UserSettings;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 import dk.dtu.arsfest.view.CustomLinePagerAdapter;
@@ -31,26 +25,20 @@ import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity implements
-		OnSlideMenuItemClickListener {
+public class MainActivity extends SlideMenuSuper {
 
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
-	public SlideMenu slidemenu;
 
 	private ArrayList<Location> locations;
 	private ArrayList<Bssid> bssids;
@@ -64,8 +52,8 @@ public class MainActivity extends Activity implements
 	private TabsAdapter scrollingTabsAdapter;
 	private TextView headerTitle;
 	private String currentLocation;
-	
-	//After refactoring
+
+	// After refactoring
 	private AlarmHelper alarmHelper;
 	private ContextAwareHelper contextAwareHelper;
 	private String comingFromLocation = null;
@@ -136,7 +124,7 @@ public class MainActivity extends Activity implements
 		headerTitle.setText(Constants.APP_NAME);
 		
 		// Sets the menu
-		startMenu(Constants.SCROLL_MENU_TIME);
+		super.startMenu(Constants.SCROLL_MENU_TIME);
 	}
 
 	private void readJson() {
@@ -278,80 +266,4 @@ public class MainActivity extends Activity implements
 		return false;
 	}
 
-	
-
-	/**
-	 * Method showing the accordeon slide menu at the left hand side
-	 * 
-	 * @param durationOfAnimation
-	 *            : Duration of Animation
-	 * @author AA
-	 */
-	private void startMenu(int durationOfAnimation) {
-		slidemenu = new SlideMenu(this, R.menu.slide, this, durationOfAnimation);
-		slidemenu = (SlideMenu) findViewById(R.id.slideMenu);
-		slidemenu.init(this, R.menu.slide, this, durationOfAnimation);
-		slidemenu.setFont(Utils.getTypeface(this,
-				Constants.TYPEFONT_PROXIMANOVA));
-		ImageButton imageButtonAccordeon = (ImageButton) findViewById(R.id.actionBarAccordeon);
-		imageButtonAccordeon.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				slidemenu.show();
-			}
-		});
-	}
-
-	/**
-	 * Menu
-	 */
-	@Override
-	public void onSlideMenuItemClick(int itemId) {
-		switch (itemId) {
-		case R.id.item_programme:
-			break;
-		case R.id.item_map:
-			Intent intentMap = new Intent(this, MapActivity.class);
-			intentMap.putExtra(Constants.EXTRA_START, "");
-			this.startActivity(intentMap);
-			break;
-		case R.id.item_settings:
-			Intent intentSettings = new Intent(this, UserSettings.class);
-			this.startActivityForResult(intentSettings, Constants.RESULT_SETTINGS);
-			break;
-		case R.id.item_about:
-			Intent intentAbout = new Intent(this, AboutActivity.class);
-			this.startActivity(intentAbout);
-			break;
-		}
-	}
-	
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
-		switch (requestCode) {
-			case Constants.RESULT_SETTINGS:
-				// do something
-				break;
-			case Constants.RESULT_EVENT_INFO:
-				this.comingFromLocation = data.getStringExtra(Constants.EXTRA_EVENT_INFO);
-				boolean comesFromAll = data.getBooleanExtra(Constants.EXTRA_EVENT_ALL, false);
-				if (comesFromAll)
-					this.comingFromLocation = "0";
-				break;
-		}
-	}
-
-	/**
-	 * Menu
-	 */
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.icon:
-			slidemenu.show();
-			break;
-		}
-		return super.onOptionsItemSelected(item);
-	}
 }
