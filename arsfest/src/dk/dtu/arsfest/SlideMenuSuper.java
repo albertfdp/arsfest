@@ -11,7 +11,6 @@ import com.coboltforge.slidemenu.SlideMenu;
 import com.coboltforge.slidemenu.SlideMenuInterface.OnSlideMenuItemClickListener;
 
 import dk.dtu.arsfest.maps.MapActivity;
-import dk.dtu.arsfest.preferences.UserSettings;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 
@@ -59,10 +58,6 @@ public class SlideMenuSuper extends Activity implements
 			break;
 		case R.id.item_map:
 			myDesiredClass = MapActivity.class;
-			myHandler.postDelayed(myrunnable, (long) (1.5 * durationOfAnimation));
-			break;
-		case R.id.item_settings:
-			myDesiredClass = UserSettings.class;
 			myHandler.postDelayed(myrunnable, (long) (1.5 * durationOfAnimation));
 			break;
 		case R.id.item_about:

@@ -2,11 +2,6 @@ package dk.dtu.arsfest.event;
 
 import java.util.Locale;
 
-import com.coboltforge.slidemenu.SlideMenu;
-import com.coboltforge.slidemenu.SlideMenuInterface.OnSlideMenuItemClickListener;
-
-import dk.dtu.arsfest.AboutActivity;
-import dk.dtu.arsfest.MainActivity;
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.SlideMenuSuper;
 import dk.dtu.arsfest.maps.MapActivity;
@@ -14,22 +9,17 @@ import dk.dtu.arsfest.maps.MapScroller;
 import dk.dtu.arsfest.model.Course;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
-import dk.dtu.arsfest.preferences.UserSettings;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Picture;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebView.PictureListener;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class EventActivity extends SlideMenuSuper {

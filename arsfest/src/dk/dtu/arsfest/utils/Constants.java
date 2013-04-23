@@ -65,4 +65,6 @@ public class Constants {
 
 	public static final int RESULT_SETTINGS = 1;
 
+	public static final String PREFS_POP_UP_CONNECTIVIY = "popUpConnectivityDiscard";
+
 }
