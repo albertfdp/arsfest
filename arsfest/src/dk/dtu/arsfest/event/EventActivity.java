@@ -54,6 +54,7 @@ public class EventActivity extends Activity implements
 	private WebView myMapWebView;
 	private Event event;
 	private Location location;
+	private boolean comesFromAll;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +68,8 @@ public class EventActivity extends Activity implements
 		// Read event info from intent
 		Intent intent = getIntent();
 		this.event = (Event) intent.getParcelableExtra(Constants.EXTRA_EVENT);
-		this.location = (Location) intent
-				.getParcelableExtra(Constants.EXTRA_LOCATION);
+		this.location = (Location) intent.getParcelableExtra(Constants.EXTRA_LOCATION);
+		this.comesFromAll = intent.getBooleanExtra(Constants.EXTRA_EVENT_ALL, false);
 
 		updateView();
 	}
@@ -232,6 +233,16 @@ public class EventActivity extends Activity implements
 			finish();
 			break;
 		}
+	}
+	
+	@Override
+	public void onBackPressed() {
+		Intent returnIntent = new Intent();
+		returnIntent.putExtra(Constants.EXTRA_EVENT_INFO, this.event.getLocation());
+		returnIntent.putExtra(Constants.EXTRA_EVENT_ALL, this.comesFromAll);
+		setResult(Constants.RESULT_EVENT_INFO, returnIntent);
+		finish();
+		return;
 	}
 
 	/**

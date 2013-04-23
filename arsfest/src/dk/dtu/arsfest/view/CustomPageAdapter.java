@@ -17,10 +17,19 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
+import android.view.View.OnCreateContextMenuListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class CustomPageAdapter extends PagerAdapter {
 	
@@ -30,6 +39,9 @@ public class CustomPageAdapter extends PagerAdapter {
 
 	private EventAdapter eventAdapter;
 	private ArrayList<Event> events;
+	
+	private String selectedWord;
+	private long selectedId;
 	
 	public CustomPageAdapter(Activity context, ArrayList<Location> locations) {
 		this.mContext = context;
@@ -45,6 +57,8 @@ public class CustomPageAdapter extends PagerAdapter {
 	public Object instantiateItem(View container, int position) {
 		
 		ListView listView = new ListView (mContext);
+		
+		mContext.registerForContextMenu(listView);
 		
 		events = this.locations.get(position).getEvents();
 		Collections.sort(events);
@@ -74,13 +88,45 @@ public class CustomPageAdapter extends PagerAdapter {
 				Intent intent = new Intent(mContext, EventActivity.class);
 				intent.putExtra(Constants.EXTRA_EVENT, clickedEvent);
 				intent.putExtra(Constants.EXTRA_LOCATION, clickedLocation);
-				mContext.startActivity(intent);
+				intent.putExtra(Constants.EXTRA_EVENT_ALL, tabPos == 0);
+				mContext.startActivityForResult(intent, Constants.RESULT_EVENT_INFO);
+			}
+			
+		});
+		listView.setOnCreateContextMenuListener(new OnCreateContextMenuListener() {
+
+			@Override
+			public void onCreateContextMenu(ContextMenu menu, View view,
+					ContextMenuInfo menuInfo) {
+				
+				AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+				
+				selectedId = info.id;
+				
+				menu.setHeaderTitle("Register an alarm");
+				menu.add("Remind me").setOnMenuItemClickListener(new OnMenuItemClickListener() {
+
+					@Override
+					public boolean onMenuItemClick(MenuItem item) {
+						
+						Event event = events.get(item.getItemId());
+						
+						Toast.makeText(mContext, "you clicked " + item.getItemId(), Toast.LENGTH_SHORT).show();
+						
+						return true;
+					}
+					
+				});
+				
+				MenuInflater inflater = mContext.getMenuInflater();
+				inflater.inflate(R.menu.alarm, menu);
 			}
 			
 		});
 		((ViewPager) container).addView(listView, 0);
 		return listView;
 	}
+	
 	
 	private Location getClickedLocation(String locationId) {
 		for (Location location : locations) {

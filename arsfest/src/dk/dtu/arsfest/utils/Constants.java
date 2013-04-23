@@ -64,5 +64,10 @@ public class Constants {
 	public static final String EXTRA_START = "dk.dtu.arsfest.map.Start";
 
 	public static final int RESULT_SETTINGS = 1;
+	public static final int RESULT_EVENT_INFO = 2;
+
+	public static final String EXTRA_EVENT_INFO = "dk.dtu.arsfest.event";
+
+	public static final String EXTRA_EVENT_ALL = "dk.dtu.arsfest.event.all";
 
 }

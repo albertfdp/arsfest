@@ -40,6 +40,8 @@ import android.content.SharedPreferences;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewTreeObserver;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -66,6 +68,7 @@ public class MainActivity extends Activity implements
 	//After refactoring
 	private AlarmHelper alarmHelper;
 	private ContextAwareHelper contextAwareHelper;
+	private String comingFromLocation = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -77,10 +80,6 @@ public class MainActivity extends Activity implements
 		// Read from data.JSON
 		readJson();
 		
-		Event e = this.locations.get(0).getEvents().get(0);
-		Toast.makeText(this, "Setting event for " + e.getName() + " " + e.getStartTime(), Toast.LENGTH_SHORT).show();
-		NotificationHelper.showEventAlert(getApplicationContext(), e, Utils.getLocationById(locations, e.getLocation()));
-
 		// Create a new AlarmHelper
 		alarmHelper = new AlarmHelper(this.getApplicationContext());
 
@@ -105,10 +104,15 @@ public class MainActivity extends Activity implements
 		// get Location Awareness
 		currentLocation = contextAwareHelper.getCurrentLocation();
 		
+		if (this.comingFromLocation != null) {
+			this.currentLocation = this.comingFromLocation;
+			this.comingFromLocation = null;
+		}
 		//get Time && Location Awareness
 		initViewPager(contextAwareHelper.getLocationArrayPosition(currentLocation),contextAwareHelper.getEventsHappeningNow());
+				
 	}
-
+	
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -170,7 +174,7 @@ public class MainActivity extends Activity implements
 
 	}
 
-	private void initViewPager(int pos, ArrayList<Event> happeningNow) {
+	private void initViewPager(final int pos, ArrayList<Event> happeningNow) {
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		pageAdapter = new CustomPageAdapter(this, this.locations);
 		viewPager.setAdapter(pageAdapter);
@@ -181,7 +185,20 @@ public class MainActivity extends Activity implements
 		scrollingTabsAdapter = new LocationTabs(this, this.locations);
 		scrollingTabs.setAdapter(scrollingTabsAdapter);
 		scrollingTabs.setViewPager(viewPager);
+		ViewTreeObserver vto = scrollingTabs.getViewTreeObserver();
+		vto.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
 
+			@Override
+			public void onGlobalLayout() {
+				
+				scrollingTabs.moveTabTo(pos);
+				
+				ViewTreeObserver obs = scrollingTabs.getViewTreeObserver();
+				obs.removeGlobalOnLayoutListener(this);
+			}
+			
+		});
+		
 		// happening now
 		happeningNow = contextAwareHelper.getEventsHappeningNow();			
 		
@@ -315,6 +332,12 @@ public class MainActivity extends Activity implements
 		switch (requestCode) {
 			case Constants.RESULT_SETTINGS:
 				// do something
+				break;
+			case Constants.RESULT_EVENT_INFO:
+				this.comingFromLocation = data.getStringExtra(Constants.EXTRA_EVENT_INFO);
+				boolean comesFromAll = data.getBooleanExtra(Constants.EXTRA_EVENT_ALL, false);
+				if (comesFromAll)
+					this.comingFromLocation = "0";
 				break;
 		}
 	}
