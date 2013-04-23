@@ -6,9 +6,10 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Date;
 
-import com.google.resting.json.JSONArray;
-import com.google.resting.json.JSONException;
-import com.google.resting.json.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 
 import dk.dtu.arsfest.model.Bssid;
 import dk.dtu.arsfest.model.Course;
