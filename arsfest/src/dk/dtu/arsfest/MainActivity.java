@@ -13,20 +13,18 @@ import dk.dtu.arsfest.context.ContextAwareHelper;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
+import dk.dtu.arsfest.network.NetworkHelper;
 import dk.dtu.arsfest.parser.JSONParser;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 import dk.dtu.arsfest.view.CustomLinePagerAdapter;
 import dk.dtu.arsfest.view.CustomPageAdapter;
 import dk.dtu.arsfest.view.LocationTabs;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -34,7 +32,6 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends SlideMenuSuper {
 
@@ -105,7 +102,7 @@ public class MainActivity extends SlideMenuSuper {
 	protected void onResume() {
 		super.onResume();
 		// Prompts user to enable WiFi
-		enableYourWiFiGotDammIt();
+		enableWiFi();
 	}
 
 	@Override
@@ -205,65 +202,54 @@ public class MainActivity extends SlideMenuSuper {
 		}
 		mLine.setViewPager(lineViewPager);
 	}
-
+	
 	/**
 	 * Method prompting user to enable WiFi
 	 * 
 	 * @author AA
 	 */
-	private void enableYourWiFiGotDammIt() {
-		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-		boolean popUpSettings = settings.getBoolean("popUpConnectivityDiscard",
-				false);
-		if (!haveITurnedOnMyWiFi(getApplicationContext()) && !popUpSettings) {
-			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-					this);
+	public void enableWiFi() {
+		SharedPreferences sharedPrefs = getSharedPreferences(Constants.PREFS_NAME, 0);
+
+		if (!NetworkHelper.isWiFiTurnedOn(this) && !sharedPrefs.getBoolean(Constants.PREFS_POP_UP_CONNECTIVIY, false)) {
+			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 			alertDialogBuilder.setTitle(R.string.wifi_title);
 			alertDialogBuilder.setMessage(R.string.wifi_txt);
-			alertDialogBuilder.setPositiveButton(R.string.wifi_option1,
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog, int id) {
-							startActivityForResult(new Intent(
-									android.provider.Settings.ACTION_SETTINGS),
-									id);
-							dialog.cancel();
-						}
-					}).setNegativeButton(R.string.wifi_option2,
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog, int id) {
-							SharedPreferences settings = getSharedPreferences(
-									PREFS_NAME, 0);
-							SharedPreferences.Editor editor = settings.edit();
-							editor.putBoolean("popUpConnectivityDiscard", true);
-							editor.commit();
+			alertDialogBuilder
+				.setPositiveButton(R.string.wifi_option1, new DialogInterface.OnClickListener() {
 
-							Toast.makeText(getApplicationContext(),
-									"WiFi card is off", Toast.LENGTH_SHORT)
-									.show();
-							dialog.cancel();
-						}
-					});
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						startActivityForResult(
+							new Intent(android.provider.Settings.ACTION_SETTINGS), which	
+						);
+						dialog.cancel();
+					}
+				})
+				.setNegativeButton(R.string.wifi_option2, new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						SharedPreferences sharedPrefs = getSharedPreferences(Constants.PREFS_NAME, 0);
+						SharedPreferences.Editor editor = sharedPrefs.edit();
+						editor.putBoolean(Constants.PREFS_POP_UP_CONNECTIVIY, true);
+						editor.commit();
+
+						//Toast.makeText(getApplicationContext(), "WiFi card is off", Toast.LENGTH_SHORT).show();
+						dialog.cancel();
+					}
+				})
+				.setNeutralButton(R.string.wifi_option3, new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.cancel();
+					}
+				});
 			alertDialogBuilder.create().show();
 		}
-	}
 
-	/**
-	 * Method checking current state of the WiFi card
-	 * 
-	 * @param applicationContext
-	 *            : Application Context
-	 * @return false: WiFi off
-	 * @return true: WiFi on
-	 */
-	private boolean haveITurnedOnMyWiFi(Context applicationContext) {
-		ConnectivityManager myConnectivityManager = (ConnectivityManager) applicationContext
-				.getSystemService(CONNECTIVITY_SERVICE);
-		NetworkInfo myWiFi = myConnectivityManager
-				.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-		if (myWiFi.isAvailable()) {
-			return true;
-		}
-		return false;
 	}
+	
 
 }

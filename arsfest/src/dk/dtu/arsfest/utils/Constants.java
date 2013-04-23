@@ -70,4 +70,6 @@ public class Constants {
 
 	public static final String EXTRA_EVENT_ALL = "dk.dtu.arsfest.event.all";
 
+	public static final String PREFS_POP_UP_CONNECTIVIY = "popUpConnectivityDiscard";
+
 }
