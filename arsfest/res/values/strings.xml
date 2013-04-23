@@ -66,6 +66,9 @@
 	<string name="aboutus">ABOUT US</string>
 	<string name="version2">VERSION</string>
 	
+	<string name="card_no_events_message">DTU \u00C5rsfest 2013</string>
+	<string name="card_no_events_submessage">The are currently no events</string>
+	
 	<!-- Map -->
 	<string name="mapview">MAP</string>
 	<string name="showmylocation">Show My Location</string>

@@ -138,42 +138,16 @@ public class ContextAwareHelper {
 
 	}
 	
-	private boolean isBeforeArsfest(){
-		
-		Date currentTime = Utils.getCurrentDate();
-		
-		for(Location loc : locations){
-			ArrayList<Event> events = loc.getEvents();
-			for(Event e : events){
-				if(currentTime.after(e.getStartTime()))
-					return true;
-			}
-		}
-		return false;
-	}
-	
-	private boolean isAfterArsfest(){
-		
-		Date currentTime = Utils.getCurrentDate();
-		
-		for(Location loc : locations){
-			ArrayList<Event> events = loc.getEvents();
-			for(Event e : events){
-				if(currentTime.before(e.getEndTime()))
-					return false;
-			}
-		}
-		return true;
-	}
-	
 	public int getLocationArrayPosition(String location_id){
+		int pos = 0;
+		for (int i = 0; i < locations.size(); i++) {
+			if (locations.get(i).getId().equals(location_id)) {
+				pos = i;
+				break;
+			}
+		}
 		
-		int i=0;
-		
-		while(!locations.get(i).getId().equals(location_id))
-			i++;
-		
-		return i;
+		return pos;
 	}
 	
 

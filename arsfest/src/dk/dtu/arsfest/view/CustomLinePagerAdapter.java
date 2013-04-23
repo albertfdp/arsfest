@@ -103,9 +103,23 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 			
 			((ViewPager) container).addView(view, 0);
 			return view;
-		} else {
+		} else if (!Utils.hasFestStarted()){
 			View view = inflater.inflate(R.layout.flat_countdown, null);
 			showCountdown(view);
+			((ViewPager) container).addView(view, 0);
+			return view;
+		} else {
+			View view = inflater.inflate(R.layout.event_finished, null);
+			
+			TextView message = (TextView) view.findViewById(R.id.card_finished_message);
+			TextView submessage = (TextView) view.findViewById(R.id.card_finished_submessage);
+			
+			message.setText(mContext.getResources().getString(R.string.card_no_events_message));
+			submessage.setText(mContext.getResources().getString(R.string.card_no_events_submessage));
+			
+			message.setTypeface(Utils.getTypeface(mContext, Constants.TYPEFONT_NEOSANS));
+			submessage.setTypeface(Utils.getTypeface(mContext, Constants.TYPEFONT_NEOSANS));
+			
 			((ViewPager) container).addView(view, 0);
 			return view;
 		}
