@@ -26,7 +26,7 @@ public class ContextAwareHelper {
 		this.context = context;
 		this.bssids = bssids;
 		this.locations = locations;
-		this.currentLocation = "l2";
+		this.currentLocation = null;
 		
 		
 	}

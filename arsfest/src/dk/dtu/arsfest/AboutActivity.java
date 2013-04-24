@@ -1,6 +1,7 @@
 package dk.dtu.arsfest;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -30,6 +31,10 @@ public class AboutActivity extends SlideMenuSuper {
 	 * @author AA
 	 */
 	private void setAbout() {
+		
+		Typeface tf_neosans = Utils.getTypeface(this,
+				Constants.TYPEFONT_NEOSANS);
+		
 		textViewHeaderTitle = (TextView) findViewById(R.id.actionBarTitle);
 		textViewHeaderTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
@@ -40,24 +45,19 @@ public class AboutActivity extends SlideMenuSuper {
 				Constants.TYPEFONT_PROXIMANOVA));
 
 		textViewAbout = (TextView) findViewById(R.id.textViewAbout);
-		textViewAbout.setTypeface(Utils.getTypeface(this,
-				Constants.TYPEFONT_NEOSANS));
+		textViewAbout.setTypeface(tf_neosans);
 
 		textViewVersion = (TextView) findViewById(R.id.textViewVersion);
-		textViewVersion.setTypeface(Utils.getTypeface(this,
-				Constants.TYPEFONT_NEOSANS));
+		textViewVersion.setTypeface(tf_neosans);
 
 		textViewGooglePlay = (TextView) findViewById(R.id.AboutGooglePlay);
-		textViewGooglePlay.setTypeface(Utils.getTypeface(this,
-				Constants.TYPEFONT_NEOSANS));
+		textViewGooglePlay.setTypeface(tf_neosans);
 
 		textViewAboutUs = (TextView) findViewById(R.id.textViewAboutUs);
-		textViewAboutUs.setTypeface(Utils.getTypeface(this,
-				Constants.TYPEFONT_NEOSANS));
+		textViewAboutUs.setTypeface(tf_neosans);
 
 		textViewVersionTitle = (TextView) findViewById(R.id.textViewVersion2);
-		textViewVersionTitle.setTypeface(Utils.getTypeface(this,
-				Constants.TYPEFONT_NEOSANS));
+		textViewVersionTitle.setTypeface(tf_neosans);
 
 		relativeLayoutRateUsLink = (RelativeLayout) findViewById(R.id.AboutLayoutRateUs);
 		relativeLayoutRateUsLink.setOnClickListener(new View.OnClickListener() {
