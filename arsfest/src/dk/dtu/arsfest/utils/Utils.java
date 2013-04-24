@@ -22,9 +22,9 @@ public class Utils {
   	}
 	
 	public static Date getCurrentDate() {
-		//return getStartDate("03-05-2013:17:29"); // just before
+		return getStartDate("03-05-2013:17:29"); // just before
 		//return new Date(); // now
-		return getStartDate("04-05-2013:03:10"); // during
+		//return getStartDate("04-05-2013:01:20"); // during
 		//return getStartDate("03-06-2013:21:10"); // over
 	}
 	
@@ -77,7 +77,7 @@ public class Utils {
 		if (theme.equals(Constants.EVENT_TYPE_MUSIC)) {
 			return context.getResources().getDrawable(R.drawable.guitar);
 		} else if (theme.equals(Constants.EVENT_TYPE_OFFICIAL)) {
-			return context.getResources().getDrawable(R.drawable.official);
+			return context.getResources().getDrawable(R.drawable.calendar);
 		} else if (theme.equals(Constants.EVENT_TYPE_FOOD)) {
 			return context.getResources().getDrawable(R.drawable.dinner_icon2);
 		} else if (theme.equals(Constants.EVENT_TYPE_DANCE)) {

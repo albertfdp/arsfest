@@ -71,9 +71,6 @@ public class MainActivity extends SlideMenuSuper {
 		// Create a new ContextAwareHelper
 		contextAwareHelper = new ContextAwareHelper(
 				this.getApplicationContext(), bssids, locations);
-
-		// inflate the list view with the events
-		initViewPager(1,contextAwareHelper.getEventsHappeningNow());
 	}
 
 	@Override
