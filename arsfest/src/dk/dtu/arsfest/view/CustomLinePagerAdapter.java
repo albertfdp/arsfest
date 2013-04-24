@@ -50,7 +50,7 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 			Event event = events.get(position);
 			View view = inflater.inflate(R.layout.event_item, null);
 			view.setTag(position);
-			
+						
 			/* init style */
 			TextView eventTitle = (TextView) view.findViewById(R.id.event_title);
 			TextView eventLocation = (TextView) view.findViewById(R.id.event_location);

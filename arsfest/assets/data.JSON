@@ -11,7 +11,7 @@
                 {
                     "id": "e0",
                     "name": "Official_Event",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:17:30",
                     "endTime": "03-05-2013:18:45",
                     "location": "l0",
@@ -22,7 +22,7 @@
                 {
                     "id": "e1",
                     "name": "Sportshal_Open",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:22:00",
                     "endTime": "03-05-2013:22:00",
                     "location": "l0",
@@ -33,7 +33,7 @@
                 {
                     "id": "e2",
                     "name": "Sportshal_Lanciers1",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:22:10",
                     "endTime": "03-05-2013:22:25",
                     "location": "l0",
@@ -44,7 +44,7 @@
                 {
                     "id": "e3",
                     "name": "Sportshal_DJ1",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:22:25",
                     "endTime": "03-05-2013:23:00",
                     "location": "l0",
@@ -55,7 +55,7 @@
                 {
                     "id": "e4",
                     "name": "Sportshal_Lanciers2",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:23:00",
                     "endTime": "03-05-2013:23:15",
                     "location": "l0",
@@ -66,7 +66,7 @@
                 {
                     "id": "e5",
                     "name": "Sportshal_Nebiha",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:23:15",
                     "endTime": "04-05-2013:00:15",
                     "location": "l0",
@@ -77,7 +77,7 @@
                 {
                     "id": "e6",
                     "name": "Sportshal_Lanciers3",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:00:15",
                     "endTime": "04-05-2013:00:30",
                     "location": "l0",
@@ -88,7 +88,7 @@
                 {
                     "id": "e7",
                     "name": "Sportshal_DJ2",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:00:30",
                     "endTime": "04-05-2013:01:15",
                     "location": "l0",
@@ -99,7 +99,7 @@
                 {
                     "id": "e8",
                     "name": "Sportshal_Rune_RK",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:01:15",
                     "endTime": "04-05-2013:02:15",
                     "location": "l0",
@@ -110,7 +110,7 @@
                 {
                     "id": "e9",
                     "name": "Sportshal_DJ3",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:02:15",
                     "endTime": "04-05-2013:03:00",
                     "location": "l0",
@@ -121,7 +121,7 @@
                 {
                     "id": "e10",
                     "name": "Sportshal_Finish",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:03:00",
                     "endTime": "04-05-2013:03:00",
                     "location": "l0",
@@ -142,7 +142,7 @@
                 {
                     "id": "e11",
                     "name": "Biblioteket_Open",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:18:30",
                     "endTime": "03-05-2013:18:30",
                     "location": "l1",
@@ -153,7 +153,7 @@
                 {
                     "id": "e12",
                     "name": "Dinner",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:19:15",
                     "endTime": "03-05-2013:22:00",
                     "location": "l1",
@@ -178,7 +178,7 @@
                 {
                     "id": "e13",
                     "name": "Biblioteket_Lanciers1",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:22:15",
                     "endTime": "03-05-2013:22:30",
                     "location": "l1",
@@ -189,7 +189,7 @@
                 {
                     "id": "e14",
                     "name": "Biblioteket_Vëto1",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:22:40",
                     "endTime": "03-05-2013:23:40",
                     "location": "l1",
@@ -200,7 +200,7 @@
                 {
                     "id": "e15",
                     "name": "Biblioteket_Lanciers2",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:22:40",
                     "endTime": "04-05-2013:00:00",
                     "location": "l1",
@@ -211,7 +211,7 @@
                 {
                     "id": "e16",
                     "name": "Biblioteket_Vëto2",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:00:00",
                     "endTime": "04-05-2013:01:00",
                     "location": "l1",
@@ -222,7 +222,7 @@
                 {
                     "id": "e17",
                     "name": "Biblioteket_Lanciers3",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:01:00",
                     "endTime": "04-05-2013:01:15",
                     "location": "l1",
@@ -233,7 +233,7 @@
                 {
                     "id": "e18",
                     "name": "Biblioteket_Close",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:01:15",
                     "endTime": "04-05-2013:01:15",
                     "location": "l1",
@@ -254,7 +254,7 @@
                 {
                     "id": "e19",
                     "name": "Oticon_Open",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:21:00",
                     "endTime": "03-05-2013:21:00",
                     "location": "l2",
@@ -265,7 +265,7 @@
                 {
                     "id": "e20",
                     "name": "Oticon_DJ1",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:21:00",
                     "endTime": "03-05-2013:22:30",
                     "location": "l2",
@@ -276,7 +276,7 @@
                 {
                     "id": "e21",
                     "name": "Oticon_Concert1",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:22:30",
                     "endTime": "03-05-2013:23:30",
                     "location": "l2",
@@ -287,7 +287,7 @@
                 {
                     "id": "e22",
                     "name": "Oticon_DJ2",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:23:30",
                     "endTime": "03-05-2013:23:50",
                     "location": "l2",
@@ -298,7 +298,7 @@
                 {
                     "id": "e23",
                     "name": "Oticon_Concert2",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:23:50",
                     "endTime": "04-05-2013:00:50",
                     "location": "l2",
@@ -309,7 +309,7 @@
                 {
                     "id": "e24",
                     "name": "Oticon_DJ3",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:23:50",
                     "endTime": "04-05-2013:05:00",
                     "location": "l2",
@@ -320,7 +320,7 @@
                 {
                     "id": "e25",
                     "name": "Oticon_Close",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:05:00",
                     "endTime": "04-05-2013:05:00",
                     "location": "l2",
@@ -341,7 +341,7 @@
                 {
                     "id": "e12",
                     "name": "Dinner",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:19:15",
                     "endTime": "03-05-2013:22:00",
                     "location": "l3",
@@ -365,7 +365,7 @@
                 {
                     "id": "e26",
                     "name": "Jazzband",
-                    "image": "",
+                    "image": "alphabeat.jpg",
                     "startTime": "03-05-2013:23:15",
                     "endTime": "04-05-2013:00:15",
                     "location": "l3",

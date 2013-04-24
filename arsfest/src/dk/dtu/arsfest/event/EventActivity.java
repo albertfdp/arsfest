@@ -14,12 +14,14 @@ import dk.dtu.arsfest.utils.Utils;
 import android.content.Intent;
 import android.graphics.Picture;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebView.PictureListener;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class EventActivity extends SlideMenuSuper {
@@ -38,7 +40,8 @@ public class EventActivity extends SlideMenuSuper {
 	private TextView courseDessertName;
 	private TextView menuName;
 	private View eventMenu;
-
+	private ImageView eventImage;
+	
 	private int scale = 50;
 	private WebView myMapWebView;
 	private Event event;
@@ -78,6 +81,7 @@ public class EventActivity extends SlideMenuSuper {
 		courseDessertName = (TextView) findViewById(R.id.dessert_course_name);
 		menuName = (TextView) findViewById(R.id.event_menu_name);
 		eventMenu = findViewById(R.id.event_menu);
+		eventImage = (ImageView) findViewById(R.id.event_image);
 
 		Typeface dtuFont = Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS);
 		eventTitle.setTypeface(dtuFont, Typeface.BOLD);
@@ -171,7 +175,9 @@ public class EventActivity extends SlideMenuSuper {
 				}
 			}
 		}
-
+		Drawable d = Utils.loadImageFromAsset(this, event.getImage());
+		if (d != null)
+			eventImage.setImageDrawable(d);
 		// eventDescription.setText(event.getDescription());
 
 	}
