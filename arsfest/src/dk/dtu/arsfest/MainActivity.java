@@ -180,10 +180,7 @@ public class MainActivity extends SlideMenuSuper {
 			}
 			
 		});
-		
-		// happening now
-		happeningNow = contextAwareHelper.getEventsHappeningNow();			
-		
+				
 		lineViewPager = (ViewPager) findViewById(R.id.linepager);
 		linePageAdapter = new CustomLinePagerAdapter(this, this.locations, happeningNow);
 
@@ -246,6 +243,19 @@ public class MainActivity extends SlideMenuSuper {
 			alertDialogBuilder.create().show();
 		}
 
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		switch (requestCode) {
+		case Constants.RESULT_EVENT_INFO:
+			this.comingFromLocation = data.getStringExtra(Constants.EXTRA_EVENT_INFO);
+			boolean comesFromAll = data.getBooleanExtra(Constants.EXTRA_EVENT_ALL, false);
+			if (comesFromAll)
+				this.comingFromLocation = "0";
+			break;
+		}
 	}
 	
 
