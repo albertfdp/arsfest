@@ -178,7 +178,7 @@ public class EventActivity extends SlideMenuSuper {
 		Drawable d = Utils.loadImageFromAsset(this, event.getImage());
 		if (d != null)
 			eventImage.setImageDrawable(d);
-		// eventDescription.setText(event.getDescription());
+		eventDescription.setText(event.getDescription());
 
 	}
 
