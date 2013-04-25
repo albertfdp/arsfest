@@ -72,4 +72,6 @@ public class Constants {
 
 	public static final String PREFS_POP_UP_CONNECTIVIY = "popUpConnectivityDiscard";
 
+	public static final String JSON_TAG_EVENT_REMARK = "remark";
+
 }
