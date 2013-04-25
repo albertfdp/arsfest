@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class EventAdapter extends ArrayAdapter <Event>{
@@ -41,6 +42,7 @@ public class EventAdapter extends ArrayAdapter <Event>{
 			TextView eventLocation = (TextView) view.findViewById(R.id.event_location);
 			TextView eventTime = (TextView) view.findViewById(R.id.event_time);
 			TextView eventStatus = (TextView) view.findViewById(R.id.event_status);
+			LinearLayout thumbnail = (LinearLayout) view.findViewById(R.id.thumbnail);
 			ImageView eventImage = (ImageView) view.findViewById(R.id.event_image);
 			Typeface typeface = Utils.getTypeface(this.context, Constants.TYPEFONT_NEOSANS);
 			if (eventTitle != null) {
@@ -56,11 +58,13 @@ public class EventAdapter extends ArrayAdapter <Event>{
 					eventTime.setTextColor(context.getResources().getColor(R.color.grey));
 					view.setBackgroundColor(context.getResources().getColor(R.color.flat_greyed));
 					eventStatus.setText(context.getResources().getString(R.string.event_finished));
+					thumbnail.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.image_bg_finished));
 				} else {
 					eventTitle.setTextColor(context.getResources().getColor(R.color.flat_grey));
 					eventLocation.setTextColor(context.getResources().getColor(R.color.flat_grey));
 					eventTime.setTextColor(context.getResources().getColor(R.color.flat_blue));
 					view.setBackgroundColor(context.getResources().getColor(R.color.white));
+					thumbnail.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.image_bg));
 					eventStatus.setText("");
 					if (event.isRemark())
 						view.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.customborder));
