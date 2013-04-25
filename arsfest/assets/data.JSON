@@ -65,14 +65,15 @@
                 },
                 {
                     "id": "e5",
-                    "name": "ALPHABEAT",
+                    "name": "Alphabeat",
                     "image": "dinner.jpg",
                     "startTime": "03-05-2013:23:00",
                     "endTime": "04-05-2013:00:15",
                     "location": "l0",
                     "description": "Alphabeat are among the greatest pop stars in Denmark not only on their records but in particularly at their live shows. At the stage Alphabeat has a lot of hits from their two first records to choose between including “This is Alphabeat” and “The spell”. Their third record has just been released with some cool singles like “Vacation” and “Love Sea”. So we at DTU know that you will have a lot to looking forward to when Alphabeat will enter the stage at DTU commemoration party 2013.",
                     "type": "nonofficial",
-                    "theme": "music"
+                    "theme": "music",
+                    "remark": true
                 },
                 {
                     "id": "e6",
