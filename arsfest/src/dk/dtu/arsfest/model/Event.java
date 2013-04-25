@@ -22,6 +22,16 @@ public class Event implements Parcelable, Comparable<Event> {
 	private String description;
 	private String type;
 	private String theme;
+	private boolean remark = false;
+	
+	public boolean isRemark() {
+		return remark;
+	}
+
+	public void setRemark(boolean remark) {
+		this.remark = remark;
+	}
+
 	private ArrayList<Course> menu = new ArrayList<Course>();
 	
 	public ArrayList<Course> getMenu() {
@@ -53,7 +63,7 @@ public class Event implements Parcelable, Comparable<Event> {
 	}
 	
 	public Event(String id, String name, String image, Date startTime, Date endTime, 
-			String location, String description, String type, String theme, ArrayList<Course> menu) {
+			String location, String description, String type, String theme, ArrayList<Course> menu, boolean remark) {
 		
 		this.id = id;
 		this.name = name;
@@ -65,6 +75,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.type = type;
 		this.theme = theme;
 		this.menu = menu;
+		this.remark = remark;
 	}
 	
 	public String getId() {
