@@ -28,6 +28,7 @@
             android:scrollY="0dp" >
 
             <LinearLayout
+                android:id="@+id/layoutViewOfTheEvent"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
@@ -123,6 +124,17 @@
                         android:text="@string/default_event_description"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/event_show_more"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="left"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/show_more"
+                        android:textColor="@color/flat_black"
+                     
+                        android:textSize="14sp" />
                 </LinearLayout>
                 
                 <LinearLayout
@@ -133,7 +145,7 @@
                     android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="5dp" >
-                    
+
                     <TextView
                         android:id="@+id/event_menu_name"
                         android:layout_width="match_parent"
@@ -280,9 +292,10 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/layoutViewMapOfTheEvent"
-                    android:layout_width="fill_parent"
-                    android:layout_height="200dp"
+               		android:id="@+id/layoutViewMapOfTheEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="200dp"
                     android:layout_margin="10dp"
                     android:background="@color/grey"
                     android:orientation="vertical"

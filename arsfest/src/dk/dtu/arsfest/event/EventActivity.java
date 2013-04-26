@@ -13,16 +13,27 @@ import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 import android.content.Intent;
 import android.graphics.Picture;
+import android.graphics.Point;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.TypedValue;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.view.ViewTreeObserver;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebView.PictureListener;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EventActivity extends SlideMenuSuper {
 
@@ -30,6 +41,7 @@ public class EventActivity extends SlideMenuSuper {
 	private TextView eventTime;
 	private TextView eventLocation;
 	private TextView eventDescription;
+	private TextView eventShowMore;
 	private TextView headerTitle;
 	private TextView seeItOnTheMap;
 	private TextView courseFirst;
@@ -41,6 +53,8 @@ public class EventActivity extends SlideMenuSuper {
 	private TextView menuName;
 	private View eventMenu;
 	private ImageView eventImage;
+	private LinearLayout layoutViewOfTheEvent;
+	private LinearLayout layoutViewMapOfTheEvent;
 	
 	private int scale = 50;
 	private WebView myMapWebView;
@@ -71,6 +85,7 @@ public class EventActivity extends SlideMenuSuper {
 		eventTime = (TextView) findViewById(R.id.event_time);
 		eventLocation = (TextView) findViewById(R.id.event_location);
 		eventDescription = (TextView) findViewById(R.id.event_description);
+		eventShowMore = (TextView) findViewById(R.id.event_show_more);
 		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
 		seeItOnTheMap = (TextView) findViewById(R.id.seeItOnTheMap);
 		courseFirst = (TextView) findViewById(R.id.first_course_type);
@@ -82,12 +97,37 @@ public class EventActivity extends SlideMenuSuper {
 		menuName = (TextView) findViewById(R.id.event_menu_name);
 		eventMenu = findViewById(R.id.event_menu);
 		eventImage = (ImageView) findViewById(R.id.event_image);
+		layoutViewOfTheEvent = (LinearLayout) findViewById(R.id.layoutViewOfTheEvent);
+		layoutViewMapOfTheEvent = (LinearLayout) findViewById(R.id.layoutViewMapOfTheEvent);
+
+		final ViewTreeObserver observer = layoutViewOfTheEvent
+				.getViewTreeObserver();
+		observer.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
+
+			@Override
+			public void onGlobalLayout() {
+				Display display = getWindowManager().getDefaultDisplay();
+				if (layoutViewOfTheEvent.getMeasuredHeight() > display
+						.getHeight()) {
+					LayoutParams myParameters = layoutViewMapOfTheEvent
+							.getLayoutParams();
+					int myHeight = (int) TypedValue.applyDimension(
+							TypedValue.COMPLEX_UNIT_DIP, 200, getResources()
+									.getDisplayMetrics());
+					myParameters.height = myHeight;
+				}
+				if (observer.isAlive()) {
+					observer.removeGlobalOnLayoutListener(this);
+				}
+			}
+		});
 
 		Typeface dtuFont = Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS);
 		eventTitle.setTypeface(dtuFont, Typeface.BOLD);
 		eventTime.setTypeface(dtuFont);
 		eventLocation.setTypeface(dtuFont);
 		eventDescription.setTypeface(dtuFont);
+		eventShowMore.setTypeface(dtuFont, Typeface.BOLD);
 		seeItOnTheMap.setTypeface(dtuFont);
 		courseFirst.setTypeface(dtuFont);
 		courseFirstName.setTypeface(dtuFont);
@@ -178,7 +218,31 @@ public class EventActivity extends SlideMenuSuper {
 		Drawable d = Utils.loadImageFromAsset(this, event.getImage());
 		if (d != null)
 			eventImage.setImageDrawable(d);
-		eventDescription.setText(event.getDescription());
+		
+		if(event.getDescription().length() > Constants.MAX_EVENT_INFO){
+			
+			eventDescription.setText(event.getDescription().substring(0, Constants.MAX_EVENT_INFO));
+			
+			eventShowMore.setOnClickListener(new OnClickListener() {
+			    public void onClick(View v) {
+			        if (eventDescription.getText().toString().equals(event.getDescription()))
+			        {
+			            eventDescription.setText(event.getDescription().substring(0, Constants.MAX_EVENT_INFO));
+			            eventShowMore.setText(getResources().getString(R.string.show_more));
+			        }
+			        else 
+			        {
+			            eventDescription.setText(event.getDescription());
+			            eventShowMore.setText(getResources().getString(R.string.show_less));
+			        }
+			    }
+			});
+			
+		}
+		else{
+			eventDescription.setText(event.getDescription());
+			eventShowMore.setVisibility(View.GONE);
+		}
 
 	}
 
