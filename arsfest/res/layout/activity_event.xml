@@ -23,11 +23,13 @@
             layout="@layout/top_header_bar" />
 
         <ScrollView
+            android:id="@+id/scrollViewContentOfEvent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scrollY="0dp" >
 
             <LinearLayout
+                android:id="@+id/layoutViewOfTheEvent"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
@@ -291,9 +293,10 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/layoutViewMapOfTheEvent"
-                    android:layout_width="fill_parent"
-                    android:layout_height="200dp"
+               		android:id="@+id/layoutViewMapOfTheEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="200dp"
                     android:layout_margin="10dp"
                     android:background="@color/grey"
                     android:orientation="vertical"

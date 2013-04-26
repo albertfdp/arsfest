@@ -13,18 +13,25 @@ import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 import android.content.Intent;
 import android.graphics.Picture;
+import android.graphics.Point;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebView.PictureListener;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EventActivity extends SlideMenuSuper {
 
@@ -44,6 +51,8 @@ public class EventActivity extends SlideMenuSuper {
 	private TextView menuName;
 	private View eventMenu;
 	private ImageView eventImage;
+	private LinearLayout layoutViewOfTheEvent;
+	private LinearLayout layoutViewMapOfTheEvent;
 	
 	private int scale = 50;
 	private WebView myMapWebView;
@@ -86,6 +95,19 @@ public class EventActivity extends SlideMenuSuper {
 		menuName = (TextView) findViewById(R.id.event_menu_name);
 		eventMenu = findViewById(R.id.event_menu);
 		eventImage = (ImageView) findViewById(R.id.event_image);
+		layoutViewOfTheEvent = (LinearLayout) findViewById(R.id.layoutViewOfTheEvent);
+		layoutViewMapOfTheEvent = (LinearLayout) findViewById(R.id.layoutViewMapOfTheEvent);
+		
+		Display display = getWindowManager().getDefaultDisplay();
+		if (layoutViewOfTheEvent.getMeasuredHeight()>display.getHeight()) {
+			LayoutParams myParameters = layoutViewMapOfTheEvent.getLayoutParams();
+			int myHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200, getResources().getDisplayMetrics());
+			myParameters.height = myHeight;
+		} else {
+			LayoutParams myParameters = layoutViewMapOfTheEvent.getLayoutParams();
+			int myHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200, getResources().getDisplayMetrics());
+			myParameters.height = myHeight;
+		}
 
 		Typeface dtuFont = Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS);
 		eventTitle.setTypeface(dtuFont, Typeface.BOLD);
