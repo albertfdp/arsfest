@@ -41,8 +41,7 @@ public class AboutActivity extends SlideMenuSuper {
 		textViewHeaderTitle.setText(Constants.APP_NAME);
 
 		textViewRateUs = (TextView) findViewById(R.id.textViewRateUs);
-		textViewRateUs.setTypeface(Utils.getTypeface(this,
-				Constants.TYPEFONT_PROXIMANOVA));
+		textViewRateUs.setTypeface(tf_neosans);
 
 		textViewAbout = (TextView) findViewById(R.id.textViewAbout);
 		textViewAbout.setTypeface(tf_neosans);
