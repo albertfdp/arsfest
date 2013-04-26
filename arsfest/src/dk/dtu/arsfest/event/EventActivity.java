@@ -22,6 +22,8 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.view.ViewTreeObserver;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebView.PictureListener;
@@ -50,7 +52,7 @@ public class EventActivity extends SlideMenuSuper {
 	private ImageView eventImage;
 	private LinearLayout layoutViewOfTheEvent;
 	private LinearLayout layoutViewMapOfTheEvent;
-	
+
 	private int scale = 50;
 	private WebView myMapWebView;
 	private Event event;
@@ -69,8 +71,10 @@ public class EventActivity extends SlideMenuSuper {
 		// Read event info from intent
 		Intent intent = getIntent();
 		this.event = (Event) intent.getParcelableExtra(Constants.EXTRA_EVENT);
-		this.location = (Location) intent.getParcelableExtra(Constants.EXTRA_LOCATION);
-		this.comesFromAll = intent.getBooleanExtra(Constants.EXTRA_EVENT_ALL, false);
+		this.location = (Location) intent
+				.getParcelableExtra(Constants.EXTRA_LOCATION);
+		this.comesFromAll = intent.getBooleanExtra(Constants.EXTRA_EVENT_ALL,
+				false);
 
 		updateView();
 	}
@@ -93,17 +97,28 @@ public class EventActivity extends SlideMenuSuper {
 		eventImage = (ImageView) findViewById(R.id.event_image);
 		layoutViewOfTheEvent = (LinearLayout) findViewById(R.id.layoutViewOfTheEvent);
 		layoutViewMapOfTheEvent = (LinearLayout) findViewById(R.id.layoutViewMapOfTheEvent);
-		
-		Display display = getWindowManager().getDefaultDisplay();
-		if (layoutViewOfTheEvent.getMeasuredHeight()>display.getHeight()) {
-			LayoutParams myParameters = layoutViewMapOfTheEvent.getLayoutParams();
-			int myHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200, getResources().getDisplayMetrics());
-			myParameters.height = myHeight;
-		} else {
-			LayoutParams myParameters = layoutViewMapOfTheEvent.getLayoutParams();
-			int myHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200, getResources().getDisplayMetrics());
-			myParameters.height = myHeight;
-		}
+
+		final ViewTreeObserver observer = layoutViewOfTheEvent
+				.getViewTreeObserver();
+		observer.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
+
+			@Override
+			public void onGlobalLayout() {
+				Display display = getWindowManager().getDefaultDisplay();
+				if (layoutViewOfTheEvent.getMeasuredHeight() > display
+						.getHeight()) {
+					LayoutParams myParameters = layoutViewMapOfTheEvent
+							.getLayoutParams();
+					int myHeight = (int) TypedValue.applyDimension(
+							TypedValue.COMPLEX_UNIT_DIP, 200, getResources()
+									.getDisplayMetrics());
+					myParameters.height = myHeight;
+				}
+				if (observer.isAlive()) {
+					observer.removeGlobalOnLayoutListener(this);
+				}
+			}
+		});
 
 		Typeface dtuFont = Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS);
 		eventTitle.setTypeface(dtuFont, Typeface.BOLD);
@@ -204,17 +219,15 @@ public class EventActivity extends SlideMenuSuper {
 
 	}
 
-	
-	
 	@Override
 	public void onBackPressed() {
 		Intent returnIntent = new Intent();
-		returnIntent.putExtra(Constants.EXTRA_EVENT_INFO, this.event.getLocation());
+		returnIntent.putExtra(Constants.EXTRA_EVENT_INFO,
+				this.event.getLocation());
 		returnIntent.putExtra(Constants.EXTRA_EVENT_ALL, this.comesFromAll);
 		setResult(Constants.RESULT_EVENT_INFO, returnIntent);
 		finish();
 		return;
 	}
 
-	
 }
