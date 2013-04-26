@@ -110,7 +110,7 @@ public class MapActivity extends SlideMenuSuper {
 					imageButtonLocateMe
 							.setImageResource(R.drawable.map_locate_me_pressed);
 					imageButtonLocateMe
-							.setBackgroundResource(R.drawable.map_filter_background);
+							.setBackgroundResource(R.drawable.purple_bg);
 					return false;
 				} else if (event.getAction() == MotionEvent.ACTION_UP) {
 					imageButtonLocateMe
@@ -137,7 +137,7 @@ public class MapActivity extends SlideMenuSuper {
 				} else {
 					Toast.makeText(
 							getApplicationContext(),
-							"404. Our Russian sattelite cannot localize you in B101.",
+							"Our Soviet satellite cannot localize you in B101. Go back to the party!",
 							Toast.LENGTH_LONG).show();
 				}
 			}
