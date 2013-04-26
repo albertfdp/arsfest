@@ -11,6 +11,7 @@ import com.coboltforge.slidemenu.SlideMenu;
 import com.coboltforge.slidemenu.SlideMenuInterface.OnSlideMenuItemClickListener;
 
 import dk.dtu.arsfest.maps.MapActivity;
+import dk.dtu.arsfest.notification.NotificationActivity;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 
@@ -54,15 +55,19 @@ public class SlideMenuSuper extends Activity implements
 		switch (itemId) {
 		case R.id.item_programme:
 			myDesiredClass = MainActivity.class;
-			myHandler.postDelayed(myrunnable, (long) (1.5 * durationOfAnimation));
+			myHandler.postDelayed(myrunnable, (long) (1.2 * durationOfAnimation));
 			break;
 		case R.id.item_map:
 			myDesiredClass = MapActivity.class;
-			myHandler.postDelayed(myrunnable, (long) (1.5 * durationOfAnimation));
+			myHandler.postDelayed(myrunnable, (long) (1.2 * durationOfAnimation));
+			break;
+		case R.id.item_alarms:
+			myDesiredClass = NotificationActivity.class;
+			myHandler.postDelayed(myrunnable, (long) (1.2 * durationOfAnimation));
 			break;
 		case R.id.item_about:
 			myDesiredClass = AboutActivity.class;
-			myHandler.postDelayed(myrunnable, (long) (1.5 * durationOfAnimation));
+			myHandler.postDelayed(myrunnable, (long) (1.2 * durationOfAnimation));
 			break;
 		}
 	}

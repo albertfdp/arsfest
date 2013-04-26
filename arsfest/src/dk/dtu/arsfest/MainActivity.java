@@ -35,7 +35,7 @@ import android.widget.TextView;
 
 public class MainActivity extends SlideMenuSuper {
 
-	public static final String PREFS_NAME = "ArsFestPrefsFile";
+	//public static final String PREFS_NAME = "ArsFestPrefsFile";
 
 	private ArrayList<Location> locations;
 	private ArrayList<Bssid> bssids;

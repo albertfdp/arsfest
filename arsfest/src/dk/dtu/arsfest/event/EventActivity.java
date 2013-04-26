@@ -21,6 +21,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebView.PictureListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EventActivity extends SlideMenuSuper {
 

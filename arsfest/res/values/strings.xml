@@ -49,7 +49,7 @@
     <string name="menu">Menu</string>
     <string name="item_one">Programme</string>
     <string name="item_two">Show Map</string>
-    <string name="item_three">Settings</string>
+    <string name="item_three">Your Alarms</string>
     <string name="item_four">About</string>
     <string name="DTU">DTU</string>
     <string name="date">3rd May 2013</string>
@@ -78,6 +78,9 @@
 	<string name="pref_ask_wifi_title">Check WiFi connectivity</string>
 	<string name="pref_update_wifi_setting">WiFi</string>
 	
-	<!-- Menu -->
-	<string name="menu_set_alarm">Remind me</string>
+	<!-- Notifications -->
+	<!-- <string name="menu_set_alarm">Remind me</string> -->
+	<string name="vibration2">Vibration</string>
+	<string name="vibration">VIBRATION</string>
+	<string name="youralarms">UNSET YOUR ALARMS</string>
 </resources>

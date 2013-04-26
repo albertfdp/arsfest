@@ -2,7 +2,7 @@ package dk.dtu.arsfest.utils;
 
 public class Constants {
 	
-	public final static String APP_NAME = "DTU ÅRSFEST 2013";
+	public final static String APP_NAME = "DTU ï¿½RSFEST 2013";
 	
 	public final static String TYPEFONT_WELLFLEET = "Wellfleet-Regular.ttf";
 	public final static String TYPEFONT_NEOSANS = "NeoSans.ttf";
@@ -71,5 +71,7 @@ public class Constants {
 	public static final String EXTRA_EVENT_ALL = "dk.dtu.arsfest.event.all";
 
 	public static final String PREFS_POP_UP_CONNECTIVIY = "popUpConnectivityDiscard";
+	
+	public static final String PREFERENCES_VIBRATION = "VibrationOnAlarm";
 
 }
