@@ -17,7 +17,6 @@ public class Location implements Parcelable {
 	private double latitude;
 	private double longitude;
 	private String description;
-	private int image;
 	private ArrayList<Event> events;
 	
 	public Location(String id){
@@ -29,23 +28,21 @@ public class Location implements Parcelable {
 		this.name = name;
 		this.events = events;
 	}
-	public Location(String id, String name, double latitude, double longitude, String description, int image, ArrayList<Event> events) {
+	public Location(String id, String name, double latitude, double longitude, String description, ArrayList<Event> events) {
 		this.id = id;
 		this.name = name;
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.description = description;
-		this.image = image;
 		this.events = events;
 	}
 	
-	public Location(String id, String name, double latitude, double longitude, String description, int image) {
+	public Location(String id, String name, double latitude, double longitude, String description) {
 		this.id = id;
 		this.name = name;
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.description = description;
-		this.image = image;
 	}
 	
 	public String getDescription() {
@@ -56,14 +53,6 @@ public class Location implements Parcelable {
 		this.description = description;
 	}
 
-	public int getImage() {
-		return this.image;
-	}
-
-	public void setImage(int image) {
-		this.image = image;
-	}
-	
 	public String getId() {
 		return this.id;
 	}
@@ -106,7 +95,7 @@ public class Location implements Parcelable {
 	
 	@Override
 	public String toString(){
-		return id+' '+name+' '+longitude+' '+latitude+' '+description+' '+image;
+		return id+' '+name+' '+longitude+' '+latitude+' '+description;
 	}
 	
 	public ArrayList<Event> happeningNow(Date currentTime){

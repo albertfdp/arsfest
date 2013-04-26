@@ -71,11 +71,10 @@ public class JSONParser {
 				Double latitude = location.getDouble(Constants.JSON_TAG_LOCATION_LATITUDE);
 				Double longitude = location.getDouble(Constants.JSON_TAG_LOCATION_LONGITUDE);
 				String description = location.getString(Constants.JSON_TAG_LOCATION_DESCRIPTION);
-				int image = location.getInt(Constants.JSON_TAG_LOCATION_IMAGE);
 				
 				// get all locations of the events
 				ArrayList<Event> events = readEvents(location.getJSONArray(Constants.JSON_TAG_LOCATION_EVENTS));
-				locations.add(new Location(id, name, latitude, longitude, description, image, events));
+				locations.add(new Location(id, name, latitude, longitude, description, events));
 			}
 			
 		} catch (JSONException e) {
