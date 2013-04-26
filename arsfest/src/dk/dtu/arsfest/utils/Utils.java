@@ -25,8 +25,8 @@ public class Utils {
 	
 	public static Date getCurrentDate() {
 		//return getStartDate("03-05-2013:17:29"); // just before
-		//return new Date(); // now
-		return getStartDate("03-05-2013:21:20"); // during
+		return new Date(); // now
+		//return getStartDate("03-05-2013:21:20"); // during
 		//return getStartDate("03-06-2013:21:10"); // over
 	}
 	
