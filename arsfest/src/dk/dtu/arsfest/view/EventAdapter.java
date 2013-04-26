@@ -66,8 +66,6 @@ public class EventAdapter extends ArrayAdapter <Event>{
 					view.setBackgroundColor(context.getResources().getColor(R.color.white));
 					thumbnail.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.image_bg));
 					eventStatus.setText("");
-					if (event.isRemark())
-						view.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.customborder));
 				}
 				eventImage.setImageDrawable(Utils.getDrawable(context, event.getTheme()));
 			}

@@ -114,8 +114,13 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 			TextView message = (TextView) view.findViewById(R.id.card_finished_message);
 			TextView submessage = (TextView) view.findViewById(R.id.card_finished_submessage);
 			
-			message.setText(mContext.getResources().getString(R.string.card_no_events_message));
-			submessage.setText(mContext.getResources().getString(R.string.card_no_events_submessage));
+			if (!Utils.hasFestStarted()) {
+				message.setText(mContext.getResources().getString(R.string.card_no_events_message));
+				submessage.setText(mContext.getResources().getString(R.string.card_not_started_submessage));
+			} else {
+				message.setText(mContext.getResources().getString(R.string.card_no_events_message));
+				submessage.setText(mContext.getResources().getString(R.string.card_no_events_submessage));
+			}
 			
 			message.setTypeface(Utils.getTypeface(mContext, Constants.TYPEFONT_NEOSANS));
 			submessage.setTypeface(Utils.getTypeface(mContext, Constants.TYPEFONT_NEOSANS));
