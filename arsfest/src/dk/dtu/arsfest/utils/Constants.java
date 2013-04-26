@@ -77,4 +77,6 @@ public class Constants {
 	public static final String JSON_TAG_EVENT_REMARK = "remark";
 	public static final int MAX_EVENT_INFO = 450;
 
+	public static final String PREFS_NOTIFICATION = "Notification 2h";
+
 }
