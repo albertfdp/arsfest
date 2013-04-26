@@ -24,6 +24,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.view.ViewTreeObserver;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebView.PictureListener;
@@ -108,6 +110,28 @@ public class EventActivity extends SlideMenuSuper {
 			int myHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200, getResources().getDisplayMetrics());
 			myParameters.height = myHeight;
 		}
+
+		final ViewTreeObserver observer = layoutViewOfTheEvent
+				.getViewTreeObserver();
+		observer.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
+
+			@Override
+			public void onGlobalLayout() {
+				Display display = getWindowManager().getDefaultDisplay();
+				if (layoutViewOfTheEvent.getMeasuredHeight() > display
+						.getHeight()) {
+					LayoutParams myParameters = layoutViewMapOfTheEvent
+							.getLayoutParams();
+					int myHeight = (int) TypedValue.applyDimension(
+							TypedValue.COMPLEX_UNIT_DIP, 200, getResources()
+									.getDisplayMetrics());
+					myParameters.height = myHeight;
+				}
+				if (observer.isAlive()) {
+					observer.removeGlobalOnLayoutListener(this);
+				}
+			}
+		});
 
 		Typeface dtuFont = Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS);
 		Typeface menuFont = Utils.getTypeface(this, Constants.TYPEFONT_MRDAFOE);

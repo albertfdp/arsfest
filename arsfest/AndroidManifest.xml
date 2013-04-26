@@ -76,7 +76,7 @@
         </activity>
 
         <service android:name="dk.dtu.arsfest.notification.MyNotificationService" />
-        
+        <service android:name="dk.dtu.arsfest.notification.MyOneTimeNotificationService" />
         <!-- Receiver for location awareness: -->
         <receiver android:name="dk.dtu.arsfest.alarms.AlarmManagerBroadcastReceiver" >
         </receiver>

@@ -146,7 +146,7 @@
                     android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="5dp" >
-                    
+
                     <TextView
                         android:id="@+id/event_menu_name"
                         android:layout_width="match_parent"
