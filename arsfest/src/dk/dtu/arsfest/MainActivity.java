@@ -35,8 +35,6 @@ import android.widget.TextView;
 
 public class MainActivity extends SlideMenuSuper {
 
-	//public static final String PREFS_NAME = "ArsFestPrefsFile";
-
 	private ArrayList<Location> locations;
 	private ArrayList<Bssid> bssids;
 
@@ -71,9 +69,6 @@ public class MainActivity extends SlideMenuSuper {
 		// Create a new ContextAwareHelper
 		contextAwareHelper = new ContextAwareHelper(
 				this.getApplicationContext(), bssids, locations);
-
-		// inflate the list view with the events
-		initViewPager(1,contextAwareHelper.getEventsHappeningNow());
 	}
 
 	@Override
@@ -183,10 +178,7 @@ public class MainActivity extends SlideMenuSuper {
 			}
 			
 		});
-		
-		// happening now
-		happeningNow = contextAwareHelper.getEventsHappeningNow();			
-		
+				
 		lineViewPager = (ViewPager) findViewById(R.id.linepager);
 		linePageAdapter = new CustomLinePagerAdapter(this, this.locations, happeningNow);
 
@@ -249,6 +241,19 @@ public class MainActivity extends SlideMenuSuper {
 			alertDialogBuilder.create().show();
 		}
 
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		switch (requestCode) {
+		case Constants.RESULT_EVENT_INFO:
+			this.comingFromLocation = data.getStringExtra(Constants.EXTRA_EVENT_INFO);
+			boolean comesFromAll = data.getBooleanExtra(Constants.EXTRA_EVENT_ALL, false);
+			if (comesFromAll)
+				this.comingFromLocation = "0";
+			break;
+		}
 	}
 	
 

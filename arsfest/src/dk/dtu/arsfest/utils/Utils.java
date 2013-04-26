@@ -1,5 +1,7 @@
 package dk.dtu.arsfest.utils;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ public class Utils {
 	public static Date getCurrentDate() {
 		//return getStartDate("03-05-2013:17:29"); // just before
 		//return new Date(); // now
-		return getStartDate("04-05-2013:03:10"); // during
+		return getStartDate("03-05-2013:21:20"); // during
 		//return getStartDate("03-06-2013:21:10"); // over
 	}
 	
@@ -73,11 +75,26 @@ public class Utils {
 		}
 	}
 	
+	public static Drawable loadImageFromAsset(Context context, String filename) {
+        // load image
+        try {
+            // get input stream
+            InputStream ims = context.getAssets().open("images/" + filename);
+            // load image as Drawable
+            Drawable d = Drawable.createFromStream(ims, null);
+            return d;
+        }
+        catch(IOException ex) {
+            return null;
+        }
+ 
+    }
+	
 	public static Drawable getDrawable(Context context, String theme) {
 		if (theme.equals(Constants.EVENT_TYPE_MUSIC)) {
 			return context.getResources().getDrawable(R.drawable.guitar);
 		} else if (theme.equals(Constants.EVENT_TYPE_OFFICIAL)) {
-			return context.getResources().getDrawable(R.drawable.official);
+			return context.getResources().getDrawable(R.drawable.calendar);
 		} else if (theme.equals(Constants.EVENT_TYPE_FOOD)) {
 			return context.getResources().getDrawable(R.drawable.dinner_icon2);
 		} else if (theme.equals(Constants.EVENT_TYPE_DANCE)) {

@@ -11,7 +11,7 @@
                 {
                     "id": "e0",
                     "name": "Official_Event",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:17:30",
                     "endTime": "03-05-2013:18:45",
                     "location": "l0",
@@ -22,7 +22,7 @@
                 {
                     "id": "e1",
                     "name": "Sportshal_Open",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:22:00",
                     "endTime": "03-05-2013:22:00",
                     "location": "l0",
@@ -33,20 +33,23 @@
                 {
                     "id": "e2",
                     "name": "Sportshal_Lanciers1",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:22:10",
                     "endTime": "03-05-2013:22:25",
                     "location": "l0",
-                    "description": "Les Lanciers",
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n
+Widespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n
+In Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.
+The five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers",
                     "type": "official",
                     "theme": "dance"
                 },
                 {
                     "id": "e3",
                     "name": "Sportshal_DJ1",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:22:25",
-                    "endTime": "03-05-2013:23:00",
+                    "endTime": "03-05-2013:22:55",
                     "location": "l0",
                     "description": "DJ",
                     "type": "nonofficial",
@@ -55,40 +58,47 @@
                 {
                     "id": "e4",
                     "name": "Sportshal_Lanciers2",
-                    "image": "",
-                    "startTime": "03-05-2013:23:00",
-                    "endTime": "03-05-2013:23:15",
+                    "image": "dinner.jpg",
+                    "startTime": "03-05-2013:22:55",
+                    "endTime": "03-05-2013:23:00",
                     "location": "l0",
-                    "description": "Les Lanciers",
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n
+Widespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n
+In Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.
+The five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers",
                     "type": "official",
                     "theme": "dance"
                 },
                 {
                     "id": "e5",
-                    "name": "Sportshal_Nebiha",
-                    "image": "",
-                    "startTime": "03-05-2013:23:15",
+                    "name": "Alphabeat",
+                    "image": "dinner.jpg",
+                    "startTime": "03-05-2013:23:00",
                     "endTime": "04-05-2013:00:15",
                     "location": "l0",
-                    "description": "Nebiha",
+                    "description": "Alphabeat are among the greatest pop stars in Denmark not only on their records but in particularly at their live shows. At the stage Alphabeat has a lot of hits from their two first records to choose between including “This is Alphabeat” and “The spell”. Their third record has just been released with some cool singles like “Vacation” and “Love Sea”. So we at DTU know that you will have a lot to looking forward to when Alphabeat will enter the stage at DTU commemoration party 2013.",
                     "type": "nonofficial",
-                    "theme": "music"
+                    "theme": "music",
+                    "remark": true
                 },
                 {
                     "id": "e6",
                     "name": "Sportshal_Lanciers3",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:00:15",
                     "endTime": "04-05-2013:00:30",
                     "location": "l0",
-                    "description": "Les Lanciers",
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n
+Widespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n
+In Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.
+The five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers",
                     "type": "official",
                     "theme": "dance"
                 },
                 {
                     "id": "e7",
                     "name": "Sportshal_DJ2",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:00:30",
                     "endTime": "04-05-2013:01:15",
                     "location": "l0",
@@ -99,7 +109,7 @@
                 {
                     "id": "e8",
                     "name": "Sportshal_Rune_RK",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:01:15",
                     "endTime": "04-05-2013:02:15",
                     "location": "l0",
@@ -110,7 +120,7 @@
                 {
                     "id": "e9",
                     "name": "Sportshal_DJ3",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:02:15",
                     "endTime": "04-05-2013:03:00",
                     "location": "l0",
@@ -121,7 +131,7 @@
                 {
                     "id": "e10",
                     "name": "Sportshal_Finish",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:03:00",
                     "endTime": "04-05-2013:03:00",
                     "location": "l0",
@@ -142,7 +152,7 @@
                 {
                     "id": "e11",
                     "name": "Biblioteket_Open",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:18:30",
                     "endTime": "03-05-2013:18:30",
                     "location": "l1",
@@ -153,7 +163,7 @@
                 {
                     "id": "e12",
                     "name": "Dinner",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:19:15",
                     "endTime": "03-05-2013:22:00",
                     "location": "l1",
@@ -178,18 +188,21 @@
                 {
                     "id": "e13",
                     "name": "Biblioteket_Lanciers1",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:22:15",
                     "endTime": "03-05-2013:22:30",
                     "location": "l1",
-                    "description": "Les Lanciers",
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n
+Widespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n
+In Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.
+The five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers",
                     "type": "official",
                     "theme": "dance"
                 },
                 {
                     "id": "e14",
                     "name": "Biblioteket_Vëto1",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:22:40",
                     "endTime": "03-05-2013:23:40",
                     "location": "l1",
@@ -200,18 +213,21 @@
                 {
                     "id": "e15",
                     "name": "Biblioteket_Lanciers2",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:22:40",
                     "endTime": "04-05-2013:00:00",
                     "location": "l1",
-                    "description": "Les Lanciers",
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n
+Widespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n
+In Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.
+The five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers",
                     "type": "official",
                     "theme": "dance"
                 },
                 {
                     "id": "e16",
                     "name": "Biblioteket_Vëto2",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:00:00",
                     "endTime": "04-05-2013:01:00",
                     "location": "l1",
@@ -222,18 +238,21 @@
                 {
                     "id": "e17",
                     "name": "Biblioteket_Lanciers3",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:01:00",
                     "endTime": "04-05-2013:01:15",
                     "location": "l1",
-                    "description": "Les Lanciers",
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n
+Widespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n
+In Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.
+The five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers",
                     "type": "official",
                     "theme": "dance"
                 },
                 {
                     "id": "e18",
                     "name": "Biblioteket_Close",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:01:15",
                     "endTime": "04-05-2013:01:15",
                     "location": "l1",
@@ -254,7 +273,7 @@
                 {
                     "id": "e19",
                     "name": "Oticon_Open",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:21:00",
                     "endTime": "03-05-2013:21:00",
                     "location": "l2",
@@ -265,7 +284,7 @@
                 {
                     "id": "e20",
                     "name": "Oticon_DJ1",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:21:00",
                     "endTime": "03-05-2013:22:30",
                     "location": "l2",
@@ -275,20 +294,20 @@
                 },
                 {
                     "id": "e21",
-                    "name": "Oticon_Concert1",
-                    "image": "",
+                    "name": "Queen Machine",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:22:30",
-                    "endTime": "03-05-2013:23:30",
+                    "endTime": "03-05-2013:23:45",
                     "location": "l2",
-                    "description": "Concert (TFH Experience)",
+                    "description": "Why are there not more bands which play Queen’s songs? The answer is simple. There was only one Freddie Mercury…  And because most of the bands which try the aweinspiring task to reproduce the credible, honest and solid music of Queen will figuratively speaking break the guitar neck. All this will now be undone with the entry of Bjarke Baisner Laursen and the rest of Queen Machine in the magical world of Queen’s music, performance and energy.\n Watch them live in Oticon Salen from 10:30pm to 11:45pm.",
                     "type": "nonofficial",
                     "theme": "music"
                 },
                 {
                     "id": "e22",
                     "name": "Oticon_DJ2",
-                    "image": "",
-                    "startTime": "03-05-2013:23:30",
+                    "image": "dinner.jpg",
+                    "startTime": "03-05-2013:23:45",
                     "endTime": "03-05-2013:23:50",
                     "location": "l2",
                     "description": "DJ",
@@ -298,7 +317,7 @@
                 {
                     "id": "e23",
                     "name": "Oticon_Concert2",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:23:50",
                     "endTime": "04-05-2013:00:50",
                     "location": "l2",
@@ -309,7 +328,7 @@
                 {
                     "id": "e24",
                     "name": "Oticon_DJ3",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:23:50",
                     "endTime": "04-05-2013:05:00",
                     "location": "l2",
@@ -320,7 +339,7 @@
                 {
                     "id": "e25",
                     "name": "Oticon_Close",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "04-05-2013:05:00",
                     "endTime": "04-05-2013:05:00",
                     "location": "l2",
@@ -341,7 +360,7 @@
                 {
                     "id": "e12",
                     "name": "Dinner",
-                    "image": "",
+                    "image": "dinner.jpg",
                     "startTime": "03-05-2013:19:15",
                     "endTime": "03-05-2013:22:00",
                     "location": "l3",
@@ -364,12 +383,23 @@
                 },
                 {
                     "id": "e26",
-                    "name": "Jazzband",
-                    "image": "",
+                    "name": "Blå Mandag Jazzband",
+                    "image": "alphabeat.jpg",
                     "startTime": "03-05-2013:23:15",
-                    "endTime": "04-05-2013:00:15",
+                    "endTime": "04-05-2013:00:00",
                     "location": "l3",
-                    "description": "Jazzband",
+                    "description": "Blue Monday is the name of a seven membered Jazzband, who has played together for 28 years. We sing and play to please others, and we, ourselves, enjoy it very much. We love making jokes while playing, and having played together for many years, we think we are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\n Watch them and dance to the music in Glassalen from 11:15pm to 12:00am and again from 12:15am to 01:00am.",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e27",
+                    "name": "Blå Mandag Jazzband",
+                    "image": "alphabeat.jpg",
+                    "startTime": "04-05-2013:00:15",
+                    "endTime": "04-05-2013:01:15",
+                    "location": "l3",
+                    "description": "Blue Monday is the name of a seven membered Jazzband, who has played together for 28 years. We sing and play to please others, and we, ourselves, enjoy it very much. We love making jokes while playing, and having played together for many years, we think we are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\n Watch them and dance to the music in Glassalen from 11:15pm to 12:00am and again from 12:15am to 01:00am.",
                     "type": "nonofficial",
                     "theme": "music"
                 }
