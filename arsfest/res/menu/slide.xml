@@ -11,9 +11,13 @@
         android:title="@string/item_two">
     </item>
     <item
+        android:id="@+id/item_alarms"
+        android:icon="@drawable/slideout_alarm"
+        android:title="@string/item_three">
+    </item>
+    <item
         android:id="@+id/item_about"
         android:icon="@drawable/slideout_about"
         android:title="@string/item_four">
     </item>
-    
 </menu>
