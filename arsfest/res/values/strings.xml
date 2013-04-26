@@ -83,4 +83,6 @@
 	<string name="vibration2">Vibration</string>
 	<string name="vibration">VIBRATION</string>
 	<string name="youralarms">UNSET YOUR ALARMS</string>
+	<string name="show_more">SHOW MORE...</string>
+	<string name="show_less">SHOW LESS</string>
 </resources>
