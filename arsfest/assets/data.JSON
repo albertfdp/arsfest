@@ -167,21 +167,18 @@ The five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, L
                     "startTime": "03-05-2013:19:15",
                     "endTime": "03-05-2013:22:00",
                     "location": "l1",
-                    "description": "Dinner in Biblioteket and Kantine",
+                    "description": "Dinner in Library and Kantine",
                     "type": "official",
                     "theme": "food",
                     "menu": [
                     		 { "course": "First",
-                    		   "name": "Fish", 
-                    		   "description": "MMMMMMMMMMM fish"
+                    		   "name": "Norsk laks sammenbagt med hoki filet og dild pesto med peanuts. Serveres med rugbrødstvild samt creme fraiche dressing med kapers og persille. Hertil brød."
                     		 },
                     		 { "course": "Main",
-                    		   "name": "Deer",
-                    		   "description": "Deer good"
+                    		   "name": "Helstegt dyreinderlår med dampet pære og urtegarniture, nøddekartofler og flødesauce med tranebær."
                     		 },
                     		 { "course": "Dessert",
-                    		   "name": "Tiramisu",
-                    		   "description": "I want tiramisu"
+                    		   "name": "Mango kompot med chili, vaniljecreme, chokolade mousse, samt makroner og krokant af græskar kerner."
                     		 }
                     		]
                 },
@@ -368,16 +365,13 @@ The five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, L
                     "type": "official",
                     "theme": "food",
                     "menu": [{ "course": "First",
-                    		   "name": "Fish", 
-                    		   "description": "MMMMMMMMMMM fish"
+                    		   "name": "Norsk laks sammenbagt med hoki filet og dild pesto med peanuts. Serveres med rugbrødstvild samt creme fraiche dressing med kapers og persille. Hertil brød."
                     		 },
                     		 { "course": "Main",
-                    		   "name": "Deer",
-                    		   "description": "Deer good"
+                    		   "name": "Helstegt dyreinderlår med dampet pære og urtegarniture, nøddekartofler og flødesauce med tranebær."
                     		 },
                     		 { "course": "Dessert",
-                    		   "name": "Tiramisu",
-                    		   "description": "I want tiramisu"
+                    		   "name": "Mango kompot med chili, vaniljecreme, chokolade mousse, samt makroner og krokant af græskar kerner."
                     		 }
                     		]
                 },

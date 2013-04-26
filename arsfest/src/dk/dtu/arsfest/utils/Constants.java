@@ -7,6 +7,7 @@ public class Constants {
 	public final static String TYPEFONT_WELLFLEET = "Wellfleet-Regular.ttf";
 	public final static String TYPEFONT_NEOSANS = "NeoSans.ttf";
 	public final static String TYPEFONT_PROXIMANOVA = "ProximaNova-Light.otf";
+	public final static String TYPEFONT_MRDAFOE = "MrDafoe-Regular.ttf";
 
 	public static final String TAG = "ARSFEST";
 	
@@ -33,7 +34,6 @@ public class Constants {
 	
 	public static final String JSON_TAG_MENU_COURSE = "course";
 	public static final String JSON_TAG_MENU_COURSE_NAME = "name";
-	public static final String JSON_TAG_MENU_COURSE_DESCRIPTION = "description";
 
 	public static final String JSON_TAG_BSSID_LOCATION = "location";
 	public static final String JSON_TAG_BSSIDS = "bssids";

@@ -1,54 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/white"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:id="@+id/layout_course_menu"
     android:padding="15dip" >
 
-    <!--  ListRow Left sied Thumbnail image -->
-    
-    <!-- Title Of Event-->
- 
-    <!-- Event location -->
-
-    <ImageView
-        android:id="@+id/course_image"
-        android:layout_width="50dip"
-        android:layout_height="50dip"
-        android:layout_alignBottom="@+id/course_name"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="23dp"
-        android:src="@drawable/map" />
-
-    
-
-    <TextView
-        android:id="@+id/course_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/course_type"
-        android:layout_toLeftOf="@+id/course_image"
-        android:text="@string/default_course_name"
-        android:textColor="@color/flat_grey"
-        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/course_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/course_name"
-        android:ellipsize="end"
-        android:maxLines="1"
         android:singleLine="true"
         android:text="@string/default_course_type"
         android:textColor="@color/flat_black"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:typeface="sans" />
+        android:typeface="sans" 
+        android:layout_gravity="center" />
+    
+    <TextView
+        android:id="@+id/course_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/default_course_name"
+        android:textColor="@color/flat_grey"
+        android:textSize="12sp" />
 
-</RelativeLayout>
+    
+
+</LinearLayout>
 
 
 

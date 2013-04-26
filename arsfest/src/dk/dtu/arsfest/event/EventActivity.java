@@ -110,17 +110,18 @@ public class EventActivity extends SlideMenuSuper {
 		}
 
 		Typeface dtuFont = Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS);
+		Typeface menuFont = Utils.getTypeface(this, Constants.TYPEFONT_MRDAFOE);
 		eventTitle.setTypeface(dtuFont, Typeface.BOLD);
 		eventTime.setTypeface(dtuFont);
 		eventLocation.setTypeface(dtuFont);
 		eventDescription.setTypeface(dtuFont);
 		eventShowMore.setTypeface(dtuFont, Typeface.BOLD);
 		seeItOnTheMap.setTypeface(dtuFont);
-		courseFirst.setTypeface(dtuFont);
+		courseFirst.setTypeface(menuFont);
 		courseFirstName.setTypeface(dtuFont);
-		courseMain.setTypeface(dtuFont);
+		courseMain.setTypeface(menuFont);
 		courseMainName.setTypeface(dtuFont);
-		courseDessert.setTypeface(dtuFont);
+		courseDessert.setTypeface(menuFont);
 		courseDessertName.setTypeface(dtuFont);
 		menuName.setTypeface(dtuFont);
 		headerTitle.setTypeface(Utils.getTypeface(this,

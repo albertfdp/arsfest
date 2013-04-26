@@ -7,13 +7,11 @@ public class Course implements Parcelable {
 	
 	private String course;
 	private String name;
-	private String description;
 	
-	public Course(String course, String name, String description){
+	public Course(String course, String name){
 		
 		this.course = course;
 		this.name = name;
-		this.description = description;
 		
 	}
 	
@@ -33,18 +31,11 @@ public class Course implements Parcelable {
 		this.name = name;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
 	
 	public Course (Parcel read) {
 		this.course = read.readString();
 		this.name = read.readString();
-		this.description = read.readString();
+
 	}
 	
 	public static final Parcelable.Creator<Course> CREATOR = 
@@ -71,7 +62,6 @@ public class Course implements Parcelable {
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeString(course);
 		dest.writeString(name);
-		dest.writeString(description);
 	}
 
 

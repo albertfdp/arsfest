@@ -112,9 +112,8 @@ public class JSONParser {
 					JSONObject menu = jsonMenu.getJSONObject(j);
 					String course = menu.getString(Constants.JSON_TAG_MENU_COURSE);
 					String course_name = menu.getString(Constants.JSON_TAG_MENU_COURSE_NAME);
-					String course_description = menu.getString(Constants.JSON_TAG_MENU_COURSE_DESCRIPTION);
 					
-					dinnerMenu.add(new Course(course,course_name,course_description));
+					dinnerMenu.add(new Course(course,course_name));
 				}
 				
 				
