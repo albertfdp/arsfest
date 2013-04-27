@@ -43,7 +43,7 @@
                 {
                     "id": "e5",
                     "name": "Alphabeat",
-                    "image": "alphabeat.png",
+                    "image": "alphabeat.jpg",
                     "startTime": "03-05-2013:23:00",
                     "endTime": "04-05-2013:00:15",
                     "location": "l0",
@@ -79,7 +79,7 @@
                     "startTime": "03-05-2013:19:15",
                     "endTime": "03-05-2013:21:45",
                     "location": "l1",
-                    "description": "Dinner in Library and Kantine",
+                    "description": "",
                     "type": "official",
                     "theme": "food",
                     "menu": [
@@ -219,7 +219,7 @@
                     "startTime": "03-05-2013:19:15",
                     "endTime": "03-05-2013:21:45",
                     "location": "l3",
-                    "description": "Dinner in Biblioteket and Kantine",
+                    "description": "",
                     "type": "official",
                     "theme": "food",
                     "menu": [{ "course": "First",
