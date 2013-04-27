@@ -61,7 +61,7 @@ public class MapActivity extends SlideMenuSuper {
 		mapView = (TextView) findViewById(R.id.mapTextViewMap);
 		mapView.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS));
 
-		scale = (int) getApplicationContext().getResources().getDisplayMetrics().heightPixels/10;
+		scale = (int) getApplicationContext().getResources().getDisplayMetrics().density*80;
 		
 		initiateLocationAwarness();
 		Intent intent = getIntent();

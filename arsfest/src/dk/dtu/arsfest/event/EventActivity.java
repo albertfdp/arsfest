@@ -13,11 +13,9 @@ import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 import android.content.Intent;
 import android.graphics.Picture;
-import android.graphics.Point;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -31,9 +29,7 @@ import android.webkit.WebViewClient;
 import android.webkit.WebView.PictureListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class EventActivity extends SlideMenuSuper {
 
@@ -56,7 +52,7 @@ public class EventActivity extends SlideMenuSuper {
 	private LinearLayout layoutViewOfTheEvent;
 	private LinearLayout layoutViewMapOfTheEvent;
 	
-	private int scale = 50;
+	private int scale;
 	private WebView myMapWebView;
 	private Event event;
 	private Location location;
@@ -100,17 +96,6 @@ public class EventActivity extends SlideMenuSuper {
 		layoutViewOfTheEvent = (LinearLayout) findViewById(R.id.layoutViewOfTheEvent);
 		layoutViewMapOfTheEvent = (LinearLayout) findViewById(R.id.layoutViewMapOfTheEvent);
 		
-		Display display = getWindowManager().getDefaultDisplay();
-		if (layoutViewOfTheEvent.getMeasuredHeight()>display.getHeight()) {
-			LayoutParams myParameters = layoutViewMapOfTheEvent.getLayoutParams();
-			int myHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200, getResources().getDisplayMetrics());
-			myParameters.height = myHeight;
-		} else {
-			LayoutParams myParameters = layoutViewMapOfTheEvent.getLayoutParams();
-			int myHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200, getResources().getDisplayMetrics());
-			myParameters.height = myHeight;
-		}
-
 		final ViewTreeObserver observer = layoutViewOfTheEvent
 				.getViewTreeObserver();
 		observer.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
@@ -160,10 +145,12 @@ public class EventActivity extends SlideMenuSuper {
 		myMapWebView.loadDataWithBaseURL("file:///android_asset/images/",
 				"<html><body><img src=\"buildingmap.png\"></body></html>",
 				"text/html", "utf-8", null);
+		scale = (int) getApplicationContext().getResources().getDisplayMetrics().widthPixels/8;
 		myMapWebView.setWebViewClient(new WebViewClient() {
 			@Override
 			public void onPageFinished(WebView view, String url) {
 				super.onPageFinished(view, url);
+				myMapWebView.setInitialScale(scale);
 				myMapWebView.setInitialScale(scale);
 				myMapWebView.setScrollContainer(false);
 				myMapWebView.setScrollbarFadingEnabled(true);
@@ -172,6 +159,7 @@ public class EventActivity extends SlideMenuSuper {
 		myMapWebView.setPictureListener(new PictureListener() {
 			@Override
 			public void onNewPicture(WebView view, Picture picture) {
+				myMapWebView.setInitialScale(scale);
 				MapScroller myMapScroll = new MapScroller(location.getName(),
 						myMapWebView.getMeasuredWidth(), myMapWebView
 								.getMeasuredHeight(), myMapWebView.getScale());
