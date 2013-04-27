@@ -24,4 +24,5 @@
     <color name="orange">#ff8000</color>
     <color name="white">#ffffff</color>
     <color name="grey">#c0c0c0</color>
+    <color name="trans">#00000000 </color>
 </resources>

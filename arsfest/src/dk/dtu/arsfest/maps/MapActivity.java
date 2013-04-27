@@ -117,7 +117,7 @@ public class MapActivity extends SlideMenuSuper {
 				} else if (event.getAction() == MotionEvent.ACTION_UP) {
 					imageButtonLocateMe
 							.setImageResource(R.drawable.map_locate_me);
-					imageButtonLocateMe.setBackgroundColor(00000000);
+					imageButtonLocateMe.setBackgroundColor(getResources().getColor(R.color.trans));
 					return false;
 				}
 				return false;
