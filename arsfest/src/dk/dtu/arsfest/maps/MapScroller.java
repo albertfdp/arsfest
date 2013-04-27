@@ -57,7 +57,7 @@ public class MapScroller {
 			correctX(bmpScrollX);
 			correctY(bmpScrollY);
 			currentHTML = "mapLibrary.html";
-		} else if (scrollLocation.equals("Oticon")
+		} else if (scrollLocation.equals("Oticon Hall")
 				|| scrollLocation.equals("l2")) {
 			bmpScrollX = (int) (2098 * currentScale - bmpWidth);
 			bmpScrollY = (int) (224 * currentScale - bmpHeight);
@@ -71,7 +71,7 @@ public class MapScroller {
 			correctX(bmpScrollX);
 			correctY(bmpScrollY);
 			currentHTML = "mapKantine.html";
-		} else if (scrollLocation.equals("Sportshal")
+		} else if (scrollLocation.equals("Sports Hall")
 				|| scrollLocation.equals("l0")) {
 			bmpScrollX = (int) (2129 * currentScale - bmpWidth);
 			bmpScrollY = (int) (1066 * currentScale - bmpHeight);

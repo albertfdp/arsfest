@@ -3,6 +3,7 @@ package dk.dtu.arsfest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 
 import com.astuetz.viewpager.extensions.IndicatorLineView;
@@ -14,6 +15,7 @@ import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.Bssid;
 import dk.dtu.arsfest.network.NetworkHelper;
+import dk.dtu.arsfest.notification.MyOneTimeNotificationService;
 import dk.dtu.arsfest.parser.JSONParser;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
@@ -24,7 +26,10 @@ import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -34,8 +39,6 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.TextView;
 
 public class MainActivity extends SlideMenuSuper {
-
-	public static final String PREFS_NAME = "ArsFestPrefsFile";
 
 	private ArrayList<Location> locations;
 	private ArrayList<Bssid> bssids;
@@ -71,6 +74,8 @@ public class MainActivity extends SlideMenuSuper {
 		// Create a new ContextAwareHelper
 		contextAwareHelper = new ContextAwareHelper(
 				this.getApplicationContext(), bssids, locations);
+		
+		setOneTimeNotification();
 	}
 
 	@Override
@@ -258,5 +263,15 @@ public class MainActivity extends SlideMenuSuper {
 		}
 	}
 	
-
+	private void setOneTimeNotification() {
+		Intent myIntent = new Intent(this, MyOneTimeNotificationService.class);
+		PendingIntent myPendingIntent = PendingIntent.getService(this, 200, myIntent, 0);
+		
+		AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
+		Calendar calendarEvent = Calendar.getInstance();
+		calendarEvent.setTime(Utils.getStartDate(Constants.FEST_START_TIME));
+		calendarEvent.add(Calendar.HOUR, -2);		
+		alarmManager.set(AlarmManager.RTC_WAKEUP,
+				calendarEvent.getTimeInMillis(), myPendingIntent);
+	}
 }
