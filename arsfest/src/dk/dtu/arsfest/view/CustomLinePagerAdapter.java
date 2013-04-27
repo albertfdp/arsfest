@@ -20,7 +20,6 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -135,22 +134,18 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 		final TextView days = (TextView) view.findViewById(R.id.textDays);
 		final TextView hours = (TextView) view.findViewById(R.id.textHours);
 		final TextView mins = (TextView) view.findViewById(R.id.textMinutes);
-		final TextView secs = (TextView) view.findViewById(R.id.textSeconds);
 		
 		final TextView daysLabel = (TextView) view.findViewById(R.id.labelDays);
 		final TextView hoursLabel = (TextView) view.findViewById(R.id.labelHours);
 		final TextView minsLabel = (TextView) view.findViewById(R.id.labelMinutes);
-		final TextView secsLabel = (TextView) view.findViewById(R.id.labelSeconds);
 		
 		Typeface tf = Utils.getTypeface(mContext, Constants.TYPEFONT_PROXIMANOVA);
 		days.setTypeface(tf);
 		hours.setTypeface(tf);
 		mins.setTypeface(tf);
-		secs.setTypeface(tf);
 		daysLabel.setTypeface(tf);
 		hoursLabel.setTypeface(tf);
 		minsLabel.setTypeface(tf);
-		secsLabel.setTypeface(tf);
 		
 		CountDownTimer cdt = new CountDownTimer(Utils.getStartDate(Constants.FEST_START_TIME).getTime()
 				- Utils.getCurrentDate().getTime(), 1000) {
@@ -164,11 +159,9 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 			int daysValue = (int) (millisUntilFinished / 86400000);
 			int hoursValue = (int) (((millisUntilFinished / 1000) - (daysValue * 86400)) / 3600);
 			int minsValue = (int) (((millisUntilFinished / 1000) - (daysValue * 86400) - (hoursValue * 3600)) / 60);
-			int secsValue = (int) (((millisUntilFinished / 1000) - (daysValue * 86400) - (hoursValue * 3600) - (minsValue * 60)));
 			days.setText(String.valueOf(daysValue));
 			hours.setText(String.valueOf(hoursValue));
 			mins.setText(String.valueOf(minsValue));
-			secs.setText(String.valueOf(secsValue));
 		}
 
 		@Override
