@@ -10,11 +10,11 @@ public class UnderstandableLocations {
 
 	private String giveMeUnderstandableLocation(String location) {
 		if (location.equals("l0")) {
-			return "Sportshal";
+			return "Sports Hall";
 		} else if (location.equals("l1")) {
 			return "Library";
 		} else if (location.equals("l2")) {
-			return "Oticon";
+			return "Oticon Hall";
 		} else if (location.equals("l3")) {
 			return "Kantine";
 		}

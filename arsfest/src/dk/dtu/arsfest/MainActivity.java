@@ -61,20 +61,20 @@ public class MainActivity extends SlideMenuSuper {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		setContentView(R.layout.activity_main);
 		initView();
 
 		// Read from data.JSON
 		readJson();
-		
+
 		// Create a new AlarmHelper
 		alarmHelper = new AlarmHelper(this.getApplicationContext());
 
 		// Create a new ContextAwareHelper
 		contextAwareHelper = new ContextAwareHelper(
 				this.getApplicationContext(), bssids, locations);
-		
+
 		setOneTimeNotification();
 	}
 
@@ -90,16 +90,18 @@ public class MainActivity extends SlideMenuSuper {
 
 		// get Location Awareness
 		currentLocation = contextAwareHelper.getCurrentLocation();
-		
+
 		if (this.comingFromLocation != null) {
 			this.currentLocation = this.comingFromLocation;
 			this.comingFromLocation = null;
 		}
-		//get Time && Location Awareness
-		initViewPager(contextAwareHelper.getLocationArrayPosition(currentLocation),contextAwareHelper.getEventsHappeningNow());
-				
+		// get Time && Location Awareness
+		initViewPager(
+				contextAwareHelper.getLocationArrayPosition(currentLocation),
+				contextAwareHelper.getEventsHappeningNow());
+
 	}
-	
+
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -121,7 +123,7 @@ public class MainActivity extends SlideMenuSuper {
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
 		headerTitle.setText(Constants.APP_NAME);
-		
+
 		// Sets the menu
 		super.startMenu(Constants.SCROLL_MENU_TIME);
 	}
@@ -177,17 +179,18 @@ public class MainActivity extends SlideMenuSuper {
 
 			@Override
 			public void onGlobalLayout() {
-				
+
 				scrollingTabs.moveTabTo(pos);
-				
+
 				ViewTreeObserver obs = scrollingTabs.getViewTreeObserver();
 				obs.removeGlobalOnLayoutListener(this);
 			}
-			
+
 		});
-				
+
 		lineViewPager = (ViewPager) findViewById(R.id.linepager);
-		linePageAdapter = new CustomLinePagerAdapter(this, this.locations, happeningNow);
+		linePageAdapter = new CustomLinePagerAdapter(this, this.locations,
+				happeningNow);
 
 		lineViewPager.setAdapter(linePageAdapter);
 		lineViewPager.setCurrentItem(0);
@@ -196,82 +199,116 @@ public class MainActivity extends SlideMenuSuper {
 		mLine = (IndicatorLineView) findViewById(R.id.line);
 		mLine.setFadeOutDelay(0);
 		if (Utils.hasFestFinished() || !Utils.hasFestStarted()) {
-			mLine.setLineColor(this.getResources().getColor(R.color.flat_light_grey));
+			mLine.setLineColor(this.getResources().getColor(
+					R.color.flat_light_grey));
 			mLine.setVisibility(View.INVISIBLE);
 		}
 		mLine.setViewPager(lineViewPager);
 	}
-	
+
 	/**
 	 * Method prompting user to enable WiFi
 	 * 
 	 * @author AA
 	 */
 	public void enableWiFi() {
-		SharedPreferences sharedPrefs = getSharedPreferences(Constants.PREFS_NAME, 0);
+		SharedPreferences sharedPrefs = getSharedPreferences(
+				Constants.PREFS_NAME, 0);
 
-		if (!NetworkHelper.isWiFiTurnedOn(this) && !sharedPrefs.getBoolean(Constants.PREFS_POP_UP_CONNECTIVIY, false)) {
-			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		if (!NetworkHelper.isWiFiTurnedOn(this)
+				&& !sharedPrefs.getBoolean(Constants.PREFS_POP_UP_CONNECTIVIY,
+						false)) {
+			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+					this);
 			alertDialogBuilder.setTitle(R.string.wifi_title);
 			alertDialogBuilder.setMessage(R.string.wifi_txt);
 			alertDialogBuilder
-				.setPositiveButton(R.string.wifi_option1, new DialogInterface.OnClickListener() {
+					.setPositiveButton(R.string.wifi_option1,
+							new DialogInterface.OnClickListener() {
 
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						startActivityForResult(
-							new Intent(android.provider.Settings.ACTION_SETTINGS), which	
-						);
-						dialog.cancel();
-					}
-				})
-				.setNegativeButton(R.string.wifi_option2, new DialogInterface.OnClickListener() {
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									startActivityForResult(
+											new Intent(
+													android.provider.Settings.ACTION_SETTINGS),
+											which);
+									dialog.cancel();
+								}
+							})
+					.setNegativeButton(R.string.wifi_option2,
+							new DialogInterface.OnClickListener() {
 
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						SharedPreferences sharedPrefs = getSharedPreferences(Constants.PREFS_NAME, 0);
-						SharedPreferences.Editor editor = sharedPrefs.edit();
-						editor.putBoolean(Constants.PREFS_POP_UP_CONNECTIVIY, true);
-						editor.commit();
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									SharedPreferences sharedPrefs = getSharedPreferences(
+											Constants.PREFS_NAME, 0);
+									SharedPreferences.Editor editor = sharedPrefs
+											.edit();
+									editor.putBoolean(
+											Constants.PREFS_POP_UP_CONNECTIVIY,
+											true);
+									editor.commit();
 
-						//Toast.makeText(getApplicationContext(), "WiFi card is off", Toast.LENGTH_SHORT).show();
-						dialog.cancel();
-					}
-				})
-				.setNeutralButton(R.string.wifi_option3, new DialogInterface.OnClickListener() {
+									// Toast.makeText(getApplicationContext(),
+									// "WiFi card is off",
+									// Toast.LENGTH_SHORT).show();
+									dialog.cancel();
+								}
+							})
+					.setNeutralButton(R.string.wifi_option3,
+							new DialogInterface.OnClickListener() {
 
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						dialog.cancel();
-					}
-				});
+								@Override
+								public void onClick(DialogInterface dialog,
+										int which) {
+									dialog.cancel();
+								}
+							});
 			alertDialogBuilder.create().show();
 		}
 
 	}
-	
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		switch (requestCode) {
 		case Constants.RESULT_EVENT_INFO:
-			this.comingFromLocation = data.getStringExtra(Constants.EXTRA_EVENT_INFO);
-			boolean comesFromAll = data.getBooleanExtra(Constants.EXTRA_EVENT_ALL, false);
+			this.comingFromLocation = data
+					.getStringExtra(Constants.EXTRA_EVENT_INFO);
+			boolean comesFromAll = data.getBooleanExtra(
+					Constants.EXTRA_EVENT_ALL, false);
 			if (comesFromAll)
 				this.comingFromLocation = "0";
 			break;
 		}
 	}
-	
+
 	private void setOneTimeNotification() {
-		Intent myIntent = new Intent(this, MyOneTimeNotificationService.class);
-		PendingIntent myPendingIntent = PendingIntent.getService(this, 200, myIntent, 0);
-		
-		AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
-		Calendar calendarEvent = Calendar.getInstance();
-		calendarEvent.setTime(Utils.getStartDate(Constants.FEST_START_TIME));
-		calendarEvent.add(Calendar.HOUR, -2);		
-		alarmManager.set(AlarmManager.RTC_WAKEUP,
-				calendarEvent.getTimeInMillis(), myPendingIntent);
+		SharedPreferences sharedPrefs = getSharedPreferences(
+				Constants.PREFS_NAME, 0);
+		if (sharedPrefs.getBoolean(Constants.ONE_TIME_NOTIFICATION, true)) {
+
+			Intent myIntent = new Intent(this,
+					MyOneTimeNotificationService.class);
+			PendingIntent myPendingIntent = PendingIntent.getService(this, 200,
+					myIntent, 0);
+			SharedPreferences.Editor editor = sharedPrefs
+					.edit();
+			editor.putBoolean(
+					Constants.ONE_TIME_NOTIFICATION,
+					false);
+			editor.commit();			
+			AlarmManager alarmManager = (AlarmManager) this
+					.getSystemService(Context.ALARM_SERVICE);
+			Calendar calendarEvent = Calendar.getInstance();
+			calendarEvent
+					.setTime(Utils.getStartDate(Constants.FEST_START_TIME));
+			calendarEvent.add(Calendar.HOUR, -2);
+			alarmManager.set(AlarmManager.RTC_WAKEUP,
+					calendarEvent.getTimeInMillis(), myPendingIntent);
+		}
 	}
 }

@@ -71,7 +71,7 @@ public class Constants {
 	public static final String EXTRA_EVENT_ALL = "dk.dtu.arsfest.event.all";
 
 	public static final String PREFS_POP_UP_CONNECTIVIY = "popUpConnectivityDiscard";
-	
+	public static final String ONE_TIME_NOTIFICATION = "oneTimeNotificationShow";
 	public static final String PREFERENCES_VIBRATION = "VibrationOnAlarm";
 
 	public static final String JSON_TAG_EVENT_REMARK = "remark";

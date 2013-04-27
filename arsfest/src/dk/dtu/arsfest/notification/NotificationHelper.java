@@ -3,8 +3,6 @@ package dk.dtu.arsfest.notification;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Calendar;
-
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.event.EventActivity;
 import dk.dtu.arsfest.model.Event;
@@ -35,16 +33,10 @@ public class NotificationHelper {
 		intent.putExtra(Constants.EXTRA_LOCATION, giveMeLocation(inputEvent.getLocation(), currentContext));
 		PendingIntent contentIntent = PendingIntent.getActivity(currentContext, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 		
-		Calendar calendarNow = Calendar.getInstance();
-		calendarNow.setTimeInMillis(System.currentTimeMillis());
-		Calendar calendarEvent = Calendar.getInstance();
-		calendarEvent.setTime(inputEvent.getStartTime());
-		int myMinutes = (int) ((calendarEvent.getTimeInMillis() - calendarNow.getTimeInMillis()) /60000) + 1;
-		
 		UnderstandableLocations myLocation = new UnderstandableLocations(inputEvent.getLocation());
 		NotificationCompat.Builder myNotificationBuilder = new NotificationCompat.Builder(currentContext)
 			.setWhen(inputEvent.getStartTime().getTime())
-			.setContentText("Starting in "+ myMinutes +" minutes in " + myLocation.getResultLocation())
+			.setContentText("Starting soon in " + myLocation.getResultLocation())
 			.setContentTitle(inputEvent.getName())
 			.setSmallIcon(R.drawable.content_event)
 			.setAutoCancel(true)
