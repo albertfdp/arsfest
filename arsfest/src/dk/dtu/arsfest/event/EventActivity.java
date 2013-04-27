@@ -255,6 +255,11 @@ public class EventActivity extends SlideMenuSuper {
 			eventDescription.setText(event.getDescription());
 			eventShowMore.setVisibility(View.GONE);
 		}
+		
+		if(event.getDescription().length() <= Constants.MIN_EVENT_INFO){
+			LinearLayout cardDescription = (LinearLayout) findViewById(R.id.event_card_description);
+			cardDescription.setVisibility(View.GONE);
+		}
 
 	}
 

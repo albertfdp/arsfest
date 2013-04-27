@@ -113,6 +113,7 @@
                     android:background="@color/flat_white"
                     android:minHeight="60dp"
                     android:orientation="vertical"
+                    android:id="@+id/event_card_description"
                     android:padding="5dp" >
 
                     <TextView
