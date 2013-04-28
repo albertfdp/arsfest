@@ -114,14 +114,9 @@ public class MySimpleArrayAdapter extends ArrayAdapter<String> {
 		PendingIntent myPendingIntent = PendingIntent.getService(currentContext, myFlagForIntent, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 		
 		AlarmManager alarmManager = (AlarmManager) currentContext.getSystemService(Context.ALARM_SERVICE);
-		//TODO get correct shift
-		Calendar calendarNow = Calendar.getInstance();
-		calendarNow.setTimeInMillis(System.currentTimeMillis());
 		Calendar calendarEvent = Calendar.getInstance();
 		calendarEvent.setTime(myEventNames.get(position).getStartTime());
-		calendarEvent.add(Calendar.MINUTE, -15);
-		//calendarNow.add(Calendar.SECOND, (int) - calendarEvent.getTimeInMillis()/1000);
-		//calendarNow.add(Calendar.SECOND, 3);		
+		calendarEvent.add(Calendar.MINUTE, -15);	
 		alarmManager.set(AlarmManager.RTC_WAKEUP,
 				calendarEvent.getTimeInMillis(), myPendingIntent);
 		

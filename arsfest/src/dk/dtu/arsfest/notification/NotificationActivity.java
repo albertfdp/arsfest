@@ -22,7 +22,6 @@ import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class NotificationActivity extends SlideMenuSuper {
 
@@ -60,7 +59,7 @@ public class NotificationActivity extends SlideMenuSuper {
 			myEvents = new ArrayList<Event>();
 			Calendar calendarNow = Calendar.getInstance();
 			calendarNow.setTimeInMillis(System.currentTimeMillis());
-			calendarNow.add(Calendar.MINUTE, -20);
+			calendarNow.add(Calendar.MINUTE, 10);
 			for (Location location : this.locations) {
 				for (Event event : location.getEvents()) {
 					if (event != null)

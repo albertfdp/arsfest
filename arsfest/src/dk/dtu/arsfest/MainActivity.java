@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
-
 import com.astuetz.viewpager.extensions.IndicatorLineView;
 import com.astuetz.viewpager.extensions.ScrollingTabsView;
 import com.astuetz.viewpager.extensions.TabsAdapter;
@@ -289,18 +288,20 @@ public class MainActivity extends SlideMenuSuper {
 	private void setOneTimeNotification() {
 		SharedPreferences sharedPrefs = getSharedPreferences(
 				Constants.PREFS_NAME, 0);
-		if (sharedPrefs.getBoolean(Constants.ONE_TIME_NOTIFICATION, true)) {
-
+		Calendar calendarNow = Calendar.getInstance();
+		calendarNow.setTimeInMillis(System.currentTimeMillis());
+		calendarNow.add(Calendar.MINUTE, 20);
+		Calendar calendarMax = Calendar.getInstance();
+		calendarMax.setTime(Utils.getStartDate(Constants.FEST_START_TIME));
+		if (sharedPrefs.getBoolean(Constants.ONE_TIME_NOTIFICATION, true)
+				&& calendarNow.before(calendarMax)) {
 			Intent myIntent = new Intent(this,
 					MyOneTimeNotificationService.class);
 			PendingIntent myPendingIntent = PendingIntent.getService(this, 200,
 					myIntent, 0);
-			SharedPreferences.Editor editor = sharedPrefs
-					.edit();
-			editor.putBoolean(
-					Constants.ONE_TIME_NOTIFICATION,
-					false);
-			editor.commit();			
+			SharedPreferences.Editor editor = sharedPrefs.edit();
+			editor.putBoolean(Constants.ONE_TIME_NOTIFICATION, false);
+			editor.commit();
 			AlarmManager alarmManager = (AlarmManager) this
 					.getSystemService(Context.ALARM_SERVICE);
 			Calendar calendarEvent = Calendar.getInstance();
