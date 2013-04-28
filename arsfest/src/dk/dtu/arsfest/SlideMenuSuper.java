@@ -85,8 +85,4 @@ public class SlideMenuSuper extends Activity implements
 		}
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		return super.onOptionsItemSelected(item);
-	}
 }

@@ -13,6 +13,7 @@ import dk.dtu.arsfest.model.Location;
 
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
@@ -61,20 +62,28 @@ public class Utils {
 		return sdf.format(date);
 	}
 	
-	public static int getDrawable(String theme) {
-		if (theme.equals(Constants.EVENT_TYPE_MUSIC)) {
-			return R.drawable.guitar;
-		} else if (theme.equals(Constants.EVENT_TYPE_OFFICIAL)) {
-			return R.drawable.official;
-		} else if (theme.equals(Constants.EVENT_TYPE_FOOD)) {
-			return R.drawable.dinner_icon2;
-		} else if (theme.equals(Constants.EVENT_TYPE_DANCE)) {
-			return R.drawable.dancing;
-		} else {
-			return R.drawable.note;
-		}
+	public static Drawable loadImageFromAsset(Context context, String filename) {
+		if (filename.equals("dinner")) {
+			return context.getResources().getDrawable(R.drawable.dinner);
+		} else if (filename.equals("official")) {
+			return context.getResources().getDrawable(R.drawable.official);
+		} else if (filename.equals("jazzband")) {
+			return context.getResources().getDrawable(R.drawable.jazzband);
+		} else if (filename.equals("alphabeat")) {
+			return context.getResources().getDrawable(R.drawable.alphabeat);
+		} else if (filename.equals("queenmachine")) {
+			return context.getResources().getDrawable(R.drawable.queenmachine);
+		} else if (filename.equals("leslanciers")) {
+			return context.getResources().getDrawable(R.drawable.dj);
+		} else if (filename.equals("dj")) {
+				return context.getResources().getDrawable(R.drawable.dj);
+		} else if (filename.equals("veto")) {
+			return context.getResources().getDrawable(R.drawable.veto);
+	}
+		return null;
 	}
 	
+	/*
 	public static Drawable loadImageFromAsset(Context context, String filename) {
         // load image
         try {
@@ -88,7 +97,7 @@ public class Utils {
             return null;
         }
  
-    }
+    }*/
 	
 	public static Drawable getDrawable(Context context, String theme) {
 		if (theme.equals(Constants.EVENT_TYPE_MUSIC)) {
@@ -99,9 +108,8 @@ public class Utils {
 			return context.getResources().getDrawable(R.drawable.dinner_icon2);
 		} else if (theme.equals(Constants.EVENT_TYPE_DANCE)) {
 			return context.getResources().getDrawable(R.drawable.dancing);
-		} else {
-			return context.getResources().getDrawable(R.drawable.note);
 		}
+		return null;
 	}
 	
 	public static Location getLocationById(ArrayList<Location> locations, String id) {

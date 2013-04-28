@@ -10,7 +10,7 @@
                 {
                     "id": "e0",
                     "name": "The official part",
-                    "image": "official.jpg",
+                    "image": "official",
                     "startTime": "03-05-2013:17:00",
                     "endTime": "03-05-2013:18:45",
                     "location": "l0",
@@ -21,7 +21,7 @@
                 {
                     "id": "e2",
                     "name": "Les Lanciers",
-                    "image": "leslanciers.jpg",
+                    "image": "leslanciers",
                     "startTime": "03-05-2013:21:30",
                     "endTime": "03-05-2013:22:25",
                     "location": "l0",
@@ -32,7 +32,7 @@
                 {
                     "id": "e3",
                     "name": "DJ",
-                    "image": "dj1.jpg",
+                    "image": "dj",
                     "startTime": "03-05-2013:22:25",
                     "endTime": "03-05-2013:22:55",
                     "location": "l0",
@@ -43,7 +43,7 @@
                 {
                     "id": "e5",
                     "name": "Alphabeat",
-                    "image": "alphabeat.jpg",
+                    "image": "alphabeat",
                     "startTime": "03-05-2013:23:00",
                     "endTime": "04-05-2013:00:15",
                     "location": "l0",
@@ -55,7 +55,7 @@
                 {
                     "id": "e7",
                     "name": "DJ",
-                    "image": "dj1.jpg",
+                    "image": "dj",
                     "startTime": "04-05-2013:00:30",
                     "endTime": "04-05-2013:01:15",
                     "location": "l0",
@@ -75,7 +75,7 @@
                 {
                     "id": "e12",
                     "name": "Dinner",
-                    "image": "dinner.jpg",
+                    "image": "dinner",
                     "startTime": "03-05-2013:19:15",
                     "endTime": "03-05-2013:21:45",
                     "location": "l1",
@@ -98,7 +98,7 @@
                 {
                     "id": "e13",
                     "name": "Les Lanciers",
-                    "image": "leslanciers.jpg",
+                    "image": "leslanciers",
                     "startTime": "03-05-2013:22:15",
                     "endTime": "03-05-2013:22:30",
                     "location": "l1",
@@ -109,7 +109,7 @@
                 {
                     "id": "e14",
                     "name": "Vetö\'s Bigband feat. Mark Linn",
-                    "image": "veto.jpg",
+                    "image": "veto",
                     "startTime": "03-05-2013:22:40",
                     "endTime": "03-05-2013:23:40",
                     "location": "l1",
@@ -120,7 +120,7 @@
                 {
                     "id": "e15",
                     "name": "Les Lanciers",
-                    "image": "leslanciers.jpg",
+                    "image": "leslanciers",
                     "startTime": "03-05-2013:22:40",
                     "endTime": "04-05-2013:00:00",
                     "location": "l1",
@@ -131,7 +131,7 @@
                 {
                     "id": "e16",
                     "name": "Vetö\'s Bigband feat. Mark Linn",
-                    "image": "veto.jpg",
+                    "image": "veto",
                     "startTime": "04-05-2013:00:00",
                     "endTime": "04-05-2013:01:00",
                     "location": "l1",
@@ -142,7 +142,7 @@
                 {
                     "id": "e17",
                     "name": "Les Lanciers",
-                    "image": "leslanciers.jpg",
+                    "image": "leslanciers",
                     "startTime": "04-05-2013:01:00",
                     "endTime": "04-05-2013:01:15",
                     "location": "l1",
@@ -162,7 +162,7 @@
                 {
                     "id": "e20",
                     "name": "DJ",
-                    "image": "dj1.jpg",
+                    "image": "dj",
                     "startTime": "03-05-2013:21:00",
                     "endTime": "03-05-2013:22:30",
                     "location": "l2",
@@ -173,7 +173,7 @@
                 {
                     "id": "e21",
                     "name": "Queen Machine",
-                    "image": "queenmachine.jpg",
+                    "image": "queenmachine",
                     "startTime": "03-05-2013:22:30",
                     "endTime": "03-05-2013:23:45",
                     "location": "l2",
@@ -184,7 +184,7 @@
                 {
                     "id": "e22",
                     "name": "DJ",
-                    "image": "dj1.jpg",
+                    "image": "dj",
                     "startTime": "03-05-2013:23:45",
                     "endTime": "03-05-2013:23:50",
                     "location": "l2",
@@ -195,7 +195,7 @@
                 {
                     "id": "e24",
                     "name": "DJ",
-                    "image": "dj1.jpg",
+                    "image": "dj",
                     "startTime": "03-05-2013:23:50",
                     "endTime": "04-05-2013:05:00",
                     "location": "l2",
@@ -215,7 +215,7 @@
                 {
                     "id": "e12",
                     "name": "Dinner",
-                    "image": "dinner.jpg",
+                    "image": "dinner",
                     "startTime": "03-05-2013:19:15",
                     "endTime": "03-05-2013:21:45",
                     "location": "l3",
@@ -236,7 +236,7 @@
                 {
                     "id": "e26",
                     "name": "Blå Mandag Jazzband",
-                    "image": "jazzband.jpg",
+                    "image": "jazzband",
                     "startTime": "03-05-2013:23:15",
                     "endTime": "04-05-2013:00:00",
                     "location": "l3",
@@ -247,7 +247,7 @@
                 {
                     "id": "e27",
                     "name": "Blå Mandag Jazzband",
-                    "image": "jazzband.jpg",
+                    "image": "jazzband",
                     "startTime": "04-05-2013:00:15",
                     "endTime": "04-05-2013:01:15",
                     "location": "l3",
