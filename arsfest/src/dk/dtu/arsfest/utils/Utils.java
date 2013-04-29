@@ -1,7 +1,5 @@
 package dk.dtu.arsfest.utils;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -13,7 +11,6 @@ import dk.dtu.arsfest.model.Location;
 
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
@@ -74,7 +71,7 @@ public class Utils {
 		} else if (filename.equals("queenmachine")) {
 			return context.getResources().getDrawable(R.drawable.queenmachine);
 		} else if (filename.equals("leslanciers")) {
-			return context.getResources().getDrawable(R.drawable.dj);
+			return context.getResources().getDrawable(R.drawable.leslanciers);
 		} else if (filename.equals("dj")) {
 				return context.getResources().getDrawable(R.drawable.dj);
 		} else if (filename.equals("veto")) {
