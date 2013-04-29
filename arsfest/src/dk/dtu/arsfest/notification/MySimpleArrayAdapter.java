@@ -82,7 +82,7 @@ public class MySimpleArrayAdapter extends ArrayAdapter<String> {
 							+ myEventNames.get(position).getId(), false);
 				}
 				editor.commit();
-			}			
+			}
 		});
 		return myRowView;
 	}
@@ -99,34 +99,43 @@ public class MySimpleArrayAdapter extends ArrayAdapter<String> {
 		}
 		myStringBuilder += myEventNames.get(position).getStartTime()
 				.getMinutes();
-		UnderstandableLocations myLocation = new UnderstandableLocations(myEventNames.get(position)
-				.getLocation());
-		myStringBuilder += ", "
-				+ myLocation.getResultLocation();
+		UnderstandableLocations myLocation = new UnderstandableLocations(
+				myEventNames.get(position).getLocation());
+		myStringBuilder += ", " + myLocation.getResultLocation();
 		return myStringBuilder;
 	}
-	
+
 	private void setMyPendingIntent(int position) {
-		int myFlagForIntent = Integer.valueOf(myEventNames.get(position).getId().substring(1));
-		Intent myIntent = new Intent(currentContext, MyNotificationService.class);
+		int myFlagForIntent = Integer.valueOf(myEventNames.get(position)
+				.getId().substring(1));
+		Intent myIntent = new Intent(currentContext,
+				MyNotificationService.class);
 
 		myIntent.putExtra(Constants.EXTRA_EVENT, myEventNames.get(position));
-		PendingIntent myPendingIntent = PendingIntent.getService(currentContext, myFlagForIntent, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-		
-		AlarmManager alarmManager = (AlarmManager) currentContext.getSystemService(Context.ALARM_SERVICE);
+		PendingIntent myPendingIntent = PendingIntent.getService(
+				currentContext, myFlagForIntent, myIntent,
+				PendingIntent.FLAG_UPDATE_CURRENT);
+
+		AlarmManager alarmManager = (AlarmManager) currentContext
+				.getSystemService(Context.ALARM_SERVICE);
 		Calendar calendarEvent = Calendar.getInstance();
 		calendarEvent.setTime(myEventNames.get(position).getStartTime());
-		calendarEvent.add(Calendar.MINUTE, -15);	
+		calendarEvent.add(Calendar.MINUTE, -15);
 		alarmManager.set(AlarmManager.RTC_WAKEUP,
 				calendarEvent.getTimeInMillis(), myPendingIntent);
-		
+
 	}
-	
+
 	private void cancelMyPendingIntent(int position) {
-		int myFlagForIntent = Integer.valueOf(myEventNames.get(position).getId().substring(1));
-		AlarmManager alarmManager = (AlarmManager) currentContext.getSystemService(Context.ALARM_SERVICE);
-		Intent myIntent = new Intent(currentContext, MyNotificationService.class);;
-		PendingIntent myPendingIntent = PendingIntent.getService(currentContext, myFlagForIntent, myIntent, 0);
+		int myFlagForIntent = Integer.valueOf(myEventNames.get(position)
+				.getId().substring(1));
+		AlarmManager alarmManager = (AlarmManager) currentContext
+				.getSystemService(Context.ALARM_SERVICE);
+		Intent myIntent = new Intent(currentContext,
+				MyNotificationService.class);
+		;
+		PendingIntent myPendingIntent = PendingIntent.getService(
+				currentContext, myFlagForIntent, myIntent, 0);
 		alarmManager.cancel(myPendingIntent);
 	}
 }

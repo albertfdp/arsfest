@@ -1,5 +1,6 @@
 package dk.dtu.arsfest.event;
 
+import java.util.Calendar;
 import java.util.Locale;
 
 import dk.dtu.arsfest.R;
@@ -9,9 +10,15 @@ import dk.dtu.arsfest.maps.MapScroller;
 import dk.dtu.arsfest.model.Course;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
+import dk.dtu.arsfest.notification.MyNotificationService;
+import dk.dtu.arsfest.notification.NotificationActivity;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Picture;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -29,6 +36,7 @@ import android.webkit.WebViewClient;
 import android.webkit.WebView.PictureListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class EventActivity extends SlideMenuSuper {
@@ -53,7 +61,11 @@ public class EventActivity extends SlideMenuSuper {
 	private ImageView eventImage;
 	private LinearLayout layoutViewOfTheEvent;
 	private LinearLayout layoutViewMapOfTheEvent;
-	
+
+	private TextView viewEventNotificationsTitle, textViewEventNotifications;
+	private LinearLayout viewEventNotifications;
+	private RelativeLayout viewEventNotificationsTextView;
+
 	private int scale;
 	private WebView myMapWebView;
 	private Event event;
@@ -72,8 +84,10 @@ public class EventActivity extends SlideMenuSuper {
 		// Read event info from intent
 		Intent intent = getIntent();
 		this.event = (Event) intent.getParcelableExtra(Constants.EXTRA_EVENT);
-		this.location = (Location) intent.getParcelableExtra(Constants.EXTRA_LOCATION);
-		this.comesFromAll = intent.getBooleanExtra(Constants.EXTRA_EVENT_ALL, false);
+		this.location = (Location) intent
+				.getParcelableExtra(Constants.EXTRA_LOCATION);
+		this.comesFromAll = intent.getBooleanExtra(Constants.EXTRA_EVENT_ALL,
+				false);
 
 		updateView();
 	}
@@ -99,7 +113,7 @@ public class EventActivity extends SlideMenuSuper {
 		eventImage = (ImageView) findViewById(R.id.event_image);
 		layoutViewOfTheEvent = (LinearLayout) findViewById(R.id.layoutViewOfTheEvent);
 		layoutViewMapOfTheEvent = (LinearLayout) findViewById(R.id.layoutViewMapOfTheEvent);
-		
+
 		final ViewTreeObserver observer = layoutViewOfTheEvent
 				.getViewTreeObserver();
 		observer.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
@@ -151,7 +165,8 @@ public class EventActivity extends SlideMenuSuper {
 		myMapWebView.loadDataWithBaseURL("file:///android_asset/images/",
 				"<html><body><img src=\"buildingmap.png\"></body></html>",
 				"text/html", "utf-8", null);
-		scale = (int) getApplicationContext().getResources().getDisplayMetrics().widthPixels/8;
+		scale = (int) getApplicationContext().getResources()
+				.getDisplayMetrics().widthPixels / 8;
 		myMapWebView.setWebViewClient(new WebViewClient() {
 			@Override
 			public void onPageFinished(WebView view, String url) {
@@ -227,50 +242,145 @@ public class EventActivity extends SlideMenuSuper {
 		Drawable d = Utils.loadImageFromAsset(this, event.getImage());
 		if (d != null)
 			eventImage.setImageDrawable(d);
-		
-		if(event.getDescription().length() > Constants.MAX_EVENT_INFO){
-			
-			eventDescription.setText(event.getDescription().substring(0, Constants.MAX_EVENT_INFO));
-			
+
+		if (event.getDescription().length() > Constants.MAX_EVENT_INFO) {
+
+			eventDescription.setText(event.getDescription().substring(0,
+					Constants.MAX_EVENT_INFO));
+
 			eventShowMore.setOnClickListener(new OnClickListener() {
-			    public void onClick(View v) {
-			        if (eventDescription.getText().toString().equals(event.getDescription()))
-			        {
-			            eventDescription.setText(event.getDescription().substring(0, Constants.MAX_EVENT_INFO));
-			            eventShowMore.setText(getResources().getString(R.string.show_more));
-			        }
-			        else 
-			        {
-			            eventDescription.setText(event.getDescription());
-			            eventShowMore.setText(getResources().getString(R.string.show_less));
-			        }
-			    }
+				public void onClick(View v) {
+					if (eventDescription.getText().toString()
+							.equals(event.getDescription())) {
+						eventDescription.setText(event.getDescription()
+								.substring(0, Constants.MAX_EVENT_INFO));
+						eventShowMore.setText(getResources().getString(
+								R.string.show_more));
+					} else {
+						eventDescription.setText(event.getDescription());
+						eventShowMore.setText(getResources().getString(
+								R.string.show_less));
+					}
+				}
 			});
-			
-		}
-		else{
+
+		} else {
 			eventDescription.setText(event.getDescription());
 			eventShowMore.setVisibility(View.GONE);
 		}
-		
-		if(event.getDescription().length() <= Constants.MIN_EVENT_INFO){
+
+		if (event.getDescription().length() <= Constants.MIN_EVENT_INFO) {
 			LinearLayout cardDescription = (LinearLayout) findViewById(R.id.event_card_description);
 			cardDescription.setVisibility(View.GONE);
 		}
-
+		viewNotifications();
 	}
 
-	
-	
+	private void viewNotifications() {
+		viewEventNotifications = (LinearLayout) findViewById(R.id.viewEventNotifications);
+		Calendar calendarNow = Calendar.getInstance();
+		calendarNow.setTimeInMillis(System.currentTimeMillis());
+		calendarNow.add(Calendar.MINUTE, 15);
+		final SharedPreferences sharedPrefs = getSharedPreferences(
+				Constants.PREFS_NAME, 0);
+		if (event.hasStarted(calendarNow.getTime())) {
+			viewEventNotifications.setVisibility(View.GONE);
+		} else {
+			viewEventNotificationsTitle = (TextView) findViewById(R.id.viewEventNotificationsTitle);
+			textViewEventNotifications = (TextView) findViewById(R.id.textViewEventNotifications);
+			viewEventNotificationsTextView = (RelativeLayout) findViewById(R.id.viewEventNotificationsTextView);
+			Typeface dtuFont = Utils.getTypeface(this,
+					Constants.TYPEFONT_NEOSANS);
+			viewEventNotificationsTitle.setTypeface(dtuFont);
+			textViewEventNotifications.setTypeface(dtuFont);
+			if (sharedPrefs.getBoolean("Alarm" + event.getId(), false)) {
+				textViewEventNotifications
+						.setText("Unset alarm for this event.");
+				viewEventNotificationsTextView
+						.setBackgroundDrawable(getResources().getDrawable(
+								R.drawable.selector_grey));
+			} else {
+				textViewEventNotifications.setText("Set alarm for this event.");
+				viewEventNotificationsTextView
+						.setBackgroundDrawable(getResources().getDrawable(
+								R.drawable.selector_rate));
+			}
+
+			viewEventNotificationsTextView
+					.setOnClickListener(new OnClickListener() {
+						@Override
+						public void onClick(View arg0) {
+							SharedPreferences.Editor editor = sharedPrefs
+									.edit();
+							editor.putBoolean(
+									"Alarm" + event.getId(),
+									!sharedPrefs.getBoolean(
+											"Alarm" + event.getId(), false));
+							editor.commit();
+
+							if (sharedPrefs.getBoolean("Alarm" + event.getId(),
+									false)) {
+								textViewEventNotifications
+										.setText("Unset alarm for this event.");
+								viewEventNotificationsTextView
+										.setBackgroundDrawable(getResources()
+												.getDrawable(
+														R.drawable.selector_grey));
+
+								setMyPendingIntent();
+							} else {
+								textViewEventNotifications
+										.setText("Set alarm for this event.");
+								viewEventNotificationsTextView
+										.setBackgroundDrawable(getResources()
+												.getDrawable(
+														R.drawable.selector_rate));
+								cancelMyPendingIntent();
+							}
+						}
+					});
+		}
+	}
+
 	@Override
 	public void onBackPressed() {
 		Intent returnIntent = new Intent();
-		returnIntent.putExtra(Constants.EXTRA_EVENT_INFO, this.event.getLocation());
+		returnIntent.putExtra(Constants.EXTRA_EVENT_INFO,
+				this.event.getLocation());
 		returnIntent.putExtra(Constants.EXTRA_EVENT_ALL, this.comesFromAll);
 		setResult(Constants.RESULT_EVENT_INFO, returnIntent);
 		finish();
 		return;
 	}
 
-	
+	private void setMyPendingIntent() {
+		Context currentContext = NotificationActivity.getAppContext();
+		int myFlagForIntent = Integer.valueOf(event.getId().substring(1));
+		Intent myIntent = new Intent(currentContext,
+				MyNotificationService.class);
+		myIntent.putExtra(Constants.EXTRA_EVENT, event);
+		PendingIntent myPendingIntent = PendingIntent.getService(
+				currentContext, myFlagForIntent, myIntent,
+				PendingIntent.FLAG_UPDATE_CURRENT);
+		AlarmManager alarmManager = (AlarmManager) currentContext
+				.getSystemService(Context.ALARM_SERVICE);
+		Calendar calendarEvent = Calendar.getInstance();
+		calendarEvent.setTime(event.getStartTime());
+		calendarEvent.add(Calendar.MINUTE, -15);
+		alarmManager.set(AlarmManager.RTC_WAKEUP,
+				calendarEvent.getTimeInMillis(), myPendingIntent);
+
+	}
+
+	private void cancelMyPendingIntent() {
+		Context currentContext = NotificationActivity.getAppContext();
+		int myFlagForIntent = Integer.valueOf(event.getId().substring(1));
+		AlarmManager alarmManager = (AlarmManager) currentContext
+				.getSystemService(Context.ALARM_SERVICE);
+		Intent myIntent = new Intent(currentContext,
+				MyNotificationService.class);
+		PendingIntent myPendingIntent = PendingIntent.getService(
+				currentContext, myFlagForIntent, myIntent, 0);
+		alarmManager.cancel(myPendingIntent);
+	}
 }

@@ -88,6 +88,53 @@
                     </LinearLayout>
                 </LinearLayout>
 
+                               <LinearLayout
+                    android:id="@+id/viewEventNotifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@color/grey"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:id="@+id/viewEventNotificationsTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text="SET ALARM"
+                        android:textColor="@color/flat_white"
+                        android:textSize="14sp" />
+
+                    <RelativeLayout        
+                        android:id="@+id/viewEventNotificationsTextView"     
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="@drawable/selector_rate"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/imageViewEventNotifications"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/alarm_light" />
+
+                        <TextView
+                            android:id="@+id/textViewEventNotifications"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/imageViewEventNotifications"
+                            android:textSize="15sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+                
+                
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
