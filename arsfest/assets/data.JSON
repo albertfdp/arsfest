@@ -84,13 +84,16 @@
                     "theme": "food",
                     "menu": [
                     		 { "course": "First",
-                    		   "name": "Norsk laks sammenbagt med hoki filet og dild pesto med peanuts. Serveres med rugbrødstvild samt creme fraiche dressing med kapers og persille. Hertil brød."
+                    		   "name": "Norwegian salmon baked together with hoki fillets and dill pesto with peanuts. Serve with rye bread pieces and sour cream dressing with capers and parsley. Will be served with bread"
                     		 },
                     		 { "course": "Main",
-                    		   "name": "Helstegt dyreinderlår med dampet pære og urtegarniture, nøddekartofler og flødesauce med tranebær."
+                    		   "name": "Roasted deer with steamed pear and herb garnish, potatoes tossed in nuts and cream sauce with cranberries."
                     		 },
                     		 { "course": "Dessert",
-                    		   "name": "Mango kompot med chili, vaniljecreme, chokolade mousse, samt makroner og krokant af græskar kerner."
+                    		   "name": "Mango Compote with chilli, vanilla cream, chocolate mousse and macaroons and crunchy pumpkin seeds."
+                    		 },
+                    		 { "course": "Drinks",
+                    		   "name": "White wine:\n2012 Parcelle B227 (Sauvignon Blanc), Bordeaux Despagne - France.\n\nRed wine:\n2011 Merlot / Primitivo Puglia. Trevini Promo - Italy"
                     		 }
                     		]
                     		
@@ -149,7 +152,7 @@
                     "theme": "music"
                 },
                 {
-                    "id": "e9",
+                    "id": "e11",
                     "name": "Les Lanciers",
                     "image": "leslanciers",
                     "startTime": "03-05-2013:23:45",
@@ -160,7 +163,7 @@
                     "theme": "dance"
                 },
                 {
-                    "id": "e10",
+                    "id": "e12",
                     "name": "DJ",
                     "image": "dj",
                     "startTime": "04-05-2013:00:00",
@@ -189,19 +192,23 @@
                     "description": "",
                     "type": "official",
                     "theme": "food",
-                    "menu": [{ "course": "First",
-                    		   "name": "Norsk laks sammenbagt med hoki filet og dild pesto med peanuts. Serveres med rugbrødstvild samt creme fraiche dressing med kapers og persille. Hertil brød."
+                    "menu": [
+                    		 { "course": "First",
+                    		   "name": "Norwegian salmon baked together with hoki fillets and dill pesto with peanuts. Serve with rye bread pieces and sour cream dressing with capers and parsley. Will be served with bread"
                     		 },
                     		 { "course": "Main",
-                    		   "name": "Helstegt dyreinderlår med dampet pære og urtegarniture, nøddekartofler og flødesauce med tranebær."
+                    		   "name": "Roasted deer with steamed pear and herb garnish, potatoes tossed in nuts and cream sauce with cranberries."
                     		 },
                     		 { "course": "Dessert",
-                    		   "name": "Mango kompot med chili, vaniljecreme, chokolade mousse, samt makroner og krokant af græskar kerner."
+                    		   "name": "Mango Compote with chilli, vanilla cream, chocolate mousse and macaroons and crunchy pumpkin seeds."
+                    		 },
+                    		 { "course": "Drinks",
+                    		   "name": "White wine:\n2012 Parcelle B227 (Sauvignon Blanc), Bordeaux Despagne - France.\n\nRed wine:\n2011 Merlot / Primitivo Puglia. Trevini Promo - Italy"
                     		 }
                     		]
                 },
                 {
-                    "id": "e11",
+                    "id": "e13",
                     "name": "Blå Mandag Jazzband",
                     "image": "jazzband",
                     "startTime": "03-05-2013:23:15",
@@ -210,7 +217,7 @@
                     "description": "Blue Monday is the name of a seven membered Jazzband, who has played together for 28 years. We sing and play to please others, and we, ourselves, enjoy it very much. We love making jokes while playing, and having played together for many years, we think we are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\nWatch them and dance to the music in Glassalen.",
                     "type": "nonofficial",
                     "theme": "music"
-                },
+                }
             ]
         }
     ],

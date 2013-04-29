@@ -46,6 +46,8 @@ public class EventActivity extends SlideMenuSuper {
 	private TextView courseMainName;
 	private TextView courseDessert;
 	private TextView courseDessertName;
+	private TextView courseDrink;
+	private TextView courseDrinkName;
 	private TextView menuName;
 	private View eventMenu;
 	private ImageView eventImage;
@@ -90,6 +92,8 @@ public class EventActivity extends SlideMenuSuper {
 		courseMainName = (TextView) findViewById(R.id.main_course_name);
 		courseDessert = (TextView) findViewById(R.id.dessert_course_type);
 		courseDessertName = (TextView) findViewById(R.id.dessert_course_name);
+		courseDrink = (TextView) findViewById(R.id.drink_course_type);
+		courseDrinkName = (TextView) findViewById(R.id.drink_course_name);
 		menuName = (TextView) findViewById(R.id.event_menu_name);
 		eventMenu = findViewById(R.id.event_menu);
 		eventImage = (ImageView) findViewById(R.id.event_image);
@@ -132,6 +136,8 @@ public class EventActivity extends SlideMenuSuper {
 		courseMainName.setTypeface(dtuFont);
 		courseDessert.setTypeface(menuFont);
 		courseDessertName.setTypeface(dtuFont);
+		courseDrink.setTypeface(menuFont);
+		courseDrinkName.setTypeface(dtuFont);
 		menuName.setTypeface(dtuFont);
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
@@ -211,6 +217,9 @@ public class EventActivity extends SlideMenuSuper {
 				} else if (c.getCourse().equals(Constants.MENU_TYPE_DESSERT)) {
 					courseDessert.setText(c.getCourse());
 					courseDessertName.setText(c.getName());
+				} else if (c.getCourse().equals(Constants.MENU_TYPE_DRINK)) {
+					courseDrink.setText(c.getCourse());
+					courseDrinkName.setText(c.getName());
 
 				}
 			}

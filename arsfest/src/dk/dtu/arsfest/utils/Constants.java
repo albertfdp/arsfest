@@ -42,6 +42,7 @@ public class Constants {
 	public static final String MENU_TYPE_FIRST = "First";
 	public static final String MENU_TYPE_MAIN = "Main";
 	public static final String MENU_TYPE_DESSERT = "Dessert";
+	public static final Object MENU_TYPE_DRINK = "Drinks";
 
 	public static final String EXTRA_EVENT = "dk.dtu.arsfest.Event";
 	public static final String EXTRA_LOCATION = "dk.dtu.arsfest.Location";
