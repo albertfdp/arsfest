@@ -7,10 +7,6 @@
     <uses-sdk
         android:minSdkVersion="7"
         android:targetSdkVersion="10" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
-
 
     <!-- PERMISSIONS NEEDED BUT I DON'T KNOW WHERE: -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
