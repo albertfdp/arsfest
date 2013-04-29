@@ -57,7 +57,7 @@
     <string name="feedback">Rate us on Google Play</string>
     <string name="version">1.0.0</string>
     <string name="about">© 2013 Team Avocado on the beerware licence.\n\nAdrian Alan Pol, &lt;adrianalan.pol@gmail.com&gt;\nAlbert Fernandez de la Peña, &lt;albertfdp@gmail.com&gt;\nJavier Calvo, &lt;javier1988c@gmail.com&gt;\n\nwrote this app. As long as you retain this notice you can do whatever you want with this stuff. If we meet some day, and you think this stuff is worth it, you can buy us a beer in return.\n\nThis application has been developed as project for course 02827 Mobile Application Prototyping.</string>
-    <string name="linkforgoogleplay">http://www.google.com</string>
+    <string name="linkforgoogleplay">http://play.google.com/store/apps/details?id=dk.dtu.arsfest</string>
     <string name="avocado">Avocado Logo</string>
     <string name="navigation">Go</string>
     <string name="logos">Logos</string>
