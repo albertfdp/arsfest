@@ -53,8 +53,7 @@ public class EventActivity extends SlideMenuSuper {
 	private ImageView eventImage;
 	private LinearLayout layoutViewOfTheEvent;
 	private LinearLayout layoutViewMapOfTheEvent;
-	
-	private int scale;
+	private int scale = 50;
 	private WebView myMapWebView;
 	private Event event;
 	private Location location;
@@ -72,8 +71,10 @@ public class EventActivity extends SlideMenuSuper {
 		// Read event info from intent
 		Intent intent = getIntent();
 		this.event = (Event) intent.getParcelableExtra(Constants.EXTRA_EVENT);
-		this.location = (Location) intent.getParcelableExtra(Constants.EXTRA_LOCATION);
-		this.comesFromAll = intent.getBooleanExtra(Constants.EXTRA_EVENT_ALL, false);
+		this.location = (Location) intent
+				.getParcelableExtra(Constants.EXTRA_LOCATION);
+		this.comesFromAll = intent.getBooleanExtra(Constants.EXTRA_EVENT_ALL,
+				false);
 
 		updateView();
 	}
@@ -99,7 +100,7 @@ public class EventActivity extends SlideMenuSuper {
 		eventImage = (ImageView) findViewById(R.id.event_image);
 		layoutViewOfTheEvent = (LinearLayout) findViewById(R.id.layoutViewOfTheEvent);
 		layoutViewMapOfTheEvent = (LinearLayout) findViewById(R.id.layoutViewMapOfTheEvent);
-		
+
 		final ViewTreeObserver observer = layoutViewOfTheEvent
 				.getViewTreeObserver();
 		observer.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
@@ -151,12 +152,10 @@ public class EventActivity extends SlideMenuSuper {
 		myMapWebView.loadDataWithBaseURL("file:///android_asset/images/",
 				"<html><body><img src=\"buildingmap.png\"></body></html>",
 				"text/html", "utf-8", null);
-		scale = (int) getApplicationContext().getResources().getDisplayMetrics().widthPixels/8;
 		myMapWebView.setWebViewClient(new WebViewClient() {
 			@Override
 			public void onPageFinished(WebView view, String url) {
 				super.onPageFinished(view, url);
-				myMapWebView.setInitialScale(scale);
 				myMapWebView.setInitialScale(scale);
 				myMapWebView.setScrollContainer(false);
 				myMapWebView.setScrollbarFadingEnabled(true);
@@ -227,50 +226,47 @@ public class EventActivity extends SlideMenuSuper {
 		Drawable d = Utils.loadImageFromAsset(this, event.getImage());
 		if (d != null)
 			eventImage.setImageDrawable(d);
-		
-		if(event.getDescription().length() > Constants.MAX_EVENT_INFO){
-			
-			eventDescription.setText(event.getDescription().substring(0, Constants.MAX_EVENT_INFO));
-			
+
+		if (event.getDescription().length() > Constants.MAX_EVENT_INFO) {
+
+			eventDescription.setText(event.getDescription().substring(0,
+					Constants.MAX_EVENT_INFO));
+
 			eventShowMore.setOnClickListener(new OnClickListener() {
-			    public void onClick(View v) {
-			        if (eventDescription.getText().toString().equals(event.getDescription()))
-			        {
-			            eventDescription.setText(event.getDescription().substring(0, Constants.MAX_EVENT_INFO));
-			            eventShowMore.setText(getResources().getString(R.string.show_more));
-			        }
-			        else 
-			        {
-			            eventDescription.setText(event.getDescription());
-			            eventShowMore.setText(getResources().getString(R.string.show_less));
-			        }
-			    }
+				public void onClick(View v) {
+					if (eventDescription.getText().toString()
+							.equals(event.getDescription())) {
+						eventDescription.setText(event.getDescription()
+								.substring(0, Constants.MAX_EVENT_INFO));
+						eventShowMore.setText(getResources().getString(
+								R.string.show_more));
+					} else {
+						eventDescription.setText(event.getDescription());
+						eventShowMore.setText(getResources().getString(
+								R.string.show_less));
+					}
+				}
 			});
-			
-		}
-		else{
+
+		} else {
 			eventDescription.setText(event.getDescription());
 			eventShowMore.setVisibility(View.GONE);
 		}
-		
-		if(event.getDescription().length() <= Constants.MIN_EVENT_INFO){
+
+		if (event.getDescription().length() <= Constants.MIN_EVENT_INFO) {
 			LinearLayout cardDescription = (LinearLayout) findViewById(R.id.event_card_description);
 			cardDescription.setVisibility(View.GONE);
 		}
-
 	}
 
-	
-	
 	@Override
 	public void onBackPressed() {
 		Intent returnIntent = new Intent();
-		returnIntent.putExtra(Constants.EXTRA_EVENT_INFO, this.event.getLocation());
+		returnIntent.putExtra(Constants.EXTRA_EVENT_INFO,
+				this.event.getLocation());
 		returnIntent.putExtra(Constants.EXTRA_EVENT_ALL, this.comesFromAll);
 		setResult(Constants.RESULT_EVENT_INFO, returnIntent);
 		finish();
 		return;
 	}
-
-	
 }

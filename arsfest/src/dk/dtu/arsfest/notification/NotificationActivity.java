@@ -11,7 +11,6 @@ import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.parser.JSONParser;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
-
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -59,7 +58,7 @@ public class NotificationActivity extends SlideMenuSuper {
 			myEvents = new ArrayList<Event>();
 			Calendar calendarNow = Calendar.getInstance();
 			calendarNow.setTimeInMillis(System.currentTimeMillis());
-			calendarNow.add(Calendar.MINUTE, 10);
+			calendarNow.add(Calendar.MINUTE, 15);
 			for (Location location : this.locations) {
 				for (Event event : location.getEvents()) {
 					if (event != null)
@@ -67,7 +66,7 @@ public class NotificationActivity extends SlideMenuSuper {
 							myEvents.add(event);
 							myEventsStrings.add(event.getName());
 						}
-					}
+				}
 			}
 			this.locations.add(new Location("0", "ALL", myEvents));
 			for (Location location : locations) {

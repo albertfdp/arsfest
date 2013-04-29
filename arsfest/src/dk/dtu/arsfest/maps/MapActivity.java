@@ -44,7 +44,7 @@ public class MapActivity extends SlideMenuSuper {
 	private ArrayList<Location> locations;
 	private ArrayList<Bssid> bssids;
 	private MapScroller myMapScroll;
-	private int scale;
+	private int scale = 80;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -60,8 +60,6 @@ public class MapActivity extends SlideMenuSuper {
 
 		mapView = (TextView) findViewById(R.id.mapTextViewMap);
 		mapView.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS));
-
-		scale = (int) getApplicationContext().getResources().getDisplayMetrics().density*80;
 		
 		initiateLocationAwarness();
 		Intent intent = getIntent();

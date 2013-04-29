@@ -30,21 +30,20 @@
     <string name="default_event_time">21:00</string>
     <string name="default_event_name">Event name</string>
     <string name="default_event_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo faucibus nisi, id rhoncus tellus pretium eget. Curabitur vitae orci eu tortor ultricies porttitor. </string>
-   	<string name="event_finished">FINISHED</string>
+    <string name="event_finished">FINISHED</string>
     <string name="event_happening_now">HAPPENING NOW</string>
     <string name="happening_now">NOW</string>
     <string name="default_course_name">Course Name</string>
     <string name="default_course_type">Course Type</string>
     <string name="menu_name">MENU</string>
-    
     <string name="card_finished_message">The \u00C5rsfest 2013 is over</string>
     <string name="card_finished_submessage">Thank you for your attendance</string>
-    
+
     <string-array name="default_categories">
         <item>All</item>
         <item>Muisc</item>
     </string-array>
-    
+
     <!-- Accordeon menu -->
     <string name="menu">Menu</string>
     <string name="item_one">Programme</string>
@@ -58,32 +57,32 @@
     <string name="feedback">Rate us on Google Play</string>
     <string name="version">1.0.1</string>
     <string name="about">© 2013 Team Avocado on the beerware licence.\n\nAdrian Alan Pol, &lt;adrianalan.pol@gmail.com&gt;\nAlbert Fernandez de la Peña, &lt;albertfdp@gmail.com&gt;\nJavier Calvo, &lt;javier1988c@gmail.com&gt;\n\nwrote this app. As long as you retain this notice you can do whatever you want with this stuff. If we meet some day, and you think this stuff is worth it, you can buy us a beer in return.\n\nThis application has been developed as project for course 02827 Mobile Application Prototyping.</string>
-	<string name="linkforgoogleplay">http://www.google.com</string>
-	<string name="avocado">Avocado Logo</string>
-	<string name="navigation">Go</string>
-	<string name="logos">Logos</string>
-	<string name="googleplay">GOOGLE PLAY</string>
-	<string name="aboutus">ABOUT US</string>
-	<string name="version2">VERSION</string>
-	
-	<string name="card_no_events_message">DTU \u00C5rsfest 2013</string>
-	<string name="card_no_events_submessage">The are currently no events</string>
-	<string name="card_not_started_submessage">3 May 2013</string>
-	
-	<!-- Map -->
-	<string name="mapview">MAP</string>
-	<string name="showmylocation">Show My Location</string>
-	
-	<!-- Preferences -->
-	<string name="pref_ask_wifi">Ask the user to turn on WiFi</string>
-	<string name="pref_ask_wifi_title">Check WiFi connectivity</string>
-	<string name="pref_update_wifi_setting">WiFi</string>
-	
-	<!-- Notifications -->
-	<!-- <string name="menu_set_alarm">Remind me</string> -->
-	<string name="vibration2">Vibration</string>
-	<string name="vibration">VIBRATION</string>
-	<string name="youralarms">UNSET YOUR ALARMS</string>
-	<string name="show_more">SHOW MORE...</string>
-	<string name="show_less">SHOW LESS</string>
+    <string name="linkforgoogleplay">http://play.google.com/store/apps/details?id=dk.dtu.arsfest</string>
+    <string name="avocado">Avocado Logo</string>
+    <string name="navigation">Go</string>
+    <string name="logos">Logos</string>
+    <string name="googleplay">GOOGLE PLAY</string>
+    <string name="aboutus">ABOUT US</string>
+    <string name="version2">VERSION</string>
+    <string name="card_no_events_message">DTU \u00C5rsfest 2013</string>
+    <string name="card_no_events_submessage">The are currently no events</string>
+    <string name="card_not_started_submessage">3 May 2013</string>
+
+    <!-- Map -->
+    <string name="mapview">MAP</string>
+    <string name="showmylocation">Show My Location</string>
+
+    <!-- Preferences -->
+    <string name="pref_ask_wifi">Ask the user to turn on WiFi</string>
+    <string name="pref_ask_wifi_title">Check WiFi connectivity</string>
+    <string name="pref_update_wifi_setting">WiFi</string>
+
+    <!-- Notifications -->
+    <!-- <string name="menu_set_alarm">Remind me</string> -->
+    <string name="vibration2">Vibration</string>
+    <string name="vibration">VIBRATION</string>
+    <string name="youralarms">SET YOUR ALARMS</string>
+    <string name="show_more">SHOW MORE...</string>
+    <string name="show_less">SHOW LESS</string>
+
 </resources>

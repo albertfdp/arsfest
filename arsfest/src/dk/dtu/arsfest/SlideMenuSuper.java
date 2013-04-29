@@ -54,19 +54,19 @@ public class SlideMenuSuper extends Activity implements
 		switch (itemId) {
 		case R.id.item_programme:
 			myDesiredClass = MainActivity.class;
-			myHandler.postDelayed(myrunnable, (long) (1.2 * durationOfAnimation));
+			myHandler.postDelayed(myrunnable, (long) (1.1 * durationOfAnimation));
 			break;
 		case R.id.item_map:
 			myDesiredClass = MapActivity.class;
-			myHandler.postDelayed(myrunnable, (long) (1.2 * durationOfAnimation));
+			myHandler.postDelayed(myrunnable, (long) (1.1 * durationOfAnimation));
 			break;
 		case R.id.item_alarms:
 			myDesiredClass = NotificationActivity.class;
-			myHandler.postDelayed(myrunnable, (long) (1.2 * durationOfAnimation));
+			myHandler.postDelayed(myrunnable, (long) (1.1 * durationOfAnimation));
 			break;
 		case R.id.item_about:
 			myDesiredClass = AboutActivity.class;
-			myHandler.postDelayed(myrunnable, (long) (1.2 * durationOfAnimation));
+			myHandler.postDelayed(myrunnable, (long) (1.1 * durationOfAnimation));
 			break;
 		}
 	}
