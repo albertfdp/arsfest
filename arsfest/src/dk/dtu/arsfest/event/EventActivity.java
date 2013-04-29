@@ -155,10 +155,11 @@ public class EventActivity extends SlideMenuSuper {
 		myMapWebView.setWebViewClient(new WebViewClient() {
 			@Override
 			public void onPageFinished(WebView view, String url) {
-				super.onPageFinished(view, url);
+				super.onPageFinished(view, url);			
 				myMapWebView.setInitialScale(scale);
 				myMapWebView.setScrollContainer(false);
 				myMapWebView.setScrollbarFadingEnabled(true);
+				myMapWebView.getSettings().setUseWideViewPort(true);
 			}
 		});
 		myMapWebView.setPictureListener(new PictureListener() {
