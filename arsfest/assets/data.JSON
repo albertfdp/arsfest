@@ -22,8 +22,8 @@
                     "id": "e2",
                     "name": "Les Lanciers",
                     "image": "leslanciers",
-                    "startTime": "03-05-2013:21:30",
-                    "endTime": "03-05-2013:22:25",
+                    "startTime": "03-05-2013:22:10",
+                    "endTime": "03-05-2013:22:35",
                     "location": "l0",
                     "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n\nWidespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n\nIn Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers",
                     "type": "official",
@@ -31,17 +31,17 @@
                 },
                 {
                     "id": "e3",
-                    "name": "DJ",
-                    "image": "dj",
-                    "startTime": "03-05-2013:22:25",
-                    "endTime": "03-05-2013:22:55",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "03-05-2013:22:35",
+                    "endTime": "03-05-2013:23:00",
                     "location": "l0",
-                    "description": "There will be DJ playing in the Sports Hall during the night. Come and enjoy the party!.",
-                    "type": "nonofficial",
-                    "theme": "music"
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n\nWidespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n\nIn Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers",
+                    "type": "official",
+                    "theme": "dance"
                 },
                 {
-                    "id": "e5",
+                    "id": "e4",
                     "name": "Alphabeat",
                     "image": "alphabeat",
                     "startTime": "03-05-2013:23:00",
@@ -53,11 +53,11 @@
                     "remark": true
                 },
                 {
-                    "id": "e7",
+                    "id": "e5",
                     "name": "DJ",
                     "image": "dj",
                     "startTime": "04-05-2013:00:30",
-                    "endTime": "04-05-2013:01:15",
+                    "endTime": "04-05-2013:03:00",
                     "location": "l0",
                     "description": "There will be DJ playing in the Sports Hall during the night. Come and enjoy the party!.",
                     "type": "nonofficial",
@@ -73,7 +73,7 @@
             "description": "",
             "events": [
                 {
-                    "id": "e12",
+                    "id": "e6",
                     "name": "Dinner",
                     "image": "dinner",
                     "startTime": "03-05-2013:19:15",
@@ -96,59 +96,15 @@
                     		
                 },
                 {
-                    "id": "e13",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
-                    "startTime": "03-05-2013:22:15",
-                    "endTime": "03-05-2013:22:30",
-                    "location": "l1",
-                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n\nWidespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n\nIn Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers",
-                    "type": "official",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e14",
+                    "id": "e7",
                     "name": "Vetö\'s Bigband feat. Mark Linn",
                     "image": "veto",
-                    "startTime": "03-05-2013:22:40",
-                    "endTime": "03-05-2013:23:40",
-                    "location": "l1",
-                    "description": "With Vetö's big band you get 17 of the countries best musicians that together deliver an impressive and complete event. All lead by Andreas Vetö. Here they are accompanied by Mark Linn who is versatile singer, that has been nominated for the Danish grammy award.",
-                    "type": "official",
-                    "theme": "music"
-                },
-                {
-                    "id": "e15",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
-                    "startTime": "03-05-2013:22:40",
-                    "endTime": "04-05-2013:00:00",
-                    "location": "l1",
-                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n\nWidespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n\nIn Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers",
-                    "type": "official",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e16",
-                    "name": "Vetö\'s Bigband feat. Mark Linn",
-                    "image": "veto",
-                    "startTime": "04-05-2013:00:00",
+                    "startTime": "03-05-2013:22:30",
                     "endTime": "04-05-2013:01:00",
                     "location": "l1",
                     "description": "With Vetö's big band you get 17 of the countries best musicians that together deliver an impressive and complete event. All lead by Andreas Vetö. Here they are accompanied by Mark Linn who is versatile singer, that has been nominated for the Danish grammy award.",
                     "type": "official",
                     "theme": "music"
-                },
-                {
-                    "id": "e17",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
-                    "startTime": "04-05-2013:01:00",
-                    "endTime": "04-05-2013:01:15",
-                    "location": "l1",
-                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n\nWidespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n\nIn Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers",
-                    "type": "official",
-                    "theme": "dance"
                 }
             ]
         },
@@ -160,18 +116,29 @@
             "description": "",
             "events": [
                 {
-                    "id": "e20",
-                    "name": "DJ",
-                    "image": "dj",
-                    "startTime": "03-05-2013:21:00",
-                    "endTime": "03-05-2013:22:30",
+                    "id": "e8",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "03-05-2013:21:15",
+                    "endTime": "03-05-2013:22:00",
                     "location": "l2",
-                    "description": "There will be DJ playing in the Oticon Hall during the night. Come and enjoy the party!.",
-                    "type": "nonofficial",
-                    "theme": "music"
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n\nWidespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n\nIn Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers",
+                    "type": "official",
+                    "theme": "dance"
                 },
                 {
-                    "id": "e21",
+                    "id": "e9",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "03-05-2013:22:00",
+                    "endTime": "03-05-2013:22:30",
+                    "location": "l2",
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n\nWidespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n\nIn Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e10",
                     "name": "Queen Machine",
                     "image": "queenmachine",
                     "startTime": "03-05-2013:22:30",
@@ -182,10 +149,21 @@
                     "theme": "music"
                 },
                 {
-                    "id": "e22",
+                    "id": "e9",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "03-05-2013:23:45",
+                    "endTime": "04-05-2013:00:00",
+                    "location": "l2",
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n\nWidespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n\nIn Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e10",
                     "name": "DJ",
                     "image": "dj",
-                    "startTime": "03-05-2013:23:45",
+                    "startTime": "04-05-2013:00:00",
                     "endTime": "04-05-2013:05:00",
                     "location": "l2",
                     "description": "There will be DJ playing in the Oticon Hall during the night. Come and enjoy the party!.",
@@ -202,7 +180,7 @@
             "description": "",
             "events": [
                 {
-                    "id": "e12",
+                    "id": "e6",
                     "name": "Dinner",
                     "image": "dinner",
                     "startTime": "03-05-2013:19:15",
@@ -223,27 +201,16 @@
                     		]
                 },
                 {
-                    "id": "e26",
+                    "id": "e11",
                     "name": "Blå Mandag Jazzband",
                     "image": "jazzband",
                     "startTime": "03-05-2013:23:15",
-                    "endTime": "04-05-2013:00:00",
+                    "endTime": "04-05-2013:01:00",
                     "location": "l3",
                     "description": "Blue Monday is the name of a seven membered Jazzband, who has played together for 28 years. We sing and play to please others, and we, ourselves, enjoy it very much. We love making jokes while playing, and having played together for many years, we think we are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\nWatch them and dance to the music in Glassalen.",
                     "type": "nonofficial",
                     "theme": "music"
                 },
-                {
-                    "id": "e27",
-                    "name": "Blå Mandag Jazzband",
-                    "image": "jazzband",
-                    "startTime": "04-05-2013:00:15",
-                    "endTime": "04-05-2013:01:15",
-                    "location": "l3",
-                    "description": "Blue Monday is the name of a seven membered Jazzband, who has played together for 28 years. We sing and play to please others, and we, ourselves, enjoy it very much. We love making jokes while playing, and having played together for many years, we think we are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\nWatch them and dance to the music in Glassalen from 11:15pm to 12:00am and again from 12:15am to 01:00am.",
-                    "type": "nonofficial",
-                    "theme": "music"
-                }
             ]
         }
     ],
