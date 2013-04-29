@@ -8,6 +8,7 @@ public class Constants {
 	public final static String TYPEFONT_NEOSANS = "NeoSans.ttf";
 	public final static String TYPEFONT_PROXIMANOVA = "ProximaNova-Light.otf";
 	public final static String TYPEFONT_MRDAFOE = "MrDafoe-Regular.ttf";
+	public final static String TYPEFONT_ROBOTO = "Roboto-Condensed.ttf";
 
 	public static final String TAG = "ARSFEST";
 	

@@ -47,7 +47,7 @@ public class EventAdapter extends ArrayAdapter <Event>{
 			Typeface typeface = Utils.getTypeface(this.context, Constants.TYPEFONT_NEOSANS);
 			if (eventTitle != null) {
 				eventTitle.setText(event.getName());
-				eventTitle.setTypeface(typeface);
+				eventTitle.setTypeface(Utils.getTypeface(context, Constants.TYPEFONT_ROBOTO));
 				eventTime.setTypeface(typeface);
 				eventLocation.setTypeface(typeface);
 				eventLocation.setText(getLocationName(event.getLocation()));
