@@ -5,11 +5,10 @@
          	android:color="@color/flat_white"
      />
      <padding
-    	android:left="7dp"
-    	android:right="7dp"
-    	android:top="7dp"
-    	android:bottom="7dp"     
+    	android:left="10dp"
+    	android:right="10dp"
+    	android:top="10dp"
+    	android:bottom="10dp"     
  	/>
-     <corners android:radius="4dp"></corners>
-     <solid android:color="@color/white"></solid>
+     <solid android:color="@color/flat_white"></solid>
  </shape>

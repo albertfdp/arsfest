@@ -56,14 +56,16 @@ public class EventAdapter extends ArrayAdapter <Event>{
 					eventTitle.setTextColor(context.getResources().getColor(R.color.grey));
 					eventLocation.setTextColor(context.getResources().getColor(R.color.grey));
 					eventTime.setTextColor(context.getResources().getColor(R.color.grey));
-					view.setBackgroundColor(context.getResources().getColor(R.color.flat_greyed));
+					view.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.event_item_color_old));
+					//view.setBackgroundColor(context.getResources().getColor(R.color.flat_greyed));
 					eventStatus.setText(context.getResources().getString(R.string.event_finished));
 					thumbnail.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.image_bg_finished));
 				} else {
 					eventTitle.setTextColor(context.getResources().getColor(R.color.flat_grey));
 					eventLocation.setTextColor(context.getResources().getColor(R.color.flat_grey));
 					eventTime.setTextColor(context.getResources().getColor(R.color.flat_blue));
-					view.setBackgroundColor(context.getResources().getColor(R.color.white));
+					view.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.event_item_color));
+					//view.setBackgroundColor(context.getResources().getColor(R.color.white));
 					thumbnail.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.image_bg));
 					eventStatus.setText("");
 				}
