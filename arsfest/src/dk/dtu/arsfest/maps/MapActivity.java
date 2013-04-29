@@ -139,7 +139,7 @@ public class MapActivity extends SlideMenuSuper {
 				} else {
 					Toast.makeText(
 							getApplicationContext(),
-							"Our Soviet satellite cannot localize you in B101. Go back to the party!",
+							"Unfortunately we cannot localize you in B101",
 							Toast.LENGTH_LONG).show();
 				}
 			}

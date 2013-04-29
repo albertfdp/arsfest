@@ -83,22 +83,6 @@ public class Utils {
 		return null;
 	}
 	
-	/*
-	public static Drawable loadImageFromAsset(Context context, String filename) {
-        // load image
-        try {
-            // get input stream
-            InputStream ims = context.getAssets().open("images/" + filename);
-            // load image as Drawable
-            Drawable d = Drawable.createFromStream(ims, null);
-            return d;
-        }
-        catch(IOException ex) {
-            return null;
-        }
- 
-    }*/
-	
 	public static Drawable getDrawable(Context context, String theme) {
 		if (theme.equals(Constants.EVENT_TYPE_MUSIC)) {
 			return context.getResources().getDrawable(R.drawable.guitar);

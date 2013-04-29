@@ -36,7 +36,7 @@
                     "startTime": "03-05-2013:22:25",
                     "endTime": "03-05-2013:22:55",
                     "location": "l0",
-                    "description": "DJ",
+                    "description": "There will be DJ playing in the Sports Hall during the night. Come and enjoy the party!.",
                     "type": "nonofficial",
                     "theme": "music"
                 },
@@ -59,7 +59,7 @@
                     "startTime": "04-05-2013:00:30",
                     "endTime": "04-05-2013:01:15",
                     "location": "l0",
-                    "description": "DJ",
+                    "description": "There will be DJ playing in the Sports Hall during the night. Come and enjoy the party!.",
                     "type": "nonofficial",
                     "theme": "music"
                 }
@@ -113,7 +113,7 @@
                     "startTime": "03-05-2013:22:40",
                     "endTime": "03-05-2013:23:40",
                     "location": "l1",
-                    "description": "Det Ny Bigband vil gøre op med bigband traditionen som værende et jazzensemble, og i stedet se bigbandet som en besætning, der kan forløse musikalske udtryk, fra forskellige musikgenrer heriblandt populærmusik, klassisk musik og jazz.\n\nDet Ny Bigband vil sætte fokus på at øge opmærksomheden på al den gode danske musik, der allerede findes og som hele tiden bliver skabt her i landet. Derudover vil vi arbejde på at udbrede kendskabet til dansk musik i udlandet.\n\nDet Ny Bigband vil igennem samarbejde med forskellige solister fra blandt andet populærmusikken arbejde hårdt på at udviske de genremæssige skæl og herigennem appellere til et bredere og større publikum, på spillesteder, hvor der ikke er tradition for bigband musik.\n\nDet Ny Bigband vil ikke lade sig trække i den traditionelle genre-retning, men i ethvert givet musikalsk projekt og samarbejde lade musikken trække bigbandet som ensemble i den retning, som musikken byder.",
+                    "description": "With Vetö's big band you get 17 of the countries best musicians that together deliver an impressive and complete event. All lead by Andreas Vetö. Here they are accompanied by Mark Linn who is versatile singer, that has been nominated for the Danish grammy award.",
                     "type": "official",
                     "theme": "music"
                 },
@@ -135,7 +135,7 @@
                     "startTime": "04-05-2013:00:00",
                     "endTime": "04-05-2013:01:00",
                     "location": "l1",
-                    "description": "Det Ny Bigband vil gøre op med bigband traditionen som værende et jazzensemble, og i stedet se bigbandet som en besætning, der kan forløse musikalske udtryk, fra forskellige musikgenrer heriblandt populærmusik, klassisk musik og jazz.\n\nDet Ny Bigband vil sætte fokus på at øge opmærksomheden på al den gode danske musik, der allerede findes og som hele tiden bliver skabt her i landet. Derudover vil vi arbejde på at udbrede kendskabet til dansk musik i udlandet.\n\nDet Ny Bigband vil igennem samarbejde med forskellige solister fra blandt andet populærmusikken arbejde hårdt på at udviske de genremæssige skæl og herigennem appellere til et bredere og større publikum, på spillesteder, hvor der ikke er tradition for bigband musik.\n\nDet Ny Bigband vil ikke lade sig trække i den traditionelle genre-retning, men i ethvert givet musikalsk projekt og samarbejde lade musikken trække bigbandet som ensemble i den retning, som musikken byder.",
+                    "description": "With Vetö's big band you get 17 of the countries best musicians that together deliver an impressive and complete event. All lead by Andreas Vetö. Here they are accompanied by Mark Linn who is versatile singer, that has been nominated for the Danish grammy award.",
                     "type": "official",
                     "theme": "music"
                 },
@@ -166,7 +166,7 @@
                     "startTime": "03-05-2013:21:00",
                     "endTime": "03-05-2013:22:30",
                     "location": "l2",
-                    "description": "DJ",
+                    "description": "There will be DJ playing in the Oticon Hall during the night. Come and enjoy the party!.",
                     "type": "nonofficial",
                     "theme": "music"
                 },
@@ -186,20 +186,9 @@
                     "name": "DJ",
                     "image": "dj",
                     "startTime": "03-05-2013:23:45",
-                    "endTime": "03-05-2013:23:50",
-                    "location": "l2",
-                    "description": "DJ",
-                    "type": "nonofficial",
-                    "theme": "music"
-                },
-                {
-                    "id": "e24",
-                    "name": "DJ",
-                    "image": "dj",
-                    "startTime": "03-05-2013:23:50",
                     "endTime": "04-05-2013:05:00",
                     "location": "l2",
-                    "description": "DJ",
+                    "description": "There will be DJ playing in the Oticon Hall during the night. Come and enjoy the party!.",
                     "type": "nonofficial",
                     "theme": "music"
                 }
