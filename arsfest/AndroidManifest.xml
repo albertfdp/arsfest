@@ -10,6 +10,7 @@
 
     <!-- PERMISSIONS NEEDED BUT I DON'T KNOW WHERE: -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- Needed for AlarmManagerBroadcastReceiver: -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />

@@ -79,7 +79,7 @@
 
     <!-- Notifications -->
     <!-- <string name="menu_set_alarm">Remind me</string> -->
-    <string name="vibration2">Vibration</string>
+    <string name="vibration2">Vibrate on alarm</string>
     <string name="vibration">VIBRATION</string>
     <string name="youralarms">SET YOUR ALARMS</string>
     <string name="show_more">SHOW MORE...</string>

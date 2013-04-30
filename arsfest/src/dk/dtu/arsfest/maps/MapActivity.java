@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.SlideMenuSuper;
 import dk.dtu.arsfest.alarms.AlarmHelper;
@@ -247,5 +249,17 @@ public class MapActivity extends SlideMenuSuper {
 			Log.i("ARSFEST", e.getMessage());
 		}
 
+	}
+	
+	@Override
+	public void onStart() {
+		super.onStart();
+		EasyTracker.getInstance().activityStart(this);
+	}
+	
+	@Override
+	public void onStop() {
+		super.onStop();
+		EasyTracker.getInstance().activityStop(this);
 	}
 }

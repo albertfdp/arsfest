@@ -8,6 +8,8 @@ import java.util.Collections;
 import com.astuetz.viewpager.extensions.IndicatorLineView;
 import com.astuetz.viewpager.extensions.ScrollingTabsView;
 import com.astuetz.viewpager.extensions.TabsAdapter;
+import com.google.analytics.tracking.android.EasyTracker;
+
 import dk.dtu.arsfest.alarms.AlarmHelper;
 import dk.dtu.arsfest.context.ContextAwareHelper;
 import dk.dtu.arsfest.model.Event;
@@ -98,7 +100,13 @@ public class MainActivity extends SlideMenuSuper {
 		initViewPager(
 				contextAwareHelper.getLocationArrayPosition(currentLocation),
 				contextAwareHelper.getEventsHappeningNow());
-
+		EasyTracker.getInstance().activityStart(this);
+	}
+		
+	@Override
+	public void onStop() {
+		super.onStop();
+		EasyTracker.getInstance().activityStop(this);
 	}
 
 	@Override
@@ -228,6 +236,7 @@ public class MainActivity extends SlideMenuSuper {
 								@Override
 								public void onClick(DialogInterface dialog,
 										int which) {
+									
 									startActivityForResult(
 											new Intent(
 													android.provider.Settings.ACTION_SETTINGS),

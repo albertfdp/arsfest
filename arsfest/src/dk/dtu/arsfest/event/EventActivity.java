@@ -2,6 +2,8 @@ package dk.dtu.arsfest.event;
 
 import java.util.Locale;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.SlideMenuSuper;
 import dk.dtu.arsfest.maps.MapActivity;
@@ -269,5 +271,17 @@ public class EventActivity extends SlideMenuSuper {
 		setResult(Constants.RESULT_EVENT_INFO, returnIntent);
 		finish();
 		return;
+	}
+	
+	@Override
+	public void onStart() {
+		super.onStart();
+		EasyTracker.getInstance().activityStart(this);
+	}
+	
+	@Override
+	public void onStop() {
+		super.onStop();
+		EasyTracker.getInstance().activityStop(this);
 	}
 }

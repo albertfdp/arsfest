@@ -1,5 +1,7 @@
 package dk.dtu.arsfest;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -23,6 +25,18 @@ public class AboutActivity extends SlideMenuSuper {
 		setContentView(R.layout.activity_about);
 		super.startMenu(Constants.SCROLL_MENU_TIME);
 		setAbout();
+	}
+	
+	@Override
+	public void onStart() {
+		super.onStart();
+		EasyTracker.getInstance().activityStart(this);
+	}
+	
+	@Override
+	public void onStop() {
+		super.onStop();
+		EasyTracker.getInstance().activityStop(this);
 	}
 
 	/**
