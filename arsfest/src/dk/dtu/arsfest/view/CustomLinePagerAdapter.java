@@ -57,7 +57,8 @@ public class CustomLinePagerAdapter extends PagerAdapter {
 			TextView eventStatus = (TextView) view.findViewById(R.id.event_status);
 			ImageView eventImage = (ImageView) view.findViewById(R.id.event_image);
 			Typeface neoType = Utils.getTypeface(mContext, Constants.TYPEFONT_NEOSANS);
-			eventTitle.setTypeface(neoType);
+			//eventTitle.setTypeface(neoType);
+			eventTitle.setTypeface(Utils.getTypeface(mContext, Constants.TYPEFONT_ROBOTO));
 			eventLocation.setTypeface(neoType);
 			eventTime.setTypeface(neoType);
 			//eventStatus.setTypeface(neoType);
