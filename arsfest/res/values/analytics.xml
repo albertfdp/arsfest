@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<resources xmlns:tools="http://schemas.android.com/tools"
+tools:ignore="TypographyDashes">
+  <!--Replace placeholder ID with your tracking ID-->
+  <string name="ga_trackingId">UA-40551963-1</string>
+
+  <!--Enable automatic activity tracking-->
+  <bool name="ga_autoActivityTracking">true</bool>
+
+  <!--Enable automatic exception tracking-->
+  <bool name="ga_reportUncaughtExceptions">true</bool>
+  
+   <!-- The screen names that will appear in your reporting -->
+	<string name="dk.dtu.arsfest.MainActivity">Main Activity</string>
+	<string name="dk.dtu.arsfest.AboutActivity">About Activity</string>
+	<string name="dk.dtu.arsfest.EventActivity">Event Activity</string>
+	<string name="dk.dtu.arsfest.MapActivity">Map Activity</string>
+</resources>
