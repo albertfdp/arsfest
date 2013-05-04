@@ -76,7 +76,7 @@ public class MainActivity extends SlideMenuSuper {
 		contextAwareHelper = new ContextAwareHelper(
 				this.getApplicationContext(), bssids, locations);
 
-		setOneTimeNotification();
+		//setOneTimeNotification();
 	}
 
 	@Override
@@ -294,7 +294,7 @@ public class MainActivity extends SlideMenuSuper {
 		}
 	}
 
-	private void setOneTimeNotification() {
+	/*private void setOneTimeNotification() {
 		SharedPreferences sharedPrefs = getSharedPreferences(
 				Constants.PREFS_NAME, 0);
 		Calendar calendarNow = Calendar.getInstance();
@@ -320,5 +320,5 @@ public class MainActivity extends SlideMenuSuper {
 			alarmManager.set(AlarmManager.RTC_WAKEUP,
 					calendarEvent.getTimeInMillis(), myPendingIntent);
 		}
-	}
+	}*/
 }
