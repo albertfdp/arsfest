@@ -144,7 +144,7 @@
                         android:layout_gravity="left"
                         android:gravity="left"
                         android:padding="2dp"
-                        android:text="@string/version2"
+                        android:text="@string/about_tracking"
                         android:textColor="@color/flat_white"
                         android:textSize="14sp" />
 
@@ -161,7 +161,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
                             android:gravity="left"
-                            android:text="@string/version"
+                            android:text="@string/about_tracking_info"
                             android:textColor="@color/flat_black"
                             android:textSize="12sp" />
                     </LinearLayout>

@@ -55,7 +55,7 @@
 
     <!-- About -->
     <string name="feedback">Rate us on Google Play</string>
-    <string name="version">1.3.1</string>
+    <string name="version">1.3.3</string>
     <string name="about">© 2013 Team Avocado on the beerware licence.\n\nAdrian Alan Pol, &lt;adrianalan.pol@gmail.com&gt;\nAlbert Fernandez de la Peña, &lt;albertfdp@gmail.com&gt;\nJavier Calvo, &lt;javier1988c@gmail.com&gt;\n\nwrote this app. As long as you retain this notice you can do whatever you want with this stuff. If we meet some day, and you think this stuff is worth it, you can buy us a beer in return.\n\nThis application has been developed as project for course 02827 Mobile Application Prototyping.</string>
     <string name="linkforgoogleplay">http://play.google.com/store/apps/details?id=dk.dtu.arsfest</string>
     <string name="avocado">Avocado Logo</string>
@@ -76,6 +76,9 @@
     <string name="pref_ask_wifi">Ask the user to turn on WiFi</string>
     <string name="pref_ask_wifi_title">Check WiFi connectivity</string>
     <string name="pref_update_wifi_setting">WiFi</string>
+    
+    <string name="about_tracking">Tracking</string>
+    <string name="about_tracking_info">Due to academical reasons and for learning about user experience, the app is anonymously tracking certain user interactions, such as the number of visualizations of each screen of the app.</string>
 
     <!-- Notifications -->
     <!-- <string name="menu_set_alarm">Remind me</string> -->
