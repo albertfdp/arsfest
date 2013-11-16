@@ -1,4 +1,5 @@
-arsfest
+DTU Arsfest 2013
 =======
 
-DTU's årfest
+This repository is the code for the official DTU Arsfest 2013 app. 
+
