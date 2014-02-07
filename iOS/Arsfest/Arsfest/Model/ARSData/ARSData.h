@@ -1,13 +1,13 @@
 //
-//  ARSDataParser.m
+//  ARSData.h
 //  Arsfest
 //
 //  Created by Thibaud Robelain on 07/02/14.
 //  Copyright (c) 2014 dtu. All rights reserved.
 //
 
-#import "ARSDataParser.h"
+#import <Foundation/Foundation.h>
 
-@implementation ARSDataParser
+@interface ARSData : NSObject
 
 @end
