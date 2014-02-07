@@ -26,8 +26,6 @@
                   clientKey:kParseClientKey];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    ARSData *data = [[ARSData alloc] init];
-    
     [self.window makeKeyAndVisible];
     return YES;
 }

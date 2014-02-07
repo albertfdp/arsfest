@@ -16,6 +16,17 @@
             coordinates = _coordinates,
             events = _events;
 
+- (id)init
+{
+    self = [super init];
+    
+    if (self) {
+        _events = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
+
 + (ARSLocation *)locationFromDictionary:(NSDictionary *)dictionary
 {
     ARSLocation *location = [[ARSLocation alloc] init];

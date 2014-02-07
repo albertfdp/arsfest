@@ -9,19 +9,18 @@
 #import "ARSEvent.h"
 
 @implementation ARSEvent
-@synthesize eventId = _eventId;
-@synthesize name = _name;
-@synthesize image = _image;
-@synthesize location = _location;
-@synthesize description = _description;
-@synthesize theme = _theme;
-@synthesize type = _type;
+@synthesize eventId = _eventId, name = _name, image = _image, location = _location, description = _description, theme = _theme, type = _type;
 
 + (ARSEvent*)eventFromDictionary:(NSDictionary*)dictionary
 {
     ARSEvent *event = [[ARSEvent alloc] init];
     
-    
+    event.name = [dictionary objectForKey:@"name"];
+    event.description = [dictionary objectForKey:@"description"];
+    event.image = [dictionary objectForKey:@"image"];
+    event.theme = [dictionary objectForKey:@"theme"];
+    event.type = [dictionary objectForKey:@"type"];
+    event.eventId = [dictionary objectForKey:@"id"];
     
     return event;
 }

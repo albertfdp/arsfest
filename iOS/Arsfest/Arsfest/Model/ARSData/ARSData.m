@@ -27,6 +27,7 @@
     self = [super init];
     
     if (self) {
+        _locations = [[NSMutableArray alloc] init];
         [self downloadJSON];
     }
     
