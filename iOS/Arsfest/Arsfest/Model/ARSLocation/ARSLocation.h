@@ -18,6 +18,7 @@
 @property (nonatomic, strong) PFGeoPoint *coordinates;
 @property (nonatomic, strong) NSMutableArray *events;
 
++ (ARSLocation*)locationFromDictionary:(NSDictionary*)dictionary;
 
 - (void)addEvent:(ARSEvent*)event;
 

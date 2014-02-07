@@ -33,7 +33,7 @@
 		DB6B317418A43AD200C3EABB /* ARSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B317318A43AD200C3EABB /* ARSLocation.m */; };
 		DB6B317718A43AE500C3EABB /* ARSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B317618A43AE500C3EABB /* ARSEvent.m */; };
 		DBCCEA4418A5628200CC87AE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */; };
-		DBCCEA4718A5638700CC87AE /* ARSDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCCEA4618A5638700CC87AE /* ARSDataParser.m */; };
+		DBCCEA4B18A5723D00CC87AE /* ARSData.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCCEA4A18A5723D00CC87AE /* ARSData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,8 +80,8 @@
 		DB6B317518A43AE500C3EABB /* ARSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSEvent.h; path = Model/ARSEvent/ARSEvent.h; sourceTree = "<group>"; };
 		DB6B317618A43AE500C3EABB /* ARSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEvent.m; path = Model/ARSEvent/ARSEvent.m; sourceTree = "<group>"; };
 		DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		DBCCEA4518A5638700CC87AE /* ARSDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSDataParser.h; path = Utils/ARSDataParser/ARSDataParser.h; sourceTree = "<group>"; };
-		DBCCEA4618A5638700CC87AE /* ARSDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSDataParser.m; path = Utils/ARSDataParser/ARSDataParser.m; sourceTree = "<group>"; };
+		DBCCEA4918A5723D00CC87AE /* ARSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSData.h; path = Model/ARSData/ARSData.h; sourceTree = "<group>"; };
+		DBCCEA4A18A5723D00CC87AE /* ARSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSData.m; path = Model/ARSData/ARSData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,8 +208,6 @@
 		DB6B315318A4338500C3EABB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DBCCEA4518A5638700CC87AE /* ARSDataParser.h */,
-				DBCCEA4618A5638700CC87AE /* ARSDataParser.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -217,6 +215,7 @@
 		DB6B316F18A43A9700C3EABB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DBCCEA4818A5722B00CC87AE /* ARSData */,
 				DB6B317118A43AA300C3EABB /* ARSEvent */,
 				DB6B317018A43A9C00C3EABB /* ARSLocation */,
 			);
@@ -239,6 +238,15 @@
 				DB6B317618A43AE500C3EABB /* ARSEvent.m */,
 			);
 			name = ARSEvent;
+			sourceTree = "<group>";
+		};
+		DBCCEA4818A5722B00CC87AE /* ARSData */ = {
+			isa = PBXGroup;
+			children = (
+				DBCCEA4918A5723D00CC87AE /* ARSData.h */,
+				DBCCEA4A18A5723D00CC87AE /* ARSData.m */,
+			);
+			name = ARSData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,9 +382,9 @@
 			files = (
 				DB6B313118A4337300C3EABB /* main.m in Sources */,
 				DB6B317418A43AD200C3EABB /* ARSLocation.m in Sources */,
-				DBCCEA4718A5638700CC87AE /* ARSDataParser.m in Sources */,
 				DB6B313518A4337300C3EABB /* ARSAppDelegate.m in Sources */,
 				DB6B317718A43AE500C3EABB /* ARSEvent.m in Sources */,
+				DBCCEA4B18A5723D00CC87AE /* ARSData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

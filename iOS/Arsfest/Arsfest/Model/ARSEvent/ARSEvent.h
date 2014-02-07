@@ -14,6 +14,8 @@
     ARSLocation *location;
 }
 
++ (ARSEvent*)eventFromDictionary:(NSDictionary*)dictionary;
+
 @property (nonatomic, strong) NSString *eventId;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *image;

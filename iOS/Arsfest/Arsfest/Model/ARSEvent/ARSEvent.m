@@ -17,5 +17,14 @@
 @synthesize theme = _theme;
 @synthesize type = _type;
 
++ (ARSEvent*)eventFromDictionary:(NSDictionary*)dictionary
+{
+    ARSEvent *event = [[ARSEvent alloc] init];
+    
+    
+    
+    return event;
+}
+
 
 @end

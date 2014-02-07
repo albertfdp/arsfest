@@ -6,8 +6,12 @@
 //  Copyright (c) 2014 dtu. All rights reserved.
 //
 
+#define kParseApplicationId @"vDLtONCuZIlrt6wEnfHrFbIDVhoW3cxUCAGEx2j5"
+#define kParseClientKey @"ZLgCiJAv5TkA4ChPgeLSnKb5S4dszCMBuVjypPcc"
+
 #import "ARSAppDelegate.h"
 #import <Parse/Parse.h>
+#import "ARSData.h"
 
 @implementation ARSAppDelegate
 
@@ -18,9 +22,11 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     //Parse setup
-    [Parse setApplicationId:@"vDLtONCuZIlrt6wEnfHrFbIDVhoW3cxUCAGEx2j5"
-                  clientKey:@"ZLgCiJAv5TkA4ChPgeLSnKb5S4dszCMBuVjypPcc"];
+    [Parse setApplicationId:kParseApplicationId
+                  clientKey:kParseClientKey];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    ARSData *data = [[ARSData alloc] init];
     
     [self.window makeKeyAndVisible];
     return YES;

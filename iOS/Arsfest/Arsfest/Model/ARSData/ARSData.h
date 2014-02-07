@@ -10,4 +10,6 @@
 
 @interface ARSData : NSObject
 
+@property (nonatomic, strong) NSMutableArray *locations;
+
 @end
