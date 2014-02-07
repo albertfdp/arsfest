@@ -9,5 +9,13 @@
 #import "ARSEvent.h"
 
 @implementation ARSEvent
+@synthesize eventId = _eventId;
+@synthesize name = _name;
+@synthesize image = _image;
+@synthesize location = _location;
+@synthesize description = _description;
+@synthesize theme = _theme;
+@synthesize type = _type;
+
 
 @end

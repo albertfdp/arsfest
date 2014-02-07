@@ -7,7 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ARSLocation.h"
 
 @interface ARSEvent : NSObject
+{
+    ARSLocation *location;
+}
+
+@property (nonatomic, strong) NSString *eventId;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *image;
+@property (nonatomic, weak) ARSLocation *location;
+@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSString *theme;
 
 @end

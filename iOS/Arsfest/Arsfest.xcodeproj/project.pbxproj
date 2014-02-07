@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3C9C2959C23450F907C64EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B51341BED63B4BC580A5958B /* libPods.a */; };
 		DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312418A4337300C3EABB /* Foundation.framework */; };
 		DB6B312718A4337300C3EABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312618A4337300C3EABB /* CoreGraphics.framework */; };
 		DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
@@ -19,7 +20,6 @@
 		DB6B314018A4337400C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
 		DB6B314818A4337400C3EABB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB6B314618A4337400C3EABB /* InfoPlist.strings */; };
 		DB6B314A18A4337400C3EABB /* ArsfestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B314918A4337400C3EABB /* ArsfestTests.m */; };
-		DB6B315618A433B300C3EABB /* ARSDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B315518A433B300C3EABB /* ARSDataParser.m */; };
 		DB6B315818A4343800C3EABB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B315718A4343800C3EABB /* Parse.framework */; };
 		DB6B315A18A4345700C3EABB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B315918A4345700C3EABB /* AudioToolbox.framework */; };
 		DB6B315C18A4346100C3EABB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B315B18A4346100C3EABB /* CFNetwork.framework */; };
@@ -30,9 +30,10 @@
 		DB6B316618A4348D00C3EABB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B316518A4348D00C3EABB /* Security.framework */; };
 		DB6B316818A4349300C3EABB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B316718A4349300C3EABB /* StoreKit.framework */; };
 		DB6B316A18A4349B00C3EABB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B316918A4349B00C3EABB /* SystemConfiguration.framework */; };
-		DB6B316E18A43A8100C3EABB /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B316D18A43A8100C3EABB /* JSONKit.m */; };
 		DB6B317418A43AD200C3EABB /* ARSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B317318A43AD200C3EABB /* ARSLocation.m */; };
 		DB6B317718A43AE500C3EABB /* ARSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B317618A43AE500C3EABB /* ARSEvent.m */; };
+		DBCCEA4418A5628200CC87AE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */; };
+		DBCCEA4718A5638700CC87AE /* ARSDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCCEA4618A5638700CC87AE /* ARSDataParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		79241BB9B33948DDAE553BAF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		B51341BED63B4BC580A5958B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6B312118A4337300C3EABB /* Arsfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arsfest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6B312418A4337300C3EABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB6B312618A4337300C3EABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,8 +65,6 @@
 		DB6B314518A4337400C3EABB /* ArsfestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ArsfestTests-Info.plist"; sourceTree = "<group>"; };
 		DB6B314718A4337400C3EABB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB6B314918A4337400C3EABB /* ArsfestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArsfestTests.m; sourceTree = "<group>"; };
-		DB6B315418A433B300C3EABB /* ARSDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSDataParser.h; path = Utils/ARSDataParser.h; sourceTree = "<group>"; };
-		DB6B315518A433B300C3EABB /* ARSDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSDataParser.m; path = Utils/ARSDataParser.m; sourceTree = "<group>"; };
 		DB6B315718A4343800C3EABB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		DB6B315918A4345700C3EABB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DB6B315B18A4346100C3EABB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -74,12 +75,13 @@
 		DB6B316518A4348D00C3EABB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DB6B316718A4349300C3EABB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		DB6B316918A4349B00C3EABB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		DB6B316C18A43A8100C3EABB /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		DB6B316D18A43A8100C3EABB /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		DB6B317218A43AD200C3EABB /* ARSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSLocation.h; path = Model/ARSLocation/ARSLocation.h; sourceTree = "<group>"; };
 		DB6B317318A43AD200C3EABB /* ARSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSLocation.m; path = Model/ARSLocation/ARSLocation.m; sourceTree = "<group>"; };
 		DB6B317518A43AE500C3EABB /* ARSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSEvent.h; path = Model/ARSEvent/ARSEvent.h; sourceTree = "<group>"; };
 		DB6B317618A43AE500C3EABB /* ARSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEvent.m; path = Model/ARSEvent/ARSEvent.m; sourceTree = "<group>"; };
+		DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		DBCCEA4518A5638700CC87AE /* ARSDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSDataParser.h; path = Utils/ARSDataParser/ARSDataParser.h; sourceTree = "<group>"; };
+		DBCCEA4618A5638700CC87AE /* ARSDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSDataParser.m; path = Utils/ARSDataParser/ARSDataParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +100,10 @@
 				DB6B315C18A4346100C3EABB /* CFNetwork.framework in Frameworks */,
 				DB6B315A18A4345700C3EABB /* AudioToolbox.framework in Frameworks */,
 				DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */,
+				DBCCEA4418A5628200CC87AE /* FacebookSDK.framework in Frameworks */,
 				DB6B315818A4343800C3EABB /* Parse.framework in Frameworks */,
 				DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */,
+				A3C9C2959C23450F907C64EF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +127,7 @@
 				DB6B314318A4337400C3EABB /* ArsfestTests */,
 				DB6B312318A4337300C3EABB /* Frameworks */,
 				DB6B312218A4337300C3EABB /* Products */,
+				79241BB9B33948DDAE553BAF /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,6 +143,7 @@
 		DB6B312318A4337300C3EABB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */,
 				DB6B316918A4349B00C3EABB /* SystemConfiguration.framework */,
 				DB6B316718A4349300C3EABB /* StoreKit.framework */,
 				DB6B316518A4348D00C3EABB /* Security.framework */,
@@ -152,6 +158,7 @@
 				DB6B312618A4337300C3EABB /* CoreGraphics.framework */,
 				DB6B312818A4337300C3EABB /* UIKit.framework */,
 				DB6B313D18A4337400C3EABB /* XCTest.framework */,
+				B51341BED63B4BC580A5958B /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -201,20 +208,10 @@
 		DB6B315318A4338500C3EABB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DB6B316B18A43A7700C3EABB /* JSONKit */,
-				DB6B315418A433B300C3EABB /* ARSDataParser.h */,
-				DB6B315518A433B300C3EABB /* ARSDataParser.m */,
+				DBCCEA4518A5638700CC87AE /* ARSDataParser.h */,
+				DBCCEA4618A5638700CC87AE /* ARSDataParser.m */,
 			);
 			name = Utils;
-			sourceTree = "<group>";
-		};
-		DB6B316B18A43A7700C3EABB /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-				DB6B316C18A43A8100C3EABB /* JSONKit.h */,
-				DB6B316D18A43A8100C3EABB /* JSONKit.m */,
-			);
-			name = JSONKit;
 			sourceTree = "<group>";
 		};
 		DB6B316F18A43A9700C3EABB /* Model */ = {
@@ -251,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB6B314D18A4337400C3EABB /* Build configuration list for PBXNativeTarget "Arsfest" */;
 			buildPhases = (
+				86FDD6F73D274E9DBC446D54 /* Check Pods Manifest.lock */,
 				DB6B311D18A4337300C3EABB /* Sources */,
 				DB6B311E18A4337300C3EABB /* Frameworks */,
 				DB6B311F18A4337300C3EABB /* Resources */,
+				A5D650664D94473ABD9A9086 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -335,6 +334,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		86FDD6F73D274E9DBC446D54 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A5D650664D94473ABD9A9086 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DB6B311D18A4337300C3EABB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -342,10 +374,9 @@
 			files = (
 				DB6B313118A4337300C3EABB /* main.m in Sources */,
 				DB6B317418A43AD200C3EABB /* ARSLocation.m in Sources */,
+				DBCCEA4718A5638700CC87AE /* ARSDataParser.m in Sources */,
 				DB6B313518A4337300C3EABB /* ARSAppDelegate.m in Sources */,
 				DB6B317718A43AE500C3EABB /* ARSEvent.m in Sources */,
-				DB6B316E18A43A8100C3EABB /* JSONKit.m in Sources */,
-				DB6B315618A433B300C3EABB /* ARSDataParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,12 +492,14 @@
 		};
 		DB6B314E18A4337400C3EABB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79241BB9B33948DDAE553BAF /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/thibaudrobelain/Documents/DTU/Mobile_Prototyping/Dev/arsfest/iOS/Arsfest,
+					/Users/thibaudrobelain/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Arsfest/Arsfest-Prefix.pch";
@@ -478,12 +511,14 @@
 		};
 		DB6B314F18A4337400C3EABB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79241BB9B33948DDAE553BAF /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/thibaudrobelain/Documents/DTU/Mobile_Prototyping/Dev/arsfest/iOS/Arsfest,
+					/Users/thibaudrobelain/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Arsfest/Arsfest-Prefix.pch";
@@ -554,6 +589,7 @@
 				DB6B314F18A4337400C3EABB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB6B315018A4337400C3EABB /* Build configuration list for PBXNativeTarget "ArsfestTests" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +598,7 @@
 				DB6B315218A4337400C3EABB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
