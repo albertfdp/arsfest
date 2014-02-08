@@ -23,5 +23,7 @@
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSString *theme;
+@property (nonatomic, strong) NSDate *startTime;
+@property (nonatomic, strong) NSDate *endTime;
 
 @end

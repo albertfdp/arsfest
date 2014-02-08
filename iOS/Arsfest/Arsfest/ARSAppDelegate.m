@@ -26,6 +26,8 @@
                   clientKey:kParseClientKey];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    [[ARSData alloc] init];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
