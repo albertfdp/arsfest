@@ -31,7 +31,7 @@
     [horizontalHeader setScrollEnabled:YES];
     [horizontalHeader setCanCancelContentTouches:YES];
     [horizontalHeader setBackgroundColor:[UIColor grayColor]];
-    [horizontalHeader addButtonsWithTitles:[NSArray arrayWithObjects:@"title", @"title2", @"title3", @"title4", nil]];
+    [horizontalHeader addButtonsWithTitles:[NSArray arrayWithObjects:@"ALL", @"LIBRARY", @"LOST", @"HELP", nil]];
 }
 
 - (void)didReceiveMemoryWarning
