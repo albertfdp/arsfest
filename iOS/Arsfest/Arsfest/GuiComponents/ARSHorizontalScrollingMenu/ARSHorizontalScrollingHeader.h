@@ -20,6 +20,6 @@
 @property (nonatomic, assign) NSUInteger selectedIndex;
 @property (nonatomic, assign) id delegate;
 
-- (void)addButtonWithTitle:(NSString*)title;
+- (void)addButtonsWithTitles:(NSArray*)titles;
 
 @end

@@ -8,7 +8,9 @@
 
 #import "ARSHorizontalScrollingHeader.h"
 
-#define kButtonWidth        self.frame.size.width/3
+#define kButtonVisible      3
+#define kButtonWidth        self.frame.size.width/kButtonVisible
+
 
 @interface ARSHorizontalScrollingHeader()
 @property(nonatomic, assign) NSInteger buttonsCount;
@@ -24,6 +26,15 @@
 
     }
     return self;
+}
+
+#pragma mark - Populating the rolling view
+
+- (void)addButtonsWithTitles:(NSArray*)titles
+{
+    for (NSString* title in titles) {
+        [self addButtonWithTitle:title];
+    }
 }
 
 - (void)addButtonWithTitle:(NSString *)title
@@ -44,6 +55,8 @@
     [self setContentSize:newContentSize];
 }
 
+#pragma mark -
+
 - (void)didSelectMenuItem:(UIButton*)button
 {
     NSInteger tag = button.tag;
@@ -59,18 +72,12 @@
 #warning add small selected graphic to the selected button
 }
 
+
+#pragma mark - Scroll view config
+
 - (BOOL)touchesShouldCancelInContentView:(UIView *)view
 {
     return YES;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end
