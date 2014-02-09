@@ -18,7 +18,7 @@
 @interface ARSHorizontalScrollingHeader : UIScrollView <UIScrollViewDelegate>
 
 @property (nonatomic, assign) NSUInteger selectedIndex;
-@property (nonatomic, assign) id delegate;
+@property (nonatomic, assign) id<ARSHorizontalScrollingHeaderDelegate> selectionDelegate;
 
 - (void)addButtonsWithTitles:(NSArray*)titles;
 
