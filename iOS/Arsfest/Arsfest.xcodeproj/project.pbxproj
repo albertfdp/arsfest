@@ -32,6 +32,9 @@
 		DB6B316A18A4349B00C3EABB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B316918A4349B00C3EABB /* SystemConfiguration.framework */; };
 		DB6B317418A43AD200C3EABB /* ARSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B317318A43AD200C3EABB /* ARSLocation.m */; };
 		DB6B317718A43AE500C3EABB /* ARSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B317618A43AE500C3EABB /* ARSEvent.m */; };
+		DB8E941118A78B5900EF214F /* ARSHorizontalScrollingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8E941018A78B5900EF214F /* ARSHorizontalScrollingHeader.m */; };
+		DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */; };
+		DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */; };
 		DBCCEA4418A5628200CC87AE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */; };
 		DBCCEA4B18A5723D00CC87AE /* ARSData.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCCEA4A18A5723D00CC87AE /* ARSData.m */; };
 /* End PBXBuildFile section */
@@ -79,6 +82,11 @@
 		DB6B317318A43AD200C3EABB /* ARSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSLocation.m; path = Model/ARSLocation/ARSLocation.m; sourceTree = "<group>"; };
 		DB6B317518A43AE500C3EABB /* ARSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSEvent.h; path = Model/ARSEvent/ARSEvent.h; sourceTree = "<group>"; };
 		DB6B317618A43AE500C3EABB /* ARSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEvent.m; path = Model/ARSEvent/ARSEvent.m; sourceTree = "<group>"; };
+		DB8E940F18A78B5900EF214F /* ARSHorizontalScrollingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSHorizontalScrollingHeader.h; path = GuiComponents/ARSHorizontalScrollingMenu/ARSHorizontalScrollingHeader.h; sourceTree = "<group>"; };
+		DB8E941018A78B5900EF214F /* ARSHorizontalScrollingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSHorizontalScrollingHeader.m; path = GuiComponents/ARSHorizontalScrollingMenu/ARSHorizontalScrollingHeader.m; sourceTree = "<group>"; };
+		DBBEC19318A6DAC200212106 /* ARSEventListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSEventListViewController.h; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.h; sourceTree = "<group>"; };
+		DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEventListViewController.m; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.m; sourceTree = "<group>"; };
+		DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ARSEventListViewController.xib; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.xib; sourceTree = "<group>"; };
 		DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		DBCCEA4918A5723D00CC87AE /* ARSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSData.h; path = Model/ARSData/ARSData.h; sourceTree = "<group>"; };
 		DBCCEA4A18A5723D00CC87AE /* ARSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSData.m; path = Model/ARSData/ARSData.m; sourceTree = "<group>"; };
@@ -166,8 +174,9 @@
 		DB6B312A18A4337300C3EABB /* Arsfest */ = {
 			isa = PBXGroup;
 			children = (
+				DB8E940E18A78ADD00EF214F /* GuiComponents */,
+				DBBEC19218A6D9E300212106 /* ViewControllers */,
 				DB6B316F18A43A9700C3EABB /* Model */,
-				DB6B315318A4338500C3EABB /* Utils */,
 				DB6B313318A4337300C3EABB /* ARSAppDelegate.h */,
 				DB6B313418A4337300C3EABB /* ARSAppDelegate.m */,
 				DB6B313618A4337300C3EABB /* Images.xcassets */,
@@ -205,13 +214,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DB6B315318A4338500C3EABB /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Utils;
-			sourceTree = "<group>";
-		};
 		DB6B316F18A43A9700C3EABB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +240,25 @@
 				DB6B317618A43AE500C3EABB /* ARSEvent.m */,
 			);
 			name = ARSEvent;
+			sourceTree = "<group>";
+		};
+		DB8E940E18A78ADD00EF214F /* GuiComponents */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E940F18A78B5900EF214F /* ARSHorizontalScrollingHeader.h */,
+				DB8E941018A78B5900EF214F /* ARSHorizontalScrollingHeader.m */,
+			);
+			name = GuiComponents;
+			sourceTree = "<group>";
+		};
+		DBBEC19218A6D9E300212106 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DBBEC19318A6DAC200212106 /* ARSEventListViewController.h */,
+				DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */,
+				DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		DBCCEA4818A5722B00CC87AE /* ARSData */ = {
@@ -328,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB6B312F18A4337300C3EABB /* InfoPlist.strings in Resources */,
+				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
 				DB6B313718A4337300C3EABB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +406,9 @@
 				DB6B317418A43AD200C3EABB /* ARSLocation.m in Sources */,
 				DB6B313518A4337300C3EABB /* ARSAppDelegate.m in Sources */,
 				DB6B317718A43AE500C3EABB /* ARSEvent.m in Sources */,
+				DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */,
 				DBCCEA4B18A5723D00CC87AE /* ARSData.m in Sources */,
+				DB8E941118A78B5900EF214F /* ARSHorizontalScrollingHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

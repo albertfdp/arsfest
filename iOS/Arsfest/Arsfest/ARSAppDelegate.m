@@ -11,7 +11,7 @@
 
 #import "ARSAppDelegate.h"
 #import <Parse/Parse.h>
-#import "ARSData.h"
+#import "ARSEventListViewController.h"
 
 @implementation ARSAppDelegate
 
@@ -26,7 +26,8 @@
                   clientKey:kParseClientKey];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    [[ARSData alloc] init];
+    ARSEventListViewController *eventListViewController = [[ARSEventListViewController alloc] initWithNibName:@"ARSEventListViewController" bundle:nil];
+    [self.window setRootViewController:eventListViewController];
     
     [self.window makeKeyAndVisible];
     return YES;
