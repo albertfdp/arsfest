@@ -5,8 +5,8 @@
     android:versionName="1.3.3" >
 
     <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="10" />
+        android:minSdkVersion="13"
+        android:targetSdkVersion="19" />
 
     <!-- PERMISSIONS NEEDED BUT I DON'T KNOW WHERE: -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

@@ -3,8 +3,21 @@ package dk.dtu.arsfest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
+import android.widget.TextView;
+
 import com.astuetz.viewpager.extensions.IndicatorLineView;
 import com.astuetz.viewpager.extensions.ScrollingTabsView;
 import com.astuetz.viewpager.extensions.TabsAdapter;
@@ -12,32 +25,16 @@ import com.google.analytics.tracking.android.EasyTracker;
 
 import dk.dtu.arsfest.alarms.AlarmHelper;
 import dk.dtu.arsfest.context.ContextAwareHelper;
+import dk.dtu.arsfest.model.Bssid;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
-import dk.dtu.arsfest.model.Bssid;
 import dk.dtu.arsfest.network.NetworkHelper;
-import dk.dtu.arsfest.notification.MyOneTimeNotificationService;
 import dk.dtu.arsfest.parser.JSONParser;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 import dk.dtu.arsfest.view.CustomLinePagerAdapter;
 import dk.dtu.arsfest.view.CustomPageAdapter;
 import dk.dtu.arsfest.view.LocationTabs;
-import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
-import android.app.AlarmManager;
-import android.app.AlertDialog;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import android.widget.TextView;
 
 public class MainActivity extends SlideMenuSuper {
 
