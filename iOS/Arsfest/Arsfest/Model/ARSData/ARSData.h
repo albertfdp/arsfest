@@ -7,9 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ARSLocation.h"
+
 
 @interface ARSData : NSObject
 
 @property (nonatomic, strong) NSMutableArray *locations;
+
+- (NSArray*)eventsIn:(ARSLocationType)location;
+
 
 @end

@@ -26,8 +26,13 @@
                   clientKey:kParseClientKey];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    
     ARSEventListViewController *eventListViewController = [[ARSEventListViewController alloc] initWithNibName:@"ARSEventListViewController" bundle:nil];
-    [self.window setRootViewController:eventListViewController];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc]
+                                                    initWithRootViewController:eventListViewController];
+    
+    [self.window setRootViewController:navigationController];
     
     [self.window makeKeyAndVisible];
     return YES;

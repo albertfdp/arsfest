@@ -128,6 +128,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB23274C18AD0DB800628B8D /* ARSEventList */ = {
+			isa = PBXGroup;
+			children = (
+				DBBEC19318A6DAC200212106 /* ARSEventListViewController.h */,
+				DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */,
+				DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */,
+			);
+			name = ARSEventList;
+			sourceTree = "<group>";
+		};
 		DB6B311818A4337300C3EABB = {
 			isa = PBXGroup;
 			children = (
@@ -254,9 +264,7 @@
 		DBBEC19218A6D9E300212106 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DBBEC19318A6DAC200212106 /* ARSEventListViewController.h */,
-				DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */,
-				DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */,
+				DB23274C18AD0DB800628B8D /* ARSEventList */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
