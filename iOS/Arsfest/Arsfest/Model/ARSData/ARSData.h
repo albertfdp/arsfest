@@ -9,9 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "ARSLocation.h"
 
+@protocol ARSDataDelegate <NSObject>
+
+- (void)didReceiveDataFromTheServer;
+
+@end
+
 
 @interface ARSData : NSObject
 
+@property (nonatomic, assign) id<ARSDataDelegate> dataDelegate;
 @property (nonatomic, strong) NSMutableArray *locations;
 
 - (NSArray*)eventsIn:(ARSLocationType)location;

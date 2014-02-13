@@ -20,6 +20,7 @@
 
 @implementation ARSData
 @synthesize locations = _locations;
+@synthesize dataDelegate = _dataDelegate;
 
 - (id)init
 {
@@ -38,7 +39,7 @@
 
 - (NSArray*)eventsIn:(ARSLocationType)locationType
 {
-    NSMutableArray *eventsArray;
+    NSMutableArray *eventsArray = [[NSMutableArray alloc] init];
     switch (locationType) {
             //Case where we want all the events
         case ARSLocationAll:
@@ -81,8 +82,8 @@
     if (!error) {
         NSArray *array = [json valueForKey:@"locations"];
         [self createLocations:array];
+        [self notifyDelegate];
     }
-
 }
 
 - (void)createLocations:(NSArray*)locations
@@ -108,6 +109,16 @@
     }];
     
     [operation start];
+}
+
+#pragma mark -
+#pragma mark - ARSDataDelegate
+
+- (void)notifyDelegate
+{
+    if ([_dataDelegate respondsToSelector:@selector(didReceiveDataFromTheServer)]) {
+        [_dataDelegate didReceiveDataFromTheServer];
+    }
 }
 
 @end
