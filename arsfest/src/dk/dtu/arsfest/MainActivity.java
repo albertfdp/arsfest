@@ -187,7 +187,8 @@ public class MainActivity extends SlideMenuSuper {
 			@Override
 			public void onGlobalLayout() {
 
-				scrollingTabs.moveTabTo(pos);
+				// deprecated: scrollingTabs.moveTabTo(pos);
+				scrollingTabs.onPageSelected(pos);
 
 				ViewTreeObserver obs = scrollingTabs.getViewTreeObserver();
 				obs.removeGlobalOnLayoutListener(this);
