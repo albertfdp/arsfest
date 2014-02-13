@@ -40,10 +40,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    //KVO on the Data for the UITableView
+    [self addObserver:self
+           forKeyPath:@"events"
+              options:0
+              context:NULL];
 
 }
 
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"events"];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -78,8 +87,8 @@
     }
     
     ARSEvent *event = (ARSEvent*)[_events objectAtIndex:indexPath.row];
-    eventCell.labelTitle.text = event.name;
-//    eventCell.textLabel.textColor = [UIColor blackColor];
+    
+    [eventCell configureCellWithEvent:event];
     
     return eventCell;
 }
@@ -89,14 +98,40 @@
 
 - (void)didReceiveDataFromTheServer
 {
-    _events = [_data eventsIn:_currentFilter];
-    
+    NSArray *receivedData = [_data eventsIn:_currentFilter];
+    [self sortAndStore:receivedData];
     //TODO: Handle UI Logic
     
+}
+
+/**
+ * Use this method to assign a new array to the table view data source
+ */
+- (void)sortAndStore:(NSArray*)array
+{
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor
+                                        sortDescriptorWithKey:@"startTime"
+                                        ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+    NSArray *sortedEventArray = [array
+                                 sortedArrayUsingDescriptors:sortDescriptors];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [_eventListTableView reloadData];
-    });
+    [self setEvents:sortedEventArray];
+}
+
+#pragma mark -
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    
+    if ([keyPath isEqual:@"events"]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_eventListTableView reloadData];
+        });
+    }
 }
 
 @end

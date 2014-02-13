@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ARSEvent.h"
 
 @interface ARSEventCell : UITableViewCell
 
@@ -16,5 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelLocation;
 @property (weak, nonatomic) IBOutlet UILabel *labelTime;
+
+- (void)configureCellWithEvent:(ARSEvent*)event;
 
 @end

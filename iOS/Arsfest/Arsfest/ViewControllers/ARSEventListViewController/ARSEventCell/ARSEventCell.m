@@ -9,6 +9,7 @@
 #import "ARSEventCell.h"
 
 @implementation ARSEventCell
+@synthesize labelTitle = _labelTitle, labelLocation = _labelLocation, labelTime = _labelTime, imageView = _imageView, progressView = _progressView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -29,6 +30,15 @@
 #pragma mark -
 #pragma mark - Custom configuration
 
-
+- (void)configureCellWithEvent:(ARSEvent *)event
+{
+    _labelTitle.text = event.name;
+    _labelLocation.text = event.location.name;
+    _labelTime.text = [NSDate hourMinuteStringFromDate:event.startTime];
+    
+    if ([NSDate currentDateIsBetween:event.startTime and:event.endTime]) {
+        [_progressView setHidden:NO];
+    }
+}
 
 @end

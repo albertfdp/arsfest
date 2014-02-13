@@ -35,6 +35,9 @@
 		DB8E941118A78B5900EF214F /* ARSHorizontalScrollingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8E941018A78B5900EF214F /* ARSHorizontalScrollingHeader.m */; };
 		DB98729718AD748B00A085FE /* ARSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB98729618AD748B00A085FE /* ARSEventCell.m */; };
 		DB98729918AD74B500A085FE /* ARSEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB98729818AD74B500A085FE /* ARSEventCell.xib */; };
+		DB98729F18AD7EB000A085FE /* ARSEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB98729D18AD7EB000A085FE /* ARSEventViewController.m */; };
+		DB9872A018AD7EB000A085FE /* ARSEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB98729E18AD7EB000A085FE /* ARSEventViewController.xib */; };
+		DB9872A418AD7F7500A085FE /* NSDate+Formatter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9872A318AD7F7500A085FE /* NSDate+Formatter.m */; };
 		DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */; };
 		DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */; };
 		DBCCEA4418A5628200CC87AE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */; };
@@ -89,6 +92,11 @@
 		DB98729518AD748B00A085FE /* ARSEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSEventCell.h; path = ViewControllers/ARSEventListViewController/ARSEventCell/ARSEventCell.h; sourceTree = "<group>"; };
 		DB98729618AD748B00A085FE /* ARSEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEventCell.m; path = ViewControllers/ARSEventListViewController/ARSEventCell/ARSEventCell.m; sourceTree = "<group>"; };
 		DB98729818AD74B500A085FE /* ARSEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARSEventCell.xib; sourceTree = "<group>"; };
+		DB98729C18AD7EB000A085FE /* ARSEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSEventViewController.h; path = ViewControllers/ARSEventViewController/ARSEventViewController.h; sourceTree = "<group>"; };
+		DB98729D18AD7EB000A085FE /* ARSEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEventViewController.m; path = ViewControllers/ARSEventViewController/ARSEventViewController.m; sourceTree = "<group>"; };
+		DB98729E18AD7EB000A085FE /* ARSEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ARSEventViewController.xib; path = ViewControllers/ARSEventViewController/ARSEventViewController.xib; sourceTree = "<group>"; };
+		DB9872A218AD7F7500A085FE /* NSDate+Formatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+Formatter.h"; path = "Utilities/NSDate+Formatter.h"; sourceTree = "<group>"; };
+		DB9872A318AD7F7500A085FE /* NSDate+Formatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Formatter.m"; path = "Utilities/NSDate+Formatter.m"; sourceTree = "<group>"; };
 		DBBEC19318A6DAC200212106 /* ARSEventListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSEventListViewController.h; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.h; sourceTree = "<group>"; };
 		DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEventListViewController.m; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.m; sourceTree = "<group>"; };
 		DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ARSEventListViewController.xib; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.xib; sourceTree = "<group>"; };
@@ -133,7 +141,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DB23274C18AD0DB800628B8D /* ARSEventList */ = {
+		DB23274C18AD0DB800628B8D /* ARSEventListViewController */ = {
 			isa = PBXGroup;
 			children = (
 				DB98729418AD745A00A085FE /* ARSEventCell */,
@@ -141,7 +149,7 @@
 				DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */,
 				DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */,
 			);
-			name = ARSEventList;
+			name = ARSEventListViewController;
 			sourceTree = "<group>";
 		};
 		DB6B311818A4337300C3EABB = {
@@ -190,6 +198,7 @@
 		DB6B312A18A4337300C3EABB /* Arsfest */ = {
 			isa = PBXGroup;
 			children = (
+				DB9872A118AD7F5900A085FE /* Utilities */,
 				DB8E940E18A78ADD00EF214F /* GuiComponents */,
 				DBBEC19218A6D9E300212106 /* ViewControllers */,
 				DB6B316F18A43A9700C3EABB /* Model */,
@@ -277,10 +286,30 @@
 			name = ARSEventCell;
 			sourceTree = "<group>";
 		};
+		DB98729A18AD7E7F00A085FE /* ARSEventViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DB98729C18AD7EB000A085FE /* ARSEventViewController.h */,
+				DB98729D18AD7EB000A085FE /* ARSEventViewController.m */,
+				DB98729E18AD7EB000A085FE /* ARSEventViewController.xib */,
+			);
+			name = ARSEventViewController;
+			sourceTree = "<group>";
+		};
+		DB9872A118AD7F5900A085FE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DB9872A218AD7F7500A085FE /* NSDate+Formatter.h */,
+				DB9872A318AD7F7500A085FE /* NSDate+Formatter.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		DBBEC19218A6D9E300212106 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DB23274C18AD0DB800628B8D /* ARSEventList */,
+				DB98729A18AD7E7F00A085FE /* ARSEventViewController */,
+				DB23274C18AD0DB800628B8D /* ARSEventListViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -376,6 +405,7 @@
 				DB98729918AD74B500A085FE /* ARSEventCell.xib in Resources */,
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
 				DB6B313718A4337300C3EABB /* Images.xcassets in Resources */,
+				DB9872A018AD7EB000A085FE /* ARSEventViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,10 +457,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB98729F18AD7EB000A085FE /* ARSEventViewController.m in Sources */,
 				DB6B313118A4337300C3EABB /* main.m in Sources */,
 				DB98729718AD748B00A085FE /* ARSEventCell.m in Sources */,
 				DB6B317418A43AD200C3EABB /* ARSLocation.m in Sources */,
 				DB6B313518A4337300C3EABB /* ARSAppDelegate.m in Sources */,
+				DB9872A418AD7F7500A085FE /* NSDate+Formatter.m in Sources */,
 				DB6B317718A43AE500C3EABB /* ARSEvent.m in Sources */,
 				DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */,
 				DBCCEA4B18A5723D00CC87AE /* ARSData.m in Sources */,
