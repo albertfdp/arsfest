@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSEventViewController/ARSEventViewController.m"
-            timestampString = "414074557.170938"
+            timestampString = "414074730.224023"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "-textViewDidChange:"
             landmarkType = "5">
          </BreakpointContent>

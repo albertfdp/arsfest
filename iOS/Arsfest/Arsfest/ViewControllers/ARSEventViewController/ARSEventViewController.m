@@ -61,10 +61,8 @@
 
 - (void)setupScrollView
 {
-    NSLog(@"%@", NSStringFromCGRect(_descriptionTextView.frame));
     [_descriptionTextView setText:_event.description];
     [self textViewDidChange:_descriptionTextView];
-    NSLog(@"%@", NSStringFromCGRect(_descriptionTextView.frame));
     [_descriptionScrollView setContentSize:_descriptionTextView.frame.size];
 }
 

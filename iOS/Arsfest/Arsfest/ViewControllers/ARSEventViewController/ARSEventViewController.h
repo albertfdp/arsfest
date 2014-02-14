@@ -14,6 +14,12 @@
 @property (nonatomic, strong) ARSEvent *event;
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIView *titleView;
+@property (weak, nonatomic) IBOutlet UIView *whereView;
+@property (weak, nonatomic) IBOutlet UIView *whenView;
+
+
+
 @property (weak, nonatomic) IBOutlet UILabel *labelEventTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelEventLocation;
 @property (weak, nonatomic) IBOutlet UIScrollView *descriptionScrollView;
