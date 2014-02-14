@@ -24,6 +24,7 @@
 @synthesize titleView = _titleView;
 @synthesize whenView = _whenView;
 @synthesize whereView = _whereView;
+@synthesize labelEventTheme = _labelEventTheme;
 
 #pragma mark -
 #pragma mark - View
@@ -63,6 +64,7 @@
 - (void)configureView
 {
     [_labelEventTitle setText:[_event.name uppercaseString]];
+    [_labelEventTheme setText:[_event.theme uppercaseString]];
     [_labelEventLocation setText:[_event.location.name uppercaseString]];
     [_labelStartTime setText:[NSDate hourMinuteStringFromDate:_event.startTime]];
     [_labelEndTime setText:[NSDate hourMinuteStringFromDate:_event.endTime]];
@@ -74,23 +76,50 @@
 
 - (void)configureBorders
 {
-    [self addBordersToView:_whereView];
-    [self addBordersToView:_whenView];
-    
+    [self view:_whereView addBorderTop:YES bottom:YES right:YES left:NO];
+    [self view:_whenView addBorderTop:YES bottom:YES right:NO left:NO];
+    [self view:_titleView addBorderTop:YES bottom:NO right:NO left:NO];
 }
 
-- (void)addBordersToView:(UIView*)view
+- (void)view:(UIView*)view addBorderTop:(BOOL)top bottom:(BOOL)bottom right:(BOOL)right left:(BOOL)left
 {
-//    [view.layer setBorderColor:[[UIColor whiteColor] CGColor]];
-//    [view.layer setBorderWidth:0.2f];
-
-    CALayer *bottomBorder = [CALayer layer];
-    
-    bottomBorder.frame = CGRectMake(0.0f, 43.0f, view.frame.size.width, 0.2f);
-    bottomBorder.backgroundColor = [UIColor colorWithWhite:0.8f
-                                                     alpha:1.0f].CGColor;
-
-    [view.layer addSublayer:bottomBorder];
+    if (top) {
+        CALayer *topBorder = [CALayer layer];
+        
+        topBorder.frame = CGRectMake(0.0f, 0.0f, view.frame.size.width, -0.3f);
+        topBorder.backgroundColor = [UIColor colorWithWhite:0.8f
+                                                      alpha:1.0f].CGColor;
+        
+        [view.layer addSublayer:topBorder];
+    }
+    if (bottom) {
+        CALayer *bottomBorder = [CALayer layer];
+        
+        bottomBorder.frame = CGRectMake(0.0f, view.frame.size.height, view.frame.size.width, 0.3f);
+        bottomBorder.backgroundColor = [UIColor colorWithWhite:0.8f
+                                                         alpha:1.0f].CGColor;
+        
+        [view.layer addSublayer:bottomBorder];
+   
+    }
+    if (left) {
+        CALayer *leftBorder = [CALayer layer];
+        
+        leftBorder.frame = CGRectMake(0.0f, 0.0f, -0.3f, view.frame.size.height);
+        leftBorder.backgroundColor = [UIColor colorWithWhite:0.8f
+                                                         alpha:1.0f].CGColor;
+        
+        [view.layer addSublayer:leftBorder];
+    }
+    if (right) {
+        CALayer *rightBorder = [CALayer layer];
+        
+        rightBorder.frame = CGRectMake(view.frame.size.width, 0.0f, 0.3f, view.frame.size.height);
+        rightBorder.backgroundColor = [UIColor colorWithWhite:0.8f
+                                                       alpha:1.0f].CGColor;
+        
+        [view.layer addSublayer:rightBorder];
+    }
 }
 
 #pragma mark -

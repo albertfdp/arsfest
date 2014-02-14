@@ -22,6 +22,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *labelEventTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelEventTheme;
 @property (weak, nonatomic) IBOutlet UILabel *labelEventLocation;
 @property (weak, nonatomic) IBOutlet UIScrollView *descriptionScrollView;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;

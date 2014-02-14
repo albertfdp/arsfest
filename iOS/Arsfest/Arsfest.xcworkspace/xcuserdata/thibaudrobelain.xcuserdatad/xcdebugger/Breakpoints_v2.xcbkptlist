@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/Model/ARSEvent/ARSEvent.m"
-            timestampString = "414024243.764177"
+            timestampString = "414109124.646661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSEventViewController/ARSEventViewController.m"
-            timestampString = "414105507.070068"
+            timestampString = "414109124.646661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "-setupNavigationBar"
             landmarkType = "5">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSEventViewController/ARSEventViewController.m"
-            timestampString = "414105507.070068"
+            timestampString = "414109124.646661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "-textViewDidChange:"
             landmarkType = "5">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSEventViewController/ARSEventViewController.m"
-            timestampString = "414105062.149731"
+            timestampString = "414109124.646661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "-initWithNibName:bundle:"
             landmarkType = "5">
          </BreakpointContent>
