@@ -7,6 +7,7 @@
 //
 
 #import "ARSEventListViewController.h"
+#import "ARSEventViewController.h"
 #import "ARSEventCell.h"
 #import "ARSEvent.h"
 
@@ -21,7 +22,7 @@
 @end
 
 @implementation ARSEventListViewController
-@synthesize data = _data, events = _events, currentFilter = _currentFilter;
+@synthesize data = _data, events = _events, currentFilter = _currentFilter, carouselScrollView = _carouselScrollView, pageControl = _pageControl;
 
 #pragma mark -
 #pragma mark - Views
@@ -93,6 +94,18 @@
     
     return eventCell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ARSEvent *event = [_events objectAtIndex:indexPath.row];
+    
+    ARSEventViewController *eventViewController = [[ARSEventViewController alloc] initWithNibName:@"ARSEventViewController" bundle:[NSBundle mainBundle]];
+    [eventViewController setEvent:event];
+    
+    [self.navigationController pushViewController:eventViewController animated:YES];
+    [_eventListTableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 
 #pragma mark -
 #pragma mark - ARSDataDelegate

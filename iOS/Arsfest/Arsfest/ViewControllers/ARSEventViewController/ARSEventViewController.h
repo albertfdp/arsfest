@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ARSEvent.h"
 
 @interface ARSEventViewController : UIViewController
+
+@property (nonatomic, strong) ARSEvent *event;
+
+
 
 @end
