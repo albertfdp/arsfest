@@ -31,7 +31,11 @@
 {
     [super viewDidLoad];
 
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self setupNavigationBar];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,6 +44,11 @@
 }
 
 #pragma mark -
-#pragma mark - 
+#pragma mark - Navigation Bar setup
+
+- (void)setupNavigationBar
+{
+    [self setTitle:_event.name];
+}
 
 @end

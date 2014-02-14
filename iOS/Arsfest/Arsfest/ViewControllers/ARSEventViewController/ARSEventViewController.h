@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) ARSEvent *event;
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 
 
 @end

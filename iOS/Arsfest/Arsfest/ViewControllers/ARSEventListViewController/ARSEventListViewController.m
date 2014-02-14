@@ -48,6 +48,10 @@
               options:0
               context:NULL];
 
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
     [self setupNavigationBar];
 }
 
@@ -154,6 +158,8 @@
 - (void)setupNavigationBar
 {
     [self.navigationController.navigationBar.topItem setTitle:@"DTU Årsfest"];
+
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 #pragma mark -
