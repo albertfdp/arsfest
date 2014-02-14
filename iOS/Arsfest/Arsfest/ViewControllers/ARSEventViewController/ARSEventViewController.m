@@ -18,6 +18,8 @@
 @synthesize labelEventLocation = _labelEventLocation;
 @synthesize descriptionScrollView = _descriptionScrollView;
 @synthesize descriptionTextView = _descriptionTextView;
+@synthesize labelStartTime = _labelStartTime;
+@synthesize labelEndTime = _labelEndTime;
 
 #pragma mark -
 #pragma mark - View
@@ -39,6 +41,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self configureView];
     [self setupNavigationBar];
     [self setupScrollView];
 }
@@ -46,6 +49,14 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)configureView
+{
+    [_labelEventTitle setText:_event.name];
+    [_labelEventLocation setText:_event.location.name];
+    [_labelStartTime setText:[NSDate hourMinuteStringFromDate:_event.startTime]];
+    [_labelEndTime setText:[NSDate hourMinuteStringFromDate:_event.endTime]];
 }
 
 #pragma mark -

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A3C9C2959C23450F907C64EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B51341BED63B4BC580A5958B /* libPods.a */; };
 		DB53D31D18AE352400508DAD /* UIViewController+Edges.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53D31C18AE352400508DAD /* UIViewController+Edges.m */; };
+		DB53D32118AE595C00508DAD /* Clock.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D31F18AE595C00508DAD /* Clock.png */; };
+		DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32018AE595C00508DAD /* Clock@2x.png */; };
 		DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312418A4337300C3EABB /* Foundation.framework */; };
 		DB6B312718A4337300C3EABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312618A4337300C3EABB /* CoreGraphics.framework */; };
 		DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
@@ -60,6 +62,8 @@
 		B51341BED63B4BC580A5958B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB53D31B18AE352400508DAD /* UIViewController+Edges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Edges.h"; path = "Utilities/UIViewController+Edges.h"; sourceTree = "<group>"; };
 		DB53D31C18AE352400508DAD /* UIViewController+Edges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Edges.m"; path = "Utilities/UIViewController+Edges.m"; sourceTree = "<group>"; };
+		DB53D31F18AE595C00508DAD /* Clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clock.png; sourceTree = "<group>"; };
+		DB53D32018AE595C00508DAD /* Clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Clock@2x.png"; sourceTree = "<group>"; };
 		DB6B312118A4337300C3EABB /* Arsfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arsfest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6B312418A4337300C3EABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB6B312618A4337300C3EABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -155,6 +159,15 @@
 			name = ARSEventListViewController;
 			sourceTree = "<group>";
 		};
+		DB53D31E18AE58D000508DAD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DB53D31F18AE595C00508DAD /* Clock.png */,
+				DB53D32018AE595C00508DAD /* Clock@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		DB6B311818A4337300C3EABB = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +214,7 @@
 		DB6B312A18A4337300C3EABB /* Arsfest */ = {
 			isa = PBXGroup;
 			children = (
+				DB53D31E18AE58D000508DAD /* Resources */,
 				DB9872A118AD7F5900A085FE /* Utilities */,
 				DB8E940E18A78ADD00EF214F /* GuiComponents */,
 				DBBEC19218A6D9E300212106 /* ViewControllers */,
@@ -409,7 +423,9 @@
 				DB6B312F18A4337300C3EABB /* InfoPlist.strings in Resources */,
 				DB98729918AD74B500A085FE /* ARSEventCell.xib in Resources */,
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
+				DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */,
 				DB6B313718A4337300C3EABB /* Images.xcassets in Resources */,
+				DB53D32118AE595C00508DAD /* Clock.png in Resources */,
 				DB9872A018AD7EB000A085FE /* ARSEventViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

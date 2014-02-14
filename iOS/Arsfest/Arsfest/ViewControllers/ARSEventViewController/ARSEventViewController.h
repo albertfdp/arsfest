@@ -25,4 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *descriptionScrollView;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelStartTime;
+@property (weak, nonatomic) IBOutlet UILabel *labelEndTime;
 @end
