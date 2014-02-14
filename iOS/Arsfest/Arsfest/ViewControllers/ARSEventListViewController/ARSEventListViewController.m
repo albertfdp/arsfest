@@ -158,8 +158,14 @@
 - (void)setupNavigationBar
 {
     [self.navigationController.navigationBar.topItem setTitle:@"DTU Årsfest"];
+    
+    NSMutableDictionary *titleAttributes = [[NSMutableDictionary alloc] init];
+    [titleAttributes setObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:titleAttributes];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.20 green:0.07 blue:0.3 alpha:0.8]];
 
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 #pragma mark -

@@ -11,6 +11,13 @@
 		DB53D31D18AE352400508DAD /* UIViewController+Edges.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53D31C18AE352400508DAD /* UIViewController+Edges.m */; };
 		DB53D32118AE595C00508DAD /* Clock.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D31F18AE595C00508DAD /* Clock.png */; };
 		DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32018AE595C00508DAD /* Clock@2x.png */; };
+		DB53D32918AEB88800508DAD /* alphabeat.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32518AEB88800508DAD /* alphabeat.png */; };
+		DB53D32A18AEB88800508DAD /* alphabeat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32618AEB88800508DAD /* alphabeat@2x.png */; };
+		DB53D32B18AEB88800508DAD /* veto.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32718AEB88800508DAD /* veto.png */; };
+		DB53D32C18AEB88800508DAD /* veto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32818AEB88800508DAD /* veto@2x.png */; };
+		DB53D33018AEBCD300508DAD /* default_background.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32D18AEBCD300508DAD /* default_background.png */; };
+		DB53D33118AEBCD300508DAD /* default_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32E18AEBCD300508DAD /* default_background@2x.png */; };
+		DB53D33218AEBCD300508DAD /* default_background568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32F18AEBCD300508DAD /* default_background568h@2x.png */; };
 		DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312418A4337300C3EABB /* Foundation.framework */; };
 		DB6B312718A4337300C3EABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312618A4337300C3EABB /* CoreGraphics.framework */; };
 		DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
@@ -64,6 +71,13 @@
 		DB53D31C18AE352400508DAD /* UIViewController+Edges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Edges.m"; path = "Utilities/UIViewController+Edges.m"; sourceTree = "<group>"; };
 		DB53D31F18AE595C00508DAD /* Clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clock.png; sourceTree = "<group>"; };
 		DB53D32018AE595C00508DAD /* Clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Clock@2x.png"; sourceTree = "<group>"; };
+		DB53D32518AEB88800508DAD /* alphabeat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alphabeat.png; sourceTree = "<group>"; };
+		DB53D32618AEB88800508DAD /* alphabeat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alphabeat@2x.png"; sourceTree = "<group>"; };
+		DB53D32718AEB88800508DAD /* veto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veto.png; sourceTree = "<group>"; };
+		DB53D32818AEB88800508DAD /* veto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "veto@2x.png"; sourceTree = "<group>"; };
+		DB53D32D18AEBCD300508DAD /* default_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_background.png; sourceTree = "<group>"; };
+		DB53D32E18AEBCD300508DAD /* default_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_background@2x.png"; sourceTree = "<group>"; };
+		DB53D32F18AEBCD300508DAD /* default_background568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_background568h@2x.png"; sourceTree = "<group>"; };
 		DB6B312118A4337300C3EABB /* Arsfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arsfest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6B312418A4337300C3EABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB6B312618A4337300C3EABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -162,10 +176,33 @@
 		DB53D31E18AE58D000508DAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DB53D32D18AEBCD300508DAD /* default_background.png */,
+				DB53D32E18AEBCD300508DAD /* default_background@2x.png */,
+				DB53D32F18AEBCD300508DAD /* default_background568h@2x.png */,
+				DB53D32418AEB87100508DAD /* Images */,
+				DB53D32318AEB86700508DAD /* Icons */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DB53D32318AEB86700508DAD /* Icons */ = {
+			isa = PBXGroup;
+			children = (
 				DB53D31F18AE595C00508DAD /* Clock.png */,
 				DB53D32018AE595C00508DAD /* Clock@2x.png */,
 			);
-			name = Resources;
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		DB53D32418AEB87100508DAD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DB53D32518AEB88800508DAD /* alphabeat.png */,
+				DB53D32618AEB88800508DAD /* alphabeat@2x.png */,
+				DB53D32718AEB88800508DAD /* veto.png */,
+				DB53D32818AEB88800508DAD /* veto@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		DB6B311818A4337300C3EABB = {
@@ -421,7 +458,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB6B312F18A4337300C3EABB /* InfoPlist.strings in Resources */,
+				DB53D32B18AEB88800508DAD /* veto.png in Resources */,
 				DB98729918AD74B500A085FE /* ARSEventCell.xib in Resources */,
+				DB53D33118AEBCD300508DAD /* default_background@2x.png in Resources */,
+				DB53D32A18AEB88800508DAD /* alphabeat@2x.png in Resources */,
+				DB53D33218AEBCD300508DAD /* default_background568h@2x.png in Resources */,
+				DB53D32C18AEB88800508DAD /* veto@2x.png in Resources */,
+				DB53D33018AEBCD300508DAD /* default_background.png in Resources */,
+				DB53D32918AEB88800508DAD /* alphabeat.png in Resources */,
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
 				DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */,
 				DB6B313718A4337300C3EABB /* Images.xcassets in Resources */,
