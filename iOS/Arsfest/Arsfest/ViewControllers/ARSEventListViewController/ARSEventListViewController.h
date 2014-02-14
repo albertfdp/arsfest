@@ -13,5 +13,7 @@
 @interface ARSEventListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ARSDataDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *eventListTableView;
+@property (weak, nonatomic) IBOutlet UIScrollView *carouselScrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @end

@@ -47,6 +47,7 @@
               options:0
               context:NULL];
 
+    [self setupNavigationBar];
 }
 
 - (void)dealloc
@@ -132,6 +133,27 @@
             [_eventListTableView reloadData];
         });
     }
+}
+
+#pragma mark -
+#pragma mark - Setup Navigation Bar
+
+- (void)setupNavigationBar
+{
+    [self.navigationController.navigationBar.topItem setTitle:@"DTU Årsfest"];
+}
+
+#pragma mark -
+#pragma mark - Carousel Initialization
+
+- (void)setupCarousel
+{
+    
+}
+
+- (void)addImageToScrollView
+{
+    
 }
 
 @end

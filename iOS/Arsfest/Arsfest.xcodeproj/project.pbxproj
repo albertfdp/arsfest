@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A3C9C2959C23450F907C64EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B51341BED63B4BC580A5958B /* libPods.a */; };
+		DB53D31D18AE352400508DAD /* UIViewController+Edges.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53D31C18AE352400508DAD /* UIViewController+Edges.m */; };
 		DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312418A4337300C3EABB /* Foundation.framework */; };
 		DB6B312718A4337300C3EABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312618A4337300C3EABB /* CoreGraphics.framework */; };
 		DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
@@ -57,6 +58,8 @@
 /* Begin PBXFileReference section */
 		79241BB9B33948DDAE553BAF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B51341BED63B4BC580A5958B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB53D31B18AE352400508DAD /* UIViewController+Edges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Edges.h"; path = "Utilities/UIViewController+Edges.h"; sourceTree = "<group>"; };
+		DB53D31C18AE352400508DAD /* UIViewController+Edges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Edges.m"; path = "Utilities/UIViewController+Edges.m"; sourceTree = "<group>"; };
 		DB6B312118A4337300C3EABB /* Arsfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arsfest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6B312418A4337300C3EABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB6B312618A4337300C3EABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -301,6 +304,8 @@
 			children = (
 				DB9872A218AD7F7500A085FE /* NSDate+Formatter.h */,
 				DB9872A318AD7F7500A085FE /* NSDate+Formatter.m */,
+				DB53D31B18AE352400508DAD /* UIViewController+Edges.h */,
+				DB53D31C18AE352400508DAD /* UIViewController+Edges.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 				DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */,
 				DBCCEA4B18A5723D00CC87AE /* ARSData.m in Sources */,
 				DB8E941118A78B5900EF214F /* ARSHorizontalScrollingHeader.m in Sources */,
+				DB53D31D18AE352400508DAD /* UIViewController+Edges.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
