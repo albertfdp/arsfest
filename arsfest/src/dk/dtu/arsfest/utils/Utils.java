@@ -1,21 +1,51 @@
 package dk.dtu.arsfest.utils;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
-import dk.dtu.arsfest.R;
-import dk.dtu.arsfest.model.Location;
-
-
 import android.content.Context;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
+import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.model.Location;
 
 public class Utils {
+	
+	public static void writeToCache(Context context, String data) throws IOException {
+		
+		/** Save the file to the cache directory */
+		File cacheDir = context.getCacheDir();
+		
+		/** Getting a reference to a temporary file */
+		File cacheFile = new File(cacheDir + "/" + Constants.JSON_CACHE_FILENAME);
+		
+		FileWriter fw = new FileWriter(cacheFile);
+		fw.write(data);
+		fw.close();
+	
+	}
+	
+	public static FileInputStream readFromCache(Context context) throws IOException {
+		
+		/** Save the file to the cache directory */
+		File cacheDir = context.getCacheDir();
+		
+		/** Getting a reference to a temporary file */
+		File cacheFile = new File(cacheDir + "/" + Constants.JSON_CACHE_FILENAME);
+		
+		FileInputStream fis = new FileInputStream(cacheFile);
+		
+		return fis;
+	
+	}
 	
 	public static Typeface getTypeface(Context context, String typeface) {
 		return Typeface.createFromAsset(context.getAssets(), "fonts/" + typeface);

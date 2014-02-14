@@ -17,11 +17,6 @@
         android:descendantFocusability="blocksDescendants"
         android:orientation="vertical" >
 
-        <include
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            layout="@layout/top_header_bar" />
-
         <ScrollView
             android:id="@+id/scrollViewContentOfEvent"
             android:layout_width="match_parent"

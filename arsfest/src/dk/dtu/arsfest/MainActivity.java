@@ -1,322 +1,140 @@
 package dk.dtu.arsfest;
 
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.LinkedList;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import android.widget.TextView;
 
-import com.astuetz.viewpager.extensions.IndicatorLineView;
-import com.astuetz.viewpager.extensions.ScrollingTabsView;
-import com.astuetz.viewpager.extensions.TabsAdapter;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.devspark.sidenavigation.ISideNavigationCallback;
+import com.devspark.sidenavigation.SideNavigationView;
+import com.devspark.sidenavigation.SideNavigationView.Mode;
 import com.google.analytics.tracking.android.EasyTracker;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
 
-import dk.dtu.arsfest.alarms.AlarmHelper;
-import dk.dtu.arsfest.context.ContextAwareHelper;
-import dk.dtu.arsfest.model.Bssid;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
-import dk.dtu.arsfest.network.NetworkHelper;
-import dk.dtu.arsfest.parser.JSONParser;
+import dk.dtu.arsfest.model.LocationList;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
-import dk.dtu.arsfest.view.CustomLinePagerAdapter;
-import dk.dtu.arsfest.view.CustomPageAdapter;
-import dk.dtu.arsfest.view.LocationTabs;
 
-public class MainActivity extends SlideMenuSuper {
-
-	private ArrayList<Location> locations;
-	private ArrayList<Bssid> bssids;
-
-	private ViewPager viewPager;
-	private PagerAdapter pageAdapter;
-	private ViewPager lineViewPager;
-	private PagerAdapter linePageAdapter;
-	private IndicatorLineView mLine;
-	private ScrollingTabsView scrollingTabs;
-	private TabsAdapter scrollingTabsAdapter;
-	private TextView headerTitle;
-	private String currentLocation;
-
-	// After refactoring
-	private AlarmHelper alarmHelper;
-	private ContextAwareHelper contextAwareHelper;
-	private String comingFromLocation = null;
+public class MainActivity extends SherlockActivity {
+	
+	private LinkedList<Location> locations;
+	
+	private SideNavigationView sideNavigationView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_main);
-		initView();
 
-		// Read from data.JSON
-		readJson();
-
-		// Create a new AlarmHelper
-		alarmHelper = new AlarmHelper(this.getApplicationContext());
-
-		// Create a new ContextAwareHelper
-		contextAwareHelper = new ContextAwareHelper(
-				this.getApplicationContext(), bssids, locations);
-
-		//setOneTimeNotification();
+		sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_view);
+		sideNavigationView.setMenuItems(R.menu.side_navigation_menu);
+	    sideNavigationView.setMenuClickCallback(new ISideNavigationCallback() {
+			@Override
+			public void onSideNavigationItemClick(int itemId) {}
+		});
+	    
+	    sideNavigationView.setMode(Mode.LEFT);
+	    
+	    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+	    getSupportActionBar().setTitle("Events");
+	    
+	    fetchData();
+	}
+	
+	private void fetchData() {
+		/** Read the server response, and attempt to parse the JSON */
+		Gson gson = new GsonBuilder().setDateFormat(Constants.JSON_DATE_FORMAT).create();
+		
+		LocationList locList = null;
+		
+		try {
+			locList = gson.fromJson(new InputStreamReader(Utils.readFromCache(getBaseContext())), LocationList.class);
+		} catch (JsonIOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonSyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		locations = new LinkedList<Location>(locList.getLocations());
+	}
+	
+	private void setUpData() {
+		LinkedList<Event> events = new LinkedList<Event>();
+		
+		for (Location location : locations) {
+			events.addAll(location.getEvents());
+			location.sortEventsByTime();
+		}
+		
+		locations.add(new Location("0", "ALL", new ArrayList<Event>(events)));
+				
+		/** sort events by time */
 	}
 
 	@Override
 	protected void onStart() {
 		super.onStart();
-
-		// Scan the BSSIDs every 60 seconds
-		alarmHelper.registerAlarmManager();
-
-		// start Context Awareness
-		contextAwareHelper.startContextAwareness();
-
-		// get Location Awareness
-		currentLocation = contextAwareHelper.getCurrentLocation();
-
-		if (this.comingFromLocation != null) {
-			this.currentLocation = this.comingFromLocation;
-			this.comingFromLocation = null;
-		}
-		// get Time && Location Awareness
-		initViewPager(
-				contextAwareHelper.getLocationArrayPosition(currentLocation),
-				contextAwareHelper.getEventsHappeningNow());
-		EasyTracker.getInstance().activityStart(this);
+		EasyTracker.getInstance(this).activityStart(this);
 	}
 		
 	@Override
 	public void onStop() {
 		super.onStop();
-		EasyTracker.getInstance().activityStop(this);
+		EasyTracker.getInstance(this).activityStop(this);
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-		// Prompts user to enable WiFi
-		enableWiFi();
 	}
 
 	@Override
 	protected void onDestroy() {
 		super.onStop();
-		// Cancels the Broadcast Receiver
-		alarmHelper.unregisterAlarmManager();
 	}
 
-	private void initView() {
-
-		// update the font type of the header
-		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
-		headerTitle.setTypeface(Utils.getTypeface(this,
-				Constants.TYPEFONT_PROXIMANOVA));
-		headerTitle.setText(Constants.APP_NAME);
-
-		// Sets the menu
-		super.startMenu(Constants.SCROLL_MENU_TIME);
-	}
-
-	private void readJson() {
-
-		JSONParser jsonParser;
-
-		try {
-			InputStream is = getAssets().open("data.JSON");
-			jsonParser = new JSONParser(is);
-
-			this.locations = jsonParser.readLocations();
-			this.bssids = jsonParser.readBssid();
-
-			// all events
-			ArrayList<Event> allEvents = new ArrayList<Event>();
-			for (Location location : this.locations) {
-				for (Event event : location.getEvents()) {
-					if (event != null)
-						allEvents.add(event);
-				}
-			}
-			this.locations.add(new Location("0", "ALL", allEvents));
-
-			// get position of 'all'
-			int allPos = this.locations.size() - 1;
-			Collections.swap(this.locations, allPos, 0);
-
-			for (Location location : locations) {
-				location.sortEventsByTime();
-			}
-
-		} catch (IOException e) {
-			Log.i("ARSFEST", e.getMessage());
-		}
-
-	}
-
-	private void initViewPager(final int pos, ArrayList<Event> happeningNow) {
-		viewPager = (ViewPager) findViewById(R.id.pager);
-		pageAdapter = new CustomPageAdapter(this, this.locations);
-		viewPager.setAdapter(pageAdapter);
-		viewPager.setCurrentItem(pos);
-		viewPager.setPageMargin(1);
-
-		scrollingTabs = (ScrollingTabsView) findViewById(R.id.scrolling_tabs);
-		scrollingTabsAdapter = new LocationTabs(this, this.locations);
-		scrollingTabs.setAdapter(scrollingTabsAdapter);
-		scrollingTabs.setViewPager(viewPager);
-		ViewTreeObserver vto = scrollingTabs.getViewTreeObserver();
-		vto.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
-
-			@Override
-			public void onGlobalLayout() {
-
-				// deprecated: scrollingTabs.moveTabTo(pos);
-				scrollingTabs.onPageSelected(pos);
-
-				ViewTreeObserver obs = scrollingTabs.getViewTreeObserver();
-				obs.removeGlobalOnLayoutListener(this);
-			}
-
-		});
-
-		lineViewPager = (ViewPager) findViewById(R.id.linepager);
-		linePageAdapter = new CustomLinePagerAdapter(this, this.locations,
-				happeningNow);
-
-		lineViewPager.setAdapter(linePageAdapter);
-		lineViewPager.setCurrentItem(0);
-		lineViewPager.setPageMargin(1);
-
-		mLine = (IndicatorLineView) findViewById(R.id.line);
-		mLine.setFadeOutDelay(0);
-		if (Utils.hasFestFinished() || !Utils.hasFestStarted()) {
-			mLine.setLineColor(this.getResources().getColor(
-					R.color.flat_light_grey));
-			mLine.setVisibility(View.INVISIBLE);
-		}
-		mLine.setViewPager(lineViewPager);
-	}
-
-	/**
-	 * Method prompting user to enable WiFi
-	 * 
-	 * @author AA
-	 */
-	public void enableWiFi() {
-		SharedPreferences sharedPrefs = getSharedPreferences(
-				Constants.PREFS_NAME, 0);
-
-		if (!NetworkHelper.isWiFiTurnedOn(this)
-				&& !sharedPrefs.getBoolean(Constants.PREFS_POP_UP_CONNECTIVIY,
-						false)) {
-			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-					this);
-			alertDialogBuilder.setTitle(R.string.wifi_title);
-			alertDialogBuilder.setMessage(R.string.wifi_txt);
-			alertDialogBuilder
-					.setPositiveButton(R.string.wifi_option1,
-							new DialogInterface.OnClickListener() {
-
-								@Override
-								public void onClick(DialogInterface dialog,
-										int which) {
-									
-									startActivityForResult(
-											new Intent(
-													android.provider.Settings.ACTION_SETTINGS),
-											which);
-									dialog.cancel();
-								}
-							})
-					.setNegativeButton(R.string.wifi_option2,
-							new DialogInterface.OnClickListener() {
-
-								@Override
-								public void onClick(DialogInterface dialog,
-										int which) {
-									SharedPreferences sharedPrefs = getSharedPreferences(
-											Constants.PREFS_NAME, 0);
-									SharedPreferences.Editor editor = sharedPrefs
-											.edit();
-									editor.putBoolean(
-											Constants.PREFS_POP_UP_CONNECTIVIY,
-											true);
-									editor.commit();
-
-									// Toast.makeText(getApplicationContext(),
-									// "WiFi card is off",
-									// Toast.LENGTH_SHORT).show();
-									dialog.cancel();
-								}
-							})
-					.setNeutralButton(R.string.wifi_option3,
-							new DialogInterface.OnClickListener() {
-
-								@Override
-								public void onClick(DialogInterface dialog,
-										int which) {
-									dialog.cancel();
-								}
-							});
-			alertDialogBuilder.create().show();
-		}
-
-	}
 
 	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
-		switch (requestCode) {
-		case Constants.RESULT_EVENT_INFO:
-			this.comingFromLocation = data
-					.getStringExtra(Constants.EXTRA_EVENT_INFO);
-			boolean comesFromAll = data.getBooleanExtra(
-					Constants.EXTRA_EVENT_ALL, false);
-			if (comesFromAll)
-				this.comingFromLocation = "0";
-			break;
-		}
+	public boolean onCreateOptionsMenu(Menu menu) {
+		
+		menu.add(R.string.action_search)
+			.setIcon(R.drawable.ic_action_search)
+			.setActionView(R.layout.collapsible_edittext)
+			.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+		
+		menu.add(R.string.action_map)
+			.setIcon(R.drawable.ic_action_map)
+			.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+			
+		return true;
 	}
-
-	/*private void setOneTimeNotification() {
-		SharedPreferences sharedPrefs = getSharedPreferences(
-				Constants.PREFS_NAME, 0);
-		Calendar calendarNow = Calendar.getInstance();
-		calendarNow.setTimeInMillis(System.currentTimeMillis());
-		calendarNow.add(Calendar.MINUTE, 20);
-		Calendar calendarMax = Calendar.getInstance();
-		calendarMax.setTime(Utils.getStartDate(Constants.FEST_START_TIME));
-		if (sharedPrefs.getBoolean(Constants.ONE_TIME_NOTIFICATION, true)
-				&& calendarNow.before(calendarMax)) {
-			Intent myIntent = new Intent(this,
-					MyOneTimeNotificationService.class);
-			PendingIntent myPendingIntent = PendingIntent.getService(this, 200,
-					myIntent, 0);
-			SharedPreferences.Editor editor = sharedPrefs.edit();
-			editor.putBoolean(Constants.ONE_TIME_NOTIFICATION, false);
-			editor.commit();
-			AlarmManager alarmManager = (AlarmManager) this
-					.getSystemService(Context.ALARM_SERVICE);
-			Calendar calendarEvent = Calendar.getInstance();
-			calendarEvent
-					.setTime(Utils.getStartDate(Constants.FEST_START_TIME));
-			calendarEvent.add(Calendar.HOUR, -2);
-			alarmManager.set(AlarmManager.RTC_WAKEUP,
-					calendarEvent.getTimeInMillis(), myPendingIntent);
-		}
-	}*/
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+		    case android.R.id.home:
+		        sideNavigationView.toggleMenu();
+		        break;
+		    default:
+		        return super.onOptionsItemSelected(item);
+		    }
+		    return true;
+	}
+	
 }

@@ -2,17 +2,6 @@ package dk.dtu.arsfest.event;
 
 import java.util.Locale;
 
-import com.google.analytics.tracking.android.EasyTracker;
-
-import dk.dtu.arsfest.R;
-import dk.dtu.arsfest.SlideMenuSuper;
-import dk.dtu.arsfest.maps.MapActivity;
-import dk.dtu.arsfest.maps.MapScroller;
-import dk.dtu.arsfest.model.Course;
-import dk.dtu.arsfest.model.Event;
-import dk.dtu.arsfest.model.Location;
-import dk.dtu.arsfest.utils.Constants;
-import dk.dtu.arsfest.utils.Utils;
 import android.content.Intent;
 import android.graphics.Picture;
 import android.graphics.Typeface;
@@ -27,13 +16,25 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.webkit.WebView.PictureListener;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class EventActivity extends SlideMenuSuper {
+import com.actionbarsherlock.app.SherlockActivity;
+import com.google.analytics.tracking.android.EasyTracker;
+
+import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.maps.MapActivity;
+import dk.dtu.arsfest.maps.MapScroller;
+import dk.dtu.arsfest.model.Course;
+import dk.dtu.arsfest.model.Event;
+import dk.dtu.arsfest.model.Location;
+import dk.dtu.arsfest.utils.Constants;
+import dk.dtu.arsfest.utils.Utils;
+
+public class EventActivity extends SherlockActivity {
 
 	private TextView eventTitle;
 	private TextView eventTime;
@@ -87,7 +88,7 @@ public class EventActivity extends SlideMenuSuper {
 		eventLocation = (TextView) findViewById(R.id.event_location);
 		eventDescription = (TextView) findViewById(R.id.event_description);
 		eventShowMore = (TextView) findViewById(R.id.event_show_more);
-		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
+		//headerTitle = (TextView) findViewById(R.id.actionBarTitle);
 		seeItOnTheMap = (TextView) findViewById(R.id.seeItOnTheMap);
 		courseFirst = (TextView) findViewById(R.id.first_course_type);
 		courseFirstName = (TextView) findViewById(R.id.first_course_name);
@@ -145,7 +146,7 @@ public class EventActivity extends SlideMenuSuper {
 		headerTitle.setTypeface(Utils.getTypeface(this,
 				Constants.TYPEFONT_PROXIMANOVA));
 		headerTitle.setText(Constants.APP_NAME);
-		super.startMenu(Constants.SCROLL_MENU_TIME);
+	//	super.startMenu(Constants.SCROLL_MENU_TIME);
 		drawMap();
 	}
 
@@ -276,12 +277,12 @@ public class EventActivity extends SlideMenuSuper {
 	@Override
 	public void onStart() {
 		super.onStart();
-		EasyTracker.getInstance().activityStart(this);
+		EasyTracker.getInstance(this).activityStart(this);
 	}
 	
 	@Override
 	public void onStop() {
 		super.onStop();
-		EasyTracker.getInstance().activityStop(this);
+		EasyTracker.getInstance(this).activityStop(this);
 	}
 }

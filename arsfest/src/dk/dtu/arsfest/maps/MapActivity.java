@@ -5,29 +5,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
 
-import com.google.analytics.tracking.android.EasyTracker;
-
-import dk.dtu.arsfest.R;
-import dk.dtu.arsfest.SlideMenuSuper;
-import dk.dtu.arsfest.alarms.AlarmHelper;
-import dk.dtu.arsfest.context.ContextAwareHelper;
-import dk.dtu.arsfest.model.Bssid;
-import dk.dtu.arsfest.model.Event;
-import dk.dtu.arsfest.model.Location;
-import dk.dtu.arsfest.parser.JSONParser;
-import dk.dtu.arsfest.utils.Constants;
-import dk.dtu.arsfest.utils.Utils;
 import android.content.Intent;
 import android.graphics.Picture;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.Window;
-import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.webkit.WebView.PictureListener;
 import android.webkit.WebViewClient;
@@ -35,7 +21,18 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MapActivity extends SlideMenuSuper {
+import com.actionbarsherlock.app.SherlockActivity;
+import com.google.analytics.tracking.android.EasyTracker;
+
+import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.alarms.AlarmHelper;
+import dk.dtu.arsfest.context.ContextAwareHelper;
+import dk.dtu.arsfest.model.Bssid;
+import dk.dtu.arsfest.model.Location;
+import dk.dtu.arsfest.utils.Constants;
+import dk.dtu.arsfest.utils.Utils;
+
+public class MapActivity extends SherlockActivity {
 
 	private ImageButton imageButtonLocateMe;
 	private TextView headerTitle, mapView;
@@ -53,12 +50,12 @@ public class MapActivity extends SlideMenuSuper {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_map);
-		super.startMenu(Constants.SCROLL_MENU_TIME);
+		//super.startMenu(Constants.SCROLL_MENU_TIME);
 
-		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
-		headerTitle.setTypeface(Utils.getTypeface(this,
-				Constants.TYPEFONT_PROXIMANOVA));
-		headerTitle.setText(Constants.APP_NAME);
+//		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
+//		headerTitle.setTypeface(Utils.getTypeface(this,
+//				Constants.TYPEFONT_PROXIMANOVA));
+//		headerTitle.setText(Constants.APP_NAME);
 
 		mapView = (TextView) findViewById(R.id.mapTextViewMap);
 		mapView.setTypeface(Utils.getTypeface(this, Constants.TYPEFONT_NEOSANS));
@@ -91,7 +88,6 @@ public class MapActivity extends SlideMenuSuper {
 	 * @author AA
 	 */
 	private void initiateLocationAwarness() {
-		readJson();
 		alarmHelper = new AlarmHelper(this.getApplicationContext());
 		contextAwareHelper = new ContextAwareHelper(
 				this.getApplicationContext(), bssids, locations);
@@ -216,50 +212,16 @@ public class MapActivity extends SlideMenuSuper {
 		return htmlString;
 	}
 
-	private void readJson() {
-
-		JSONParser jsonParser;
-
-		try {
-			InputStream is = getAssets().open("data.JSON");
-			jsonParser = new JSONParser(is);
-
-			this.locations = jsonParser.readLocations();
-			this.bssids = jsonParser.readBssid();
-
-			// all events
-			ArrayList<Event> allEvents = new ArrayList<Event>();
-			for (Location location : this.locations) {
-				for (Event event : location.getEvents()) {
-					if (event != null)
-						allEvents.add(event);
-				}
-			}
-			this.locations.add(new Location("0", "ALL", allEvents));
-
-			// get position of 'all'
-			int allPos = this.locations.size() - 1;
-			Collections.swap(this.locations, allPos, 0);
-
-			for (Location location : locations) {
-				location.sortEventsByTime();
-			}
-
-		} catch (IOException e) {
-			Log.i("ARSFEST", e.getMessage());
-		}
-
-	}
 	
 	@Override
 	public void onStart() {
 		super.onStart();
-		EasyTracker.getInstance().activityStart(this);
+		EasyTracker.getInstance(this).activityStart(this);
 	}
 	
 	@Override
 	public void onStop() {
 		super.onStop();
-		EasyTracker.getInstance().activityStop(this);
+		EasyTracker.getInstance(this).activityStop(this);
 	}
 }

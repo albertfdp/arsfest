@@ -4,12 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/flat_light_grey" >
-    
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        layout="@layout/top_header_bar" />
-    
+        
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >

@@ -17,11 +17,6 @@
         android:background="@color/flat_light_grey"
         android:orientation="vertical" >
 
-        <include
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            layout="@layout/top_header_bar" />
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >

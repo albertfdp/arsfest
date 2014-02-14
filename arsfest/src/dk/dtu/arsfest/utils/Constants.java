@@ -5,13 +5,16 @@ public class Constants {
 	public final static String APP_NAME = "DTU \u00C5RSFEST 2013";
 	
 	public final static String TYPEFONT_WELLFLEET = "Wellfleet-Regular.ttf";
-	public final static String TYPEFONT_NEOSANS = "NeoSans.ttf";
-	public final static String TYPEFONT_PROXIMANOVA = "ProximaNova-Light.otf";
+	public final static String TYPEFONT_NEOSANS = "fonts/NeoSans.ttf";
+	public final static String TYPEFONT_PROXIMANOVA = "fonts/ProximaNova-Light.otf";
 	public final static String TYPEFONT_MRDAFOE = "MrDafoe-Regular.ttf";
 	public final static String TYPEFONT_ROBOTO = "Roboto-Condensed.ttf";
+	public final static String TYPEFONT_BREE_SERIF = "fonts/BreeSerif-Regular.ttf";
 
 	public static final String TAG = "ARSFEST";
 	
+	public static final String JSON_URL = "https://dl.dropboxusercontent.com/u/3792125/arsfest2014/assets/data/data.json";
+	public static final String JSON_CACHE_FILENAME = "data.json";
 	public static final String JSON_TAG_LOCATIONS = "locations";
 	public static final String JSON_TAG_LOCATION_ID = "id";
 	public static final String JSON_TAG_LOCATION_NAME = "name";
@@ -31,7 +34,7 @@ public class Constants {
 	public static final String JSON_TAG_EVENT_TYPE = "type";
 	public static final String JSON_TAG_EVENT_THEME = "theme";
 	public static final String JSON_TAG_EVENT_MENU = "menu";
-	public static final Object JSON_TAG_MENU_DINNER = "Dinner";
+	public static final String JSON_TAG_MENU_DINNER = "Dinner";
 	
 	public static final String JSON_TAG_MENU_COURSE = "course";
 	public static final String JSON_TAG_MENU_COURSE_NAME = "name";
@@ -43,18 +46,19 @@ public class Constants {
 	public static final String MENU_TYPE_FIRST = "First";
 	public static final String MENU_TYPE_MAIN = "Main";
 	public static final String MENU_TYPE_DESSERT = "Dessert";
-	public static final Object MENU_TYPE_DRINK = "Drinks";
+	public static final String MENU_TYPE_DRINK = "Drinks";
 
 	public static final String EXTRA_EVENT = "dk.dtu.arsfest.Event";
 	public static final String EXTRA_LOCATION = "dk.dtu.arsfest.Location";
 	
+	public static final String JSON_DATE_FORMAT = "dd-MM-yyyy:HH:mm";
 	public static final String FEST_START_TIME = "03-05-2013:17:30";
 	public static final String FEST_END_TIME = "04-05-2013:06:00";
 
-	public static final Object EVENT_TYPE_MUSIC = "music";
-	public static final Object EVENT_TYPE_OFFICIAL = "official";
-	public static final Object EVENT_TYPE_FOOD = "food";
-	public static final Object EVENT_TYPE_DANCE = "dance";
+	public static final String EVENT_TYPE_MUSIC = "music";
+	public static final String EVENT_TYPE_OFFICIAL = "official";
+	public static final String EVENT_TYPE_FOOD = "food";
+	public static final String EVENT_TYPE_DANCE = "dance";
 	
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
 	public static final int ALARM_FREQUENCY = 60;
@@ -80,5 +84,7 @@ public class Constants {
 	
 	public static final int MAX_EVENT_INFO = 450;
 	public static final int MIN_EVENT_INFO = 35;
+	
+	public static final String PREFS_LAST_UPDATED_KEY = "PREFS_LAST_UPDATED_KEY";
 
 }

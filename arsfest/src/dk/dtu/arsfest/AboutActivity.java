@@ -1,5 +1,6 @@
 package dk.dtu.arsfest;
 
+import com.actionbarsherlock.app.SherlockActivity;
 import com.google.analytics.tracking.android.EasyTracker;
 
 import android.content.Intent;
@@ -12,7 +13,7 @@ import android.widget.TextView;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 
-public class AboutActivity extends SlideMenuSuper {
+public class AboutActivity extends SherlockActivity {
 
 	private TextView textViewHeaderTitle, textViewGooglePlay, textViewAboutUs,
 			textViewRateUs, textViewAbout, textViewVersion,
@@ -23,20 +24,20 @@ public class AboutActivity extends SlideMenuSuper {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_about);
-		super.startMenu(Constants.SCROLL_MENU_TIME);
+		//super.startMenu(Constants.SCROLL_MENU_TIME);
 		setAbout();
 	}
 	
 	@Override
 	public void onStart() {
 		super.onStart();
-		EasyTracker.getInstance().activityStart(this);
+		EasyTracker.getInstance(this).activityStart(this);
 	}
 	
 	@Override
 	public void onStop() {
 		super.onStop();
-		EasyTracker.getInstance().activityStop(this);
+		EasyTracker.getInstance(this).activityStop(this);
 	}
 
 	/**
@@ -49,10 +50,10 @@ public class AboutActivity extends SlideMenuSuper {
 		Typeface tf_neosans = Utils.getTypeface(this,
 				Constants.TYPEFONT_NEOSANS);
 		
-		textViewHeaderTitle = (TextView) findViewById(R.id.actionBarTitle);
-		textViewHeaderTitle.setTypeface(Utils.getTypeface(this,
-				Constants.TYPEFONT_PROXIMANOVA));
-		textViewHeaderTitle.setText(Constants.APP_NAME);
+//		textViewHeaderTitle = (TextView) findViewById(R.id.actionBarTitle);
+//		textViewHeaderTitle.setTypeface(Utils.getTypeface(this,
+//				Constants.TYPEFONT_PROXIMANOVA));
+//		textViewHeaderTitle.setText(Constants.APP_NAME);
 
 		textViewRateUs = (TextView) findViewById(R.id.textViewRateUs);
 		textViewRateUs.setTypeface(tf_neosans);

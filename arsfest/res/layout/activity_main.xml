@@ -5,32 +5,20 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <com.coboltforge.slidemenu.SlideMenu
-        android:id="@+id/slideMenu"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <!-- include
+        android:layout_width="fill_parent"
+        android:layout_height="140dp"
+        layout="@layout/happening_now"
+        android:background="@color/flat_light_grey" /> -->
 
-    <LinearLayout
-        android:id="@+id/MainLayout2"
+    <!-- <include
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical" >
-
-        <include
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            layout="@layout/top_header_bar" />
-
-        <include
-            android:layout_width="fill_parent"
-            android:layout_height="140dp"
-            layout="@layout/happening_now"
-            android:background="@color/flat_light_grey" />
-
-        <include
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            layout="@layout/activity_scrolling_tabs" />
-    </LinearLayout>
+        layout="@layout/activity_scrolling_tabs" /> -->
+    
+    <com.devspark.sidenavigation.SideNavigationView
+        android:id="@+id/side_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>
