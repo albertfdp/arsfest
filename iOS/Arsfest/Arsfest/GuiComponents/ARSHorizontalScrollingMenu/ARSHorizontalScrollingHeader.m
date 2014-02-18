@@ -9,27 +9,14 @@
 #import "ARSHorizontalScrollingHeader.h"
 
 #define kButtonVisible      3
-#define kColumns            3
 #define kButtonWidth        self.frame.size.width/kButtonVisible
 
-typedef enum ScrollDirection {
-    ScrollDirectionNone,
-    ScrollDirectionRight,
-    ScrollDirectionLeft,
-    ScrollDirectionUp,
-    ScrollDirectionDown,
-    ScrollDirectionCrazy,
-} ScrollDirection;
-
 @interface ARSHorizontalScrollingHeader()
-@property(nonatomic, assign) NSInteger buttonsOffset;
 @property(nonatomic, assign) NSInteger buttonsCount;
-@property (nonatomic, assign) NSInteger lastContentOffset;
-@property (nonatomic, assign) ScrollDirection scrollDirection;
 @end
 
 @implementation ARSHorizontalScrollingHeader
-@synthesize selectedIndex, buttonsCount, buttonsOffset, selectionDelegate = _selectionDelegate, lastContentOffset = _lastContentOffset, scrollDirection = _scrollDirection;
+@synthesize selectedIndex, buttonsCount, selectionDelegate = _selectionDelegate;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -50,116 +37,59 @@ typedef enum ScrollDirection {
 #pragma mark - Populating the rolling view
 
 - (void)addButtonsWithTitles:(NSArray*)titles
-{    
-    buttonsCount = titles.count;
-    for (int i = 0; i < kColumns; i++) {
-        for (NSString* title in titles) {
-            [self addButtonWithTitle:title];
-        }
+{
+    for (NSString* title in titles) {
+        [self addButtonWithTitle:title];
     }
-    NSUInteger numberOfItems = [titles count];
-    [self setContentOffset:CGPointMake(numberOfItems*kButtonWidth, 0)];
 }
 
 - (void)addButtonWithTitle:(NSString *)title
 {
     //Initializing button
-    CGRect buttonFrame = CGRectMake(kButtonWidth * buttonsOffset, 0, kButtonWidth, self.frame.size.height);
+    CGRect buttonFrame = CGRectMake(kButtonWidth * buttonsCount, 0, kButtonWidth, self.frame.size.height);
     UIButton *newButton = [[UIButton alloc] initWithFrame:buttonFrame];
     [newButton setTitle:title forState:UIControlStateNormal];
-    [newButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    newButton.tag = buttonsOffset % buttonsCount;
-    buttonsOffset += 1;
+    [newButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    newButton.tag = buttonsCount;
+    buttonsCount+=1;
     
     [newButton addTarget:self action:@selector(didSelectMenuItem:) forControlEvents:UIControlEventTouchUpInside];
     
     //Resizing scroll view
     [self addSubview:newButton];
-    CGSize newContentSize = CGSizeMake(kButtonWidth*buttonsOffset, self.frame.size.height);
+    CGSize newContentSize = CGSizeMake(kButtonWidth*buttonsCount, self.frame.size.height);
     [self setContentSize:newContentSize];
 }
 
-#pragma mark -
+#pragma mark - Selection handler
 
 - (void)didSelectMenuItem:(UIButton*)button
 {
-    [self didSelectIndex:selectedIndex];
-}
-
-- (void)didSelectIndex:(int)index
-{
-    if ( index < -kButtonVisible+1 || index > buttonsCount-1) {
-        float offset;
-        if (index<0) {
-            offset = (kButtonVisible+1)*kButtonWidth;
-        } else {
-            offset = -kButtonWidth*buttonsCount;
-        }
-
-        NSLog(@"%@",NSStringFromCGPoint(self.contentOffset));
-        CGPoint indexPoint = CGPointMake(self.contentOffset.x + offset, 0);
-        [self setContentOffset:indexPoint];
-        NSLog(@"%@",NSStringFromCGPoint(self.contentOffset));
-    }
-    index = index%4;
-    selectedIndex = index;
-    CGPoint indexPoint = CGPointMake(buttonsCount*kButtonWidth + index*kButtonWidth, 0);
-    [UIView animateWithDuration:0.5 animations:^{
-        NSLog(@"%@",NSStringFromCGPoint(self.contentOffset));
-        [self setContentOffset:indexPoint];
-                NSLog(@"%@",NSStringFromCGPoint(self.contentOffset));
+    NSInteger tag = button.tag;
+    CGPoint menuItemOrigin = button.frame.origin;
+    NSLog(@"Selected index %li", (long)tag);
+    [UIView animateWithDuration:0.3 animations:^{
+        [self setContentOffset:menuItemOrigin];
     }];
     
     if ([_selectionDelegate respondsToSelector:@selector(scrollViewDidSelectMenuItemAtIndex:)]) {
-        [_selectionDelegate scrollViewDidSelectMenuItemAtIndex:index];
-    }
-}
-
-- (void)adjustScrollViewOffset
-{
-    CGFloat maxX = (kColumns-1)*buttonsCount*kButtonWidth;
-    CGFloat minX = buttonsCount*kButtonWidth - kButtonVisible*kButtonWidth;
-
-    if (self.contentOffset.x > maxX) {
-        CGPoint newOffset = CGPointMake(buttonsCount*kButtonWidth, 0);
-        self.contentOffset = newOffset;
+        [_selectionDelegate scrollViewDidSelectMenuItemAtIndex:tag];
     }
     
-    if (self.contentOffset.x < minX) {
-        CGPoint newOffset = CGPointMake((buttonsCount*2-kButtonVisible)*kButtonWidth, 0);
-        self.contentOffset = newOffset;
+#warning add small selected graphic to the selected button
+}
+
+#pragma mark - Scroll view delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    float maxX = (buttonsCount-kButtonVisible)*kButtonWidth;
+    if (scrollView.contentOffset.x > maxX) {
+        [scrollView setContentOffset:CGPointMake(maxX, 0)];
     }
 }
 
 #pragma mark - Scroll view config
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    if (_lastContentOffset < scrollView.contentOffset.x) {
-        _scrollDirection = ScrollDirectionRight;
-    }
-    else if (self.lastContentOffset > scrollView.contentOffset.x) {
-        _scrollDirection = ScrollDirectionLeft;
-    }
-    
-    self.lastContentOffset = scrollView.contentOffset.x;
-    
-    [self adjustScrollViewOffset];
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    if (_scrollDirection == ScrollDirectionRight) {
-        int index = (selectedIndex+1);
-            NSLog(@"%i", index);
-        [self didSelectIndex:index];
-    } else if (_scrollDirection == ScrollDirectionLeft) {
-        int index = (selectedIndex-1);;
-            NSLog(@"%i", index);
-        [self didSelectIndex:index];
-    }
-}
-
 
 - (BOOL)touchesShouldCancelInContentView:(UIView *)view
 {

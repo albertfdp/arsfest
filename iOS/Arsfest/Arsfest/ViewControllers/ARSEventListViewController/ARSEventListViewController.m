@@ -22,7 +22,7 @@
 @end
 
 @implementation ARSEventListViewController
-@synthesize data = _data, events = _events, currentFilter = _currentFilter, carouselScrollView = _carouselScrollView, pageControl = _pageControl;
+@synthesize data = _data, events = _events, currentFilter = _currentFilter, carouselScrollView = _carouselScrollView, pageControl = _pageControl, menuScrollView = _menuScrollView;
 
 #pragma mark -
 #pragma mark - Views
@@ -47,7 +47,10 @@
            forKeyPath:@"events"
               options:0
               context:NULL];
-
+    
+    //Setting up scrolling menu
+    [_menuScrollView addButtonsWithTitles:[NSArray arrayWithObjects:@"ALL",@"LIBRARY",@"OTICON SALEN",@"KANTINE",@"SPORTS HALL", nil]];
+    [_menuScrollView setBackgroundColor:[UIColor grayColor]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

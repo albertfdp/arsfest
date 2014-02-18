@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/GuiComponents/ARSHorizontalScrollingMenu/ARSHorizontalScrollingHeader.m"
-            timestampString = "413844440.097609"
+            timestampString = "414442235.088454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "-initWithCoder:"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,44 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/GuiComponents/ARSHorizontalScrollingMenu/ARSHorizontalScrollingHeader.m"
-            timestampString = "413844440.097609"
+            timestampString = "414442235.088454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "-initWithFrame:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arsfest/GuiComponents/ARSHorizontalScrollingMenu/ARSHorizontalScrollingHeader.m"
-            timestampString = "413848835.227408"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "-adjustScrollViewOffset"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arsfest/GuiComponents/ARSHorizontalScrollingMenu/ARSHorizontalScrollingHeader.m"
-            timestampString = "413849010.658052"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "-adjustScrollViewOffset"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -202,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSEventListViewController/ARSEventListViewController.m"
-            timestampString = "414071513.935327"
+            timestampString = "414442235.088454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSEventListViewController/ARSEventListViewController.m"
-            timestampString = "414071513.935327"
+            timestampString = "414442235.088454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "-didReceiveDataFromTheServer"
             landmarkType = "5">
          </BreakpointContent>
