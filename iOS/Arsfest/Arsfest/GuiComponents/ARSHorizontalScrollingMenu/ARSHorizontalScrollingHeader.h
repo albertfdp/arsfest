@@ -10,14 +10,13 @@
 
 @protocol ARSHorizontalScrollingHeaderDelegate <NSObject>
 
-- (void)scrollViewDidSelectMenuItemAtIndex:(NSUInteger)index;
+- (void)menuDidSelectMenuItemAtIndex:(NSUInteger)index;
 
 @end
 
 
 @interface ARSHorizontalScrollingHeader : UIScrollView <UIScrollViewDelegate>
 
-@property (nonatomic, assign) NSUInteger selectedIndex;
 @property (nonatomic, assign) id<ARSHorizontalScrollingHeaderDelegate> selectionDelegate;
 
 - (void)addButtonsWithTitles:(NSArray*)titles;

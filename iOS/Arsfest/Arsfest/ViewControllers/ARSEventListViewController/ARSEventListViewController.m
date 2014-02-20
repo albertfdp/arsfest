@@ -18,11 +18,13 @@
 @property (nonatomic, assign) ARSLocationType currentFilter;
 @property (nonatomic, strong) ARSData *data;
 @property (nonatomic, strong) NSArray *events;
+@property (nonatomic, strong) NSMutableArray *menuCategories;
 
 @end
 
 @implementation ARSEventListViewController
 @synthesize data = _data, events = _events, currentFilter = _currentFilter, carouselScrollView = _carouselScrollView, pageControl = _pageControl, menuScrollView = _menuScrollView;
+@synthesize menuCategories = _menuCategories;
 
 #pragma mark -
 #pragma mark - Views
@@ -34,6 +36,7 @@
         _data = [[ARSData alloc] init];
         _data.dataDelegate = self;
         _currentFilter = ARSLocationAll;
+        _menuCategories = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -50,7 +53,9 @@
     
     //Setting up scrolling menu
     [_menuScrollView addButtonsWithTitles:[NSArray arrayWithObjects:@"ALL",@"LIBRARY",@"OTICON SALEN",@"KANTINE",@"SPORTS HALL", nil]];
+    
     [_menuScrollView setBackgroundColor:[UIColor grayColor]];
+    [_menuScrollView setSelectionDelegate:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -181,6 +186,15 @@
 
 - (void)addImageToScrollView
 {
+    
+}
+
+#pragma mark -
+#pragma mark - Horizontal menu delegate
+
+- (void)menuDidSelectMenuItemAtIndex:(NSUInteger)index
+{
+    
     
 }
 
