@@ -51,10 +51,12 @@
               options:0
               context:NULL];
     
+    [self.backgroundView setImage:kBackgroundImage];
+    
     //Setting up scrolling menu
     [_menuScrollView addButtonsWithTitles:[NSArray arrayWithObjects:@"ALL",@"LIBRARY",@"OTICON SALEN",@"KANTINE",@"SPORTS HALL", nil]];
     
-    [_menuScrollView setBackgroundColor:[UIColor grayColor]];
+    [_menuScrollView setBackgroundColor:kArsfestColor];
     [_menuScrollView setSelectionDelegate:self];
 }
 
@@ -118,6 +120,10 @@
     [_eventListTableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell setBackgroundColor:[UIColor clearColor]];
+}
 
 #pragma mark -
 #pragma mark - ARSDataDelegate

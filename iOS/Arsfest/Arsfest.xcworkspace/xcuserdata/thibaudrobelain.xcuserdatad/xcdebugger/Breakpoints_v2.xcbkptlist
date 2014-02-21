@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSEventListViewController/ARSEventListViewController.m"
-            timestampString = "414442235.088454"
+            timestampString = "414608151.251098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "-numberOfSectionsInTableView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSEventListViewController/ARSEventListViewController.m"
-            timestampString = "414442235.088454"
+            timestampString = "414608467.495836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "@implementation ARSEventListViewController"
             landmarkType = "3">
          </BreakpointContent>

@@ -32,6 +32,8 @@
     UINavigationController *navigationController = [[UINavigationController alloc]
                                                     initWithRootViewController:eventListViewController];
     
+    [navigationController.navigationBar setBarTintColor:kArsfestColor];
+    [navigationController.navigationBar setTranslucent:YES];
     [self.window setRootViewController:navigationController];
     
     [self.window makeKeyAndVisible];

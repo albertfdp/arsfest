@@ -69,7 +69,7 @@
     [_labelStartTime setText:[NSDate hourMinuteStringFromDate:_event.startTime]];
     [_labelEndTime setText:[NSDate hourMinuteStringFromDate:_event.endTime]];
     [_eventImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", _event.image]]];
-    [_backgroundView setImage:[UIImage imageNamed:@"default_background.png"]];
+    [_backgroundView setImage:kBackgroundImage];
     
     [self configureBorders];
 }
@@ -78,7 +78,7 @@
 {
     [self view:_whereView addBorderTop:YES bottom:YES right:YES left:NO];
     [self view:_whenView addBorderTop:YES bottom:YES right:NO left:NO];
-    [self view:_titleView addBorderTop:YES bottom:NO right:NO left:NO];
+    [self view:_eventImageView addBorderTop:NO bottom:YES right:NO left:NO];
 }
 
 - (void)view:(UIView*)view addBorderTop:(BOOL)top bottom:(BOOL)bottom right:(BOOL)right left:(BOOL)left

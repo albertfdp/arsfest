@@ -52,6 +52,22 @@
 		DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */; };
 		DBCCEA4418A5628200CC87AE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */; };
 		DBCCEA4B18A5723D00CC87AE /* ARSData.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCCEA4A18A5723D00CC87AE /* ARSData.m */; };
+		DBE009C718B78E22000B6DFE /* alphabeat.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009B718B78E22000B6DFE /* alphabeat.png */; };
+		DBE009C818B78E22000B6DFE /* alphabeat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009B818B78E22000B6DFE /* alphabeat@2x.png */; };
+		DBE009C918B78E22000B6DFE /* dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009B918B78E22000B6DFE /* dinner.png */; };
+		DBE009CA18B78E22000B6DFE /* dinner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009BA18B78E22000B6DFE /* dinner@2x.png */; };
+		DBE009CB18B78E22000B6DFE /* dj.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009BB18B78E22000B6DFE /* dj.png */; };
+		DBE009CC18B78E22000B6DFE /* dj@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009BC18B78E22000B6DFE /* dj@2x.png */; };
+		DBE009CD18B78E22000B6DFE /* jazzband.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009BD18B78E22000B6DFE /* jazzband.png */; };
+		DBE009CE18B78E22000B6DFE /* jazzband@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009BE18B78E22000B6DFE /* jazzband@2x.png */; };
+		DBE009CF18B78E22000B6DFE /* leslanciers.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009BF18B78E22000B6DFE /* leslanciers.png */; };
+		DBE009D018B78E22000B6DFE /* leslanciers@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C018B78E22000B6DFE /* leslanciers@2x.png */; };
+		DBE009D118B78E22000B6DFE /* official.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C118B78E22000B6DFE /* official.png */; };
+		DBE009D218B78E22000B6DFE /* official@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C218B78E22000B6DFE /* official@2x.png */; };
+		DBE009D318B78E22000B6DFE /* queenmachine.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C318B78E22000B6DFE /* queenmachine.png */; };
+		DBE009D418B78E22000B6DFE /* queenmachine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C418B78E22000B6DFE /* queenmachine@2x.png */; };
+		DBE009D518B78E22000B6DFE /* veto.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C518B78E22000B6DFE /* veto.png */; };
+		DBE009D618B78E22000B6DFE /* veto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C618B78E22000B6DFE /* veto@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +126,7 @@
 		DB6B317618A43AE500C3EABB /* ARSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEvent.m; path = Model/ARSEvent/ARSEvent.m; sourceTree = "<group>"; };
 		DB8E940F18A78B5900EF214F /* ARSHorizontalScrollingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSHorizontalScrollingHeader.h; path = GuiComponents/ARSHorizontalScrollingMenu/ARSHorizontalScrollingHeader.h; sourceTree = "<group>"; };
 		DB8E941018A78B5900EF214F /* ARSHorizontalScrollingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSHorizontalScrollingHeader.m; path = GuiComponents/ARSHorizontalScrollingMenu/ARSHorizontalScrollingHeader.m; sourceTree = "<group>"; };
+		DB8F53E618B66CA1006625C9 /* ARSGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSGlobals.h; path = Utilities/ARSGlobals.h; sourceTree = "<group>"; };
 		DB98729518AD748B00A085FE /* ARSEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSEventCell.h; path = ViewControllers/ARSEventListViewController/ARSEventCell/ARSEventCell.h; sourceTree = "<group>"; };
 		DB98729618AD748B00A085FE /* ARSEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEventCell.m; path = ViewControllers/ARSEventListViewController/ARSEventCell/ARSEventCell.m; sourceTree = "<group>"; };
 		DB98729818AD74B500A085FE /* ARSEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARSEventCell.xib; sourceTree = "<group>"; };
@@ -124,6 +141,22 @@
 		DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		DBCCEA4918A5723D00CC87AE /* ARSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSData.h; path = Model/ARSData/ARSData.h; sourceTree = "<group>"; };
 		DBCCEA4A18A5723D00CC87AE /* ARSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSData.m; path = Model/ARSData/ARSData.m; sourceTree = "<group>"; };
+		DBE009B718B78E22000B6DFE /* alphabeat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alphabeat.png; sourceTree = "<group>"; };
+		DBE009B818B78E22000B6DFE /* alphabeat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alphabeat@2x.png"; sourceTree = "<group>"; };
+		DBE009B918B78E22000B6DFE /* dinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinner.png; sourceTree = "<group>"; };
+		DBE009BA18B78E22000B6DFE /* dinner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dinner@2x.png"; sourceTree = "<group>"; };
+		DBE009BB18B78E22000B6DFE /* dj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dj.png; sourceTree = "<group>"; };
+		DBE009BC18B78E22000B6DFE /* dj@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dj@2x.png"; sourceTree = "<group>"; };
+		DBE009BD18B78E22000B6DFE /* jazzband.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jazzband.png; sourceTree = "<group>"; };
+		DBE009BE18B78E22000B6DFE /* jazzband@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jazzband@2x.png"; sourceTree = "<group>"; };
+		DBE009BF18B78E22000B6DFE /* leslanciers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leslanciers.png; sourceTree = "<group>"; };
+		DBE009C018B78E22000B6DFE /* leslanciers@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leslanciers@2x.png"; sourceTree = "<group>"; };
+		DBE009C118B78E22000B6DFE /* official.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = official.png; sourceTree = "<group>"; };
+		DBE009C218B78E22000B6DFE /* official@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "official@2x.png"; sourceTree = "<group>"; };
+		DBE009C318B78E22000B6DFE /* queenmachine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = queenmachine.png; sourceTree = "<group>"; };
+		DBE009C418B78E22000B6DFE /* queenmachine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "queenmachine@2x.png"; sourceTree = "<group>"; };
+		DBE009C518B78E22000B6DFE /* veto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veto.png; sourceTree = "<group>"; };
+		DBE009C618B78E22000B6DFE /* veto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "veto@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +230,22 @@
 		DB53D32418AEB87100508DAD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DBE009B718B78E22000B6DFE /* alphabeat.png */,
+				DBE009B818B78E22000B6DFE /* alphabeat@2x.png */,
+				DBE009B918B78E22000B6DFE /* dinner.png */,
+				DBE009BA18B78E22000B6DFE /* dinner@2x.png */,
+				DBE009BB18B78E22000B6DFE /* dj.png */,
+				DBE009BC18B78E22000B6DFE /* dj@2x.png */,
+				DBE009BD18B78E22000B6DFE /* jazzband.png */,
+				DBE009BE18B78E22000B6DFE /* jazzband@2x.png */,
+				DBE009BF18B78E22000B6DFE /* leslanciers.png */,
+				DBE009C018B78E22000B6DFE /* leslanciers@2x.png */,
+				DBE009C118B78E22000B6DFE /* official.png */,
+				DBE009C218B78E22000B6DFE /* official@2x.png */,
+				DBE009C318B78E22000B6DFE /* queenmachine.png */,
+				DBE009C418B78E22000B6DFE /* queenmachine@2x.png */,
+				DBE009C518B78E22000B6DFE /* veto.png */,
+				DBE009C618B78E22000B6DFE /* veto@2x.png */,
 				DB53D32518AEB88800508DAD /* alphabeat.png */,
 				DB53D32618AEB88800508DAD /* alphabeat@2x.png */,
 				DB53D32718AEB88800508DAD /* veto.png */,
@@ -258,6 +307,7 @@
 				DB6B316F18A43A9700C3EABB /* Model */,
 				DB6B313318A4337300C3EABB /* ARSAppDelegate.h */,
 				DB6B313418A4337300C3EABB /* ARSAppDelegate.m */,
+				DB8F53E618B66CA1006625C9 /* ARSGlobals.h */,
 				DB6B313618A4337300C3EABB /* Images.xcassets */,
 				DB6B312B18A4337300C3EABB /* Supporting Files */,
 			);
@@ -459,18 +509,34 @@
 			files = (
 				DB6B312F18A4337300C3EABB /* InfoPlist.strings in Resources */,
 				DB53D32B18AEB88800508DAD /* veto.png in Resources */,
+				DBE009CA18B78E22000B6DFE /* dinner@2x.png in Resources */,
+				DBE009D418B78E22000B6DFE /* queenmachine@2x.png in Resources */,
 				DB98729918AD74B500A085FE /* ARSEventCell.xib in Resources */,
+				DBE009D018B78E22000B6DFE /* leslanciers@2x.png in Resources */,
+				DBE009CD18B78E22000B6DFE /* jazzband.png in Resources */,
 				DB53D33118AEBCD300508DAD /* default_background@2x.png in Resources */,
+				DBE009D118B78E22000B6DFE /* official.png in Resources */,
 				DB53D32A18AEB88800508DAD /* alphabeat@2x.png in Resources */,
 				DB53D33218AEBCD300508DAD /* default_background568h@2x.png in Resources */,
 				DB53D32C18AEB88800508DAD /* veto@2x.png in Resources */,
 				DB53D33018AEBCD300508DAD /* default_background.png in Resources */,
 				DB53D32918AEB88800508DAD /* alphabeat.png in Resources */,
+				DBE009D618B78E22000B6DFE /* veto@2x.png in Resources */,
+				DBE009C718B78E22000B6DFE /* alphabeat.png in Resources */,
+				DBE009C918B78E22000B6DFE /* dinner.png in Resources */,
+				DBE009CC18B78E22000B6DFE /* dj@2x.png in Resources */,
+				DBE009CE18B78E22000B6DFE /* jazzband@2x.png in Resources */,
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
 				DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */,
+				DBE009D518B78E22000B6DFE /* veto.png in Resources */,
+				DBE009D218B78E22000B6DFE /* official@2x.png in Resources */,
+				DBE009CF18B78E22000B6DFE /* leslanciers.png in Resources */,
 				DB6B313718A4337300C3EABB /* Images.xcassets in Resources */,
 				DB53D32118AE595C00508DAD /* Clock.png in Resources */,
+				DBE009CB18B78E22000B6DFE /* dj.png in Resources */,
 				DB9872A018AD7EB000A085FE /* ARSEventViewController.xib in Resources */,
+				DBE009C818B78E22000B6DFE /* alphabeat@2x.png in Resources */,
+				DBE009D318B78E22000B6DFE /* queenmachine.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
