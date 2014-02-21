@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARSEventListViewController">
             <connections>
                 <outlet property="backgroundView" destination="egy-bK-VjV" id="y7E-sw-amq"/>
+                <outlet property="bottomView" destination="Hm7-l5-gTz" id="qVC-BW-Akn"/>
                 <outlet property="carouselScrollView" destination="pek-MQ-rVZ" id="wLQ-Iv-Xz7"/>
                 <outlet property="eventListTableView" destination="gEH-me-qcF" id="1RW-V5-yQF"/>
                 <outlet property="menuScrollView" destination="veF-Cv-biX" id="roS-fp-UNq"/>

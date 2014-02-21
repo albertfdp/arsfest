@@ -54,10 +54,7 @@
     
     [self.backgroundView setImage:kBackgroundImage];
     
-    //Setting up scrolling menu
-    [_menuScrollView addButtonsWithTitles:[NSArray arrayWithObjects:@"ALL",@"KANTINE",@"OTICON SALEN",@"LIBRARY",@"SPORTS HALL", nil]];
-    [_menuScrollView setSelectionDelegate:self];
-    [_menuScrollView addBorderTop:YES bottom:YES right:NO left:NO outside:NO];
+    [self initializeScrollingMenu];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -125,6 +122,13 @@
     [cell setBackgroundColor:[UIColor clearColor]];
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] init];
+    
+    return view;
+}
+
 #pragma mark -
 #pragma mark - ARSDataDelegate
 
@@ -167,7 +171,7 @@
 }
 
 #pragma mark -
-#pragma mark - Setup Navigation Bar
+#pragma mark - View setup
 
 - (void)setupNavigationBar
 {
@@ -180,6 +184,14 @@
 //    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.20 green:0.07 blue:0.3 alpha:0.8]];
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+}
+
+- (void)initializeScrollingMenu
+{
+    //Setting up scrolling menu
+    [_menuScrollView addButtonsWithTitles:[NSArray arrayWithObjects:@"ALL",@"KANTINE",@"OTICON SALEN",@"LIBRARY",@"SPORTS HALL", nil]];
+    [_menuScrollView setSelectionDelegate:self];
+    [_menuScrollView addBorderTop:YES bottom:YES right:NO left:NO outside:NO];
 }
 
 #pragma mark -

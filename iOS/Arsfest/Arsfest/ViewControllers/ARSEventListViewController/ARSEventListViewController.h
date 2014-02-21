@@ -18,4 +18,5 @@
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet ARSHorizontalScrollingHeader *menuScrollView;
 
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 @end
