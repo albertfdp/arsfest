@@ -33,8 +33,12 @@
                                                     initWithRootViewController:eventListViewController];
     
     [navigationController.navigationBar setBarTintColor:kArsfestColor];
+    [navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
     [navigationController.navigationBar setTranslucent:YES];
     [self.window setRootViewController:navigationController];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [self.window makeKeyAndVisible];
     return YES;

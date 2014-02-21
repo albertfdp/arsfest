@@ -76,9 +76,9 @@
 
 - (void)configureBorders
 {
-    [self view:_whereView addBorderTop:YES bottom:YES right:YES left:NO];
-    [self view:_whenView addBorderTop:YES bottom:YES right:NO left:NO];
-    [self view:_eventImageView addBorderTop:NO bottom:YES right:NO left:NO];
+    [_whereView addBorderTop:YES bottom:YES right:YES left:NO outside:YES];
+    [_whenView addBorderTop:YES bottom:YES right:NO left:NO outside:YES];
+    [_eventImageView addBorderTop:NO bottom:YES right:NO left:NO outside:YES];
 }
 
 - (void)view:(UIView*)view addBorderTop:(BOOL)top bottom:(BOOL)bottom right:(BOOL)right left:(BOOL)left

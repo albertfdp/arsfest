@@ -54,10 +54,9 @@
     [self.backgroundView setImage:kBackgroundImage];
     
     //Setting up scrolling menu
-    [_menuScrollView addButtonsWithTitles:[NSArray arrayWithObjects:@"ALL",@"LIBRARY",@"OTICON SALEN",@"KANTINE",@"SPORTS HALL", nil]];
-    
-    [_menuScrollView setBackgroundColor:kArsfestColor];
+    [_menuScrollView addButtonsWithTitles:[NSArray arrayWithObjects:@"ALL",@"KANTINE",@"OTICON SALEN",@"LIBRARY",@"SPORTS HALL", nil]];
     [_menuScrollView setSelectionDelegate:self];
+    [_menuScrollView addBorderTop:YES bottom:YES right:NO left:NO outside:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -200,8 +199,9 @@
 
 - (void)menuDidSelectMenuItemAtIndex:(NSUInteger)index
 {
-    
-    
+    _currentFilter = kNumberOfLocations - index;
+    NSArray *newData = [_data eventsIn:_currentFilter];
+    [self sortAndStore:newData];
 }
 
 @end

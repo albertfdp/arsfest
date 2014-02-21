@@ -68,6 +68,9 @@
 		DBE009D418B78E22000B6DFE /* queenmachine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C418B78E22000B6DFE /* queenmachine@2x.png */; };
 		DBE009D518B78E22000B6DFE /* veto.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C518B78E22000B6DFE /* veto.png */; };
 		DBE009D618B78E22000B6DFE /* veto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C618B78E22000B6DFE /* veto@2x.png */; };
+		DBE009E118B7949D000B6DFE /* dinner_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009DF18B7949D000B6DFE /* dinner_icon.png */; };
+		DBE009E218B7949D000B6DFE /* dinner_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009E018B7949D000B6DFE /* dinner_icon@2x.png */; };
+		DBE009E518B79585000B6DFE /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE009E418B79585000B6DFE /* UIView+Borders.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +160,10 @@
 		DBE009C418B78E22000B6DFE /* queenmachine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "queenmachine@2x.png"; sourceTree = "<group>"; };
 		DBE009C518B78E22000B6DFE /* veto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veto.png; sourceTree = "<group>"; };
 		DBE009C618B78E22000B6DFE /* veto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "veto@2x.png"; sourceTree = "<group>"; };
+		DBE009DF18B7949D000B6DFE /* dinner_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinner_icon.png; sourceTree = "<group>"; };
+		DBE009E018B7949D000B6DFE /* dinner_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dinner_icon@2x.png"; sourceTree = "<group>"; };
+		DBE009E318B79585000B6DFE /* UIView+Borders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Borders.h"; path = "Utilities/UIView+Borders.h"; sourceTree = "<group>"; };
+		DBE009E418B79585000B6DFE /* UIView+Borders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Borders.m"; path = "Utilities/UIView+Borders.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +237,8 @@
 		DB53D32418AEB87100508DAD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DBE009DF18B7949D000B6DFE /* dinner_icon.png */,
+				DBE009E018B7949D000B6DFE /* dinner_icon@2x.png */,
 				DBE009B718B78E22000B6DFE /* alphabeat.png */,
 				DBE009B818B78E22000B6DFE /* alphabeat@2x.png */,
 				DBE009B918B78E22000B6DFE /* dinner.png */,
@@ -407,6 +416,8 @@
 				DB9872A318AD7F7500A085FE /* NSDate+Formatter.m */,
 				DB53D31B18AE352400508DAD /* UIViewController+Edges.h */,
 				DB53D31C18AE352400508DAD /* UIViewController+Edges.m */,
+				DBE009E318B79585000B6DFE /* UIView+Borders.h */,
+				DBE009E418B79585000B6DFE /* UIView+Borders.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -511,6 +522,7 @@
 				DB53D32B18AEB88800508DAD /* veto.png in Resources */,
 				DBE009CA18B78E22000B6DFE /* dinner@2x.png in Resources */,
 				DBE009D418B78E22000B6DFE /* queenmachine@2x.png in Resources */,
+				DBE009E118B7949D000B6DFE /* dinner_icon.png in Resources */,
 				DB98729918AD74B500A085FE /* ARSEventCell.xib in Resources */,
 				DBE009D018B78E22000B6DFE /* leslanciers@2x.png in Resources */,
 				DBE009CD18B78E22000B6DFE /* jazzband.png in Resources */,
@@ -529,6 +541,7 @@
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
 				DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */,
 				DBE009D518B78E22000B6DFE /* veto.png in Resources */,
+				DBE009E218B7949D000B6DFE /* dinner_icon@2x.png in Resources */,
 				DBE009D218B78E22000B6DFE /* official@2x.png in Resources */,
 				DBE009CF18B78E22000B6DFE /* leslanciers.png in Resources */,
 				DB6B313718A4337300C3EABB /* Images.xcassets in Resources */,
@@ -596,6 +609,7 @@
 				DB9872A418AD7F7500A085FE /* NSDate+Formatter.m in Sources */,
 				DB6B317718A43AE500C3EABB /* ARSEvent.m in Sources */,
 				DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */,
+				DBE009E518B79585000B6DFE /* UIView+Borders.m in Sources */,
 				DBCCEA4B18A5723D00CC87AE /* ARSData.m in Sources */,
 				DB8E941118A78B5900EF214F /* ARSHorizontalScrollingHeader.m in Sources */,
 				DB53D31D18AE352400508DAD /* UIViewController+Edges.m in Sources */,
