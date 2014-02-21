@@ -37,6 +37,7 @@
         _data.dataDelegate = self;
         _currentFilter = ARSLocationAll;
         _menuCategories = [[NSMutableArray alloc] init];
+        _events = [[NSArray alloc] init];
     }
     return self;
 }

@@ -48,6 +48,13 @@
 		DB98729F18AD7EB000A085FE /* ARSEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB98729D18AD7EB000A085FE /* ARSEventViewController.m */; };
 		DB9872A018AD7EB000A085FE /* ARSEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB98729E18AD7EB000A085FE /* ARSEventViewController.xib */; };
 		DB9872A418AD7F7500A085FE /* NSDate+Formatter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9872A318AD7F7500A085FE /* NSDate+Formatter.m */; };
+		DBA50A2B18B7C6A0001C8AF1 /* dance_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA50A2518B7C6A0001C8AF1 /* dance_icon.png */; };
+		DBA50A2C18B7C6A0001C8AF1 /* dance_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA50A2618B7C6A0001C8AF1 /* dance_icon@2x.png */; };
+		DBA50A2D18B7C6A0001C8AF1 /* food_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA50A2718B7C6A0001C8AF1 /* food_icon.png */; };
+		DBA50A2E18B7C6A0001C8AF1 /* food_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA50A2818B7C6A0001C8AF1 /* food_icon@2x.png */; };
+		DBA50A2F18B7C6A0001C8AF1 /* music_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA50A2918B7C6A0001C8AF1 /* music_icon.png */; };
+		DBA50A3018B7C6A0001C8AF1 /* music_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA50A2A18B7C6A0001C8AF1 /* music_icon@2x.png */; };
+		DBA50A3318B7C6C6001C8AF1 /* UIImage+Icon.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA50A3218B7C6C6001C8AF1 /* UIImage+Icon.m */; };
 		DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */; };
 		DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */; };
 		DBCCEA4418A5628200CC87AE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */; };
@@ -68,8 +75,6 @@
 		DBE009D418B78E22000B6DFE /* queenmachine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C418B78E22000B6DFE /* queenmachine@2x.png */; };
 		DBE009D518B78E22000B6DFE /* veto.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C518B78E22000B6DFE /* veto.png */; };
 		DBE009D618B78E22000B6DFE /* veto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C618B78E22000B6DFE /* veto@2x.png */; };
-		DBE009E118B7949D000B6DFE /* dinner_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009DF18B7949D000B6DFE /* dinner_icon.png */; };
-		DBE009E218B7949D000B6DFE /* dinner_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009E018B7949D000B6DFE /* dinner_icon@2x.png */; };
 		DBE009E518B79585000B6DFE /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE009E418B79585000B6DFE /* UIView+Borders.m */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +143,14 @@
 		DB98729E18AD7EB000A085FE /* ARSEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ARSEventViewController.xib; path = ViewControllers/ARSEventViewController/ARSEventViewController.xib; sourceTree = "<group>"; };
 		DB9872A218AD7F7500A085FE /* NSDate+Formatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+Formatter.h"; path = "Utilities/NSDate+Formatter.h"; sourceTree = "<group>"; };
 		DB9872A318AD7F7500A085FE /* NSDate+Formatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Formatter.m"; path = "Utilities/NSDate+Formatter.m"; sourceTree = "<group>"; };
+		DBA50A2518B7C6A0001C8AF1 /* dance_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dance_icon.png; sourceTree = "<group>"; };
+		DBA50A2618B7C6A0001C8AF1 /* dance_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dance_icon@2x.png"; sourceTree = "<group>"; };
+		DBA50A2718B7C6A0001C8AF1 /* food_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food_icon.png; sourceTree = "<group>"; };
+		DBA50A2818B7C6A0001C8AF1 /* food_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "food_icon@2x.png"; sourceTree = "<group>"; };
+		DBA50A2918B7C6A0001C8AF1 /* music_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music_icon.png; sourceTree = "<group>"; };
+		DBA50A2A18B7C6A0001C8AF1 /* music_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music_icon@2x.png"; sourceTree = "<group>"; };
+		DBA50A3118B7C6C6001C8AF1 /* UIImage+Icon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Icon.h"; path = "Utilities/UIImage+Icon.h"; sourceTree = "<group>"; };
+		DBA50A3218B7C6C6001C8AF1 /* UIImage+Icon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Icon.m"; path = "Utilities/UIImage+Icon.m"; sourceTree = "<group>"; };
 		DBBEC19318A6DAC200212106 /* ARSEventListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSEventListViewController.h; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.h; sourceTree = "<group>"; };
 		DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEventListViewController.m; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.m; sourceTree = "<group>"; };
 		DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ARSEventListViewController.xib; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.xib; sourceTree = "<group>"; };
@@ -160,8 +173,6 @@
 		DBE009C418B78E22000B6DFE /* queenmachine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "queenmachine@2x.png"; sourceTree = "<group>"; };
 		DBE009C518B78E22000B6DFE /* veto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veto.png; sourceTree = "<group>"; };
 		DBE009C618B78E22000B6DFE /* veto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "veto@2x.png"; sourceTree = "<group>"; };
-		DBE009DF18B7949D000B6DFE /* dinner_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinner_icon.png; sourceTree = "<group>"; };
-		DBE009E018B7949D000B6DFE /* dinner_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dinner_icon@2x.png"; sourceTree = "<group>"; };
 		DBE009E318B79585000B6DFE /* UIView+Borders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Borders.h"; path = "Utilities/UIView+Borders.h"; sourceTree = "<group>"; };
 		DBE009E418B79585000B6DFE /* UIView+Borders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Borders.m"; path = "Utilities/UIView+Borders.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,8 +248,7 @@
 		DB53D32418AEB87100508DAD /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				DBE009DF18B7949D000B6DFE /* dinner_icon.png */,
-				DBE009E018B7949D000B6DFE /* dinner_icon@2x.png */,
+				DBA50A2418B7C5B8001C8AF1 /* Icons */,
 				DBE009B718B78E22000B6DFE /* alphabeat.png */,
 				DBE009B818B78E22000B6DFE /* alphabeat@2x.png */,
 				DBE009B918B78E22000B6DFE /* dinner.png */,
@@ -418,8 +428,23 @@
 				DB53D31C18AE352400508DAD /* UIViewController+Edges.m */,
 				DBE009E318B79585000B6DFE /* UIView+Borders.h */,
 				DBE009E418B79585000B6DFE /* UIView+Borders.m */,
+				DBA50A3118B7C6C6001C8AF1 /* UIImage+Icon.h */,
+				DBA50A3218B7C6C6001C8AF1 /* UIImage+Icon.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		DBA50A2418B7C5B8001C8AF1 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				DBA50A2518B7C6A0001C8AF1 /* dance_icon.png */,
+				DBA50A2618B7C6A0001C8AF1 /* dance_icon@2x.png */,
+				DBA50A2718B7C6A0001C8AF1 /* food_icon.png */,
+				DBA50A2818B7C6A0001C8AF1 /* food_icon@2x.png */,
+				DBA50A2918B7C6A0001C8AF1 /* music_icon.png */,
+				DBA50A2A18B7C6A0001C8AF1 /* music_icon@2x.png */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 		DBBEC19218A6D9E300212106 /* ViewControllers */ = {
@@ -521,10 +546,11 @@
 				DB6B312F18A4337300C3EABB /* InfoPlist.strings in Resources */,
 				DB53D32B18AEB88800508DAD /* veto.png in Resources */,
 				DBE009CA18B78E22000B6DFE /* dinner@2x.png in Resources */,
+				DBA50A3018B7C6A0001C8AF1 /* music_icon@2x.png in Resources */,
 				DBE009D418B78E22000B6DFE /* queenmachine@2x.png in Resources */,
-				DBE009E118B7949D000B6DFE /* dinner_icon.png in Resources */,
 				DB98729918AD74B500A085FE /* ARSEventCell.xib in Resources */,
 				DBE009D018B78E22000B6DFE /* leslanciers@2x.png in Resources */,
+				DBA50A2B18B7C6A0001C8AF1 /* dance_icon.png in Resources */,
 				DBE009CD18B78E22000B6DFE /* jazzband.png in Resources */,
 				DB53D33118AEBCD300508DAD /* default_background@2x.png in Resources */,
 				DBE009D118B78E22000B6DFE /* official.png in Resources */,
@@ -532,16 +558,19 @@
 				DB53D33218AEBCD300508DAD /* default_background568h@2x.png in Resources */,
 				DB53D32C18AEB88800508DAD /* veto@2x.png in Resources */,
 				DB53D33018AEBCD300508DAD /* default_background.png in Resources */,
+				DBA50A2F18B7C6A0001C8AF1 /* music_icon.png in Resources */,
 				DB53D32918AEB88800508DAD /* alphabeat.png in Resources */,
 				DBE009D618B78E22000B6DFE /* veto@2x.png in Resources */,
 				DBE009C718B78E22000B6DFE /* alphabeat.png in Resources */,
+				DBA50A2E18B7C6A0001C8AF1 /* food_icon@2x.png in Resources */,
+				DBA50A2C18B7C6A0001C8AF1 /* dance_icon@2x.png in Resources */,
 				DBE009C918B78E22000B6DFE /* dinner.png in Resources */,
 				DBE009CC18B78E22000B6DFE /* dj@2x.png in Resources */,
 				DBE009CE18B78E22000B6DFE /* jazzband@2x.png in Resources */,
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
 				DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */,
 				DBE009D518B78E22000B6DFE /* veto.png in Resources */,
-				DBE009E218B7949D000B6DFE /* dinner_icon@2x.png in Resources */,
+				DBA50A2D18B7C6A0001C8AF1 /* food_icon.png in Resources */,
 				DBE009D218B78E22000B6DFE /* official@2x.png in Resources */,
 				DBE009CF18B78E22000B6DFE /* leslanciers.png in Resources */,
 				DB6B313718A4337300C3EABB /* Images.xcassets in Resources */,
@@ -602,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB98729F18AD7EB000A085FE /* ARSEventViewController.m in Sources */,
+				DBA50A3318B7C6C6001C8AF1 /* UIImage+Icon.m in Sources */,
 				DB6B313118A4337300C3EABB /* main.m in Sources */,
 				DB98729718AD748B00A085FE /* ARSEventCell.m in Sources */,
 				DB6B317418A43AD200C3EABB /* ARSLocation.m in Sources */,
