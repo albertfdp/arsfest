@@ -189,9 +189,9 @@
 - (void)initializeScrollingMenu
 {
     //Setting up scrolling menu
-    [_menuScrollView addButtonsWithTitles:[NSArray arrayWithObjects:@"ALL",@"KANTINE",@"OTICON SALEN",@"LIBRARY",@"SPORTS HALL", nil]];
+    [_menuScrollView addButtonsWithTitles:[NSArray arrayWithObjects:@"ALL",@"KANTINE",@"OTICON HALL",@"LIBRARY",@"SPORTS HALL", nil]];
     [_menuScrollView setSelectionDelegate:self];
-    [_menuScrollView addBorderTop:YES bottom:NO right:NO left:NO outside:NO];
+//    [_menuScrollView addBorderTop:YES bottom:NO right:NO left:NO outside:NO];
 }
 
 #pragma mark -

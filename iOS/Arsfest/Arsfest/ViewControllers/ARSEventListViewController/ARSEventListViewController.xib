@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C62" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -21,18 +21,60 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="egy-bK-VjV">
-                    <rect key="frame" x="0.0" y="-5" width="320" height="568"/>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ldB-GE-Mba">
+                    <rect key="frame" x="-20" y="-25" width="360" height="608"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <view contentMode="scaleToFill" id="Hm7-l5-gTz">
-                    <rect key="frame" x="0.0" y="180" width="320" height="300"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="egy-bK-VjV">
+                            <rect key="frame" x="20" y="20" width="320" height="568"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="568" id="7je-mp-cGI"/>
+                                <constraint firstAttribute="width" constant="320" id="Vxp-Ro-ecz"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qe7-aa-4vA">
+                            <rect key="frame" x="40" y="45" width="280" height="134"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pek-MQ-rVZ">
+                                    <rect key="frame" x="6" y="5" width="268" height="124"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="AHZ-Pt-UVM">
+                                            <rect key="frame" x="115" y="93" width="39" height="37"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </pageControl>
+                                    </subviews>
+                                </scrollView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="134" id="cQa-RW-XWE"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="360" id="517-2d-ODY"/>
+                        <constraint firstItem="egy-bK-VjV" firstAttribute="leading" secondItem="ldB-GE-Mba" secondAttribute="leading" constant="20" id="P53-Pv-szy"/>
+                        <constraint firstItem="Qe7-aa-4vA" firstAttribute="leading" secondItem="ldB-GE-Mba" secondAttribute="leading" constant="40" id="WqK-C5-SGD"/>
+                        <constraint firstItem="egy-bK-VjV" firstAttribute="top" secondItem="ldB-GE-Mba" secondAttribute="top" constant="20" id="cOQ-wf-dst"/>
+                        <constraint firstAttribute="bottom" secondItem="egy-bK-VjV" secondAttribute="bottom" constant="20" id="qgX-P6-m6y"/>
+                        <constraint firstItem="Qe7-aa-4vA" firstAttribute="top" secondItem="ldB-GE-Mba" secondAttribute="top" constant="45" id="sl7-HL-8vt"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hm7-l5-gTz">
+                    <rect key="frame" x="0.0" y="162" width="320" height="318"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gEH-me-qcF">
-                            <rect key="frame" x="0.0" y="61" width="320" height="239"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gEH-me-qcF">
+                            <rect key="frame" x="0.0" y="45" width="320" height="273"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="320" id="IAG-lg-bZP"/>
+                            </constraints>
                             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -41,32 +83,33 @@
                                 <outlet property="delegate" destination="-1" id="dhf-Zf-H8m"/>
                             </connections>
                         </tableView>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="veF-Cv-biX" customClass="ARSHorizontalScrollingHeader">
-                            <rect key="frame" x="0.0" y="8" width="320" height="45"/>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veF-Cv-biX" customClass="ARSHorizontalScrollingHeader">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="9Bs-DY-5lX"/>
+                                <constraint firstAttribute="width" constant="320" id="GD5-qN-n1u"/>
+                            </constraints>
                         </scrollView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" id="Qe7-aa-4vA">
-                    <rect key="frame" x="20" y="20" width="280" height="134"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="pek-MQ-rVZ">
-                            <rect key="frame" x="6" y="5" width="268" height="124"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" id="AHZ-Pt-UVM">
-                                    <rect key="frame" x="115" y="93" width="39" height="37"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </pageControl>
-                            </subviews>
-                        </scrollView>
-                    </subviews>
-                    <color key="backgroundColor" red="0.89357591711956519" green="0.89357591711956519" blue="0.89357591711956519" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="veF-Cv-biX" firstAttribute="leading" secondItem="Hm7-l5-gTz" secondAttribute="leading" id="KAC-62-R0n"/>
+                        <constraint firstItem="gEH-me-qcF" firstAttribute="top" secondItem="veF-Cv-biX" secondAttribute="bottom" id="eg7-Vc-vxp"/>
+                        <constraint firstItem="veF-Cv-biX" firstAttribute="top" secondItem="Hm7-l5-gTz" secondAttribute="top" id="es5-dM-pbo"/>
+                        <constraint firstItem="gEH-me-qcF" firstAttribute="leading" secondItem="Hm7-l5-gTz" secondAttribute="leading" id="lBs-Ob-xF8"/>
+                        <constraint firstAttribute="width" constant="320" id="nWb-pm-20Y"/>
+                        <constraint firstAttribute="bottom" secondItem="gEH-me-qcF" secondAttribute="bottom" id="zjY-6C-DjL"/>
+                    </constraints>
                 </view>
             </subviews>
+            <constraints>
+                <constraint firstItem="Hm7-l5-gTz" firstAttribute="top" secondItem="Qe7-aa-4vA" secondAttribute="bottom" constant="8" id="ErR-Rw-SAI"/>
+                <constraint firstAttribute="bottom" secondItem="Hm7-l5-gTz" secondAttribute="bottom" id="jgj-zE-7t3"/>
+                <constraint firstItem="Hm7-l5-gTz" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="wEf-Ru-J22"/>
+                <constraint firstItem="ldB-GE-Mba" firstAttribute="top" secondItem="1" secondAttribute="top" constant="-25" id="yH1-gZ-D1b"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
