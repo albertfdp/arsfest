@@ -29,13 +29,9 @@
     
     ARSEventListViewController *eventListViewController = [[ARSEventListViewController alloc] initWithNibName:@"ARSEventListViewController" bundle:nil];
     
-    UINavigationController *navigationController = [[UINavigationController alloc]
+    ARSNavigationController *navigationController = [[ARSNavigationController alloc]
                                                     initWithRootViewController:eventListViewController];
     
-    [navigationController.navigationBar setBarTintColor:kArsfestColor];
-    [navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    
-    [navigationController.navigationBar setTranslucent:YES];
     [self.window setRootViewController:navigationController];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
@@ -70,5 +66,6 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 @end
