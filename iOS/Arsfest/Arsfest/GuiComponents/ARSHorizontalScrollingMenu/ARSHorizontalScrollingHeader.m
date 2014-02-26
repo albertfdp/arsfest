@@ -8,16 +8,23 @@
 
 #import "ARSHorizontalScrollingHeader.h"
 
-#define kButtonVisible      3
-#define kButtonWidth        self.frame.size.width/kButtonVisible
+#define kButtonVisible              3
+#define kButtonWidth                self.frame.size.width/kButtonVisible
+#define kFeedbackHeight             -self.frame.size.height/10
+#define kFeedbackSelectedColor      [UIColor colorWithRed:119/255.f green:6/255.f blue:148/255.f alpha:1]
+#define kFeedbackDeselectedColor    [UIColor colorWithRed:153/255.f green:48/255.f blue:179/255.f alpha:1]
+
+static BOOL kSwipeEnabled = NO;
 
 @interface ARSHorizontalScrollingHeader() <UIGestureRecognizerDelegate>
 @property (nonatomic, assign) NSInteger selectedIndex;
-@property(nonatomic, assign) NSInteger buttonsCount;
+@property (nonatomic, assign) NSInteger buttonsCount;
+@property (nonatomic, strong) NSMutableArray *buttonsFeedback;
 @end
 
 @implementation ARSHorizontalScrollingHeader
 @synthesize selectedIndex = _selectedIndex, buttonsCount, selectionDelegate = _selectionDelegate;
+@synthesize buttonsFeedback = _buttonsFeedback;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -33,15 +40,20 @@
         return nil;
     self.delegate = self;
     
-    [self setScrollEnabled:NO];
+    _buttonsFeedback = [[NSMutableArray alloc] init];
+    _selectedIndex = 0;
     
-    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    swipeRecognizer.direction = (UISwipeGestureRecognizerDirectionLeft);
-    [self addGestureRecognizer:swipeRecognizer];
-    
-    UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-    rightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
-    [self addGestureRecognizer:rightRecognizer];
+    if (kSwipeEnabled) {
+        [self setScrollEnabled:NO];
+        
+        UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+        swipeRecognizer.direction = (UISwipeGestureRecognizerDirectionLeft);
+        [self addGestureRecognizer:swipeRecognizer];
+        
+        UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+        rightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+        [self addGestureRecognizer:rightRecognizer];
+    }
     
     return self;
 }
@@ -50,8 +62,11 @@
 
 - (void)addButtonsWithTitles:(NSArray*)titles
 {
+    int i = 0;
     for (NSString* title in titles) {
         [self addButtonWithTitle:title];
+        [self addFeedbackToButtonAtIndex:i];
+        i++;
     }
 }
 
@@ -74,6 +89,20 @@
     [self setContentSize:newContentSize];
 }
 
+- (void)addFeedbackToButtonAtIndex:(NSInteger)index
+{
+    float originX = kButtonWidth*index;
+    float originY = self.frame.size.height;
+    CGRect feedbackFrame = CGRectMake(originX, originY, kButtonWidth, kFeedbackHeight);
+    
+    UIView *feedbackView = [[UIView alloc] initWithFrame:feedbackFrame];
+    UIColor *feedbackColor = (index == 0)?kFeedbackSelectedColor:kFeedbackDeselectedColor;
+    [feedbackView setBackgroundColor:feedbackColor];
+    
+    [_buttonsFeedback addObject:feedbackView];
+    [self addSubview:feedbackView];
+}
+
 #pragma mark - Selection handler
 
 - (void)didSelectMenuItem:(UIButton*)button
@@ -85,19 +114,29 @@
 - (void)didSelectButtonAtIndex:(NSInteger)index
 {
     __block int originX = kButtonWidth*index;
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         originX = MIN(originX, (buttonsCount-kButtonVisible)*kButtonWidth);
         CGPoint menuItemOrigin = CGPointMake(originX, 0);
         [self setContentOffset:menuItemOrigin];
     }];
     
+    [self changeFeedbackForSelectedIndex:index deselectedIndex:_selectedIndex];
     _selectedIndex = index;
     
     if ([_selectionDelegate respondsToSelector:@selector(menuDidSelectMenuItemAtIndex:)]) {
         [_selectionDelegate menuDidSelectMenuItemAtIndex:_selectedIndex];
     }
+}
+
+- (void)changeFeedbackForSelectedIndex:(NSInteger)selectedIndex deselectedIndex:(NSInteger)deselectedIndex
+{
+    UIView *deselectedFeedback = [_buttonsFeedback objectAtIndex:deselectedIndex];
+    UIView *selectedFeedback = [_buttonsFeedback objectAtIndex:selectedIndex];
     
-#warning add small selected graphic to the selected button
+    [UIView animateWithDuration:0.2 animations:^{
+        [deselectedFeedback setBackgroundColor:kFeedbackDeselectedColor];
+        [selectedFeedback setBackgroundColor:kFeedbackSelectedColor];
+    }];
 }
 
 #pragma mark - Scroll view delegate
@@ -105,8 +144,12 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     float maxX = (buttonsCount-kButtonVisible)*kButtonWidth;
+    float minX = 0;
     if (scrollView.contentOffset.x > maxX) {
         [scrollView setContentOffset:CGPointMake(maxX, 0)];
+    }
+    if (scrollView.contentOffset.x < minX) {
+        [scrollView setContentOffset:CGPointMake(minX, 0)];
     }
 }
 
@@ -122,9 +165,9 @@
 {
     NSInteger selectedIndex;
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
-        selectedIndex = MAX(0, --_selectedIndex);
+        selectedIndex = MAX(0, _selectedIndex - 1);
     } else {
-        selectedIndex = MIN(buttonsCount, ++_selectedIndex);
+        selectedIndex = MIN(buttonsCount-1, _selectedIndex + 1);
     }
     [self didSelectButtonAtIndex:selectedIndex];
 }
