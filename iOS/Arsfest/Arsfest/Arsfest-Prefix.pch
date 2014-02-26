@@ -19,5 +19,3 @@
 #import "ARSGlobals.h"
 #import "UIView+Borders.h"
 #import "UIImage+Icon.h"
-#import "UIBarButtonItem+RightBarItem.h"
-#import "ARSNavigationController.h"
