@@ -2,22 +2,16 @@ package dk.dtu.arsfest;
 
 import android.os.Bundle;
 
-import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.MenuItem;
 
-public abstract class BaseFragment extends SherlockFragmentActivity {
+public abstract class BaseActivity extends SherlockActivity {
 	
 	@Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        setTitle();
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
-
-    protected void setTitle(){
-        getActivity().setTitle(getTitleResourceId());
-    }
-
-    public abstract int getTitleResourceId();
+	
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

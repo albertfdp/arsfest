@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
     android:id="@+id/MainLayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/flat_lila_shadow"
     android:orientation="vertical" >
 
     <!-- include
@@ -15,6 +17,15 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         layout="@layout/activity_scrolling_tabs" /> -->
+        
+  	<it.gmariotti.cardslib.library.view.CardView
+		 android:id="@+id/carddemo1"
+		 android:layout_width="match_parent"
+		 android:layout_height="wrap_content"
+		 android:layout_marginLeft="12dp"
+		 android:layout_marginRight="12dp"
+		 android:layout_marginTop="12dp"
+		 card:card_layout_resourceID="@layout/card_thumbnail_layout" />
     
     <com.devspark.sidenavigation.SideNavigationView
         android:id="@+id/side_navigation_view"
