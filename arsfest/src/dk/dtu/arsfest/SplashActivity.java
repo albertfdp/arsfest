@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -22,12 +23,12 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 import dk.dtu.arsfest.utils.Constants;
-import dk.dtu.arsfest.utils.Utils;
+import dk.dtu.arsfest.utils.FileCache;
 
 public class SplashActivity extends SherlockActivity {
 	
 	private AsyncHttpClient client;
-	
+		
 	private ProgressBar progressBar;
 	
 	private TextView splashTitle;
@@ -57,12 +58,10 @@ public class SplashActivity extends SherlockActivity {
 		
 		if (checkNeedsUpdate()) {
 			updateJson();
-		}
-		
-		Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-		startActivity(intent);
-		
-	
+		} else {
+			Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+			startActivity(intent);
+		}	
 	}
 	
 	private void updateJson() {
@@ -84,36 +83,29 @@ public class SplashActivity extends SherlockActivity {
 			@Override
 			public void onSuccess(String response) {
 				
+				SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(SplashActivity.this);
+				SharedPreferences.Editor editor = prefs.edit();
+				editor.putLong(Constants.PREFS_LAST_UPDATED_KEY, System.currentTimeMillis());
+				editor.commit();
+				
 				try {
-					Utils.writeToCache(getBaseContext(), response);
-					SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(SplashActivity.this);
-					SharedPreferences.Editor editor = prefs.edit();
-					editor.putLong(Constants.PREFS_LAST_UPDATED_KEY, System.currentTimeMillis());
-					editor.commit();
+					FileCache.createCacheFile(getApplicationContext(), Constants.JSON_CACHE_FILENAME, response);
 				} catch (IOException e) {
-					Crouton.showText(SplashActivity.this, getString(R.string.splash_json_error), Style.ALERT);
+					Log.e(Constants.TAG, e.getMessage());
 				}
-				
-				Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-				startActivity(intent);
-				
-//				/** Read the server response, and attempt to parse the JSON */
-//				Gson gson = new GsonBuilder().setDateFormat(Constants.JSON_DATE_FORMAT).create();
-//				LocationList locList = gson.fromJson(response, LocationList.class);
-//				ArrayList<Location> locations = locList.getLocations();
-//				Log.d(Constants.TAG, locations.toString());
 			}
 			
 			@Override
 			public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
 				Crouton.showText(SplashActivity.this, getString(R.string.splash_json_error), Style.ALERT);
-				Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-				startActivity(intent);
 			}
 			
 			@Override
 			public void onFinish() {
 				progressBar.setVisibility(View.GONE);
+				Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+				startActivity(intent);
+				finish();
 			}
 			
 		});
@@ -130,7 +122,8 @@ public class SplashActivity extends SherlockActivity {
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTimeInMillis(System.currentTimeMillis());
 		calendar.add(Calendar.DAY_OF_YEAR, -1);
-		return calendar.getTimeInMillis() > lastUpdated;
+		//return calendar.getTimeInMillis() > lastUpdated;
+		return true;
 	}
 	
 	@Override

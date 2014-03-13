@@ -4,7 +4,6 @@ public class Bssid {
 	
 	private String bssid;
 	private String location;
-	//private int rssid; optional
 	
 	public Bssid (String bssid, String location) {
 		this.bssid = bssid;

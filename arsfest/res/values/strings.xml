@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	
+    <!-- ACTIVITIES -->
+    <string name="activity_main">Events</string>
+    
     <!-- SPLASH -->
     <string name="splash_title">DTU \u00C5rsfest</string>
     <string name="splash_subtitle">Coming next 9th May 2014</string>

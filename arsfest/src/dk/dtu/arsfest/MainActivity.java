@@ -1,11 +1,13 @@
 package dk.dtu.arsfest;
 
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
@@ -14,77 +16,56 @@ import com.devspark.sidenavigation.ISideNavigationCallback;
 import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.SideNavigationView.Mode;
 import com.google.analytics.tracking.android.EasyTracker;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonIOException;
-import com.google.gson.JsonSyntaxException;
 
-import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
-import dk.dtu.arsfest.model.LocationList;
 import dk.dtu.arsfest.utils.Constants;
-import dk.dtu.arsfest.utils.Utils;
+import dk.dtu.arsfest.utils.FileCache;
 
-public class MainActivity extends SherlockActivity {
-	
-	private LinkedList<Location> locations;
+public class MainActivity extends BaseFragment {
 	
 	private SideNavigationView sideNavigationView;
+	
+	private ArrayList<Location> locations;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_main);
-
-		sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_view);
-		sideNavigationView.setMenuItems(R.menu.side_navigation_menu);
-	    sideNavigationView.setMenuClickCallback(new ISideNavigationCallback() {
-			@Override
-			public void onSideNavigationItemClick(int itemId) {}
-		});
+//		sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_view);
+//		sideNavigationView.setMenuItems(R.menu.side_navigation_menu);
+//	    sideNavigationView.setMenuClickCallback(new ISideNavigationCallback() {
+//			@Override
+//			public void onSideNavigationItemClick(int itemId) {}
+//		});
+//	    
+//	    sideNavigationView.setMode(Mode.LEFT);
+//	    
+//	    getSupportActionBar().setHomeButtonEnabled(true);
+//	    getSupportActionBar().setTitle("Events");
 	    
-	    sideNavigationView.setMode(Mode.LEFT);
+	    readProgramme();
 	    
-	    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-	    getSupportActionBar().setTitle("Events");
-	    
-	    fetchData();
 	}
 	
-	private void fetchData() {
-		/** Read the server response, and attempt to parse the JSON */
-		Gson gson = new GsonBuilder().setDateFormat(Constants.JSON_DATE_FORMAT).create();
-		
-		LocationList locList = null;
-		
+	@Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.activity_main, container, false);
+    }
+	
+	private void readProgramme() {
+		locations = new ArrayList<Location>();
 		try {
-			locList = gson.fromJson(new InputStreamReader(Utils.readFromCache(getBaseContext())), LocationList.class);
-		} catch (JsonIOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonSyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			locations = FileCache.readCacheFile(MainActivity.this.getActivity(), Constants.JSON_CACHE_FILENAME);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Log.e(Constants.TAG, "Could not read file from cache. Reading from assets, could be not updated");
+			Log.e(Constants.TAG, e.getMessage());
+			// TODO : locations = FileCache.readFromAssets();
 		}
 		
-		locations = new LinkedList<Location>(locList.getLocations());
-	}
-	
-	private void setUpData() {
-		LinkedList<Event> events = new LinkedList<Event>();
-		
 		for (Location location : locations) {
-			events.addAll(location.getEvents());
 			location.sortEventsByTime();
 		}
 		
-		locations.add(new Location("0", "ALL", new ArrayList<Event>(events)));
-				
-		/** sort events by time */
 	}
 
 	@Override
@@ -135,6 +116,11 @@ public class MainActivity extends SherlockActivity {
 		        return super.onOptionsItemSelected(item);
 		    }
 		    return true;
+	}
+
+	@Override
+	public int getTitleResourceId() {
+		return R.string.activity_main;
 	}
 	
 }

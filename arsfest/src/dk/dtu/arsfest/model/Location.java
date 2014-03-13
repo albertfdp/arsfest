@@ -2,6 +2,7 @@ package dk.dtu.arsfest.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 
 import android.os.Parcel;
@@ -16,16 +17,9 @@ public class Location implements Parcelable {
 	private String description;
 	private ArrayList<Event> events;
 	
-	public Location(String id){
-		this.id = id;
-	}
-	
-	public Location(String id, String name, ArrayList<Event> events) {
-		this.id = id;
-		this.name = name;
-		this.events = events;
-	}
-	public Location(String id, String name, double latitude, double longitude, String description, ArrayList<Event> events) {
+	public Location(String id, String name, double latitude, double longitude,
+			String description, ArrayList<Event> events) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.latitude = latitude;
@@ -33,15 +27,7 @@ public class Location implements Parcelable {
 		this.description = description;
 		this.events = events;
 	}
-	
-	public Location(String id, String name, double latitude, double longitude, String description) {
-		this.id = id;
-		this.name = name;
-		this.latitude = latitude;
-		this.longitude = longitude;
-		this.description = description;
-	}
-	
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -83,7 +69,7 @@ public class Location implements Parcelable {
 	}
 	
 	public void sortEventsByTime() {
-		Collections.sort(this.events);
+		Collections.sort(this.events, Event.START_TIME);
 	}
 	
 	public ArrayList<Event> getEvents(){
@@ -119,6 +105,15 @@ public class Location implements Parcelable {
 		dest.writeDouble(longitude);
 		dest.writeDouble(latitude);
 	}
+	
+	public static final Comparator<Location> TIME = new Comparator<Location>() {
+
+		@Override
+		public int compare(Location lhs, Location rhs) {
+			return 0;
+		}
+		
+	};
 	
 	public static final Parcelable.Creator<Location> CREATOR = new Parcelable.Creator<Location>()  {
 
