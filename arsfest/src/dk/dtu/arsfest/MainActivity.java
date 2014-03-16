@@ -1,7 +1,9 @@
 package dk.dtu.arsfest;
 
 import it.gmariotti.cardslib.library.internal.Card;
+import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
 import it.gmariotti.cardslib.library.internal.CardHeader;
+import it.gmariotti.cardslib.library.view.CardListView;
 import it.gmariotti.cardslib.library.view.CardView;
 
 import java.io.IOException;
@@ -9,8 +11,6 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
@@ -19,16 +19,25 @@ import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.SideNavigationView.Mode;
 import com.google.analytics.tracking.android.EasyTracker;
 
+import dk.dtu.arsfest.cards.HappeningNowHeader;
+import dk.dtu.arsfest.cards.HappenningNowCard;
+import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.FileCache;
 import dk.dtu.arsfest.utils.PicassoThumbnail;
+import dk.dtu.arsfest.utils.Utils;
 
 public class MainActivity extends BaseActivity {
 	
 	private SideNavigationView sideNavigationView;
 	
 	private ArrayList<Location> locations;
+	private ArrayList<Event> events = new ArrayList<Event>();
+	
+	private HappenningNowCard happeningNowCard;
+	private CardView happeningNowCardView;
+	private ArrayList<Card> cards;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -49,7 +58,8 @@ public class MainActivity extends BaseActivity {
 	    getSupportActionBar().setTitle("Events");
 	    
 	    readProgramme();
-	    
+	    onHappenningNow(events.get(0));
+	    //createCards();
 	}
 	
 	private void readProgramme() {
@@ -63,37 +73,64 @@ public class MainActivity extends BaseActivity {
 		}
 		
 		for (Location location : locations) {
+			events.addAll(location.getEvents());
 			location.sortEventsByTime();
 		}
+		
+	}
+	
+	private void onHappenningNow(Event event) {
+		happeningNowCard = new HappenningNowCard(this);
+		
+		CardHeader cardHeader = new HappeningNowHeader(this);
+		cardHeader.setTitle("Happening now");
+		happeningNowCard.addCardHeader(cardHeader);
+		
+		PicassoThumbnail thumbnail = new PicassoThumbnail(this);
+		thumbnail.setFilename(event.getImage());
+		happeningNowCard.addCardThumbnail(thumbnail);
+		
+		happeningNowCard.setTitle(event.getName());
+		happeningNowCard.setMember(Utils.getEventTime(event.getStartTime()));
+				
+		happeningNowCardView = (CardView) findViewById(R.id.card_happening_now);
+		happeningNowCardView.setCard(happeningNowCard);
+		
+		
+	}
+	
+	private void createCards() {
+		cards = new ArrayList<Card>();
+		
+		for (Event event : events) {
+			Card card = new Card(this, R.layout.card_event_inner);
+			card.setTitle(event.getStartTime().toString());
+			
+			CardHeader cardHeader = new CardHeader(this);
+			cardHeader.setTitle(event.getName());
+			
+			PicassoThumbnail cardThumbnail = new PicassoThumbnail(this);
+			cardThumbnail.setFilename(event.getImage());
+			cardThumbnail.setExternalUsage(true);
+			
+			card.addCardHeader(cardHeader);
+			card.addCardThumbnail(cardThumbnail);
+			
+			card.setSwipeable(true);
+			
+			cards.add(card);
+		}
+		
+		CardArrayAdapter cardArrayAdapter = new CardArrayAdapter(this, cards);
+		CardListView cardsView = (CardListView) findViewById(R.id.event_list);
+		if (cardsView != null) cardsView.setAdapter(cardArrayAdapter);
 		
 	}
 
 	@Override
 	protected void onStart() {
 		super.onStart();
-		EasyTracker.getInstance(this).activityStart(this);
-		
-		Card card = new Card(this, R.layout.card_event_inner);
-		card.setTitle("What time");
-		card.setSwipeable(true);
-		card.setOnClickListener(new Card.OnCardClickListener() {
-			
-			@Override
-			public void onClick(Card card, View view) {
-				Toast.makeText(MainActivity.this,"Clickable card", Toast.LENGTH_LONG).show();
-			}
-		});
-		
-		CardHeader cardHeader = new CardHeader(this);
-		cardHeader.setTitle("This is fucking awesome");
-		card.addCardHeader(cardHeader);
-		
-		PicassoThumbnail thumbnail = new PicassoThumbnail(this);
-		card.addCardThumbnail(thumbnail);
-		
-		CardView cardView = (CardView) findViewById(R.id.carddemo1);
-		cardView.setCard(card);
-		
+		EasyTracker.getInstance(this).activityStart(this);		
 	}
 		
 	@Override
