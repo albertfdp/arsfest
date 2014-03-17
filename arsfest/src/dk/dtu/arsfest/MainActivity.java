@@ -18,6 +18,7 @@ import com.devspark.sidenavigation.ISideNavigationCallback;
 import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.SideNavigationView.Mode;
 import com.google.analytics.tracking.android.EasyTracker;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 import dk.dtu.arsfest.cards.HappeningNowHeader;
 import dk.dtu.arsfest.cards.HappenningNowCard;
@@ -25,7 +26,7 @@ import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.FileCache;
-import dk.dtu.arsfest.utils.PicassoThumbnail;
+import dk.dtu.arsfest.utils.UniversalImageLoaderThumbnail;
 import dk.dtu.arsfest.utils.Utils;
 
 public class MainActivity extends BaseActivity {
@@ -38,6 +39,8 @@ public class MainActivity extends BaseActivity {
 	private HappenningNowCard happeningNowCard;
 	private CardView happeningNowCardView;
 	private ArrayList<Card> cards;
+	
+	private DisplayImageOptions options;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,13 @@ public class MainActivity extends BaseActivity {
 	    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	    getSupportActionBar().setHomeButtonEnabled(true);
 	    getSupportActionBar().setTitle("Events");
+	    
+	    options = new DisplayImageOptions.Builder()
+	    	.showImageOnLoading(R.drawable.ic_empty)
+	    	.showImageOnFail(R.drawable.ic_error)
+	    	.cacheInMemory(true)
+	    	.cacheOnDisc(true)
+	    	.build();
 	    
 	    readProgramme();
 	    onHappenningNow(events.get(0));
@@ -86,9 +96,9 @@ public class MainActivity extends BaseActivity {
 		cardHeader.setTitle("Happening now");
 		happeningNowCard.addCardHeader(cardHeader);
 		
-		PicassoThumbnail thumbnail = new PicassoThumbnail(this);
-		thumbnail.setFilename(event.getImage());
-		happeningNowCard.addCardThumbnail(thumbnail);
+		UniversalImageLoaderThumbnail cardThumbnail = new UniversalImageLoaderThumbnail(this, options);
+		cardThumbnail.setFilename(event.getImage());
+		happeningNowCard.addCardThumbnail(cardThumbnail);
 		
 		happeningNowCard.setTitle(event.getName());
 		happeningNowCard.setMember(Utils.getEventTime(event.getStartTime()));
@@ -109,7 +119,8 @@ public class MainActivity extends BaseActivity {
 			CardHeader cardHeader = new CardHeader(this);
 			cardHeader.setTitle(event.getName());
 			
-			PicassoThumbnail cardThumbnail = new PicassoThumbnail(this);
+			//PicassoThumbnail cardThumbnail = new PicassoThumbnail(this);
+			UniversalImageLoaderThumbnail cardThumbnail = new UniversalImageLoaderThumbnail(this, options);
 			cardThumbnail.setFilename(event.getImage());
 			cardThumbnail.setExternalUsage(true);
 			

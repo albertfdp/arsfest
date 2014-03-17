@@ -13,6 +13,8 @@ public class Constants {
 
 	public static final String TAG = "ARSFEST";
 	
+	public static final String IMG_CONTENT_PROVIDER_URL = "https://dl.dropboxusercontent.com/u/3792125/arsfest2014/assets/img/";
+	
 	public static final String JSON_URL = "https://dl.dropboxusercontent.com/u/3792125/arsfest2014/assets/data/data.json";
 	public static final String JSON_CACHE_FILENAME = "data.json";
 	public static final String JSON_TAG_LOCATIONS = "locations";
