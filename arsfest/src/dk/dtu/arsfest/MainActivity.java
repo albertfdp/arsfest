@@ -79,7 +79,7 @@ public class MainActivity extends BaseActivity {
 		} catch (IOException e) {
 			Log.e(Constants.TAG, "Could not read file from cache. Reading from assets, could be not updated");
 			Log.e(Constants.TAG, e.getMessage());
-			// TODO : locations = FileCache.readFromAssets();
+			locations = FileCache.readFromAssets(MainActivity.this);
 		}
 		
 		for (Location location : locations) {
