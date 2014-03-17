@@ -12,13 +12,13 @@ import android.widget.ImageView;
 
 public class UniversalImageLoaderThumbnail extends CardThumbnail {
 	
-	private DisplayImageOptions options;
+	private ImageLoader imageLoader;
 	
 	private String url;
 	
-	public UniversalImageLoaderThumbnail(Context context, DisplayImageOptions options) {
+	public UniversalImageLoaderThumbnail(Context context) {
 		super(context);
-		this.options = options;
+		imageLoader = ImageLoader.getInstance();
 		setExternalUsage(true);
 	}
 	
@@ -29,17 +29,7 @@ public class UniversalImageLoaderThumbnail extends CardThumbnail {
 	@Override
 	public void setupInnerViewElements(ViewGroup parent, View viewImage) {
 		
-		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getContext())
-			.defaultDisplayImageOptions(options)
-			.build();
-		
-		
-		//In real case you should config better the imageLoader
-        ImageLoader imageLoader = ImageLoader.getInstance();
-        imageLoader.init(config);
-
-
-        imageLoader.displayImage(Constants.IMG_CONTENT_PROVIDER_URL + this.url + ".jpg", (ImageView) viewImage);
+		imageLoader.displayImage(Constants.IMG_CONTENT_PROVIDER_URL + this.url + ".jpg", (ImageView) viewImage);
 
         viewImage.getLayoutParams().width = 250;
         viewImage.getLayoutParams().height = 250;

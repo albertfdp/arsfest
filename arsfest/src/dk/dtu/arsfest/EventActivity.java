@@ -1,28 +1,25 @@
 package dk.dtu.arsfest;
 
+import it.gmariotti.cardslib.library.internal.Card;
+import it.gmariotti.cardslib.library.view.CardView;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
 
 import com.actionbarsherlock.view.MenuItem;
 import com.devspark.sidenavigation.ISideNavigationCallback;
 import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.SideNavigationView.Mode;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
+import dk.dtu.arsfest.cards.EventImageCard;
+import dk.dtu.arsfest.cards.EventInfoCard;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.utils.Constants;
 
 public class EventActivity extends BaseActivity {
 	
 	private Event event;
-	
-	private ImageView eventImage;
 
 	private SideNavigationView sideNavigationView;
-	private DisplayImageOptions options;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -38,18 +35,10 @@ public class EventActivity extends BaseActivity {
 	    
 	    sideNavigationView.setMode(Mode.LEFT);
 	    
-	    options = new DisplayImageOptions.Builder()
-	    	.showImageOnLoading(R.drawable.ic_empty)
-	    	.showImageOnFail(R.drawable.ic_error)
-	    	.cacheInMemory(true)
-	    	.cacheOnDisc(true)
-	    	.build();
-	    
 	    Intent intent = getIntent();
 	    this.event = (Event) intent.getParcelableExtra(Constants.EXTRA_EVENT);
 	    
 	    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-	    //getSupportActionBar().setHomeButtonEnabled(true);
 	    getSupportActionBar().setTitle(event.getName());
 	    initView();
 	    
@@ -57,19 +46,16 @@ public class EventActivity extends BaseActivity {
 	
 	private void initView() {
 		
-		eventImage = (ImageView) findViewById(R.id.event_image);
+		Card eventImageCard = new EventImageCard(this, event);		
+		eventImageCard.setTitle(event.getName());		
+		CardView cardView = (CardView) findViewById(R.id.card_event_image);
+		cardView.setCard(eventImageCard);
 		
-		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
-			.defaultDisplayImageOptions(options)
-			.build();
-	
-	
-		//In real case you should config better the imageLoader
-	    ImageLoader imageLoader = ImageLoader.getInstance();
-	    imageLoader.init(config);
-	    
-	    imageLoader.displayImage(Constants.IMG_CONTENT_PROVIDER_URL + this.event.getImage() + ".jpg", (ImageView) eventImage);
-
+		Card info = new EventInfoCard(this, event);
+		CardView infoCardView = (CardView) findViewById(R.id.card_event_info);
+		infoCardView.setCard(info);
+				
+		
 	}
 	
 	@Override

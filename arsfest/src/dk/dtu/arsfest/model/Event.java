@@ -142,6 +142,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		dest.writeString(type);
 		dest.writeString(theme);
 		dest.writeTypedList(menu);
+		dest.writeParcelable(parent, flags);
 	}
 	
 	public static final Parcelable.Creator<Event> CREATOR = new Parcelable.Creator<Event>() {
@@ -167,6 +168,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.type = in.readString();
 		this.theme = in.readString();
 		in.readTypedList(this.menu, Course.CREATOR);
+		this.parent = in.readParcelable(Location.class.getClassLoader());
 	}
 
 	public boolean hasStarted(Date currentTime) {

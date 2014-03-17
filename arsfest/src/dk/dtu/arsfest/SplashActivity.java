@@ -61,6 +61,7 @@ public class SplashActivity extends SherlockActivity {
 		} else {
 			Intent intent = new Intent(SplashActivity.this, MainActivity.class);
 			startActivity(intent);
+			finish();
 		}	
 	}
 	
@@ -122,8 +123,8 @@ public class SplashActivity extends SherlockActivity {
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTimeInMillis(System.currentTimeMillis());
 		calendar.add(Calendar.DAY_OF_YEAR, -1);
-		//return calendar.getTimeInMillis() > lastUpdated;
-		return true;
+		return calendar.getTimeInMillis() > lastUpdated;
+		//return true;
 	}
 	
 	@Override
