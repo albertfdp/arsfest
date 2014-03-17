@@ -1,0 +1,20 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <!-- Use same ID to use built-in features -->
+
+    <TextView
+        android:id="@+id/card_event_inner_content_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp" />
+    
+    <TextView
+        android:id="@+id/card_event_inner_content_location"
+        android:paddingTop="5dp"
+        style="@style/carddemo_suggested_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
