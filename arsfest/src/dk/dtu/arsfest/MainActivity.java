@@ -1,9 +1,7 @@
 package dk.dtu.arsfest;
 
 import it.gmariotti.cardslib.library.internal.Card;
-import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
 import it.gmariotti.cardslib.library.internal.CardHeader;
-import it.gmariotti.cardslib.library.view.CardListView;
 import it.gmariotti.cardslib.library.view.CardView;
 
 import java.io.IOException;
@@ -27,7 +25,6 @@ import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.FileCache;
 import dk.dtu.arsfest.utils.UniversalImageLoaderThumbnail;
-import dk.dtu.arsfest.utils.Utils;
 
 public class MainActivity extends BaseActivity {
 	
@@ -68,8 +65,12 @@ public class MainActivity extends BaseActivity {
 	    	.build();
 	    
 	    readProgramme();
-	    onHappenningNow(events.get(0));
+	    onHappenningNow(getHappenningNow());
 	    //createCards();
+	}
+	
+	private Event getHappenningNow() {
+		return events.get(1);
 	}
 	
 	private void readProgramme() {
@@ -90,53 +91,49 @@ public class MainActivity extends BaseActivity {
 	}
 	
 	private void onHappenningNow(Event event) {
-		happeningNowCard = new HappenningNowCard(this);
+		happeningNowCard = new HappenningNowCard(this, event);
 		
 		CardHeader cardHeader = new HappeningNowHeader(this);
 		cardHeader.setTitle("Happening now");
 		happeningNowCard.addCardHeader(cardHeader);
 		
 		UniversalImageLoaderThumbnail cardThumbnail = new UniversalImageLoaderThumbnail(this, options);
-		cardThumbnail.setFilename(event.getImage());
+		cardThumbnail.setUrl(event.getImage());
 		happeningNowCard.addCardThumbnail(cardThumbnail);
 		
-		happeningNowCard.setTitle(event.getName());
-		happeningNowCard.setMember(Utils.getEventTime(event.getStartTime()));
-				
 		happeningNowCardView = (CardView) findViewById(R.id.card_happening_now);
 		happeningNowCardView.setCard(happeningNowCard);
 		
 		
 	}
 	
-	private void createCards() {
-		cards = new ArrayList<Card>();
-		
-		for (Event event : events) {
-			Card card = new Card(this, R.layout.card_event_inner);
-			card.setTitle(event.getStartTime().toString());
-			
-			CardHeader cardHeader = new CardHeader(this);
-			cardHeader.setTitle(event.getName());
-			
-			//PicassoThumbnail cardThumbnail = new PicassoThumbnail(this);
-			UniversalImageLoaderThumbnail cardThumbnail = new UniversalImageLoaderThumbnail(this, options);
-			cardThumbnail.setFilename(event.getImage());
-			cardThumbnail.setExternalUsage(true);
-			
-			card.addCardHeader(cardHeader);
-			card.addCardThumbnail(cardThumbnail);
-			
-			card.setSwipeable(true);
-			
-			cards.add(card);
-		}
-		
-		CardArrayAdapter cardArrayAdapter = new CardArrayAdapter(this, cards);
-		CardListView cardsView = (CardListView) findViewById(R.id.event_list);
-		if (cardsView != null) cardsView.setAdapter(cardArrayAdapter);
-		
-	}
+//	private void createCards() {
+//		cards = new ArrayList<Card>();
+//		
+//		for (Event event : events) {
+//			Card card = new Card(this, R.layout.card_event_inner);
+//			card.setTitle(event.getStartTime().toString());
+//			
+//			CardHeader cardHeader = new CardHeader(this);
+//			cardHeader.setTitle(event.getName());
+//			
+//			//PicassoThumbnail cardThumbnail = new PicassoThumbnail(this);
+//			UniversalImageLoaderThumbnail cardThumbnail = new UniversalImageLoaderThumbnail(this, options);
+//			cardThumbnail.setUrl(event.getImage());
+//			
+//			card.addCardHeader(cardHeader);
+//			card.addCardThumbnail(cardThumbnail);
+//			
+//			card.setSwipeable(true);
+//			
+//			cards.add(card);
+//		}
+//		
+//		CardArrayAdapter cardArrayAdapter = new CardArrayAdapter(this, cards);
+//		CardListView cardsView = (CardListView) findViewById(R.id.event_list);
+//		if (cardsView != null) cardsView.setAdapter(cardArrayAdapter);
+//		
+//	}
 
 	@Override
 	protected void onStart() {

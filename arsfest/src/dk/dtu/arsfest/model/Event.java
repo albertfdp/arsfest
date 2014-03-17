@@ -18,6 +18,7 @@ public class Event implements Parcelable, Comparable<Event> {
 	private String type;
 	private String theme;
 	private boolean remark = false;
+	private Location parent;
 	
 	public Event (String id, String name) {
 		this.id = id;
@@ -58,8 +59,16 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.theme = theme;
 	}
 	
+	public Location getParent() {
+		return parent;
+	}
+
+	public void setParent(Location parent) {
+		this.parent = parent;
+	}
+
 	public Event(String id, String name, String image, Date startTime, Date endTime, 
-			String location, String description, String type, String theme, ArrayList<Course> menu, boolean remark) {
+			String location, String description, String type, String theme, ArrayList<Course> menu, boolean remark, Location parent) {
 		
 		this.id = id;
 		this.name = name;
@@ -71,6 +80,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.theme = theme;
 		this.menu = menu;
 		this.remark = remark;
+		this.parent = parent;
 	}
 	
 	public String getId() {

@@ -16,6 +16,7 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.model.LocationList;
 
@@ -42,6 +43,15 @@ public class FileCache {
 		FileInputStream fis = new FileInputStream(cacheFile);
 		
 		LocationList list = gson.fromJson(new InputStreamReader(fis, "UTF-8"), LocationList.class);
+		
+		/* set parent object to each event */
+		for (Location location : list.getLocations()) {
+			for (Event event : location.getEvents()) {
+				Location eventLocation = new Location(location); // creates a clone with empty events list.
+				event.setParent(eventLocation);
+			}
+		}
+		
 		return list.getLocations();
 	}
 	
@@ -54,6 +64,15 @@ public class FileCache {
 		try {
 			fis = context.getAssets().open(Constants.JSON_CACHE_FILENAME);
 			list = gson.fromJson(new InputStreamReader(fis, "UTF-8"), LocationList.class);
+			
+			/* set parent object to each event */
+			for (Location location : list.getLocations()) {
+				for (Event event : location.getEvents()) {
+					Location eventLocation = new Location(location); // creates a clone with empty events list.
+					event.setParent(eventLocation);
+				}
+			}
+			
 			return list.getLocations();
 		} catch (IOException e) {
 			Log.e(Constants.TAG, "Could not read data.json from assets");

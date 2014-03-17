@@ -27,6 +27,20 @@ public class Location implements Parcelable {
 		this.description = description;
 		this.events = events;
 	}
+	
+	/**
+	 * Custom clone method.
+	 * @param location
+	 */
+	public Location(Location location) {
+		super();
+		this.id = location.id;
+		this.name = location.name;
+		this.latitude = location.latitude;
+		this.longitude = location.longitude;
+		this.description = location.description;
+		this.events = new ArrayList<Event>();
+	}
 
 	public String getDescription() {
 		return this.description;
@@ -76,6 +90,10 @@ public class Location implements Parcelable {
 		return this.events;
 	}
 	
+	public void setEvents(ArrayList<Event> events) {
+		this.events = events;
+	}
+
 	@Override
 	public String toString(){
 		return id+' '+name+' '+longitude+' '+latitude+' '+description;
