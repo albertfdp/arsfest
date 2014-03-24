@@ -53,23 +53,31 @@ public class MainActivity extends BaseActivity {
 	    sideNavigationView.setMenuClickCallback(new ISideNavigationCallback() {
 			@Override
 			public void onSideNavigationItemClick(int itemId) {
-				
+				Intent intent;
 				switch (itemId) {
+					case R.id.side_navigation_events:
+						if (!showFinishedEvents) break;
+						intent = new Intent(MainActivity.this, MainActivity.class);
+						intent.putExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, false);
+						MainActivity.this.startActivity(intent);
+						finish();
+						break;
 					case R.id.side_navigation_map:
 //						Intent intent = new Intent(getContext(), EventActivity.class);
 //						intent.putExtra(Constants.EXTRA_EVENT, event);
 //						getContext().startActivity(intent);
+						//finish();
 						break;
 						
 					case R.id.side_navigation_old_events:
-						Intent intent = new Intent(MainActivity.this, MainActivity.class);
+						intent = new Intent(MainActivity.this, MainActivity.class);
 						intent.putExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, true);
 						MainActivity.this.startActivity(intent);
+						finish();
 						break;
 					default:
 						break;
-					}
-				finish();
+					}				
 			}
 		});
 	    
@@ -126,6 +134,13 @@ public class MainActivity extends BaseActivity {
 					finishedEvents.add(event);
 			}
 			events.removeAll(finishedEvents);
+		} else { // remove not finished
+			ArrayList<Event> notFinished = new ArrayList<Event>();
+			for (Event event : events) {
+				if (!event.hasFinished())
+					notFinished.add(event);
+			}
+			events.removeAll(notFinished);
 		}
 		
 	}

@@ -52,6 +52,7 @@
 	        android:id="@+id/carddemo_suggested_subtitle"
 	        style="@style/carddemo_suggested_text"
 	        android:paddingTop="5dp"
+	        android:gravity="right"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"/>
 	

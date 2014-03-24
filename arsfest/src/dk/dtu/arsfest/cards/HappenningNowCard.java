@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
+import android.text.format.DateUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -72,6 +73,13 @@ public class HappenningNowCard extends EventCard {
 			setTitle(event.getName());
 			this.member = Utils.getEventTime(event.getStartTime());
 			this.community = event.getParent().getName();
+			
+			if (event.hasStarted()) {
+				setSubtitle("Ends " + DateUtils.getRelativeTimeSpanString(event.getEndTime().getTime()).toString());
+			} else {
+				setSubtitle("Starts " + DateUtils.getRelativeTimeSpanString(event.getStartTime().getTime()).toString());
+			}
+			
 		}
 	}
 
