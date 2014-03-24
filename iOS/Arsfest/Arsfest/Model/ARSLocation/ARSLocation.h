@@ -9,8 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 
+typedef enum {
+    ARSLocationSportsHall,
+    ARSLocationLibrary,
+    ARSLocationOticonSalen,
+    ARSLocationKantine,
+    ARSLocationAll,
+} ARSLocationType;
+
 @class ARSEvent;
 @interface ARSLocation : NSObject
+
+@property (nonatomic, assign) ARSLocationType type;
 
 @property (nonatomic, strong) NSString *locationId;
 @property (nonatomic, strong) NSString *name;

@@ -14,7 +14,8 @@
             name = _name,
             description = _description,
             coordinates = _coordinates,
-            events = _events;
+            events = _events,
+            type = _type;
 
 - (id)init
 {
@@ -33,6 +34,8 @@
     
     location.name = [dictionary objectForKey:@"name"];
     location.locationId = [dictionary objectForKey:@"id"];
+    location.type = [[location.locationId substringFromIndex:1] integerValue];
+    
     NSString *latitude = [dictionary objectForKey:@"latitude"];
     NSString *longitude = [dictionary objectForKey:@"longitude"];
     location.coordinates = [PFGeoPoint geoPointWithLatitude:[latitude doubleValue] longitude:[longitude doubleValue]];

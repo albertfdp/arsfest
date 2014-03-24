@@ -22,13 +22,11 @@
     event.type = [dictionary objectForKey:@"type"];
     event.eventId = [dictionary objectForKey:@"id"];
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy:HH:mm"];
     NSString *startTimeAsString = [dictionary objectForKey:@"startTime"];
     NSString *endTimeAsString = [dictionary objectForKey:@"endTime"];
 
-    event.startTime = [dateFormatter dateFromString:startTimeAsString];
-    event.endTime = [dateFormatter dateFromString:endTimeAsString];
+    event.startTime = [NSDate dateFromString:startTimeAsString];
+    event.endTime = [NSDate dateFromString:endTimeAsString];
     
     return event;
 }

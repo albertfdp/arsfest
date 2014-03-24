@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "ARSHorizontalScrollingHeader.h"
+#import "ARSData.h"
 
-@interface ARSEventListViewController : UIViewController
+@interface ARSEventListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ARSDataDelegate, ARSHorizontalScrollingHeaderDelegate>
 
-@property (weak, nonatomic) IBOutlet ARSHorizontalScrollingHeader *horizontalHeader;
+@property (weak, nonatomic) IBOutlet UITableView *eventListTableView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIScrollView *carouselScrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet ARSHorizontalScrollingHeader *menuScrollView;
 
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 @end

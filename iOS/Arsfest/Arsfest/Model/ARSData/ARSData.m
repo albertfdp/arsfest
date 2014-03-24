@@ -7,7 +7,6 @@
 //
 
 #import "ARSData.h"
-#import "ARSLocation.h"
 #import "AFNetworking.h"
 
 #define kJSONURL                [NSURL URLWithString:@"https://raw2.github.com/albertfdp/arsfest/master/iOS/test.json"]
@@ -21,6 +20,7 @@
 
 @implementation ARSData
 @synthesize locations = _locations;
+@synthesize dataDelegate = _dataDelegate;
 
 - (id)init
 {
@@ -33,6 +33,41 @@
     
     return self;
 }
+
+#pragma mark -
+#pragma mark - Data source for the table view
+
+- (NSArray*)eventsIn:(ARSLocationType)locationType
+{
+    NSMutableArray *eventsArray = [[NSMutableArray alloc] init];
+    switch (locationType) {
+            //Case where we want all the events
+        case ARSLocationAll:
+        {
+            for (ARSLocation *location in _locations) {
+                [eventsArray addObjectsFromArray:location.events];
+            }
+        }
+            break;
+        default:
+            //Case where we request a specific location
+        {
+            for (ARSLocation *location in _locations) {
+                if (location.type == locationType) {
+                    eventsArray = location.events;
+                }
+            }
+            
+        }
+            break;
+    }
+
+    NSArray *returnedArray = [NSArray arrayWithArray:eventsArray];
+    return returnedArray;
+}
+
+#pragma mark -
+#pragma mark - JSON Parsing and Fetching
 
 - (void)parseJSON:(id)jsonObject
 {
@@ -47,8 +82,8 @@
     if (!error) {
         NSArray *array = [json valueForKey:@"locations"];
         [self createLocations:array];
+        [self notifyDelegate];
     }
-
 }
 
 - (void)createLocations:(NSArray*)locations
@@ -74,6 +109,16 @@
     }];
     
     [operation start];
+}
+
+#pragma mark -
+#pragma mark - ARSDataDelegate
+
+- (void)notifyDelegate
+{
+    if ([_dataDelegate respondsToSelector:@selector(didReceiveDataFromTheServer)]) {
+        [_dataDelegate didReceiveDataFromTheServer];
+    }
 }
 
 @end

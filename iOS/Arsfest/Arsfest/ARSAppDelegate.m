@@ -26,8 +26,15 @@
                   clientKey:kParseClientKey];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    
     ARSEventListViewController *eventListViewController = [[ARSEventListViewController alloc] initWithNibName:@"ARSEventListViewController" bundle:nil];
-    [self.window setRootViewController:eventListViewController];
+    
+    ARSNavigationController *navigationController = [[ARSNavigationController alloc]
+                                                    initWithRootViewController:eventListViewController];
+    
+    [self.window setRootViewController:navigationController];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [self.window makeKeyAndVisible];
     return YES;
@@ -59,5 +66,6 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 @end
