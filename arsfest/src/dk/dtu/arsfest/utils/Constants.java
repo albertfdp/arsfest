@@ -75,6 +75,7 @@ public class Constants {
 	public static final int RESULT_EVENT_INFO = 2;
 
 	public static final String EXTRA_EVENT_INFO = "dk.dtu.arsfest.event";
+	public static final String EXTRA_EVENT_SHOW_FINISHED = "dk.dtu.arsfest.event.show.finished";
 
 	public static final String EXTRA_EVENT_ALL = "dk.dtu.arsfest.event.all";
 

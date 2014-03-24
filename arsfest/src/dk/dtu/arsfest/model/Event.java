@@ -175,6 +175,11 @@ public class Event implements Parcelable, Comparable<Event> {
 		return (currentTime.after(startTime));
 	}
 	
+	public boolean hasFinished() {
+		Date date = new Date();
+		return (date.after(endTime));
+	}
+	
 	public boolean hasFinished(Date currentTime) {
 		return (currentTime.after(endTime));
 	}

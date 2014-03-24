@@ -8,14 +8,14 @@
     android:orientation="vertical" >
     
    
-   	<it.gmariotti.cardslib.library.view.CardView
+   	<!-- <it.gmariotti.cardslib.library.view.CardView
 	    android:id="@+id/card_happening_now"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_marginLeft="12dp"
 	    android:layout_marginRight="12dp"
 	    card:card_layout_resourceID="@layout/card_event"
-	    android:layout_marginTop="12dp"/>
+	    android:layout_marginTop="12dp"/> -->
 
     <!-- include
         android:layout_width="fill_parent"
@@ -40,9 +40,16 @@
 	<!-- <it.gmariotti.cardslib.library.view.CardListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/happening_now_card"
+        android:layout_marginLeft="12dp"
+	    android:layout_marginRight="12dp"
         card:list_card_layout_resourceID="@layout/list_card_thumbnail_layout"
-        android:id="@+id/event_list"/>-->
+        android:id="@+id/arsfest_events_list"/> -->
+        
+   	<it.gmariotti.cardslib.library.view.CardListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/arsfest_events_list"
+        card:list_card_layout_resourceID="@layout/list_card_thumbnail_layout" />
     
     <com.devspark.sidenavigation.SideNavigationView
         android:id="@+id/side_navigation_view"

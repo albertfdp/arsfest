@@ -80,6 +80,13 @@
     </style>
     
     <!-- Suggested community -->
+    
+    <style name="card.shadow_my_image">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">10dp</item>
+        <item name="android:src">@drawable/democard_my_shadow</item>
+        <item name="android:layout_below">@+id/card_main_content_layout</item>
+    </style>
 
     <style name="carddemo_suggested_header_text"></style>
 

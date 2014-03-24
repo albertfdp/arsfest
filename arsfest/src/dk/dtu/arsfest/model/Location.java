@@ -16,15 +16,17 @@ public class Location implements Parcelable {
 	private double longitude;
 	private String description;
 	private ArrayList<Event> events;
+	private String color;
 	
 	public Location(String id, String name, double latitude, double longitude,
-			String description, ArrayList<Event> events) {
+			String description, String color, ArrayList<Event> events) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.description = description;
+		this.color = color;
 		this.events = events;
 	}
 	
@@ -39,6 +41,7 @@ public class Location implements Parcelable {
 		this.latitude = location.latitude;
 		this.longitude = location.longitude;
 		this.description = location.description;
+		this.color = location.color;
 		this.events = new ArrayList<Event>();
 	}
 
@@ -93,6 +96,16 @@ public class Location implements Parcelable {
 	public void setEvents(ArrayList<Event> events) {
 		this.events = events;
 	}
+	
+	
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
 
 	@Override
 	public String toString(){
@@ -122,6 +135,7 @@ public class Location implements Parcelable {
 		dest.writeString(name);
 		dest.writeDouble(longitude);
 		dest.writeDouble(latitude);
+		dest.writeString(color);
 	}
 	
 	public static final Comparator<Location> TIME = new Comparator<Location>() {
@@ -152,6 +166,7 @@ public class Location implements Parcelable {
 		this.name = in.readString();
 		this.longitude = in.readDouble();
 		this.latitude = in.readDouble();
+		this.color = in.readString();
 	}
 
 }

@@ -81,6 +81,7 @@
     <string name="action_save">Save</string>
     <string name="action_search">Search</string>
     <string name="action_map">Map</string>
+    <string name="action_old_events">Finished events</string>
     
     <!-- Map -->
     <string name="mapview">MAP</string>

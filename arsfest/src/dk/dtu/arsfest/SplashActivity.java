@@ -56,10 +56,11 @@ public class SplashActivity extends SherlockActivity {
 	public void onStart() {
 		super.onStart();
 		
-		if (checkNeedsUpdate()) {
+		if (!checkNeedsUpdate()) {
 			updateJson();
 		} else {
 			Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+			intent.putExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, false);
 			startActivity(intent);
 			finish();
 		}	
@@ -105,6 +106,7 @@ public class SplashActivity extends SherlockActivity {
 			public void onFinish() {
 				progressBar.setVisibility(View.GONE);
 				Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+				intent.putExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, false);
 				startActivity(intent);
 				finish();
 			}

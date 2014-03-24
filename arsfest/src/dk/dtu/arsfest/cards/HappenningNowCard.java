@@ -1,9 +1,12 @@
 package dk.dtu.arsfest.cards;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.model.Event;
@@ -15,6 +18,8 @@ public class HappenningNowCard extends EventCard {
 	private String member;
 	private String subtitle;
 	private String community;
+	
+	private ImageView locationImage;
 	
 	private Typeface font;
 	
@@ -83,6 +88,8 @@ public class HappenningNowCard extends EventCard {
 			TextView community = (TextView) view
 					.findViewById(R.id.carddemo_suggested_community);
 			
+			ImageView locationImage = (ImageView) view.findViewById(R.id.colorBorder);
+			
 			title.setTypeface(font);
 
 			if (title != null)
@@ -96,6 +103,13 @@ public class HappenningNowCard extends EventCard {
 
 			if (community != null)
 				community.setText(getCommunity());
+			
+			if (locationImage != null) {
+				GradientDrawable bgShape = (GradientDrawable) locationImage.getBackground();
+				int color = Color.parseColor(event.getParent().getColor());
+				bgShape.setColor(color);
+			}
+			
 		}
 	}
 }
