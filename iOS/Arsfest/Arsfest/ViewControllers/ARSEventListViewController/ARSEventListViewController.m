@@ -10,6 +10,7 @@
 #import "ARSEventViewController.h"
 #import "ARSEventCell.h"
 #import "ARSEvent.h"
+#import "EAIntroView.h"
 
 #define kEventCellHeight 78
 
@@ -55,6 +56,7 @@
     [self.backgroundView setImage:kBackgroundImage];
     
     [self initializeScrollingMenu];
+    [self setupIntroView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -183,9 +185,26 @@
     //Setting up scrolling menu
     [_menuScrollView addButtonsWithTitles:[NSArray arrayWithObjects:@"ALL",@"KANTINE",@"OTICON HALL",@"LIBRARY",@"SPORTS HALL", nil]];
     [_menuScrollView setSelectionDelegate:self];
-//    [_menuScrollView addBorderTop:YES bottom:NO right:NO left:NO outside:NO];
 }
 
+- (void)setupIntroView
+{
+//    if (![[[NSUserDefaults standardUserDefaults] objectForKey:INTRO_SHOWN_ONCE] boolValue]) {
+    
+        EAIntroPage *page = [EAIntroPage page];
+        page.title = @"Register with Facebook";
+        page.desc = @"Register now with Facebook to share your location with your friends and see them in real-time on the map during the party only.";
+        page.bgImage = [UIImage imageNamed:@"BackgroundIntroView.png"];
+    
+        EAIntroView *introView = [[EAIntroView alloc] initWithFrame:self.navigationController.view.bounds
+                                                           andPages:[NSArray arrayWithObject:page]];
+        
+        [introView showInView:self.navigationController.view animateDuration:0.0f];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:INTRO_SHOWN_ONCE];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+//    }
+}
 #pragma mark -
 #pragma mark - Carousel Initialization
 

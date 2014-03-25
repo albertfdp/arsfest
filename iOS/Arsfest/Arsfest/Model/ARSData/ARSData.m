@@ -9,7 +9,7 @@
 #import "ARSData.h"
 #import "AFNetworking.h"
 
-#define kJSONURL                [NSURL URLWithString:@"https://raw2.github.com/albertfdp/arsfest/master/iOS/test.json"]
+#define kJSONURL                [NSURL URLWithString:@"https://raw.github.com/albertfdp/arsfest/master/iOS/test.json"]
 
 @interface ARSData()
 
