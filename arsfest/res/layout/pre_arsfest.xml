@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/palette_lilinperucca"
+    android:gravity="fill_horizontal"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:id="@+id/splash_arsfest_title"
+        android:textSize="36sp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/splash_arsfest_subtitle"
+        android:text="@string/splash_title" 
+        android:textStyle="bold"/>
+    
+    <TextView
+        android:id="@+id/splash_arsfest_subtitle"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="@string/splash_subtitle"
+        android:textStyle="bold"/>
+
+    <ProgressBar
+        android:id="@+id/splash_progress_bar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_below="@+id/splash_arsfest_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

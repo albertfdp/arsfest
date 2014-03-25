@@ -17,11 +17,6 @@
         android:descendantFocusability="blocksDescendants"
         android:orientation="vertical" >
 
-        <include
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            layout="@layout/top_header_bar" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

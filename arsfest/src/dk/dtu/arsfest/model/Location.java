@@ -1,10 +1,8 @@
-/*******************************************************************************
- * Copyright 2013 Albert Fern�ndez de la Pe�a
- ******************************************************************************/
 package dk.dtu.arsfest.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 
 import android.os.Parcel;
@@ -18,33 +16,35 @@ public class Location implements Parcelable {
 	private double longitude;
 	private String description;
 	private ArrayList<Event> events;
+	private String color;
 	
-	public Location(String id){
-		this.id = id;
-	}
-	
-	public Location(String id, String name, ArrayList<Event> events) {
-		this.id = id;
-		this.name = name;
-		this.events = events;
-	}
-	public Location(String id, String name, double latitude, double longitude, String description, ArrayList<Event> events) {
+	public Location(String id, String name, double latitude, double longitude,
+			String description, String color, ArrayList<Event> events) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.description = description;
+		this.color = color;
 		this.events = events;
 	}
 	
-	public Location(String id, String name, double latitude, double longitude, String description) {
-		this.id = id;
-		this.name = name;
-		this.latitude = latitude;
-		this.longitude = longitude;
-		this.description = description;
+	/**
+	 * Custom clone method.
+	 * @param location
+	 */
+	public Location(Location location) {
+		super();
+		this.id = location.id;
+		this.name = location.name;
+		this.latitude = location.latitude;
+		this.longitude = location.longitude;
+		this.description = location.description;
+		this.color = location.color;
+		this.events = new ArrayList<Event>();
 	}
-	
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -86,13 +86,27 @@ public class Location implements Parcelable {
 	}
 	
 	public void sortEventsByTime() {
-		Collections.sort(this.events);
+		Collections.sort(this.events, Event.START_TIME);
 	}
 	
 	public ArrayList<Event> getEvents(){
 		return this.events;
 	}
 	
+	public void setEvents(ArrayList<Event> events) {
+		this.events = events;
+	}
+	
+	
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
 	@Override
 	public String toString(){
 		return id+' '+name+' '+longitude+' '+latitude+' '+description;
@@ -121,7 +135,17 @@ public class Location implements Parcelable {
 		dest.writeString(name);
 		dest.writeDouble(longitude);
 		dest.writeDouble(latitude);
+		dest.writeString(color);
 	}
+	
+	public static final Comparator<Location> TIME = new Comparator<Location>() {
+
+		@Override
+		public int compare(Location lhs, Location rhs) {
+			return 0;
+		}
+		
+	};
 	
 	public static final Parcelable.Creator<Location> CREATOR = new Parcelable.Creator<Location>()  {
 
@@ -142,6 +166,7 @@ public class Location implements Parcelable {
 		this.name = in.readString();
 		this.longitude = in.readDouble();
 		this.latitude = in.readDouble();
+		this.color = in.readString();
 	}
 
 }

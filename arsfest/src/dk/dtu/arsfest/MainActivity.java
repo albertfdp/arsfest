@@ -1,325 +1,300 @@
 package dk.dtu.arsfest;
 
-import java.io.IOException;
-import java.io.InputStream;
+import it.gmariotti.cardslib.library.internal.Card;
+import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
+import it.gmariotti.cardslib.library.internal.CardHeader;
+import it.gmariotti.cardslib.library.view.CardListView;
+import it.gmariotti.cardslib.library.view.CardView;
+
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
-import com.astuetz.viewpager.extensions.IndicatorLineView;
-import com.astuetz.viewpager.extensions.ScrollingTabsView;
-import com.astuetz.viewpager.extensions.TabsAdapter;
+
+import android.content.Intent;
+import android.os.Bundle;
+
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.widget.SearchView;
+import com.actionbarsherlock.widget.SearchView.OnQueryTextListener;
+import com.devspark.sidenavigation.ISideNavigationCallback;
+import com.devspark.sidenavigation.SideNavigationView;
+import com.devspark.sidenavigation.SideNavigationView.Mode;
 import com.google.analytics.tracking.android.EasyTracker;
 
-import dk.dtu.arsfest.alarms.AlarmHelper;
-import dk.dtu.arsfest.context.ContextAwareHelper;
+import dk.dtu.arsfest.cards.EventCard;
+import dk.dtu.arsfest.cards.HappeningNowHeader;
+import dk.dtu.arsfest.cards.HappenningNowCard;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
-import dk.dtu.arsfest.model.Bssid;
-import dk.dtu.arsfest.network.NetworkHelper;
-import dk.dtu.arsfest.notification.MyOneTimeNotificationService;
-import dk.dtu.arsfest.parser.JSONParser;
 import dk.dtu.arsfest.utils.Constants;
+import dk.dtu.arsfest.utils.UniversalImageLoaderThumbnail;
 import dk.dtu.arsfest.utils.Utils;
-import dk.dtu.arsfest.view.CustomLinePagerAdapter;
-import dk.dtu.arsfest.view.CustomPageAdapter;
-import dk.dtu.arsfest.view.LocationTabs;
-import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
-import android.app.AlarmManager;
-import android.app.AlertDialog;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import android.widget.TextView;
 
-public class MainActivity extends SlideMenuSuper {
-
+public class MainActivity extends BaseActivity {
+	
+	private SideNavigationView sideNavigationView;
+	
 	private ArrayList<Location> locations;
-	private ArrayList<Bssid> bssids;
-
-	private ViewPager viewPager;
-	private PagerAdapter pageAdapter;
-	private ViewPager lineViewPager;
-	private PagerAdapter linePageAdapter;
-	private IndicatorLineView mLine;
-	private ScrollingTabsView scrollingTabs;
-	private TabsAdapter scrollingTabsAdapter;
-	private TextView headerTitle;
-	private String currentLocation;
-
-	// After refactoring
-	private AlarmHelper alarmHelper;
-	private ContextAwareHelper contextAwareHelper;
-	private String comingFromLocation = null;
+	private ArrayList<Event> events = new ArrayList<Event>();
+	
+	private HappenningNowCard happeningNowCard;
+	private CardView happeningNowCardView;
+	private ArrayList<Card> cards;
+	
+	private boolean showFinishedEvents = false;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		setContentView(R.layout.activity_main);
-		initView();
 
-		// Read from data.JSON
-		readJson();
-
-		// Create a new AlarmHelper
-		alarmHelper = new AlarmHelper(this.getApplicationContext());
-
-		// Create a new ContextAwareHelper
-		contextAwareHelper = new ContextAwareHelper(
-				this.getApplicationContext(), bssids, locations);
-
-		//setOneTimeNotification();
+		sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_view);
+		sideNavigationView.setMenuItems(R.menu.side_navigation_menu);
+	    sideNavigationView.setMenuClickCallback(new ISideNavigationCallback() {
+			@Override
+			public void onSideNavigationItemClick(int itemId) {
+				Intent intent;
+				switch (itemId) {
+					case R.id.side_navigation_events:
+						if (!showFinishedEvents) break;
+						intent = new Intent(MainActivity.this, MainActivity.class);
+						intent.putExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, false);
+						MainActivity.this.startActivity(intent);
+						finish();
+						break;
+					case R.id.side_navigation_map:
+//						Intent intent = new Intent(getContext(), EventActivity.class);
+//						intent.putExtra(Constants.EXTRA_EVENT, event);
+//						getContext().startActivity(intent);
+						//finish();
+						break;
+						
+					case R.id.side_navigation_old_events:
+						intent = new Intent(MainActivity.this, MainActivity.class);
+						intent.putExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, true);
+						MainActivity.this.startActivity(intent);
+						finish();
+						break;
+					default:
+						break;
+					}				
+			}
+		});
+	    
+	    sideNavigationView.setMode(Mode.LEFT);
+	    
+	    Intent intent = getIntent();
+	    this.showFinishedEvents = intent.getBooleanExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, false);
+	    
+	    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+	    getSupportActionBar().setHomeButtonEnabled(true);
+	    getSupportActionBar().setTitle("Events");
+	    
+	    
+	    readProgramme();
+	    
+//	    Event happeningNow = getHappenningNow();
+//	    if (happeningNow != null)
+//	    	onHappenningNow(happeningNow);
+	    
+	    if (events.isEmpty()) {
+	    	createArsfestFinishedCard();
+	    } else {
+	    	createCards();
+	    }
 	}
+	
+	private Event getHappenningNow() {
+		if (!events.isEmpty())
+			return events.get(1);
+		return null;
+	}
+	
+	private void readProgramme() {
+		
+		locations = Utils.getProgramme(MainActivity.this);
+		
+		for (Location location : locations) {
+			for (Event event : location.getEvents()) {
+				
+				event.setParent(location);
+				events.add(event);
+				
+			}
+		}
+		
+		// sort events by start time
+		Collections.sort(events, Event.START_TIME);
+		
+		// remove finished, if needed
+		if (!showFinishedEvents) {
+			ArrayList<Event> finishedEvents = new ArrayList<Event>();
+			for (Event event : events) {
+				if (event.hasFinished())
+					finishedEvents.add(event);
+			}
+			events.removeAll(finishedEvents);
+		} else { // remove not finished
+			ArrayList<Event> notFinished = new ArrayList<Event>();
+			for (Event event : events) {
+				if (!event.hasFinished())
+					notFinished.add(event);
+			}
+			events.removeAll(notFinished);
+		}
+		
+	}
+	
+	private void createArsfestFinishedCard() {
+		cards = new ArrayList<Card>();
+		
+		Card card = new Card(this);
+		card.setTitle("aLL EVENTS ARE FINISHED DUDE!");
+		
+		cards.add(card);
+		
+		CardArrayAdapter cardArrayAdapter = new CardArrayAdapter(this, cards);
+		CardListView cardsView = (CardListView) findViewById(R.id.arsfest_events_list);
+		
+		if (cardsView != null) cardsView.setAdapter(cardArrayAdapter);
+	}
+	
+	private void createCards() {
+		cards = new ArrayList<Card>();
+		
+		for (Event event : events) {
+			
+			Card card = new HappenningNowCard(this, event);
+			card.setTitle(event.getName());
+			
+			UniversalImageLoaderThumbnail cardThumbnail = new UniversalImageLoaderThumbnail(this);
+			cardThumbnail.setUrl(event.getImage());
+			card.addCardThumbnail(cardThumbnail);
+			
+			card.setShadow(true);
+			
+			cards.add(card);
+		}
+		
+		CardArrayAdapter cardArrayAdapter = new CardArrayAdapter(this, cards);
+		CardListView cardsView = (CardListView) findViewById(R.id.arsfest_events_list);
+		
+		if (cardsView != null) cardsView.setAdapter(cardArrayAdapter);
+		
+	}
+	
+//	private void onHappenningNow(Event event) {
+//		happeningNowCard = new HappenningNowCard(this, event);
+//		
+//		CardHeader cardHeader = new HappeningNowHeader(this);
+//		cardHeader.setTitle("Happening now");
+//		happeningNowCard.addCardHeader(cardHeader);
+//		
+//		UniversalImageLoaderThumbnail cardThumbnail = new UniversalImageLoaderThumbnail(this);
+//		cardThumbnail.setUrl(event.getImage());
+//		happeningNowCard.addCardThumbnail(cardThumbnail);
+//		
+//		happeningNowCard.setShadow(true);
+//		
+//		happeningNowCardView = (CardView) findViewById(R.id.card_happening_now);
+//		happeningNowCardView.setCard(happeningNowCard);
+//		
+//		
+//	}
+	
+//	private void createCards() {
+//		cards = new ArrayList<Card>();
+//		
+//		for (Event event : events) {
+//			Card card = new Card(this, R.layout.card_event_inner);
+//			card.setTitle(event.getStartTime().toString());
+//			
+//			CardHeader cardHeader = new CardHeader(this);
+//			cardHeader.setTitle(event.getName());
+//			
+//			//PicassoThumbnail cardThumbnail = new PicassoThumbnail(this);
+//			UniversalImageLoaderThumbnail cardThumbnail = new UniversalImageLoaderThumbnail(this, options);
+//			cardThumbnail.setUrl(event.getImage());
+//			
+//			card.addCardHeader(cardHeader);
+//			card.addCardThumbnail(cardThumbnail);
+//			
+//			card.setSwipeable(true);
+//			
+//			cards.add(card);
+//		}
+//		
+//		CardArrayAdapter cardArrayAdapter = new CardArrayAdapter(this, cards);
+//		CardListView cardsView = (CardListView) findViewById(R.id.event_list);
+//		if (cardsView != null) cardsView.setAdapter(cardArrayAdapter);
+//		
+//	}
 
 	@Override
 	protected void onStart() {
 		super.onStart();
-
-		// Scan the BSSIDs every 60 seconds
-		alarmHelper.registerAlarmManager();
-
-		// start Context Awareness
-		contextAwareHelper.startContextAwareness();
-
-		// get Location Awareness
-		currentLocation = contextAwareHelper.getCurrentLocation();
-
-		if (this.comingFromLocation != null) {
-			this.currentLocation = this.comingFromLocation;
-			this.comingFromLocation = null;
-		}
-		// get Time && Location Awareness
-		initViewPager(
-				contextAwareHelper.getLocationArrayPosition(currentLocation),
-				contextAwareHelper.getEventsHappeningNow());
-		EasyTracker.getInstance().activityStart(this);
+		EasyTracker.getInstance(this).activityStart(this);		
 	}
 		
 	@Override
 	public void onStop() {
 		super.onStop();
-		EasyTracker.getInstance().activityStop(this);
+		EasyTracker.getInstance(this).activityStop(this);
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-		// Prompts user to enable WiFi
-		enableWiFi();
 	}
 
 	@Override
 	protected void onDestroy() {
 		super.onStop();
-		// Cancels the Broadcast Receiver
-		alarmHelper.unregisterAlarmManager();
 	}
 
-	private void initView() {
-
-		// update the font type of the header
-		headerTitle = (TextView) findViewById(R.id.actionBarTitle);
-		headerTitle.setTypeface(Utils.getTypeface(this,
-				Constants.TYPEFONT_PROXIMANOVA));
-		headerTitle.setText(Constants.APP_NAME);
-
-		// Sets the menu
-		super.startMenu(Constants.SCROLL_MENU_TIME);
-	}
-
-	private void readJson() {
-
-		JSONParser jsonParser;
-
-		try {
-			InputStream is = getAssets().open("data.JSON");
-			jsonParser = new JSONParser(is);
-
-			this.locations = jsonParser.readLocations();
-			this.bssids = jsonParser.readBssid();
-
-			// all events
-			ArrayList<Event> allEvents = new ArrayList<Event>();
-			for (Location location : this.locations) {
-				for (Event event : location.getEvents()) {
-					if (event != null)
-						allEvents.add(event);
-				}
-			}
-			this.locations.add(new Location("0", "ALL", allEvents));
-
-			// get position of 'all'
-			int allPos = this.locations.size() - 1;
-			Collections.swap(this.locations, allPos, 0);
-
-			for (Location location : locations) {
-				location.sortEventsByTime();
-			}
-
-		} catch (IOException e) {
-			Log.i("ARSFEST", e.getMessage());
-		}
-
-	}
-
-	private void initViewPager(final int pos, ArrayList<Event> happeningNow) {
-		viewPager = (ViewPager) findViewById(R.id.pager);
-		pageAdapter = new CustomPageAdapter(this, this.locations);
-		viewPager.setAdapter(pageAdapter);
-		viewPager.setCurrentItem(pos);
-		viewPager.setPageMargin(1);
-
-		scrollingTabs = (ScrollingTabsView) findViewById(R.id.scrolling_tabs);
-		scrollingTabsAdapter = new LocationTabs(this, this.locations);
-		scrollingTabs.setAdapter(scrollingTabsAdapter);
-		scrollingTabs.setViewPager(viewPager);
-		ViewTreeObserver vto = scrollingTabs.getViewTreeObserver();
-		vto.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
-
-			@Override
-			public void onGlobalLayout() {
-
-				// deprecated: scrollingTabs.moveTabTo(pos);
-				scrollingTabs.onPageSelected(pos);
-
-				ViewTreeObserver obs = scrollingTabs.getViewTreeObserver();
-				obs.removeGlobalOnLayoutListener(this);
-			}
-
-		});
-
-		lineViewPager = (ViewPager) findViewById(R.id.linepager);
-		linePageAdapter = new CustomLinePagerAdapter(this, this.locations,
-				happeningNow);
-
-		lineViewPager.setAdapter(linePageAdapter);
-		lineViewPager.setCurrentItem(0);
-		lineViewPager.setPageMargin(1);
-
-		mLine = (IndicatorLineView) findViewById(R.id.line);
-		mLine.setFadeOutDelay(0);
-		if (Utils.hasFestFinished() || !Utils.hasFestStarted()) {
-			mLine.setLineColor(this.getResources().getColor(
-					R.color.flat_light_grey));
-			mLine.setVisibility(View.INVISIBLE);
-		}
-		mLine.setViewPager(lineViewPager);
-	}
-
-	/**
-	 * Method prompting user to enable WiFi
-	 * 
-	 * @author AA
-	 */
-	public void enableWiFi() {
-		SharedPreferences sharedPrefs = getSharedPreferences(
-				Constants.PREFS_NAME, 0);
-
-		if (!NetworkHelper.isWiFiTurnedOn(this)
-				&& !sharedPrefs.getBoolean(Constants.PREFS_POP_UP_CONNECTIVIY,
-						false)) {
-			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-					this);
-			alertDialogBuilder.setTitle(R.string.wifi_title);
-			alertDialogBuilder.setMessage(R.string.wifi_txt);
-			alertDialogBuilder
-					.setPositiveButton(R.string.wifi_option1,
-							new DialogInterface.OnClickListener() {
-
-								@Override
-								public void onClick(DialogInterface dialog,
-										int which) {
-									
-									startActivityForResult(
-											new Intent(
-													android.provider.Settings.ACTION_SETTINGS),
-											which);
-									dialog.cancel();
-								}
-							})
-					.setNegativeButton(R.string.wifi_option2,
-							new DialogInterface.OnClickListener() {
-
-								@Override
-								public void onClick(DialogInterface dialog,
-										int which) {
-									SharedPreferences sharedPrefs = getSharedPreferences(
-											Constants.PREFS_NAME, 0);
-									SharedPreferences.Editor editor = sharedPrefs
-											.edit();
-									editor.putBoolean(
-											Constants.PREFS_POP_UP_CONNECTIVIY,
-											true);
-									editor.commit();
-
-									// Toast.makeText(getApplicationContext(),
-									// "WiFi card is off",
-									// Toast.LENGTH_SHORT).show();
-									dialog.cancel();
-								}
-							})
-					.setNeutralButton(R.string.wifi_option3,
-							new DialogInterface.OnClickListener() {
-
-								@Override
-								public void onClick(DialogInterface dialog,
-										int which) {
-									dialog.cancel();
-								}
-							});
-			alertDialogBuilder.create().show();
-		}
-
-	}
 
 	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
-		switch (requestCode) {
-		case Constants.RESULT_EVENT_INFO:
-			this.comingFromLocation = data
-					.getStringExtra(Constants.EXTRA_EVENT_INFO);
-			boolean comesFromAll = data.getBooleanExtra(
-					Constants.EXTRA_EVENT_ALL, false);
-			if (comesFromAll)
-				this.comingFromLocation = "0";
-			break;
-		}
+	public boolean onCreateOptionsMenu(Menu menu) {
+		
+		final SearchView searchView = new SearchView(getSupportActionBar().getThemedContext());
+		searchView.setQueryHint("Search");
+		
+		menu.add(R.string.action_search)
+			.setIcon(R.drawable.ic_action_search)
+			//.setActionView(R.layout.collapsible_edittext)
+			.setActionView(searchView)
+			.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+		
+		searchView.setOnQueryTextListener(new OnQueryTextListener() {
+			
+			@Override
+			public boolean onQueryTextSubmit(String query) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+			@Override
+			public boolean onQueryTextChange(String newText) {
+				if (newText.length() > 0) {
+					
+				}
+				return false;
+			}
+		});
+			
+		return true;
 	}
-
-	/*private void setOneTimeNotification() {
-		SharedPreferences sharedPrefs = getSharedPreferences(
-				Constants.PREFS_NAME, 0);
-		Calendar calendarNow = Calendar.getInstance();
-		calendarNow.setTimeInMillis(System.currentTimeMillis());
-		calendarNow.add(Calendar.MINUTE, 20);
-		Calendar calendarMax = Calendar.getInstance();
-		calendarMax.setTime(Utils.getStartDate(Constants.FEST_START_TIME));
-		if (sharedPrefs.getBoolean(Constants.ONE_TIME_NOTIFICATION, true)
-				&& calendarNow.before(calendarMax)) {
-			Intent myIntent = new Intent(this,
-					MyOneTimeNotificationService.class);
-			PendingIntent myPendingIntent = PendingIntent.getService(this, 200,
-					myIntent, 0);
-			SharedPreferences.Editor editor = sharedPrefs.edit();
-			editor.putBoolean(Constants.ONE_TIME_NOTIFICATION, false);
-			editor.commit();
-			AlarmManager alarmManager = (AlarmManager) this
-					.getSystemService(Context.ALARM_SERVICE);
-			Calendar calendarEvent = Calendar.getInstance();
-			calendarEvent
-					.setTime(Utils.getStartDate(Constants.FEST_START_TIME));
-			calendarEvent.add(Calendar.HOUR, -2);
-			alarmManager.set(AlarmManager.RTC_WAKEUP,
-					calendarEvent.getTimeInMillis(), myPendingIntent);
-		}
-	}*/
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+		    case android.R.id.home:
+		        sideNavigationView.toggleMenu();
+		        break;
+		    default:
+		        return super.onOptionsItemSelected(item);
+		    }
+		    return true;
+	}
+	
 }

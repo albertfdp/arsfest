@@ -1,15 +1,11 @@
 package dk.dtu.arsfest.model;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
-
-import dk.dtu.arsfest.utils.Constants;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.util.Log;
-
-import dk.dtu.arsfest.model.Course;
 
 public class Event implements Parcelable, Comparable<Event> {
 	
@@ -18,11 +14,16 @@ public class Event implements Parcelable, Comparable<Event> {
 	private String image;
 	private Date startTime;
 	private Date endTime;
-	private String location;
 	private String description;
 	private String type;
 	private String theme;
 	private boolean remark = false;
+	private Location parent;
+	
+	public Event (String id, String name) {
+		this.id = id;
+		this.name = name;
+	}
 	
 	public boolean isRemark() {
 		return remark;
@@ -57,25 +58,29 @@ public class Event implements Parcelable, Comparable<Event> {
 	public void setTheme(String theme) {
 		this.theme = theme;
 	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
 	
+	public Location getParent() {
+		return parent;
+	}
+
+	public void setParent(Location parent) {
+		this.parent = parent;
+	}
+
 	public Event(String id, String name, String image, Date startTime, Date endTime, 
-			String location, String description, String type, String theme, ArrayList<Course> menu, boolean remark) {
+			String location, String description, String type, String theme, ArrayList<Course> menu, boolean remark, Location parent) {
 		
 		this.id = id;
 		this.name = name;
 		this.image = image;
 		this.startTime = startTime;
 		this.endTime = endTime;
-		this.location = location; 
 		this.description = description;
 		this.type = type;
 		this.theme = theme;
 		this.menu = menu;
 		this.remark = remark;
+		this.parent = parent;
 	}
 	
 	public String getId() {
@@ -108,12 +113,7 @@ public class Event implements Parcelable, Comparable<Event> {
 	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
-	public String getLocation() {
-		return location;
-	}
-	public void setLocations(String location) {
-		this.location = location;
-	}
+	
 	public String getDescription() {
 		return description;
 	}
@@ -138,11 +138,11 @@ public class Event implements Parcelable, Comparable<Event> {
 		dest.writeString(image);
 		dest.writeLong(startTime.getTime());
 		dest.writeLong(endTime.getTime());
-		dest.writeString(location);
 		dest.writeString(description);
 		dest.writeString(type);
 		dest.writeString(theme);
 		dest.writeTypedList(menu);
+		dest.writeParcelable(parent, flags);
 	}
 	
 	public static final Parcelable.Creator<Event> CREATOR = new Parcelable.Creator<Event>() {
@@ -164,15 +164,25 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.image = in.readString();
 		this.startTime = new Date(in.readLong());
 		this.endTime = new Date(in.readLong());
-		this.location = in.readString();
 		this.description = in.readString();
 		this.type = in.readString();
 		this.theme = in.readString();
 		in.readTypedList(this.menu, Course.CREATOR);
+		this.parent = in.readParcelable(Location.class.getClassLoader());
 	}
 
 	public boolean hasStarted(Date currentTime) {
 		return (currentTime.after(startTime));
+	}
+	
+	public boolean hasStarted() {
+		Date date = new Date();
+		return (date.after(startTime));
+	}
+	
+	public boolean hasFinished() {
+		Date date = new Date();
+		return (date.after(endTime));
 	}
 	
 	public boolean hasFinished(Date currentTime) {
@@ -180,13 +190,9 @@ public class Event implements Parcelable, Comparable<Event> {
 	}
 	
 	public boolean isHappeningNow(Date currentTime){
-		//return (hasStarted(currentTime) && !hasFinished(currentTime));
 		if (hasStarted(currentTime) && !hasFinished(currentTime)) {
-			Log.i(Constants.TAG, this.name + " hasStarted, but not finished");
 			return true;
-		} else if (hasStarted(currentTime) && hasFinished(currentTime)) {
-			Log.i(Constants.TAG, this.name + " hasStarted, and finished");
-		}
+		} 
 		return false;
 	}
 
@@ -195,7 +201,22 @@ public class Event implements Parcelable, Comparable<Event> {
 		return this.getStartTime().compareTo(anotherInstance.getStartTime());
 	}
 	
+	public static final Comparator<Event> START_TIME = new Comparator<Event>() {
+
+		@Override
+		public int compare(Event lhs, Event rhs) {
+			return lhs.compareTo(rhs);
+		}
+		
+	};
 	
-	
+	public static final Comparator<Event> END_TIME = new Comparator<Event>() {
+
+		@Override
+		public int compare(Event lhs, Event rhs) {
+			return lhs.getEndTime().compareTo(rhs.getEndTime());
+		}
+		
+	};
 	
 }
