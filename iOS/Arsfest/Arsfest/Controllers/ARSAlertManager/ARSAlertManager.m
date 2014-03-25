@@ -10,6 +10,13 @@
 
 @implementation ARSAlertManager
 
-
++ (void)showErrorWithTitle:(NSString*)title message:(NSString*)message cancelTitle:(NSString*)cancelTitle
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelTitle otherButtonTitles:nil];
+    
+    if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+        [alertView show];
+    }
+}
 
 @end

@@ -10,4 +10,7 @@
 
 @interface ARSAlertManager : NSObject
 
+/*  Show an alert message with the specified arguments */
++ (void)showErrorWithTitle:(NSString*)title message:(NSString*)message cancelTitle:(NSString*)cancelTitle;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ARSUserController.h"
+#import "ARSAlertManager.h"
 #import <Parse/Parse.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
 
@@ -64,6 +65,14 @@
                 [delegate userLogInCompletedWithError:ARSUserLoginUnknownError];
             }
         } else {
+            //Fetching user's facebook id and assigning it to the PFUSer
+            [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                if (!error) {
+                    [[PFUser currentUser] setObject:[result objectForKey:@"id"]
+                                             forKey:@"fbId"];
+                    [[PFUser currentUser] saveInBackground];
+                }
+            }];
             [delegate userLogInCompletedWithSuccess];
         }
     }];
@@ -125,7 +134,32 @@
     return wiFiAvailable;
 }
 
+- (PFGeoPoint*)locationFromBSSID:(NSString*)bssid
+{
+#warning YET TO BE IMPLEMENTED
+    return nil;
+}
 
+- (void)updateUserLocation
+{
+    if ([self localWiFiAvailable]) {
+        lastBSSID = [self currentWifiBSSID];
+        
+        //Get coordinates of the BSSID
+        PFGeoPoint *location = [self locationFromBSSID:lastBSSID];
+        //If BSSID or WiFi not connected, location is updated to nil
+        [[PFUser currentUser] setObject:location forKey:@"location"];
+        [[PFUser currentUser] setObject:[NSDate date] forKey:@"lastUpdatedAt"];
+        [[PFUser currentUser] saveInBackground];
+        
+    } else {
+        //WiFi not available
+        [ARSAlertManager showErrorWithTitle:@"Wi-Fi Not Enabled" message:@"Please enable the Wi-Fi to get your current location" cancelTitle:@"OK"];
+        
+        
+        
+    }
+}
 
 
 @end
