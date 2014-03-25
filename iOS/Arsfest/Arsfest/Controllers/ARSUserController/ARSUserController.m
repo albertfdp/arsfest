@@ -8,9 +8,32 @@
 
 #import "ARSUserController.h"
 #import <Parse/Parse.h>
+#import <SystemConfiguration/CaptiveNetwork.h>
+
+#import <arpa/inet.h> // For AF_INET, etc.
+#import <ifaddrs.h> // For getifaddrs()
+#import <net/if.h> // For IFF_LOOPBACK
+
+@interface ARSUserController()
+
+@property (nonatomic, retain) NSString *lastBSSID;
+
+- (NSString *)currentWifiBSSID;
+- (BOOL)localWiFiAvailable;
+
+@end
 
 @implementation ARSUserController
+@synthesize lastBSSID;
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        lastBSSID = nil;
+    }
+    return self;
+}
 
 + (ARSUserController*)sharedUserController
 {
@@ -23,6 +46,8 @@
     return sharedController;
 }
 
+#pragma mark -
+#pragma mark - Log in/out methods
 
 + (void)logUserWithDelegate:(id<ARSUserControllerDelegate>)delegate
 {
@@ -54,6 +79,53 @@
     return ([PFUser currentUser] && // Check if a user is cached
             [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]); // Check if user is linked to Facebook
 }
+
+#pragma mark -
+#pragma mark - Location methods
+
+- (NSString *)currentWifiBSSID {
+    
+    NSString *bssid = nil;
+    NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfaces();
+    for (NSString *ifnam in ifs) {
+        NSDictionary *info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
+        
+        NSLog(@"info:%@",info);
+        
+        if (info[@"BSSID"]) {
+            bssid = info[@"BSSID"];
+        }
+    }
+    
+    return bssid;
+}
+
+- (BOOL)localWiFiAvailable
+{
+    struct ifaddrs *addresses;
+    struct ifaddrs *cursor;
+    BOOL wiFiAvailable = NO;
+    if (getifaddrs(&addresses) != 0) return NO;
+    
+    cursor = addresses;
+    while (cursor != NULL) {
+    	if (cursor -> ifa_addr -> sa_family == AF_INET
+    		&& !(cursor -> ifa_flags & IFF_LOOPBACK)) // Ignore the loopback address
+    	{
+    		// Check for WiFi adapter
+    		if (strcmp(cursor -> ifa_name, "en0") == 0) {
+    			wiFiAvailable = YES;
+    			break;
+    		}
+    	}
+    	cursor = cursor -> ifa_next;
+    }
+    
+    freeifaddrs(addresses);
+    return wiFiAvailable;
+}
+
+
 
 
 @end

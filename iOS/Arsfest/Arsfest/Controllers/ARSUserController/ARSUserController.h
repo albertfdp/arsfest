@@ -31,7 +31,18 @@ typedef NS_ENUM(NSInteger, ARSUserLoginError) {
 
 + (ARSUserController*)sharedUserController;
 
-
+/* Log the user to Facebook with the specified delegate */
 + (void)logUserWithDelegate:(id<ARSUserControllerDelegate>)delegate;
+
+/* Log out the user */
++ (void)logOutUser;
+
+/* Asks if a user is currently logged in
+ * Warning: It does not specify if the session is active but invalidated
+ */
++ (BOOL)isUserLoggedIn;
+
+
+
 
 @end

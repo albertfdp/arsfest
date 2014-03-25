@@ -12,6 +12,7 @@
 		DB21FDA518BE1A680083F26C /* location_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21FDA318BE1A680083F26C /* location_icon.png */; };
 		DB21FDA618BE1A680083F26C /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21FDA418BE1A680083F26C /* location_icon@2x.png */; };
 		DB21FDAA18BE1B6E0083F26C /* ARSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB21FDA918BE1B6E0083F26C /* ARSNavigationController.m */; };
+		DB38A69818E1908F00AA12AE /* ARSAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB38A69718E1908F00AA12AE /* ARSAlertManager.m */; };
 		DB43AE3E18DEDE7D00D56B4F /* ARSUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB43AE3D18DEDE7D00D56B4F /* ARSUserController.m */; };
 		DB53D31D18AE352400508DAD /* UIViewController+Edges.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53D31C18AE352400508DAD /* UIViewController+Edges.m */; };
 		DB53D32118AE595C00508DAD /* Clock.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D31F18AE595C00508DAD /* Clock.png */; };
@@ -106,6 +107,8 @@
 		DB21FDA418BE1A680083F26C /* location_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@2x.png"; sourceTree = "<group>"; };
 		DB21FDA818BE1B6E0083F26C /* ARSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSNavigationController.h; path = Utilities/ARSNavigationController.h; sourceTree = "<group>"; };
 		DB21FDA918BE1B6E0083F26C /* ARSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSNavigationController.m; path = Utilities/ARSNavigationController.m; sourceTree = "<group>"; };
+		DB38A69618E1908F00AA12AE /* ARSAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSAlertManager.h; path = Controllers/ARSAlertManager/ARSAlertManager.h; sourceTree = "<group>"; };
+		DB38A69718E1908F00AA12AE /* ARSAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSAlertManager.m; path = Controllers/ARSAlertManager/ARSAlertManager.m; sourceTree = "<group>"; };
 		DB43AE3C18DEDE7D00D56B4F /* ARSUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSUserController.h; path = Controllers/ARSUserController/ARSUserController.h; sourceTree = "<group>"; };
 		DB43AE3D18DEDE7D00D56B4F /* ARSUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSUserController.m; path = Controllers/ARSUserController/ARSUserController.m; sourceTree = "<group>"; };
 		DB53D31B18AE352400508DAD /* UIViewController+Edges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Edges.h"; path = "Utilities/UIViewController+Edges.h"; sourceTree = "<group>"; };
@@ -264,6 +267,15 @@
 			name = ARSEventListViewController;
 			sourceTree = "<group>";
 		};
+		DB38A69918E1909800AA12AE /* ARSAlertManager */ = {
+			isa = PBXGroup;
+			children = (
+				DB38A69618E1908F00AA12AE /* ARSAlertManager.h */,
+				DB38A69718E1908F00AA12AE /* ARSAlertManager.m */,
+			);
+			name = ARSAlertManager;
+			sourceTree = "<group>";
+		};
 		DB43AE3A18DEDDAE00D56B4F /* EventThumbnails */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +306,7 @@
 		DB43AE3B18DEDE4E00D56B4F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DB38A69918E1909800AA12AE /* ARSAlertManager */,
 				DB43AE3F18DEDE8100D56B4F /* ARSUserController */,
 			);
 			name = Controllers;
@@ -742,6 +755,7 @@
 				DB98729718AD748B00A085FE /* ARSEventCell.m in Sources */,
 				DBA8518E18DB7E86005E352E /* EAIntroView.m in Sources */,
 				DB6B317418A43AD200C3EABB /* ARSLocation.m in Sources */,
+				DB38A69818E1908F00AA12AE /* ARSAlertManager.m in Sources */,
 				DB6B313518A4337300C3EABB /* ARSAppDelegate.m in Sources */,
 				DB9872A418AD7F7500A085FE /* NSDate+Formatter.m in Sources */,
 				DBA8518D18DB7E86005E352E /* EAIntroPage.m in Sources */,
