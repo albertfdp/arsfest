@@ -907,8 +907,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/thibaudrobelain/Documents/DTU/Mobile_Prototyping/Dev/arsfest/iOS/Arsfest,
-					/Users/thibaudrobelain/Documents/FacebookSDK,
+					$HOME/Documents/DTU/Mobile_Prototyping/Dev/arsfest/iOS/Arsfest,
+					$HOME/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Arsfest/Arsfest-Prefix.pch";
@@ -928,8 +928,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/thibaudrobelain/Documents/DTU/Mobile_Prototyping/Dev/arsfest/iOS/Arsfest,
-					/Users/thibaudrobelain/Documents/FacebookSDK,
+					$HOME/Documents/DTU/Mobile_Prototyping/Dev/arsfest/iOS/Arsfest,
+					$HOME/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Arsfest/Arsfest-Prefix.pch";
