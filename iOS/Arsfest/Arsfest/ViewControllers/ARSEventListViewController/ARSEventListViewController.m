@@ -138,9 +138,7 @@
 - (void)didReceiveDataFromTheServer
 {
     NSArray *receivedData = [_data eventsIn:_currentFilter];
-    [self sortAndStore:receivedData];
-    //TODO: Handle UI Logic
-    
+    [self sortAndStore:receivedData];    
 }
 
 /**

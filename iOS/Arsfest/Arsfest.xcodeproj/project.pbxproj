@@ -564,10 +564,18 @@
 		DBBEC19218A6D9E300212106 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DBC83A6618E2DBA30047D269 /* ARSMapViewController */,
 				DB98729A18AD7E7F00A085FE /* ARSEventViewController */,
 				DB23274C18AD0DB800628B8D /* ARSEventListViewController */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DBC83A6618E2DBA30047D269 /* ARSMapViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ARSMapViewController;
 			sourceTree = "<group>";
 		};
 		DBCCEA4818A5722B00CC87AE /* ARSData */ = {

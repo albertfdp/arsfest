@@ -15,8 +15,12 @@ typedef NS_ENUM(NSInteger, ARSUserLoginError) {
 
 @protocol ARSUserControllerDelegate <NSObject>
 
+/* Callbacks to notify the delegates of the result of the facebook login flow */
 - (void)userLogInCompletedWithSuccess;
 - (void)userLogInCompletedWithError:(ARSUserLoginError)error;
+
+/* Notifies the delegate that the UserController fetched the current user friends and their locations */
+- (void)userControllerRetrievedUserFriends:(NSArray*)friends;
 
 @end
 
@@ -42,8 +46,15 @@ typedef NS_ENUM(NSInteger, ARSUserLoginError) {
  */
 + (BOOL)isUserLoggedIn;
 
-
+/*
+ * Updates the user location to the server if the user is currently connected to Facebook and to the WiFi
+ */
 - (void)updateUserLocation;
+
+/*
+ * Fetches the user friends location and notifies the specified delegate
+ */
+- (void)fetchFriendsLocationWithDelegate:(id<ARSUserControllerDelegate>)delegate;
 
 
 @end

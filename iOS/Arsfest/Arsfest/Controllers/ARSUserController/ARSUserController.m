@@ -18,6 +18,7 @@
 @interface ARSUserController()
 
 @property (nonatomic, retain) NSString *lastBSSID;
+@property (nonatomic, retain) NSArray *userFriends;
 
 - (NSString *)currentWifiBSSID;
 - (BOOL)localWiFiAvailable;
@@ -26,6 +27,10 @@
 
 @implementation ARSUserController
 @synthesize lastBSSID;
+@synthesize userFriends;
+
+#pragma mark -
+#pragma mark - Initialization
 
 - (id)init
 {
@@ -146,23 +151,60 @@
 
 - (void)updateUserLocation
 {
-    if ([self localWiFiAvailable]) {
+    if ([self localWiFiAvailable] && [ARSUserController isUserLoggedIn]) {
         lastBSSID = [self currentWifiBSSID];
         
         //Get coordinates of the BSSID
         PFGeoPoint *location = [self locationFromBSSID:lastBSSID];
         //If BSSID or WiFi not connected, location is updated to nil
         [[PFUser currentUser] setObject:location forKey:@"location"];
-        [[PFUser currentUser] setObject:[NSDate date] forKey:@"lastUpdatedAt"];
         [[PFUser currentUser] saveInBackground];
         
     } else {
         //WiFi not available
-        [ARSAlertManager showErrorWithTitle:@"Wi-Fi Not Enabled" message:@"Please enable the Wi-Fi to get your current location" cancelTitle:@"OK"];
-        
-        
-        
+        if (![self localWiFiAvailable]) {
+            [ARSAlertManager showErrorWithTitle:@"Wi-Fi Not Enabled" message:@"Please enable the Wi-Fi to get your current location" cancelTitle:@"OK"];
+        }
     }
+}
+
+- (void)fetchFriendsLocationWithDelegate:(id<ARSUserControllerDelegate>)delegate
+{
+    if (!userFriends) {
+        // Issue a Facebook Graph API request to get your user's friend list
+        [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            if (!error) {
+                // result will contain an array with your user's friends in the "data" key
+                userFriends = [result objectForKey:@"data"];
+                [self queryUserFriendsWithIds:userFriends delegate:delegate];
+            }
+        }];
+    } else {
+        [self queryUserFriendsWithIds:userFriends delegate:delegate];
+    }
+}
+
+- (void)queryUserFriendsWithIds:(NSArray*)friendsIds delegate:(id<ARSUserControllerDelegate>)delegate
+{
+    NSMutableArray *friendIds = [NSMutableArray arrayWithCapacity:userFriends.count];
+    // Create a list of friends' Facebook IDs
+    for (NSDictionary *friendObject in userFriends) {
+        [friendIds addObject:[friendObject objectForKey:@"id"]];
+    }
+    
+    // Construct a PFUser query that will find friends whose facebook ids
+    // are contained in the current user's friend list.
+    PFQuery *friendQuery = [PFUser query];
+    [friendQuery whereKey:@"fbId" containedIn:friendIds];
+    
+    // findObjects will return a list of PFUsers that are friends
+    // with the current user
+    
+    [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+        if ([delegate respondsToSelector:@selector(userControllerRetrievedUserFriends:)]) {
+            [delegate userControllerRetrievedUserFriends:objects];
+        }
+    }];
 }
 
 

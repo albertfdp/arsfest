@@ -81,47 +81,6 @@
     [_eventImageView addBorderTop:NO bottom:YES right:NO left:NO outside:YES];
 }
 
-- (void)view:(UIView*)view addBorderTop:(BOOL)top bottom:(BOOL)bottom right:(BOOL)right left:(BOOL)left
-{
-    if (top) {
-        CALayer *topBorder = [CALayer layer];
-        
-        topBorder.frame = CGRectMake(0.0f, 0.0f, view.frame.size.width, -0.3f);
-        topBorder.backgroundColor = [UIColor colorWithWhite:0.8f
-                                                      alpha:1.0f].CGColor;
-        
-        [view.layer addSublayer:topBorder];
-    }
-    if (bottom) {
-        CALayer *bottomBorder = [CALayer layer];
-        
-        bottomBorder.frame = CGRectMake(0.0f, view.frame.size.height, view.frame.size.width, 0.3f);
-        bottomBorder.backgroundColor = [UIColor colorWithWhite:0.8f
-                                                         alpha:1.0f].CGColor;
-        
-        [view.layer addSublayer:bottomBorder];
-   
-    }
-    if (left) {
-        CALayer *leftBorder = [CALayer layer];
-        
-        leftBorder.frame = CGRectMake(0.0f, 0.0f, -0.3f, view.frame.size.height);
-        leftBorder.backgroundColor = [UIColor colorWithWhite:0.8f
-                                                         alpha:1.0f].CGColor;
-        
-        [view.layer addSublayer:leftBorder];
-    }
-    if (right) {
-        CALayer *rightBorder = [CALayer layer];
-        
-        rightBorder.frame = CGRectMake(view.frame.size.width, 0.0f, 0.3f, view.frame.size.height);
-        rightBorder.backgroundColor = [UIColor colorWithWhite:0.8f
-                                                       alpha:1.0f].CGColor;
-        
-        [view.layer addSublayer:rightBorder];
-    }
-}
-
 #pragma mark -
 #pragma mark - Navigation Bar setup
 
