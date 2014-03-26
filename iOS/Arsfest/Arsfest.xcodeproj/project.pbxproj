@@ -67,6 +67,8 @@
 		DBA8518E18DB7E86005E352E /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA8518C18DB7E86005E352E /* EAIntroView.m */; };
 		DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */; };
 		DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */; };
+		DBC83A6A18E2DE380047D269 /* ARSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC83A6818E2DE380047D269 /* ARSMapViewController.m */; };
+		DBC83A6B18E2DE380047D269 /* ARSMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC83A6918E2DE380047D269 /* ARSMapViewController.xib */; };
 		DBCCEA4418A5628200CC87AE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */; };
 		DBCCEA4B18A5723D00CC87AE /* ARSData.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCCEA4A18A5723D00CC87AE /* ARSData.m */; };
 		DBE009C718B78E22000B6DFE /* alphabeat.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009B718B78E22000B6DFE /* alphabeat.png */; };
@@ -180,6 +182,9 @@
 		DBBEC19318A6DAC200212106 /* ARSEventListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSEventListViewController.h; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.h; sourceTree = "<group>"; };
 		DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEventListViewController.m; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.m; sourceTree = "<group>"; };
 		DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ARSEventListViewController.xib; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.xib; sourceTree = "<group>"; };
+		DBC83A6718E2DE380047D269 /* ARSMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSMapViewController.h; path = ViewControllers/ARSMapViewController/ARSMapViewController.h; sourceTree = "<group>"; };
+		DBC83A6818E2DE380047D269 /* ARSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSMapViewController.m; path = ViewControllers/ARSMapViewController/ARSMapViewController.m; sourceTree = "<group>"; };
+		DBC83A6918E2DE380047D269 /* ARSMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ARSMapViewController.xib; path = ViewControllers/ARSMapViewController/ARSMapViewController.xib; sourceTree = "<group>"; };
 		DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		DBCCEA4918A5723D00CC87AE /* ARSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSData.h; path = Model/ARSData/ARSData.h; sourceTree = "<group>"; };
 		DBCCEA4A18A5723D00CC87AE /* ARSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSData.m; path = Model/ARSData/ARSData.m; sourceTree = "<group>"; };
@@ -574,6 +579,9 @@
 		DBC83A6618E2DBA30047D269 /* ARSMapViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DBC83A6718E2DE380047D269 /* ARSMapViewController.h */,
+				DBC83A6818E2DE380047D269 /* ARSMapViewController.m */,
+				DBC83A6918E2DE380047D269 /* ARSMapViewController.xib */,
 			);
 			name = ARSMapViewController;
 			sourceTree = "<group>";
@@ -690,6 +698,7 @@
 				DBA50A2C18B7C6A0001C8AF1 /* dance_icon@2x.png in Resources */,
 				DBE009C918B78E22000B6DFE /* dinner.png in Resources */,
 				DBE009CC18B78E22000B6DFE /* dj@2x.png in Resources */,
+				DBC83A6B18E2DE380047D269 /* ARSMapViewController.xib in Resources */,
 				DBE009CE18B78E22000B6DFE /* jazzband@2x.png in Resources */,
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
 				DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */,
@@ -768,6 +777,7 @@
 				DB9872A418AD7F7500A085FE /* NSDate+Formatter.m in Sources */,
 				DBA8518D18DB7E86005E352E /* EAIntroPage.m in Sources */,
 				DB6B317718A43AE500C3EABB /* ARSEvent.m in Sources */,
+				DBC83A6A18E2DE380047D269 /* ARSMapViewController.m in Sources */,
 				DB21FD9618BE16B80083F26C /* UIBarButtonItem+RightBarItem.m in Sources */,
 				DB21FDAA18BE1B6E0083F26C /* ARSNavigationController.m in Sources */,
 				DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */,

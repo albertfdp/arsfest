@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger, ARSUserLoginError) {
 
 /* Notifies the delegate that the UserController fetched the current user friends and their locations */
 - (void)userControllerRetrievedUserFriends:(NSArray*)friends;
+- (void)userControllerFailedToRetrieveFriends;
 
 @end
 

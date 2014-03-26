@@ -201,8 +201,14 @@
     // with the current user
     
     [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
-        if ([delegate respondsToSelector:@selector(userControllerRetrievedUserFriends:)]) {
-            [delegate userControllerRetrievedUserFriends:objects];
+        if (!error) {
+            if ([delegate respondsToSelector:@selector(userControllerRetrievedUserFriends:)]) {
+                [delegate userControllerRetrievedUserFriends:objects];
+            }
+        } else {
+            if ([delegate respondsToSelector:@selector(userControllerFailedToRetrieveFriends)]) {
+                [delegate userControllerFailedToRetrieveFriends];
+            }
         }
     }];
 }
