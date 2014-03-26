@@ -137,7 +137,11 @@
 - (PFGeoPoint*)locationFromBSSID:(NSString*)bssid
 {
 #warning YET TO BE IMPLEMENTED
-    return nil;
+    
+    PFGeoPoint *location = [[PFGeoPoint alloc] init];
+    location.longitude = 52;
+    location.latitude = 52;
+    return location;
 }
 
 - (void)updateUserLocation

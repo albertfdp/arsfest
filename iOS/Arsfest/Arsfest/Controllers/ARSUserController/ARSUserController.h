@@ -43,6 +43,7 @@ typedef NS_ENUM(NSInteger, ARSUserLoginError) {
 + (BOOL)isUserLoggedIn;
 
 
+- (void)updateUserLocation;
 
 
 @end

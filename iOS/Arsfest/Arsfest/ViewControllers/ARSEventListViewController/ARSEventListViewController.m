@@ -11,10 +11,11 @@
 #import "ARSEventCell.h"
 #import "ARSEvent.h"
 #import "EAIntroView.h"
+#import "ARSUserController.h"
 
 #define kEventCellHeight 78
 
-@interface ARSEventListViewController ()
+@interface ARSEventListViewController() <ARSUserControllerDelegate>
 
 @property (nonatomic, assign) ARSLocationType currentFilter;
 @property (nonatomic, strong) ARSData *data;
@@ -203,6 +204,10 @@
         
         [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:INTRO_SHOWN_ONCE];
         [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    if ([ARSUserController isUserLoggedIn]) {
+        [[ARSUserController sharedUserController] updateUserLocation];
+    }
 //    }
 }
 #pragma mark -
@@ -226,6 +231,19 @@
     _currentFilter = kNumberOfLocations - index;
     NSArray *newData = [_data eventsIn:_currentFilter];
     [self sortAndStore:newData];
+}
+
+#pragma mark -
+#pragma mark - User controller delegate
+
+- (void)userLogInCompletedWithSuccess
+{
+    NSLog(@"Success");
+}
+
+- (void)userLogInCompletedWithError:(ARSUserLoginError)error
+{
+    NSLog(@"Error");    
 }
 
 @end
