@@ -71,6 +71,8 @@
 {
     ARSMapViewController *mapViewController = [[ARSMapViewController alloc] initWithNibName:@"ARSMapViewController" bundle:[NSBundle mainBundle]];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
+    [navigationController.navigationBar setBarTintColor:kArsfestColor];
+    
     [self presentViewController:navigationController animated:YES completion:^{
         NSLog(@"Did show the map");
     }];

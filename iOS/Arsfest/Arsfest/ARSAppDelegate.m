@@ -12,6 +12,7 @@
 #import "ARSAppDelegate.h"
 #import <Parse/Parse.h>
 #import "ARSEventListViewController.h"
+#import "ARSUserController.h"
 
 @implementation ARSAppDelegate
 
@@ -26,6 +27,10 @@
                   clientKey:kParseClientKey];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
+    
+    if ([ARSUserController isUserLoggedIn]) {
+        [ARSUserController logOutUser];
+    }
     
     
     ARSEventListViewController *eventListViewController = [[ARSEventListViewController alloc] initWithNibName:@"ARSEventListViewController" bundle:nil];
