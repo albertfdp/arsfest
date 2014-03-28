@@ -11,9 +11,12 @@
 
 @interface ARSMapViewController ()
 
+@property (nonatomic, retain) NSArray *friends;
+
 @end
 
 @implementation ARSMapViewController
+@synthesize friends;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +32,9 @@
     [super viewDidLoad];
     
     [self customizeFacebookLoginButton];
+    
+    [self.friendListView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:nil];
+    [self.friendListDataView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:nil];
 
     [self.segmentedControl addObserver:self forKeyPath:@"selectedSegmentIndex" options:NSKeyValueObservingOptionNew context:nil];
     [self.segmentedControl setSelectedSegmentIndex:0];
@@ -55,6 +61,12 @@
     [self.friendListView setHidden:YES];
     [self.containerView addSubview:self.mapView];
     [self.mapView setHidden:YES];
+}
+
+- (void)showFriendListProcessingView:(BOOL)processing
+{
+    self.friendListDataView.hidden = processing;
+    self.friendListLoadingView.hidden = !processing;
 }
 
 #pragma mark -
@@ -110,25 +122,26 @@
 #pragma mark -
 #pragma mark - User controller delegate
 
-- (void)userControllerRetrievedUserFriends:(NSArray *)friends
+- (void)userControllerRetrievedUserFriends:(NSArray *)_friends
 {
-    
+    [self showFriendListProcessingView:NO];
+    friends = _friends;
 }
 
 - (void)userControllerFailedToRetrieveFriends
 {
-    
+    [[ARSUserController sharedUserController] fetchFriendsLocationWithDelegate:self]; 
 }
 
 - (void)userLogInCompletedWithError:(ARSUserLoginError)error
 {
     self.containerView = self.registerView;
-    [ARSAlertManager showErrorWithTitle:@"Facebook Error" message:@"The registration couldn't complete" cancelTitle:@"OK"];
+    [ARSAlertManager showErrorWithTitle:@"Registration error" message:@"The registration couldn't complete" cancelTitle:@"OK"];
 }
 
 - (void)userLogInCompletedWithSuccess
 {
-    self.containerView = self.friendListView;
+    [self configureViewForSelectedIndex:self.segmentedControl.selectedSegmentIndex];
 }
 
 - (void)removeLoadingView
@@ -144,6 +157,19 @@
     if ([keyPath isEqualToString:@"selectedSegmentIndex"]) {
         UISegmentedControl *segmControl = (UISegmentedControl*)object;
         [self configureViewForSelectedIndex:segmControl.selectedSegmentIndex];
+    }
+    
+    if (object == self.friendListView) {
+        if (!self.friendListView.hidden) {
+            [self showFriendListProcessingView:YES];
+            [[ARSUserController sharedUserController] fetchFriendsLocationWithDelegate:self];
+        }
+    }
+    
+    if (object == self.friendListDataView) {
+        BOOL shouldHideTableView = (!self.friendListDataView.hidden && [friends count] == 0);
+        self.friendsListTableView.hidden = shouldHideTableView;
+        self.noFriendsRegisteredLabel.hidden = !shouldHideTableView;
     }
 }
 

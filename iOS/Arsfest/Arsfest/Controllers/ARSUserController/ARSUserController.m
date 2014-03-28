@@ -70,6 +70,7 @@
                 [delegate userLogInCompletedWithError:ARSUserLoginUnknownError];
             }
         } else {
+            [delegate userLogInCompletedWithSuccess];
             //Fetching user's facebook id and assigning it to the PFUSer
             [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                 if (!error) {
@@ -78,7 +79,6 @@
                     [[PFUser currentUser] saveInBackground];
                 }
             }];
-            [delegate userLogInCompletedWithSuccess];
         }
     }];
 }

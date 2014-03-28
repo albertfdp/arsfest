@@ -73,9 +73,7 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
     [navigationController.navigationBar setBarTintColor:kArsfestColor];
     
-    [self presentViewController:navigationController animated:YES completion:^{
-        NSLog(@"Did show the map");
-    }];
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 @end
