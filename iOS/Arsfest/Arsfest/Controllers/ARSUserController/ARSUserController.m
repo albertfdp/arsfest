@@ -76,6 +76,9 @@
                 if (!error) {
                     [[PFUser currentUser] setObject:[result objectForKey:@"id"]
                                              forKey:@"fbId"];
+                    [[PFUser currentUser] setObject:[result objectForKey:@"name"] forKey:@"name"];
+                    NSString *pictureURL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", [result objectForKey:@"id"]];
+                    [[PFUser currentUser] setObject:pictureURL forKey:@"pictureURL"];
                     [[PFUser currentUser] saveInBackground];
                 }
             }];
@@ -192,13 +195,8 @@
         [friendIds addObject:[friendObject objectForKey:@"id"]];
     }
     
-    // Construct a PFUser query that will find friends whose facebook ids
-    // are contained in the current user's friend list.
     PFQuery *friendQuery = [PFUser query];
-    [friendQuery whereKey:@"fbId" containedIn:friendIds];
-    
-    // findObjects will return a list of PFUsers that are friends
-    // with the current user
+//    [friendQuery whereKey:@"fbId" containedIn:friendIds];
     
     [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
         if (!error) {

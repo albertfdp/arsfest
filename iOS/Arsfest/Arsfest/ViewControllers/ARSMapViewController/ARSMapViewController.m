@@ -8,6 +8,7 @@
 
 #import "ARSMapViewController.h"
 #import "ARSAlertManager.h"
+#import "ARSFriendListCell/ARSFriendListCell.h"
 
 @interface ARSMapViewController ()
 
@@ -36,6 +37,11 @@
     [self.friendListView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:nil];
     [self.friendListDataView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:nil];
 
+    [self addObserver:self
+           forKeyPath:@"friends"
+              options:0
+              context:NULL];
+
     [self.segmentedControl addObserver:self forKeyPath:@"selectedSegmentIndex" options:NSKeyValueObservingOptionNew context:nil];
     [self.segmentedControl setSelectedSegmentIndex:0];
     [self.segmentedControl setTintColor:kArsfestColor];
@@ -61,12 +67,6 @@
     [self.friendListView setHidden:YES];
     [self.containerView addSubview:self.mapView];
     [self.mapView setHidden:YES];
-}
-
-- (void)showFriendListProcessingView:(BOOL)processing
-{
-    self.friendListDataView.hidden = processing;
-    self.friendListLoadingView.hidden = !processing;
 }
 
 #pragma mark -
@@ -113,8 +113,15 @@
 
 }
 
+- (void)showFriendListProcessingView:(BOOL)processing
+{
+    self.friendListDataView.hidden = processing;
+    self.friendListLoadingView.hidden = !processing;
+}
+
 #pragma mark -
 #pragma mark - Register with Facebook view
+
 - (IBAction)loginUser:(id)sender {
     [ARSUserController logUserWithDelegate:self];
 }
@@ -124,8 +131,8 @@
 
 - (void)userControllerRetrievedUserFriends:(NSArray *)_friends
 {
+    [self setFriends:_friends];
     [self showFriendListProcessingView:NO];
-    friends = _friends;
 }
 
 - (void)userControllerFailedToRetrieveFriends
@@ -144,11 +151,6 @@
     [self configureViewForSelectedIndex:self.segmentedControl.selectedSegmentIndex];
 }
 
-- (void)removeLoadingView
-{
-    
-}
-
 #pragma mark -
 #pragma mark - KVO
 
@@ -157,6 +159,8 @@
     if ([keyPath isEqualToString:@"selectedSegmentIndex"]) {
         UISegmentedControl *segmControl = (UISegmentedControl*)object;
         [self configureViewForSelectedIndex:segmControl.selectedSegmentIndex];
+    } else if ([keyPath isEqualToString:@"friends"]) {
+        [self.friendsListTableView reloadData];
     }
     
     if (object == self.friendListView) {
@@ -171,6 +175,41 @@
         self.friendsListTableView.hidden = shouldHideTableView;
         self.noFriendsRegisteredLabel.hidden = !shouldHideTableView;
     }
+}
+
+#pragma mark -
+#pragma mark - Dismiss view controller
+
+- (void)dismissMap
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark - Table view delegate and data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [friends count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return FRIEND_CELL_HEIGHT;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"ARSFriendListCell";
+    ARSFriendListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        NSArray *topLevelObjects =[[NSBundle mainBundle] loadNibNamed:@"ARSFriendListCell" owner:self options:nil];
+        cell = [topLevelObjects lastObject];
+    }
+    
+    [cell configureCellWithUser:[friends objectAtIndex:indexPath.row]];
+    
+    return cell;
 }
 
 @end

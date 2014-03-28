@@ -51,6 +51,9 @@
 		DB77EBD718DC56E400452E06 /* BackgroundIntroView-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB77EBD518DC56E400452E06 /* BackgroundIntroView-568h@2x.png */; };
 		DB77EBD818DC56E400452E06 /* BackgroundIntroView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB77EBD618DC56E400452E06 /* BackgroundIntroView@2x.png */; };
 		DB8E941118A78B5900EF214F /* ARSHorizontalScrollingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8E941018A78B5900EF214F /* ARSHorizontalScrollingHeader.m */; };
+		DB96086918E5D87B00AC3B8B /* ARSFriendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96086718E5D87B00AC3B8B /* ARSFriendListCell.m */; };
+		DB96086A18E5D87B00AC3B8B /* ARSFriendListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB96086818E5D87B00AC3B8B /* ARSFriendListCell.xib */; };
+		DB96086E18E5E12000AC3B8B /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96086D18E5E12000AC3B8B /* AsyncImageView.m */; };
 		DB98729718AD748B00A085FE /* ARSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB98729618AD748B00A085FE /* ARSEventCell.m */; };
 		DB98729918AD74B500A085FE /* ARSEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB98729818AD74B500A085FE /* ARSEventCell.xib */; };
 		DB98729F18AD7EB000A085FE /* ARSEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB98729D18AD7EB000A085FE /* ARSEventViewController.m */; };
@@ -159,6 +162,11 @@
 		DB8E940F18A78B5900EF214F /* ARSHorizontalScrollingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSHorizontalScrollingHeader.h; path = GuiComponents/ARSHorizontalScrollingMenu/ARSHorizontalScrollingHeader.h; sourceTree = "<group>"; };
 		DB8E941018A78B5900EF214F /* ARSHorizontalScrollingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSHorizontalScrollingHeader.m; path = GuiComponents/ARSHorizontalScrollingMenu/ARSHorizontalScrollingHeader.m; sourceTree = "<group>"; };
 		DB8F53E618B66CA1006625C9 /* ARSGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSGlobals.h; path = Utilities/ARSGlobals.h; sourceTree = "<group>"; };
+		DB96086618E5D87B00AC3B8B /* ARSFriendListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSFriendListCell.h; path = ViewControllers/ARSMapViewController/ARSFriendListCell/ARSFriendListCell.h; sourceTree = "<group>"; };
+		DB96086718E5D87B00AC3B8B /* ARSFriendListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSFriendListCell.m; path = ViewControllers/ARSMapViewController/ARSFriendListCell/ARSFriendListCell.m; sourceTree = "<group>"; };
+		DB96086818E5D87B00AC3B8B /* ARSFriendListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ARSFriendListCell.xib; path = ViewControllers/ARSMapViewController/ARSFriendListCell/ARSFriendListCell.xib; sourceTree = "<group>"; };
+		DB96086C18E5E12000AC3B8B /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		DB96086D18E5E12000AC3B8B /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		DB98729518AD748B00A085FE /* ARSEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSEventCell.h; path = ViewControllers/ARSEventListViewController/ARSEventCell/ARSEventCell.h; sourceTree = "<group>"; };
 		DB98729618AD748B00A085FE /* ARSEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEventCell.m; path = ViewControllers/ARSEventListViewController/ARSEventCell/ARSEventCell.m; sourceTree = "<group>"; };
 		DB98729818AD74B500A085FE /* ARSEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARSEventCell.xib; sourceTree = "<group>"; };
@@ -509,6 +517,25 @@
 			name = GuiComponents;
 			sourceTree = "<group>";
 		};
+		DB96086518E5D83E00AC3B8B /* ARSFriendListCell */ = {
+			isa = PBXGroup;
+			children = (
+				DB96086618E5D87B00AC3B8B /* ARSFriendListCell.h */,
+				DB96086718E5D87B00AC3B8B /* ARSFriendListCell.m */,
+				DB96086818E5D87B00AC3B8B /* ARSFriendListCell.xib */,
+			);
+			name = ARSFriendListCell;
+			sourceTree = "<group>";
+		};
+		DB96086B18E5E12000AC3B8B /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				DB96086C18E5E12000AC3B8B /* AsyncImageView.h */,
+				DB96086D18E5E12000AC3B8B /* AsyncImageView.m */,
+			);
+			path = AsyncImageView;
+			sourceTree = "<group>";
+		};
 		DB98729418AD745A00A085FE /* ARSEventCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +559,7 @@
 		DB9872A118AD7F5900A085FE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				DB96086B18E5E12000AC3B8B /* AsyncImageView */,
 				DBA8518818DB7E54005E352E /* EAIntroView */,
 				DB21FDA718BE1AFF0083F26C /* Categories */,
 				DB21FDA818BE1B6E0083F26C /* ARSNavigationController.h */,
@@ -579,6 +607,7 @@
 		DBC83A6618E2DBA30047D269 /* ARSMapViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DB96086518E5D83E00AC3B8B /* ARSFriendListCell */,
 				DBC83A6718E2DE380047D269 /* ARSMapViewController.h */,
 				DBC83A6818E2DE380047D269 /* ARSMapViewController.m */,
 				DBC83A6918E2DE380047D269 /* ARSMapViewController.xib */,
@@ -679,6 +708,7 @@
 				DBA50A3018B7C6A0001C8AF1 /* music_icon@2x.png in Resources */,
 				DBE009D418B78E22000B6DFE /* queenmachine@2x.png in Resources */,
 				DB98729918AD74B500A085FE /* ARSEventCell.xib in Resources */,
+				DB96086A18E5D87B00AC3B8B /* ARSFriendListCell.xib in Resources */,
 				DB77EBD818DC56E400452E06 /* BackgroundIntroView@2x.png in Resources */,
 				DBE009D018B78E22000B6DFE /* leslanciers@2x.png in Resources */,
 				DBA50A2B18B7C6A0001C8AF1 /* dance_icon.png in Resources */,
@@ -766,9 +796,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB98729F18AD7EB000A085FE /* ARSEventViewController.m in Sources */,
+				DB96086918E5D87B00AC3B8B /* ARSFriendListCell.m in Sources */,
 				DB43AE3E18DEDE7D00D56B4F /* ARSUserController.m in Sources */,
 				DBA50A3318B7C6C6001C8AF1 /* UIImage+Icon.m in Sources */,
 				DB6B313118A4337300C3EABB /* main.m in Sources */,
+				DB96086E18E5E12000AC3B8B /* AsyncImageView.m in Sources */,
 				DB98729718AD748B00A085FE /* ARSEventCell.m in Sources */,
 				DBA8518E18DB7E86005E352E /* EAIntroView.m in Sources */,
 				DB6B317418A43AD200C3EABB /* ARSLocation.m in Sources */,
