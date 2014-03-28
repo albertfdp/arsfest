@@ -6,9 +6,6 @@
 //  Copyright (c) 2014 dtu. All rights reserved.
 //
 
-#define kParseApplicationId @"vDLtONCuZIlrt6wEnfHrFbIDVhoW3cxUCAGEx2j5"
-#define kParseClientKey @"ZLgCiJAv5TkA4ChPgeLSnKb5S4dszCMBuVjypPcc"
-
 #import "ARSAppDelegate.h"
 #import <Parse/Parse.h>
 #import "ARSEventListViewController.h"
@@ -27,10 +24,6 @@
                   clientKey:kParseClientKey];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
-    
-    if ([ARSUserController isUserLoggedIn]) {
-        [ARSUserController logOutUser];
-    }
     
     
     ARSEventListViewController *eventListViewController = [[ARSEventListViewController alloc] initWithNibName:@"ARSEventListViewController" bundle:nil];
