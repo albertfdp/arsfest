@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSMapViewController/ARSMapViewController.m"
-            timestampString = "417717811.892937"
+            timestampString = "417789735.944863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "-configureViewForSelectedIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSMapViewController/ARSMapViewController.m"
-            timestampString = "417717811.892937"
+            timestampString = "417789735.944863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "-configureViewForSelectedIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -362,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSMapViewController/ARSMapViewController.m"
-            timestampString = "417717811.892937"
+            timestampString = "417789735.944863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "-configureViewForSelectedIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -378,11 +378,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSMapViewController/ARSMapViewController.m"
-            timestampString = "417717811.892937"
+            timestampString = "417789735.944863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "-userLogInCompletedWithSuccess"
             landmarkType = "5">
          </BreakpointContent>
@@ -394,11 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSMapViewController/ARSMapViewController.m"
-            timestampString = "417717811.892937"
+            timestampString = "417789735.944863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "-loginUser:"
             landmarkType = "5">
          </BreakpointContent>
@@ -410,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSMapViewController/ARSFriendListCell/ARSFriendListCell.m"
-            timestampString = "417719167.33723"
+            timestampString = "417782488.122609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "-configureCellWithUser:"
             landmarkType = "5">
          </BreakpointContent>
@@ -426,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSMapViewController/ARSMapViewController.m"
-            timestampString = "417717811.892937"
+            timestampString = "417789735.944863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>

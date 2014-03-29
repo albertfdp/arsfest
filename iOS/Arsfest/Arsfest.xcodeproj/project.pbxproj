@@ -51,6 +51,9 @@
 		DB6B317718A43AE500C3EABB /* ARSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B317618A43AE500C3EABB /* ARSEvent.m */; };
 		DB77EBD718DC56E400452E06 /* BackgroundIntroView-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB77EBD518DC56E400452E06 /* BackgroundIntroView-568h@2x.png */; };
 		DB77EBD818DC56E400452E06 /* BackgroundIntroView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB77EBD618DC56E400452E06 /* BackgroundIntroView@2x.png */; };
+		DB811D7718E6E0E800BB11E6 /* buildingmap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB811D7618E6E0E800BB11E6 /* buildingmap@2x.png */; };
+		DB811D7A18E6F6E500BB11E6 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = DB811D7818E6F6E500BB11E6 /* close.png */; };
+		DB811D7B18E6F6E500BB11E6 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB811D7918E6F6E500BB11E6 /* close@2x.png */; };
 		DB8E941118A78B5900EF214F /* ARSHorizontalScrollingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8E941018A78B5900EF214F /* ARSHorizontalScrollingHeader.m */; };
 		DB96086918E5D87B00AC3B8B /* ARSFriendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96086718E5D87B00AC3B8B /* ARSFriendListCell.m */; };
 		DB96086A18E5D87B00AC3B8B /* ARSFriendListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB96086818E5D87B00AC3B8B /* ARSFriendListCell.xib */; };
@@ -161,6 +164,9 @@
 		DB6B317618A43AE500C3EABB /* ARSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEvent.m; path = Model/ARSEvent/ARSEvent.m; sourceTree = "<group>"; };
 		DB77EBD518DC56E400452E06 /* BackgroundIntroView-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundIntroView-568h@2x.png"; sourceTree = "<group>"; };
 		DB77EBD618DC56E400452E06 /* BackgroundIntroView@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundIntroView@2x.png"; sourceTree = "<group>"; };
+		DB811D7618E6E0E800BB11E6 /* buildingmap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buildingmap@2x.png"; sourceTree = "<group>"; };
+		DB811D7818E6F6E500BB11E6 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		DB811D7918E6F6E500BB11E6 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		DB8E940F18A78B5900EF214F /* ARSHorizontalScrollingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSHorizontalScrollingHeader.h; path = GuiComponents/ARSHorizontalScrollingMenu/ARSHorizontalScrollingHeader.h; sourceTree = "<group>"; };
 		DB8E941018A78B5900EF214F /* ARSHorizontalScrollingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSHorizontalScrollingHeader.m; path = GuiComponents/ARSHorizontalScrollingMenu/ARSHorizontalScrollingHeader.m; sourceTree = "<group>"; };
 		DB8F53E618B66CA1006625C9 /* ARSGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSGlobals.h; path = Utilities/ARSGlobals.h; sourceTree = "<group>"; };
@@ -339,6 +345,7 @@
 		DB53D31E18AE58D000508DAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DB811D7618E6E0E800BB11E6 /* buildingmap@2x.png */,
 				DB53D32D18AEBCD300508DAD /* default_background.png */,
 				DB53D32E18AEBCD300508DAD /* default_background@2x.png */,
 				DB53D32F18AEBCD300508DAD /* default_background568h@2x.png */,
@@ -351,6 +358,8 @@
 		DB53D32318AEB86700508DAD /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				DB811D7818E6F6E500BB11E6 /* close.png */,
+				DB811D7918E6F6E500BB11E6 /* close@2x.png */,
 				DB169A4B18E5F93400075319 /* contact_icon@2x.png */,
 				DB53D31F18AE595C00508DAD /* Clock.png */,
 				DB53D32018AE595C00508DAD /* Clock@2x.png */,
@@ -714,7 +723,9 @@
 				DB96086A18E5D87B00AC3B8B /* ARSFriendListCell.xib in Resources */,
 				DB77EBD818DC56E400452E06 /* BackgroundIntroView@2x.png in Resources */,
 				DBE009D018B78E22000B6DFE /* leslanciers@2x.png in Resources */,
+				DB811D7B18E6F6E500BB11E6 /* close@2x.png in Resources */,
 				DBA50A2B18B7C6A0001C8AF1 /* dance_icon.png in Resources */,
+				DB811D7718E6E0E800BB11E6 /* buildingmap@2x.png in Resources */,
 				DB77EBD718DC56E400452E06 /* BackgroundIntroView-568h@2x.png in Resources */,
 				DBE009CD18B78E22000B6DFE /* jazzband.png in Resources */,
 				DB53D33118AEBCD300508DAD /* default_background@2x.png in Resources */,
@@ -722,6 +733,7 @@
 				DB53D32A18AEB88800508DAD /* alphabeat@2x.png in Resources */,
 				DB53D33218AEBCD300508DAD /* default_background568h@2x.png in Resources */,
 				DB53D32C18AEB88800508DAD /* veto@2x.png in Resources */,
+				DB811D7A18E6F6E500BB11E6 /* close.png in Resources */,
 				DB53D33018AEBCD300508DAD /* default_background.png in Resources */,
 				DBA50A2F18B7C6A0001C8AF1 /* music_icon.png in Resources */,
 				DB53D32918AEB88800508DAD /* alphabeat.png in Resources */,

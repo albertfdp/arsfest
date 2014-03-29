@@ -28,12 +28,14 @@
 
 - (void)configureCellWithUser:(PFUser*)user
 {
+    //Informations
     self.nameLabel = [user objectForKey:@"name"];
-//    self.picture.imageURL = [NSURL URLWithString:[user objectForKey:@"pictureURL"]];
+    self.picture.imageURL = [NSURL URLWithString:[user objectForKey:@"pictureURL"]];
     
-    [self.picture.layer setCornerRadius:25.0f];
+    //Picture rounding
     [self.picture setClipsToBounds:YES];
-    [self.picture.layer setBorderWidth:1.0f];
+    [self.picture.layer setCornerRadius:25.0f];
+    [self.picture.layer setBorderWidth:0.8f];
     [self.picture.layer setBorderColor:[[UIColor colorWithRed:213/255.f green:213/255.f blue:213/255.f alpha:1.0f] CGColor]];
     
 #warning Finish Implementation and Decide on Variable Names

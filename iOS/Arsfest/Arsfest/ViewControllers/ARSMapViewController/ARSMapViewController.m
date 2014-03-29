@@ -14,10 +14,18 @@
 
 @property (nonatomic, retain) NSArray *friends;
 
+
+/* Add the map to the view and set the content size of the scrollview */
+- (void)initializeMapScrollView;
+
+/* Configures the view when the selected index of the segmented control changes */
+- (void)configureViewForSelectedIndex:(NSInteger)index;
+
 @end
 
 @implementation ARSMapViewController
 @synthesize friends;
+@synthesize mapImageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,18 +42,21 @@
     
     [self customizeFacebookLoginButton];
     
+    //KVO Registration
     [self.friendListView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:nil];
     [self.friendListDataView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:nil];
-
-    [self addObserver:self
-           forKeyPath:@"friends"
-              options:0
-              context:NULL];
-
+    [self addObserver:self forKeyPath:@"friends" options:0 context:NULL];
     [self.segmentedControl addObserver:self forKeyPath:@"selectedSegmentIndex" options:NSKeyValueObservingOptionNew context:nil];
+    
+    
     [self.segmentedControl setSelectedSegmentIndex:0];
     [self.segmentedControl setTintColor:kArsfestColor];
     
+    [self initializeMapScrollView];
+    
+    UIImage *leftImage = [UIImage imageNamed:@"close.png"];
+    UIBarButtonItem *leftItem = [UIBarButtonItem itemWithImage:leftImage target:self action:@selector(dismissMap)];
+    [self.navigationController.navigationBar.topItem setLeftBarButtonItem:leftItem];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -59,18 +70,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)initializeViews
+- (void)dealloc
 {
-    [self.containerView addSubview:self.registerView];
-    [self.registerView setHidden:YES];
-    [self.containerView addSubview:self.friendListView];
-    [self.friendListView setHidden:YES];
-    [self.containerView addSubview:self.mapView];
-    [self.mapView setHidden:YES];
+    [self.friendListView removeObserver:self forKeyPath:@"hidden"];
+    [self.friendListDataView removeObserver:self forKeyPath:@"hidden"];
+    [self removeObserver:self forKeyPath:@"friends"];
+    [self.segmentedControl removeObserver:self forKeyPath:@"selectedSegmentIndex"];
+}
+
+#pragma mark -
+#pragma mark - Scroll view delegate
+
+-(UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.mapImageView;
 }
 
 #pragma mark -
 #pragma mark - View changes
+
+- (void)initializeMapScrollView
+{
+    self.mapScrollView.delegate = self;
+    self.mapImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"buildingmap.png"]];
+    [self.mapScrollView addSubview:self.mapImageView];
+    [self.mapScrollView setContentSize:self.mapImageView.image.size];
+}
 
 - (void)customizeFacebookLoginButton
 {
@@ -109,10 +134,6 @@
     }
 }
 
-- (IBAction)didChangeSegmentedControl:(id)sender {
-
-}
-
 - (void)showFriendListProcessingView:(BOOL)processing
 {
     self.friendListDataView.hidden = processing;
@@ -131,7 +152,13 @@
 
 - (void)userControllerRetrievedUserFriends:(NSArray *)_friends
 {
-    [self setFriends:_friends];
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    [arr addObjectsFromArray:_friends];
+    for (int i =0 ; i<2; i++) {
+        [arr addObject:[arr objectAtIndex:0]];
+    }
+    [self setFriends:[NSArray arrayWithArray:arr]];
+//    [self setFriends:_friends];
     [self showFriendListProcessingView:NO];
 }
 

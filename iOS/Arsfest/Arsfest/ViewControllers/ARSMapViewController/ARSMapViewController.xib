@@ -13,7 +13,7 @@
                 <outlet property="friendListView" destination="MCM-Au-LQo" id="htB-0y-ZFr"/>
                 <outlet property="friendsListTableView" destination="0cO-gu-pWo" id="c1r-uR-Jsf"/>
                 <outlet property="loginButton" destination="V4p-ZE-WKo" id="Qxf-mj-efh"/>
-                <outlet property="mapScrollView" destination="g96-oq-VSe" id="IT5-1V-vcp"/>
+                <outlet property="mapScrollView" destination="buj-a9-vFs" id="DDs-kN-F9C"/>
                 <outlet property="mapView" destination="MVB-ju-hh4" id="rTM-gg-iYQ"/>
                 <outlet property="noFriendsRegisteredLabel" destination="p1o-A8-313" id="E55-Gr-XXr"/>
                 <outlet property="registerView" destination="JfY-Hc-c02" id="zwc-e3-hEh"/>
@@ -43,9 +43,6 @@
                                     <segment title="Map"/>
                                     <segment title="Friends"/>
                                 </segments>
-                                <connections>
-                                    <action selector="didChangeSegmentedControl:" destination="-1" eventType="valueChanged" id="3mk-Xq-qWd"/>
-                                </connections>
                             </segmentedControl>
                         </barButtonItem>
                         <barButtonItem width="66" style="plain" systemItem="fixedSpace" id="INx-Ta-wZB"/>
@@ -59,9 +56,9 @@
                             <rect key="frame" x="0.0" y="1" width="320" height="371"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g96-oq-VSe">
-                                    <rect key="frame" x="0.0" y="1" width="320" height="371"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.40000000000000002" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="buj-a9-vFs">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="371"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </scrollView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

@@ -9,13 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "ARSUserController.h"
 
-@interface ARSMapViewController : UIViewController <ARSUserControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ARSMapViewController : UIViewController <ARSUserControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
 /* Main view outlets */
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-
-- (IBAction)didChangeSegmentedControl:(id)sender;
 
 /* Register with facebook outlets */
 
@@ -45,5 +43,8 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *mapScrollView;
 
+    /* Map image view */
+
+@property (nonatomic, strong) UIImageView *mapImageView;
 
 @end
