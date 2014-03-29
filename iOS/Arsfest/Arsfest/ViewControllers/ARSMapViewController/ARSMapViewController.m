@@ -13,7 +13,7 @@
 @interface ARSMapViewController ()
 
 @property (nonatomic, retain) NSArray *friends;
-
+@property (nonatomic, retain) UIBarButtonItem *refreshBarButtonItem;
 
 /* Add the map to the view and set the content size of the scrollview */
 - (void)initializeMapScrollView;
@@ -26,6 +26,7 @@
 @implementation ARSMapViewController
 @synthesize friends;
 @synthesize mapImageView;
+@synthesize refreshBarButtonItem;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,15 +49,19 @@
     [self addObserver:self forKeyPath:@"friends" options:0 context:NULL];
     [self.segmentedControl addObserver:self forKeyPath:@"selectedSegmentIndex" options:NSKeyValueObservingOptionNew context:nil];
     
-    
+    //Segmented control initialization
     [self.segmentedControl setSelectedSegmentIndex:0];
     [self.segmentedControl setTintColor:kArsfestColor];
     
     [self initializeMapScrollView];
     
-    UIImage *leftImage = [UIImage imageNamed:@"close.png"];
-    UIBarButtonItem *leftItem = [UIBarButtonItem itemWithImage:leftImage target:self action:@selector(dismissMap)];
-    [self.navigationController.navigationBar.topItem setLeftBarButtonItem:leftItem];
+    //Navigation bar buttons
+    UIImage *rightImage = [UIImage imageNamed:@"close.png"];
+    UIBarButtonItem *rightItem = [UIBarButtonItem itemWithImage:rightImage target:self action:@selector(dismissMap)];
+    [self.navigationController.navigationBar.topItem setRightBarButtonItem:rightItem];
+
+    UIImage *refreshImage = [UIImage imageNamed:@"Refresh.png"];
+    refreshBarButtonItem = [UIBarButtonItem itemWithImage:refreshImage target:self action:@selector(refreshFriendsLocation)];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -114,6 +119,9 @@
             [self.friendListView setHidden:YES];
             
             [self setTitle:@"Map"];
+            
+            [self.navigationController.navigationBar.topItem setLeftBarButtonItem:nil];
+            
             break;
         }
         case 1:
@@ -129,6 +137,9 @@
             }
             
             [self setTitle:@"Friends"];
+            
+            [self.navigationController.navigationBar.topItem setLeftBarButtonItem:refreshBarButtonItem];
+            
             break;
         }
     }
@@ -152,30 +163,36 @@
 
 - (void)userControllerRetrievedUserFriends:(NSArray *)_friends
 {
-    NSMutableArray *arr = [[NSMutableArray alloc] init];
-    [arr addObjectsFromArray:_friends];
-    for (int i =0 ; i<2; i++) {
-        [arr addObject:[arr objectAtIndex:0]];
-    }
-    [self setFriends:[NSArray arrayWithArray:arr]];
-//    [self setFriends:_friends];
+//    NSMutableArray *arr = [[NSMutableArray alloc] init];
+//    [arr addObjectsFromArray:_friends];
+//    for (int i =0 ; i<2; i++) {
+//        [arr addObject:[arr objectAtIndex:0]];
+//    }
+//    [self setFriends:[NSArray arrayWithArray:arr]];
+    [self setFriends:_friends];
     [self showFriendListProcessingView:NO];
 }
 
 - (void)userControllerFailedToRetrieveFriends
 {
-    [[ARSUserController sharedUserController] fetchFriendsLocationWithDelegate:self]; 
+    [[ARSUserController sharedUserController] fetchFriendsLocationWithDelegate:self enforceRefresh:YES];
 }
 
 - (void)userLogInCompletedWithError:(ARSUserLoginError)error
 {
     self.containerView = self.registerView;
-    [ARSAlertManager showErrorWithTitle:@"Registration error" message:@"The registration couldn't complete" cancelTitle:@"OK"];
+    [ARSAlertManager showErrorWithTitle:@"Registration error" message:@"The registration couldn't be completed" cancelTitle:@"OK"];
 }
 
 - (void)userLogInCompletedWithSuccess
 {
     [self configureViewForSelectedIndex:self.segmentedControl.selectedSegmentIndex];
+}
+
+- (void)refreshFriendsLocation
+{
+    [self showFriendListProcessingView:YES];
+    [[ARSUserController sharedUserController] fetchFriendsLocationWithDelegate:self enforceRefresh:YES];
 }
 
 #pragma mark -
@@ -193,7 +210,7 @@
     if (object == self.friendListView) {
         if (!self.friendListView.hidden) {
             [self showFriendListProcessingView:YES];
-            [[ARSUserController sharedUserController] fetchFriendsLocationWithDelegate:self];
+            [[ARSUserController sharedUserController] fetchFriendsLocationWithDelegate:self enforceRefresh:NO];
         }
     }
     

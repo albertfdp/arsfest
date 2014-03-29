@@ -19,15 +19,18 @@
 
 @property (nonatomic, retain) NSString *lastBSSID;
 @property (nonatomic, retain) NSArray *userFriends;
+@property (nonatomic, retain) NSArray *parseUsers;
 
 - (NSString *)currentWifiBSSID;
 - (BOOL)localWiFiAvailable;
+- (void)queryUserFriendsWithIds:(NSArray*)friendsIds delegate:(id<ARSUserControllerDelegate>)delegate enforceRefresh:(BOOL)refreshCache;
 
 @end
 
 @implementation ARSUserController
 @synthesize lastBSSID;
 @synthesize userFriends;
+@synthesize parseUsers;
 
 #pragma mark -
 #pragma mark - Initialization
@@ -58,7 +61,7 @@
 + (void)logUserWithDelegate:(id<ARSUserControllerDelegate>)delegate
 {
     // The permissions requested from the user
-    NSArray *permissionsArray = @[ @"user_friends" ];
+    NSArray *permissionsArray = @[ @"user_about_me" , @"user_friends" ];
     
     // Login PFUser using Facebook
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
@@ -171,44 +174,51 @@
     }
 }
 
-- (void)fetchFriendsLocationWithDelegate:(id<ARSUserControllerDelegate>)delegate
+- (void)fetchFriendsLocationWithDelegate:(id<ARSUserControllerDelegate>)delegate enforceRefresh:(BOOL)refreshCache
 {
+#warning Implement a timer to refresh the caching mechanism
     if (!userFriends) {
         // Issue a Facebook Graph API request to get your user's friend list
         [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
             if (!error) {
                 // result will contain an array with your user's friends in the "data" key
                 userFriends = [result objectForKey:@"data"];
-                [self queryUserFriendsWithIds:userFriends delegate:delegate];
+                [self queryUserFriendsWithIds:userFriends delegate:delegate enforceRefresh:refreshCache];
             }
         }];
     } else {
-        [self queryUserFriendsWithIds:userFriends delegate:delegate];
+        [self queryUserFriendsWithIds:userFriends delegate:delegate enforceRefresh:refreshCache];
     }
 }
 
-- (void)queryUserFriendsWithIds:(NSArray*)friendsIds delegate:(id<ARSUserControllerDelegate>)delegate
+- (void)queryUserFriendsWithIds:(NSArray*)friendsIds delegate:(id<ARSUserControllerDelegate>)delegate enforceRefresh:(BOOL)refreshCache
 {
-    NSMutableArray *friendIds = [NSMutableArray arrayWithCapacity:userFriends.count];
-    // Create a list of friends' Facebook IDs
-    for (NSDictionary *friendObject in userFriends) {
-        [friendIds addObject:[friendObject objectForKey:@"id"]];
-    }
-    
-    PFQuery *friendQuery = [PFUser query];
-//    [friendQuery whereKey:@"fbId" containedIn:friendIds];
-    
-    [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
-        if (!error) {
-            if ([delegate respondsToSelector:@selector(userControllerRetrievedUserFriends:)]) {
-                [delegate userControllerRetrievedUserFriends:objects];
-            }
-        } else {
-            if ([delegate respondsToSelector:@selector(userControllerFailedToRetrieveFriends)]) {
-                [delegate userControllerFailedToRetrieveFriends];
-            }
+#warning Remove the commented line with the key fbId
+    if (parseUsers && !refreshCache) {
+        [delegate userControllerRetrievedUserFriends:parseUsers];
+    } else {
+        NSMutableArray *friendIds = [NSMutableArray arrayWithCapacity:userFriends.count];
+        // Create a list of friends' Facebook IDs
+        for (NSDictionary *friendObject in userFriends) {
+            [friendIds addObject:[friendObject objectForKey:@"id"]];
         }
-    }];
+        
+        PFQuery *friendQuery = [PFUser query];
+        //    [friendQuery whereKey:@"fbId" containedIn:friendIds];
+        
+        [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+            if (!error) {
+                if ([delegate respondsToSelector:@selector(userControllerRetrievedUserFriends:)]) {
+                    parseUsers = objects;
+                    [delegate userControllerRetrievedUserFriends:objects];
+                }
+            } else {
+                if ([delegate respondsToSelector:@selector(userControllerFailedToRetrieveFriends)]) {
+                    [delegate userControllerFailedToRetrieveFriends];
+                }
+            }
+        }];
+    }
 }
 
 

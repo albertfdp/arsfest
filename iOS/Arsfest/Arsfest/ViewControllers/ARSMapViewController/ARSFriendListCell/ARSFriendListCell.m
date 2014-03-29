@@ -29,7 +29,7 @@
 - (void)configureCellWithUser:(PFUser*)user
 {
     //Informations
-    self.nameLabel = [user objectForKey:@"name"];
+    self.nameLabel.text = [user objectForKey:@"name"];
     self.picture.imageURL = [NSURL URLWithString:[user objectForKey:@"pictureURL"]];
     
     //Picture rounding

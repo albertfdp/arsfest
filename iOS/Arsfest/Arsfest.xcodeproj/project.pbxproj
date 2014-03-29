@@ -72,6 +72,7 @@
 		DBA50A3318B7C6C6001C8AF1 /* UIImage+Icon.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA50A3218B7C6C6001C8AF1 /* UIImage+Icon.m */; };
 		DBA8518D18DB7E86005E352E /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA8518A18DB7E86005E352E /* EAIntroPage.m */; };
 		DBA8518E18DB7E86005E352E /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA8518C18DB7E86005E352E /* EAIntroView.m */; };
+		DBBCEDC118E7825C00771BFD /* Refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBBCEDC018E7825C00771BFD /* Refresh@2x.png */; };
 		DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */; };
 		DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */; };
 		DBC83A6A18E2DE380047D269 /* ARSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC83A6818E2DE380047D269 /* ARSMapViewController.m */; };
@@ -195,6 +196,7 @@
 		DBA8518A18DB7E86005E352E /* EAIntroPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EAIntroPage.m; path = Utilities/EAIntroView/EAIntroPage.m; sourceTree = "<group>"; };
 		DBA8518B18DB7E86005E352E /* EAIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EAIntroView.h; path = Utilities/EAIntroView/EAIntroView.h; sourceTree = "<group>"; };
 		DBA8518C18DB7E86005E352E /* EAIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EAIntroView.m; path = Utilities/EAIntroView/EAIntroView.m; sourceTree = "<group>"; };
+		DBBCEDC018E7825C00771BFD /* Refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Refresh@2x.png"; sourceTree = "<group>"; };
 		DBBEC19318A6DAC200212106 /* ARSEventListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSEventListViewController.h; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.h; sourceTree = "<group>"; };
 		DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEventListViewController.m; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.m; sourceTree = "<group>"; };
 		DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ARSEventListViewController.xib; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.xib; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		DB53D31E18AE58D000508DAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DBBCEDC018E7825C00771BFD /* Refresh@2x.png */,
 				DB811D7618E6E0E800BB11E6 /* buildingmap@2x.png */,
 				DB53D32D18AEBCD300508DAD /* default_background.png */,
 				DB53D32E18AEBCD300508DAD /* default_background@2x.png */,
@@ -753,6 +756,7 @@
 				DBA50A2D18B7C6A0001C8AF1 /* food_icon.png in Resources */,
 				DBE009D218B78E22000B6DFE /* official@2x.png in Resources */,
 				DBE009CF18B78E22000B6DFE /* leslanciers.png in Resources */,
+				DBBCEDC118E7825C00771BFD /* Refresh@2x.png in Resources */,
 				DB6B313718A4337300C3EABB /* Images.xcassets in Resources */,
 				DB53D32118AE595C00508DAD /* Clock.png in Resources */,
 				DBE009CB18B78E22000B6DFE /* dj.png in Resources */,

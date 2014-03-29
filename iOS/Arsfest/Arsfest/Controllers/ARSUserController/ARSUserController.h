@@ -55,7 +55,7 @@ typedef NS_ENUM(NSInteger, ARSUserLoginError) {
 /*
  * Fetches the user friends location and notifies the specified delegate
  */
-- (void)fetchFriendsLocationWithDelegate:(id<ARSUserControllerDelegate>)delegate;
+- (void)fetchFriendsLocationWithDelegate:(id<ARSUserControllerDelegate>)delegate enforceRefresh:(BOOL)refreshCache;
 
 
 @end

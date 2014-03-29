@@ -56,12 +56,16 @@
                             <rect key="frame" x="0.0" y="1" width="320" height="371"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.40000000000000002" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="buj-a9-vFs">
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" minimumZoomScale="0.40000000000000002" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="buj-a9-vFs">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="371"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </scrollView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="buj-a9-vFs" secondAttribute="bottom" id="JEF-m5-WAx"/>
+                                <constraint firstItem="buj-a9-vFs" firstAttribute="top" secondItem="MVB-ju-hh4" secondAttribute="top" id="MBk-jJ-SPb"/>
+                            </constraints>
                         </view>
                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCM-Au-LQo" userLabel="Friend list view">
                             <rect key="frame" x="0.0" y="1" width="320" height="371"/>
@@ -74,14 +78,14 @@
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0cO-gu-pWo">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="371"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <inset key="separatorInset" minX="80" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <connections>
                                                 <outlet property="dataSource" destination="-1" id="3h1-tV-Qfr"/>
                                                 <outlet property="delegate" destination="-1" id="iLs-1L-CI5"/>
                                             </connections>
                                         </tableView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="None of your friends are currently registered in the app.                     Come back later to check!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1o-A8-313">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="None of your friends are currently registered in the app.                     Come back later to check!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1o-A8-313">
                                             <rect key="frame" x="40" y="166" width="240" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -91,11 +95,13 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="0cO-gu-pWo" firstAttribute="top" secondItem="ThE-h3-afp" secondAttribute="top" id="J16-I9-bQG"/>
-                                        <constraint firstAttribute="bottom" secondItem="0cO-gu-pWo" secondAttribute="bottom" id="lt1-Qw-lhe"/>
+                                        <constraint firstAttribute="bottom" secondItem="p1o-A8-313" secondAttribute="bottom" constant="125" id="OHL-5H-Wsx"/>
+                                        <constraint firstItem="p1o-A8-313" firstAttribute="top" secondItem="ThE-h3-afp" secondAttribute="top" constant="166" id="Oze-ga-IjR"/>
+                                        <constraint firstItem="0cO-gu-pWo" firstAttribute="top" secondItem="ThE-h3-afp" secondAttribute="top" id="SPY-B5-xqc"/>
+                                        <constraint firstAttribute="bottom" secondItem="0cO-gu-pWo" secondAttribute="bottom" id="sQt-0r-Fah"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pNY-2q-qLg" userLabel="View - Loading">
+                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pNY-2q-qLg" userLabel="View - Loading">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="371"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -114,6 +120,12 @@
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="ThE-h3-afp" firstAttribute="top" secondItem="MCM-Au-LQo" secondAttribute="top" id="9Vg-fC-QC5"/>
+                                <constraint firstItem="pNY-2q-qLg" firstAttribute="top" secondItem="MCM-Au-LQo" secondAttribute="top" id="DxT-Ys-YK8"/>
+                                <constraint firstAttribute="bottom" secondItem="ThE-h3-afp" secondAttribute="bottom" id="Z31-nH-T6s"/>
+                                <constraint firstAttribute="bottom" secondItem="pNY-2q-qLg" secondAttribute="bottom" id="o9Y-BN-Vq7"/>
+                            </constraints>
                         </view>
                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JfY-Hc-c02" userLabel="Register view">
                             <rect key="frame" x="0.0" y="1" width="320" height="371"/>
@@ -160,13 +172,12 @@
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="MCM-Au-LQo" firstAttribute="top" secondItem="cXB-8z-KiR" secondAttribute="top" constant="1" id="2Fh-A2-BoU"/>
                         <constraint firstItem="MVB-ju-hh4" firstAttribute="top" secondItem="cXB-8z-KiR" secondAttribute="top" constant="1" id="5Ys-l3-OjT"/>
-                        <constraint firstAttribute="bottom" secondItem="MCM-Au-LQo" secondAttribute="bottom" id="70k-9D-0Sn"/>
                         <constraint firstAttribute="bottom" secondItem="JfY-Hc-c02" secondAttribute="bottom" id="8Ft-UJ-bFb"/>
-                        <constraint firstItem="MCM-Au-LQo" firstAttribute="top" secondItem="cXB-8z-KiR" secondAttribute="top" constant="1" id="J2l-Id-RAJ"/>
+                        <constraint firstItem="MCM-Au-LQo" firstAttribute="top" secondItem="cXB-8z-KiR" secondAttribute="top" constant="1" id="GW4-oo-g7T"/>
                         <constraint firstAttribute="width" constant="320" id="Rhm-rq-VwL"/>
                         <constraint firstAttribute="bottom" secondItem="MVB-ju-hh4" secondAttribute="bottom" id="cbo-dM-G4I"/>
+                        <constraint firstAttribute="bottom" secondItem="MCM-Au-LQo" secondAttribute="bottom" id="nSp-MP-rA7"/>
                         <constraint firstItem="JfY-Hc-c02" firstAttribute="top" secondItem="cXB-8z-KiR" secondAttribute="top" constant="1" id="uIz-ju-6Pp"/>
                     </constraints>
                 </view>
