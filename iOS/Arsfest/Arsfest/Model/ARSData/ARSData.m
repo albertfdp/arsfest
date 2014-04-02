@@ -80,11 +80,6 @@
     return returnedArray;
 }
 
-- (NSString*)locationNameForWifiBssid:(NSString*)bssid
-{
-    return @"";
-}
-
 #pragma mark -
 #pragma mark - JSON Parsing and Fetching
 
@@ -137,6 +132,36 @@
     [self createLocations:locations];
     NSArray *wifis = [self parseJSONWithFileName:kWifisFileName key:@"bssids"];
     [self createWifis:wifis];
+}
+
+#pragma mark -
+#pragma mark - Wifi to bssid / Bssid to wifi
+
+- (NSString*)locationNameForWifiBssid:(NSString*)bssid
+{
+    NSString *locationName = @"";
+    if ([_wifis objectForKey:bssid] != nil) {
+        ARSWifi *wifi = [[_wifis objectForKey:bssid] lastObject];
+        locationName = wifi.locationName;
+    }
+    
+    return locationName;
+}
+
+- (NSString*)locationNameFromGeoPoint:(PFGeoPoint*)geoPoint
+{
+    for (NSString* key in [_wifis allKeys]) {
+        for (NSArray *array in [_wifis objectForKey:key]) {
+            ARSWifi *wifi = [array lastObject];
+            if (wifi.location == geoPoint) {
+                return wifi.locationName;
+            } else {
+                break;
+            }
+        }
+    }
+    
+    return nil;
 }
 
 @end
