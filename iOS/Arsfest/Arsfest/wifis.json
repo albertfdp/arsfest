@@ -1,0 +1,88 @@
+{
+    "bssids": [
+        {
+            "bssid": "00:27:0d:5f:17",
+            "locationId": "l1",
+            "locationName": "Library",
+            "latitude": 55.786893,
+            "longitude": 12.523265
+        },
+        {
+            "bssid": "00:27:0d:48",
+            "locationId": "l1",
+            "locationName": "Sports Hall",
+            "latitude": 55.785949,
+            "longitude": 12.525475
+        },
+        {
+            "bssid": "00:27:0d:ed:18",
+            "locationId": "l0",
+            "locationName": "Sports Hall",
+            "latitude": 55.785949,
+            "longitude": 12.525475
+        },
+        {
+            "bssid": "00:27:0d:ed:1a",
+            "locationId": "l0",
+            "locationName": "Sports Hall",
+            "latitude": 55.785949,
+            "longitude": 12.525475
+        },
+        {
+            "bssid": "00:27:0d:5f:42",
+            "locationId": "l0",
+            "locationName": "Sports Hall",
+            "latitude": 55.785949,
+            "longitude": 12.525475
+        },
+        {
+            "bssid": "00:27:0d:5f:4c",
+            "locationId": "l0",
+            "locationName": "Sports Hall",
+            "latitude": 55.785949,
+            "longitude": 12.525475
+        },
+        {
+            "bssid": "00:1c:0e:42:70",
+            "locationId": "l2",
+            "locationName": "Oticon Hall",
+            "latitude": 55.78683,
+            "longitude": 12.525871
+        },
+        {
+            "bssid": "00:1c:0e:42:d4",
+            "locationId": "l2",
+            "locationName": "Oticon Hall",
+            "latitude": 55.78683,
+            "longitude": 12.525871
+        },
+        {
+            "bssid": "00:1a:30:7d:89",
+            "locationId": "l3",
+            "locationName": "Cantine",
+            "latitude": 55.786489,
+            "longitude": 12.524634,
+        },
+        {
+            "bssid": "00:1c:0e:42:7e",
+            "locationId": "l3",
+            "locationName": "Cantine",
+            "latitude": 55.786489,
+            "longitude": 12.524634,
+        },
+        {
+            "bssid": "00:23:5e:1f:20",
+            "locationId": "l3",
+            "locationName": "Cantine",
+            "latitude": 55.786489,
+            "longitude": 12.524634,
+        },
+        {
+            "bssid": "00:1c:0e:42:d4",
+            "locationId": "l3",
+            "locationName": "Cantine",
+            "latitude": 55.786489,
+            "longitude": 12.524634,
+        }
+    ]
+}
