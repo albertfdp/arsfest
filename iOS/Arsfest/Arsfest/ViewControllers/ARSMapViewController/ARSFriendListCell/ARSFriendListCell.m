@@ -31,6 +31,7 @@
     //Informations
     self.nameLabel.text = [user objectForKey:@"name"];
     self.picture.imageURL = [NSURL URLWithString:[user objectForKey:@"pictureURL"]];
+    self.locationLabel.text = [user objectForKey:@"locationName"];
     
     //Picture rounding
     [self.picture setClipsToBounds:YES];

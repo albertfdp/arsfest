@@ -8,6 +8,7 @@
 
 #import "ARSUserController.h"
 #import "ARSAlertManager.h"
+#import "ARSData.h"
 #import <Parse/Parse.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
 
@@ -145,25 +146,15 @@
     return wiFiAvailable;
 }
 
-- (PFGeoPoint*)locationFromBSSID:(NSString*)bssid
-{
-#warning YET TO BE IMPLEMENTED
-    
-    PFGeoPoint *location = [[PFGeoPoint alloc] init];
-    location.longitude = 52;
-    location.latitude = 52;
-    return location;
-}
-
 - (void)updateUserLocation
 {
     if ([self localWiFiAvailable] && [ARSUserController isUserLoggedIn]) {
         lastBSSID = [self currentWifiBSSID];
         
         //Get coordinates of the BSSID
-        PFGeoPoint *location = [self locationFromBSSID:lastBSSID];
+        NSString *locationName = [[ARSData data] locationNameForWifiBssid:lastBSSID];
         //If BSSID or WiFi not connected, location is updated to nil
-        [[PFUser currentUser] setObject:location forKey:@"location"];
+        [[PFUser currentUser] setObject:location forKey:@"locationName"];
         [[PFUser currentUser] saveInBackground];
         
     } else {
