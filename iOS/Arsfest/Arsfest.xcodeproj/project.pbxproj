@@ -96,6 +96,7 @@
 		DBE009D518B78E22000B6DFE /* veto.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C518B78E22000B6DFE /* veto.png */; };
 		DBE009D618B78E22000B6DFE /* veto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C618B78E22000B6DFE /* veto@2x.png */; };
 		DBE009E518B79585000B6DFE /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE009E418B79585000B6DFE /* UIView+Borders.m */; };
+		DBF6B0DD18EC316F0048605F /* ARSWifi.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF6B0DC18EC316F0048605F /* ARSWifi.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +225,8 @@
 		DBE009C618B78E22000B6DFE /* veto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "veto@2x.png"; sourceTree = "<group>"; };
 		DBE009E318B79585000B6DFE /* UIView+Borders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Borders.h"; path = "Utilities/UIView+Borders.h"; sourceTree = "<group>"; };
 		DBE009E418B79585000B6DFE /* UIView+Borders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Borders.m"; path = "Utilities/UIView+Borders.m"; sourceTree = "<group>"; };
+		DBF6B0DB18EC316F0048605F /* ARSWifi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSWifi.h; path = Model/ARSWifi/ARSWifi.h; sourceTree = "<group>"; };
+		DBF6B0DC18EC316F0048605F /* ARSWifi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSWifi.m; path = Model/ARSWifi/ARSWifi.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -474,6 +477,7 @@
 		DB6B316F18A43A9700C3EABB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DBF6B0DA18EC31300048605F /* ARSWifi */,
 				DBCCEA4818A5722B00CC87AE /* ARSData */,
 				DB6B317118A43AA300C3EABB /* ARSEvent */,
 				DB6B317018A43A9C00C3EABB /* ARSLocation */,
@@ -637,6 +641,15 @@
 				DBCCEA4A18A5723D00CC87AE /* ARSData.m */,
 			);
 			name = ARSData;
+			sourceTree = "<group>";
+		};
+		DBF6B0DA18EC31300048605F /* ARSWifi */ = {
+			isa = PBXGroup;
+			children = (
+				DBF6B0DB18EC316F0048605F /* ARSWifi.h */,
+				DBF6B0DC18EC316F0048605F /* ARSWifi.m */,
+			);
+			name = ARSWifi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -832,6 +845,7 @@
 				DBC83A6A18E2DE380047D269 /* ARSMapViewController.m in Sources */,
 				DB21FD9618BE16B80083F26C /* UIBarButtonItem+RightBarItem.m in Sources */,
 				DB21FDAA18BE1B6E0083F26C /* ARSNavigationController.m in Sources */,
+				DBF6B0DD18EC316F0048605F /* ARSWifi.m in Sources */,
 				DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */,
 				DBE009E518B79585000B6DFE /* UIView+Borders.m in Sources */,
 				DBCCEA4B18A5723D00CC87AE /* ARSData.m in Sources */,

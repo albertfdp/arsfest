@@ -36,11 +36,11 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <view contentMode="scaleToFill" id="FPL-d7-d3z">
-                    <rect key="frame" x="0.0" y="205" width="320" height="275.00033733292673"/>
+                    <rect key="frame" x="0.0" y="205" width="320" height="275.00039749993516"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" id="rzt-kp-fXA">
-                            <rect key="frame" x="0.0" y="2" width="320" height="107.00033114332824"/>
+                            <rect key="frame" x="0.0" y="2" width="320" height="107.00039020637796"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" id="Uu4-46-9eV" userLabel="WhenView">
@@ -128,7 +128,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="mjo-Te-V4W">
-                            <rect key="frame" x="0.0" y="115" width="320" height="160.00033733292673"/>
+                            <rect key="frame" x="0.0" y="115" width="320" height="160.00039749993519"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="m6R-wM-OGC">
