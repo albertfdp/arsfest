@@ -141,17 +141,17 @@ static BOOL kSwipeEnabled = NO;
 
 #pragma mark - Scroll view delegate
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    float maxX = (buttonsCount-kButtonVisible)*kButtonWidth;
-    float minX = 0;
-    if (scrollView.contentOffset.x > maxX) {
-        [scrollView setContentOffset:CGPointMake(maxX, 0)];
-    }
-    if (scrollView.contentOffset.x < minX) {
-        [scrollView setContentOffset:CGPointMake(minX, 0)];
-    }
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    float maxX = (buttonsCount-kButtonVisible)*kButtonWidth;
+//    float minX = 0;
+//    if (scrollView.contentOffset.x > maxX) {
+//        [scrollView setContentOffset:CGPointMake(maxX, 0)];
+//    }
+//    if (scrollView.contentOffset.x < minX) {
+//        [scrollView setContentOffset:CGPointMake(minX, 0)];
+//    }
+//}
 
 #pragma mark - Scroll view config
 
