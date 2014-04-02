@@ -10,7 +10,7 @@
 #import "ARSHorizontalScrollingHeader.h"
 #import "ARSData.h"
 
-@interface ARSEventListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ARSDataDelegate, ARSHorizontalScrollingHeaderDelegate>
+@interface ARSEventListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ARSHorizontalScrollingHeaderDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *eventListTableView;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;

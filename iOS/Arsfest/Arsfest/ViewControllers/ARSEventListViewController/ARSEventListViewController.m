@@ -18,14 +18,13 @@
 @interface ARSEventListViewController() <ARSUserControllerDelegate>
 
 @property (nonatomic, assign) ARSLocationType currentFilter;
-@property (nonatomic, strong) ARSData *data;
 @property (nonatomic, strong) NSArray *events;
 @property (nonatomic, strong) NSMutableArray *menuCategories;
 
 @end
 
 @implementation ARSEventListViewController
-@synthesize data = _data, events = _events, currentFilter = _currentFilter, carouselScrollView = _carouselScrollView, pageControl = _pageControl, menuScrollView = _menuScrollView;
+@synthesize events = _events, currentFilter = _currentFilter, carouselScrollView = _carouselScrollView, pageControl = _pageControl, menuScrollView = _menuScrollView;
 @synthesize menuCategories = _menuCategories;
 
 #pragma mark -
@@ -35,9 +34,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _data = [[ARSData alloc] init];
-        _data.dataDelegate = self;
-        _currentFilter = ARSLocationAll;
         _menuCategories = [[NSMutableArray alloc] init];
         _events = [[NSArray alloc] init];
     }
@@ -54,9 +50,11 @@
               options:0
               context:NULL];
     
-    [self.backgroundView setImage:kBackgroundImage];
-    
+    //Initialize the menu in the first position
     [self initializeScrollingMenu];
+    [self menuDidSelectMenuItemAtIndex:0];
+    
+    [self.backgroundView setImage:kBackgroundImage];
     [self setupIntroView];
 }
 
@@ -133,13 +131,7 @@
 }
 
 #pragma mark -
-#pragma mark - ARSDataDelegate
-
-- (void)didReceiveDataFromTheServer
-{
-    NSArray *receivedData = [_data eventsIn:_currentFilter];
-    [self sortAndStore:receivedData];    
-}
+#pragma mark - ARSData related methods
 
 /**
  * Use this method to assign a new array to the table view data source
@@ -213,10 +205,6 @@
     
 }
 
-- (void)addImageToScrollView
-{
-    
-}
 
 #pragma mark -
 #pragma mark - Horizontal menu delegate
@@ -224,7 +212,7 @@
 - (void)menuDidSelectMenuItemAtIndex:(NSUInteger)index
 {
     _currentFilter = kNumberOfLocations - index;
-    NSArray *newData = [_data eventsIn:_currentFilter];
+    NSArray *newData = [[ARSData data] eventsIn:_currentFilter];
     [self sortAndStore:newData];
 }
 

@@ -23,7 +23,6 @@
 
 @implementation ARSData
 @synthesize locations = _locations;
-@synthesize dataDelegate = _dataDelegate;
 @synthesize wifis = _wifis;
 
 - (id)init
@@ -138,16 +137,6 @@
     [self createLocations:locations];
     NSArray *wifis = [self parseJSONWithFileName:kWifisFileName key:@"bssids"];
     [self createWifis:wifis];
-}
-
-#pragma mark -
-#pragma mark - ARSDataDelegate
-
-- (void)notifyDelegate
-{
-    if ([_dataDelegate respondsToSelector:@selector(didReceiveDataFromTheServer)]) {
-        [_dataDelegate didReceiveDataFromTheServer];
-    }
 }
 
 @end
