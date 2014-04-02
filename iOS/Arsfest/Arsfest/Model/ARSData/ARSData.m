@@ -7,20 +7,24 @@
 //
 
 #import "ARSData.h"
-#import "AFNetworking.h"
 
-#define kJSONURL                [NSURL URLWithString:@"https://raw.github.com/albertfdp/arsfest/master/iOS/test.json"]
+#define kEventsFileName                @"events"
+#define kWifisFileName                 @"wifis"
 
 @interface ARSData()
 
-- (void)downloadJSON;
-- (void)parseJSON:(id)jsonObject;
+/** Parses both JSON files to initialize all the data the app needs **/
+- (void)parseJSON;
+
+/** Parses a specified JSON file searching for the given master key **/
+- (NSArray*)parseJSONWithFileName:(NSString*)filename key:(NSString*)key;
 
 @end
 
 @implementation ARSData
 @synthesize locations = _locations;
 @synthesize dataDelegate = _dataDelegate;
+@synthesize wifis = _wifis;
 
 - (id)init
 {
@@ -28,10 +32,21 @@
     
     if (self) {
         _locations = [[NSMutableArray alloc] init];
-        [self downloadJSON];
+        _wifis = [[NSMutableDictionary alloc] init];
+        [self parseJSON];
     }
     
     return self;
+}
+
++ (ARSData*)data
+{
+    static ARSData* data = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        data = [[ARSData alloc] init];
+    });
+    return data;
 }
 
 #pragma mark -
@@ -66,24 +81,33 @@
     return returnedArray;
 }
 
+- (NSString*)locationNameForWifiBssid:(NSString*)bssid
+{
+    return @"";
+}
+
 #pragma mark -
 #pragma mark - JSON Parsing and Fetching
 
-- (void)parseJSON:(id)jsonObject
+- (NSArray*)parseJSONWithFileName:(NSString*)filename key:(NSString*)key
 {
     NSError *error;
-    NSData *data = (NSData*)jsonObject;
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:filePath];
+    
     
     NSJSONSerialization* json = [NSJSONSerialization
-                          JSONObjectWithData:data
-                          options:kNilOptions
-                          error:&error];
+                                 JSONObjectWithData:jsonData
+                                 options:kNilOptions
+                                 error:&error];
     
     if (!error) {
-        NSArray *array = [json valueForKey:@"locations"];
-        [self createLocations:array];
-        [self notifyDelegate];
+        NSArray *array = [json valueForKey:key];
+        return array;
     }
+    
+    return nil;
 }
 
 - (void)createLocations:(NSArray*)locations
@@ -94,21 +118,26 @@
     }
 }
 
-- (void)downloadJSON
+- (void)createWifis:(NSArray*)wifis
 {
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:kJSONURL];
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [self parseJSON:responseObject];
-        });
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    
-    [operation start];
+    for (NSDictionary* wifiDictionary in wifis) {
+        ARSWifi* wifi = [ARSWifi wifiFromDictionary:wifiDictionary];
+        if ([_wifis objectForKey:wifi.bssid] != nil) {
+            [[_wifis objectForKey:wifi.bssid] addObject:wifi];
+        } else {
+            NSMutableArray *bssidArray = [[NSMutableArray alloc] init];
+            [bssidArray addObject:wifi];
+            [_wifis setValue:bssidArray forKey:wifi.bssid];
+        }
+    }
+}
+
+- (void)parseJSON
+{
+    NSArray *locations = [self parseJSONWithFileName:kEventsFileName key:@"locations"];
+    [self createLocations:locations];
+    NSArray *wifis = [self parseJSONWithFileName:kWifisFileName key:@"bssids"];
+    [self createWifis:wifis];
 }
 
 #pragma mark -

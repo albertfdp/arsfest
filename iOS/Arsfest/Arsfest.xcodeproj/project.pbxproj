@@ -97,6 +97,8 @@
 		DBE009D618B78E22000B6DFE /* veto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C618B78E22000B6DFE /* veto@2x.png */; };
 		DBE009E518B79585000B6DFE /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE009E418B79585000B6DFE /* UIView+Borders.m */; };
 		DBF6B0DD18EC316F0048605F /* ARSWifi.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF6B0DC18EC316F0048605F /* ARSWifi.m */; };
+		DBF6B0E018EC548B0048605F /* wifis.json in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B0DF18EC548B0048605F /* wifis.json */; };
+		DBF6B0E218EC54CA0048605F /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B0E118EC54CA0048605F /* events.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +229,8 @@
 		DBE009E418B79585000B6DFE /* UIView+Borders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Borders.m"; path = "Utilities/UIView+Borders.m"; sourceTree = "<group>"; };
 		DBF6B0DB18EC316F0048605F /* ARSWifi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSWifi.h; path = Model/ARSWifi/ARSWifi.h; sourceTree = "<group>"; };
 		DBF6B0DC18EC316F0048605F /* ARSWifi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSWifi.m; path = Model/ARSWifi/ARSWifi.m; sourceTree = "<group>"; };
+		DBF6B0DF18EC548B0048605F /* wifis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wifis.json; sourceTree = "<group>"; };
+		DBF6B0E118EC54CA0048605F /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +354,7 @@
 		DB53D31E18AE58D000508DAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DBF6B0DE18EC547D0048605F /* JSON Files */,
 				DBBCEDC018E7825C00771BFD /* Refresh@2x.png */,
 				DB811D7618E6E0E800BB11E6 /* buildingmap@2x.png */,
 				DB53D32D18AEBCD300508DAD /* default_background.png */,
@@ -652,6 +657,15 @@
 			name = ARSWifi;
 			sourceTree = "<group>";
 		};
+		DBF6B0DE18EC547D0048605F /* JSON Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBF6B0E118EC54CA0048605F /* events.json */,
+				DBF6B0DF18EC548B0048605F /* wifis.json */,
+			);
+			name = "JSON Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -761,11 +775,13 @@
 				DBE009C918B78E22000B6DFE /* dinner.png in Resources */,
 				DBE009CC18B78E22000B6DFE /* dj@2x.png in Resources */,
 				DBC83A6B18E2DE380047D269 /* ARSMapViewController.xib in Resources */,
+				DBF6B0E218EC54CA0048605F /* events.json in Resources */,
 				DBE009CE18B78E22000B6DFE /* jazzband@2x.png in Resources */,
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
 				DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */,
 				DB21FDA618BE1A680083F26C /* location_icon@2x.png in Resources */,
 				DBE009D518B78E22000B6DFE /* veto.png in Resources */,
+				DBF6B0E018EC548B0048605F /* wifis.json in Resources */,
 				DBA50A2D18B7C6A0001C8AF1 /* food_icon.png in Resources */,
 				DBE009D218B78E22000B6DFE /* official@2x.png in Resources */,
 				DBE009CF18B78E22000B6DFE /* leslanciers.png in Resources */,

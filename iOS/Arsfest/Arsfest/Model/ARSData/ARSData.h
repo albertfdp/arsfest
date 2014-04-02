@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ARSLocation.h"
+#import "ARSWifi.h"
 
 @protocol ARSDataDelegate <NSObject>
 
@@ -20,8 +21,12 @@
 
 @property (nonatomic, assign) id<ARSDataDelegate> dataDelegate;
 @property (nonatomic, strong) NSMutableArray *locations;
+@property (nonatomic, strong) NSDictionary *wifis;
+
++ (ARSData*)data;
 
 - (NSArray*)eventsIn:(ARSLocationType)location;
+- (NSString*)locationNameForWifiBssid:(NSString*)bssid;
 
 
 @end
