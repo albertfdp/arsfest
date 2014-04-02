@@ -16,6 +16,6 @@
 @property (strong, nonatomic) NSString *locationName;
 @property (strong, nonatomic) NSString *locationUniqueID;
 
-+ (ARSWifi*)locationFromDictionary:(NSDictionary*)dictionary;
++ (ARSWifi*)wifiFromDictionary:(NSDictionary*)dictionary;
 
 @end

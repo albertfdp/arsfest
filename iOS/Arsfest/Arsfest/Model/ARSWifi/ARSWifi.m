@@ -12,7 +12,7 @@
 @synthesize location, locationName, locationUniqueID, bssid;
 
 
-+ (ARSWifi*)locationFromDictionary:(NSDictionary*)dictionary
++ (ARSWifi*)wifiFromDictionary:(NSDictionary*)dictionary
 {
     ARSWifi *newWifi = [[ARSWifi alloc] init];
     
