@@ -246,11 +246,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/Controllers/ARSUserController/ARSUserController.m"
-            timestampString = "417826165.481348"
+            timestampString = "418247659.17173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "-updateUserLocation"
             landmarkType = "5">
          </BreakpointContent>

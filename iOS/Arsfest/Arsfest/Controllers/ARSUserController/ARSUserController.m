@@ -164,7 +164,7 @@ typedef NS_ENUM(NSInteger, kService) {
         }
     } else {
         //WiFi not available
-        if (![self localWiFiAvailable]) {
+        if (![self localWiFiAvailable] && ! [ARSUserController isUserLoggedIn]) {
             [ARSAlertManager showErrorWithTitle:@"Wi-Fi Not Enabled" message:@"Please enable the Wi-Fi to get your current location" cancelTitle:@"OK"];
         }
     }
