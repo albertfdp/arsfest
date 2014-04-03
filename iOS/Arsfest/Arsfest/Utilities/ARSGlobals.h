@@ -23,6 +23,9 @@
 
 // Key constants
 #define INTRO_SHOWN_ONCE @"IntroShownOnce"
+#define LAST_FACEBOOK_REFRESH @"lastFacebookRefresh"
+#define LAST_PARSE_REFRESH @"lastParseRefresh"
+#define REFRESH_PARSE_AFTER 5
 
 // Friend list table view constant
 #define FRIEND_CELL_HEIGHT 71

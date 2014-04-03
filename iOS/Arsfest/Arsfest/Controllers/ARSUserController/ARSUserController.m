@@ -154,7 +154,7 @@
         //Get coordinates of the BSSID
         NSString *locationName = [[ARSData data] locationNameForWifiBssid:lastBSSID];
         //If BSSID or WiFi not connected, location is updated to nil
-        [[PFUser currentUser] setObject:location forKey:@"locationName"];
+        [[PFUser currentUser] setObject:locationName forKey:@"locationName"];
         [[PFUser currentUser] saveInBackground];
         
     } else {
@@ -167,8 +167,8 @@
 
 - (void)fetchFriendsLocationWithDelegate:(id<ARSUserControllerDelegate>)delegate enforceRefresh:(BOOL)refreshCache
 {
-#warning Implement a timer to refresh the caching mechanism
-    if (!userFriends) {
+    BOOL shouldRefreshFacebookFriends = [self shouldRefreshFacebookFriends];
+    if (!userFriends || shouldRefreshFacebookFriends) {
         // Issue a Facebook Graph API request to get your user's friend list
         [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
             if (!error) {
@@ -182,9 +182,35 @@
     }
 }
 
+- (BOOL)shouldRefreshFacebookFriends
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([userDefaults objectForKey:LAST_FACEBOOK_REFRESH]) {
+        NSDate *oldDate = (NSDate*)[userDefaults objectForKey:LAST_FACEBOOK_REFRESH];
+        BOOL shouldRefresh = ![oldDate isOnSameDayAsDate:[NSDate date] inTimeZone:[NSTimeZone systemTimeZone]];
+        return shouldRefresh;
+    } else {
+        [userDefaults setObject:[NSDate date] forKey:LAST_FACEBOOK_REFRESH];
+        return YES;
+    }
+}
+
+- (BOOL)shouldRefreshParseUsers
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([userDefaults objectForKey:LAST_PARSE_REFRESH]) {
+        NSDate *oldDate = (NSDate*)[userDefaults objectForKey:LAST_PARSE_REFRESH];
+        BOOL shouldRefresh = [oldDate isEarlierThanDate:[NSDate date] fromMinutes:REFRESH_PARSE_AFTER];
+        return shouldRefresh;
+    } else {
+        [userDefaults setObject:[NSDate date] forKey:LAST_PARSE_REFRESH];
+        return YES;
+    }
+}
+
 - (void)queryUserFriendsWithIds:(NSArray*)friendsIds delegate:(id<ARSUserControllerDelegate>)delegate enforceRefresh:(BOOL)refreshCache
 {
-#warning Remove the commented line with the key fbId
+    refreshCache = ( refreshCache || [self shouldRefreshParseUsers] );
     if (parseUsers && !refreshCache) {
         [delegate userControllerRetrievedUserFriends:parseUsers];
     } else {

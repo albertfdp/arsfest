@@ -16,6 +16,7 @@
 #endif
 
 #import "NSDate+Formatter.h"
+#import "NSDate+DayTest.h"
 #import "ARSGlobals.h"
 #import "UIView+Borders.h"
 #import "UIImage+Icon.h"

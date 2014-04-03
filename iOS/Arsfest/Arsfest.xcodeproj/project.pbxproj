@@ -14,6 +14,7 @@
 		DB21FDA618BE1A680083F26C /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21FDA418BE1A680083F26C /* location_icon@2x.png */; };
 		DB21FDAA18BE1B6E0083F26C /* ARSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB21FDA918BE1B6E0083F26C /* ARSNavigationController.m */; };
 		DB38A69818E1908F00AA12AE /* ARSAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB38A69718E1908F00AA12AE /* ARSAlertManager.m */; };
+		DB43481918EDC7DC00CD310E /* NSDate+DayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB43481818EDC7DC00CD310E /* NSDate+DayTest.m */; };
 		DB43AE3E18DEDE7D00D56B4F /* ARSUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB43AE3D18DEDE7D00D56B4F /* ARSUserController.m */; };
 		DB53D31D18AE352400508DAD /* UIViewController+Edges.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53D31C18AE352400508DAD /* UIViewController+Edges.m */; };
 		DB53D32118AE595C00508DAD /* Clock.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D31F18AE595C00508DAD /* Clock.png */; };
@@ -123,6 +124,8 @@
 		DB21FDA918BE1B6E0083F26C /* ARSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSNavigationController.m; path = Utilities/ARSNavigationController.m; sourceTree = "<group>"; };
 		DB38A69618E1908F00AA12AE /* ARSAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSAlertManager.h; path = Controllers/ARSAlertManager/ARSAlertManager.h; sourceTree = "<group>"; };
 		DB38A69718E1908F00AA12AE /* ARSAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSAlertManager.m; path = Controllers/ARSAlertManager/ARSAlertManager.m; sourceTree = "<group>"; };
+		DB43481718EDC7DC00CD310E /* NSDate+DayTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DayTest.h"; sourceTree = "<group>"; };
+		DB43481818EDC7DC00CD310E /* NSDate+DayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DayTest.m"; sourceTree = "<group>"; };
 		DB43AE3C18DEDE7D00D56B4F /* ARSUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSUserController.h; path = Controllers/ARSUserController/ARSUserController.h; sourceTree = "<group>"; };
 		DB43AE3D18DEDE7D00D56B4F /* ARSUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSUserController.m; path = Controllers/ARSUserController/ARSUserController.m; sourceTree = "<group>"; };
 		DB53D31B18AE352400508DAD /* UIViewController+Edges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Edges.h"; path = "Utilities/UIViewController+Edges.h"; sourceTree = "<group>"; };
@@ -272,6 +275,7 @@
 		DB21FDA718BE1AFF0083F26C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				DB43481618EDC7DC00CD310E /* NSDate+DayTest */,
 				DB9872A218AD7F7500A085FE /* NSDate+Formatter.h */,
 				DB9872A318AD7F7500A085FE /* NSDate+Formatter.m */,
 				DB53D31B18AE352400508DAD /* UIViewController+Edges.h */,
@@ -304,6 +308,15 @@
 				DB38A69718E1908F00AA12AE /* ARSAlertManager.m */,
 			);
 			name = ARSAlertManager;
+			sourceTree = "<group>";
+		};
+		DB43481618EDC7DC00CD310E /* NSDate+DayTest */ = {
+			isa = PBXGroup;
+			children = (
+				DB43481718EDC7DC00CD310E /* NSDate+DayTest.h */,
+				DB43481818EDC7DC00CD310E /* NSDate+DayTest.m */,
+			);
+			path = "NSDate+DayTest";
 			sourceTree = "<group>";
 		};
 		DB43AE3A18DEDDAE00D56B4F /* EventThumbnails */ = {
@@ -847,6 +860,7 @@
 				DB98729F18AD7EB000A085FE /* ARSEventViewController.m in Sources */,
 				DB96086918E5D87B00AC3B8B /* ARSFriendListCell.m in Sources */,
 				DB43AE3E18DEDE7D00D56B4F /* ARSUserController.m in Sources */,
+				DB43481918EDC7DC00CD310E /* NSDate+DayTest.m in Sources */,
 				DBA50A3318B7C6C6001C8AF1 /* UIImage+Icon.m in Sources */,
 				DB6B313118A4337300C3EABB /* main.m in Sources */,
 				DB96086E18E5E12000AC3B8B /* AsyncImageView.m in Sources */,
