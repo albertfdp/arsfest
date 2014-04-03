@@ -31,14 +31,19 @@
     //Informations
     self.nameLabel.text = [user objectForKey:@"name"];
     self.picture.imageURL = [NSURL URLWithString:[user objectForKey:@"pictureURL"]];
-    self.locationLabel.text = [user objectForKey:@"locationName"];
+    NSString *locationName = [user objectForKey:@"locationName"];
+    if (locationName && ![locationName isEqualToString:@""]) {
+        self.locationLabel.text = [user objectForKey:@"locationName"];
+    } else {
+        self.locationLabel.text = @"Unknown Location";
+    }
     
     
     //Picture rounding
     [self.picture setClipsToBounds:YES];
     [self.picture.layer setCornerRadius:25.0f];
     [self.picture.layer setBorderWidth:0.8f];
-    [self.picture.layer setBorderColor:[[UIColor colorWithRed:213/255.f green:213/255.f blue:213/255.f alpha:1.0f] CGColor]];
+    [self.picture.layer setBorderColor:kFriendCellColor];
 }
 
 @end
