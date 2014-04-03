@@ -42,6 +42,7 @@ public class MainActivity extends BaseActivity {
 	private ArrayList<Card> cards;
 	
 	private boolean showFinishedEvents = false;
+	private CardArrayAdapter cardArrayAdapter;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -176,9 +177,9 @@ public class MainActivity extends BaseActivity {
 			cards.add(card);
 		}
 		
-		CardArrayAdapter cardArrayAdapter = new CardArrayAdapter(this, cards);
+		cardArrayAdapter = new CardArrayAdapter(this,cards);
 		CardListView cardsView = (CardListView) findViewById(R.id.arsfest_events_list);
-		
+
 		if (cardsView != null) cardsView.setAdapter(cardArrayAdapter);
 		
 	}
@@ -265,24 +266,24 @@ public class MainActivity extends BaseActivity {
 			.setActionView(searchView)
 			.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
 		
-		searchView.setOnQueryTextListener(new OnQueryTextListener() {
+		SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener(){
 			
 			@Override
-			public boolean onQueryTextSubmit(String query) {
-				// TODO Auto-generated method stub
-				return false;
+			public boolean onQueryTextSubmit(String query) {			
+				cardArrayAdapter.getFilter().filter(query);
+				return true;
 			}
 			
 			@Override
 			public boolean onQueryTextChange(String newText) {
-				if (newText.length() > 0) {
-					
-				}
-				return false;
+				cardArrayAdapter.getFilter().filter(newText);
+				return true;
 			}
-		});
-			
-		return true;
+		};
+		
+		searchView.setOnQueryTextListener(queryTextListener);
+		
+		return super.onCreateOptionsMenu(menu);
 	}
 	
 	@Override
