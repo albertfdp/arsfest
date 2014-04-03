@@ -16,6 +16,11 @@
 #import <ifaddrs.h> // For getifaddrs()
 #import <net/if.h> // For IFF_LOOPBACK
 
+typedef NS_ENUM(NSInteger, kService) {
+    kFacebookService,
+    kParseService
+};
+
 @interface ARSUserController()
 
 @property (nonatomic, retain) NSString *lastBSSID;
@@ -102,7 +107,7 @@
 }
 
 #pragma mark -
-#pragma mark - Location methods
+#pragma mark - Location handler
 
 - (NSString *)currentWifiBSSID {
     
@@ -153,10 +158,10 @@
         
         //Get coordinates of the BSSID
         NSString *locationName = [[ARSData data] locationNameForWifiBssid:lastBSSID];
-        //If BSSID or WiFi not connected, location is updated to nil
-        [[PFUser currentUser] setObject:locationName forKey:@"locationName"];
-        [[PFUser currentUser] saveInBackground];
-        
+        if (locationName) {
+            [[PFUser currentUser] setObject:locationName forKey:@"locationName"];
+            [[PFUser currentUser] saveInBackground];   
+        }
     } else {
         //WiFi not available
         if (![self localWiFiAvailable]) {
@@ -165,9 +170,12 @@
     }
 }
 
+#pragma mark -
+#pragma mark - Friends Handler
+
 - (void)fetchFriendsLocationWithDelegate:(id<ARSUserControllerDelegate>)delegate enforceRefresh:(BOOL)refreshCache
 {
-    BOOL shouldRefreshFacebookFriends = [self shouldRefreshFacebookFriends];
+    BOOL shouldRefreshFacebookFriends = [self shouldRefreshUsersFromService:kFacebookService];
     if (!userFriends || shouldRefreshFacebookFriends) {
         // Issue a Facebook Graph API request to get your user's friend list
         [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -175,6 +183,8 @@
                 // result will contain an array with your user's friends in the "data" key
                 userFriends = [result objectForKey:@"data"];
                 [self queryUserFriendsWithIds:userFriends delegate:delegate enforceRefresh:refreshCache];
+            } else {
+#warning Implement Facebook Error Mechanism
             }
         }];
     } else {
@@ -182,35 +192,9 @@
     }
 }
 
-- (BOOL)shouldRefreshFacebookFriends
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    if ([userDefaults objectForKey:LAST_FACEBOOK_REFRESH]) {
-        NSDate *oldDate = (NSDate*)[userDefaults objectForKey:LAST_FACEBOOK_REFRESH];
-        BOOL shouldRefresh = ![oldDate isOnSameDayAsDate:[NSDate date] inTimeZone:[NSTimeZone systemTimeZone]];
-        return shouldRefresh;
-    } else {
-        [userDefaults setObject:[NSDate date] forKey:LAST_FACEBOOK_REFRESH];
-        return YES;
-    }
-}
-
-- (BOOL)shouldRefreshParseUsers
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    if ([userDefaults objectForKey:LAST_PARSE_REFRESH]) {
-        NSDate *oldDate = (NSDate*)[userDefaults objectForKey:LAST_PARSE_REFRESH];
-        BOOL shouldRefresh = [oldDate isEarlierThanDate:[NSDate date] fromMinutes:REFRESH_PARSE_AFTER];
-        return shouldRefresh;
-    } else {
-        [userDefaults setObject:[NSDate date] forKey:LAST_PARSE_REFRESH];
-        return YES;
-    }
-}
-
 - (void)queryUserFriendsWithIds:(NSArray*)friendsIds delegate:(id<ARSUserControllerDelegate>)delegate enforceRefresh:(BOOL)refreshCache
 {
-    refreshCache = ( refreshCache || [self shouldRefreshParseUsers] );
+    refreshCache = ( refreshCache || [self shouldRefreshUsersFromService:kParseService] );
     if (parseUsers && !refreshCache) {
         [delegate userControllerRetrievedUserFriends:parseUsers];
     } else {
@@ -238,5 +222,23 @@
     }
 }
 
+- (BOOL)shouldRefreshUsersFromService:(kService)service
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *key = (service == kFacebookService)?LAST_FACEBOOK_REFRESH:LAST_PARSE_REFRESH;
+    if ([userDefaults objectForKey:key]) {
+        NSDate *oldDate = (NSDate*)[userDefaults objectForKey:key];
+        BOOL shouldRefresh = nil;
+        if (service == kFacebookService) {
+            shouldRefresh = ![oldDate isOnSameDayAsDate:[NSDate date] inTimeZone:[NSTimeZone systemTimeZone]];
+        } else {
+            shouldRefresh = [oldDate isEarlierThanDate:[NSDate date] fromMinutes:REFRESH_PARSE_AFTER];
+        }
+        return shouldRefresh;
+    } else {
+        [userDefaults setObject:[NSDate date] forKey:key];
+        return YES;
+    }
+}
 
 @end

@@ -139,7 +139,7 @@
 
 - (NSString*)locationNameForWifiBssid:(NSString*)bssid
 {
-    NSString *locationName = @"";
+    NSString *locationName = nil;
     if ([_wifis objectForKey:bssid] != nil) {
         ARSWifi *wifi = [[_wifis objectForKey:bssid] lastObject];
         locationName = wifi.locationName;
