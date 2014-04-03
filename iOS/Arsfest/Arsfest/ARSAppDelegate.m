@@ -11,7 +11,14 @@
 #import "ARSEventListViewController.h"
 #import "ARSUserController.h"
 
+@interface ARSAppDelegate ()
+
+@property (strong, nonatomic) NSTimer *updateLocationTimer;
+
+@end
+
 @implementation ARSAppDelegate
+@synthesize updateLocationTimer;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -24,8 +31,6 @@
                   clientKey:kParseClientKey];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
-    
-    [ARSUserController logOutUser];
     
     ARSEventListViewController *eventListViewController = [[ARSEventListViewController alloc] initWithNibName:@"ARSEventListViewController" bundle:nil];
     
@@ -50,6 +55,7 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [self.updateLocationTimer invalidate];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -68,11 +74,27 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
+    
+    [self startLocationUpdateTimer];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark -
+#pragma mark - Location timer
+
+- (void)startLocationUpdateTimer
+{
+    self.updateLocationTimer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+    [[ARSUserController sharedUserController] updateUserLocation];
+}
+
+- (void)onTimer:(NSTimer*)timer
+{
+    [[ARSUserController sharedUserController] updateUserLocation];
 }
 
 

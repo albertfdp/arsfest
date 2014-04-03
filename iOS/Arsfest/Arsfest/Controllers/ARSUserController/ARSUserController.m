@@ -89,6 +89,7 @@ typedef NS_ENUM(NSInteger, kService) {
                     NSString *pictureURL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", [result objectForKey:@"id"]];
                     [[PFUser currentUser] setObject:pictureURL forKey:@"pictureURL"];
                     [[PFUser currentUser] saveInBackground];
+                    
                 }
             }];
         }
@@ -158,6 +159,8 @@ typedef NS_ENUM(NSInteger, kService) {
         
         //Get coordinates of the BSSID
         NSString *locationName = [[ARSData data] locationNameForWifiBssid:lastBSSID];
+        NSString *testLocation = @"Cantine";
+#warning Remove testlocation and use location name
         if (locationName) {
             [[PFUser currentUser] setObject:locationName forKey:@"locationName"];
             [[PFUser currentUser] saveInBackground];   
