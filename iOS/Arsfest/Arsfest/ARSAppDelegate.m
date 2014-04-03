@@ -88,7 +88,7 @@
 
 - (void)startLocationUpdateTimer
 {
-    self.updateLocationTimer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+    self.updateLocationTimer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_RATE_LOCATION target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
     [[ARSUserController sharedUserController] updateUserLocation];
 }
 

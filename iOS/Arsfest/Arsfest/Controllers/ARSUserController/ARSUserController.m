@@ -117,8 +117,6 @@ typedef NS_ENUM(NSInteger, kService) {
     for (NSString *ifnam in ifs) {
         NSDictionary *info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
         
-        NSLog(@"info:%@",info);
-        
         if (info[@"BSSID"]) {
             bssid = info[@"BSSID"];
         }
@@ -159,8 +157,8 @@ typedef NS_ENUM(NSInteger, kService) {
         
         //Get coordinates of the BSSID
         NSString *locationName = [[ARSData data] locationNameForWifiBssid:lastBSSID];
-        NSString *testLocation = @"Cantine";
-#warning Remove testlocation and use location name
+        locationName = @"Cantine";
+#warning Remove line above
         if (locationName) {
             [[PFUser currentUser] setObject:locationName forKey:@"locationName"];
             [[PFUser currentUser] saveInBackground];   

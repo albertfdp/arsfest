@@ -29,3 +29,5 @@
 
 // Friend list table view constant
 #define FRIEND_CELL_HEIGHT 71
+
+#define REFRESH_RATE_LOCATION 60
