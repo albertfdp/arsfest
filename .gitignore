@@ -16,6 +16,6 @@ gen/
 local.properties
 
 project.propertie
-
+project.properties
 # Mac files
 *.DS_Store
