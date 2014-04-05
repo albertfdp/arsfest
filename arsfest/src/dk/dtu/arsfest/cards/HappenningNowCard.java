@@ -7,6 +7,8 @@ import android.graphics.drawable.GradientDrawable;
 import android.text.format.DateUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 import dk.dtu.arsfest.R;
@@ -14,7 +16,7 @@ import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 
-public class HappenningNowCard extends EventCard {
+public class HappenningNowCard extends EventCard{
 	
 	private String member;
 	private String subtitle;
@@ -119,6 +121,11 @@ public class HappenningNowCard extends EventCard {
 			}
 			
 		}
+	}
+	
+	@Override
+	public String toString(){
+		return this.getTitle()+" "+this.member+" "+this.subtitle+" "+this.community;
 	}
 }
 
