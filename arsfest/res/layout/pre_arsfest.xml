@@ -29,13 +29,27 @@
         android:text="@string/splash_subtitle"
         android:textStyle="bold"/>
 
-    <ProgressBar
-        android:id="@+id/splash_progress_bar"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_below="@+id/splash_arsfest_subtitle"
+    <Button
+        android:id="@+id/splash_button_tickets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/splash_button_program"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:gravity="center"
+       	android:background="@drawable/button_shape" 
+        android:text="See Tickets Sale" />
+
+    <Button
+        android:id="@+id/splash_button_program"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/splash_button_tickets"
+        android:layout_alignRight="@+id/splash_button_tickets"
+        android:layout_below="@+id/splash_arsfest_subtitle"
+        android:layout_marginTop="33dp"
+        android:background="@drawable/button_shape"
+        android:gravity="center"
+        android:text="See Program" />
 
 </RelativeLayout>
