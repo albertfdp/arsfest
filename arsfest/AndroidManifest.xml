@@ -16,6 +16,10 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    <!-- LocationService -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -67,12 +71,12 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
-	-->
-        
+        -->
+		<service android:name="dk.dtu.arsfest.sensors.LocationService" />
         <service android:name="dk.dtu.arsfest.notification.MyNotificationService" />
         <service android:name="dk.dtu.arsfest.notification.MyOneTimeNotificationService" />
         <!-- Receiver for location awareness: -->
-        
+
         <!--
         <receiver android:name="dk.dtu.arsfest.alarms.AlarmManagerBroadcastReceiver" >
         </receiver>
