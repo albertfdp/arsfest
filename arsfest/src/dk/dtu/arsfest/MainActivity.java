@@ -2,10 +2,7 @@ package dk.dtu.arsfest;
 
 import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
-import it.gmariotti.cardslib.library.internal.CardHeader;
 import it.gmariotti.cardslib.library.view.CardListView;
-import it.gmariotti.cardslib.library.view.CardView;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -15,17 +12,14 @@ import android.os.Bundle;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.widget.SearchView;
-import com.actionbarsherlock.widget.SearchView.OnQueryTextListener;
-import com.devspark.sidenavigation.ISideNavigationCallback;
 import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.SideNavigationView.Mode;
 import com.google.analytics.tracking.android.EasyTracker;
 
-import dk.dtu.arsfest.cards.EventCard;
-import dk.dtu.arsfest.cards.HappeningNowHeader;
 import dk.dtu.arsfest.cards.HappenningNowCard;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
+import dk.dtu.arsfest.navigation.SideNavigation;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.UniversalImageLoaderThumbnail;
 import dk.dtu.arsfest.utils.Utils;
@@ -37,8 +31,8 @@ public class MainActivity extends BaseActivity {
 	private ArrayList<Location> locations;
 	private ArrayList<Event> events = new ArrayList<Event>();
 	
-	private HappenningNowCard happeningNowCard;
-	private CardView happeningNowCardView;
+	//private HappenningNowCard happeningNowCard;
+	//private CardView happeningNowCardView;
 	private ArrayList<Card> cards;
 	
 	private boolean showFinishedEvents = false;
@@ -50,40 +44,10 @@ public class MainActivity extends BaseActivity {
 		setContentView(R.layout.activity_main);
 
 		sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_view);
-		sideNavigationView.setMenuItems(R.menu.side_navigation_menu);
-	    sideNavigationView.setMenuClickCallback(new ISideNavigationCallback() {
-			@Override
-			public void onSideNavigationItemClick(int itemId) {
-				Intent intent;
-				switch (itemId) {
-					case R.id.side_navigation_events:
-						if (!showFinishedEvents) break;
-						intent = new Intent(MainActivity.this, MainActivity.class);
-						intent.putExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, false);
-						MainActivity.this.startActivity(intent);
-						finish();
-						break;
-					case R.id.side_navigation_map:
-//						Intent intent = new Intent(getContext(), EventActivity.class);
-//						intent.putExtra(Constants.EXTRA_EVENT, event);
-//						getContext().startActivity(intent);
-						//finish();
-						break;
-						
-					case R.id.side_navigation_old_events:
-						intent = new Intent(MainActivity.this, MainActivity.class);
-						intent.putExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, true);
-						MainActivity.this.startActivity(intent);
-						finish();
-						break;
-					default:
-						break;
-					}				
-			}
-		});
-	    
-	    sideNavigationView.setMode(Mode.LEFT);
-	    
+		SideNavigation mSideNavigation = new SideNavigation(sideNavigationView,
+				getApplicationContext());
+		mSideNavigation.getSideNavigation(Mode.LEFT);
+
 	    Intent intent = getIntent();
 	    this.showFinishedEvents = intent.getBooleanExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, false);
 	    
@@ -105,11 +69,11 @@ public class MainActivity extends BaseActivity {
 	    }
 	}
 	
-	private Event getHappenningNow() {
+	/*private Event getHappenningNow() {
 		if (!events.isEmpty())
 			return events.get(1);
 		return null;
-	}
+	}*/
 	
 	private void readProgramme() {
 		

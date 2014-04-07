@@ -16,3 +16,6 @@
 
 // Image constants
 #define kBackgroundImage [UIImage imageNamed:@"default_background.png"]
+
+// Key constants
+#define INTRO_SHOWN_ONCE @"IntroShownOnce"

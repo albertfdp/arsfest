@@ -67,10 +67,11 @@ public class Constants {
 
 	public static final int SCROLL_MENU_TIME = 333;
 	
-	public static final String EXTRA_STARTX = "dk.dtu.arsfest.map.StartX";
-	public static final String EXTRA_STARTY = "dk.dtu.arsfest.map.StartY";
-	public static final String EXTRA_START = "dk.dtu.arsfest.map.Start";
-
+	//public static final String EXTRA_STARTX = "dk.dtu.arsfest.map.StartX";
+	//public static final String EXTRA_STARTY = "dk.dtu.arsfest.map.StartY";
+	//public static final String EXTRA_START = "dk.dtu.arsfest.map.Start";
+	public static final String EXTRA_MAP = "dk.dtu.arsfest.map.start";
+	
 	public static final int RESULT_SETTINGS = 1;
 	public static final int RESULT_EVENT_INFO = 2;
 

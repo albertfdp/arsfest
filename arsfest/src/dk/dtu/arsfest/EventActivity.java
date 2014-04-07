@@ -25,8 +25,9 @@ public class EventActivity extends BaseActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_event);
-
+		
 		sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_view);
+		
 		sideNavigationView.setMenuItems(R.menu.side_navigation_menu);
 	    sideNavigationView.setMenuClickCallback(new ISideNavigationCallback() {
 			@Override
