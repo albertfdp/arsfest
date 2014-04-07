@@ -96,9 +96,10 @@ public class Constants {
 	public static final String LocationFlagLatitude = "ArsfestLatitude";
 	public static final String LocationFlagLongitude = "ArsfestLongitude";
 	public static final String LocationFlagAccuracy = "ArsfestAccuracy";
-	//public static final String LocationGPSProvider = "ArsfestGPSProvider";
-	//public static final String LocationNetworkProvider = "ArsfestNetworkProvider";
 	public static final String ProvidersActionTag = "ArsfestProvidersRequest";
 	public static final String GPSProvider = "ArsfestGPSProvider";
 	public static final String NetworkProvider = "ArsfestNetworkProvider";
+	public static final String OrientationActionTag = "ArsfestOrientationRequest";
+	public static final String OrientationFlagAzimuth = "ArsfestAzimuth";
+	
 }

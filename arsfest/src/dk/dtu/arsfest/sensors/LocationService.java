@@ -43,8 +43,6 @@ public class LocationService extends Service {
 				Log.e(Constants.TAG, holdErrorInformation + e);
 			}
 		}
-
-		sendGPSIntent();
 	}
 
 	@Override

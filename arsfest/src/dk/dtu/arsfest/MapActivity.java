@@ -6,6 +6,7 @@ import com.devspark.sidenavigation.SideNavigationView.Mode;
 
 import dk.dtu.arsfest.navigation.SideNavigation;
 import dk.dtu.arsfest.sensors.LocationService;
+import dk.dtu.arsfest.sensors.OrientationService;
 import dk.dtu.arsfest.utils.Constants;
 
 import android.content.BroadcastReceiver;
@@ -24,6 +25,9 @@ public class MapActivity extends BaseActivity {
 	private SensorsReceiver mStateReceiver;
 
 	private LocationService mLocationServiceBinder = null;
+	private OrientationService mOrientationServiceBinder = null;
+
+	private double mAzimuth = 0;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -43,30 +47,40 @@ public class MapActivity extends BaseActivity {
 		// Deal with initial view
 		// Intent intent = getIntent();
 		// initView(intent.getParcelableExtra(Constants.EXTRA_MAP));
+
 	}
 
 	@Override
 	protected void onResume() {
+		super.onResume();
 		// Broadcast Receivers
 		mStateReceiver = new SensorsReceiver();
 		IntentFilter intentLocationFilter = new IntentFilter();
 		intentLocationFilter.addAction(Constants.LocationActionTag);
-		// intentLocationFilter.addAction(Constants.OrientationActionTag);
+		intentLocationFilter.addAction(Constants.OrientationActionTag);
 		registerReceiver(mStateReceiver, intentLocationFilter);
 
-		// Bind Service
+		// Bind Services
 		if (mLocationServiceBinder == null) {
 			Intent mIntent = new Intent(this, LocationService.class);
-			bindService(mIntent, mConnection, Context.BIND_AUTO_CREATE);
+			bindService(mIntent, mLocationConnection, Context.BIND_AUTO_CREATE);
 		} else {
 			mLocationServiceBinder.sendGPSIntent();
 		}
-		super.onResume();
+
+		if (mOrientationServiceBinder == null) {
+			Intent mIntent = new Intent(this, OrientationService.class);
+			bindService(mIntent, mOrientationConnection,
+					Context.BIND_AUTO_CREATE);
+		} else {
+			mLocationServiceBinder.sendGPSIntent();
+		}
 	}
 
 	@Override
 	protected void onDestroy() {
-		unbindService(mConnection);
+		unbindService(mLocationConnection);
+		unbindService(mOrientationConnection);
 		super.onDestroy();
 	}
 
@@ -90,20 +104,28 @@ public class MapActivity extends BaseActivity {
 			if (mReceivedIntent.getAction().equals(Constants.LocationActionTag)) {
 				Toast.makeText(
 						getApplicationContext(),
-						""
+						"Latitude: "
 								+ mReceivedIntent.getDoubleExtra(
 										Constants.LocationFlagLatitude, 0)
+								+ "Longitude: "
 								+ mReceivedIntent.getDoubleExtra(
 										Constants.LocationFlagLongitude, 0)
+								+ "Accuracy: "
 								+ mReceivedIntent.getFloatExtra(
-										Constants.LocationFlagAccuracy, 0),
-						Toast.LENGTH_LONG).show();
+										Constants.LocationFlagAccuracy, 0)
+								+ "Azimuth:" + mAzimuth, Toast.LENGTH_LONG)
+						.show();
 			}
 
+			if (mReceivedIntent.getAction().equals(
+					Constants.OrientationActionTag)) {
+				setAzimuth(mReceivedIntent.getDoubleExtra(
+						Constants.OrientationFlagAzimuth, 0));
+			}
 		}
 	}
 
-	private ServiceConnection mConnection = new ServiceConnection() {
+	private ServiceConnection mLocationConnection = new ServiceConnection() {
 
 		@Override
 		public void onServiceDisconnected(ComponentName name) {
@@ -114,6 +136,26 @@ public class MapActivity extends BaseActivity {
 		public void onServiceConnected(ComponentName name, IBinder service) {
 			mLocationServiceBinder = ((LocationService.LocationBinder) service)
 					.getService();
+
 		}
 	};
+
+	private ServiceConnection mOrientationConnection = new ServiceConnection() {
+
+		@Override
+		public void onServiceDisconnected(ComponentName name) {
+			mOrientationServiceBinder = null;
+		}
+
+		@Override
+		public void onServiceConnected(ComponentName name, IBinder service) {
+			mOrientationServiceBinder = ((OrientationService.OrientationBinder) service)
+					.getService();
+
+		}
+	};
+
+	private void setAzimuth(double mAzimuth) {
+		this.mAzimuth = mAzimuth;
+	}
 }

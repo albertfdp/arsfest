@@ -1,141 +1,113 @@
-/*
- * This service provides information about azimuth, pitch and roll.
- * This service is running constantly in the background as the response of the application has to be immediate and the process of communicating with the server takes enough time already.
- */
 package dk.dtu.arsfest.sensors;
 
+import dk.dtu.arsfest.utils.Constants;
 import android.app.Service;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
-public class OrientationService {//extends Service implements SensorEventListener {
+public class OrientationService extends Service implements SensorEventListener {
 
-	/* RAW
-	 * TODO orientation service would be nice for the mapview
-	 */
-	
-	/*
-	private SensorManager sensorManager;
-	private Sensor sensorAccelerometer, sensorMagneticField;
-	private float[] valuesAccelerometer, valuesMagneticField;
-	private float[] matrixR, matrixI, matrixValues;
-	private double azimuthON = -1, pitchON = -1, rollON = -1;
+	private String holdErrorInformation = "SensorEventListener error";
+	private final IBinder mOrientationBinder = new OrientationBinder();
+	private SensorManager mSensorManager;
+	private Sensor mSensorAccelerometer, mSensorMagneticField;
+	private float[] mValuesAccelerometer, mValuesMagneticField;
+	private float[] mMatrixR, mMatrixI, mMatrixValues;
+	private double mAzimuth = -1;
 
 	@Override
 	public void onCreate() {
-		sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+		super.onCreate();
+		mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
-		// we use two types of sensors to ensure accuracy
-		sensorAccelerometer = sensorManager
+		mSensorAccelerometer = mSensorManager
 				.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-		sensorMagneticField = sensorManager
+		mSensorMagneticField = mSensorManager
 				.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 
-		valuesAccelerometer = new float[3];
-		valuesMagneticField = new float[3];
-		matrixR = new float[9];
-		matrixI = new float[9];
-		matrixValues = new float[3];
+		mValuesAccelerometer = new float[3];
+		mValuesMagneticField = new float[3];
+		mMatrixR = new float[9];
+		mMatrixI = new float[9];
+		mMatrixValues = new float[3];
 
-		sensorManager.registerListener(this, sensorAccelerometer,
+		mSensorManager.registerListener(this, mSensorAccelerometer,
 				SensorManager.SENSOR_DELAY_NORMAL);
-		sensorManager.registerListener(this, sensorMagneticField,
+		mSensorManager.registerListener(this, mSensorMagneticField,
 				SensorManager.SENSOR_DELAY_NORMAL);
-
-		super.onCreate();
-	}
-
-	@Override
-	public void onStart(Intent intent, int startId) {
-		if (getAzimuth() != -1 && getPitch() != -1 && getRoll() != -1) {
-			sendOrientationIntent();
-		}
 	}
 
 	private void sendOrientationIntent() {
-		Intent onOrientationIntent = new Intent();
-		onOrientationIntent.setAction(Constants.OrientationActionTag);
-		onOrientationIntent.putExtra(Constants.OrientationFlagAzimuth,
+		Intent OrientationIntent = new Intent();
+		OrientationIntent.setAction(Constants.OrientationActionTag);
+		OrientationIntent.putExtra(Constants.OrientationFlagAzimuth,
 				getAzimuth());
-		onOrientationIntent.putExtra(Constants.OrientationFlagRoll, getRoll());
-		onOrientationIntent
-				.putExtra(Constants.OrientationFlagPitch, getPitch());
-		sendBroadcast(onOrientationIntent);
+		sendBroadcast(OrientationIntent);
 	}
 
 	@Override
-	public void onAccuracyChanged(Sensor arg0, int arg1) {
+	public void onAccuracyChanged(Sensor s, int i) {
 	}
 
 	@Override
-	public void onSensorChanged(SensorEvent event) {
-		switch (event.sensor.getType()) {
+	public void onSensorChanged(SensorEvent e) {
+
+		switch (e.sensor.getType()) {
 		case Sensor.TYPE_ACCELEROMETER:
 			for (int i = 0; i < 3; i++) {
-				valuesAccelerometer[i] = event.values[i];
+				mValuesAccelerometer[i] = e.values[i];
 			}
 			break;
 		case Sensor.TYPE_MAGNETIC_FIELD:
 			for (int i = 0; i < 3; i++) {
-				valuesMagneticField[i] = event.values[i];
+				mValuesMagneticField[i] = e.values[i];
 			}
 			break;
 		}
 
 		try {
-			boolean success = SensorManager.getRotationMatrix(matrixR, matrixI,
-					valuesAccelerometer, valuesMagneticField);
-			if (success) {
-				SensorManager.getOrientation(matrixR, matrixValues);
-				setAzimuth(Math.toDegrees(matrixValues[0]));
-				setPitch(Math.toDegrees(matrixValues[1]));
-				setRoll(Math.toDegrees(matrixValues[2]));
+			if (SensorManager.getRotationMatrix(mMatrixR, mMatrixI,
+					mValuesAccelerometer, mValuesMagneticField)) {
+				SensorManager.getOrientation(mMatrixR, mMatrixValues);
+				setAzimuth(Math.toDegrees(mMatrixValues[0]));
+				sendOrientationIntent();
 			}
-		} catch (Exception e) {
-			Log.e("onOrientationManager",
-					"Failed to request orientation update" + e);
+		} catch (Exception ex) {
+			Log.e(Constants.TAG, holdErrorInformation + ex);
 		}
 	}
 
 	private double getAzimuth() {
-		return azimuthON;
+		return mAzimuth;
 	}
 
-	private void setAzimuth(double azimuthON) {
-		this.azimuthON = azimuthON;
-	}
-
-	private double getPitch() {
-		return pitchON;
-	}
-
-	private void setPitch(double pitchON) {
-		this.pitchON = pitchON;
-	}
-
-	private double getRoll() {
-		return rollON;
-	}
-
-	private void setRoll(double rollON) {
-		this.rollON = rollON;
+	private void setAzimuth(double mAzimuth) {
+		this.mAzimuth = mAzimuth;
 	}
 
 	@Override
-	public IBinder onBind(Intent arg0) {
-		return null;
+	public IBinder onBind(Intent intent) {
+		return mOrientationBinder;
+	}
+
+	public class OrientationBinder extends Binder {
+		public OrientationService getService() {
+			return OrientationService.this;
+		}
 	}
 
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		sensorManager.unregisterListener(this, sensorAccelerometer);
-		sensorManager.unregisterListener(this, sensorMagneticField);
-		sensorManager.unregisterListener(this);
-	}*/
+		if (mSensorManager != null) {
+			mSensorManager.unregisterListener(this, mSensorAccelerometer);
+			mSensorManager.unregisterListener(this, mSensorMagneticField);
+		}
+	}
 }
