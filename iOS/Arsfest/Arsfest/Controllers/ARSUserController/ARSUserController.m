@@ -164,10 +164,11 @@ typedef NS_ENUM(NSInteger, kService) {
             [[PFUser currentUser] saveInBackground];   
         }
     } else {
+#warning How to handle this?
         //WiFi not available
-        if (![self localWiFiAvailable] && ! [ARSUserController isUserLoggedIn]) {
-            [ARSAlertManager showErrorWithTitle:@"Wi-Fi Not Enabled" message:@"Please enable the Wi-Fi to get your current location" cancelTitle:@"OK"];
-        }
+//        if (![self localWiFiAvailable] && ! [ARSUserController isUserLoggedIn]) {
+//            [ARSAlertManager showErrorWithTitle:@"Wi-Fi Not Enabled" message:@"Please enable the Wi-Fi to get your current location" cancelTitle:@"OK"];
+//        }
     }
 }
 

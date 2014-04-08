@@ -100,6 +100,8 @@
     self.mapImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"buildingmap.png"]];
     [self.mapScrollView addSubview:self.mapImageView];
     [self.mapScrollView setContentSize:self.mapImageView.image.size];
+    
+    [self.mapScrollView setZoomScale:0.6];
 }
 
 - (void)customizeFacebookLoginButton
