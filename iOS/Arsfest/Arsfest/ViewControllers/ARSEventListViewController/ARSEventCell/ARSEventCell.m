@@ -36,7 +36,10 @@
     _labelLocation.text = event.location.name;
     _labelTime.text = [NSDate hourMinuteStringFromDate:event.startTime];
     
-    _imageView.image = [UIImage iconForTheme:event.theme];
+    UIImage *icon = [UIImage iconForTheme:event.theme];
+    if (icon) {
+        _imageView.image = icon;
+    }
     
     if ([NSDate currentDateIsBetween:event.startTime and:event.endTime]) {
         [_progressView setHidden:NO];
