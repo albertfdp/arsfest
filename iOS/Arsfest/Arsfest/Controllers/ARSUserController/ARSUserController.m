@@ -157,11 +157,11 @@ typedef NS_ENUM(NSInteger, kService) {
         
         //Get coordinates of the BSSID
         NSString *locationName = [[ARSData data] locationNameForWifiBssid:lastBSSID];
-        locationName = @"Cantine";
-#warning Remove line above
         if (locationName) {
             [[PFUser currentUser] setObject:locationName forKey:@"locationName"];
             [[PFUser currentUser] saveInBackground];   
+        } else if ( ![[PFUser currentUser] objectForKey:@"locationName"] ) {
+            [[PFUser currentUser] setObject:@"Unknown Location" forKey:@"locationName"];
         }
     } else {
 #warning How to handle this?

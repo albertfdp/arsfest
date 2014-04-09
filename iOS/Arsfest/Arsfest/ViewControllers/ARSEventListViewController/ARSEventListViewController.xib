@@ -59,7 +59,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gEH-me-qcF">
-                                    <rect key="frame" x="0.0" y="56" width="320" height="224"/>
+                                    <rect key="frame" x="0.0" y="48" width="320" height="232"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" red="0.94144610969999998" green="0.94144610969999998" blue="0.94144610969999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -70,17 +70,18 @@
                                         <outlet property="delegate" destination="-1" id="dhf-Zf-H8m"/>
                                     </connections>
                                 </tableView>
-                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veF-Cv-biX" customClass="ARSHorizontalScrollingHeader">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veF-Cv-biX" customClass="ARSHorizontalScrollingHeader">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </scrollView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="gEH-me-qcF" secondAttribute="bottom" constant="-1" id="Igy-yC-lNC"/>
-                                <constraint firstItem="gEH-me-qcF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Hm7-l5-gTz" secondAttribute="top" constant="58" id="OXO-hp-d79"/>
-                                <constraint firstItem="gEH-me-qcF" firstAttribute="top" secondItem="Hm7-l5-gTz" secondAttribute="top" constant="58" id="oRq-Ui-UgH"/>
+                                <constraint firstItem="gEH-me-qcF" firstAttribute="top" secondItem="veF-Cv-biX" secondAttribute="bottom" id="2Px-Mx-WQc"/>
+                                <constraint firstAttribute="bottom" secondItem="gEH-me-qcF" secondAttribute="bottom" constant="-1" id="A5u-xQ-eC8"/>
+                                <constraint firstItem="gEH-me-qcF" firstAttribute="top" secondItem="Hm7-l5-gTz" secondAttribute="top" constant="48" id="HhN-mu-Zfd"/>
+                                <constraint firstItem="veF-Cv-biX" firstAttribute="top" secondItem="Hm7-l5-gTz" secondAttribute="top" id="ILY-Fd-Xit"/>
                             </constraints>
                         </view>
                     </subviews>
