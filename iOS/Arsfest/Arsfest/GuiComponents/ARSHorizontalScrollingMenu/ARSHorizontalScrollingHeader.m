@@ -172,4 +172,18 @@ static BOOL kSwipeEnabled = NO;
     [self didSelectButtonAtIndex:selectedIndex];
 }
 
+- (void)handleMasterSwipeWithDirection:(kSwipeDirection)direction
+{
+    NSInteger selectedIndex;
+    NSInteger oldSelectedIndex = _selectedIndex;
+    if (direction == kSwipeDirectionRight) {
+        selectedIndex = MAX(0, _selectedIndex - 1);
+    } else {
+        selectedIndex = MIN(buttonsCount-1, _selectedIndex + 1);
+    }
+    if (oldSelectedIndex != selectedIndex) {
+        [self didSelectButtonAtIndex:selectedIndex];
+    }
+}
+
 @end

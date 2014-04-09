@@ -50,6 +50,16 @@
               options:0
               context:NULL];
     
+    //Initialize gesture on the table view
+    UISwipeGestureRecognizer *rightSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    rightSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    
+    UISwipeGestureRecognizer *leftSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    leftSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+
+    [self.eventListTableView addGestureRecognizer:rightSwipeRecognizer];
+    [self.eventListTableView addGestureRecognizer:leftSwipeRecognizer];
+    
     //Initialize the menu in the first position
     [self initializeScrollingMenu];
     [self menuDidSelectMenuItemAtIndex:0];
@@ -168,7 +178,7 @@
 
 - (void)setupNavigationBar
 {
-    [self.navigationController.navigationBar.topItem setTitle:@"DTU Årsfest"];
+    [self.navigationController.navigationBar.topItem setTitle:@"Årsfest"];
 }
 
 - (void)initializeScrollingMenu
@@ -227,6 +237,18 @@
 - (void)userLogInCompletedWithError:(ARSUserLoginError)error
 {
     NSLog(@"Error");    
+}
+
+#pragma mark -
+#pragma mark - Swipe handler table view
+
+- (IBAction)handleSwipe:(UISwipeGestureRecognizer*)sender
+{
+    if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
+        [self.menuScrollView handleMasterSwipeWithDirection:kSwipeDirectionRight];
+    } else {
+        [self.menuScrollView handleMasterSwipeWithDirection:kSwipeDirectionLeft];
+    }
 }
 
 @end

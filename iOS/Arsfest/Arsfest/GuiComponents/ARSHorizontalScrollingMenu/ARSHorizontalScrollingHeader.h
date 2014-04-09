@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, kSwipeDirection) {
+    kSwipeDirectionLeft,
+    kSwipeDirectionRight
+};
+
 @protocol ARSHorizontalScrollingHeaderDelegate <NSObject>
 
 - (void)menuDidSelectMenuItemAtIndex:(NSUInteger)index;
@@ -20,5 +25,6 @@
 @property (nonatomic, assign) id<ARSHorizontalScrollingHeaderDelegate> selectionDelegate;
 
 - (void)addButtonsWithTitles:(NSArray*)titles;
+- (void)handleMasterSwipeWithDirection:(kSwipeDirection)direction;
 
 @end

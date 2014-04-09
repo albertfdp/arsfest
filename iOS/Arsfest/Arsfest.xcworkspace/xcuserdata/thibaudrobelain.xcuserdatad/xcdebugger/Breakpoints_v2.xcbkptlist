@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSEventListViewController/ARSEventListViewController.m"
-            timestampString = "418142820.324543"
+            timestampString = "418726705.410481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "-numberOfSectionsInTableView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -374,11 +374,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSEventListViewController/ARSEventListViewController.m"
-            timestampString = "418142820.324543"
+            timestampString = "418726705.410481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "-menuDidSelectMenuItemAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -406,11 +406,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSEventListViewController/ARSEventListViewController.m"
-            timestampString = "418142820.324543"
+            timestampString = "418726705.410481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "-menuDidSelectMenuItemAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -422,11 +422,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSEventListViewController/ARSEventListViewController.m"
-            timestampString = "418142820.324543"
+            timestampString = "418726705.410481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "-sortAndStore:"
             landmarkType = "5">
          </BreakpointContent>
@@ -438,11 +438,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ViewControllers/ARSEventListViewController/ARSEventListViewController.m"
-            timestampString = "418142820.324543"
+            timestampString = "418726705.410481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
             landmarkType = "5">
          </BreakpointContent>
@@ -486,11 +486,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/Controllers/ARSUserController/ARSUserController.m"
-            timestampString = "418249329.529353"
+            timestampString = "418726221.897205"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "-updateUserLocation"
             landmarkType = "5">
          </BreakpointContent>
