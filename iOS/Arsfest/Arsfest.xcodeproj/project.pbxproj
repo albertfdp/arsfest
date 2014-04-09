@@ -732,6 +732,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = dtu;
 				TargetAttributes = {
+					DB6B312018A4337300C3EABB = {
+						DevelopmentTeam = JD4KMD4VG6;
+					};
 					DB6B313B18A4337400C3EABB = {
 						TestTargetID = DB6B312018A4337300C3EABB;
 					};
@@ -1005,17 +1008,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					$HOME/Documents/DTU/Mobile_Prototyping/Dev/arsfest/iOS/Arsfest,
 					$HOME/Documents/FacebookSDK,
 					"$HOME/Documents/Årsfest(i)/iOS/Arsfest",
+					"$HOME/Documents/arsfest-last/iOS/Arsfest",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Arsfest/Arsfest-Prefix.pch";
 				INFOPLIST_FILE = "Arsfest/Arsfest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1027,17 +1033,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					$HOME/Documents/DTU/Mobile_Prototyping/Dev/arsfest/iOS/Arsfest,
 					$HOME/Documents/FacebookSDK,
 					"$HOME/Documents/Årsfest(i)/iOS/Arsfest",
+					"$HOME/Documents/arsfest-last/iOS/Arsfest",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Arsfest/Arsfest-Prefix.pch";
 				INFOPLIST_FILE = "Arsfest/Arsfest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
