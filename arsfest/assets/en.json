@@ -59,8 +59,7 @@
                     "startTime": "09-05-2014:23:35",
                     "endTime": "10-05-2014:00:29",
                     "location": "l0",
-                    "description": "Carpark North is probably Denmarks best and most energetic electro-rockband.  Carpark North offers powerful, catchy and present numbers from three very thorough records, the latest of which is called "Grateful". Most of you probably do not remember when Carpark North kicked the door in to the Danish music scene with the hit “Transparent And Glasslike” back in 2003, but they have been part of the Danish music scene for a while.
-\n\nAdditionally Carpark North also has plenty to offer live and anyone who has seen them can attest to this. It is simply an amazing experience to witness Carpark North and the unique energy and passion that the band takes with them onstage every time. And the experience is certainly not reduced by the fact that Carpark North is the source of many hits that the audience can sing along to at concerts.\n\nIn 2013 the newest material from Carpark North was released, in the shape of a fourth album, where the song ”32” featuring Stine Bramsen is rising in the charts. There are lots of things to look forward to.",
+                    "description": "Carpark North is probably Denmark's best and most energetic electro-rockband. Carpark North offers powerful, catchy and present numbers from three very thorough records, the latest of which is called 'Grateful'. Most of you probably do not remember when Carpark North kicked the door in to the Danish music scene with the hit 'Transparent And Glasslike' back in 2003, but they have been part of the Danish music scene for a while.\n\nAdditionally Carpark North also has plenty to offer live and anyone who has seen them can attest to this. It is simply an amazing experience to witness Carpark North and the unique energy and passion that the band takes with them onstage every time. And the experience is certainly not reduced by the fact that Carpark North is the source of many hits that the audience can sing along to at concerts.\n\nIn 2013 the newest material from Carpark North was released, in the shape of a fourth album, where the song '32' featuring Stine Bramsen is rising in the charts. There are lots of things to look forward to.",
                     "type": "nonofficial",
                     "theme": "music",
                     "remark": true
@@ -128,7 +127,7 @@
                 },
                 {
                     "id": "e8",
-                    "name": "Ballroom",
+                    "name": "Dance with me! Ballroom",
                     "image": "",
                     "startTime": "09-05-2014:22:00",
                     "endTime": "09-05-2014:23:29",
@@ -139,7 +138,7 @@
                 },
                 {
                     "id": "e9",
-                    "name": "Caribbean Heat",
+                    "name": "Dance with me! Caribbean Heat",
                     "image": "",
                     "startTime": "09-05-2014:22:30",
                     "endTime": "10-05-2014:00:59",
@@ -150,7 +149,7 @@
                 },
                 {
                     "id": "e10",
-                    "name": "Turn it up!",
+                    "name": "Dance with me! Turn it up!",
                     "image": "",
                     "startTime": "10-05-2014:01:00",
                     "endTime": "10-05-2014:01:29",
@@ -161,7 +160,7 @@
                 },
                 {
                     "id": "e11",
-                    "name": "Club DTU DancIng",
+                    "name": "Dance with me! Club DTU DancIng",
                     "image": "",
                     "startTime": "10-05-2014:01:30",
                     "endTime": "10-05-2014:02:57",
@@ -231,7 +230,7 @@
                     "startTime": "10-05-2014:02:00",
                     "endTime": "10-05-2014:05:00",
                     "location": "l2",
-                    "description": "There will be DJ playing in the Oticon Hall during the night. Come and enjoy the music!",
+                    "description": "There is DJ playing in the Oticon Hall. Come and enjoy the music!",
                     "type": "nonofficial",
                     "theme": "music"
                 }
