@@ -1,0 +1,334 @@
+{
+    "locations": [
+        {
+            "id": "l0",
+            "latitude": 55.785949,
+            "longitude": 12.525475,
+            "name": "Sports Hall",
+            "color": "#2ecc71",
+            "description": "The Hall, Building 101B",
+            "events": [
+                {
+                    "id": "e0",
+                    "name": "The Official Part",
+                    "image": "official",
+                    "startTime": "09-05-2014:17:00",
+                    "endTime": "09-05-2014:19:00",
+                    "location": "l0",
+                    "description": "Speeches by the President and by the chairman of the student union, an invited lecture by CEO Bernhard Palsson, DTU Biosustain, and academic awards. There will be a performance of music of the Danish composer Carl Nielsen especially arranged for DTU.\n\nTickets: There is free access but a limited number of seats are available (the doors will be closed at 16:50 or earlier if the Hall is full).\n\nTranslation: Headsets are available (free of charge).",
+                    "type": "official",
+                    "theme": "official"
+                },
+                {
+                    "id": "e1",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "09-05-2014:22:00",
+                    "endTime": "09-05-2014:22:24",
+                    "location": "l0",
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n\nWidespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n\nIn Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers.",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e2",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "09-05-2014:22:25",
+                    "endTime": "09-05-2014:23:19",
+                    "location": "l0",
+                    "description": "There is DJ playing in the Sports Hall. Come and enjoy the music!",
+                    "type": "official",
+                    "theme": "music"
+                },
+                {
+                    "id": "e3",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "09-05-2014:23:20",
+                    "endTime": "09-05-2014:23:34",
+                    "location": "l0",
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n\nWidespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n\nIn Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers.",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e4",
+                    "name": "Carpark North",
+                    "image": "",
+                    "startTime": "09-05-2014:23:35",
+                    "endTime": "10-05-2014:00:29",
+                    "location": "l0",
+                    "description": "Carpark North is a Danish electronic rock band. The band was formed in Aarhus, Denmark on 28 July 1999 by Lau Højen (vocal, guitar), Søren Balsner (bass, synthesisers) and Morten Thorhauge (drums). The name CarparkNorth was created from the electro and rock genres: Carpark stands for car parks, edges, roughness, metal - the rock part, and North stands for northern lights, stars ethereal electronics. In January 2010, the band announced that they had been signed internationally by Sony Music.",
+                    "type": "nonofficial",
+                    "theme": "music",
+                    "remark": true
+                },
+                {
+                    "id": "e5",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "10-05-2014:00:30",
+                    "endTime": "10-05-2014:00:59",
+                    "location": "l0",
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n\nWidespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n\nIn Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers.",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e6",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "10-05-2014:01:00",
+                    "endTime": "10-05-2014:03:00",
+                    "location": "l0",
+                    "description": "There is DJ playing in the Sports Hall. Come and enjoy the music!",
+                    "type": "official",
+                    "theme": "music"
+                }
+            ]
+        },
+        {
+            "id": "l1",
+            "latitude": 55.786893,
+            "longitude": 12.523265,
+            "name": "Library",
+            "description": "",
+            "color": "#2980b9",
+            "events": [
+                {
+                    "id": "e7",
+                    "name": "Dinner",
+                    "image": "dinner",
+                    "startTime": "09-05-2014:19:15",
+                    "endTime": "09-05-2014:21:30",
+                    "location": "l1",
+                    "description": "",
+                    "type": "official",
+                    "theme": "food",
+                    "menu": [
+                        {
+                            "course": "Starter",
+                            "name": "Salmon rillette topped with lime marinated shrimp with fresh herbs. Salad with whole cherry tomatoes and fresh green asparagus, served with chili or ginger dressing. Served with pumpkin bun."
+                        },
+                        {
+                            "course": "Main",
+                            "name": "Roasted fillet of beef with raisin sauce. Baked vegetables with sweet beets and golden beets. Small baked potatoes with herbs. Fried plums with vanilla."
+                        },
+                        {
+                            "course": "Coffee",
+                            "name": "Coffee/tea and petit fours."
+                        },
+                        {
+                            "course": "Drinks",
+                            "name": "A glass of white wine will be served with the starter, and a glass of red wine will be served with the main course. Extra wine can be ordered in the S-house. 1 bottle costs 95 kr in presale and 120 kr on the night. The wine will be delivered during the starter. Drinks can also be bought at the bar on the night. White wine: 2013 Chardonnay, William Cole – Casablanca Valley (Chile). Red wine: 2012 Comte de Roc Oval – Costieres de Nîmes (France)"
+                        }
+                    ]
+                },
+                {
+                    "id": "e8",
+                    "name": "Ballroom",
+                    "image": "",
+                    "startTime": "09-05-2014:22:00",
+                    "endTime": "09-05-2014:23:29",
+                    "location": "l1",
+                    "description": "Short intro to Waltz & Standard/Latin and Tango Argentino",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e9",
+                    "name": "Caribbean Heat",
+                    "image": "",
+                    "startTime": "09-05-2014:22:30",
+                    "endTime": "10-05-2014:00:59",
+                    "location": "l1",
+                    "description": "Short intro to Salsa & short intro to Bachata",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e10",
+                    "name": "Turn it up!",
+                    "image": "",
+                    "startTime": "10-05-2014:01:00",
+                    "endTime": "10-05-2014:01:29",
+                    "location": "l1",
+                    "description": "Zumba & short intro to Jitterbug",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e11",
+                    "name": "Club DTU DancIng",
+                    "image": "",
+                    "startTime": "10-05-2014:01:30",
+                    "endTime": "10-05-2014:02:57",
+                    "location": "l1",
+                    "description": "Special style mix with surprises and social dancing.",
+                    "type": "official",
+                    "theme": "dance"
+                }
+            ]
+        },
+        {
+            "id": "l2",
+            "latitude": 55.78683,
+            "longitude": 12.525871,
+            "name": "Oticon Hall",
+            "description": "",
+            "color": "#c0392b",
+            "events": [
+                {
+                    "id": "e12",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "09-05-2014:21:00",
+                    "endTime": "09-05-2014:22:44",
+                    "location": "l2",
+                    "description": "There is DJ playing in the Oticon Hall. Come and enjoy the music!",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e13",
+                    "name": "Kaka",
+                    "image": "",
+                    "startTime": "09-05-2014:22:45",
+                    "endTime": "09-05-2014:23:44",
+                    "location": "l2",
+                    "description": "Rajabu Willer (born on 19 February 1991 in Allerød) is probably best known under the stage name Little Kaka, Kaka BIGG or just KAKA. He is a Danish Dancehall rapper / toaster, which in 2007 had its debut, and has since released an EP in August 2012. Kaka means brother in Ki-Swahili",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e14",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "09-05-2014:23:45",
+                    "endTime": "10-05-2014:00:59",
+                    "location": "l2",
+                    "description": "There is DJ playing in the Oticon Hall. Come and enjoy the music!",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e15",
+                    "name": "Kongsted",
+                    "image": "",
+                    "startTime": "10-05-2014:01:00",
+                    "endTime": "10-05-2014:01:59",
+                    "location": "l2",
+                    "description": "Kongsted (born Andrew Lau Kongsted Jespersen Jensen, November 11, 1982 in Naestved) is a Danish DJ and music producer. He has won the award at the Danish DJ Award: This year's Mainstream DJ in both 2010 and 2011. He has been active as a DJ since 2002 and producer since 2010.",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e16",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "10-05-2014:02:00",
+                    "endTime": "10-05-2014:05:00",
+                    "location": "l2",
+                    "description": "There will be DJ playing in the Oticon Hall during the night. Come and enjoy the music!",
+                    "type": "nonofficial",
+                    "theme": "music"
+                }
+            ]
+        },
+        {
+            "id": "l3",
+            "latitude": 55.785496,
+            "longitude": 12.525008,
+            "name": "The Tent",
+            "description": "",
+            "color": "#c0392b",
+            "events": [
+                {
+                    "id": "e17",
+                    "name": "Dinner",
+                    "image": "dinner",
+                    "startTime": "09-05-2014:19:15",
+                    "endTime": "09-05-2014:21:30",
+                    "location": "l3",
+                    "description": "",
+                    "type": "official",
+                    "theme": "food",
+                    "menu": [
+                        {
+                            "course": "Starter",
+                            "name": "Salmon rillette topped with lime marinated shrimp with fresh herbs. Salad with whole cherry tomatoes and fresh green asparagus, served with chili or ginger dressing. Served with pumpkin bun."
+                        },
+                        {
+                            "course": "Main",
+                            "name": "Roasted fillet of beef with raisin sauce. Baked vegetables with sweet beets and golden beets. Small baked potatoes with herbs. Fried plums with vanilla."
+                        },
+                        {
+                            "course": "Coffee",
+                            "name": "Coffee/tea and petit fours."
+                        },
+                        {
+                            "course": "Drinks",
+                            "name": "A glass of white wine will be served with the starter, and a glass of red wine will be served with the main course. Extra wine can be ordered in the S-house. 1 bottle costs 95 kr in presale and 120 kr on the night. The wine will be delivered during the starter. Drinks can also be bought at the bar on the night. White wine: 2013 Chardonnay, William Cole – Casablanca Valley (Chile). Red wine: 2012 Comte de Roc Oval – Costieres de Nîmes (France)"
+                        }
+                    ]
+                },
+                {
+                    "id": "e18",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "09-05-2014:21:50",
+                    "endTime": "09-05-2014:22:14",
+                    "location": "l3",
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n\nWidespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n\nIn Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers.",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e19",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "09-05-2014:22:15",
+                    "endTime": "09-05-2014:22:39",
+                    "location": "l3",
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n\nWidespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n\nIn Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers.",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e20",
+                    "name": "ABBAtizers",
+                    "image": "",
+                    "startTime": "09-05-2014:22:40",
+                    "endTime": "09-05-2014:23:39",
+                    "location": "l3",
+                    "description": "The ABBAtizers consists of 6 dedicated individuals that have devoted their lives to stop time and take us back to the golden age of the 70s and ABBA's heyday.",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e21",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "09-05-2014:23:40",
+                    "endTime": "09-05-2014:23:59",
+                    "location": "l3",
+                    "description": "Les Lanciers is a Square, or a Quadrille, which is the pan-European term for a set dance performed by four couples. It is a composite dance made up of five figures or tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers or The Lancers in many variants in several countries. One in particular, with its own distinctive music and choreography, is danced only in Denmark.\n\nWidespread though it was throughout Europe, Les Lanciers or The Lancers became less fashionable in the beginning of the century. It survived as a popular dance only in Denmark where it is now danced in an unbroken tradition of almost 140 years.\n\nIn Denmark, Les Lanciers is danced at Court, at many University and School Gaudies, and at countless private functions. Les Lanciers is also taught in most of the high schools in Denmark.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lancers.",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e22",
+                    "name": "ABBAtizers",
+                    "image": "",
+                    "startTime": "10-05-2014:00:00",
+                    "endTime": "10-05-2014:01:00",
+                    "location": "l3",
+                    "description": "The ABBAtizers consists of 6 dedicated individuals that have devoted their lives to stop time and take us back to the golden age of the 70s and ABBA's heyday.",
+                    "type": "nonofficial",
+                    "theme": "music"
+                }
+            ]
+        }
+    ]
+}
