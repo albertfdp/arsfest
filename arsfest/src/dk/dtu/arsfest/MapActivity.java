@@ -5,7 +5,9 @@ import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.SideNavigationView.Mode;
 
 import dk.dtu.arsfest.navigation.SideNavigation;
+import dk.dtu.arsfest.sensors.BSSIDService;
 import dk.dtu.arsfest.sensors.LocationService;
+import dk.dtu.arsfest.sensors.NetworkHelper;
 import dk.dtu.arsfest.sensors.OrientationService;
 import dk.dtu.arsfest.utils.Constants;
 
@@ -43,11 +45,14 @@ public class MapActivity extends BaseActivity {
 		getSupportActionBar().setHomeButtonEnabled(true);
 		getSupportActionBar().setTitle("Map");
 
+		BSSIDService bssid = new BSSIDService(getApplicationContext());
 		// TODO
 		// Deal with initial view
 		// Intent intent = getIntent();
 		// initView(intent.getParcelableExtra(Constants.EXTRA_MAP));
 
+		//unregister receiver!!!
+		
 	}
 
 	@Override
@@ -102,7 +107,7 @@ public class MapActivity extends BaseActivity {
 		public void onReceive(Context arg0, Intent mReceivedIntent) {
 
 			if (mReceivedIntent.getAction().equals(Constants.LocationActionTag)) {
-				Toast.makeText(
+				/*Toast.makeText(
 						getApplicationContext(),
 						"Latitude: "
 								+ mReceivedIntent.getDoubleExtra(
@@ -114,7 +119,7 @@ public class MapActivity extends BaseActivity {
 								+ mReceivedIntent.getFloatExtra(
 										Constants.LocationFlagAccuracy, 0)
 								+ "Azimuth:" + mAzimuth, Toast.LENGTH_LONG)
-						.show();
+						.show();*/
 			}
 
 			if (mReceivedIntent.getAction().equals(

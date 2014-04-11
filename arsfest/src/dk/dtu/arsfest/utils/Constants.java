@@ -102,4 +102,9 @@ public class Constants {
 	public static final String OrientationActionTag = "ArsfestOrientationRequest";
 	public static final String OrientationFlagAzimuth = "ArsfestAzimuth";
 	
+	public static final String Library = "Library";
+	public static final String Oticon = "Oticon";
+	public static final String SportsHall = "SportsHall";
+	public static final String Canteen = "Canteen";
+	
 }
