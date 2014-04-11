@@ -277,17 +277,6 @@
                     "id": "e18",
                     "name": "Les Lanciers",
                     "image": "leslanciers",
-                    "startTime": "09-05-2014:21:50",
-                    "endTime": "09-05-2014:22:14",
-                    "location": "l3",
-                    "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers. \n\nIntroductory dance classes are available before the Commemoration Party, if Les Lanciers is a new acquaintance or if you just like to refresh your steps.\nClasses (in English) in Les Lanciers in the Oticon Hall Tuesday May 6th (at 16.30) and Thursday May 8th (at 17.15). Free access.",
-                    "type": "official",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e19",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
                     "startTime": "09-05-2014:22:15",
                     "endTime": "09-05-2014:22:39",
                     "location": "l3",
@@ -296,7 +285,7 @@
                     "theme": "dance"
                 },
                 {
-                    "id": "e20",
+                    "id": "e19",
                     "name": "ABBAtizers",
                     "image": "",
                     "startTime": "09-05-2014:22:40",
@@ -307,7 +296,7 @@
                     "theme": "music"
                 },
                 {
-                    "id": "e21",
+                    "id": "e20",
                     "name": "Les Lanciers",
                     "image": "leslanciers",
                     "startTime": "09-05-2014:23:40",
@@ -318,13 +307,85 @@
                     "theme": "dance"
                 },
                 {
-                    "id": "e22",
+                    "id": "e21",
                     "name": "ABBAtizers",
                     "image": "",
                     "startTime": "10-05-2014:00:00",
-                    "endTime": "10-05-2014:01:00",
+                    "endTime": "10-05-2014:00:59",
                     "location": "l3",
                     "description": "The ABBAtizers is composed of 6 dedicated members who, with a twinkle in their eye, have devoted their life to stopping time and beaming us all back to the 70s and ABBAs heyday.\n\nIn The ABBAtizers fantastic universe, it is a world where Agnethas eyes have never been bluer and the plateau boots have never been as tight. The ABBAtizers celebrate disco and challenge anyone with even a modicum of rhythm. They play the seats out of their tight fitting satin pants with humor, style and great respect for the originals.\n\nThe ABBAtizers will take their audience on a musical journey through all of ABBAs great compositions, and they hold nothing back. The show is performed with great attention to detail, so both ABBA lovers and previously uninitiated will get the best experience.\n\nFlower Power Rules...",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e22",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "10-05-2014:01:00",
+                    "endTime": "10-05-2014:01:20",
+                    "location": "l3",
+                    "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers. \n\nIntroductory dance classes are available before the Commemoration Party, if Les Lanciers is a new acquaintance or if you just like to refresh your steps.\nClasses (in English) in Les Lanciers in the Oticon Hall Tuesday May 6th (at 16.30) and Thursday May 8th (at 17.15). Free access.",
+                    "type": "official",
+                    "theme": "dance"
+                }
+            ]
+        },
+        {
+            "id": "l4",
+            "latitude": 55.786489,
+            "longitude": 12.524634,
+            "name": "Canteen",
+            "description": "",
+            "color": "#c0392b",
+            "events": [
+                {
+                    "id": "e23",
+                    "name": "Dinner",
+                    "image": "dinner",
+                    "startTime": "09-05-2014:19:15",
+                    "endTime": "09-05-2014:21:30",
+                    "location": "l4",
+                    "description": "",
+                    "type": "official",
+                    "theme": "food",
+                    "menu": [
+                        {
+                            "course": "Starter",
+                            "name": "Salmon rillette topped with lime marinated shrimp with fresh herbs. Salad with whole cherry tomatoes and fresh green asparagus, served with chili or ginger dressing. Served with pumpkin bun."
+                        },
+                        {
+                            "course": "Main",
+                            "name": "Roasted fillet of beef with raisin sauce. Baked vegetables with sweet beets and golden beets. Small baked potatoes with herbs. Fried plums with vanilla."
+                        },
+                        {
+                            "course": "Coffee",
+                            "name": "Coffee/tea and petit fours."
+                        },
+                        {
+                            "course": "Drinks",
+                            "name": "A glass of white wine will be served with the starter, and a glass of red wine will be served with the main course. Extra wine can be ordered in the S-house. 1 bottle costs 95 kr in presale and 120 kr on the night. The wine will be delivered during the starter. Drinks can also be bought at the bar on the night. White wine: 2013 Chardonnay, William Cole – Casablanca Valley (Chile). Red wine: 2012 Comte de Roc Oval – Costieres de Nîmes (France)"
+                        }
+                    ]
+                },
+                {
+                    "id": "e24",
+                    "name": "Blå Mandag Jazzband, 1. set",
+                    "image": "",
+                    "startTime": "09-05-2014:23:15",
+                    "endTime": "09-05-2014:23:59",
+                    "location": "l4",
+                    "description": "Blå Mandag is the name of a seven membered Jazzband, who has played together for 28 years. They write on their homepage that they sing and play to please others, and enjoy it very much themselves.\n\nThey enjoy including a bit playfulness in their music, and having played together for many years. They believe they are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\n\nTheir motto is: 'We are there for you', so their most distinguished purpose is to play in honour of their audience and guests so they will have a tremendous experience.",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e24",
+                    "name": "Blå Mandag Jazzband, 2. set",
+                    "image": "",
+                    "startTime": "10-05-2014:00:15",
+                    "endTime": "10-05-2014:01:00",
+                    "location": "l4",
+                    "description": "Blå Mandag is the name of a seven membered Jazzband, who has played together for 28 years. They write on their homepage that they sing and play to please others, and enjoy it very much themselves.\n\nThey enjoy including a bit playfulness in their music, and having played together for many years. They believe they are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\n\nTheir motto is: 'We are there for you', so their most distinguished purpose is to play in honour of their audience and guests so they will have a tremendous experience.",
                     "type": "nonofficial",
                     "theme": "music"
                 }

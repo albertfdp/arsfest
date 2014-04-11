@@ -277,17 +277,6 @@
                     "id": "e18",
                     "name": "Les Lanciers",
                     "image": "leslanciers",
-                    "startTime": "09-05-2014:21:50",
-                    "endTime": "09-05-2014:22:14",
-                    "location": "l3",
-                    "description": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede. I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester. \n\nLes lanciers består af fem ture: La Dorset, La Victoria (også kendt som komplimentturen), Les Moulinets (også kendt som damemøllen), Les Visites (også kendt som visitturen), Les Lanciers (også kendt som herremøllen). \n\n En hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
-                    "type": "official",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e19",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
                     "startTime": "09-05-2014:22:15",
                     "endTime": "09-05-2014:22:39",
                     "location": "l3",
@@ -296,7 +285,7 @@
                     "theme": "dance"
                 },
                 {
-                    "id": "e20",
+                    "id": "e19",
                     "name": "ABBAtizers",
                     "image": "",
                     "startTime": "09-05-2014:22:40",
@@ -307,7 +296,7 @@
                     "theme": "music"
                 },
                 {
-                    "id": "e21",
+                    "id": "e20",
                     "name": "Les Lanciers",
                     "image": "leslanciers",
                     "startTime": "09-05-2014:23:40",
@@ -318,13 +307,85 @@
                     "theme": "dance"
                 },
                 {
-                    "id": "e22",
+                    "id": "e21",
                     "name": "ABBAtizers",
                     "image": "",
                     "startTime": "10-05-2014:00:00",
-                    "endTime": "10-05-2014:01:00",
+                    "endTime": "10-05-2014:00:59",
                     "location": "l3",
                     "description": "The ABBAtizers består af 6 dedikerede personer der med et glimt i øjet har viet deres liv til at standse tiden og beame os alle tilbage til 70ernes guldalder og ABBAs storhedstid. \n\nI The ABBAtizers fantastiske univers møder man en verden hvor Agnethas øjne har aldrig været mere blå og plateaustøvlerne strammer de helt rigtige steder.\nThe ABBAtizers hylder discoen og udfordrer alle med bare et minimum af rytmesans. Med humor, stil og stor respekt for originalen spiller de kort sagt r….ud deres lidt for tætsiddende satinbukser.\n\nThe ABBAtizers tager publikum på en musikalsk rejse gennem alle de store ABBA kompositioner og de holder sig ikke tilbage: showet gennemføres helt ud i detaljen så både ABBA elskere og hidtil uindviede får en maksimal oplevelse.\n\nFlower Power Rules...",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e22",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "10-05-2014:01:00",
+                    "endTime": "10-05-2014:01:20",
+                    "location": "l3",
+                    "description": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede. I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester. \n\nLes lanciers består af fem ture: La Dorset, La Victoria (også kendt som komplimentturen), Les Moulinets (også kendt som damemøllen), Les Visites (også kendt som visitturen), Les Lanciers (også kendt som herremøllen). \n\n En hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
+                    "type": "official",
+                    "theme": "dance"
+                }
+            ]
+        },
+        {
+            "id": "l4",
+            "latitude": 55.786489,
+            "longitude": 12.524634,
+            "name": "Canteen",
+            "description": "",
+            "color": "#c0392b",
+            "events": [
+                {
+                    "id": "e23",
+                    "name": "Dinner",
+                    "image": "dinner",
+                    "startTime": "09-05-2014:19:15",
+                    "endTime": "09-05-2014:21:30",
+                    "location": "l4",
+                    "description": "",
+                    "type": "official",
+                    "theme": "food",
+                    "menu": [
+                        {
+                            "course": "Forret",
+                            "name": "Lakserillette toppet med lime marinerede rejer med friske krydderurter. Salat med hele cherrytomater og friske grønne asparges, hertil chili/ingefær dressing. Hertil græskar bolle."
+                        },
+                        {
+                            "course": "Hovedret",
+                            "name": "Helstegt oksefilet med rosin sauce. Bagte grøntsager med bolchebeder og gulbeder. Små bagte kartofler med krydderurter. Stegte blommer med vanilje."
+                        },
+                        {
+                            "course": "Kaffe",
+                            "name": "Kaffe/the og petit fours."
+                        },
+                        {
+                            "course": "Drinks",
+                            "name": "Til forretten serveres et glas hvidvin, og til hovedretten serveres et glas rødvin. Der kan bestilles ekstra vin i S-huset. 1 flaske koster 95,- i forsalg. Vinen vil blive leveret under forretten. Drikkevarer kan også købes i barerne på aftenen. På aftenen koster 1 flaske vin 120,-. Hvidvin: 2013 Chardonnay, William Cole – Casablanca Valley (Chile). Rødvin: 2012 Comte de Roc Oval – Costieres de Nîmes (Frankrig)"
+                        }
+                    ]
+                },
+                {
+                    "id": "e24",
+                    "name": "Blå Mandag Jazzband, 1. set",
+                    "image": "",
+                    "startTime": "09-05-2014:23:15",
+                    "endTime": "09-05-2014:23:59",
+                    "location": "l4",
+                    "description": "Blå Mandag er navnet på jazzband med syv medlemmer som har spillet sammen i 28 år. Som de skriver på deres hjemmeside, så synger og spiller de for at glæde andre, og nyder det også selv rigtig meget. De elsker at lege mens de spiller, og har spillet sammen i mange år. Blå Mandag Jazzband mener selv de er ret gode til at lave gammel, sjov og traditionel New Orleans Jazz, som er nem at danse til.\n\nDeres motto er 'Vi er der for dig' så deres mål er at spille i ære for vores publikum og gæster, så de får en fanstastisk oplevelse.",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e24",
+                    "name": "Blå Mandag Jazzband, 2. set",
+                    "image": "",
+                    "startTime": "10-05-2014:00:15",
+                    "endTime": "10-05-2014:01:00",
+                    "location": "l4",
+                    "description": "Blå Mandag er navnet på jazzband med syv medlemmer som har spillet sammen i 28 år. Som de skriver på deres hjemmeside, så synger og spiller de for at glæde andre, og nyder det også selv rigtig meget. De elsker at lege mens de spiller, og har spillet sammen i mange år. Blå Mandag Jazzband mener selv de er ret gode til at lave gammel, sjov og traditionel New Orleans Jazz, som er nem at danse til.\n\nDeres motto er 'Vi er der for dig' så deres mål er at spille i ære for vores publikum og gæster, så de får en fanstastisk oplevelse.",
                     "type": "nonofficial",
                     "theme": "music"
                 }
