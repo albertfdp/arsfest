@@ -51,6 +51,10 @@ typedef NS_ENUM(NSInteger, ARSUserLoginError) {
  * Updates the user location to the server if the user is currently connected to Facebook and to the WiFi
  */
 - (void)updateUserLocation;
+- (NSString*)userLocation;
+
+/* Returns true if the iPhone is on a wifi*/
+- (BOOL)localWiFiAvailable;
 
 /*
  * Fetches the user friends location and notifies the specified delegate

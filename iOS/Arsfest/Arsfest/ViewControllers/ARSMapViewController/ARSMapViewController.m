@@ -15,6 +15,11 @@
 @property (nonatomic, retain) NSArray *friends;
 @property (nonatomic, retain) UIBarButtonItem *refreshBarButtonItem;
 
+//Location indicator on map
+@property (nonatomic, weak) CAShapeLayer *circleLayer;
+@property (nonatomic) CGPoint circleCenter;
+@property (nonatomic) CGFloat circleRadius;
+
 /* Add the map to the view and set the content size of the scrollview */
 - (void)initializeMapScrollView;
 
@@ -151,6 +156,67 @@
 {
     self.friendListDataView.hidden = processing;
     self.friendListLoadingView.hidden = !processing;
+}
+
+#pragma mark - Locate user
+
+- (void)locateUser
+{
+    if ([[ARSUserController sharedUserController] localWiFiAvailable]) {
+        CGPoint coordinates = [self mapPointFromLocation:[[ARSUserController sharedUserController] userLocation]];
+        [self addLocationIndicatorToMapAt:coordinates];
+    } else {
+        [ARSAlertManager showErrorWithTitle:@"Wi-Fi Not Available" message:@"Please activate the Wi-Fi and try again" cancelTitle:@"OK"];
+    }
+}
+
+- (CGPoint)mapPointFromLocation:(NSString*)locationName
+{
+    if ([locationName isEqualToString:@"Library"]) {
+        return CGPointMake(380, 265); // Radius 20.0
+    } else if ([locationName isEqualToString:@"Cantine"]) {
+        return CGPointMake(725, 290);
+    } else if ([locationName isEqualToString:@"Oticon Hall"]) {
+        return CGPointMake(1050, 115);
+    } else if ([locationName isEqualToString:@"Sports Hall"]) {
+        return CGPointMake(1062, 535);
+    }
+    
+    return CGPointMake(0, 0);
+}
+
+- (UIBezierPath *)makeCircleAtLocation:(CGPoint)location radius:(CGFloat)radius
+{
+    self.circleCenter = location;
+    self.circleRadius = radius;
+    
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path addArcWithCenter:self.circleCenter
+                    radius:self.circleRadius
+                startAngle:0.0
+                  endAngle:M_PI * 2.0
+                 clockwise:YES];
+    
+    return path;
+}
+
+- (void)addLocationIndicatorToMapAt:(CGPoint)location
+{
+    if ((location.x != location.y) && (location.x != 0)) {
+        [self.circleLayer removeFromSuperlayer];
+        
+        CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+        shapeLayer.path = [[self makeCircleAtLocation:location radius:20] CGPath];
+        shapeLayer.strokeColor = [[UIColor colorWithRed:0.0f green:120/255.f blue:1.0f alpha:1.0f] CGColor];
+        shapeLayer.fillColor = [[UIColor colorWithRed:0.0f green:168/255.f blue:1.0f alpha:1.0f] CGColor];
+        shapeLayer.lineWidth = 2.0f;
+        
+        // Add CAShapeLayer to the view
+        [self.mapImageView.layer addSublayer:shapeLayer];
+        self.circleLayer = shapeLayer;
+    } else {
+        [ARSAlertManager showErrorWithTitle:@"Position Unknown" message:@"We couldn't locate you on the map" cancelTitle:@"OK"];
+    }
 }
 
 #pragma mark -

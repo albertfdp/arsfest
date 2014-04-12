@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, kService) {
 @property (nonatomic, retain) NSString *lastBSSID;
 @property (nonatomic, retain) NSArray *userFriends;
 @property (nonatomic, retain) NSArray *parseUsers;
+@property (nonatomic, retain) NSString *userPosition;
 
 - (NSString *)currentWifiBSSID;
 - (BOOL)localWiFiAvailable;
@@ -37,6 +38,7 @@ typedef NS_ENUM(NSInteger, kService) {
 @synthesize lastBSSID;
 @synthesize userFriends;
 @synthesize parseUsers;
+@synthesize userPosition;
 
 #pragma mark -
 #pragma mark - Initialization
@@ -153,10 +155,8 @@ typedef NS_ENUM(NSInteger, kService) {
 - (void)updateUserLocation
 {
     if ([self localWiFiAvailable] && [ARSUserController isUserLoggedIn]) {
-        lastBSSID = [self currentWifiBSSID];
         
-        //Get coordinates of the BSSID
-        NSString *locationName = [[ARSData data] locationNameForWifiBssid:lastBSSID];
+        NSString *locationName = [self userLocation];
         if (locationName) {
             [[PFUser currentUser] setObject:locationName forKey:@"locationName"];
             [[PFUser currentUser] saveInBackground];   
@@ -170,6 +170,17 @@ typedef NS_ENUM(NSInteger, kService) {
 //            [ARSAlertManager showErrorWithTitle:@"Wi-Fi Not Enabled" message:@"Please enable the Wi-Fi to get your current location" cancelTitle:@"OK"];
 //        }
     }
+}
+
+- (NSString*)userLocation
+{
+    NSString *currentBSSID = [self currentWifiBSSID];
+    
+    //Get name of the BSSID's location
+    NSString *locationName = [[ARSData data] locationNameForWifiBssid:currentBSSID];
+    
+    userPosition = locationName;
+    return locationName;
 }
 
 #pragma mark -
