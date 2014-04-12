@@ -107,6 +107,8 @@
     [self.mapScrollView setContentSize:self.mapImageView.image.size];
     
     [self.mapScrollView setZoomScale:0.6];
+    
+    [self locateUser];
 }
 
 - (void)customizeFacebookLoginButton
@@ -173,15 +175,14 @@
 - (CGPoint)mapPointFromLocation:(NSString*)locationName
 {
     if ([locationName isEqualToString:@"Library"]) {
-        return CGPointMake(380, 265); // Radius 20.0
+        return CGPointMake(380, 265);
     } else if ([locationName isEqualToString:@"Cantine"]) {
         return CGPointMake(725, 290);
     } else if ([locationName isEqualToString:@"Oticon Hall"]) {
         return CGPointMake(1050, 115);
     } else if ([locationName isEqualToString:@"Sports Hall"]) {
-        return CGPointMake(1062, 535);
+        return CGPointMake(1065, 535);
     }
-    
     return CGPointMake(0, 0);
 }
 
@@ -206,9 +207,9 @@
         [self.circleLayer removeFromSuperlayer];
         
         CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-        shapeLayer.path = [[self makeCircleAtLocation:location radius:20] CGPath];
-        shapeLayer.strokeColor = [[UIColor colorWithRed:0.0f green:120/255.f blue:1.0f alpha:1.0f] CGColor];
-        shapeLayer.fillColor = [[UIColor colorWithRed:0.0f green:168/255.f blue:1.0f alpha:1.0f] CGColor];
+        shapeLayer.path = [[self makeCircleAtLocation:location radius:40] CGPath];
+        shapeLayer.strokeColor = [[UIColor colorWithRed:0.0f green:120/255.f blue:1.0f alpha:0.7f] CGColor];
+        shapeLayer.fillColor = [[UIColor colorWithRed:0.0f green:168/255.f blue:1.0f alpha:0.4f] CGColor];
         shapeLayer.lineWidth = 2.0f;
         
         // Add CAShapeLayer to the view

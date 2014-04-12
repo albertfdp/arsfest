@@ -46,4 +46,9 @@
     [self.picture.layer setBorderColor:kFriendCellColor];
 }
 
+- (NSString*)stringFromUpdateDate:(NSDate*)date
+{
+    return @"";
+}
+
 @end
