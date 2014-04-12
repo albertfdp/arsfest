@@ -5,73 +5,42 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/flat_greyed"
+    android:descendantFocusability="blocksDescendants"
     android:orientation="vertical" >
 
-
-
-    <LinearLayout
+    <WebView
+        android:id="@+id/webViewMap"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/flat_light_grey"
-        android:descendantFocusability="blocksDescendants"
-        android:orientation="vertical" >
+        android:scrollbars="none"
+        android:focusable="false"
+        android:clickable="false" />
+
+    <RelativeLayout
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_map_locate_me" >
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:background="@color/grey"
-            android:orientation="vertical"
-            android:padding="5dp" >
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/purple_bg" >
 
-            <TextView
-                android:id="@+id/mapTextViewMap"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:gravity="left"
-                android:padding="2dp"
-                android:text="@string/mapview"
-                android:textColor="@color/flat_white"
-                android:textSize="14sp" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <WebView
-                    android:id="@+id/mapWebViewMapOfThe101"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-                <RelativeLayout
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/shape_map_locate_me" >
-
-                    <LinearLayout
-                        android:layout_width="44dp"
-                        android:layout_height="44dp"
-                        android:background="@drawable/purple_bg" >
-
-                        <ImageButton
-                            android:id="@+id/imageButtonLocateMe"
-                            android:layout_width="42dp"
-                            android:layout_height="42dp"
-                            android:background="@color/trans"
-                            android:layout_gravity="center_vertical|center_horizontal"
-                            android:contentDescription="@string/showmylocation"
-                            android:src="@drawable/map_locate_me" />
-                    </LinearLayout>
-                </RelativeLayout>
-            </RelativeLayout>
+            <ImageButton
+                android:id="@+id/imageButtonLocateMe"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:background="@color/trans"
+                android:contentDescription="@string/showmylocation"
+                android:src="@drawable/map_locate_me" />
         </LinearLayout>
-    </LinearLayout>
-    
-        <com.devspark.sidenavigation.SideNavigationView
+    </RelativeLayout>
+
+    <com.devspark.sidenavigation.SideNavigationView
         android:id="@+id/side_navigation_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

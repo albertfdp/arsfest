@@ -7,7 +7,6 @@ import com.devspark.sidenavigation.SideNavigationView.Mode;
 import dk.dtu.arsfest.navigation.SideNavigation;
 import dk.dtu.arsfest.sensors.BSSIDService;
 import dk.dtu.arsfest.sensors.LocationService;
-import dk.dtu.arsfest.sensors.NetworkHelper;
 import dk.dtu.arsfest.sensors.OrientationService;
 import dk.dtu.arsfest.utils.Constants;
 
@@ -17,18 +16,28 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.graphics.Picture;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
+import android.webkit.WebView;
+import android.webkit.WebView.PictureListener;
+import android.webkit.WebViewClient;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
+@SuppressWarnings("deprecation")
 public class MapActivity extends BaseActivity {
 
 	private SideNavigationView sideNavigationView;
 	private SensorsReceiver mStateReceiver;
-
 	private LocationService mLocationServiceBinder = null;
 	private OrientationService mOrientationServiceBinder = null;
-
+	private WebView mMapWebView;
+	private ImageButton mLocateButton;
 	private double mAzimuth = 0;
 
 	@Override
@@ -45,14 +54,61 @@ public class MapActivity extends BaseActivity {
 		getSupportActionBar().setHomeButtonEnabled(true);
 		getSupportActionBar().setTitle("Map");
 
-		BSSIDService bssid = new BSSIDService(getApplicationContext());
+		// TODO: Pass initial scrolling position @String
+		setWebView(null);
+		setLocateMeButton();
+
 		// TODO
 		// Deal with initial view
 		// Intent intent = getIntent();
 		// initView(intent.getParcelableExtra(Constants.EXTRA_MAP));
+		// TODO
+		// unregister receiver!!!
+		//TODO bssids support
+		//BSSIDService bssid = new BSSIDService(getApplicationContext());
+	}
 
-		//unregister receiver!!!
-		
+	private void setLocateMeButton() {
+		mLocateButton = (ImageButton) findViewById(R.id.imageButtonLocateMe);
+		mLocateButton.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if (event.getAction() == MotionEvent.ACTION_DOWN) {
+					mLocateButton
+							.setImageResource(R.drawable.map_locate_me_pressed);
+					mLocateButton.setBackgroundResource(R.drawable.purple_bg);
+					return false;
+				} else if (event.getAction() == MotionEvent.ACTION_UP) {
+					mLocateButton.setImageResource(R.drawable.map_locate_me);
+					mLocateButton.setBackgroundColor(getResources().getColor(
+							R.color.trans));
+					return false;
+				}
+				return false;
+			}
+		});
+
+		mLocateButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(getApplicationContext(),
+						"TODO Handling sensors services", Toast.LENGTH_LONG)
+						.show();
+				/*
+				 * alarmHelper.registerAlarmManager();
+				 * contextAwareHelper.startContextAwareness(); myCurrentLocation
+				 * = contextAwareHelper.getCurrentLocation(); scale = (int)
+				 * (webView.getScale() * 100); if (myCurrentLocation != null) {
+				 * myMapScroll = new MapScroller(myCurrentLocation, webView
+				 * .getMeasuredWidth(), webView.getMeasuredHeight(),
+				 * webView.getScale()); setWebView(myMapScroll.getCurrentHTML(),
+				 * myCurrentLocation); } else {
+				 * Toast.makeText(getApplicationContext(),
+				 * "Unfortunately we cannot localize you in B101",
+				 * Toast.LENGTH_LONG).show(); }
+				 */
+			}
+		});
 	}
 
 	@Override
@@ -107,19 +163,16 @@ public class MapActivity extends BaseActivity {
 		public void onReceive(Context arg0, Intent mReceivedIntent) {
 
 			if (mReceivedIntent.getAction().equals(Constants.LocationActionTag)) {
-				/*Toast.makeText(
-						getApplicationContext(),
-						"Latitude: "
-								+ mReceivedIntent.getDoubleExtra(
-										Constants.LocationFlagLatitude, 0)
-								+ "Longitude: "
-								+ mReceivedIntent.getDoubleExtra(
-										Constants.LocationFlagLongitude, 0)
-								+ "Accuracy: "
-								+ mReceivedIntent.getFloatExtra(
-										Constants.LocationFlagAccuracy, 0)
-								+ "Azimuth:" + mAzimuth, Toast.LENGTH_LONG)
-						.show();*/
+				/*
+				 * Toast.makeText( getApplicationContext(), "Latitude: " +
+				 * mReceivedIntent.getDoubleExtra(
+				 * Constants.LocationFlagLatitude, 0) + "Longitude: " +
+				 * mReceivedIntent.getDoubleExtra(
+				 * Constants.LocationFlagLongitude, 0) + "Accuracy: " +
+				 * mReceivedIntent.getFloatExtra(
+				 * Constants.LocationFlagAccuracy, 0) + "Azimuth:" + mAzimuth,
+				 * Toast.LENGTH_LONG) .show();
+				 */
 			}
 
 			if (mReceivedIntent.getAction().equals(
@@ -163,4 +216,48 @@ public class MapActivity extends BaseActivity {
 	private void setAzimuth(double mAzimuth) {
 		this.mAzimuth = mAzimuth;
 	}
+
+	private void setWebView(String mInitialScroll) {
+		mMapWebView = (WebView) findViewById(R.id.webViewMap);
+		mMapWebView.loadDataWithBaseURL("file:///android_asset/images/",
+				generateHTML(), "text/html", "utf-8", null);
+
+		mMapWebView.setWebViewClient(new WebViewClient() {
+			@Override
+			public void onPageFinished(WebView v, String url) {
+				super.onPageFinished(v, url);
+				v.getSettings().setUseWideViewPort(true);
+				v.getSettings().setLoadWithOverviewMode(true);
+				v.getSettings().setBuiltInZoomControls(false);
+				v.getSettings().setDisplayZoomControls(false);
+				v.getSettings().setSupportZoom(false);
+				v.setInitialScale(100);
+			}
+		});
+
+		mMapWebView.setPictureListener(new PictureListener() {
+
+			@Override
+			@Deprecated
+			public void onNewPicture(WebView view, Picture picture) {
+				// view.getSettings().setDefaultZoom(ZoomDensity.FAR);
+				view.getSettings().setUseWideViewPort(false);
+			}
+		});
+
+		mMapWebView.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent e) {
+				mMapWebView.setPictureListener(null);
+				return false;
+			}
+		});
+	}
+
+	private String generateHTML() {
+		String mHTML = "<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" /></head>";
+		mHTML += "<body><div style=\"background-image: url(map.png);height:1560px;width:1900px\"></div></body>";
+		return mHTML;
+	}
+
 }
