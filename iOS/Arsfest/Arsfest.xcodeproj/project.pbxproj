@@ -55,6 +55,7 @@
 		DB811D7718E6E0E800BB11E6 /* buildingmap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB811D7618E6E0E800BB11E6 /* buildingmap@2x.png */; };
 		DB811D7A18E6F6E500BB11E6 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = DB811D7818E6F6E500BB11E6 /* close.png */; };
 		DB811D7B18E6F6E500BB11E6 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB811D7918E6F6E500BB11E6 /* close@2x.png */; };
+		DB818DA018F9A9C5004C3845 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB818D9F18F9A9C5004C3845 /* MZTimerLabel.m */; };
 		DB8E941118A78B5900EF214F /* ARSHorizontalScrollingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8E941018A78B5900EF214F /* ARSHorizontalScrollingHeader.m */; };
 		DB96086918E5D87B00AC3B8B /* ARSFriendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96086718E5D87B00AC3B8B /* ARSFriendListCell.m */; };
 		DB96086A18E5D87B00AC3B8B /* ARSFriendListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB96086818E5D87B00AC3B8B /* ARSFriendListCell.xib */; };
@@ -175,6 +176,8 @@
 		DB811D7618E6E0E800BB11E6 /* buildingmap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buildingmap@2x.png"; sourceTree = "<group>"; };
 		DB811D7818E6F6E500BB11E6 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		DB811D7918E6F6E500BB11E6 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		DB818D9E18F9A9C5004C3845 /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
+		DB818D9F18F9A9C5004C3845 /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
 		DB8E940F18A78B5900EF214F /* ARSHorizontalScrollingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSHorizontalScrollingHeader.h; path = GuiComponents/ARSHorizontalScrollingMenu/ARSHorizontalScrollingHeader.h; sourceTree = "<group>"; };
 		DB8E941018A78B5900EF214F /* ARSHorizontalScrollingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSHorizontalScrollingHeader.m; path = GuiComponents/ARSHorizontalScrollingMenu/ARSHorizontalScrollingHeader.m; sourceTree = "<group>"; };
 		DB8F53E618B66CA1006625C9 /* ARSGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSGlobals.h; path = Utilities/ARSGlobals.h; sourceTree = "<group>"; };
@@ -548,6 +551,15 @@
 			name = "Intro view";
 			sourceTree = "<group>";
 		};
+		DB818D9D18F9A9C5004C3845 /* MZTimerLabel */ = {
+			isa = PBXGroup;
+			children = (
+				DB818D9E18F9A9C5004C3845 /* MZTimerLabel.h */,
+				DB818D9F18F9A9C5004C3845 /* MZTimerLabel.m */,
+			);
+			path = MZTimerLabel;
+			sourceTree = "<group>";
+		};
 		DB8E940E18A78ADD00EF214F /* GuiComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -599,6 +611,7 @@
 		DB9872A118AD7F5900A085FE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				DB818D9D18F9A9C5004C3845 /* MZTimerLabel */,
 				DB96086B18E5E12000AC3B8B /* AsyncImageView */,
 				DBA8518818DB7E54005E352E /* EAIntroView */,
 				DB21FDA718BE1AFF0083F26C /* Categories */,
@@ -869,6 +882,7 @@
 				DB43AE3E18DEDE7D00D56B4F /* ARSUserController.m in Sources */,
 				DB43481918EDC7DC00CD310E /* NSDate+DayTest.m in Sources */,
 				DBA50A3318B7C6C6001C8AF1 /* UIImage+Icon.m in Sources */,
+				DB818DA018F9A9C5004C3845 /* MZTimerLabel.m in Sources */,
 				DB6B313118A4337300C3EABB /* main.m in Sources */,
 				DB96086E18E5E12000AC3B8B /* AsyncImageView.m in Sources */,
 				DB98729718AD748B00A085FE /* ARSEventCell.m in Sources */,
