@@ -24,10 +24,6 @@
     return [date1WithoutTime isEqualToDate:date2WithoutTime];
 }
 
-/**
- * Use this method to determine whether date 2 is at least one day later than date 1, and it has b
- * Example: Date 1 = 10/02/14 | Date 2 = 11/02/14 03:00AM | Threshold = 2  returns true
- */
 - (BOOL)isEarlierThanDate:(NSDate*)date fromMinutes:(NSInteger)threshold
 {
         NSCalendar* calendar = [NSCalendar currentCalendar];
@@ -40,7 +36,6 @@
         [comp1 day]  <=  [comp2 day] &&
         [comp1 month] <= [comp2 month] &&
         [comp1 year]  <= [comp2 year];
-
 }
 
 
