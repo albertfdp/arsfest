@@ -96,19 +96,7 @@
 - (void)setupScrollView
 {
     [_descriptionTextView setText:_event.description];
-//    [self textViewDidChange:_descriptionTextView];
     [_descriptionScrollView setContentSize:_descriptionTextView.frame.size];
 }
 
-//#pragma mark -
-//#pragma mark - Text view delegate
-//
-//- (void)textViewDidChange:(UITextView *)textView
-//{
-//    CGFloat fixedWidth = textView.frame.size.width;
-//    CGSize newSize = [textView sizeThatFits:CGSizeMake(fixedWidth, MAXFLOAT)];
-//    CGRect newFrame = textView.frame;
-//    newFrame.size = CGSizeMake(fmaxf(newSize.width, fixedWidth), newSize.height + 5);
-//    textView.frame = newFrame;
-//}
 @end
