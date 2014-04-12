@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIView *whereView;
 @property (weak, nonatomic) IBOutlet UIView *whenView;
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
+@property (weak, nonatomic) IBOutlet UIView *informationsView;
 
 
 

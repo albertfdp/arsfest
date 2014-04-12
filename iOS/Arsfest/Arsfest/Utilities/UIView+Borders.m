@@ -21,7 +21,7 @@
         } else {
             topBorder.frame = CGRectMake(0.0f, 0.0f, self.frame.size.width, delta);
         }
-        topBorder.backgroundColor = [UIColor colorWithWhite:0.8f
+        topBorder.backgroundColor = [UIColor colorWithWhite:0.0f
                                                       alpha:1.0f].CGColor;
         
         [self.layer addSublayer:topBorder];
@@ -36,7 +36,7 @@
         } else {
             bottomBorder.frame = CGRectMake(0.0f, self.frame.size.height, self.frame.size.width, delta);
         }
-        bottomBorder.backgroundColor = [UIColor colorWithWhite:0.8f
+        bottomBorder.backgroundColor = [UIColor colorWithWhite:0.0f
                                                          alpha:1.0f].CGColor;
         
         [self.layer addSublayer:bottomBorder];
@@ -46,7 +46,7 @@
         CALayer *leftBorder = [CALayer layer];
         float delta = (outside)?-0.3f:0.3f;
         leftBorder.frame = CGRectMake(0.0f, 0.0f, delta, self.frame.size.height);
-        leftBorder.backgroundColor = [UIColor colorWithWhite:0.8f
+        leftBorder.backgroundColor = [UIColor colorWithWhite:0.0f
                                                        alpha:1.0f].CGColor;
         
         [self.layer addSublayer:leftBorder];
@@ -56,7 +56,7 @@
         
         float delta = (outside)?0.3f:-0.3f;
         rightBorder.frame = CGRectMake(self.frame.size.width, 0.0f, delta, self.frame.size.height);
-        rightBorder.backgroundColor = [UIColor colorWithWhite:0.8f
+        rightBorder.backgroundColor = [UIColor colorWithWhite:0.0f
                                                         alpha:1.0f].CGColor;
         
         [self.layer addSublayer:rightBorder];
