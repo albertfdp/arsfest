@@ -1,11 +1,18 @@
-package dk.dtu.arsfest;
+/*
+ * To start map in a specific location, to the intent please add:
+ * String extra (Constants.MapStartLocation, Constants.<STARTING LOCATION>)
+ * boolean extra (Constants.MapShowPin, Constants.<TRUE/FALSE IF YOU WANT TO PLACE A PIN>)
+ */
+
+package dk.dtu.arsfest.localization;
 
 import com.actionbarsherlock.view.MenuItem;
 import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.SideNavigationView.Mode;
 
+import dk.dtu.arsfest.BaseActivity;
+import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.navigation.SideNavigation;
-import dk.dtu.arsfest.sensors.BSSIDService;
 import dk.dtu.arsfest.sensors.LocationService;
 import dk.dtu.arsfest.sensors.OrientationService;
 import dk.dtu.arsfest.utils.Constants;
@@ -27,6 +34,7 @@ import android.webkit.WebView;
 import android.webkit.WebView.PictureListener;
 import android.webkit.WebViewClient;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 @SuppressWarnings("deprecation")
@@ -38,12 +46,17 @@ public class MapActivity extends BaseActivity {
 	private OrientationService mOrientationServiceBinder = null;
 	private WebView mMapWebView;
 	private ImageButton mLocateButton;
+	private ProgressBar mProgressBar;
+	private LocalizationHelper mLocalization;
+	private ScrollHelper mMapScroll;
 	private double mAzimuth = 0;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_map);
+		mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+		mProgressBar.setVisibility(View.VISIBLE);
 
 		// Site Navigation
 		sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_view);
@@ -54,18 +67,14 @@ public class MapActivity extends BaseActivity {
 		getSupportActionBar().setHomeButtonEnabled(true);
 		getSupportActionBar().setTitle("Map");
 
-		// TODO: Pass initial scrolling position @String
-		setWebView(null);
-		setLocateMeButton();
+		mLocalization = new LocalizationHelper();
 
-		// TODO
-		// Deal with initial view
-		// Intent intent = getIntent();
-		// initView(intent.getParcelableExtra(Constants.EXTRA_MAP));
-		// TODO
-		// unregister receiver!!!
-		//TODO bssids support
-		//BSSIDService bssid = new BSSIDService(getApplicationContext());
+		Intent i = getIntent();
+		setWebView(i.getStringExtra(Constants.MapStartLocation),
+				i.getBooleanExtra(Constants.MapShowPin, false));
+
+		// setWebView(Constants.Oticon, true);
+		setLocateMeButton();
 	}
 
 	private void setLocateMeButton() {
@@ -136,6 +145,15 @@ public class MapActivity extends BaseActivity {
 		} else {
 			mLocationServiceBinder.sendGPSIntent();
 		}
+
+		// TODO bssids support
+		// BSSIDService bssid = new BSSIDService(getApplicationContext());
+	}
+
+	@Override
+	protected void onPause() {
+		unregisterReceiver(mStateReceiver);
+		super.onPause();
 	}
 
 	@Override
@@ -217,15 +235,17 @@ public class MapActivity extends BaseActivity {
 		this.mAzimuth = mAzimuth;
 	}
 
-	private void setWebView(String mInitialScroll) {
+	private void setWebView(final String mInitialLocation, boolean ifPIN) {
 		mMapWebView = (WebView) findViewById(R.id.webViewMap);
 		mMapWebView.loadDataWithBaseURL("file:///android_asset/images/",
-				generateHTML(), "text/html", "utf-8", null);
+				generateHTML(mLocalization.getScroll(mInitialLocation), ifPIN),
+				"text/html", "utf-8", null);
 
 		mMapWebView.setWebViewClient(new WebViewClient() {
 			@Override
 			public void onPageFinished(WebView v, String url) {
 				super.onPageFinished(v, url);
+
 				v.getSettings().setUseWideViewPort(true);
 				v.getSettings().setLoadWithOverviewMode(true);
 				v.getSettings().setBuiltInZoomControls(false);
@@ -242,6 +262,13 @@ public class MapActivity extends BaseActivity {
 			public void onNewPicture(WebView view, Picture picture) {
 				// view.getSettings().setDefaultZoom(ZoomDensity.FAR);
 				view.getSettings().setUseWideViewPort(false);
+				mMapScroll = new ScrollHelper(mLocalization
+						.getScroll(mInitialLocation), new int[] {
+						view.getMeasuredWidth(), view.getMeasuredHeight() },
+						view.getScale());
+				view.scrollTo(mMapScroll.getScroll()[0],
+						mMapScroll.getScroll()[1]);
+				mProgressBar.setVisibility(View.INVISIBLE);
 			}
 		});
 
@@ -249,15 +276,30 @@ public class MapActivity extends BaseActivity {
 			@Override
 			public boolean onTouch(View v, MotionEvent e) {
 				mMapWebView.setPictureListener(null);
+				mProgressBar.setVisibility(View.INVISIBLE);
 				return false;
 			}
 		});
 	}
 
-	private String generateHTML() {
-		String mHTML = "<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" /></head>";
-		mHTML += "<body><div style=\"background-image: url(map.png);height:1560px;width:1900px\"></div></body>";
+	private String generateHTML(int[] pinPosition, boolean showPIN) {
+		String mHTML = "";
+		mHTML += "<html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" /><style type='text/css'>";
+		if (showPIN) {
+			mHTML += ".pin {position:absolute;margin:" + (pinPosition[1] - 100)
+					+ "px 0 0 " + (pinPosition[0] - 42) + "px;}";
+		} else {
+			mHTML += ".pin {display:none}";
+		}
+		mHTML += "body {background-image: url(map.png);height:"
+				+ Constants.MapDimentions[1] + "px;matgin:0;padding:0;width:"
+				+ Constants.MapDimentions[0] + "px}";
+		mHTML += "</style>";
+		mHTML += "<body><img src=\"pin.png\" class=\"pin\"></body>";
+
+		Toast.makeText(getApplicationContext(), mHTML, Toast.LENGTH_LONG)
+				.show();
+
 		return mHTML;
 	}
-
 }

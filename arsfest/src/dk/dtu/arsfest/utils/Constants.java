@@ -106,5 +106,10 @@ public class Constants {
 	public static final String Oticon = "Oticon";
 	public static final String SportsHall = "SportsHall";
 	public static final String Canteen = "Canteen";
+	public static final String Tent = "Tent";
+	
+	public static final String MapStartLocation = "MapStartLocation";
+	public static final String MapShowPin = "MapShowPin";
+	public static final int[] MapDimentions = {1900, 1560};
 	
 }

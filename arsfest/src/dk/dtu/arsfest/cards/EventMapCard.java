@@ -4,7 +4,7 @@ import it.gmariotti.cardslib.library.internal.Card;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
-import dk.dtu.arsfest.MapActivity;
+import dk.dtu.arsfest.localization.MapActivity;
 import dk.dtu.arsfest.model.Event;
 
 public class EventMapCard extends EventImageCard {

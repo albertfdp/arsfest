@@ -8,8 +8,8 @@ import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.SideNavigationView.Mode;
 
 import dk.dtu.arsfest.MainActivity;
-import dk.dtu.arsfest.MapActivity;
 import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.localization.MapActivity;
 import dk.dtu.arsfest.utils.Constants;
 
 public class SideNavigation {
