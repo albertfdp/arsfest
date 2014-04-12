@@ -231,12 +231,6 @@
 
 - (void)userControllerRetrievedUserFriends:(NSArray *)_friends
 {
-//    NSMutableArray *arr = [[NSMutableArray alloc] init];
-//    [arr addObjectsFromArray:_friends];
-//    for (int i =0 ; i<2; i++) {
-//        [arr addObject:[arr objectAtIndex:0]];
-//    }
-//    [self setFriends:[NSArray arrayWithArray:arr]];
     [self setFriends:_friends];
     [self showFriendListProcessingView:NO];
 }
@@ -249,7 +243,7 @@
 - (void)userLogInCompletedWithError:(ARSUserLoginError)error
 {
     self.containerView = self.registerView;
-    [ARSAlertManager showErrorWithTitle:@"Registration error" message:@"The registration couldn't be completed" cancelTitle:@"OK"];
+    [ARSAlertManager showErrorWithTitle:@"Registration Error" message:@"There was an error during the registration" cancelTitle:@"OK"];
 }
 
 - (void)userLogInCompletedWithSuccess
