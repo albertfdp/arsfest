@@ -43,7 +43,7 @@ public class OrientationService extends Service implements SensorEventListener {
 				SensorManager.SENSOR_DELAY_NORMAL);
 	}
 
-	private void sendOrientationIntent() {
+	public void sendOrientationIntent() {
 		Intent OrientationIntent = new Intent();
 		OrientationIntent.setAction(Constants.OrientationActionTag);
 		OrientationIntent.putExtra(Constants.OrientationFlagAzimuth,

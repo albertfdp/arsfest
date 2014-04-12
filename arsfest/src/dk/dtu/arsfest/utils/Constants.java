@@ -111,5 +111,15 @@ public class Constants {
 	public static final String MapStartLocation = "MapStartLocation";
 	public static final String MapShowPin = "MapShowPin";
 	public static final int[] MapDimentions = {1900, 1560};
+	public static final int LocateMeTreshold = 20000;
+	public static final String AlertDialogEnable = "Enable";
+	public static final String AlertDialogCancel = "Cancel";
+	public static final String AlertDialogStopAsking = "Stop Asking";
+	public static final String SharedPreferences = "SharedPreferences";
+	public static final String GPSRequest = "SharedPreferencesGPS";
+	public static final String NetworkRequest = "SharedPreferencesNetwork";
+	public static final String NetworkInfo = "Network is disabled in your device";
+	public static final String GPSInfo = "GPS is disabled in your device";
+	public static final CharSequence UnsuccessfulLocatization = "We cannot localize you in the area of 101";
 	
 }

@@ -13,18 +13,26 @@ import com.devspark.sidenavigation.SideNavigationView.Mode;
 import dk.dtu.arsfest.BaseActivity;
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.navigation.SideNavigation;
+import dk.dtu.arsfest.sensors.BSSIDService;
 import dk.dtu.arsfest.sensors.LocationService;
 import dk.dtu.arsfest.sensors.OrientationService;
 import dk.dtu.arsfest.utils.Constants;
 
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningServiceInfo;
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Picture;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.view.MotionEvent;
 import android.view.View;
@@ -49,7 +57,18 @@ public class MapActivity extends BaseActivity {
 	private ProgressBar mProgressBar;
 	private LocalizationHelper mLocalization;
 	private ScrollHelper mMapScroll;
-	private double mAzimuth = 0;
+	private double mLatitude = 0, mLongitude = 0, mAccuracy = 0, mAzimuth = 0;
+	private boolean mProviders = false;
+	private SharedPreferences mPreferences;
+	private Handler uCantHandleThat = new Handler();
+	private Runnable runForYourLife = new Runnable() {
+		public void run() {
+			mProgressBar.setVisibility(View.INVISIBLE);
+			Toast.makeText(getApplicationContext(),
+					Constants.UnsuccessfulLocatization, Toast.LENGTH_LONG)
+					.show();
+		}
+	};
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -58,7 +77,6 @@ public class MapActivity extends BaseActivity {
 		mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
 		mProgressBar.setVisibility(View.VISIBLE);
 
-		// Site Navigation
 		sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_view);
 		SideNavigation mSideNavigation = new SideNavigation(sideNavigationView,
 				getApplicationContext());
@@ -66,14 +84,13 @@ public class MapActivity extends BaseActivity {
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
 		getSupportActionBar().setTitle("Map");
-
 		mLocalization = new LocalizationHelper();
 
 		Intent i = getIntent();
 		setWebView(i.getStringExtra(Constants.MapStartLocation),
 				i.getBooleanExtra(Constants.MapShowPin, false));
-
-		// setWebView(Constants.Oticon, true);
+		mPreferences = getApplicationContext().getSharedPreferences(
+				Constants.SharedPreferences, 0);
 		setLocateMeButton();
 	}
 
@@ -100,22 +117,56 @@ public class MapActivity extends BaseActivity {
 		mLocateButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(),
-						"TODO Handling sensors services", Toast.LENGTH_LONG)
-						.show();
-				/*
-				 * alarmHelper.registerAlarmManager();
-				 * contextAwareHelper.startContextAwareness(); myCurrentLocation
-				 * = contextAwareHelper.getCurrentLocation(); scale = (int)
-				 * (webView.getScale() * 100); if (myCurrentLocation != null) {
-				 * myMapScroll = new MapScroller(myCurrentLocation, webView
-				 * .getMeasuredWidth(), webView.getMeasuredHeight(),
-				 * webView.getScale()); setWebView(myMapScroll.getCurrentHTML(),
-				 * myCurrentLocation); } else {
-				 * Toast.makeText(getApplicationContext(),
-				 * "Unfortunately we cannot localize you in B101",
-				 * Toast.LENGTH_LONG).show(); }
-				 */
+				mProgressBar.setVisibility(View.VISIBLE);
+
+				if (mLocationServiceBinder == null) {
+					Intent mIntent = new Intent(getApplicationContext(),
+							LocationService.class);
+					bindService(mIntent, mLocationConnection,
+							Context.BIND_AUTO_CREATE);
+				} else {
+					mLocationServiceBinder.sendGPSIntent();
+					mLocationServiceBinder.sendProviderInfoIntent();
+				}
+
+				if (mOrientationServiceBinder == null) {
+					Intent mIntent = new Intent(getApplicationContext(),
+							OrientationService.class);
+					bindService(mIntent, mOrientationConnection,
+							Context.BIND_AUTO_CREATE);
+				} else {
+					mOrientationServiceBinder.sendOrientationIntent();
+				}
+
+				if (!mProviders) {
+					BSSIDService mBSSID = new BSSIDService(
+							getApplicationContext());
+					mBSSID.getUpdate();
+					if (mBSSID.isNetworkAvailable()) {
+
+						// TODO Handling the BSSID data
+
+						Toast.makeText(
+								getApplicationContext(),
+								"Your location based on BSSID:"
+										+ mBSSID.getCurrentLocation(),
+								Toast.LENGTH_LONG).show();
+						
+						
+					} else {
+						if (!mProviders) {
+							if (!mPreferences.getBoolean(
+									Constants.NetworkRequest, false)) {
+								buildAlertMessage(
+										Constants.NetworkInfo,
+										android.provider.Settings.ACTION_WIFI_SETTINGS,
+										Constants.NetworkRequest);
+							}
+						}
+					}
+				}
+				uCantHandleThat.postDelayed(runForYourLife,
+						Constants.LocateMeTreshold);
 			}
 		});
 	}
@@ -123,44 +174,44 @@ public class MapActivity extends BaseActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		// Broadcast Receivers
 		mStateReceiver = new SensorsReceiver();
 		IntentFilter intentLocationFilter = new IntentFilter();
 		intentLocationFilter.addAction(Constants.LocationActionTag);
 		intentLocationFilter.addAction(Constants.OrientationActionTag);
+		intentLocationFilter.addAction(Constants.ProvidersActionTag);
 		registerReceiver(mStateReceiver, intentLocationFilter);
-
-		// Bind Services
-		if (mLocationServiceBinder == null) {
-			Intent mIntent = new Intent(this, LocationService.class);
-			bindService(mIntent, mLocationConnection, Context.BIND_AUTO_CREATE);
-		} else {
-			mLocationServiceBinder.sendGPSIntent();
-		}
-
-		if (mOrientationServiceBinder == null) {
-			Intent mIntent = new Intent(this, OrientationService.class);
-			bindService(mIntent, mOrientationConnection,
-					Context.BIND_AUTO_CREATE);
-		} else {
-			mLocationServiceBinder.sendGPSIntent();
-		}
-
-		// TODO bssids support
-		// BSSIDService bssid = new BSSIDService(getApplicationContext());
+		mLatitude = 0;
+		mLongitude = 0;
+		mAccuracy = 0;
+		mAzimuth = 0;
 	}
 
 	@Override
 	protected void onPause() {
+		if (mLocationServiceBinder != null) {
+			if (isMyServiceRunning(mLocationServiceBinder.getClass().getName())) {
+				unbindService(mLocationConnection);
+			}
+		}
+		if (mOrientationServiceBinder != null) {
+			if (isMyServiceRunning(mOrientationServiceBinder.getClass()
+					.getName())) {
+				unbindService(mOrientationConnection);
+			}
+		}
 		unregisterReceiver(mStateReceiver);
 		super.onPause();
 	}
 
-	@Override
-	protected void onDestroy() {
-		unbindService(mLocationConnection);
-		unbindService(mOrientationConnection);
-		super.onDestroy();
+	private boolean isMyServiceRunning(String s) {
+		ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+		for (RunningServiceInfo service : manager
+				.getRunningServices(Integer.MAX_VALUE)) {
+			if (s.equals(service.service.getClassName())) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@Override
@@ -181,22 +232,49 @@ public class MapActivity extends BaseActivity {
 		public void onReceive(Context arg0, Intent mReceivedIntent) {
 
 			if (mReceivedIntent.getAction().equals(Constants.LocationActionTag)) {
-				/*
-				 * Toast.makeText( getApplicationContext(), "Latitude: " +
-				 * mReceivedIntent.getDoubleExtra(
-				 * Constants.LocationFlagLatitude, 0) + "Longitude: " +
-				 * mReceivedIntent.getDoubleExtra(
-				 * Constants.LocationFlagLongitude, 0) + "Accuracy: " +
-				 * mReceivedIntent.getFloatExtra(
-				 * Constants.LocationFlagAccuracy, 0) + "Azimuth:" + mAzimuth,
-				 * Toast.LENGTH_LONG) .show();
-				 */
+
+				mAccuracy = mReceivedIntent.getFloatExtra(
+						Constants.LocationFlagAccuracy, 0);
+				mLongitude = mReceivedIntent.getDoubleExtra(
+						Constants.LocationFlagLongitude, 0);
+				mLatitude = mReceivedIntent.getDoubleExtra(
+						Constants.LocationFlagLatitude, 0);
+
+				mProgressBar.setVisibility(View.INVISIBLE);
+
+				// TODO Handling GPS/Network data
+
+				Toast.makeText(
+						getApplicationContext(),
+						"Accuracy: " + mAccuracy + "; Latitude: " + mLatitude
+								+ "; Longitude " + mLongitude + "; Azimuth: "
+								+ mAzimuth, Toast.LENGTH_LONG).show();
+
+				
+				uCantHandleThat.removeCallbacks(runForYourLife);
 			}
 
 			if (mReceivedIntent.getAction().equals(
 					Constants.OrientationActionTag)) {
 				setAzimuth(mReceivedIntent.getDoubleExtra(
 						Constants.OrientationFlagAzimuth, 0));
+			}
+
+			if (mReceivedIntent.getAction()
+					.equals(Constants.ProvidersActionTag)) {
+				mProviders = mReceivedIntent.getBooleanExtra(
+						Constants.GPSProvider, false)
+						|| mReceivedIntent.getBooleanExtra(
+								Constants.NetworkProvider, false);
+
+				if (!mProviders) {
+					if (!mPreferences.getBoolean(Constants.GPSRequest, false)) {
+						buildAlertMessage(
+								Constants.GPSInfo,
+								android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS,
+								Constants.GPSRequest);
+					}
+				}
 			}
 		}
 	}
@@ -296,10 +374,40 @@ public class MapActivity extends BaseActivity {
 				+ Constants.MapDimentions[0] + "px}";
 		mHTML += "</style>";
 		mHTML += "<body><img src=\"pin.png\" class=\"pin\"></body>";
-
-		Toast.makeText(getApplicationContext(), mHTML, Toast.LENGTH_LONG)
-				.show();
-
 		return mHTML;
+	}
+
+	private void buildAlertMessage(String mMessage, final String mIntent,
+			final String mKey) {
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		alertDialogBuilder
+				.setMessage(mMessage)
+				.setCancelable(false)
+				.setPositiveButton(Constants.AlertDialogEnable,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								Intent callSettingIntent = new Intent(mIntent);
+								startActivity(callSettingIntent);
+							}
+						});
+		alertDialogBuilder.setNeutralButton(Constants.AlertDialogCancel,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						dialog.cancel();
+					}
+				});
+		alertDialogBuilder.setNegativeButton(Constants.AlertDialogStopAsking,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						SharedPreferences mPreferences = getApplicationContext()
+								.getSharedPreferences(
+										Constants.SharedPreferences, 0);
+						Editor mEditor = mPreferences.edit();
+						mEditor.putBoolean(mKey, true);
+						mEditor.commit();
+					}
+				});
+		AlertDialog alert = alertDialogBuilder.create();
+		alert.show();
 	}
 }
