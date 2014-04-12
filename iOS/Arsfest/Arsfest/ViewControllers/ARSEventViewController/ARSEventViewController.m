@@ -79,7 +79,7 @@
     [_whereView addBorderTop:YES bottom:YES right:YES left:NO outside:NO];
     [_whenView addBorderTop:YES bottom:YES right:NO left:NO outside:NO];
     [_eventImageView addBorderTop:NO bottom:YES right:NO left:NO outside:YES];
-    [self.informationsView addBorderTop:NO bottom:YES right:NO left:NO outside:NO];
+    [self.informationsView addBorderTop:YES bottom:YES right:NO left:NO outside:NO];
 }
 
 #pragma mark -
