@@ -109,8 +109,10 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
 - (void)startLocationUpdateTimer
 {
 #warning Define time bounds in which the timer will operate
-    self.updateLocationTimer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_RATE_LOCATION target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
-    [[ARSUserController sharedUserController] updateUserLocation];
+    if ([ARSUserController isUserLoggedIn]) {
+        self.updateLocationTimer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_RATE_LOCATION target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+        [[ARSUserController sharedUserController] updateUserLocation];
+    }
 }
 
 - (void)onTimer:(NSTimer*)timer
