@@ -46,20 +46,21 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </pageControl>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </scrollView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="pek-MQ-rVZ" secondAttribute="bottom" id="djC-rc-gSg"/>
                                 <constraint firstItem="pek-MQ-rVZ" firstAttribute="top" secondItem="Qe7-aa-4vA" secondAttribute="top" id="l4f-Ba-hkk"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hm7-l5-gTz">
-                            <rect key="frame" x="20" y="164" width="320" height="279.00000599250984"/>
+                            <rect key="frame" x="20" y="164" width="320" height="279.00001067303526"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gEH-me-qcF">
-                                    <rect key="frame" x="0.0" y="48" width="320" height="232.00000599250984"/>
+                                    <rect key="frame" x="0.0" y="48" width="320" height="232.00001067303526"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" red="0.94144610969999998" green="0.94144610969999998" blue="0.94144610969999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>

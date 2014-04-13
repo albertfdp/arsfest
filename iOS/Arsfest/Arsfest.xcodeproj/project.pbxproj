@@ -26,6 +26,10 @@
 		DB53D33018AEBCD300508DAD /* default_background.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32D18AEBCD300508DAD /* default_background.png */; };
 		DB53D33118AEBCD300508DAD /* default_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32E18AEBCD300508DAD /* default_background@2x.png */; };
 		DB53D33218AEBCD300508DAD /* default_background568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32F18AEBCD300508DAD /* default_background568h@2x.png */; };
+		DB59F48518FAC62200348BBF /* ARSCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB59F48418FAC62200348BBF /* ARSCarousel.m */; };
+		DB59F48718FAC63000348BBF /* ARSCarousel.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB59F48618FAC63000348BBF /* ARSCarousel.xib */; };
+		DB59F48C18FAC6FF00348BBF /* ARSCarouselThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = DB59F48B18FAC6FF00348BBF /* ARSCarouselThumbnail.m */; };
+		DB59F48E18FAC72100348BBF /* ARSCarouselThumbnail.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB59F48D18FAC72100348BBF /* ARSCarouselThumbnail.xib */; };
 		DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312418A4337300C3EABB /* Foundation.framework */; };
 		DB6B312718A4337300C3EABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312618A4337300C3EABB /* CoreGraphics.framework */; };
 		DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
@@ -141,6 +145,12 @@
 		DB53D32D18AEBCD300508DAD /* default_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_background.png; sourceTree = "<group>"; };
 		DB53D32E18AEBCD300508DAD /* default_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_background@2x.png"; sourceTree = "<group>"; };
 		DB53D32F18AEBCD300508DAD /* default_background568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_background568h@2x.png"; sourceTree = "<group>"; };
+		DB59F48318FAC62200348BBF /* ARSCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSCarousel.h; sourceTree = "<group>"; };
+		DB59F48418FAC62200348BBF /* ARSCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARSCarousel.m; sourceTree = "<group>"; };
+		DB59F48618FAC63000348BBF /* ARSCarousel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARSCarousel.xib; sourceTree = "<group>"; };
+		DB59F48A18FAC6FF00348BBF /* ARSCarouselThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSCarouselThumbnail.h; sourceTree = "<group>"; };
+		DB59F48B18FAC6FF00348BBF /* ARSCarouselThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARSCarouselThumbnail.m; sourceTree = "<group>"; };
+		DB59F48D18FAC72100348BBF /* ARSCarouselThumbnail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARSCarouselThumbnail.xib; sourceTree = "<group>"; };
 		DB6B312118A4337300C3EABB /* Arsfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arsfest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6B312418A4337300C3EABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB6B312618A4337300C3EABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -407,6 +417,36 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		DB59F48218FAC41200348BBF /* ARSCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				DB59F48918FAC6B900348BBF /* ARSCarouselThumbnail */,
+				DB59F48318FAC62200348BBF /* ARSCarousel.h */,
+				DB59F48418FAC62200348BBF /* ARSCarousel.m */,
+				DB59F48618FAC63000348BBF /* ARSCarousel.xib */,
+			);
+			name = ARSCarousel;
+			sourceTree = "<group>";
+		};
+		DB59F48818FAC6A900348BBF /* ARSHorizontalScrollingHeader */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E940F18A78B5900EF214F /* ARSHorizontalScrollingHeader.h */,
+				DB8E941018A78B5900EF214F /* ARSHorizontalScrollingHeader.m */,
+			);
+			name = ARSHorizontalScrollingHeader;
+			sourceTree = "<group>";
+		};
+		DB59F48918FAC6B900348BBF /* ARSCarouselThumbnail */ = {
+			isa = PBXGroup;
+			children = (
+				DB59F48A18FAC6FF00348BBF /* ARSCarouselThumbnail.h */,
+				DB59F48B18FAC6FF00348BBF /* ARSCarouselThumbnail.m */,
+				DB59F48D18FAC72100348BBF /* ARSCarouselThumbnail.xib */,
+			);
+			name = ARSCarouselThumbnail;
+			sourceTree = "<group>";
+		};
 		DB6B311818A4337300C3EABB = {
 			isa = PBXGroup;
 			children = (
@@ -563,8 +603,8 @@
 		DB8E940E18A78ADD00EF214F /* GuiComponents */ = {
 			isa = PBXGroup;
 			children = (
-				DB8E940F18A78B5900EF214F /* ARSHorizontalScrollingHeader.h */,
-				DB8E941018A78B5900EF214F /* ARSHorizontalScrollingHeader.m */,
+				DB59F48818FAC6A900348BBF /* ARSHorizontalScrollingHeader */,
+				DB59F48218FAC41200348BBF /* ARSCarousel */,
 			);
 			name = GuiComponents;
 			sourceTree = "<group>";
@@ -778,6 +818,7 @@
 			files = (
 				DB6B312F18A4337300C3EABB /* InfoPlist.strings in Resources */,
 				DB53D32B18AEB88800508DAD /* veto.png in Resources */,
+				DB59F48718FAC63000348BBF /* ARSCarousel.xib in Resources */,
 				DBE009CA18B78E22000B6DFE /* dinner@2x.png in Resources */,
 				DBA50A3018B7C6A0001C8AF1 /* music_icon@2x.png in Resources */,
 				DBE009D418B78E22000B6DFE /* queenmachine@2x.png in Resources */,
@@ -824,6 +865,7 @@
 				DBE009CB18B78E22000B6DFE /* dj.png in Resources */,
 				DB21FDA518BE1A680083F26C /* location_icon.png in Resources */,
 				DB9872A018AD7EB000A085FE /* ARSEventViewController.xib in Resources */,
+				DB59F48E18FAC72100348BBF /* ARSCarouselThumbnail.xib in Resources */,
 				DBE009C818B78E22000B6DFE /* alphabeat@2x.png in Resources */,
 				DBE009D318B78E22000B6DFE /* queenmachine.png in Resources */,
 			);
@@ -879,6 +921,7 @@
 			files = (
 				DB98729F18AD7EB000A085FE /* ARSEventViewController.m in Sources */,
 				DB96086918E5D87B00AC3B8B /* ARSFriendListCell.m in Sources */,
+				DB59F48518FAC62200348BBF /* ARSCarousel.m in Sources */,
 				DB43AE3E18DEDE7D00D56B4F /* ARSUserController.m in Sources */,
 				DB43481918EDC7DC00CD310E /* NSDate+DayTest.m in Sources */,
 				DBA50A3318B7C6C6001C8AF1 /* UIImage+Icon.m in Sources */,
@@ -897,6 +940,7 @@
 				DB21FD9618BE16B80083F26C /* UIBarButtonItem+RightBarItem.m in Sources */,
 				DB21FDAA18BE1B6E0083F26C /* ARSNavigationController.m in Sources */,
 				DBF6B0DD18EC316F0048605F /* ARSWifi.m in Sources */,
+				DB59F48C18FAC6FF00348BBF /* ARSCarouselThumbnail.m in Sources */,
 				DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */,
 				DBE009E518B79585000B6DFE /* UIView+Borders.m in Sources */,
 				DBCCEA4B18A5723D00CC87AE /* ARSData.m in Sources */,
