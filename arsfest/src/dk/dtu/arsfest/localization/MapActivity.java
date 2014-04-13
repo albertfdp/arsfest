@@ -23,18 +23,16 @@ import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Picture;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.IBinder;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -51,8 +49,6 @@ public class MapActivity extends BaseActivity {
 
 	private SideNavigationView sideNavigationView;
 	private SensorsReceiver mStateReceiver;
-	private LocationService mLocationServiceBinder = null;
-	private OrientationService mOrientationServiceBinder = null;
 	private WebView mMapWebView;
 	private ImageButton mLocateButton;
 	private ProgressBar mProgressBar;
@@ -70,6 +66,7 @@ public class MapActivity extends BaseActivity {
 					.show();
 		}
 	};
+	private Intent mIntentOrientation, mIntentLocation;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -77,6 +74,11 @@ public class MapActivity extends BaseActivity {
 		setContentView(R.layout.activity_map);
 		mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
 		mProgressBar.setVisibility(View.VISIBLE);
+
+		mIntentOrientation = new Intent(getApplicationContext(),
+				OrientationService.class);
+		mIntentLocation = new Intent(getApplicationContext(),
+				LocationService.class);
 
 		sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_view);
 		SideNavigation mSideNavigation = new SideNavigation(sideNavigationView,
@@ -119,25 +121,8 @@ public class MapActivity extends BaseActivity {
 			@Override
 			public void onClick(View v) {
 				mProgressBar.setVisibility(View.VISIBLE);
-
-				if (mLocationServiceBinder == null) {
-					Intent mIntent = new Intent(getApplicationContext(),
-							LocationService.class);
-					bindService(mIntent, mLocationConnection,
-							Context.BIND_AUTO_CREATE);
-				} else {
-					mLocationServiceBinder.sendGPSIntent();
-					mLocationServiceBinder.sendProviderInfoIntent();
-				}
-
-				if (mOrientationServiceBinder == null) {
-					Intent mIntent = new Intent(getApplicationContext(),
-							OrientationService.class);
-					bindService(mIntent, mOrientationConnection,
-							Context.BIND_AUTO_CREATE);
-				} else {
-					mOrientationServiceBinder.sendOrientationIntent();
-				}
+				startService(mIntentLocation);
+				startService(mIntentOrientation);
 
 				if (!mProviders) {
 					BSSIDService mBSSID = new BSSIDService(
@@ -184,20 +169,16 @@ public class MapActivity extends BaseActivity {
 		mLongitude = 0;
 		mAccuracy = 0;
 		mAzimuth = 0;
+		mMapWebView.loadUrl("javascript:hide()");
 	}
 
 	@Override
 	protected void onPause() {
-		if (mLocationServiceBinder != null) {
-			if (isMyServiceRunning(mLocationServiceBinder.getClass().getName())) {
-				unbindService(mLocationConnection);
-			}
+		if (isMyServiceRunning(LocationService.class.getName())) {
+			stopService(mIntentLocation);
 		}
-		if (mOrientationServiceBinder != null) {
-			if (isMyServiceRunning(mOrientationServiceBinder.getClass()
-					.getName())) {
-				unbindService(mOrientationConnection);
-			}
+		if (isMyServiceRunning(OrientationService.class.getName())) {
+			stopService(mIntentOrientation);
 		}
 		unregisterReceiver(mStateReceiver);
 		super.onPause();
@@ -280,36 +261,6 @@ public class MapActivity extends BaseActivity {
 			}
 		}
 	}
-
-	private ServiceConnection mLocationConnection = new ServiceConnection() {
-
-		@Override
-		public void onServiceDisconnected(ComponentName name) {
-			mLocationServiceBinder = null;
-		}
-
-		@Override
-		public void onServiceConnected(ComponentName name, IBinder service) {
-			mLocationServiceBinder = ((LocationService.LocationBinder) service)
-					.getService();
-
-		}
-	};
-
-	private ServiceConnection mOrientationConnection = new ServiceConnection() {
-
-		@Override
-		public void onServiceDisconnected(ComponentName name) {
-			mOrientationServiceBinder = null;
-		}
-
-		@Override
-		public void onServiceConnected(ComponentName name, IBinder service) {
-			mOrientationServiceBinder = ((OrientationService.OrientationBinder) service)
-					.getService();
-
-		}
-	};
 
 	private void setAzimuth(double mAzimuth) {
 		this.mAzimuth = mAzimuth - Constants.AzimuthTreshold;
