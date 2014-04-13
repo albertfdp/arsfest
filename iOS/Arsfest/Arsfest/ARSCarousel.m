@@ -27,4 +27,9 @@
     [self setContentSize:thumbnail.frame.size];
 }
 
+- (void)timerFinished
+{
+    
+}
+
 @end

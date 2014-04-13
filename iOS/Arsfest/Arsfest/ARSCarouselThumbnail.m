@@ -27,6 +27,9 @@
         case ARSCarouselThumbnailTypeTimer:
             [self.imageView setHidden:YES];
             [self.timerLabel setCountDownToDate:ARSFEST_START_DATE];
+            [self.timerLabel setTimerType:MZTimerLabelTypeTimer];
+            [self.timerLabel setTimeFormat:@"dd : HH : mm : ss"];
+            [self.timerLabel start];
             break;
             
         default:
