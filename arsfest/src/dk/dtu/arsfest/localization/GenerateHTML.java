@@ -19,12 +19,15 @@ public class GenerateHTML {
 			+ "var el = document.getElementById('gps');"
 			+ "el.style.display = 'none';" 
 			+ "}";
-
+	private String mScripts4 = "function pageScroll(mLeft, mTop) {"
+			+ "window.scrollTo(mLeft, mTop);"
+			+ "}";
+	
 	public GenerateHTML(int[] pinPosition, boolean showPIN) {
 		mHTML += "<html>"
 				+ "<head>"
 				+ "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" />"
-				+ "<script>" + mScripts + mScripts2 + mScripts3 + "</script>"
+				+ "<script>" + mScripts4  + mScripts + mScripts2 + mScripts3 +"</script>"
 				+ "<style type='text/css'>";
 		if (showPIN) {
 			mHTML += "#pin {" + "position:absolute;" + "margin:"

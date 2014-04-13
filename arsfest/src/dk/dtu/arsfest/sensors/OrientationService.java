@@ -50,6 +50,12 @@ public class OrientationService extends Service implements SensorEventListener {
 	}
 
 	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
+		sendOrientationIntent();
+		return super.onStartCommand(intent, flags, startId);
+	}
+
+	@Override
 	public void onAccuracyChanged(Sensor s, int i) {
 	}
 
