@@ -10,6 +10,7 @@ import com.devspark.sidenavigation.ISideNavigationCallback;
 import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.SideNavigationView.Mode;
 
+import dk.dtu.arsfest.cards.EventDescriptionCard;
 import dk.dtu.arsfest.cards.EventImageCard;
 import dk.dtu.arsfest.cards.EventInfoCard;
 import dk.dtu.arsfest.cards.EventMapCard;
@@ -58,15 +59,15 @@ public class EventActivity extends BaseActivity {
 		CardView infoCardView = (CardView) findViewById(R.id.card_event_info);
 		infoCardView.setCard(info);
 		
-		//if (event.isMenu()) {
-			Card menuCard = new EventMenuCard(this, event);
-			CardView menuCardView = (CardView) findViewById(R.id.card_event_menu);
-			menuCardView.setCard(menuCard);
-		/*else {
+		if (event.getMenu().isEmpty()) {
 			Card descriptionCard = new EventDescriptionCard(this, event);
-			CardView descriptionCardView = (CardView) findViewById(R.id.card_event_menu);
+			CardView descriptionCardView = (CardView) findViewById(R.id.card_event_description);
 			descriptionCardView.setCard(descriptionCard);
-		}*/
+		} else {
+			Card menuCard = new EventMenuCard(this, event);
+			CardView menuCardView = (CardView) findViewById(R.id.card_event_description);
+			menuCardView.setCard(menuCard);
+		}
 		
 		Card mapCard = new EventMapCard(this, event);
 		CardView mapCardView = (CardView) findViewById(R.id.card_event_map);

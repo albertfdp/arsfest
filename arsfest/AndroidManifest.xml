@@ -8,18 +8,15 @@
         android:minSdkVersion="13"
         android:targetSdkVersion="19" />
 
-    <!-- PERMISSIONS NEEDED BUT I DON'T KNOW WHERE: -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <!-- Needed for AlarmManagerBroadcastReceiver: -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- PERMISSIONS TO EVALUATE IF NECESSARY: -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <!-- LocationService -->
+    
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -31,7 +28,7 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.Arsfest" >
         <activity
-            android:name="dk.dtu.arsfest.SplashActivity"
+            android:name=".SplashActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -41,17 +38,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="dk.dtu.arsfest.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="dk.dtu.arsfest.MenuActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name="dk.dtu.arsfest.MapActivity"
+            android:name="dk.dtu.arsfest.localization.MapActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
@@ -66,23 +58,9 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
-        <activity
-            android:name="dk.dtu.arsfest.notification.NotificationActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait" >
-        </activity>
         -->
         <service android:name="dk.dtu.arsfest.sensors.OrientationService" />
         <service android:name="dk.dtu.arsfest.sensors.LocationService" />
-        <service android:name="dk.dtu.arsfest.notification.MyNotificationService" />
-        <service android:name="dk.dtu.arsfest.notification.MyOneTimeNotificationService" />
-        <!-- Receiver for location awareness: -->
-
-
-        <!--
-        <receiver android:name="dk.dtu.arsfest.alarms.AlarmManagerBroadcastReceiver" >
-        </receiver>
-        -->
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
