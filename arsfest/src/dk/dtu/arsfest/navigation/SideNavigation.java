@@ -10,6 +10,7 @@ import com.devspark.sidenavigation.SideNavigationView.Mode;
 import dk.dtu.arsfest.MainActivity;
 import dk.dtu.arsfest.MapActivity;
 import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.TicketSaleActivity;
 import dk.dtu.arsfest.utils.Constants;
 
 public class SideNavigation {
@@ -41,6 +42,10 @@ public class SideNavigation {
 				case R.id.side_navigation_old_events:
 					intent = new Intent(mContext, MainActivity.class);
 					intent.putExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, true);
+					break;
+				case R.id.side_navigation_tickets:
+					intent = new Intent(mContext, TicketSaleActivity.class);
+					intent.putExtra(Constants.EXTRA_TICKET_SALE_ACTIVITY, "");
 					break;
 				default:
 					break;

@@ -82,6 +82,8 @@ public class SplashActivity extends SherlockActivity {
 		Typeface font = Typeface.createFromAsset(getAssets(), Constants.TYPEFONT_NEOSANS);
 		splashTitle.setTypeface(font);
 		splashSubtitle.setTypeface(font);
+		programButton.setTypeface(font);
+		ticketButton.setTypeface(font);
 		
 	}
 	
@@ -91,7 +93,7 @@ public class SplashActivity extends SherlockActivity {
 		
 		if (!checkNeedsUpdate()) {
 			updateJson();
-		} /*else {
+		}/* else {
 			Intent intent = new Intent(SplashActivity.this, MainActivity.class);
 			intent.putExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, false);
 			startActivity(intent);

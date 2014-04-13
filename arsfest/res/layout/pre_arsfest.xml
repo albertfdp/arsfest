@@ -38,7 +38,9 @@
         android:layout_marginTop="26dp"
         android:gravity="center"
        	android:background="@drawable/button_shape" 
-        android:text="See Tickets Sale" />
+        android:text="@string/splash_button_tickets" 
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/splash_button_program"
@@ -50,6 +52,8 @@
         android:layout_marginTop="33dp"
         android:background="@drawable/button_shape"
         android:gravity="center"
-        android:text="See Program" />
+        android:text="@string/splash_button_program" 
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
 </RelativeLayout>

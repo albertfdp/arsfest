@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!--
   ~ *******************************************************************************
   ~   Copyright (c) 2013-2014 Gabriele Mariotti.
@@ -17,22 +18,24 @@
   ~  *****************************************************************************
   -->
 
-<!-- This is the Header Layout -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              style="@style/card"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                style="@style/card.header_compound_view">
-
-    <!-- This is the Inner Content Header which you can populate runtime
-         with setupInnerViewElements(android.view.ViewGroup, android.view.View) method in CardHeader class. -->
-    <FrameLayout
-        android:id="@+id/card_header_inner_frame"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <!-- This is the base Inner View inside a CardHeader.
+         You can customize it with your layout xml file and your CardHeader.
+         You can popolate your element with CardHeader#setupInnerViewElements() method -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/text_suggested_card1"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/flat_lila_shadow"
         />
 
-
-</RelativeLayout>
+</LinearLayout>

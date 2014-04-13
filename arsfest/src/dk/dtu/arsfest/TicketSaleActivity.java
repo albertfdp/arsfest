@@ -1,5 +1,7 @@
 package dk.dtu.arsfest;
 
+import it.gmariotti.cardslib.library.internal.Card;
+import it.gmariotti.cardslib.library.internal.CardHeader;
 import it.gmariotti.cardslib.library.view.CardView;
 
 import com.actionbarsherlock.view.Menu;
@@ -10,6 +12,7 @@ import com.google.analytics.tracking.android.EasyTracker;
 
 import dk.dtu.arsfest.cards.EventInfoCard;
 import dk.dtu.arsfest.cards.PriceTicketCard;
+import dk.dtu.arsfest.cards.SaleCardHeader;
 import dk.dtu.arsfest.navigation.SideNavigation;
 import android.os.Bundle;
 import android.widget.ScrollView;
@@ -65,13 +68,33 @@ public class TicketSaleActivity extends BaseActivity {
 	private void createCards() {
 		
 		iniPriceCard();
+		iniHeader();
 		
 	}
 	
 	private void iniPriceCard() {
+		/*Card card = new Card(this);
+		SaleCardHeader saleCardHeader = new SaleCardHeader(this);
+		card.addCardHeader(saleCardHeader);
+		
+		CardView cardView = (CardView) findViewById(R.id.card_price);
+        cardView.setCard(card);*/
 		PriceTicketCard card = new PriceTicketCard(this);
         CardView cardView = (CardView) findViewById(R.id.card_price);
         cardView.setCard(card);
+		
+	}
+	
+	private void iniHeader(){
+		//Create a Card
+		  Card card = new Card(this);
+
+		  //Create a CardHeader
+		  CardHeader header = new CardHeader(this);
+
+		  //Add header to card
+		  card.addCardHeader(header);
+
 		
 	}
 

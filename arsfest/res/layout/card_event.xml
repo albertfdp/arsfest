@@ -34,11 +34,12 @@
         android:layout_height="match_parent"
         >
 
+                   <!--  card:card_header_layout_resourceID="@layout/card_event_header_layout" -->
+        
         <it.gmariotti.cardslib.library.view.component.CardHeaderView
             style="@style/card.header_outer_layout"
             android:id="@+id/card_header_layout"
             android:layout_width="match_parent"
-            card:card_header_layout_resourceID="@layout/card_event_header_layout"
             android:layout_height="wrap_content"/>
 
         <LinearLayout

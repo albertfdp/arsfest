@@ -17,6 +17,7 @@ import com.devspark.sidenavigation.SideNavigationView.Mode;
 import com.google.analytics.tracking.android.EasyTracker;
 
 import dk.dtu.arsfest.cards.HappenningNowCard;
+import dk.dtu.arsfest.cards.PostEventCard;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.navigation.SideNavigation;
@@ -113,10 +114,9 @@ public class MainActivity extends BaseActivity {
 	private void createArsfestFinishedCard() {
 		cards = new ArrayList<Card>();
 		
-		Card card = new Card(this);
-		card.setTitle("aLL EVENTS ARE FINISHED DUDE!");
+		PostEventCard card = new PostEventCard(this);
 		
-		cards.add(card);
+		cards.add(0,card);
 		
 		CardArrayAdapter cardArrayAdapter = new CardArrayAdapter(this, cards);
 		CardListView cardsView = (CardListView) findViewById(R.id.arsfest_events_list);

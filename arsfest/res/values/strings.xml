@@ -108,5 +108,5 @@
     <string name="card_price_suggested_title">Dinner and Dance: 250 kr</string>
     <string name="card_price_suggested_member">Dance: 175 kr (admission after 21.00)</string>
     <string name="card_price_suggested_community">Only 4 tickets per person, payment in cash.</string>
-	<string name="card_price_header">Ticket Sale Information</string>
+	<string name="card_price_header">Price</string>
 </resources>

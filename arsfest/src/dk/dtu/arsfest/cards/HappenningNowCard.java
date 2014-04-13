@@ -7,8 +7,6 @@ import android.graphics.drawable.GradientDrawable;
 import android.text.format.DateUtils;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 import dk.dtu.arsfest.R;
@@ -21,8 +19,7 @@ public class HappenningNowCard extends EventCard{
 	private String member;
 	private String subtitle;
 	private String community;
-	
-	private ImageView locationImage;
+
 	
 	private Typeface font;
 	

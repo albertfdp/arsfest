@@ -51,7 +51,7 @@ public class PriceTicketCard extends Card{
 class SuggestedCardHeader extends CardHeader {
 
     public SuggestedCardHeader(Context context) {
-        super(context, R.layout.card_price_header_inner);
+        super(context, R.layout.card_sales_header_inner);
     }
     
     public SuggestedCardHeader(Context context, int innerLayout) {
@@ -63,7 +63,7 @@ class SuggestedCardHeader extends CardHeader {
     public void setupInnerViewElements(ViewGroup parent, View view) {
 
         if (view != null) {
-            TextView textView = (TextView) view.findViewById(R.id.text_price_card1);
+            TextView textView = (TextView) view.findViewById(R.id.text_suggested_card1);
             
             if (textView != null) {
                 textView.setText(R.string.card_price_header);
