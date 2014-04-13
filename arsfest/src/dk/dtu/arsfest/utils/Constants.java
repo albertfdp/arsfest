@@ -121,5 +121,6 @@ public class Constants {
 	public static final String NetworkInfo = "Network is disabled in your device";
 	public static final String GPSInfo = "GPS is disabled in your device";
 	public static final CharSequence UnsuccessfulLocatization = "We cannot localize you in the area of 101";
+	public static final double AzimuthTreshold = 25;
 	
 }

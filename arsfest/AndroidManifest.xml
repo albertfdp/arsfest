@@ -8,18 +8,15 @@
         android:minSdkVersion="13"
         android:targetSdkVersion="19" />
 
-    <!-- PERMISSIONS NEEDED BUT I DON'T KNOW WHERE: -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <!-- Needed for AlarmManagerBroadcastReceiver: -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- PERMISSIONS TO EVALUATE IF NECESSARY: -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     
-    <!-- LocationService -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />   
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -74,8 +71,10 @@
         -->
         <service android:name="dk.dtu.arsfest.sensors.OrientationService" />
 		<service android:name="dk.dtu.arsfest.sensors.LocationService" />
+		<!--
         <service android:name="dk.dtu.arsfest.notification.MyNotificationService" />
         <service android:name="dk.dtu.arsfest.notification.MyOneTimeNotificationService" />
+        -->
         <!-- Receiver for location awareness: -->
 
         <!--
@@ -87,5 +86,4 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyD8T9OKMXJDbhJtPpOQPRQdrAhU0v33xl4" />
     </application>
-
 </manifest>

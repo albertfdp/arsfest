@@ -18,6 +18,7 @@ import dk.dtu.arsfest.sensors.LocationService;
 import dk.dtu.arsfest.sensors.OrientationService;
 import dk.dtu.arsfest.utils.Constants;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.app.AlertDialog;
@@ -151,8 +152,7 @@ public class MapActivity extends BaseActivity {
 								"Your location based on BSSID:"
 										+ mBSSID.getCurrentLocation(),
 								Toast.LENGTH_LONG).show();
-						
-						
+
 					} else {
 						if (!mProviders) {
 							if (!mPreferences.getBoolean(
@@ -250,7 +250,8 @@ public class MapActivity extends BaseActivity {
 								+ "; Longitude " + mLongitude + "; Azimuth: "
 								+ mAzimuth, Toast.LENGTH_LONG).show();
 
-				
+				mMapWebView.loadUrl("javascript:position(370, 420)");
+
 				uCantHandleThat.removeCallbacks(runForYourLife);
 			}
 
@@ -258,6 +259,7 @@ public class MapActivity extends BaseActivity {
 					Constants.OrientationActionTag)) {
 				setAzimuth(mReceivedIntent.getDoubleExtra(
 						Constants.OrientationFlagAzimuth, 0));
+				mMapWebView.loadUrl("javascript:rotation(" + mAzimuth + ")");
 			}
 
 			if (mReceivedIntent.getAction()
@@ -310,20 +312,22 @@ public class MapActivity extends BaseActivity {
 	};
 
 	private void setAzimuth(double mAzimuth) {
-		this.mAzimuth = mAzimuth;
+		this.mAzimuth = mAzimuth - Constants.AzimuthTreshold;
 	}
 
+	@SuppressLint("SetJavaScriptEnabled")
 	private void setWebView(final String mInitialLocation, boolean ifPIN) {
 		mMapWebView = (WebView) findViewById(R.id.webViewMap);
+		GenerateHTML mHTML = new GenerateHTML(
+				mLocalization.getScroll(mInitialLocation), ifPIN);
 		mMapWebView.loadDataWithBaseURL("file:///android_asset/images/",
-				generateHTML(mLocalization.getScroll(mInitialLocation), ifPIN),
-				"text/html", "utf-8", null);
+				mHTML.getmHTML(), "text/html", "utf-8", null);
+		mMapWebView.getSettings().setJavaScriptEnabled(true);
 
 		mMapWebView.setWebViewClient(new WebViewClient() {
 			@Override
 			public void onPageFinished(WebView v, String url) {
 				super.onPageFinished(v, url);
-
 				v.getSettings().setUseWideViewPort(true);
 				v.getSettings().setLoadWithOverviewMode(true);
 				v.getSettings().setBuiltInZoomControls(false);
@@ -358,23 +362,6 @@ public class MapActivity extends BaseActivity {
 				return false;
 			}
 		});
-	}
-
-	private String generateHTML(int[] pinPosition, boolean showPIN) {
-		String mHTML = "";
-		mHTML += "<html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" /><style type='text/css'>";
-		if (showPIN) {
-			mHTML += ".pin {position:absolute;margin:" + (pinPosition[1] - 100)
-					+ "px 0 0 " + (pinPosition[0] - 42) + "px;}";
-		} else {
-			mHTML += ".pin {display:none}";
-		}
-		mHTML += "body {background-image: url(map.png);height:"
-				+ Constants.MapDimentions[1] + "px;matgin:0;padding:0;width:"
-				+ Constants.MapDimentions[0] + "px}";
-		mHTML += "</style>";
-		mHTML += "<body><img src=\"pin.png\" class=\"pin\"></body>";
-		return mHTML;
 	}
 
 	private void buildAlertMessage(String mMessage, final String mIntent,
