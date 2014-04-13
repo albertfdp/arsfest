@@ -108,10 +108,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
 
 - (void)startLocationUpdateTimer
 {
-    NSDate *startDate = [NSDate dateWithYear:2014 month:5 day:9 hour:15];
-    NSDate *endDate = [NSDate dateWithYear:2014 month:5 day:10 hour:5];
-    
-    if ([ARSUserController isUserLoggedIn] && [NSDate currentDateIsBetween:startDate and:endDate]) {
+    if ([ARSUserController isUserLoggedIn] && [NSDate currentDateIsBetween:ARSFEST_START_DATE and:ARSFEST_END_DATE]) {
         self.updateLocationTimer = [NSTimer scheduledTimerWithTimeInterval:REFRESH_RATE_LOCATION target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
         [[ARSUserController sharedUserController] updateUserLocation];
     }

@@ -14,10 +14,17 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
     }
     return self;
 }
 
+
+- (void)awakeFromNib
+{
+    ARSCarouselThumbnail *thumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
+    thumbnail.type = ARSCarouselThumbnailTypeTimer;
+    [self addSubview:thumbnail];
+    [self setContentSize:thumbnail.frame.size];
+}
 
 @end

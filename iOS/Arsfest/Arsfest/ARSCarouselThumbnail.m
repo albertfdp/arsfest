@@ -9,26 +9,31 @@
 #import "ARSCarouselThumbnail.h"
 
 @implementation ARSCarouselThumbnail
+@synthesize type;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        
     }
     return self;
 }
 
-+ (ARSCarouselThumbnail*)eventThumbnailFrom:(ARSEvent*)event
-{
-#warning Incomplete Implementation
-    return nil;
-}
 
-+ (ARSCarouselThumbnail*)informationThumbnail
+- (void)setType:(ARSCarouselThumbnailType)newType
 {
-#warning Incomplete Implementation
-    return nil;
+    switch (newType) {
+        case ARSCarouselThumbnailTypeTimer:
+            [self.imageView setHidden:YES];
+            [self.timerLabel setCountDownToDate:ARSFEST_START_DATE];
+            break;
+            
+        default:
+            break;
+    }
+    
+    type = newType;
 }
 
 

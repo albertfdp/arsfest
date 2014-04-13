@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ARSCarouselThumbnail.h"
 
 @interface ARSCarousel : UIScrollView
 

@@ -28,7 +28,5 @@ typedef NS_ENUM(NSInteger, ARSCarouselThumbnailType) {
 @property (weak, nonatomic) ARSEvent *event;
 @property (nonatomic, assign) ARSCarouselThumbnailType type;
 
-+ (ARSCarouselThumbnail*)eventThumbnailFrom:(ARSEvent*)event;
-+ (ARSCarouselThumbnail*)informationThumbnail;
 
 @end
