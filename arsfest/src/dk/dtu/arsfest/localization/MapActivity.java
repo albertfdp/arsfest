@@ -207,6 +207,22 @@ public class MapActivity extends BaseActivity {
 		return true;
 	}
 
+	private void onPositionChange(double x, double y) {
+		mMapWebView.loadUrl("javascript:position(" + (int) x + ", " + (int) y
+				+ ")");
+		mMapScroll = new ScrollHelper(new int[] { (int) x, (int) y },
+				new int[] { mMapWebView.getMeasuredWidth(),
+						mMapWebView.getMeasuredHeight() },
+				mMapWebView.getScale());
+		mMapWebView.loadUrl("javascript:pageScroll("
+				+ mMapScroll.getScroll()[0] + ", " + mMapScroll.getScroll()[1]
+				+ ")");
+	}
+
+	private void onAzimuthChange(double d) {
+		mMapWebView.loadUrl("javascript:rotation(" + (int) d + ")");
+	}
+
 	private class SensorsReceiver extends BroadcastReceiver {
 
 		@Override
@@ -231,8 +247,13 @@ public class MapActivity extends BaseActivity {
 								+ "; Longitude " + mLongitude + "; Azimuth: "
 								+ mAzimuth, Toast.LENGTH_LONG).show();
 
-				mMapWebView.loadUrl("javascript:position(370, 420)");
+				double lat = 55.785949;
+				double lon = 12.525475;
 
+				double xScroll = 1000;
+				double YScroll = 420;
+
+				onPositionChange(xScroll, YScroll);
 				uCantHandleThat.removeCallbacks(runForYourLife);
 			}
 
@@ -240,7 +261,8 @@ public class MapActivity extends BaseActivity {
 					Constants.OrientationActionTag)) {
 				setAzimuth(mReceivedIntent.getDoubleExtra(
 						Constants.OrientationFlagAzimuth, 0));
-				mMapWebView.loadUrl("javascript:rotation(" + mAzimuth + ")");
+				onAzimuthChange(mAzimuth);
+
 			}
 
 			if (mReceivedIntent.getAction()
@@ -294,23 +316,16 @@ public class MapActivity extends BaseActivity {
 			@Deprecated
 			public void onNewPicture(WebView view, Picture picture) {
 				// view.getSettings().setDefaultZoom(ZoomDensity.FAR);
-				view.getSettings().setUseWideViewPort(false);
+				mMapWebView.setWebViewClient(null);
+				mMapWebView.getSettings().setUseWideViewPort(false);
 				mMapScroll = new ScrollHelper(mLocalization
 						.getScroll(mInitialLocation), new int[] {
 						view.getMeasuredWidth(), view.getMeasuredHeight() },
 						view.getScale());
-				view.scrollTo(mMapScroll.getScroll()[0],
+				mMapWebView.scrollTo(mMapScroll.getScroll()[0],
 						mMapScroll.getScroll()[1]);
 				mProgressBar.setVisibility(View.INVISIBLE);
-			}
-		});
-
-		mMapWebView.setOnTouchListener(new OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent e) {
 				mMapWebView.setPictureListener(null);
-				mProgressBar.setVisibility(View.INVISIBLE);
-				return false;
 			}
 		});
 	}

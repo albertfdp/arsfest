@@ -76,6 +76,13 @@ public class LocationService extends Service {
 		sendBroadcast(ProviderInfoIntent);
 	}
 
+	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
+		sendGPSIntent();
+		sendProviderInfoIntent();
+		return super.onStartCommand(intent, flags, startId);
+	}
+
 	private double getLatitude() {
 		return mLatitude;
 	}
