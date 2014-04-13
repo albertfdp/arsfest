@@ -31,9 +31,10 @@ public class EventInfoCard extends Card {
 			TextView location = (TextView) view.findViewById(R.id.card_event_inner_content_location);
 			TextView time = (TextView) view.findViewById(R.id.card_event_inner_content_time);
 			
-			if (title != null)
+			if (title != null) {
 				title.setTypeface(font);
 				title.setText(event.getName());
+			}
 			
 			if (location != null)
 				location.setText(event.getParent().getName());
