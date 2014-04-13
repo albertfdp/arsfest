@@ -15,5 +15,10 @@
         android:id="@+id/side_navigation_old_events"
         android:icon="@drawable/ic_action_event"
         android:title="@string/action_old_events"/>
+    
+    <item
+        android:id="@+id/side_navigation_tickets"
+        android:icon="@drawable/ic_action_event"
+        android:title="@string/action_tickets"/>
 
 </menu>

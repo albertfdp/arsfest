@@ -16,7 +16,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    
+
     <!-- LocationService -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -31,7 +31,7 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.Arsfest" >
         <activity
-            android:name=".SplashActivity"
+            android:name="dk.dtu.arsfest.SplashActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -41,12 +41,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="dk.dtu.arsfest.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".MenuActivity"
+            android:name="dk.dtu.arsfest.MenuActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
@@ -73,10 +73,11 @@
         </activity>
         -->
         <service android:name="dk.dtu.arsfest.sensors.OrientationService" />
-		<service android:name="dk.dtu.arsfest.sensors.LocationService" />
+        <service android:name="dk.dtu.arsfest.sensors.LocationService" />
         <service android:name="dk.dtu.arsfest.notification.MyNotificationService" />
         <service android:name="dk.dtu.arsfest.notification.MyOneTimeNotificationService" />
         <!-- Receiver for location awareness: -->
+
 
         <!--
         <receiver android:name="dk.dtu.arsfest.alarms.AlarmManagerBroadcastReceiver" >
@@ -86,6 +87,15 @@
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyD8T9OKMXJDbhJtPpOQPRQdrAhU0v33xl4" />
+
+        <activity
+            android:name="dk.dtu.arsfest.TicketSaleActivity"
+            android:label="@string/title_activity_ticket_sale"
+            android:parentActivityName="dk.dtu.arsfest.BaseActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dk.dtu.arsfest.BaseActivity" />
+        </activity>
     </application>
 
 </manifest>
