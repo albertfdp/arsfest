@@ -7,7 +7,7 @@
 //
 
 // Constants
-#define kNumberOfLocations 4
+#define kNumberOfLocations 5
 
 // Parse
 #define kParseApplicationId @"vDLtONCuZIlrt6wEnfHrFbIDVhoW3cxUCAGEx2j5"

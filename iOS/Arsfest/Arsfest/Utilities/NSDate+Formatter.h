@@ -15,6 +15,6 @@
 + (BOOL)currentDateIsBetween:(NSDate*)startDate and:(NSDate*)endDate;
 + (NSString*)hourMinuteStringFromDate:(NSDate*)date;
 
-+ (NSDate*)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour
++ (NSDate*)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour;
 
 @end

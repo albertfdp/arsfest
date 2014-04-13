@@ -184,7 +184,7 @@
 - (void)initializeScrollingMenu
 {
     //Setting up scrolling menu
-    [_menuScrollView addButtonsWithTitles:[NSArray arrayWithObjects:@"ALL",@"KANTINE",@"OTICON HALL",@"LIBRARY",@"SPORTS HALL", nil]];
+    [_menuScrollView addButtonsWithTitles:[NSArray arrayWithObjects:@"ALL",@"CANTEEN",@"THE TENT",@"OTICON HALL",@"LIBRARY",@"SPORTS HALL", nil]];
     [_menuScrollView setSelectionDelegate:self];
 }
 

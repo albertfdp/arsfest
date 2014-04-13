@@ -13,7 +13,8 @@ typedef enum {
     ARSLocationSportsHall,
     ARSLocationLibrary,
     ARSLocationOticonSalen,
-    ARSLocationKantine,
+    ARSLocationTent,
+    ARSLocationCanteen,
     ARSLocationAll,
 } ARSLocationType;
 
