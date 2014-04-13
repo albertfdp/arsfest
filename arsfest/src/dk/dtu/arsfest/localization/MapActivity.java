@@ -67,9 +67,9 @@ public class MapActivity extends BaseActivity {
 						.show();
 				mMapWebView.loadUrl("javascript:hide()");
 			} else {
+				mAccuracy = Constants.EstimatedBSSIDAccuracy;
 				int[] mScroll = mLocalization.getScroll(mBSSIDLocation);
 				onPositionChange(mScroll[0], mScroll[1]);
-				//TODO Handle accuracy
 			}
 		}
 	};
@@ -208,8 +208,8 @@ public class MapActivity extends BaseActivity {
 	}
 
 	private void onPositionChange(double x, double y) {
-		if (x < 0 || y < 0 || x < Constants.MapDimentions[0]
-				|| y < Constants.MapDimentions[1]) {
+		if (x > 0 && y > 0 && x < Constants.MapDimentions[0]
+				&& y < Constants.MapDimentions[1]) {
 			mMapWebView.loadUrl("javascript:position(" + (int) x + ", "
 					+ (int) y + ")");
 			mMapScroll = new ScrollHelper(new int[] { (int) x, (int) y },
@@ -219,6 +219,8 @@ public class MapActivity extends BaseActivity {
 			mMapWebView.loadUrl("javascript:pageScroll("
 					+ mMapScroll.getScroll()[0] + ", "
 					+ mMapScroll.getScroll()[1] + ")");
+			mMapWebView.loadUrl("javascript:showCircle(" + (int) x + ", "
+					+ (int) y + ", " + (int) (mAccuracy * Constants.meterToPixel) + ")");
 		} else {
 			uCantHandleThat.postDelayed(runForYourLife, 1000);
 		}
@@ -266,8 +268,6 @@ public class MapActivity extends BaseActivity {
 
 					double[] mScroll = toPixels.getScroll();
 					onPositionChange(mScroll[0], mScroll[1]);
-					
-					//TODO Handle accuracy
 				}
 			}
 
