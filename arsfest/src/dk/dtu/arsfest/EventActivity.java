@@ -59,15 +59,15 @@ public class EventActivity extends BaseActivity {
 		CardView infoCardView = (CardView) findViewById(R.id.card_event_info);
 		infoCardView.setCard(info);
 		
-		//if (event.isMenu()) {
-		Card descriptionCard = new EventDescriptionCard(this, event);
-		CardView descriptionCardView = (CardView) findViewById(R.id.card_event_description);
-		descriptionCardView.setCard(descriptionCard);
-		/*else {
+		if (event.getMenu().isEmpty()) {
 			Card descriptionCard = new EventDescriptionCard(this, event);
-			CardView descriptionCardView = (CardView) findViewById(R.id.card_event_menu);
+			CardView descriptionCardView = (CardView) findViewById(R.id.card_event_description);
 			descriptionCardView.setCard(descriptionCard);
-		}*/
+		} else {
+			Card menuCard = new EventMenuCard(this, event);
+			CardView menuCardView = (CardView) findViewById(R.id.card_event_description);
+			menuCardView.setCard(menuCard);
+		}
 		
 		Card mapCard = new EventMapCard(this, event);
 		CardView mapCardView = (CardView) findViewById(R.id.card_event_map);

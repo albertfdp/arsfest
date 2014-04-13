@@ -3,18 +3,170 @@
     android:layout_height="wrap_content" >
 
     <!-- Use same ID to use built-in features -->
-
-    <TextView
-        android:id="@+id/card_event_inner_content_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp" />
+	<TextView
+	    android:id="@+id/card_event_menu_starter_label"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="Starter"
+	    android:textSize="14sp"
+	    android:padding="10dp"
+	    android:textAllCaps="true"
+	    android:textColor="@color/flat_black"
+	    android:textStyle="bold"
+	    android:gravity="center"/>
+	
+	<LinearLayout 
+	  	android:id="@+id/card_event_menu_starter"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/card_event_menu_starter_label"
+       android:orientation="horizontal">
+       
+            <ImageView
+	       android:id="@+id/card_event_menu_starter_icon"
+	       android:src="@drawable/ic_action_place"
+	       android:layout_gravity="center"
+	       android:padding="3dp"
+	       android:layout_marginLeft="5dp"
+	       android:layout_width="40dip"
+	       android:layout_height="40dip" />
+	
+	<TextView
+	    android:id="@+id/card_event_menu_starter_text"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:textSize="16sp"
+	    android:padding="10dp"
+	    android:textStyle="italic"
+	    android:textColor="@color/flat_grey"
+	    android:gravity="left"/>
+          
+     	</LinearLayout>
+     	
+	<TextView
+	    android:id="@+id/card_event_menu_main_label"
+	    android:layout_below="@+id/card_event_menu_starter"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="Main"
+	    android:textSize="14sp"
+	    android:padding="10dp"
+	    android:textAllCaps="true"
+	    android:textColor="@color/flat_black"
+	    android:textStyle="bold"
+	    android:gravity="center"/>
+     	
+	<LinearLayout 
+	   android:id="@+id/card_event_menu_main"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/card_event_menu_main_label"
+       android:orientation="horizontal">
+       
+            <ImageView
+	       android:id="@+id/card_event_menu_main_icon"
+	       android:src="@drawable/ic_action_place"
+	       android:layout_gravity="center"
+	       android:padding="3dp"
+	       android:layout_marginLeft="5dp"
+	       android:layout_width="40dip"
+	       android:layout_height="40dip" />
+	
+	<TextView
+	    android:id="@+id/card_event_menu_main_text"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:textSize="16sp"
+	    android:padding="10dp"
+	    android:textStyle="italic"
+	    android:textColor="@color/flat_grey"
+	    android:gravity="left"/>
+          
+     	</LinearLayout>
+     	
+	<TextView
+	    android:id="@+id/card_event_menu_coffee_label"
+	    android:layout_below="@+id/card_event_menu_main"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="Coffee"
+	    android:textSize="14sp"
+	    android:padding="10dp"
+	    android:textAllCaps="true"
+	    android:textColor="@color/flat_black"
+	    android:textStyle="bold"
+	    android:gravity="center"/>
+     	
+	<LinearLayout 
+	    android:id="@+id/card_event_menu_coffee"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/card_event_menu_coffee_label"
+       android:orientation="horizontal">
+       
+            <ImageView
+	       android:id="@+id/card_event_menu_coffee_icon"
+	       android:src="@drawable/ic_action_place"
+	       android:layout_gravity="center"
+	       android:padding="3dp"
+	       android:layout_marginLeft="5dp"
+	       android:layout_width="40dip"
+	       android:layout_height="40dip" />
+	
+	<TextView
+	    android:id="@+id/card_event_menu_coffee_text"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:textSize="16sp"
+	    android:padding="10dp"
+	    android:textStyle="italic"
+	    android:textColor="@color/flat_grey"
+	    android:gravity="left"/>
+          
+     	</LinearLayout>
+	
+	<TextView
+	    android:id="@+id/card_event_menu_drinks_label"
+	    android:layout_below="@+id/card_event_menu_coffee"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="Drinks"
+	    android:textSize="14sp"
+	    android:padding="10dp"
+	    android:textAllCaps="true"
+	    android:textColor="@color/flat_black"
+	    android:textStyle="bold"
+	    android:gravity="center"/>
+     	
+	<LinearLayout 
+	    android:id="@+id/card_event_menu_drinks"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/card_event_menu_drinks_label"
+       android:orientation="horizontal">
+       
+            <ImageView
+	       android:id="@+id/card_event_menu_drinks_icon"
+	       android:src="@drawable/ic_action_place"
+	       android:layout_gravity="center"
+	       android:padding="3dp"
+	       android:layout_marginLeft="5dp"
+	       android:layout_width="40dip"
+	       android:layout_height="40dip" />
+	
+	<TextView
+	    android:id="@+id/card_event_menu_drinks_text"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:textSize="16sp"
+	    android:padding="10dp"
+	    android:textStyle="italic"
+	    android:textColor="@color/flat_grey"
+	    android:gravity="left"/>
+          
+     	</LinearLayout>
+	
+	
     
-    <TextView
-        android:id="@+id/card_event_inner_content_location"
-        android:paddingTop="5dp"
-        style="@style/carddemo_suggested_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
 </RelativeLayout>

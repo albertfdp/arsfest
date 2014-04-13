@@ -11,26 +11,39 @@ import dk.dtu.arsfest.model.Event;
 public class EventMenuCard extends Card {
 	
 	private Event event;
-
+	
 	public EventMenuCard(Context context, Event event) {
 		super(context, R.layout.card_event_menu_inner_content);
 		this.event = event;
 	}
 	
 	@Override
-	public void setupInnerViewElements(ViewGroup parent, View view) {
+    public void setupInnerViewElements(ViewGroup parent, View view) {
 		
 		if (view != null) {
-			TextView title = (TextView) view.findViewById(R.id.card_event_inner_content_title);
-			TextView location = (TextView) view.findViewById(R.id.card_event_inner_content_location);
 			
-			if (title != null)
-				title.setText(event.getName());
+			TextView starter = (TextView) view.findViewById(R.id.card_event_menu_starter_text);
+			TextView main = (TextView) view.findViewById(R.id.card_event_menu_main_text);
+			TextView coffee = (TextView) view.findViewById(R.id.card_event_menu_coffee_text);
+			TextView drinks = (TextView) view.findViewById(R.id.card_event_menu_drinks_text);
 			
-			if (location != null)
-				location.setText(event.getParent().getName());
+			if (starter != null) {
+				starter.setText(event.getMenu().get(0).getName());
+			}
+			
+			if (main != null) {
+				main.setText(event.getMenu().get(1).getName());
+			}
+			
+			if (coffee != null) {
+				coffee.setText(event.getMenu().get(2).getName());
+			}
+			
+			if (drinks != null) {
+				drinks.setText(event.getMenu().get(3).getName());
+			}
 		}
-		
-	}
+
+    }
 
 }
