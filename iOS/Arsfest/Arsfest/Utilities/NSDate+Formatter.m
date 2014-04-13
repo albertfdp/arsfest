@@ -42,4 +42,16 @@
             && [endDate compare:currentDate] == NSOrderedDescending);
 }
 
++ (NSDate*)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour
+{
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    [comps setHour:hour];
+    [comps setDay:day];
+    [comps setMonth:month];
+    [comps setYear:year];
+    
+    NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:comps];
+    return date;
+}
+
 @end
