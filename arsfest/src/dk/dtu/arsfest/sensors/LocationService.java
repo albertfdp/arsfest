@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
-import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
@@ -15,7 +14,6 @@ import android.util.Log;
 public class LocationService extends Service {
 
 	private String holdErrorInformation = "LocationListener error";
-	private final IBinder mLocationBinder = new LocationBinder();
 	private Location clientsLastLocation;
 	private LocationManager mLocationManager = null;
 	private String[] mProvidersStrings = { LocationManager.NETWORK_PROVIDER,
@@ -151,12 +149,6 @@ public class LocationService extends Service {
 
 	@Override
 	public IBinder onBind(Intent intent) {
-		return mLocationBinder;
-	}
-
-	public class LocationBinder extends Binder {
-		public LocationService getService() {
-			return LocationService.this;
-		}
+		return null;
 	}
 }

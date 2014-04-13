@@ -7,14 +7,12 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
 public class OrientationService extends Service implements SensorEventListener {
 
 	private String holdErrorInformation = "SensorEventListener error";
-	private final IBinder mOrientationBinder = new OrientationBinder();
 	private SensorManager mSensorManager;
 	private Sensor mSensorAccelerometer, mSensorMagneticField;
 	private float[] mValuesAccelerometer, mValuesMagneticField;
@@ -92,22 +90,16 @@ public class OrientationService extends Service implements SensorEventListener {
 	}
 
 	@Override
-	public IBinder onBind(Intent intent) {
-		return mOrientationBinder;
-	}
-
-	public class OrientationBinder extends Binder {
-		public OrientationService getService() {
-			return OrientationService.this;
-		}
-	}
-
-	@Override
 	public void onDestroy() {
 		super.onDestroy();
 		if (mSensorManager != null) {
 			mSensorManager.unregisterListener(this, mSensorAccelerometer);
 			mSensorManager.unregisterListener(this, mSensorMagneticField);
 		}
+	}
+
+	@Override
+	public IBinder onBind(Intent intent) {
+		return null;
 	}
 }
