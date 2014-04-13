@@ -123,4 +123,10 @@ public class Constants {
 	public static final CharSequence UnsuccessfulLocatization = "We cannot localize you in the area of 101";
 	public static final double AzimuthTreshold = 25;
 	
+	public static final double aLeftCoefficientMap = 5.80162601623;
+	public static final double bLeftCoefficientMap = -16.8665276907;
+	public static final double leftRightLengthMap = 0.0033;
+	public static final double aTopCoefficientMap = -0.172365470853;
+	public static final double bTopCoefficientMap = 57.9460962716;
+	public static final double topDownLengthMap   = 0.0018;
 }

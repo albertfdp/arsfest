@@ -32,7 +32,6 @@ import android.content.SharedPreferences.Editor;
 import android.graphics.Picture;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -54,6 +53,7 @@ public class MapActivity extends BaseActivity {
 	private ProgressBar mProgressBar;
 	private LocalizationHelper mLocalization;
 	private ScrollHelper mMapScroll;
+	private String mBSSIDLocation = null;
 	private double mLatitude = 0, mLongitude = 0, mAccuracy = 0, mAzimuth = 0;
 	private boolean mProviders = false;
 	private SharedPreferences mPreferences;
@@ -61,12 +61,20 @@ public class MapActivity extends BaseActivity {
 	private Runnable runForYourLife = new Runnable() {
 		public void run() {
 			mProgressBar.setVisibility(View.INVISIBLE);
-			Toast.makeText(getApplicationContext(),
-					Constants.UnsuccessfulLocatization, Toast.LENGTH_LONG)
-					.show();
+			if (mBSSIDLocation == null) {
+				Toast.makeText(getApplicationContext(),
+						Constants.UnsuccessfulLocatization, Toast.LENGTH_LONG)
+						.show();
+				mMapWebView.loadUrl("javascript:hide()");
+			} else {
+				int[] mScroll = mLocalization.getScroll(mBSSIDLocation);
+				onPositionChange(mScroll[0], mScroll[1]);
+				//TODO Handle accuracy
+			}
 		}
 	};
 	private Intent mIntentOrientation, mIntentLocation;
+	private GeoToPixels toPixels;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -129,15 +137,7 @@ public class MapActivity extends BaseActivity {
 							getApplicationContext());
 					mBSSID.getUpdate();
 					if (mBSSID.isNetworkAvailable()) {
-
-						// TODO Handling the BSSID data
-
-						Toast.makeText(
-								getApplicationContext(),
-								"Your location based on BSSID:"
-										+ mBSSID.getCurrentLocation(),
-								Toast.LENGTH_LONG).show();
-
+						mBSSIDLocation = mBSSID.getCurrentLocation();
 					} else {
 						if (!mProviders) {
 							if (!mPreferences.getBoolean(
@@ -208,15 +208,20 @@ public class MapActivity extends BaseActivity {
 	}
 
 	private void onPositionChange(double x, double y) {
-		mMapWebView.loadUrl("javascript:position(" + (int) x + ", " + (int) y
-				+ ")");
-		mMapScroll = new ScrollHelper(new int[] { (int) x, (int) y },
-				new int[] { mMapWebView.getMeasuredWidth(),
-						mMapWebView.getMeasuredHeight() },
-				mMapWebView.getScale());
-		mMapWebView.loadUrl("javascript:pageScroll("
-				+ mMapScroll.getScroll()[0] + ", " + mMapScroll.getScroll()[1]
-				+ ")");
+		if (x < 0 || y < 0 || x < Constants.MapDimentions[0]
+				|| y < Constants.MapDimentions[1]) {
+			mMapWebView.loadUrl("javascript:position(" + (int) x + ", "
+					+ (int) y + ")");
+			mMapScroll = new ScrollHelper(new int[] { (int) x, (int) y },
+					new int[] { mMapWebView.getMeasuredWidth(),
+							mMapWebView.getMeasuredHeight() },
+					mMapWebView.getScale());
+			mMapWebView.loadUrl("javascript:pageScroll("
+					+ mMapScroll.getScroll()[0] + ", "
+					+ mMapScroll.getScroll()[1] + ")");
+		} else {
+			uCantHandleThat.postDelayed(runForYourLife, 1000);
+		}
 	}
 
 	private void onAzimuthChange(double d) {
@@ -229,7 +234,6 @@ public class MapActivity extends BaseActivity {
 		public void onReceive(Context arg0, Intent mReceivedIntent) {
 
 			if (mReceivedIntent.getAction().equals(Constants.LocationActionTag)) {
-
 				mAccuracy = mReceivedIntent.getFloatExtra(
 						Constants.LocationFlagAccuracy, 0);
 				mLongitude = mReceivedIntent.getDoubleExtra(
@@ -237,24 +241,34 @@ public class MapActivity extends BaseActivity {
 				mLatitude = mReceivedIntent.getDoubleExtra(
 						Constants.LocationFlagLatitude, 0);
 
-				mProgressBar.setVisibility(View.INVISIBLE);
+				if (mLatitude != 0) {
+					uCantHandleThat.removeCallbacks(runForYourLife);
+					mProgressBar.setVisibility(View.INVISIBLE);
 
-				// TODO Handling GPS/Network data
+					Toast.makeText(
+							getApplicationContext(),
+							"Accuracy: " + mAccuracy + "; Latitude: "
+									+ mLatitude + "; Longitude " + mLongitude
+									+ "; Azimuth: " + mAzimuth,
+							Toast.LENGTH_LONG).show();
 
-				Toast.makeText(
-						getApplicationContext(),
-						"Accuracy: " + mAccuracy + "; Latitude: " + mLatitude
-								+ "; Longitude " + mLongitude + "; Azimuth: "
-								+ mAzimuth, Toast.LENGTH_LONG).show();
+					// Testing: Oticon
+					//double mLatitude = 55.786907;
+					//double mLongitude = 12.525935;
 
-				double lat = 55.785949;
-				double lon = 12.525475;
+					toPixels = new GeoToPixels(Constants.aTopCoefficientMap,
+							Constants.bTopCoefficientMap,
+							Constants.aLeftCoefficientMap,
+							Constants.bLeftCoefficientMap,
+							Constants.leftRightLengthMap,
+							Constants.topDownLengthMap,
+							Constants.MapDimentions, mLongitude, mLatitude);
 
-				double xScroll = 1000;
-				double YScroll = 420;
-
-				onPositionChange(xScroll, YScroll);
-				uCantHandleThat.removeCallbacks(runForYourLife);
+					double[] mScroll = toPixels.getScroll();
+					onPositionChange(mScroll[0], mScroll[1]);
+					
+					//TODO Handle accuracy
+				}
 			}
 
 			if (mReceivedIntent.getAction().equals(
@@ -301,12 +315,12 @@ public class MapActivity extends BaseActivity {
 			@Override
 			public void onPageFinished(WebView v, String url) {
 				super.onPageFinished(v, url);
-				v.getSettings().setUseWideViewPort(true);
-				v.getSettings().setLoadWithOverviewMode(true);
-				v.getSettings().setBuiltInZoomControls(false);
-				v.getSettings().setDisplayZoomControls(false);
-				v.getSettings().setSupportZoom(false);
-				v.setInitialScale(100);
+				mMapWebView.getSettings().setUseWideViewPort(true);
+				mMapWebView.getSettings().setLoadWithOverviewMode(true);
+				mMapWebView.getSettings().setBuiltInZoomControls(false);
+				mMapWebView.getSettings().setDisplayZoomControls(false);
+				mMapWebView.getSettings().setSupportZoom(false);
+				mMapWebView.setInitialScale(100);
 			}
 		});
 
@@ -315,7 +329,6 @@ public class MapActivity extends BaseActivity {
 			@Override
 			@Deprecated
 			public void onNewPicture(WebView view, Picture picture) {
-				// view.getSettings().setDefaultZoom(ZoomDensity.FAR);
 				mMapWebView.setWebViewClient(null);
 				mMapWebView.getSettings().setUseWideViewPort(false);
 				mMapScroll = new ScrollHelper(mLocalization

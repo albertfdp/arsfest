@@ -39,7 +39,7 @@ public class GenerateHTML {
 		mHTML += "#gps {display:none;position:absolute;margin:0;" +
 				//"-webkit-transform: rotate(30deg);" +
 				"}";
-		mHTML += "body {background-image: url(map.png);height:"
+		mHTML += "body {background-image: url(map.png);background-repeat: no-repeat;height:"
 				+ Constants.MapDimentions[1] + "px;matgin:0;padding:0;width:"
 				+ Constants.MapDimentions[0] + "px}";
 		mHTML += "</style>";
