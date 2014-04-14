@@ -1,6 +1,7 @@
 package dk.dtu.arsfest;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -26,8 +27,11 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
+import dk.dtu.arsfest.model.Event;
+import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.FileCache;
+import dk.dtu.arsfest.utils.Utils;
 
 public class SplashActivity extends SherlockActivity {
 	
@@ -93,12 +97,14 @@ public class SplashActivity extends SherlockActivity {
 		
 		if (!checkNeedsUpdate()) {
 			updateJson();
-		}/* else {
+		} 
+		
+		if(hasStarted()){
 			Intent intent = new Intent(SplashActivity.this, MainActivity.class);
 			intent.putExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, false);
 			startActivity(intent);
 			finish();
-		}	*/
+		}	
 	}
 	
 	private void updateJson() {
@@ -181,9 +187,18 @@ public class SplashActivity extends SherlockActivity {
 	}
 	
 	private boolean hasStarted(){
+		ArrayList<Location> locations;
 		Date date = new Date();
-		//TODO
-		return false;
+		boolean flag = false;
+		
+		locations = Utils.getProgramme(this);
+		for(Location location : locations){
+			for (Event event : location.getEvents()) {				
+				if((date.after(event.getStartTime())) && (!event.getType().equals(Constants.EVENT_TYPE_SALE)))
+					flag = true;
+			}
+		}
+		return flag;
 	}
 
 }
