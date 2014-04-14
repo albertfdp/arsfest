@@ -129,16 +129,18 @@ public class MainActivity extends BaseActivity {
 		
 		for (Event event : events) {
 			
-			Card card = new HappenningNowCard(this, event);
-			card.setTitle(event.getName());
-			
-			UniversalImageLoaderThumbnail cardThumbnail = new UniversalImageLoaderThumbnail(this);
-			cardThumbnail.setUrl(event.getImage());
-			card.addCardThumbnail(cardThumbnail);
-			
-			card.setShadow(true);
-			
-			cards.add(card);
+			if(!event.getType().equals("ticket sale")){
+				Card card = new HappenningNowCard(this, event);
+				card.setTitle(event.getName());
+				
+				UniversalImageLoaderThumbnail cardThumbnail = new UniversalImageLoaderThumbnail(this);
+				cardThumbnail.setUrl(event.getImage());
+				card.addCardThumbnail(cardThumbnail);
+				
+				card.setShadow(true);
+				
+				cards.add(card);
+			}
 		}
 		
 		cardArrayAdapter = new CardArrayAdapter(this,cards);

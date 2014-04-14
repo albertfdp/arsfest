@@ -1,5 +1,7 @@
 package dk.dtu.arsfest;
 
+import java.util.Date;
+
 import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardHeader;
 import it.gmariotti.cardslib.library.view.CardView;
@@ -12,10 +14,13 @@ import com.google.analytics.tracking.android.EasyTracker;
 
 import dk.dtu.arsfest.cards.EventInfoCard;
 import dk.dtu.arsfest.cards.PriceTicketCard;
-import dk.dtu.arsfest.cards.SaleCardHeader;
+import dk.dtu.arsfest.model.Event;
+import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.navigation.SideNavigation;
 import android.os.Bundle;
 import android.widget.ScrollView;
+
+import dk.dtu.arsfest.utils.*;
 
 
 public class TicketSaleActivity extends BaseActivity {
@@ -67,36 +72,31 @@ public class TicketSaleActivity extends BaseActivity {
 	
 	private void createCards() {
 		
+		iniCardEventInfo();
 		iniPriceCard();
-		iniHeader();
+
 		
 	}
 	
+	private void iniCardEventInfo(){
+		//******************************************************
+		Date date1 = Utils.getFormattedDate("25-04-2014:09:00");
+		Date date2 = null;
+		Location parent = new Location(null, "administration hall in building 101 DTU Lyngby Campus", 0, 0, null, null, null);
+		Event event = new Event("","TICKET SALE","",date1,date2,"administration hall in building 101 DTU Lyngby Campus","","","",null,false,parent);
+		//******************************************************
+		Card info = new EventInfoCard(this, event);
+		CardView infoCardView = (CardView) findViewById(R.id.card_sale_info);
+		infoCardView.setCard(info);
+	}
+	
 	private void iniPriceCard() {
-		/*Card card = new Card(this);
-		SaleCardHeader saleCardHeader = new SaleCardHeader(this);
-		card.addCardHeader(saleCardHeader);
-		
-		CardView cardView = (CardView) findViewById(R.id.card_price);
-        cardView.setCard(card);*/
-		PriceTicketCard card = new PriceTicketCard(this);
+		Card card = new PriceTicketCard(this);
         CardView cardView = (CardView) findViewById(R.id.card_price);
         cardView.setCard(card);
 		
 	}
-	
-	private void iniHeader(){
-		//Create a Card
-		  Card card = new Card(this);
 
-		  //Create a CardHeader
-		  CardHeader header = new CardHeader(this);
-
-		  //Add header to card
-		  card.addCardHeader(header);
-
-		
-	}
 
 
 	@Override

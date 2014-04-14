@@ -39,8 +39,12 @@ public class EventInfoCard extends Card {
 			if (location != null)
 				location.setText(event.getParent().getName());
 			
-			if (time != null)
+			if ((time != null) && (event.getEndTime()!=null)){
 				time.setText(Utils.getEventTime(event.getStartTime()) + " - " + Utils.getEventTime(event.getEndTime()));
+			}
+			if ((time != null) && (event.getEndTime()==null)){
+				time.setText(Utils.getEventFullDate(event.getStartTime()));
+			}
 			
 		}
 

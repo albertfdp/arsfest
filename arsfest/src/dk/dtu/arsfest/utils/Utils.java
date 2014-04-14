@@ -48,4 +48,9 @@ public class Utils {
 		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm", Locale.FRANCE);
 		return formatter.format(date);
 	}
+	
+	public static String getEventFullDate(Date date) {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd MMMM yyyy HH:mm", Locale.FRANCE);
+		return formatter.format(date);
+	}
 }

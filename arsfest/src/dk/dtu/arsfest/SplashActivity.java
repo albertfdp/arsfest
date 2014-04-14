@@ -68,7 +68,7 @@ public class SplashActivity extends SherlockActivity {
 		
 		ticketButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+            	Intent intent = new Intent(SplashActivity.this, TicketSaleActivity.class);
 				intent.putExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, false);
 				startActivity(intent);
 				finish();
@@ -182,6 +182,7 @@ public class SplashActivity extends SherlockActivity {
 	
 	private boolean hasStarted(){
 		Date date = new Date();
+		//TODO
 		return false;
 	}
 

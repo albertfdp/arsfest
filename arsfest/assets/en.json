@@ -390,6 +390,31 @@
                     "theme": "music"
                 }
             ]
-        }
+        },
+        {
+            "id": "l5",
+            "latitude": 55.786489,
+            "longitude": 12.524634,
+            "name": "Administration hall in building 101 DTU Lyngby Campus",
+            "description": "",
+            "color": "#c0392b",
+            "events": [
+                {
+                    "id": "e24",
+                    "name": "Ticket sale",
+                    "image": "dinner",
+                    "startTime": "25-04-2014:09:00",
+                    "endTime": "25-04-2014:09:00",
+                    "location": "l5",
+                    "description": "Over the years there has been a tradition of the queue for ticket sales to begin the day before, on Thursday. You can read more about this queue-party on the PF facebook page or on www.pf.dk. You must stay within the designated areas, and only after 17 o’clock Thursday the 24th of April 2014. During the whole evening there will be fire guards present. Requests made by the fire guards must be met, as they are present for you safety. During the night, queue numbers will be distributed. Your number is you place in the queue when the ticket sales start at 9 o’clock on Friday the 25th of April. Breakfast will be served around 07:00, before the tickets sales start. Employees have the opportunity to buy tickets in the advance sale through their department. If this option is chosen tickets are 375 kr. (dinner and ball) and 175 dkk (ball).",
+                    "type": "ticket sale",
+                    "theme": "Price",
+                    "price": [ "Dinner and Dance: 250 kr", 
+                    		   "Dance: 175 kr (admission after 21.00)", 
+                    		   "Only 4 tickets per person, payment in cash"
+                    		 ]     
+                }
+            ]
+        } 
     ]
 }
