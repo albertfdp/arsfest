@@ -1,5 +1,6 @@
 package dk.dtu.arsfest;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import it.gmariotti.cardslib.library.internal.Card;
@@ -12,6 +13,7 @@ import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.SideNavigationView.Mode;
 import com.google.analytics.tracking.android.EasyTracker;
 
+import dk.dtu.arsfest.cards.EventDescriptionCard;
 import dk.dtu.arsfest.cards.EventInfoCard;
 import dk.dtu.arsfest.cards.PriceTicketCard;
 import dk.dtu.arsfest.model.Event;
@@ -27,6 +29,8 @@ public class TicketSaleActivity extends BaseActivity {
 
 	private SideNavigationView sideNavigationView;	
 	private ScrollView  mScrollView;
+
+	private Event saleEvent;
 	
 	
 	@Override
@@ -43,11 +47,27 @@ public class TicketSaleActivity extends BaseActivity {
 	    getSupportActionBar().setHomeButtonEnabled(true);
 	    getSupportActionBar().setTitle("Ticket Sale Information");
 	    
+	    saleEvent = findSaleEvent(Utils.getProgramme(TicketSaleActivity.this));
+	    
 	    mScrollView = (ScrollView) findViewById(R.id.sale_scrollview);
 	    createCards();
 	    
 	}
 	
+	private Event findSaleEvent(ArrayList<Location> programme) {		
+		Event eventAux = null;
+		for (Location location : programme) {
+			for (Event event : location.getEvents()) {
+				if(event.getType().equals(Constants.EVENT_TYPE_SALE)){
+					event.setParent(location);
+					eventAux = event;
+					eventAux.setEndTime(null);
+				}
+			}
+		}
+		return eventAux;
+	}
+
 	@Override
 	protected void onStart() {
 		super.onStart();
@@ -74,25 +94,27 @@ public class TicketSaleActivity extends BaseActivity {
 		
 		iniCardEventInfo();
 		iniPriceCard();
+		iniDescriptionCard();
 
 		
 	}
 	
 	private void iniCardEventInfo(){
-		//******************************************************
-		Date date1 = Utils.getFormattedDate("25-04-2014:09:00");
-		Date date2 = null;
-		Location parent = new Location(null, "administration hall in building 101 DTU Lyngby Campus", 0, 0, null, null, null);
-		Event event = new Event("","TICKET SALE","",date1,date2,"administration hall in building 101 DTU Lyngby Campus","","","",null,false,parent);
-		//******************************************************
-		Card info = new EventInfoCard(this, event);
+		Card info = new EventInfoCard(this, saleEvent);
 		CardView infoCardView = (CardView) findViewById(R.id.card_sale_info);
 		infoCardView.setCard(info);
 	}
 	
 	private void iniPriceCard() {
-		Card card = new PriceTicketCard(this);
+		Card card = new PriceTicketCard(this,saleEvent);
         CardView cardView = (CardView) findViewById(R.id.card_price);
+        cardView.setCard(card);
+		
+	}
+	
+	private void iniDescriptionCard() {
+		Card card = new EventDescriptionCard(this,saleEvent);
+        CardView cardView = (CardView) findViewById(R.id.card_sale_description);
         cardView.setCard(card);
 		
 	}

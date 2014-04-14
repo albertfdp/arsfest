@@ -20,6 +20,7 @@ public class Event implements Parcelable, Comparable<Event> {
 	private boolean remark = false;
 	private Location parent;
 	
+	
 	public Event (String id, String name) {
 		this.id = id;
 		this.name = name;

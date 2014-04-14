@@ -129,7 +129,7 @@ public class MainActivity extends BaseActivity {
 		
 		for (Event event : events) {
 			
-			if(!event.getType().equals("ticket sale")){
+			if(!event.getType().equals(Constants.EVENT_TYPE_SALE)){
 				Card card = new HappenningNowCard(this, event);
 				card.setTitle(event.getName());
 				

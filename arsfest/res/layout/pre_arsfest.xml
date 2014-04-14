@@ -37,7 +37,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
         android:gravity="center"
-       	android:background="@drawable/button_shape" 
+       	android:background="@drawable/button_selector" 
         android:text="@string/splash_button_tickets" 
         android:textSize="20sp"
         android:textStyle="bold"/>
@@ -50,7 +50,7 @@
         android:layout_alignRight="@+id/splash_button_tickets"
         android:layout_below="@+id/splash_arsfest_subtitle"
         android:layout_marginTop="33dp"
-        android:background="@drawable/button_shape"
+        android:background="@drawable/button_selector"
         android:gravity="center"
         android:text="@string/splash_button_program" 
         android:textSize="20sp"

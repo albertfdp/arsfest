@@ -1,6 +1,7 @@
 package dk.dtu.arsfest.cards;
 
 import dk.dtu.arsfest.R;
+import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.utils.Constants;
 import android.content.Context;
 import android.graphics.Typeface;
@@ -14,9 +15,11 @@ import it.gmariotti.cardslib.library.internal.CardHeader;
 public class PriceTicketCard extends Card{
 
 	private Typeface font;
+	private Event event;
 	
-	public PriceTicketCard(Context context) {
+	public PriceTicketCard(Context context,Event event) {
         this(context, R.layout.card_price_inner_content);
+        this.event = event;
         font = Typeface.createFromAsset(context.getAssets(), Constants.TYPEFONT_NEOSANS);
     }
 
@@ -35,7 +38,7 @@ public class PriceTicketCard extends Card{
 
             if (title != null)
             	title.setTypeface(font);
-                title.setText(R.string.card_price_header);
+                title.setText(event.getTheme());
 
             if (total != null)
                 total.setText(R.string.card_price_suggested_title);

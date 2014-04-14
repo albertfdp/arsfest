@@ -49,6 +49,8 @@ public class Constants {
 	public static final String MENU_TYPE_MAIN = "Main";
 	public static final String MENU_TYPE_DESSERT = "Dessert";
 	public static final String MENU_TYPE_DRINK = "Drinks";
+	
+	public static final String JSON_TAG_PRICE = "price";
 
 	public static final String EXTRA_EVENT = "dk.dtu.arsfest.Event";
 	public static final String EXTRA_LOCATION = "dk.dtu.arsfest.Location";
@@ -61,6 +63,7 @@ public class Constants {
 	public static final String EVENT_TYPE_OFFICIAL = "official";
 	public static final String EVENT_TYPE_FOOD = "food";
 	public static final String EVENT_TYPE_DANCE = "dance";
+	public static final String EVENT_TYPE_SALE = "ticket sale";
 
 	public static final String PREFS_NAME = "ArsFestPrefsFile";
 	public static final int ALARM_FREQUENCY = 60;

@@ -34,6 +34,15 @@
 	                 android:layout_marginRight="12dp"
 	                 android:layout_marginTop="12dp" />
 	             
+	             <it.gmariotti.cardslib.library.view.CardView
+	                 android:id="@+id/card_sale_description"
+	                 android:layout_width="match_parent"
+	                 android:layout_height="wrap_content"
+	                 card:card_layout_resourceID="@layout/card_layout"
+	                 android:layout_marginLeft="12dp"
+	                 android:layout_marginRight="12dp"
+	                 android:layout_marginTop="12dp" />
+	             
 	             
 	             <!-- Empty view-->
             	<View
