@@ -1,10 +1,8 @@
 package dk.dtu.arsfest;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 import it.gmariotti.cardslib.library.internal.Card;
-import it.gmariotti.cardslib.library.internal.CardHeader;
 import it.gmariotti.cardslib.library.view.CardView;
 
 import com.actionbarsherlock.view.Menu;

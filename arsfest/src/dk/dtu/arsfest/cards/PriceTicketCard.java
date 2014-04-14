@@ -30,24 +30,25 @@ public class PriceTicketCard extends Card{
     @Override
     public void setupInnerViewElements(ViewGroup parent, View view) {
 
-        if (view != null) {
-            TextView title = (TextView) view.findViewById(R.id.card_price_inner_content_title);
-            TextView total = (TextView) view.findViewById(R.id.card_price_inner_content_total1);
-            TextView dance = (TextView) view.findViewById(R.id.card_price_inner_content_dance1);
-            TextView extra = (TextView) view.findViewById(R.id.card_price_inner_content_extra);
+    	if (view != null) {
+    		TextView title = (TextView) view.findViewById(R.id.card_price_inner_content_title);
+	        TextView total = (TextView) view.findViewById(R.id.card_price_inner_content_total1);
+	        TextView dance = (TextView) view.findViewById(R.id.card_price_inner_content_dance1);
+	        TextView extra = (TextView) view.findViewById(R.id.card_price_inner_content_extra);
+	
+	        if (title != null)
+	           	title.setTypeface(font);
+	            title.setText(event.getTheme());
+	
+	        if (total != null)
+	            total.setText(event.getPrice().get(0));
+	
+	        if (dance != null)
+	            dance.setText(event.getPrice().get(1));
+	            
+	        if (extra != null)
+	           extra.setText(event.getPrice().get(2));
 
-            if (title != null)
-            	title.setTypeface(font);
-                title.setText(event.getTheme());
-
-            if (total != null)
-                total.setText(R.string.card_price_suggested_title);
-
-            if (dance != null)
-                dance.setText(R.string.card_price_suggested_member);
-            
-            if (extra != null)
-                extra.setText(R.string.card_price_suggested_community);
             
         }
     }

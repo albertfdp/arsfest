@@ -67,9 +67,20 @@ public class Event implements Parcelable, Comparable<Event> {
 	public void setParent(Location parent) {
 		this.parent = parent;
 	}
+	
+	private ArrayList<String> price = new ArrayList<String>();
+	
+	public ArrayList<String> getPrice() {
+		return price;
+	}
+
+	public void setPrice(ArrayList<String> price) {
+		this.price = price;
+	}
+
 
 	public Event(String id, String name, String image, Date startTime, Date endTime, 
-			String location, String description, String type, String theme, ArrayList<Course> menu, boolean remark, Location parent) {
+			String location, String description, String type, String theme, ArrayList<Course> menu, boolean remark, Location parent,ArrayList<String> price) {
 		
 		this.id = id;
 		this.name = name;
@@ -82,6 +93,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.menu = menu;
 		this.remark = remark;
 		this.parent = parent;
+		this.price = price;
 	}
 	
 	public String getId() {
@@ -144,6 +156,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		dest.writeString(theme);
 		dest.writeTypedList(menu);
 		dest.writeParcelable(parent, flags);
+		dest.writeList(price);
 	}
 	
 	public static final Parcelable.Creator<Event> CREATOR = new Parcelable.Creator<Event>() {
@@ -170,6 +183,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.theme = in.readString();
 		in.readTypedList(this.menu, Course.CREATOR);
 		this.parent = in.readParcelable(Location.class.getClassLoader());
+		this.price = in.createStringArrayList();
 	}
 
 	public boolean hasStarted(Date currentTime) {
