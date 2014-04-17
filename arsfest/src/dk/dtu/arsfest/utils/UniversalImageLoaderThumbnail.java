@@ -1,14 +1,12 @@
 package dk.dtu.arsfest.utils;
 
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-
 import it.gmariotti.cardslib.library.internal.CardThumbnail;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class UniversalImageLoaderThumbnail extends CardThumbnail {
 	
