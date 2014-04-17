@@ -108,10 +108,10 @@ public class Constants {
 	public static final String OrientationFlagAzimuth = "ArsfestAzimuth";
 
 	public static final String Library = "Library";
-	public static final String Oticon = "Oticon";
-	public static final String SportsHall = "SportsHall";
+	public static final String Oticon = "Oticon Hall";
+	public static final String SportsHall = "Sports Hall";
 	public static final String Canteen = "Canteen";
-	public static final String Tent = "Tent";
+	public static final String Tent = "The Tent";
 
 	public static final String MapStartLocation = "MapStartLocation";
 	public static final String MapShowPin = "MapShowPin";
