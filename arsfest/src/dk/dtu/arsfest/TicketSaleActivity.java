@@ -12,6 +12,7 @@ import com.devspark.sidenavigation.SideNavigationView.Mode;
 import com.google.analytics.tracking.android.EasyTracker;
 
 import dk.dtu.arsfest.cards.EventDescriptionCard;
+import dk.dtu.arsfest.cards.EventImageCard;
 import dk.dtu.arsfest.cards.EventInfoCard;
 import dk.dtu.arsfest.cards.PriceTicketCard;
 import dk.dtu.arsfest.model.Event;
@@ -90,11 +91,19 @@ public class TicketSaleActivity extends BaseActivity {
 	
 	private void createCards() {
 		
+		initCardImage();
 		iniCardEventInfo();
 		iniPriceCard();
 		iniDescriptionCard();
 
 		
+	}
+	
+	private void initCardImage() {
+		Card eventImageCard = new EventImageCard(this, saleEvent);		
+		eventImageCard.setTitle(saleEvent.getName());		
+		CardView cardView = (CardView) findViewById(R.id.card_event_image);
+		cardView.setCard(eventImageCard);
 	}
 	
 	private void iniCardEventInfo(){

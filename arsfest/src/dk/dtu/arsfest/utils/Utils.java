@@ -33,7 +33,7 @@ public class Utils {
 	}
 	
 	public static Date getFormattedDate(String eventDate) {
-		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy:HH:mm", Locale.FRANCE);
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy:HH:mm", Locale.ENGLISH);
 		Date formattedDate;
 		try {
 			formattedDate = (Date) formatter.parse(eventDate);
@@ -45,12 +45,12 @@ public class Utils {
 	}
 	
 	public static String getEventTime(Date date) {
-		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm", Locale.FRANCE);
+		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
 		return formatter.format(date);
 	}
 	
 	public static String getEventFullDate(Date date) {
-		SimpleDateFormat formatter = new SimpleDateFormat("dd MMMM yyyy HH:mm", Locale.FRANCE);
+		SimpleDateFormat formatter = new SimpleDateFormat("dd MMMM yyyy HH:mm", Locale.ENGLISH);
 		return formatter.format(date);
 	}
 }
