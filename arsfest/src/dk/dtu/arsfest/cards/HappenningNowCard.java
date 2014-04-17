@@ -74,9 +74,9 @@ public class HappenningNowCard extends EventCard{
 			this.community = event.getParent().getName();
 			
 			if (event.hasStarted()) {
-				setSubtitle(Constants.Ends + DateUtils.getRelativeTimeSpanString(event.getEndTime().getTime()).toString());
+				setSubtitle(getContext().getText(R.string.ends) + DateUtils.getRelativeTimeSpanString(event.getEndTime().getTime()).toString());
 			} else {
-				setSubtitle(Constants.Starts + DateUtils.getRelativeTimeSpanString(event.getStartTime().getTime()).toString());
+				setSubtitle(getContext().getText(R.string.starts) + DateUtils.getRelativeTimeSpanString(event.getStartTime().getTime()).toString());
 			}
 			
 		}

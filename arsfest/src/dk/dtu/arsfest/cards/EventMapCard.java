@@ -25,13 +25,14 @@ public class EventMapCard extends Card {
 	private String mLocation;
 	private Context mContext;
 	private WebView mWebView;
-	private LocalizationHelper mLocalization = new LocalizationHelper();
+	private LocalizationHelper mLocalization;
 	private ScrollHelper mMapScroll;
 
 	public EventMapCard(Context context, Event event) {
 		super(context, R.layout.card_event_map_layout);
 		this.mContext = context;
 		this.mLocation = event.getParent().getName();
+		mLocalization = new LocalizationHelper(getContext());
 	}
 
 	@Override
@@ -60,7 +61,8 @@ public class EventMapCard extends Card {
 					mWebView.getSettings().setSupportZoom(false);
 					mWebView.setInitialScale(100);
 					RelativeLayout.LayoutParams mParms = new RelativeLayout.LayoutParams(
-							mWebView.getMeasuredWidth(), mWebView.getMeasuredWidth());
+							mWebView.getMeasuredWidth(), mWebView
+									.getMeasuredWidth());
 					mWebView.setLayoutParams(mParms);
 				}
 			});

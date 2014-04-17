@@ -122,7 +122,7 @@ public class SplashActivity extends SherlockActivity {
 				 * progressBar.setProgress(0);
 				 */
 				dialog = new ProgressDialog(mContext);
-				dialog.setMessage(Constants.Loading);
+				dialog.setMessage(getText(R.string.loading));
 				dialog.setIndeterminate(false);
 				dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 				dialog.setCancelable(true);

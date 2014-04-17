@@ -2,7 +2,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" 
     android:background="@drawable/selector_slideout">
-
+     
     <ImageView
         android:id="@+id/menu_icon"
         android:layout_width="30dip"
@@ -21,5 +21,5 @@
         android:textSize="20sp"
         android:gravity="center_vertical"
         android:textColor="@color/flat_white"/>
-        
+       
 </LinearLayout>

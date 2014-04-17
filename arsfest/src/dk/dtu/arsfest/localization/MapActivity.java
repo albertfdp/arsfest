@@ -63,7 +63,7 @@ public class MapActivity extends BaseActivity {
 			mProgressBar.setVisibility(View.INVISIBLE);
 			if (mBSSIDLocation == null) {
 				Toast.makeText(getApplicationContext(),
-						Constants.UnsuccessfulLocatization, Toast.LENGTH_LONG)
+						getApplicationContext().getString(R.string.unsuccessfullocatization), Toast.LENGTH_LONG)
 						.show();
 				mMapWebView.loadUrl("javascript:hide()");
 			} else {
@@ -95,7 +95,7 @@ public class MapActivity extends BaseActivity {
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
 		getSupportActionBar().setTitle("Map");
-		mLocalization = new LocalizationHelper();
+		mLocalization = new LocalizationHelper(getApplicationContext());
 
 		Intent i = getIntent();
 		setWebView(i.getStringExtra(Constants.MapStartLocation),
@@ -143,7 +143,7 @@ public class MapActivity extends BaseActivity {
 							if (!mPreferences.getBoolean(
 									Constants.NetworkRequest, false)) {
 								buildAlertMessage(
-										Constants.NetworkInfo,
+										getString(R.string.networkoff),
 										android.provider.Settings.ACTION_WIFI_SETTINGS,
 										Constants.NetworkRequest);
 							}
@@ -289,7 +289,7 @@ public class MapActivity extends BaseActivity {
 				if (!mProviders) {
 					if (!mPreferences.getBoolean(Constants.GPSRequest, false)) {
 						buildAlertMessage(
-								Constants.GPSInfo,
+								getString(R.string.gpsoff),
 								android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS,
 								Constants.GPSRequest);
 					}
@@ -349,20 +349,20 @@ public class MapActivity extends BaseActivity {
 		alertDialogBuilder
 				.setMessage(mMessage)
 				.setCancelable(false)
-				.setPositiveButton(Constants.AlertDialogEnable,
+				.setPositiveButton(getString(R.string.enable),
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int id) {
 								Intent callSettingIntent = new Intent(mIntent);
 								startActivity(callSettingIntent);
 							}
 						});
-		alertDialogBuilder.setNeutralButton(Constants.AlertDialogCancel,
+		alertDialogBuilder.setNeutralButton(getString(R.string.cancel),
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int id) {
 						dialog.cancel();
 					}
 				});
-		alertDialogBuilder.setNegativeButton(Constants.AlertDialogStopAsking,
+		alertDialogBuilder.setNegativeButton(getString(R.string.stopasking),
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int id) {
 						SharedPreferences mPreferences = getApplicationContext()
