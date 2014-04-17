@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- ACTIVITIES -->
-    <string name="activity_main">Events</string>
-
-    <!-- SPLASH -->
     <string name="splash_title">DTU \u00C5rsfest</string>
     <string name="splash_subtitle">Coming next 9th May 2014</string>
     <string name="splash_json_error">Could not fetch updated programme.</string>
     <string name="app_name">DTU \u00C5rsfest</string>
-    <string name="action_settings">Settings</string>    
+    <string name="action_settings">Settings</string>
     <string name="loading">Loading...</string>
+    <string name="activity_main">Events</string>
     <string name="events">Events</string>
     <string name="ends">Ends </string>
     <string name="starts">Starts </string>
@@ -38,9 +35,11 @@
     <string name="about_tracking_info">Due to academical reasons and for learning about user experience, the app is anonymously tracking certain user interactions, such as the number of visualizations of each screen of the app.</string>
     <string name="splash_button_program">Programme</string>
     <string name="splash_button_tickets">Tickets Sale</string>
-    <string name="title_activity_ticket_sale">TicketSaleActivity</string>    
+    <string name="title_activity_ticket_sale">TicketSaleActivity</string>
     <string name="card_price_suggested_title">Dinner and Dance: 250 kr</string>
     <string name="card_price_suggested_member">Dance: 175 kr (admission after 21.00)</string>
     <string name="card_price_suggested_community">Only 4 tickets per person, payment in cash.</string>
-	<string name="card_price_header">Price</string>
+    <string name="card_price_header">Price</string>
+    <string name="json">"dk.json"</string>
+
 </resources>

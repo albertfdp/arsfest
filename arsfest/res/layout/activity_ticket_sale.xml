@@ -6,61 +6,59 @@
     android:layout_height="fill_parent"
     android:background="@color/flat_greyed"
     android:orientation="vertical" >
-        
-        <ScrollView
+
+    <ScrollView
         android:id="@+id/sale_scrollview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" >
 
-	        <LinearLayout
-	            android:orientation="vertical"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content">
-	            
-	            <it.gmariotti.cardslib.library.view.CardView
-	                 android:id="@+id/card_sale_info"
-	                 android:layout_width="match_parent"
-	                 android:layout_height="wrap_content"
-	                 android:layout_marginLeft="12dp"
-	                 android:layout_marginRight="12dp"
-	                 android:layout_marginTop="12dp" 
-	                 card:card_layout_resourceID="@layout/card_layout"/>
-	            
-	             <it.gmariotti.cardslib.library.view.CardView
-	                 android:id="@+id/card_price"
-	                 android:layout_width="match_parent"
-	                 android:layout_height="wrap_content"
-	                 android:layout_marginLeft="12dp"
-	                 android:layout_marginRight="12dp"
-	                 android:layout_marginTop="12dp" />
-	             
-	             
-	             
-	             <it.gmariotti.cardslib.library.view.CardView
-	                 android:id="@+id/card_sale_description"
-	                 android:layout_width="match_parent"
-	                 android:layout_height="wrap_content"
-	                 card:card_layout_resourceID="@layout/card_layout"
-	                 android:layout_marginLeft="12dp"
-	                 android:layout_marginRight="12dp"
-	                 android:layout_marginTop="12dp" />
-	             
-	             <it.gmariotti.cardslib.library.view.CardView
-				    android:id="@+id/card_event_image"
-				    android:layout_width="match_parent"
-				    android:layout_height="wrap_content"
-				    android:layout_marginLeft="12dp"
-				    android:layout_marginRight="12dp"
-				    card:card_layout_resourceID="@layout/card_thumbnail_layout"
-				    android:layout_marginTop="12dp"/>
-	             
-	             
-	             <!-- Empty view-->
-            	<View
-	                android:layout_width="match_parent"
-	                android:layout_height="15dp"/>
-			</LinearLayout>
-		</ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <it.gmariotti.cardslib.library.view.CardView
+                android:id="@+id/card_sale_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                card:card_layout_resourceID="@layout/card_layout" />
+
+            <it.gmariotti.cardslib.library.view.CardView
+                android:id="@+id/card_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp" />
+
+            <it.gmariotti.cardslib.library.view.CardView
+                android:id="@+id/card_sale_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                card:card_layout_resourceID="@layout/card_layout" />
+
+            <it.gmariotti.cardslib.library.view.CardView
+                android:id="@+id/card_event_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                card:card_layout_resourceID="@layout/card_thumbnail_layout" />
+
+            <!-- Empty view -->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+        </LinearLayout>
+    </ScrollView>
 
     <com.devspark.sidenavigation.SideNavigationView
         android:id="@+id/side_navigation_view"
@@ -68,4 +66,3 @@
         android:layout_height="match_parent" />
 
 </RelativeLayout>
-

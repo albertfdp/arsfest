@@ -6,7 +6,7 @@ public class Constants {
 	public static final String TAG = "ARSFEST";
 	public static final String IMG_CONTENT_PROVIDER_URL = "https://dl.dropboxusercontent.com/u/3792125/arsfest2014/assets/img/";
 	public static final String JSON_URL = "https://dl.dropboxusercontent.com/u/3792125/arsfest2014/assets/data/data.json";
-	public static final String JSON_CACHE_FILENAME = "en.json";
+	//public static final String JSON_CACHE_FILENAME = "en.json";
 	public static final String EXTRA_EVENT = "dk.dtu.arsfest.Event";
 	public static final String JSON_DATE_FORMAT = "dd-MM-yyyy:HH:mm";
 	public static final String EVENT_TYPE_SALE = "ticket sale";

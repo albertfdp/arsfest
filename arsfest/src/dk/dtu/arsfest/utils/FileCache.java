@@ -53,7 +53,7 @@ public class FileCache {
 		InputStream fis;
 		LocationList list;
 		try {
-			fis = context.getAssets().open(Constants.JSON_CACHE_FILENAME);
+			fis = context.getAssets().open(Utils.getJSON(context));
 			list = gson.fromJson(new InputStreamReader(fis, "UTF-8"), LocationList.class);
 			
 			return list.getLocations();

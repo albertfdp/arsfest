@@ -50,7 +50,7 @@ public class SplashActivity extends SherlockActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.pre_arsfest);
+		setContentView(R.layout.activity_pre_arsfest);
 
 		mContext = this;
 
@@ -147,7 +147,7 @@ public class SplashActivity extends SherlockActivity {
 
 				try {
 					FileCache.createCacheFile(getApplicationContext(),
-							Constants.JSON_CACHE_FILENAME, response);
+							Utils.getJSON(getApplicationContext()), response);
 				} catch (IOException e) {
 					Log.e(Constants.TAG, e.getMessage());
 				}

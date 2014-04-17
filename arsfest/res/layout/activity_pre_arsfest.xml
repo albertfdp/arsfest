@@ -5,28 +5,28 @@
     android:background="@color/palette_lilinperucca"
     android:gravity="fill_horizontal"
     android:orientation="vertical" >
-    
+
     <TextView
         android:id="@+id/splash_arsfest_title"
-        android:textSize="36sp"
-        android:gravity="center"
-        android:textColor="@android:color/white"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
         android:layout_above="@+id/splash_arsfest_subtitle"
-        android:text="@string/splash_title" 
-        android:textStyle="bold"/>
-    
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="@string/splash_title"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/splash_arsfest_subtitle"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:textColor="@android:color/white"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:text="@string/splash_subtitle"/>
+        android:gravity="center"
+        android:text="@string/splash_subtitle"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/splash_button_tickets"
@@ -35,15 +35,15 @@
         android:layout_below="@+id/splash_button_program"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
+        android:background="@drawable/button_selector"
+        android:drawableLeft="@drawable/ticket"
+        android:drawablePadding="2dip"
         android:gravity="center"
-       	android:background="@drawable/button_selector" 
-       	android:drawableLeft="@drawable/ticket"
-       	android:drawablePadding="2dip"
-       	android:paddingLeft="30dip"
-    	android:paddingRight="26dip"
-        android:text="@string/splash_button_tickets" 
+        android:paddingLeft="30dip"
+        android:paddingRight="26dip"
+        android:text="@string/splash_button_tickets"
         android:textColor="@color/white"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/splash_button_program"
@@ -56,11 +56,11 @@
         android:background="@drawable/button_selector"
         android:drawableLeft="@drawable/calendar_arsfest"
         android:drawablePadding="2dip"
-       	android:paddingLeft="30dip"
-    	android:paddingRight="26dip"
         android:gravity="center"
-        android:text="@string/splash_button_program" 
-        android:textSize="20sp"
-        android:textColor="@color/white"/>
+        android:paddingLeft="30dip"
+        android:paddingRight="26dip"
+        android:text="@string/splash_button_program"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
 </RelativeLayout>
