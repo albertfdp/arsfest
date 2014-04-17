@@ -8,50 +8,51 @@
     <string name="splash_title">DTU \u00C5rsfest</string>
     <string name="splash_subtitle">Coming next 9th May 2014</string>
     <string name="splash_json_error">Could not fetch updated programme.</string>
-    <string name="app_name">DTU \u00C5rsfest</string>
+    <!--<string name="app_name">DTU \u00C5rsfest</string>-->
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <!--<string name="hello_world">Hello world!</string>
     <string name="rest_task_title">Calling</string>
     <string name="rest_task_message">Loading ...</string>
     <string name="countdown_days">DAYS</string>
     <string name="countdown_days_value">99</string>
     <string name="countdown_hours">HOURS</string>
-    <string name="countdown_hours_value">99</string>
-    <string name="countdown_mins">MINUTES</string>
-    <string name="countdown_mins_value">99</string>
-    <string name="countdown_secs">SECONDS</string>
-    <string name="countdown_secs_value">99</string>
-    <string name="event_image_description">Image of the event</string>
-    <string name="ico">.ico</string>
-    <string name="wifi_title">WiFi Disabled</string>
-    <string name="wifi_option1">Enable</string>
-    <string name="wifi_option2">Don\'t remind</string>
-    <string name="wifi_option3">OK</string>
-    <string name="wifi_txt">There is no WiFi enabled right now. The application you want to use was aimed to use information provided by your WiFi card. Please enable your WiFi connection.</string>
-    <string name="time">Time</string>
-    <string name="place">Place</string>
-    <string name="setAlarm">Set Alarm</string>
-    <string name="viewMap">View Map</string>
-    <string name="map">SEE IT ON THE MAP</string>
-    <string name="default_event_location">Sports Hall</string>
-    <string name="default_event_time">21:00</string>
-    <string name="default_event_name">Event name</string>
-    <string name="default_event_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo faucibus nisi, id rhoncus tellus pretium eget. Curabitur vitae orci eu tortor ultricies porttitor. </string>
-    <string name="event_finished">FINISHED</string>
-    <string name="event_happening_now">HAPPENING NOW</string>
-    <string name="happening_now">NOW</string>
-    <string name="default_course_name">Course Name</string>
-    <string name="default_course_type">Course Type</string>
-    <string name="menu_name">MENU</string>
+    <string name="countdown_hours_value">99</string>-->
+    <!--<string name="countdown_mins">MINUTES</string>-->
+    <!--<string name="countdown_mins_value">99</string>-->
+    <!--<string name="countdown_secs">SECONDS</string>-->
+    <!--<string name="countdown_secs_value">99</string>-->
+    <!--<string name="event_image_description">Image of the event</string>-->
+    <!--<string name="ico">.ico</string>-->
+    <!--<string name="wifi_title">WiFi Disabled</string>-->
+   <!-- <string name="wifi_option1">Enable</string>-->
+    <!--<string name="wifi_option2">Don\'t remind</string>-->
+    <!--<string name="wifi_option3">OK</string>-->
+    <!--<string name="wifi_txt">There is no WiFi enabled right now. The application you want to use was aimed to use information provided by your WiFi card. Please enable your WiFi connection.</string>-->
+    <!--<string name="time">Time</string>-->
+    <!--<string name="place">Place</string>-->
+    <!--<string name="setAlarm">Set Alarm</string>-->
+    <!--<string name="viewMap">View Map</string>-->
+    <!--<string name="map">SEE IT ON THE MAP</string>-->
+    <!--<string name="default_event_location">Sports Hall</string>-->
+    <!--<string name="default_event_time">21:00</string>-->
+    <!--<string name="default_event_name">Event name</string>-->
+    <!--<string name="default_event_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo faucibus nisi, id rhoncus tellus pretium eget. Curabitur vitae orci eu tortor ultricies porttitor. </string>-->
+    <!--<string name="event_finished">FINISHED</string>-->
+    <!--<string name="event_happening_now">HAPPENING NOW</string>-->
+    <!--<string name="happening_now">NOW</string>-->
+    <!--<string name="default_course_name">Course Name</string>-->
+    <!--<string name="default_course_type">Course Type</string>-->
+    <!--<string name="menu_name">MENU</string>-->
     <string name="card_finished_message">The \u00C5rsfest 2014 is over</string>
     <string name="card_finished_submessage">Thank you for your attendance</string>
-
+<!--
     <string-array name="default_categories">
         <item>All</item>
         <item>Muisc</item>
     </string-array>
-
+-->
     <!-- Accordeon menu -->
+    <!--
     <string name="menu">Menu</string>
     <string name="item_one">Programme</string>
     <string name="item_two">Show Map</string>
@@ -59,8 +60,9 @@
     <string name="item_four">About</string>
     <string name="DTU">DTU</string>
     <string name="date">3rd May 2013</string>
-
+-->
     <!-- About -->
+    <!--
     <string name="feedback">Rate us on Google Play</string>
     <string name="version">1.3.3</string>
     <string name="about">© 2013 Team Avocado on the beerware licence.\n\nAdrian Alan Pol, &lt;adrianalan.pol@gmail.com&gt;\nAlbert Fernandez de la Peña, &lt;albertfdp@gmail.com&gt;\nJavier Calvo, &lt;javier1988c@gmail.com&gt;\n\nwrote this app. As long as you retain this notice you can do whatever you want with this stuff. If we meet some day, and you think this stuff is worth it, you can buy us a beer in return.\n\nThis application has been developed as project for course 02827 Mobile Application Prototyping.</string>
@@ -74,6 +76,7 @@
     <string name="card_no_events_message">DTU \u00C5rsfest 2013</string>
     <string name="card_no_events_submessage">The are currently no events</string>
     <string name="card_not_started_submessage">3 May 2013</string>
+    -->
 
     <!-- Actions -->
     <string name="action_save">Save</string>
@@ -84,23 +87,26 @@
     <string name="action_tickets">Tickets Sale</string>
 
     <!-- Map -->
-    <string name="mapview">MAP</string>
+    <!--
+    <string name="mapview">MAP</string>-->
     <string name="showmylocation">Show My Location</string>
 
     <!-- Preferences -->
+    <!--
     <string name="pref_ask_wifi">Ask the user to turn on WiFi</string>
-    <string name="pref_ask_wifi_title">Check WiFi connectivity</string>
-    <string name="pref_update_wifi_setting">WiFi</string>
+    <string name="pref_ask_wifi_title">Check WiFi connectivity/string>
+    <string name="pref_update_wifi_setting">WiFi</string>-->
     <string name="about_tracking">Tracking</string>
     <string name="about_tracking_info">Due to academical reasons and for learning about user experience, the app is anonymously tracking certain user interactions, such as the number of visualizations of each screen of the app.</string>
 
     <!-- Notifications -->
     <!-- <string name="menu_set_alarm">Remind me</string> -->
+    <!--
     <string name="vibration2">Vibrate on alarm</string>
     <string name="vibration">VIBRATION</string>
     <string name="youralarms">SET YOUR ALARMS</string>
     <string name="show_more">SHOW MORE...</string>
-    <string name="show_less">SHOW LESS</string>
+    <string name="show_less">SHOW LESS</string>-->
     <string name="splash_button_program">Programme</string>
     <string name="splash_button_tickets">Tickets Sale</string>
     <string name="title_activity_ticket_sale">TicketSaleActivity</string>
