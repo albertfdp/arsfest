@@ -9,27 +9,10 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 public abstract class BaseActivity extends SherlockActivity {
-	
-	protected ImageLoader imageLoader = ImageLoader.getInstance();
-	
+		
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        // Create global configuration and initialize
-        // ImageLoader with this configuration
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-	    	.showImageOnLoading(R.drawable.ic_empty)
-	    	.showImageOnFail(R.drawable.ic_error)
-	    	.cacheInMemory(true)
-	    	.cacheOnDisc(true)
-	    	.build();
-        
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
-			.defaultDisplayImageOptions(options)
-			.build();
-        
-        imageLoader.init(config);
         
     }
 	

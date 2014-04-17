@@ -24,7 +24,7 @@
        
             <ImageView
 	       android:id="@+id/card_event_menu_starter_icon"
-	       android:src="@drawable/ic_action_place"
+	       android:src="@drawable/beer"
 	       android:layout_gravity="center"
 	       android:padding="3dp"
 	       android:layout_marginLeft="5dp"
@@ -65,7 +65,7 @@
        
             <ImageView
 	       android:id="@+id/card_event_menu_main_icon"
-	       android:src="@drawable/ic_action_place"
+	       android:src="@drawable/cutlery"
 	       android:layout_gravity="center"
 	       android:padding="3dp"
 	       android:layout_marginLeft="5dp"
@@ -106,7 +106,7 @@
        
             <ImageView
 	       android:id="@+id/card_event_menu_coffee_icon"
-	       android:src="@drawable/ic_action_place"
+	       android:src="@drawable/coffee"
 	       android:layout_gravity="center"
 	       android:padding="3dp"
 	       android:layout_marginLeft="5dp"
@@ -147,7 +147,7 @@
        
             <ImageView
 	       android:id="@+id/card_event_menu_drinks_icon"
-	       android:src="@drawable/ic_action_place"
+	       android:src="@drawable/glass"
 	       android:layout_gravity="center"
 	       android:padding="3dp"
 	       android:layout_marginLeft="5dp"
