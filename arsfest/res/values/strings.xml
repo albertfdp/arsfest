@@ -101,8 +101,8 @@
     <string name="youralarms">SET YOUR ALARMS</string>
     <string name="show_more">SHOW MORE...</string>
     <string name="show_less">SHOW LESS</string>
-    <string name="splash_button_program">See Program</string>
-    <string name="splash_button_tickets">See Tickets Sale</string>
+    <string name="splash_button_program">Programme</string>
+    <string name="splash_button_tickets">Tickets Sale</string>
     <string name="title_activity_ticket_sale">TicketSaleActivity</string>
     
     <string name="card_price_suggested_title">Dinner and Dance: 250 kr</string>

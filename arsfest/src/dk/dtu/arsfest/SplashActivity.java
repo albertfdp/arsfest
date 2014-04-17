@@ -95,7 +95,7 @@ public class SplashActivity extends SherlockActivity {
 	public void onStart() {
 		super.onStart();
 		
-		if (!checkNeedsUpdate()) {
+		if (checkNeedsUpdate()) {
 			updateJson();
 		} 
 		

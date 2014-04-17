@@ -26,8 +26,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:text="@string/splash_subtitle"
-        android:textStyle="bold"/>
+        android:text="@string/splash_subtitle"/>
 
     <Button
         android:id="@+id/splash_button_tickets"
@@ -38,9 +37,13 @@
         android:layout_marginTop="26dp"
         android:gravity="center"
        	android:background="@drawable/button_selector" 
+       	android:drawableLeft="@drawable/ic_action_event"
+       	android:drawablePadding="2dip"
+       	android:paddingLeft="30dip"
+    	android:paddingRight="26dip"
         android:text="@string/splash_button_tickets" 
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textColor="@color/white"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/splash_button_program"
@@ -51,9 +54,13 @@
         android:layout_below="@+id/splash_arsfest_subtitle"
         android:layout_marginTop="33dp"
         android:background="@drawable/button_selector"
+        android:drawableLeft="@drawable/ic_action_event"
+        android:drawablePadding="2dip"
+       	android:paddingLeft="30dip"
+    	android:paddingRight="26dip"
         android:gravity="center"
         android:text="@string/splash_button_program" 
         android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textColor="@color/white"/>
 
 </RelativeLayout>
