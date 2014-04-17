@@ -68,19 +68,19 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.parent = parent;
 	}
 	
-	private ArrayList<String> price = new ArrayList<String>();
+	private ArrayList<Price> prices = new ArrayList<Price>();
 	
-	public ArrayList<String> getPrice() {
-		return price;
+	public ArrayList<Price> getPrices() {
+		return prices;
 	}
 
-	public void setPrice(ArrayList<String> price) {
-		this.price = price;
+	public void setPrices(ArrayList<Price> prices) {
+		this.prices = prices;
 	}
 
 
 	public Event(String id, String name, String image, Date startTime, Date endTime, 
-			String location, String description, String type, String theme, ArrayList<Course> menu, boolean remark, Location parent,ArrayList<String> price) {
+			String location, String description, String type, String theme, ArrayList<Course> menu, boolean remark, Location parent,ArrayList<Price> prices) {
 		
 		this.id = id;
 		this.name = name;
@@ -93,7 +93,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.menu = menu;
 		this.remark = remark;
 		this.parent = parent;
-		this.price = price;
+		this.prices = prices;
 	}
 	
 	public String getId() {
@@ -156,7 +156,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		dest.writeString(theme);
 		dest.writeTypedList(menu);
 		dest.writeParcelable(parent, flags);
-		dest.writeList(price);
+		dest.writeTypedList(prices);
 	}
 	
 	public static final Parcelable.Creator<Event> CREATOR = new Parcelable.Creator<Event>() {
@@ -183,7 +183,7 @@ public class Event implements Parcelable, Comparable<Event> {
 		this.theme = in.readString();
 		in.readTypedList(this.menu, Course.CREATOR);
 		this.parent = in.readParcelable(Location.class.getClassLoader());
-		this.price = in.createStringArrayList();
+		in.readTypedList(this.prices, Price.CREATOR);
 	}
 
 	public boolean hasStarted(Date currentTime) {

@@ -97,35 +97,6 @@
             "color": "#2980b9",
             "events": [
                 {
-                    "id": "e7",
-                    "name": "Dinner",
-                    "image": "dinner",
-                    "startTime": "09-05-2014:19:15",
-                    "endTime": "09-05-2014:21:30",
-                    "location": "l1",
-                    "description": "",
-                    "type": "official",
-                    "theme": "food",
-                    "menu": [
-                        {
-                            "course": "Starter",
-                            "name": "Salmon rillette topped with lime marinated shrimp with fresh herbs. Salad with whole cherry tomatoes and fresh green asparagus, served with chili or ginger dressing. Served with pumpkin bun."
-                        },
-                        {
-                            "course": "Main",
-                            "name": "Roasted fillet of beef with raisin sauce. Baked vegetables with sweet beets and golden beets. Small baked potatoes with herbs. Fried plums with vanilla."
-                        },
-                        {
-                            "course": "Coffee",
-                            "name": "Coffee/tea and petit fours."
-                        },
-                        {
-                            "course": "Drinks",
-                            "name": "A glass of white wine will be served with the starter, and a glass of red wine will be served with the main course. Extra wine can be ordered in the S-house. 1 bottle costs 95 kr in presale and 120 kr on the night. The wine will be delivered during the starter. Drinks can also be bought at the bar on the night. White wine: 2013 Chardonnay, William Cole – Casablanca Valley (Chile). Red wine: 2012 Comte de Roc Oval – Costieres de Nîmes (France)"
-                        }
-                    ]
-                },
-                {
                     "id": "e8",
                     "name": "Dance with me! Ballroom",
                     "image": "",
@@ -177,7 +148,7 @@
             "longitude": 12.525871,
             "name": "Oticon Hall",
             "description": "",
-            "color": "#c0392b",
+            "color": "#1abc9c",
             "events": [
                 {
                     "id": "e12",
@@ -242,37 +213,8 @@
             "longitude": 12.525008,
             "name": "The Tent",
             "description": "",
-            "color": "#c0392b",
+            "color": "#7f8c8d",
             "events": [
-                {
-                    "id": "e17",
-                    "name": "Dinner",
-                    "image": "dinner",
-                    "startTime": "09-05-2014:19:15",
-                    "endTime": "09-05-2014:21:30",
-                    "location": "l3",
-                    "description": "",
-                    "type": "official",
-                    "theme": "food",
-                    "menu": [
-                        {
-                            "course": "Starter",
-                            "name": "Salmon rillette topped with lime marinated shrimp with fresh herbs. Salad with whole cherry tomatoes and fresh green asparagus, served with chili or ginger dressing. Served with pumpkin bun."
-                        },
-                        {
-                            "course": "Main",
-                            "name": "Roasted fillet of beef with raisin sauce. Baked vegetables with sweet beets and golden beets. Small baked potatoes with herbs. Fried plums with vanilla."
-                        },
-                        {
-                            "course": "Coffee",
-                            "name": "Coffee/tea and petit fours."
-                        },
-                        {
-                            "course": "Drinks",
-                            "name": "A glass of white wine will be served with the starter, and a glass of red wine will be served with the main course. Extra wine can be ordered in the S-house. 1 bottle costs 95 kr in presale and 120 kr on the night. The wine will be delivered during the starter. Drinks can also be bought at the bar on the night. White wine: 2013 Chardonnay, William Cole – Casablanca Valley (Chile). Red wine: 2012 Comte de Roc Oval – Costieres de Nîmes (France)"
-                        }
-                    ]
-                },
                 {
                     "id": "e18",
                     "name": "Les Lanciers",
@@ -339,35 +281,6 @@
             "color": "#c0392b",
             "events": [
                 {
-                    "id": "e23",
-                    "name": "Dinner",
-                    "image": "dinner",
-                    "startTime": "09-05-2014:19:15",
-                    "endTime": "09-05-2014:21:30",
-                    "location": "l4",
-                    "description": "",
-                    "type": "official",
-                    "theme": "food",
-                    "menu": [
-                        {
-                            "course": "Starter",
-                            "name": "Salmon rillette topped with lime marinated shrimp with fresh herbs. Salad with whole cherry tomatoes and fresh green asparagus, served with chili or ginger dressing. Served with pumpkin bun."
-                        },
-                        {
-                            "course": "Main",
-                            "name": "Roasted fillet of beef with raisin sauce. Baked vegetables with sweet beets and golden beets. Small baked potatoes with herbs. Fried plums with vanilla."
-                        },
-                        {
-                            "course": "Coffee",
-                            "name": "Coffee/tea and petit fours."
-                        },
-                        {
-                            "course": "Drinks",
-                            "name": "A glass of white wine will be served with the starter, and a glass of red wine will be served with the main course. Extra wine can be ordered in the S-house. 1 bottle costs 95 kr in presale and 120 kr on the night. The wine will be delivered during the starter. Drinks can also be bought at the bar on the night. White wine: 2013 Chardonnay, William Cole – Casablanca Valley (Chile). Red wine: 2012 Comte de Roc Oval – Costieres de Nîmes (France)"
-                        }
-                    ]
-                },
-                {
                     "id": "e24",
                     "name": "Blå Mandag Jazzband, 1. set",
                     "image": "",
@@ -395,26 +308,80 @@
             "id": "l5",
             "latitude": 55.786489,
             "longitude": 12.524634,
-            "name": "Administration hall in building 101 DTU Lyngby Campus",
+            "name": "DTU 101",
             "description": "",
             "color": "#c0392b",
             "events": [
                 {
                     "id": "e24",
-                    "name": "Ticket sale",
-                    "image": "dinner",
+                    "name": "Ticket sale - Kø-fest",
+                    "image": "kofest",
                     "startTime": "25-04-2014:09:00",
                     "endTime": "25-04-2014:09:00",
                     "location": "l5",
                     "description": "Over the years there has been a tradition of the queue for ticket sales to begin the day before, on Thursday. You can read more about this queue-party on the PF facebook page or on www.pf.dk.\n\nYou must stay within the designated areas, and only after 17 o'clock Thursday the 24th of April 2014. During the whole evening there will be fire guards present. Requests made by the fire guards must be met, as they are present for you safety. During the night, queue numbers will be distributed. Your number is you place in the queue when the ticket sales start at 9 o'clock on Friday the 25th of April. Breakfast will be served around 07:00, before the tickets sales start.\n\nEmployees have the opportunity to buy tickets in the advance sale through their department. If this option is chosen tickets are 375 kr. (dinner and ball) and 175 dkk (ball).",
                     "type": "ticket sale",
                     "theme": "Price",
-                    "price": [ "Dinner and Dance: 250 kr", 
-                    		   "Dance: 175 kr (admission after 21.00)", 
-                    		   "Only 4 tickets per person, payment in cash"
-                    		 ]     
+                    "prices": [
+                        {
+                            "name": "Dinner and Dance",
+                            "price": 250,
+                            "currency": "DKK"
+                        },
+                        {
+                            "name": "Dance",
+                            "price": 175,
+                            "currency": "DKK",
+                            "extra": "Admission after 21:00"
+                        },
+                        {
+                            "name": "Note",
+                            "price": 0,
+                            "currency": "DKK",
+                            "extra": "Only 4 tickets per person. Payment in cash."
+                        }
+                    ]
                 }
             ]
-        } 
+        },
+        {
+            "id": "l6",
+            "latitude": 55.785949,
+            "longitude": 12.525475,
+            "name": "Library - Canteen - Tent",
+            "color": "#f1c40f",
+            "description": "Library - Canteen - Tent",
+            "events": [
+                {
+                    "id": "e23",
+                    "name": "Dinner",
+                    "image": "dinner",
+                    "startTime": "09-05-2014:19:15",
+                    "endTime": "09-05-2014:21:30",
+                    "location": "l6",
+                    "description": "",
+                    "type": "official",
+                    "theme": "food",
+                    "menu": [
+                        {
+                            "course": "Starter",
+                            "name": "Salmon rillette topped with lime marinated shrimp with fresh herbs. Salad with whole cherry tomatoes and fresh green asparagus, served with chili or ginger dressing. Served with pumpkin bun."
+                        },
+                        {
+                            "course": "Main",
+                            "name": "Roasted fillet of beef with raisin sauce. Baked vegetables with sweet beets and golden beets. Small baked potatoes with herbs. Fried plums with vanilla."
+                        },
+                        {
+                            "course": "Coffee",
+                            "name": "Coffee/tea and petit fours."
+                        },
+                        {
+                            "course": "Drinks",
+                            "name": "A glass of white wine will be served with the starter, and a glass of red wine will be served with the main course. Extra wine can be ordered in the S-house. 1 bottle costs 95 kr in presale and 120 kr on the night. The wine will be delivered during the starter. Drinks can also be bought at the bar on the night. White wine: 2013 Chardonnay, William Cole – Casablanca Valley (Chile). Red wine: 2012 Comte de Roc Oval – Costieres de Nîmes (France)"
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

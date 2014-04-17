@@ -1,16 +1,14 @@
 package dk.dtu.arsfest.cards;
 
+import it.gmariotti.cardslib.library.internal.Card;
+import android.content.Context;
+import android.graphics.Typeface;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import dk.dtu.arsfest.R;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.utils.Constants;
-import android.content.Context;
-import android.graphics.Typeface;
-import android.widget.TextView;
-import android.view.View;
-import android.view.ViewGroup;
-
-import it.gmariotti.cardslib.library.internal.Card;
-import it.gmariotti.cardslib.library.internal.CardHeader;
 
 public class PriceTicketCard extends Card{
 
@@ -31,7 +29,14 @@ public class PriceTicketCard extends Card{
     public void setupInnerViewElements(ViewGroup parent, View view) {
 
     	if (view != null) {
-    		TextView title = (TextView) view.findViewById(R.id.card_price_inner_content_title);
+    		TextView priceDanceDinner = (TextView) view.findViewById(R.id.card_price_item_price);
+    		TextView priceDance = (TextView) view.findViewById(R.id.card_price_item_price_dance);
+    		
+    		priceDance.setTypeface(font);
+    		priceDanceDinner.setTypeface(font);
+    		
+    		
+    		/*TextView title = (TextView) view.findViewById(R.id.card_price_inner_content_title);
 	        TextView total = (TextView) view.findViewById(R.id.card_price_inner_content_total1);
 	        TextView dance = (TextView) view.findViewById(R.id.card_price_inner_content_dance1);
 	        TextView extra = (TextView) view.findViewById(R.id.card_price_inner_content_extra);
@@ -41,15 +46,15 @@ public class PriceTicketCard extends Card{
 	            title.setText(event.getTheme());
 	
 	        if (total != null)
-	            total.setText(event.getPrice().get(0));
+	            total.setText(event.getPrices().get(0).getName());
 	
 	        if (dance != null)
-	            dance.setText(event.getPrice().get(1));
+	            dance.setText(event.getPrices().get(1).getName());
 	            
-	        if (extra != null)
-	           extra.setText(event.getPrice().get(2));
+	        //if (extra != null)
+	          // extra.setText(event.getPrices().get(2));
 
-            
+            */
         }
     }
 }

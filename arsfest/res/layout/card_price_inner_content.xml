@@ -1,58 +1,96 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
-	<LinearLayout 
-        android:layout_alignParentTop="true"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/flat_lila"
-       >
-    
-    	<TextView
-	        android:id="@+id/card_price_inner_content_title"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:textSize="24sp"
-	        android:padding="10dp"
-	        android:textAllCaps="true"
-	        android:textColor="@color/flat_light_grey"
-	        android:textStyle="bold"
-	        android:gravity="center"/>
-
-
-    	    
-    	<TextView
-		        android:id="@+id/card_price_inner_content_total1"
-		        style="@style/carddemo_suggested_text_bold1"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:textSize="18sp"
-		        android:paddingLeft="10dp"
-		        android:background="@color/flat_light_grey"
-		        android:text="patata1"/>
-
-		    <TextView
-		        android:id="@+id/card_price_inner_content_dance1"
-		        android:paddingTop="5dp"
-		        style="@style/carddemo_suggested_text_bold1"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:background="@color/flat_light_grey"
-		        android:paddingLeft="10dp"
-		        android:textSize="18sp"
-		        android:text="patata2"/>
+	
+	<LinearLayout
+	    android:id="@+id/card_price_item_dinner_and_dance"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingBottom="3dp"
+	    android:layout_alignParentTop="true"
+	    android:orientation="horizontal" >
 
 	    <TextView
-	        android:id="@+id/card_price_inner_content_extra"
-	        android:paddingTop="5dp"
-	        style="@style/carddemo_suggested_text_bold"
+	        android:id="@+id/card_price_item_price"
+	        android:layout_height="match_parent"
+	        android:layout_width="wrap_content"
+	        android:background="@color/flat_lila"
+	        android:padding="20dp"
+	        android:text="250 DKK"
+	        android:layout_gravity="center_vertical"
+	        android:textColor="@color/white"
+	        android:textSize="20sp"
+	        android:textStyle="bold" />
+
+	    <TextView
+	        android:id="@+id/card_price_item_concept"
+	        android:layout_height="match_parent"
 	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:background="@color/flat_light_grey"
-	        android:paddingLeft="10dp"
-	        android:textSize="16sp"
-	        android:text="patata3"/>
-	        
+	        android:padding="20dp"
+	        android:text="Dinner and Dance"
+	        android:textSize="20sp"
+	        android:textStyle="italic" />
 	</LinearLayout>
+	
+	<LinearLayout
+	    android:id="@+id/card_price_item_dance"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/card_price_item_dinner_and_dance"
+	    android:orientation="horizontal" >
+
+	    <TextView
+	        android:id="@+id/card_price_item_price_dance"
+	        android:layout_height="match_parent"
+	        android:layout_width="wrap_content"
+	        android:background="@color/flat_lila"
+	        android:gravity="center"
+	        android:padding="20dp"
+	        android:text="175 DKK"
+	        android:textColor="@color/white"
+	        android:textSize="20sp"
+	        android:textStyle="bold" />
+	    
+	    <RelativeLayout 
+	    	android:layout_height="match_parent"
+		    android:layout_width="match_parent">
+
+		    <TextView
+		        android:id="@+id/card_price_item_concept_dance"
+		        android:layout_height="wrap_content"
+		        android:layout_width="match_parent"
+		        android:paddingTop="10dp"
+		        android:paddingBottom="10dp"
+		        android:paddingLeft="20dp"
+		        android:text="Dance"
+		        android:textSize="20sp"
+		        android:textStyle="italic" />
+		    
+		    <TextView
+		        android:id="@+id/card_price_item_concept_dance_note"
+		        android:layout_below="@+id/card_price_item_concept_dance"
+		        android:layout_height="wrap_content"
+		        android:layout_width="match_parent"
+		        android:paddingLeft="20dp"
+		        android:paddingRight="5dp"
+		        android:text="Admission after 21:00"
+		        android:gravity="right"
+		        android:textSize="10sp"
+		        android:textStyle="italic" />
+	    
+	    </RelativeLayout>
+	</LinearLayout>
+	
+	<TextView
+       android:id="@+id/card_price_notes"
+       android:layout_below="@+id/card_price_item_dance"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:paddingTop="4dp"
+       android:paddingLeft="20dp"
+       android:text="Only 4 tickets per person. Payment in cash."
+       android:gravity="center"
+       android:textSize="10sp"
+       android:textStyle="italic" />
+
 </RelativeLayout>
