@@ -37,7 +37,6 @@ public class SideNavigation {
 					break;
 				case R.id.side_navigation_map:
 					intent = new Intent(mContext, MapActivity.class);
-					intent.putExtra(Constants.EXTRA_MAP, "");
 					break;
 				case R.id.side_navigation_old_events:
 					intent = new Intent(mContext, MainActivity.class);

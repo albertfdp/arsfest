@@ -54,7 +54,7 @@ public class MainActivity extends BaseActivity {
 	    
 	    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	    getSupportActionBar().setHomeButtonEnabled(true);
-	    getSupportActionBar().setTitle("Events");
+	    getSupportActionBar().setTitle(Constants.Events);
 	    
 	    
 	    readProgramme();

@@ -22,7 +22,7 @@ public class BSSIDService {
 	public void getUpdate() {
 		setNetworkAvailable(mNetworkHelper.isWiFiTurnedOn());
 		if (isNetworkAvailable()) {
-			//mNetworkHelper.resetNetwork();
+			mNetworkHelper.resetNetwork();
 			setCurrentLocation(mNetworkHelper.getScanResults());
 		}
 	}
