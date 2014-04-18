@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARSInfoViewController">
+            <connections>
+                <outlet property="header" destination="oPc-LF-9ia" id="H9d-KQ-Rdl"/>
+                <outlet property="info" destination="4ky-Rb-YTa" id="AEK-MN-jfO"/>
+                <outlet property="segmentedControl" destination="Mc8-fM-xgM" id="cou-bi-NZT"/>
+                <outlet property="ticketSale" destination="07v-41-R1H" id="vTy-vN-2Id"/>
+                <outlet property="view" destination="IaK-oy-ehP" id="SdZ-wE-qmH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="IaK-oy-ehP">
+            <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZhJ-vP-QFs">
+                    <rect key="frame" x="0.0" y="0.0" width="315" height="372"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Commemoration Party: 9th of May 2014" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPc-LF-9ia">
+                            <rect key="frame" x="9" y="60" width="296" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ky-Rb-YTa" userLabel="info">
+                            <rect key="frame" x="14" y="117" width="287" height="255"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <string key="content">The Commemoration Party is the festive peak of the academic year, where achievements, perspectives and collaborations are celebrated with the students, employees and partners of the university. 
+
+DTU also highlights select achievements of the past year by the awarding academic honours.
+
+The Commemoration Party can be divided into three. The official part, followed by dinner and then a large ball. DTU and Polytechnical Association hope you have a fantastic evening.</string>
+                                    <attributes>
+                                        <font key="NSFont" size="14" name="HelveticaNeue-Thin"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="07v-41-R1H" userLabel="ticket">
+                            <rect key="frame" x="14" y="117" width="287" height="255"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <string key="content">Ticket sale will start on Friday the 25th of April 2014 at 9 o’clock in the administration hall in building 101 DTU Lyngby Campus.
+
+Prices:
+
+Dinner and dance: 250 kr
+
+Ball (admission after 21.00): 175 kr
+
+Only 4 tickets per person, payment in cash
+
+Over the years there has been a tradition of the queue for ticket sales to begin the day before, on Thursday. 
+
+You can read more about this queue-party on the PF facebook page or on www.pf.dk. 
+
+You must stay within the designated areas, and only after 17 o’clock Thursday the 24th of April 2014.
+
+During the whole evening there will be fire guards present. Requests made by the fire guards must be met, 
+
+as they are present for you safety.
+
+During the night, queue numbers will be distributed. Your number is you place in the queue when the ticket sales start at 9 o’clock on Friday the 25th of April.
+
+Breakfast will be served around 07:00, before the tickets sales start. 
+
+Employees have the opportunity to buy tickets in the advance sale through their department. If this option is chosen tickets are 375 kr. (dinner and ball) and 175 dkk (ball).</string>
+                                    <attributes>
+                                        <font key="NSFont" size="14" name="HelveticaNeue-Thin"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </view>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="001-8p-Lkx">
+                    <rect key="frame" x="-5" y="372" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="Yv7-Z8-7Ks"/>
+                        <constraint firstAttribute="height" constant="44" id="jDF-dA-RfF"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem width="66" style="plain" systemItem="fixedSpace" id="N25-Aw-95y"/>
+                        <barButtonItem style="plain" id="d14-2l-9BN">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" id="Mc8-fM-xgM">
+                                <rect key="frame" x="82" y="7" width="161" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Info"/>
+                                    <segment title="Tickets"/>
+                                </segments>
+                            </segmentedControl>
+                        </barButtonItem>
+                        <barButtonItem width="66" style="plain" systemItem="fixedSpace" id="HcK-7M-IsX"/>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="001-8p-Lkx" firstAttribute="top" secondItem="ZhJ-vP-QFs" secondAttribute="bottom" id="31a-vh-Db7"/>
+                <constraint firstAttribute="bottom" secondItem="001-8p-Lkx" secondAttribute="bottom" id="5iB-Rq-An6"/>
+                <constraint firstItem="001-8p-Lkx" firstAttribute="top" secondItem="ZhJ-vP-QFs" secondAttribute="bottom" id="AQl-HN-UcD"/>
+                <constraint firstItem="001-8p-Lkx" firstAttribute="leading" secondItem="IaK-oy-ehP" secondAttribute="leading" constant="-5" id="JlP-yI-hAI"/>
+                <constraint firstItem="001-8p-Lkx" firstAttribute="trailing" secondItem="ZhJ-vP-QFs" secondAttribute="trailing" id="X6O-VH-MN0"/>
+                <constraint firstItem="ZhJ-vP-QFs" firstAttribute="leading" secondItem="IaK-oy-ehP" secondAttribute="leading" id="b6t-Ba-cQg"/>
+                <constraint firstItem="ZhJ-vP-QFs" firstAttribute="top" secondItem="IaK-oy-ehP" secondAttribute="top" id="oLm-3f-ZOQ"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

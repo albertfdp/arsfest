@@ -8,6 +8,7 @@
 
 #import "ARSNavigationController.h"
 #import "ARSMapViewController.h"
+#import "ARSInfoViewController.h"
 
 @interface ARSNavigationController ()
 
@@ -58,10 +59,18 @@
 {
     viewController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
+    // Map
     UIImage *rightImage = [UIImage imageNamed:@"location_icon.png"];
     UIBarButtonItem *rightItem = [UIBarButtonItem itemWithImage:rightImage target:self action:@selector(showMap)];
     
     [viewController.navigationItem setRightBarButtonItem:rightItem];
+    
+    // Info
+    
+    UIImage *leftImage = [UIImage imageNamed:@"location_icon.png"];
+    UIBarButtonItem *leftItem = [UIBarButtonItem itemWithImage:leftImage target:self action:@selector(showInfo)];
+    
+    [viewController.navigationItem setLeftBarButtonItem:leftItem];
 }
 
 #pragma mark -
@@ -71,6 +80,18 @@
 {
     ARSMapViewController *mapViewController = [[ARSMapViewController alloc] initWithNibName:@"ARSMapViewController" bundle:[NSBundle mainBundle]];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
+    [navigationController.navigationBar setBarTintColor:kArsfestColor];
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark - Map handling
+
+- (void)showInfo
+{
+    ARSInfoViewController *infoViewController = [[ARSInfoViewController alloc] initWithNibName:@"ARSInfoViewController" bundle:[NSBundle mainBundle]];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:infoViewController];
     [navigationController.navigationBar setBarTintColor:kArsfestColor];
     
     [self presentViewController:navigationController animated:YES completion:nil];

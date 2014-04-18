@@ -106,6 +106,8 @@
 		DBF6B0DD18EC316F0048605F /* ARSWifi.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF6B0DC18EC316F0048605F /* ARSWifi.m */; };
 		DBF6B0E018EC548B0048605F /* wifis.json in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B0DF18EC548B0048605F /* wifis.json */; };
 		DBF6B0E218EC54CA0048605F /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B0E118EC54CA0048605F /* events.json */; };
+		E147EDFC19015ADF00C2D8B8 /* ARSInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E147EDFB19015ADF00C2D8B8 /* ARSInfoViewController.m */; };
+		E147EE0019015C0600C2D8B8 /* ARSInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E147EDFF19015C0600C2D8B8 /* ARSInfoViewController.xib */; };
 		E1C3B77418FD3F3D00D6FC18 /* abbatizers.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B77318FD3F3D00D6FC18 /* abbatizers.png */; };
 		E1C3B77618FFC80800D6FC18 /* kaka.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B77518FFC80800D6FC18 /* kaka.png */; };
 		E1C3B77818FFC9B800D6FC18 /* carpark.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B77718FFC9B800D6FC18 /* carpark.png */; };
@@ -269,6 +271,9 @@
 		DBF6B0DC18EC316F0048605F /* ARSWifi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSWifi.m; path = Model/ARSWifi/ARSWifi.m; sourceTree = "<group>"; };
 		DBF6B0DF18EC548B0048605F /* wifis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wifis.json; sourceTree = "<group>"; };
 		DBF6B0E118EC54CA0048605F /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
+		E147EDFA19015ADF00C2D8B8 /* ARSInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSInfoViewController.h; sourceTree = "<group>"; };
+		E147EDFB19015ADF00C2D8B8 /* ARSInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARSInfoViewController.m; sourceTree = "<group>"; };
+		E147EDFF19015C0600C2D8B8 /* ARSInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARSInfoViewController.xib; sourceTree = "<group>"; };
 		E1C3B77318FD3F3D00D6FC18 /* abbatizers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abbatizers.png; sourceTree = "<group>"; };
 		E1C3B77518FFC80800D6FC18 /* kaka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaka.png; sourceTree = "<group>"; };
 		E1C3B77718FFC9B800D6FC18 /* carpark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carpark.png; sourceTree = "<group>"; };
@@ -750,6 +755,7 @@
 		DBBEC19218A6D9E300212106 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E147EDF919015ABF00C2D8B8 /* ARSInfoViewController */,
 				DBC83A6618E2DBA30047D269 /* ARSMapViewController */,
 				DB98729A18AD7E7F00A085FE /* ARSEventViewController */,
 				DB23274C18AD0DB800628B8D /* ARSEventListViewController */,
@@ -793,6 +799,16 @@
 				DBF6B0DF18EC548B0048605F /* wifis.json */,
 			);
 			name = "JSON Files";
+			sourceTree = "<group>";
+		};
+		E147EDF919015ABF00C2D8B8 /* ARSInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E147EDFF19015C0600C2D8B8 /* ARSInfoViewController.xib */,
+				E147EDFA19015ADF00C2D8B8 /* ARSInfoViewController.h */,
+				E147EDFB19015ADF00C2D8B8 /* ARSInfoViewController.m */,
+			);
+			name = ARSInfoViewController;
 			sourceTree = "<group>";
 		};
 		E1C3B7A31900444600D6FC18 /* ARSCarouselPartyInfo */ = {
@@ -937,6 +953,7 @@
 				DBC83A6B18E2DE380047D269 /* ARSMapViewController.xib in Resources */,
 				DBF6B0E218EC54CA0048605F /* events.json in Resources */,
 				DBE009CE18B78E22000B6DFE /* jazzband@2x.png in Resources */,
+				E147EE0019015C0600C2D8B8 /* ARSInfoViewController.xib in Resources */,
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
 				E1C3B78018FFD07400D6FC18 /* zumba.png in Resources */,
 				DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */,
@@ -1025,6 +1042,7 @@
 				DB9872A418AD7F7500A085FE /* NSDate+Formatter.m in Sources */,
 				DBA8518D18DB7E86005E352E /* EAIntroPage.m in Sources */,
 				DB6B317718A43AE500C3EABB /* ARSEvent.m in Sources */,
+				E147EDFC19015ADF00C2D8B8 /* ARSInfoViewController.m in Sources */,
 				DBC83A6A18E2DE380047D269 /* ARSMapViewController.m in Sources */,
 				DB21FD9618BE16B80083F26C /* UIBarButtonItem+RightBarItem.m in Sources */,
 				DB21FDAA18BE1B6E0083F26C /* ARSNavigationController.m in Sources */,
