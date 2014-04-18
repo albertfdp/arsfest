@@ -62,9 +62,11 @@ public class MapActivity extends BaseActivity {
 		public void run() {
 			mProgressBar.setVisibility(View.INVISIBLE);
 			if (mBSSIDLocation == null) {
-				Toast.makeText(getApplicationContext(),
-						getApplicationContext().getString(R.string.unsuccessfullocatization), Toast.LENGTH_LONG)
-						.show();
+				Toast.makeText(
+						getApplicationContext(),
+						getApplicationContext().getString(
+								R.string.unsuccessfullocatization),
+						Toast.LENGTH_LONG).show();
 				mMapWebView.loadUrl("javascript:hide()");
 			} else {
 				mAccuracy = Constants.EstimatedBSSIDAccuracy;
@@ -98,8 +100,13 @@ public class MapActivity extends BaseActivity {
 		mLocalization = new LocalizationHelper(getApplicationContext());
 
 		Intent i = getIntent();
-		setWebView(i.getStringExtra(Constants.MapStartLocation),
-				i.getBooleanExtra(Constants.MapShowPin, false));
+		String mLocation = i.getStringExtra(Constants.MapStartLocation);
+		if (this.getString(R.string.dinnerlocation).equals(mLocation)) {
+			mLocation = this.getString(R.string.canteen);
+		} else {
+			setWebView(mLocation,
+					i.getBooleanExtra(Constants.MapShowPin, false));
+		}
 		mPreferences = getApplicationContext().getSharedPreferences(
 				Constants.SharedPreferences, 0);
 		setLocateMeButton();
@@ -220,7 +227,8 @@ public class MapActivity extends BaseActivity {
 					+ mMapScroll.getScroll()[0] + ", "
 					+ mMapScroll.getScroll()[1] + ")");
 			mMapWebView.loadUrl("javascript:showCircle(" + (int) x + ", "
-					+ (int) y + ", " + (int) (mAccuracy * Constants.meterToPixel) + ")");
+					+ (int) y + ", "
+					+ (int) (mAccuracy * Constants.meterToPixel) + ")");
 		} else {
 			uCantHandleThat.postDelayed(runForYourLife, 1000);
 		}
@@ -255,8 +263,8 @@ public class MapActivity extends BaseActivity {
 							Toast.LENGTH_LONG).show();
 
 					// Testing: Oticon
-					//double mLatitude = 55.786907;
-					//double mLongitude = 12.525935;
+					// double mLatitude = 55.786907;
+					// double mLongitude = 12.525935;
 
 					toPixels = new GeoToPixels(Constants.aTopCoefficientMap,
 							Constants.bTopCoefficientMap,

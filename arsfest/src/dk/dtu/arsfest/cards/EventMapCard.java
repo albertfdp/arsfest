@@ -32,6 +32,9 @@ public class EventMapCard extends Card {
 		super(context, R.layout.card_event_map_layout);
 		this.mContext = context;
 		this.mLocation = event.getParent().getName();
+		if (mContext.getString(R.string.dinnerlocation).equals(mLocation)) {
+			mLocation = mContext.getString(R.string.canteen);
+		}
 		mLocalization = new LocalizationHelper(getContext());
 	}
 

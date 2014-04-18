@@ -16,6 +16,7 @@
     <string name="oticon">Oticon Hall</string>
     <string name="canteen">Canteen</string>
     <string name="tent">The Tent</string>
+    <string name="dinnerlocation">Library - Canteen - Tent</string>
     <string name="enable">Enable</string>
     <string name="cancel">Cancel</string>
     <string name="stopasking">Stop Asking</string>
