@@ -26,13 +26,14 @@ public class NetworkHelper {
 
 	public String getScanResults() {
 		for (int mIndex = 0; mIndex < mWifiManager.getScanResults().size(); mIndex++) {
-			if (mWifiManager.getScanResults().get(mIndex).SSID.equals("eduroam")) {
+			if (mWifiManager.getScanResults().get(mIndex).SSID
+					.equals("eduroam")) {
 				return mWifiManager.getScanResults().get(mIndex).BSSID;
 			}
 		}
 		return null;
 	}
-	
+
 	public boolean resetNetwork() {
 		return mWifiManager.startScan();
 	}

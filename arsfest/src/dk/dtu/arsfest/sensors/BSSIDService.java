@@ -42,7 +42,7 @@ public class BSSIDService {
 
 	private void setCurrentLocation(String currentLocation) {
 		if (mMap.containsKey(currentLocation)) {
-			this.currentLocation = mMap.get(currentLocation);	
+			this.currentLocation = mMap.get(currentLocation);
 		} else {
 			this.currentLocation = null;
 		}

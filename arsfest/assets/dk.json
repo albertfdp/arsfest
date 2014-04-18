@@ -97,35 +97,6 @@
             "color": "#2980b9",
             "events": [
                 {
-                    "id": "e7",
-                    "name": "Middag",
-                    "image": "dinner",
-                    "startTime": "09-05-2014:19:15",
-                    "endTime": "09-05-2014:21:30",
-                    "location": "l1",
-                    "description": "",
-                    "type": "official",
-                    "theme": "food",
-                    "menu": [
-                        {
-                            "course": "Forret",
-                            "name": "Lakserillette toppet med lime marinerede rejer med friske krydderurter. Salat med hele cherrytomater og friske grønne asparges, hertil chili/ingefær dressing. Hertil græskar bolle."
-                        },
-                        {
-                            "course": "Hovedret",
-                            "name": "Helstegt oksefilet med rosin sauce. Bagte grøntsager med bolchebeder og gulbeder. Små bagte kartofler med krydderurter. Stegte blommer med vanilje."
-                        },
-                        {
-                            "course": "Kaffe",
-                            "name": "Kaffe/the og petit fours."
-                        },
-                        {
-                            "course": "Drinks",
-                            "name": "Til forretten serveres et glas hvidvin, og til hovedretten serveres et glas rødvin. Der kan bestilles ekstra vin i S-huset. 1 flaske koster 95,- i forsalg. Vinen vil blive leveret under forretten. Drikkevarer kan også købes i barerne på aftenen. På aftenen koster 1 flaske vin 120,-. Hvidvin: 2013 Chardonnay, William Cole – Casablanca Valley (Chile). Rødvin: 2012 Comte de Roc Oval – Costieres de Nîmes (Frankrig)"
-                        }
-                    ]
-                },
-                {
                     "id": "e8",
                     "name": "Dans med mig! Ballroom",
                     "image": "",
@@ -245,35 +216,6 @@
             "color": "#c0392b",
             "events": [
                 {
-                    "id": "e17",
-                    "name": "Middag",
-                    "image": "dinner",
-                    "startTime": "09-05-2014:19:15",
-                    "endTime": "09-05-2014:21:30",
-                    "location": "l3",
-                    "description": "",
-                    "type": "official",
-                    "theme": "food",
-                    "menu": [
-                        {
-                            "course": "Forret",
-                            "name": "Lakserillette toppet med lime marinerede rejer med friske krydderurter. Salat med hele cherrytomater og friske grønne asparges, hertil chili/ingefær dressing. Hertil græskar bolle."
-                        },
-                        {
-                            "course": "Hovedret",
-                            "name": "Helstegt oksefilet med rosin sauce. Bagte grøntsager med bolchebeder og gulbeder. Små bagte kartofler med krydderurter. Stegte blommer med vanilje."
-                        },
-                        {
-                            "course": "Kaffe",
-                            "name": "Kaffe/the og petit fours."
-                        },
-                        {
-                            "course": "Drinks",
-                            "name": "Til forretten serveres et glas hvidvin, og til hovedretten serveres et glas rødvin. Der kan bestilles ekstra vin i S-huset. 1 flaske koster 95,- i forsalg. Vinen vil blive leveret under forretten. Drikkevarer kan også købes i barerne på aftenen. På aftenen koster 1 flaske vin 120,-. Hvidvin: 2013 Chardonnay, William Cole – Casablanca Valley (Chile). Rødvin: 2012 Comte de Roc Oval – Costieres de Nîmes (Frankrig)"
-                        }
-                    ]
-                },
-                {
                     "id": "e18",
                     "name": "Les Lanciers",
                     "image": "leslanciers",
@@ -334,39 +276,10 @@
             "id": "l4",
             "latitude": 55.786489,
             "longitude": 12.524634,
-            "name": "Canteen",
+            "name": "Kantinen",
             "description": "",
             "color": "#c0392b",
             "events": [
-                {
-                    "id": "e23",
-                    "name": "Dinner",
-                    "image": "dinner",
-                    "startTime": "09-05-2014:19:15",
-                    "endTime": "09-05-2014:21:30",
-                    "location": "l4",
-                    "description": "",
-                    "type": "official",
-                    "theme": "food",
-                    "menu": [
-                        {
-                            "course": "Forret",
-                            "name": "Lakserillette toppet med lime marinerede rejer med friske krydderurter. Salat med hele cherrytomater og friske grønne asparges, hertil chili/ingefær dressing. Hertil græskar bolle."
-                        },
-                        {
-                            "course": "Hovedret",
-                            "name": "Helstegt oksefilet med rosin sauce. Bagte grøntsager med bolchebeder og gulbeder. Små bagte kartofler med krydderurter. Stegte blommer med vanilje."
-                        },
-                        {
-                            "course": "Kaffe",
-                            "name": "Kaffe/the og petit fours."
-                        },
-                        {
-                            "course": "Drinks",
-                            "name": "Til forretten serveres et glas hvidvin, og til hovedretten serveres et glas rødvin. Der kan bestilles ekstra vin i S-huset. 1 flaske koster 95,- i forsalg. Vinen vil blive leveret under forretten. Drikkevarer kan også købes i barerne på aftenen. På aftenen koster 1 flaske vin 120,-. Hvidvin: 2013 Chardonnay, William Cole – Casablanca Valley (Chile). Rødvin: 2012 Comte de Roc Oval – Costieres de Nîmes (Frankrig)"
-                        }
-                    ]
-                },
                 {
                     "id": "e24",
                     "name": "Blå Mandag Jazzband, 1. set",
@@ -406,16 +319,55 @@
                     "startTime": "25-04-2014:09:00",
                     "endTime": "25-04-2014:09:00",
                     "location": "l5",
-                    "description": "Igennem �rene er der blevet tradition for at k�en til billetsalget starter allerede dagen f�r, torsdag. Du kan l�se mere om denne k�-fest p� PF�s facebook side eller www.pf.dk. Det er kun tilladt at tage ophold inden for de afm�rkede omr�der, og f�rst efter kl. 17.00 torsdag d. 24. april 2014. Hele aftenen vil der v�re brandvagter til stede. Henvisninger og retningslinjer fra brandvagterne skal im�dekommes. Brandvagterne er der for din sikkerheds skyld. I l�bet af natten vil der blive uddelt k�-numre. Dit nummer er din plads i k�en n�r billetsalget starter fredag d. 25. april kl. 09.00. Der serveres morgenmad ca. kl. 07.00, inden billetsalget starter. Medarbejdere har mulighed for at k�be billetter i forsalg gennem instituttet/afdelingen. Benyttes denne mulighed er billetpriserne: 375,- (middag og bal) og 175,- (bal)",
+                    "description": "Igennem �rene er der blevet tradition for at k�en til billetsalget starter allerede dagen f�r, torsdag. Du kan l�se mere om denne k�-fest p� PF�s facebook side eller www.pf.dk. Det er kun tilladt at tage ophold inden for de afm�rkede omr�der, og f�rst efter kl. 17.00 torsdag d. 24. april 2014. Hele aftenen vil der v�re brandvagter til stede. Henvisninger og retningslinjer fra brandvagterne skal im�dekommes. Brandvagterne er der for din sikkerheds skyld. I l�bet af natten vil der blive uddelt k�-numre. Dit nummer er din plads i k�en n�r billetsalget starter fredag d. 25. april kl. 09.00. Der serveres morgenmad ca. kl. 07.00, inden billetsalget starter. Medarbejdere har mulighed for at k�be billetter i forsalg gennem instituttet/afdelingen. Benyttes denne mulighed er billetpriserne: 375,- (middag og bal) og 175,- (bal)",
                     "type": "ticket sale",
                     "theme": "Priser",
-                    "price": [ "Middag og bal: 250", 
-                    		   "Bal (entr� efter kl. 21.00): 175", 
-                    		   "Max 4 billetter pr. person, kontant betaling."
-                    		 ]     
+                    "price": [
+                        "Middag og bal: 250",
+                        "Bal (entr� efter kl. 21.00): 175",
+                        "Max 4 billetter pr. person, kontant betaling."
+                    ]
                 }
             ]
-        } 
+        },
+        {
+            "id": "l6",
+            "latitude": 55.785949,
+            "longitude": 12.525475,
+            "name": "Bibliotek - Kantinen - Teltet",
+            "color": "#f1c40f",
+            "description": "Bibliotek - Kantinen - Teltet",
+            "events": [
+                {
+                    "id": "e24",
+                    "name": "Middag",
+                    "image": "dinner",
+                    "startTime": "09-05-2014:19:15",
+                    "endTime": "09-05-2014:21:30",
+                    "location": "l6",
+                    "description": "",
+                    "type": "official",
+                    "theme": "food",
+                    "menu": [
+                        {
+                            "course": "Forret",
+                            "name": "Lakserillette toppet med lime marinerede rejer med friske krydderurter. Salat med hele cherrytomater og friske grønne asparges, hertil chili/ingefær dressing. Hertil græskar bolle."
+                        },
+                        {
+                            "course": "Hovedret",
+                            "name": "Helstegt oksefilet med rosin sauce. Bagte grøntsager med bolchebeder og gulbeder. Små bagte kartofler med krydderurter. Stegte blommer med vanilje."
+                        },
+                        {
+                            "course": "Kaffe",
+                            "name": "Kaffe/the og petit fours."
+                        },
+                        {
+                            "course": "Drinks",
+                            "name": "Til forretten serveres et glas hvidvin, og til hovedretten serveres et glas rødvin. Der kan bestilles ekstra vin i S-huset. 1 flaske koster 95,- i forsalg. Vinen vil blive leveret under forretten. Drikkevarer kan også købes i barerne på aftenen. På aftenen koster 1 flaske vin 120,-. Hvidvin: 2013 Chardonnay, William Cole – Casablanca Valley (Chile). Rødvin: 2012 Comte de Roc Oval – Costieres de Nîmes (Frankrig)"
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }
-

@@ -97,7 +97,7 @@
             "color": "#2980b9",
             "events": [
                 {
-                    "id": "e8",
+                    "id": "e7",
                     "name": "Dance with me! Ballroom",
                     "image": "",
                     "startTime": "09-05-2014:22:00",
@@ -108,7 +108,7 @@
                     "theme": "dance"
                 },
                 {
-                    "id": "e9",
+                    "id": "e8",
                     "name": "Dance with me! Caribbean Heat",
                     "image": "",
                     "startTime": "09-05-2014:22:30",
@@ -119,7 +119,7 @@
                     "theme": "dance"
                 },
                 {
-                    "id": "e10",
+                    "id": "e9",
                     "name": "Dance with me! Turn it up!",
                     "image": "",
                     "startTime": "10-05-2014:01:00",
@@ -130,7 +130,7 @@
                     "theme": "dance"
                 },
                 {
-                    "id": "e11",
+                    "id": "e10",
                     "name": "Dance with me! Club DTU DancIng",
                     "image": "",
                     "startTime": "10-05-2014:01:30",
@@ -151,7 +151,7 @@
             "color": "#1abc9c",
             "events": [
                 {
-                    "id": "e12",
+                    "id": "e11",
                     "name": "DJ",
                     "image": "dj",
                     "startTime": "09-05-2014:21:00",
@@ -162,7 +162,7 @@
                     "theme": "music"
                 },
                 {
-                    "id": "e13",
+                    "id": "e12",
                     "name": "Kaka",
                     "image": "",
                     "startTime": "09-05-2014:22:45",
@@ -173,7 +173,7 @@
                     "theme": "music"
                 },
                 {
-                    "id": "e14",
+                    "id": "e13",
                     "name": "DJ",
                     "image": "dj",
                     "startTime": "09-05-2014:23:45",
@@ -184,7 +184,7 @@
                     "theme": "music"
                 },
                 {
-                    "id": "e15",
+                    "id": "e14",
                     "name": "Kongsted",
                     "image": "",
                     "startTime": "10-05-2014:01:00",
@@ -195,7 +195,7 @@
                     "theme": "music"
                 },
                 {
-                    "id": "e16",
+                    "id": "e15",
                     "name": "DJ",
                     "image": "dj",
                     "startTime": "10-05-2014:02:00",
@@ -216,7 +216,7 @@
             "color": "#7f8c8d",
             "events": [
                 {
-                    "id": "e18",
+                    "id": "e16",
                     "name": "Les Lanciers",
                     "image": "leslanciers",
                     "startTime": "09-05-2014:22:15",
@@ -227,7 +227,7 @@
                     "theme": "dance"
                 },
                 {
-                    "id": "e19",
+                    "id": "e17",
                     "name": "ABBAtizers",
                     "image": "",
                     "startTime": "09-05-2014:22:40",
@@ -238,7 +238,7 @@
                     "theme": "music"
                 },
                 {
-                    "id": "e20",
+                    "id": "e18",
                     "name": "Les Lanciers",
                     "image": "leslanciers",
                     "startTime": "09-05-2014:23:40",
@@ -249,7 +249,7 @@
                     "theme": "dance"
                 },
                 {
-                    "id": "e21",
+                    "id": "e19",
                     "name": "ABBAtizers",
                     "image": "",
                     "startTime": "10-05-2014:00:00",
@@ -260,7 +260,7 @@
                     "theme": "music"
                 },
                 {
-                    "id": "e22",
+                    "id": "e20",
                     "name": "Les Lanciers",
                     "image": "leslanciers",
                     "startTime": "10-05-2014:01:00",
@@ -281,7 +281,7 @@
             "color": "#c0392b",
             "events": [
                 {
-                    "id": "e24",
+                    "id": "e21",
                     "name": "Blå Mandag Jazzband, 1. set",
                     "image": "",
                     "startTime": "09-05-2014:23:15",
@@ -292,7 +292,7 @@
                     "theme": "music"
                 },
                 {
-                    "id": "e24",
+                    "id": "e22",
                     "name": "Blå Mandag Jazzband, 2. set",
                     "image": "",
                     "startTime": "10-05-2014:00:15",
@@ -313,7 +313,7 @@
             "color": "#c0392b",
             "events": [
                 {
-                    "id": "e24",
+                    "id": "e23",
                     "name": "Ticket sale - Kø-fest",
                     "image": "kofest",
                     "startTime": "25-04-2014:09:00",
@@ -353,7 +353,7 @@
             "description": "Library - Canteen - Tent",
             "events": [
                 {
-                    "id": "e23",
+                    "id": "e24",
                     "name": "Dinner",
                     "image": "dinner",
                     "startTime": "09-05-2014:19:15",
