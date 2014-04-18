@@ -106,6 +106,26 @@
 		DBF6B0DD18EC316F0048605F /* ARSWifi.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF6B0DC18EC316F0048605F /* ARSWifi.m */; };
 		DBF6B0E018EC548B0048605F /* wifis.json in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B0DF18EC548B0048605F /* wifis.json */; };
 		DBF6B0E218EC54CA0048605F /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B0E118EC54CA0048605F /* events.json */; };
+		E1C3B77418FD3F3D00D6FC18 /* abbatizers.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B77318FD3F3D00D6FC18 /* abbatizers.png */; };
+		E1C3B77618FFC80800D6FC18 /* kaka.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B77518FFC80800D6FC18 /* kaka.png */; };
+		E1C3B77818FFC9B800D6FC18 /* carpark.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B77718FFC9B800D6FC18 /* carpark.png */; };
+		E1C3B77A18FFCA5400D6FC18 /* kongsted.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B77918FFCA5400D6FC18 /* kongsted.png */; };
+		E1C3B77C18FFCB3700D6FC18 /* jazz.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B77B18FFCB3700D6FC18 /* jazz.png */; };
+		E1C3B77E18FFCD6400D6FC18 /* salsa.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B77D18FFCD6400D6FC18 /* salsa.png */; };
+		E1C3B78018FFD07400D6FC18 /* zumba.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B77F18FFD07400D6FC18 /* zumba.png */; };
+		E1C3B78218FFD19D00D6FC18 /* waltz.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B78118FFD19D00D6FC18 /* waltz.png */; };
+		E1C3B78418FFD28400D6FC18 /* dtudance.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B78318FFD28400D6FC18 /* dtudance.png */; };
+		E1C3B78E18FFD4BD00D6FC18 /* abbatizers@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B78518FFD4BD00D6FC18 /* abbatizers@2x.png */; };
+		E1C3B78F18FFD4BD00D6FC18 /* carpark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B78618FFD4BD00D6FC18 /* carpark@2x.png */; };
+		E1C3B79018FFD4BD00D6FC18 /* dtudance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B78718FFD4BD00D6FC18 /* dtudance@2x.png */; };
+		E1C3B79118FFD4BD00D6FC18 /* jazz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B78818FFD4BD00D6FC18 /* jazz@2x.png */; };
+		E1C3B79218FFD4BD00D6FC18 /* kaka@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B78918FFD4BD00D6FC18 /* kaka@2x.png */; };
+		E1C3B79318FFD4BD00D6FC18 /* kongsted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B78A18FFD4BD00D6FC18 /* kongsted@2x.png */; };
+		E1C3B79418FFD4BD00D6FC18 /* salsa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B78B18FFD4BD00D6FC18 /* salsa@2x.png */; };
+		E1C3B79518FFD4BD00D6FC18 /* waltz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B78C18FFD4BD00D6FC18 /* waltz@2x.png */; };
+		E1C3B79618FFD4BD00D6FC18 /* zumba@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B78D18FFD4BD00D6FC18 /* zumba@2x.png */; };
+		E1C3B7A21900444200D6FC18 /* ARSCarouselPartyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C3B7A11900444200D6FC18 /* ARSCarouselPartyInfo.m */; };
+		E1C3B7A51900448300D6FC18 /* ARSCarouselPartyInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B7A41900448300D6FC18 /* ARSCarouselPartyInfo.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -249,6 +269,27 @@
 		DBF6B0DC18EC316F0048605F /* ARSWifi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSWifi.m; path = Model/ARSWifi/ARSWifi.m; sourceTree = "<group>"; };
 		DBF6B0DF18EC548B0048605F /* wifis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wifis.json; sourceTree = "<group>"; };
 		DBF6B0E118EC54CA0048605F /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
+		E1C3B77318FD3F3D00D6FC18 /* abbatizers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abbatizers.png; sourceTree = "<group>"; };
+		E1C3B77518FFC80800D6FC18 /* kaka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaka.png; sourceTree = "<group>"; };
+		E1C3B77718FFC9B800D6FC18 /* carpark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carpark.png; sourceTree = "<group>"; };
+		E1C3B77918FFCA5400D6FC18 /* kongsted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kongsted.png; sourceTree = "<group>"; };
+		E1C3B77B18FFCB3700D6FC18 /* jazz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jazz.png; sourceTree = "<group>"; };
+		E1C3B77D18FFCD6400D6FC18 /* salsa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = salsa.png; sourceTree = "<group>"; };
+		E1C3B77F18FFD07400D6FC18 /* zumba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zumba.png; sourceTree = "<group>"; };
+		E1C3B78118FFD19D00D6FC18 /* waltz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waltz.png; sourceTree = "<group>"; };
+		E1C3B78318FFD28400D6FC18 /* dtudance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dtudance.png; sourceTree = "<group>"; };
+		E1C3B78518FFD4BD00D6FC18 /* abbatizers@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "abbatizers@2x.png"; sourceTree = "<group>"; };
+		E1C3B78618FFD4BD00D6FC18 /* carpark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carpark@2x.png"; sourceTree = "<group>"; };
+		E1C3B78718FFD4BD00D6FC18 /* dtudance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dtudance@2x.png"; sourceTree = "<group>"; };
+		E1C3B78818FFD4BD00D6FC18 /* jazz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jazz@2x.png"; sourceTree = "<group>"; };
+		E1C3B78918FFD4BD00D6FC18 /* kaka@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kaka@2x.png"; sourceTree = "<group>"; };
+		E1C3B78A18FFD4BD00D6FC18 /* kongsted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kongsted@2x.png"; sourceTree = "<group>"; };
+		E1C3B78B18FFD4BD00D6FC18 /* salsa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "salsa@2x.png"; sourceTree = "<group>"; };
+		E1C3B78C18FFD4BD00D6FC18 /* waltz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "waltz@2x.png"; sourceTree = "<group>"; };
+		E1C3B78D18FFD4BD00D6FC18 /* zumba@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zumba@2x.png"; sourceTree = "<group>"; };
+		E1C3B7A01900444200D6FC18 /* ARSCarouselPartyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSCarouselPartyInfo.h; sourceTree = "<group>"; };
+		E1C3B7A11900444200D6FC18 /* ARSCarouselPartyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARSCarouselPartyInfo.m; sourceTree = "<group>"; };
+		E1C3B7A41900448300D6FC18 /* ARSCarouselPartyInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARSCarouselPartyInfo.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +378,24 @@
 		DB43AE3A18DEDDAE00D56B4F /* EventThumbnails */ = {
 			isa = PBXGroup;
 			children = (
+				E1C3B78518FFD4BD00D6FC18 /* abbatizers@2x.png */,
+				E1C3B78618FFD4BD00D6FC18 /* carpark@2x.png */,
+				E1C3B78718FFD4BD00D6FC18 /* dtudance@2x.png */,
+				E1C3B78818FFD4BD00D6FC18 /* jazz@2x.png */,
+				E1C3B78918FFD4BD00D6FC18 /* kaka@2x.png */,
+				E1C3B78A18FFD4BD00D6FC18 /* kongsted@2x.png */,
+				E1C3B78B18FFD4BD00D6FC18 /* salsa@2x.png */,
+				E1C3B78C18FFD4BD00D6FC18 /* waltz@2x.png */,
+				E1C3B78D18FFD4BD00D6FC18 /* zumba@2x.png */,
+				E1C3B78318FFD28400D6FC18 /* dtudance.png */,
+				E1C3B78118FFD19D00D6FC18 /* waltz.png */,
+				E1C3B77F18FFD07400D6FC18 /* zumba.png */,
+				E1C3B77D18FFCD6400D6FC18 /* salsa.png */,
+				E1C3B77B18FFCB3700D6FC18 /* jazz.png */,
+				E1C3B77918FFCA5400D6FC18 /* kongsted.png */,
+				E1C3B77718FFC9B800D6FC18 /* carpark.png */,
+				E1C3B77518FFC80800D6FC18 /* kaka.png */,
+				E1C3B77318FD3F3D00D6FC18 /* abbatizers.png */,
 				DBE009B718B78E22000B6DFE /* alphabeat.png */,
 				DBE009B818B78E22000B6DFE /* alphabeat@2x.png */,
 				DBE009B918B78E22000B6DFE /* dinner.png */,
@@ -424,6 +483,7 @@
 				DB59F48318FAC62200348BBF /* ARSCarousel.h */,
 				DB59F48418FAC62200348BBF /* ARSCarousel.m */,
 				DB59F48618FAC63000348BBF /* ARSCarousel.xib */,
+				E1C3B7A31900444600D6FC18 /* ARSCarouselPartyInfo */,
 			);
 			name = ARSCarousel;
 			sourceTree = "<group>";
@@ -735,6 +795,16 @@
 			name = "JSON Files";
 			sourceTree = "<group>";
 		};
+		E1C3B7A31900444600D6FC18 /* ARSCarouselPartyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E1C3B7A01900444200D6FC18 /* ARSCarouselPartyInfo.h */,
+				E1C3B7A11900444200D6FC18 /* ARSCarouselPartyInfo.m */,
+				E1C3B7A41900448300D6FC18 /* ARSCarouselPartyInfo.xib */,
+			);
+			name = ARSCarouselPartyInfo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -821,21 +891,33 @@
 				DB59F48718FAC63000348BBF /* ARSCarousel.xib in Resources */,
 				DBE009CA18B78E22000B6DFE /* dinner@2x.png in Resources */,
 				DBA50A3018B7C6A0001C8AF1 /* music_icon@2x.png in Resources */,
+				E1C3B77818FFC9B800D6FC18 /* carpark.png in Resources */,
+				E1C3B77A18FFCA5400D6FC18 /* kongsted.png in Resources */,
 				DBE009D418B78E22000B6DFE /* queenmachine@2x.png in Resources */,
 				DB98729918AD74B500A085FE /* ARSEventCell.xib in Resources */,
+				E1C3B77418FD3F3D00D6FC18 /* abbatizers.png in Resources */,
+				E1C3B77E18FFCD6400D6FC18 /* salsa.png in Resources */,
+				E1C3B78E18FFD4BD00D6FC18 /* abbatizers@2x.png in Resources */,
 				DB96086A18E5D87B00AC3B8B /* ARSFriendListCell.xib in Resources */,
+				E1C3B79118FFD4BD00D6FC18 /* jazz@2x.png in Resources */,
 				DB77EBD818DC56E400452E06 /* BackgroundIntroView@2x.png in Resources */,
 				DBE009D018B78E22000B6DFE /* leslanciers@2x.png in Resources */,
 				DB811D7B18E6F6E500BB11E6 /* close@2x.png in Resources */,
 				DBA50A2B18B7C6A0001C8AF1 /* dance_icon.png in Resources */,
 				DB811D7718E6E0E800BB11E6 /* buildingmap@2x.png in Resources */,
 				DB9D6E2C18F47CB000D76BA8 /* Refresh.png in Resources */,
+				E1C3B79318FFD4BD00D6FC18 /* kongsted@2x.png in Resources */,
 				DB77EBD718DC56E400452E06 /* BackgroundIntroView-568h@2x.png in Resources */,
+				E1C3B78F18FFD4BD00D6FC18 /* carpark@2x.png in Resources */,
+				E1C3B79218FFD4BD00D6FC18 /* kaka@2x.png in Resources */,
+				E1C3B7A51900448300D6FC18 /* ARSCarouselPartyInfo.xib in Resources */,
 				DBE009CD18B78E22000B6DFE /* jazzband.png in Resources */,
 				DB53D33118AEBCD300508DAD /* default_background@2x.png in Resources */,
 				DBE009D118B78E22000B6DFE /* official.png in Resources */,
+				E1C3B78418FFD28400D6FC18 /* dtudance.png in Resources */,
 				DB53D32A18AEB88800508DAD /* alphabeat@2x.png in Resources */,
 				DB53D33218AEBCD300508DAD /* default_background568h@2x.png in Resources */,
+				E1C3B79518FFD4BD00D6FC18 /* waltz@2x.png in Resources */,
 				DB53D32C18AEB88800508DAD /* veto@2x.png in Resources */,
 				DB811D7A18E6F6E500BB11E6 /* close.png in Resources */,
 				DB53D33018AEBCD300508DAD /* default_background.png in Resources */,
@@ -844,25 +926,32 @@
 				DBE009D618B78E22000B6DFE /* veto@2x.png in Resources */,
 				DBE009C718B78E22000B6DFE /* alphabeat.png in Resources */,
 				DB169A4C18E5F93400075319 /* contact_icon@2x.png in Resources */,
+				E1C3B77618FFC80800D6FC18 /* kaka.png in Resources */,
 				DBA50A2E18B7C6A0001C8AF1 /* food_icon@2x.png in Resources */,
 				DB9D6E2D18F47CB000D76BA8 /* Refresh@2x.png in Resources */,
 				DBA50A2C18B7C6A0001C8AF1 /* dance_icon@2x.png in Resources */,
 				DBE009C918B78E22000B6DFE /* dinner.png in Resources */,
 				DBE009CC18B78E22000B6DFE /* dj@2x.png in Resources */,
+				E1C3B78218FFD19D00D6FC18 /* waltz.png in Resources */,
+				E1C3B79418FFD4BD00D6FC18 /* salsa@2x.png in Resources */,
 				DBC83A6B18E2DE380047D269 /* ARSMapViewController.xib in Resources */,
 				DBF6B0E218EC54CA0048605F /* events.json in Resources */,
 				DBE009CE18B78E22000B6DFE /* jazzband@2x.png in Resources */,
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
+				E1C3B78018FFD07400D6FC18 /* zumba.png in Resources */,
 				DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */,
 				DB21FDA618BE1A680083F26C /* location_icon@2x.png in Resources */,
 				DBE009D518B78E22000B6DFE /* veto.png in Resources */,
 				DBF6B0E018EC548B0048605F /* wifis.json in Resources */,
 				DBA50A2D18B7C6A0001C8AF1 /* food_icon.png in Resources */,
+				E1C3B79018FFD4BD00D6FC18 /* dtudance@2x.png in Resources */,
 				DBE009D218B78E22000B6DFE /* official@2x.png in Resources */,
 				DBE009CF18B78E22000B6DFE /* leslanciers.png in Resources */,
 				DB6B313718A4337300C3EABB /* Images.xcassets in Resources */,
 				DB53D32118AE595C00508DAD /* Clock.png in Resources */,
+				E1C3B77C18FFCB3700D6FC18 /* jazz.png in Resources */,
 				DBE009CB18B78E22000B6DFE /* dj.png in Resources */,
+				E1C3B79618FFD4BD00D6FC18 /* zumba@2x.png in Resources */,
 				DB21FDA518BE1A680083F26C /* location_icon.png in Resources */,
 				DB9872A018AD7EB000A085FE /* ARSEventViewController.xib in Resources */,
 				DB59F48E18FAC72100348BBF /* ARSCarouselThumbnail.xib in Resources */,
@@ -940,6 +1029,7 @@
 				DB21FD9618BE16B80083F26C /* UIBarButtonItem+RightBarItem.m in Sources */,
 				DB21FDAA18BE1B6E0083F26C /* ARSNavigationController.m in Sources */,
 				DBF6B0DD18EC316F0048605F /* ARSWifi.m in Sources */,
+				E1C3B7A21900444200D6FC18 /* ARSCarouselPartyInfo.m in Sources */,
 				DB59F48C18FAC6FF00348BBF /* ARSCarouselThumbnail.m in Sources */,
 				DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */,
 				DBE009E518B79585000B6DFE /* UIView+Borders.m in Sources */,

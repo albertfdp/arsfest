@@ -41,8 +41,7 @@
     
     ARSEventListViewController *eventListViewController = [[ARSEventListViewController alloc] initWithNibName:@"ARSEventListViewController" bundle:nil];
     
-    ARSNavigationController *navigationController = [[ARSNavigationController alloc]
-                                                    initWithRootViewController:eventListViewController];
+    ARSNavigationController *navigationController = [[ARSNavigationController alloc] initWithRootViewController:eventListViewController];
     
     [self.window setRootViewController:navigationController];
     

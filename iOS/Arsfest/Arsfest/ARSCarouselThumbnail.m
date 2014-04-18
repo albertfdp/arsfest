@@ -7,6 +7,8 @@
 //
 
 #import "ARSCarouselThumbnail.h"
+#import "ARSUserController.h"
+#import "ARSEvent.h"
 
 @implementation ARSCarouselThumbnail
 @synthesize type;
@@ -15,7 +17,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        //self.userInteractionEnabled = YES;
     }
     return self;
 }
@@ -31,13 +33,47 @@
             [self.timerLabel setTimeFormat:@"dd : HH : mm : ss"];
             [self.timerLabel start];
             break;
+        case ARSCarouselThumbnailTypeLaunched:
+            //
+            NSLog(@"..");
+            break;
+        case ARSCarouselThumbnailTypeEvent:
+            // Get actual time
+            //NSDate *now = [[NSDate alloc] init];
+            // Get user location
+            //NSString *location = [[ARSUserController sharedUserController] userLocation];
+            // Get closer next event
             
+            
+            break;
+        case ARSCarouselThumbnailTypeNextEvent:
+            // Get actual time
+            //NSDate *now = [[NSDate alloc] init];
+            // Get user location
+            //NSLog([[ARSUserController sharedUserController] userLocation]);
+            // Get closer next event
+            break;
         default:
             break;
     }
     
     type = newType;
 }
+
+-(void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
+{
+    UITouch *touch = [touches anyObject];
+    
+    if(touch.view.tag == 99){
+        self.labelDescription.text = @"it worked!";
+        // Update view
+        
+        
+    }
+}
+
+
+
 
 
 @end

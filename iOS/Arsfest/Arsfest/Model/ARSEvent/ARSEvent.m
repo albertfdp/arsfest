@@ -16,7 +16,24 @@
     ARSEvent *event = [[ARSEvent alloc] init];
     
     event.name = [dictionary objectForKey:@"name"];
-    event.description = [dictionary objectForKey:@"description"];
+    
+    
+    if ([dictionary objectForKey:@"menu"]){
+        NSArray *menu = [dictionary objectForKey:@"menu"];
+        NSMutableString *menuDescription = [NSMutableString stringWithString:@""];
+        for(NSDictionary *dish in menu) {
+            [menuDescription appendString:@"\t"];
+            [menuDescription appendString:[dish objectForKey:@"course"]];
+            [menuDescription appendString:@"\n"];
+            [menuDescription appendString:@"\n"];
+            [menuDescription appendString:[dish objectForKey:@"name"]];
+            [menuDescription appendString:@"\n"];
+            [menuDescription appendString:@"\n"];
+        }
+        event.description = menuDescription;
+    }else{
+        event.description = [dictionary objectForKey:@"description"];
+    }
     event.image = [dictionary objectForKey:@"image"];
     event.theme = [dictionary objectForKey:@"theme"];
     event.type = [dictionary objectForKey:@"type"];

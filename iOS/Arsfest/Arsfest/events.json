@@ -55,7 +55,7 @@
                 {
                     "id": "e4",
                     "name": "Carpark North",
-                    "image": "",
+                    "image": "carpark",
                     "startTime": "09-05-2014:23:35",
                     "endTime": "10-05-2014:00:29",
                     "location": "l0",
@@ -128,7 +128,7 @@
                 {
                     "id": "e8",
                     "name": "Dance with me! Ballroom",
-                    "image": "",
+                    "image": "waltz",
                     "startTime": "09-05-2014:22:00",
                     "endTime": "09-05-2014:23:29",
                     "location": "l1",
@@ -139,7 +139,7 @@
                 {
                     "id": "e9",
                     "name": "Dance with me! Caribbean Heat",
-                    "image": "",
+                    "image": "salsa",
                     "startTime": "09-05-2014:22:30",
                     "endTime": "10-05-2014:00:59",
                     "location": "l1",
@@ -150,7 +150,7 @@
                 {
                     "id": "e10",
                     "name": "Dance with me! Turn it up!",
-                    "image": "",
+                    "image": "zumba",
                     "startTime": "10-05-2014:01:00",
                     "endTime": "10-05-2014:01:29",
                     "location": "l1",
@@ -161,7 +161,7 @@
                 {
                     "id": "e11",
                     "name": "Dance with me! Club DTU DancIng",
-                    "image": "",
+                    "image": "dtudance",
                     "startTime": "10-05-2014:01:30",
                     "endTime": "10-05-2014:02:57",
                     "location": "l1",
@@ -193,7 +193,7 @@
                 {
                     "id": "e13",
                     "name": "Kaka",
-                    "image": "",
+                    "image": "kaka",
                     "startTime": "09-05-2014:22:45",
                     "endTime": "09-05-2014:23:44",
                     "location": "l2",
@@ -215,7 +215,7 @@
                 {
                     "id": "e15",
                     "name": "Kongsted",
-                    "image": "",
+                    "image": "kongsted",
                     "startTime": "10-05-2014:01:00",
                     "endTime": "10-05-2014:01:59",
                     "location": "l2",
@@ -287,7 +287,7 @@
                 {
                     "id": "e19",
                     "name": "ABBAtizers",
-                    "image": "",
+                    "image": "abbatizers",
                     "startTime": "09-05-2014:22:40",
                     "endTime": "09-05-2014:23:39",
                     "location": "l3",
@@ -309,7 +309,7 @@
                 {
                     "id": "e21",
                     "name": "ABBAtizers",
-                    "image": "",
+                    "image": "abbatizers",
                     "startTime": "10-05-2014:00:00",
                     "endTime": "10-05-2014:00:59",
                     "location": "l3",
@@ -370,7 +370,7 @@
                 {
                     "id": "e24",
                     "name": "Blå Mandag Jazzband, 1. set",
-                    "image": "",
+                    "image": "jazz",
                     "startTime": "09-05-2014:23:15",
                     "endTime": "09-05-2014:23:59",
                     "location": "l4",
@@ -381,7 +381,7 @@
                 {
                     "id": "e24",
                     "name": "Blå Mandag Jazzband, 2. set",
-                    "image": "",
+                    "image": "jazz",
                     "startTime": "10-05-2014:00:15",
                     "endTime": "10-05-2014:01:00",
                     "location": "l4",
