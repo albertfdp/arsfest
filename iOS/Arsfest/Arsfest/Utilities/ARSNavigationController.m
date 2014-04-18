@@ -66,8 +66,7 @@
     [viewController.navigationItem setRightBarButtonItem:rightItem];
     
     // Info
-    
-    UIImage *leftImage = [UIImage imageNamed:@"location_icon.png"];
+    UIImage *leftImage = [UIImage imageNamed:@"question"];
     UIBarButtonItem *leftItem = [UIBarButtonItem itemWithImage:leftImage target:self action:@selector(showInfo)];
     
     [viewController.navigationItem setLeftBarButtonItem:leftItem];

@@ -8,6 +8,7 @@
 
 #import "ARSEventViewController.h"
 
+
 @interface ARSEventViewController ()
 
 @end
@@ -33,7 +34,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        
     }
     return self;
 }
