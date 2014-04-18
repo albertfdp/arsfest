@@ -21,6 +21,7 @@ import dk.dtu.arsfest.cards.PostEventCard;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.navigation.SideNavigation;
+import dk.dtu.arsfest.notification.ArsfestNotification;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.UniversalImageLoaderThumbnail;
 import dk.dtu.arsfest.utils.Utils;
@@ -68,6 +69,9 @@ public class MainActivity extends BaseActivity {
 	    } else {
 	    	createCards();
 	    }
+	    
+	    ArsfestNotification mNotification = new ArsfestNotification();
+	    mNotification.setAlarm(getApplicationContext());
 	}
 	
 	/*private Event getHappenningNow() {

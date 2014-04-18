@@ -17,7 +17,6 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockActivity;
@@ -29,6 +28,7 @@ import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
+import dk.dtu.arsfest.notification.ArsfestNotification;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.FileCache;
 import dk.dtu.arsfest.utils.Utils;
@@ -49,7 +49,7 @@ public class SplashActivity extends SherlockActivity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+		super.onCreate(savedInstanceState);		
 		setContentView(R.layout.activity_pre_arsfest);
 
 		mContext = this;
@@ -93,6 +93,8 @@ public class SplashActivity extends SherlockActivity {
 		programButton.setTypeface(font);
 		ticketButton.setTypeface(font);
 
+	    ArsfestNotification mNotification = new ArsfestNotification();
+	    mNotification.setAlarm(getApplicationContext());
 	}
 
 	@Override
