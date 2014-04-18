@@ -44,7 +44,7 @@
     [self.navigationBar setTranslucent:YES];
     
     NSMutableDictionary *titleAttributes = [[NSMutableDictionary alloc] init];
-    [titleAttributes setObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
+    [titleAttributes setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
     
     [[UINavigationBar appearance] setTitleTextAttributes:titleAttributes];
 }

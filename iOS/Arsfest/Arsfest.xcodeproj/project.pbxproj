@@ -33,6 +33,7 @@
 		DB59F48718FAC63000348BBF /* ARSCarousel.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB59F48618FAC63000348BBF /* ARSCarousel.xib */; };
 		DB59F48C18FAC6FF00348BBF /* ARSCarouselThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = DB59F48B18FAC6FF00348BBF /* ARSCarouselThumbnail.m */; };
 		DB59F48E18FAC72100348BBF /* ARSCarouselThumbnail.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB59F48D18FAC72100348BBF /* ARSCarouselThumbnail.xib */; };
+		DB5B3FDE1901D25D000EBB36 /* appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5B3FDD1901D25D000EBB36 /* appicon@2x.png */; };
 		DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312418A4337300C3EABB /* Foundation.framework */; };
 		DB6B312718A4337300C3EABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312618A4337300C3EABB /* CoreGraphics.framework */; };
 		DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
@@ -181,6 +182,7 @@
 		DB59F48A18FAC6FF00348BBF /* ARSCarouselThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSCarouselThumbnail.h; sourceTree = "<group>"; };
 		DB59F48B18FAC6FF00348BBF /* ARSCarouselThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARSCarouselThumbnail.m; sourceTree = "<group>"; };
 		DB59F48D18FAC72100348BBF /* ARSCarouselThumbnail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARSCarouselThumbnail.xib; sourceTree = "<group>"; };
+		DB5B3FDD1901D25D000EBB36 /* appicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon@2x.png"; sourceTree = "<group>"; };
 		DB6B312118A4337300C3EABB /* Arsfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arsfest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6B312418A4337300C3EABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB6B312618A4337300C3EABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -456,6 +458,7 @@
 		DB53D31E18AE58D000508DAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DB5B3FDD1901D25D000EBB36 /* appicon@2x.png */,
 				DBF6B0DE18EC547D0048605F /* JSON Files */,
 				DB811D7618E6E0E800BB11E6 /* buildingmap@2x.png */,
 				DB53D32D18AEBCD300508DAD /* default_background.png */,
@@ -942,6 +945,7 @@
 				DB4114A419019FA800740FF8 /* sign-in-with-facebook-highlighted@2x.png in Resources */,
 				E1C3B79318FFD4BD00D6FC18 /* kongsted@2x.png in Resources */,
 				DB77EBD718DC56E400452E06 /* BackgroundIntroView-568h@2x.png in Resources */,
+				DB5B3FDE1901D25D000EBB36 /* appicon@2x.png in Resources */,
 				E1C3B78F18FFD4BD00D6FC18 /* carpark@2x.png in Resources */,
 				E1C3B79218FFD4BD00D6FC18 /* kaka@2x.png in Resources */,
 				E1C3B7A51900448300D6FC18 /* ARSCarouselPartyInfo.xib in Resources */,
@@ -1193,8 +1197,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 79241BB9B33948DDAE553BAF /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1218,8 +1220,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 79241BB9B33948DDAE553BAF /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
