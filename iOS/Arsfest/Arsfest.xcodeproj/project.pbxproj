@@ -14,6 +14,9 @@
 		DB21FDA618BE1A680083F26C /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21FDA418BE1A680083F26C /* location_icon@2x.png */; };
 		DB21FDAA18BE1B6E0083F26C /* ARSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB21FDA918BE1B6E0083F26C /* ARSNavigationController.m */; };
 		DB38A69818E1908F00AA12AE /* ARSAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB38A69718E1908F00AA12AE /* ARSAlertManager.m */; };
+		DB4114A019019E5500740FF8 /* sign-in-with-facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB41149F19019E5500740FF8 /* sign-in-with-facebook@2x.png */; };
+		DB4114A219019EDA00740FF8 /* registerview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB4114A119019EDA00740FF8 /* registerview@2x.png */; };
+		DB4114A419019FA800740FF8 /* sign-in-with-facebook-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB4114A319019FA800740FF8 /* sign-in-with-facebook-highlighted@2x.png */; };
 		DB43481918EDC7DC00CD310E /* NSDate+DayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB43481818EDC7DC00CD310E /* NSDate+DayTest.m */; };
 		DB43AE3E18DEDE7D00D56B4F /* ARSUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB43AE3D18DEDE7D00D56B4F /* ARSUserController.m */; };
 		DB53D31D18AE352400508DAD /* UIViewController+Edges.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53D31C18AE352400508DAD /* UIViewController+Edges.m */; };
@@ -152,6 +155,9 @@
 		DB21FDA918BE1B6E0083F26C /* ARSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSNavigationController.m; path = Utilities/ARSNavigationController.m; sourceTree = "<group>"; };
 		DB38A69618E1908F00AA12AE /* ARSAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSAlertManager.h; path = Controllers/ARSAlertManager/ARSAlertManager.h; sourceTree = "<group>"; };
 		DB38A69718E1908F00AA12AE /* ARSAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSAlertManager.m; path = Controllers/ARSAlertManager/ARSAlertManager.m; sourceTree = "<group>"; };
+		DB41149F19019E5500740FF8 /* sign-in-with-facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign-in-with-facebook@2x.png"; sourceTree = "<group>"; };
+		DB4114A119019EDA00740FF8 /* registerview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "registerview@2x.png"; sourceTree = "<group>"; };
+		DB4114A319019FA800740FF8 /* sign-in-with-facebook-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign-in-with-facebook-highlighted@2x.png"; sourceTree = "<group>"; };
 		DB43481718EDC7DC00CD310E /* NSDate+DayTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DayTest.h"; sourceTree = "<group>"; };
 		DB43481818EDC7DC00CD310E /* NSDate+DayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DayTest.m"; sourceTree = "<group>"; };
 		DB43AE3C18DEDE7D00D56B4F /* ARSUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSUserController.h; path = Controllers/ARSUserController/ARSUserController.h; sourceTree = "<group>"; };
@@ -474,6 +480,9 @@
 		DB53D32418AEB87100508DAD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DB4114A319019FA800740FF8 /* sign-in-with-facebook-highlighted@2x.png */,
+				DB4114A119019EDA00740FF8 /* registerview@2x.png */,
+				DB41149F19019E5500740FF8 /* sign-in-with-facebook@2x.png */,
 				DB43AE3A18DEDDAE00D56B4F /* EventThumbnails */,
 				DB77EBD418DC56D400452E06 /* Intro view */,
 				DBA50A2418B7C5B8001C8AF1 /* Icons */,
@@ -910,6 +919,7 @@
 				E1C3B77818FFC9B800D6FC18 /* carpark.png in Resources */,
 				E1C3B77A18FFCA5400D6FC18 /* kongsted.png in Resources */,
 				DBE009D418B78E22000B6DFE /* queenmachine@2x.png in Resources */,
+				DB4114A019019E5500740FF8 /* sign-in-with-facebook@2x.png in Resources */,
 				DB98729918AD74B500A085FE /* ARSEventCell.xib in Resources */,
 				E1C3B77418FD3F3D00D6FC18 /* abbatizers.png in Resources */,
 				E1C3B77E18FFCD6400D6FC18 /* salsa.png in Resources */,
@@ -922,6 +932,7 @@
 				DBA50A2B18B7C6A0001C8AF1 /* dance_icon.png in Resources */,
 				DB811D7718E6E0E800BB11E6 /* buildingmap@2x.png in Resources */,
 				DB9D6E2C18F47CB000D76BA8 /* Refresh.png in Resources */,
+				DB4114A419019FA800740FF8 /* sign-in-with-facebook-highlighted@2x.png in Resources */,
 				E1C3B79318FFD4BD00D6FC18 /* kongsted@2x.png in Resources */,
 				DB77EBD718DC56E400452E06 /* BackgroundIntroView-568h@2x.png in Resources */,
 				E1C3B78F18FFD4BD00D6FC18 /* carpark@2x.png in Resources */,
@@ -941,6 +952,7 @@
 				DB53D32918AEB88800508DAD /* alphabeat.png in Resources */,
 				DBE009D618B78E22000B6DFE /* veto@2x.png in Resources */,
 				DBE009C718B78E22000B6DFE /* alphabeat.png in Resources */,
+				DB4114A219019EDA00740FF8 /* registerview@2x.png in Resources */,
 				DB169A4C18E5F93400075319 /* contact_icon@2x.png in Resources */,
 				E1C3B77618FFC80800D6FC18 /* kaka.png in Resources */,
 				DBA50A2E18B7C6A0001C8AF1 /* food_icon@2x.png in Resources */,

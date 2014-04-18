@@ -8,6 +8,7 @@
 
 #import "ARSEventListViewController.h"
 #import "ARSEventViewController.h"
+#import "ARSInfoViewController.h"
 #import "ARSEventCell.h"
 #import "ARSEvent.h"
 #import "EAIntroView.h"
@@ -179,6 +180,20 @@
 - (void)setupNavigationBar
 {
     [self.navigationController.navigationBar.topItem setTitle:@"Årsfest"];
+    
+    // Info button
+    UIImage *leftImage = [UIImage imageNamed:@"location_icon.png"];
+    UIBarButtonItem *leftItem = [UIBarButtonItem itemWithImage:leftImage target:self action:@selector(showInfo)];
+    [self.navigationItem setLeftBarButtonItem:leftItem];
+}
+
+- (void)showInfo
+{
+    ARSInfoViewController *infoViewController = [[ARSInfoViewController alloc] initWithNibName:@"ARSInfoViewController" bundle:[NSBundle mainBundle]];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:infoViewController];
+    [navigationController.navigationBar setBarTintColor:kArsfestColor];
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 - (void)initializeScrollingMenu

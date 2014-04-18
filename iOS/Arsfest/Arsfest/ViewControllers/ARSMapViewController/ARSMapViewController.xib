@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13D12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
@@ -131,41 +131,35 @@
                             <rect key="frame" x="0.0" y="1" width="320" height="371"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Register with Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9m-au-mnf">
-                                    <rect key="frame" x="70" y="74" width="181" height="21"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="registerview.png" translatesAutoresizingMaskIntoConstraints="NO" id="uCR-oj-7oA">
+                                    <rect key="frame" x="0.0" y="22" width="320" height="73"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBp-1k-Gpo">
-                                    <rect key="frame" x="16" y="103" width="287" height="150"/>
+                                </imageView>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBp-1k-Gpo">
+                                    <rect key="frame" x="17" y="111" width="287" height="150"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <string key="text">Registering with Facebook enables you to find your friends during the party.                                                   By registering, you agree to share your location with your friends for the duration of the party. You will be able to unregister at any time during the party and the application will automatically log you out when the party is over. </string>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4p-ZE-WKo">
-                                    <rect key="frame" x="102" y="305" width="117" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4p-ZE-WKo">
+                                    <rect key="frame" x="37" y="297" width="246" height="54"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Login">
+                                    <state key="normal" image="sign-in-with-facebook.png">
                                         <color key="titleColor" red="0.75409731660000001" green="0.7527842146" blue="0.74687875739999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <state key="highlighted" image="sign-in-with-facebook-highlighted.png"/>
                                     <connections>
                                         <action selector="loginUser:" destination="-1" eventType="touchUpInside" id="VRn-Wu-uzv"/>
                                     </connections>
                                 </button>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iyn-PZ-r0A">
-                                    <rect key="frame" x="44" y="241" width="233" height="56"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="V4p-ZE-WKo" secondAttribute="bottom" constant="36" id="Wlc-2Q-OPc"/>
+                                <constraint firstAttribute="centerY" secondItem="jBp-1k-Gpo" secondAttribute="centerY" id="KIe-1v-axw"/>
+                                <constraint firstItem="uCR-oj-7oA" firstAttribute="top" secondItem="JfY-Hc-c02" secondAttribute="top" constant="22" id="lMW-qM-JmB"/>
                             </constraints>
                             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                         </view>
@@ -186,6 +180,7 @@
             <constraints>
                 <constraint firstItem="WO6-7t-MGG" firstAttribute="top" secondItem="cXB-8z-KiR" secondAttribute="bottom" id="IQO-Vf-8VM"/>
                 <constraint firstAttribute="bottom" secondItem="WO6-7t-MGG" secondAttribute="bottom" id="OB8-2J-Ofq"/>
+                <constraint firstItem="WO6-7t-MGG" firstAttribute="top" secondItem="V4p-ZE-WKo" secondAttribute="bottom" constant="20" id="PHM-8f-2rt"/>
                 <constraint firstItem="cXB-8z-KiR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bwr-Mq-Sdd"/>
                 <constraint firstAttribute="trailing" secondItem="cXB-8z-KiR" secondAttribute="trailing" id="g5C-wm-Bcm"/>
             </constraints>
@@ -194,4 +189,9 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="registerview.png" width="320" height="73"/>
+        <image name="sign-in-with-facebook-highlighted.png" width="246" height="54"/>
+        <image name="sign-in-with-facebook.png" width="246" height="54"/>
+    </resources>
 </document>

@@ -45,9 +45,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self customizeFacebookLoginButton];
-    
+
     //KVO Registration
     [self.friendListView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:nil];
     [self.friendListDataView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:nil];
@@ -109,13 +107,6 @@
     [self.mapScrollView setZoomScale:0.6];
     
     [self locateUser];
-}
-
-- (void)customizeFacebookLoginButton
-{
-    [self.loginButton.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
-    [self.loginButton.layer setBorderWidth:1.0f];
-    [self.loginButton.layer setCornerRadius:5.0f];
 }
 
 - (void)configureViewForSelectedIndex:(NSInteger)index
