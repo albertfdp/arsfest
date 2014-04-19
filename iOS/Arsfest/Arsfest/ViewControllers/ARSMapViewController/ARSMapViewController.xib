@@ -34,10 +34,9 @@
                         <constraint firstAttribute="height" constant="44" id="tK9-rv-BT0"/>
                     </constraints>
                     <items>
-                        <barButtonItem width="66" style="plain" systemItem="fixedSpace" id="8Ma-b7-Qia"/>
                         <barButtonItem style="plain" id="o3r-yF-Rof">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" id="b7G-oj-BkJ">
-                                <rect key="frame" x="82" y="7" width="161" height="30"/>
+                                <rect key="frame" x="16" y="7" width="161" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Map"/>
@@ -45,7 +44,6 @@
                                 </segments>
                             </segmentedControl>
                         </barButtonItem>
-                        <barButtonItem width="66" style="plain" systemItem="fixedSpace" id="INx-Ta-wZB"/>
                     </items>
                 </toolbar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXB-8z-KiR" userLabel="Container view">

@@ -63,8 +63,9 @@
     UIBarButtonItem *rightItem = [UIBarButtonItem itemWithImage:rightImage target:self action:@selector(dismissMap)];
     [self.navigationController.navigationBar.topItem setRightBarButtonItem:rightItem];
 
+    
     UIImage *refreshImage = [UIImage imageNamed:@"Refresh.png"];
-    refreshBarButtonItem = [UIBarButtonItem itemWithImage:refreshImage target:self action:@selector(refreshFriendsLocation)];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated

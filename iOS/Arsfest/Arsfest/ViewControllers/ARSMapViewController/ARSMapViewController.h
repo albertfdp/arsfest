@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
+
 /* Register with facebook outlets */
 
 @property (strong, nonatomic) IBOutlet UIView *registerView;
@@ -46,5 +47,6 @@
     /* Map image view */
 
 @property (nonatomic, strong) UIImageView *mapImageView;
+
 
 @end

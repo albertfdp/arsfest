@@ -33,9 +33,11 @@
 		DB59F48718FAC63000348BBF /* ARSCarousel.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB59F48618FAC63000348BBF /* ARSCarousel.xib */; };
 		DB59F48C18FAC6FF00348BBF /* ARSCarouselThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = DB59F48B18FAC6FF00348BBF /* ARSCarouselThumbnail.m */; };
 		DB59F48E18FAC72100348BBF /* ARSCarouselThumbnail.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB59F48D18FAC72100348BBF /* ARSCarouselThumbnail.xib */; };
-		DB5B3FDE1901D25D000EBB36 /* appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5B3FDD1901D25D000EBB36 /* appicon@2x.png */; };
+		DB5B3FDE1901D25D000EBB36 /* AppIcon120.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5B3FDD1901D25D000EBB36 /* AppIcon120.png */; };
 		DB5C7B8419025A3500E56ECD /* AppIcon58.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8219025A3500E56ECD /* AppIcon58.png */; };
 		DB5C7B8519025A3500E56ECD /* AppIcon80.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8319025A3500E56ECD /* AppIcon80.png */; };
+		DB5C7B8819029D0A00E56ECD /* AppLaunchScreen960.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8619029D0A00E56ECD /* AppLaunchScreen960.png */; };
+		DB5C7B8919029D0A00E56ECD /* AppLaunchScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8719029D0A00E56ECD /* AppLaunchScreen1136.png */; };
 		DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312418A4337300C3EABB /* Foundation.framework */; };
 		DB6B312718A4337300C3EABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312618A4337300C3EABB /* CoreGraphics.framework */; };
 		DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
@@ -184,9 +186,11 @@
 		DB59F48A18FAC6FF00348BBF /* ARSCarouselThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSCarouselThumbnail.h; sourceTree = "<group>"; };
 		DB59F48B18FAC6FF00348BBF /* ARSCarouselThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARSCarouselThumbnail.m; sourceTree = "<group>"; };
 		DB59F48D18FAC72100348BBF /* ARSCarouselThumbnail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARSCarouselThumbnail.xib; sourceTree = "<group>"; };
-		DB5B3FDD1901D25D000EBB36 /* appicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon@2x.png"; sourceTree = "<group>"; };
+		DB5B3FDD1901D25D000EBB36 /* AppIcon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon120.png; sourceTree = "<group>"; };
 		DB5C7B8219025A3500E56ECD /* AppIcon58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon58.png; sourceTree = "<group>"; };
 		DB5C7B8319025A3500E56ECD /* AppIcon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon80.png; sourceTree = "<group>"; };
+		DB5C7B8619029D0A00E56ECD /* AppLaunchScreen960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppLaunchScreen960.png; sourceTree = "<group>"; };
+		DB5C7B8719029D0A00E56ECD /* AppLaunchScreen1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppLaunchScreen1136.png; sourceTree = "<group>"; };
 		DB6B312118A4337300C3EABB /* Arsfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arsfest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6B312418A4337300C3EABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB6B312618A4337300C3EABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -462,9 +466,11 @@
 		DB53D31E18AE58D000508DAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DB5C7B8619029D0A00E56ECD /* AppLaunchScreen960.png */,
+				DB5C7B8719029D0A00E56ECD /* AppLaunchScreen1136.png */,
 				DB5C7B8219025A3500E56ECD /* AppIcon58.png */,
 				DB5C7B8319025A3500E56ECD /* AppIcon80.png */,
-				DB5B3FDD1901D25D000EBB36 /* appicon@2x.png */,
+				DB5B3FDD1901D25D000EBB36 /* AppIcon120.png */,
 				DBF6B0DE18EC547D0048605F /* JSON Files */,
 				DB811D7618E6E0E800BB11E6 /* buildingmap@2x.png */,
 				DB53D32D18AEBCD300508DAD /* default_background.png */,
@@ -951,7 +957,7 @@
 				DB4114A419019FA800740FF8 /* sign-in-with-facebook-highlighted@2x.png in Resources */,
 				E1C3B79318FFD4BD00D6FC18 /* kongsted@2x.png in Resources */,
 				DB77EBD718DC56E400452E06 /* BackgroundIntroView-568h@2x.png in Resources */,
-				DB5B3FDE1901D25D000EBB36 /* appicon@2x.png in Resources */,
+				DB5B3FDE1901D25D000EBB36 /* AppIcon120.png in Resources */,
 				E1C3B78F18FFD4BD00D6FC18 /* carpark@2x.png in Resources */,
 				E1C3B79218FFD4BD00D6FC18 /* kaka@2x.png in Resources */,
 				E1C3B7A51900448300D6FC18 /* ARSCarouselPartyInfo.xib in Resources */,
@@ -969,6 +975,7 @@
 				DB53D32918AEB88800508DAD /* alphabeat.png in Resources */,
 				DBE009D618B78E22000B6DFE /* veto@2x.png in Resources */,
 				DBE009C718B78E22000B6DFE /* alphabeat.png in Resources */,
+				DB5C7B8819029D0A00E56ECD /* AppLaunchScreen960.png in Resources */,
 				DB169A4C18E5F93400075319 /* contact_icon@2x.png in Resources */,
 				E1C3B77618FFC80800D6FC18 /* kaka.png in Resources */,
 				DBA50A2E18B7C6A0001C8AF1 /* food_icon@2x.png in Resources */,
@@ -1004,6 +1011,7 @@
 				DB21FDA518BE1A680083F26C /* location_icon.png in Resources */,
 				DB9872A018AD7EB000A085FE /* ARSEventViewController.xib in Resources */,
 				DB59F48E18FAC72100348BBF /* ARSCarouselThumbnail.xib in Resources */,
+				DB5C7B8919029D0A00E56ECD /* AppLaunchScreen1136.png in Resources */,
 				DBE009C818B78E22000B6DFE /* alphabeat@2x.png in Resources */,
 				DBE009D318B78E22000B6DFE /* queenmachine.png in Resources */,
 			);
