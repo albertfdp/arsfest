@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ARSUserController.h"
 
-@interface ARSMapViewController : UIViewController <ARSUserControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@interface ARSMapViewController : UIViewController <ARSUserControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UIAlertViewDelegate>
 
 /* Main view outlets */
 @property (weak, nonatomic) IBOutlet UIView *containerView;

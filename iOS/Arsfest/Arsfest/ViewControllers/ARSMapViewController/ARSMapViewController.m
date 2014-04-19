@@ -53,7 +53,7 @@
     [super viewDidLoad];
     
     //Important: initialize these buttons before anything else
-    refreshBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"refresh.png"] target:self action:@selector(dismissMap)];
+    refreshBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"refresh.png"] target:self action:@selector(refreshFriendsLocation)];
     locateMeButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"locateme.png"] target:self action:@selector(locateUser)];
     logoutButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"logoutbutton.png"] target:self action:@selector(logOut)];
     flexibleButtonItem = [[UIBarButtonItem alloc]
@@ -329,10 +329,24 @@
 
 - (void)logOut
 {
-#warning Incomplete
     //Show alert first
-    [ARSUserController logOutUser];
-    [self configureViewForSelectedIndex:self.segmentedControl.selectedSegmentIndex];
+    UIAlertView *confirmAlert = [[UIAlertView alloc] initWithTitle:@"Confirmation" message:@"Do you wish to log out of Facebook?" delegate:self cancelButtonTitle:@"CANCEL" otherButtonTitles:@"LOG OUT", nil];
+    [confirmAlert show];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 1:
+        {
+                [ARSUserController logOutUser];
+                [self configureViewForSelectedIndex:self.segmentedControl.selectedSegmentIndex];
+        }
+        default:
+            break;
+    }
+}
+
+
 
 @end
