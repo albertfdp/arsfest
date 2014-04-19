@@ -34,6 +34,8 @@
 		DB59F48C18FAC6FF00348BBF /* ARSCarouselThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = DB59F48B18FAC6FF00348BBF /* ARSCarouselThumbnail.m */; };
 		DB59F48E18FAC72100348BBF /* ARSCarouselThumbnail.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB59F48D18FAC72100348BBF /* ARSCarouselThumbnail.xib */; };
 		DB5B3FDE1901D25D000EBB36 /* appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5B3FDD1901D25D000EBB36 /* appicon@2x.png */; };
+		DB5C7B8419025A3500E56ECD /* AppIcon58.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8219025A3500E56ECD /* AppIcon58.png */; };
+		DB5C7B8519025A3500E56ECD /* AppIcon80.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8319025A3500E56ECD /* AppIcon80.png */; };
 		DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312418A4337300C3EABB /* Foundation.framework */; };
 		DB6B312718A4337300C3EABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312618A4337300C3EABB /* CoreGraphics.framework */; };
 		DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
@@ -183,6 +185,8 @@
 		DB59F48B18FAC6FF00348BBF /* ARSCarouselThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARSCarouselThumbnail.m; sourceTree = "<group>"; };
 		DB59F48D18FAC72100348BBF /* ARSCarouselThumbnail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARSCarouselThumbnail.xib; sourceTree = "<group>"; };
 		DB5B3FDD1901D25D000EBB36 /* appicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon@2x.png"; sourceTree = "<group>"; };
+		DB5C7B8219025A3500E56ECD /* AppIcon58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon58.png; sourceTree = "<group>"; };
+		DB5C7B8319025A3500E56ECD /* AppIcon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon80.png; sourceTree = "<group>"; };
 		DB6B312118A4337300C3EABB /* Arsfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arsfest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6B312418A4337300C3EABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB6B312618A4337300C3EABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -458,6 +462,8 @@
 		DB53D31E18AE58D000508DAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DB5C7B8219025A3500E56ECD /* AppIcon58.png */,
+				DB5C7B8319025A3500E56ECD /* AppIcon80.png */,
 				DB5B3FDD1901D25D000EBB36 /* appicon@2x.png */,
 				DBF6B0DE18EC547D0048605F /* JSON Files */,
 				DB811D7618E6E0E800BB11E6 /* buildingmap@2x.png */,
@@ -970,6 +976,7 @@
 				DBA50A2C18B7C6A0001C8AF1 /* dance_icon@2x.png in Resources */,
 				DBE009C918B78E22000B6DFE /* dinner.png in Resources */,
 				DBE009CC18B78E22000B6DFE /* dj@2x.png in Resources */,
+				DB5C7B8519025A3500E56ECD /* AppIcon80.png in Resources */,
 				E1C3B78218FFD19D00D6FC18 /* waltz.png in Resources */,
 				E1C3B79418FFD4BD00D6FC18 /* salsa@2x.png in Resources */,
 				DBC83A6B18E2DE380047D269 /* ARSMapViewController.xib in Resources */,
@@ -991,6 +998,7 @@
 				DB53D32118AE595C00508DAD /* Clock.png in Resources */,
 				E1C3B77C18FFCB3700D6FC18 /* jazz.png in Resources */,
 				DBE009CB18B78E22000B6DFE /* dj.png in Resources */,
+				DB5C7B8419025A3500E56ECD /* AppIcon58.png in Resources */,
 				DB4114A61901A26800740FF8 /* registerview@2x.png in Resources */,
 				E1C3B79618FFD4BD00D6FC18 /* zumba@2x.png in Resources */,
 				DB21FDA518BE1A680083F26C /* location_icon.png in Resources */,
