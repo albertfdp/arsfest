@@ -38,6 +38,8 @@
 		DB5C7B8519025A3500E56ECD /* AppIcon80.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8319025A3500E56ECD /* AppIcon80.png */; };
 		DB5C7B8819029D0A00E56ECD /* AppLaunchScreen960.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8619029D0A00E56ECD /* AppLaunchScreen960.png */; };
 		DB5C7B8919029D0A00E56ECD /* AppLaunchScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8719029D0A00E56ECD /* AppLaunchScreen1136.png */; };
+		DB5C7B8C1902E89A00E56ECD /* official_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8A1902E89A00E56ECD /* official_icon.png */; };
+		DB5C7B8D1902E89A00E56ECD /* official_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8B1902E89A00E56ECD /* official_icon@2x.png */; };
 		DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312418A4337300C3EABB /* Foundation.framework */; };
 		DB6B312718A4337300C3EABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312618A4337300C3EABB /* CoreGraphics.framework */; };
 		DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
@@ -191,6 +193,8 @@
 		DB5C7B8319025A3500E56ECD /* AppIcon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon80.png; sourceTree = "<group>"; };
 		DB5C7B8619029D0A00E56ECD /* AppLaunchScreen960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppLaunchScreen960.png; sourceTree = "<group>"; };
 		DB5C7B8719029D0A00E56ECD /* AppLaunchScreen1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppLaunchScreen1136.png; sourceTree = "<group>"; };
+		DB5C7B8A1902E89A00E56ECD /* official_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = official_icon.png; sourceTree = "<group>"; };
+		DB5C7B8B1902E89A00E56ECD /* official_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "official_icon@2x.png"; sourceTree = "<group>"; };
 		DB6B312118A4337300C3EABB /* Arsfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arsfest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6B312418A4337300C3EABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB6B312618A4337300C3EABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -757,6 +761,8 @@
 		DBA50A2418B7C5B8001C8AF1 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				DB5C7B8A1902E89A00E56ECD /* official_icon.png */,
+				DB5C7B8B1902E89A00E56ECD /* official_icon@2x.png */,
 				E147EE031901902900C2D8B8 /* question@2x.png */,
 				E147EE011901900500C2D8B8 /* question.png */,
 				DB21FDA318BE1A680083F26C /* location_icon.png */,
@@ -942,6 +948,7 @@
 				DBE009D418B78E22000B6DFE /* queenmachine@2x.png in Resources */,
 				DB4114A019019E5500740FF8 /* sign-in-with-facebook@2x.png in Resources */,
 				DB98729918AD74B500A085FE /* ARSEventCell.xib in Resources */,
+				DB5C7B8D1902E89A00E56ECD /* official_icon@2x.png in Resources */,
 				E1C3B77418FD3F3D00D6FC18 /* abbatizers.png in Resources */,
 				E1C3B77E18FFCD6400D6FC18 /* salsa.png in Resources */,
 				E1C3B78E18FFD4BD00D6FC18 /* abbatizers@2x.png in Resources */,
@@ -978,6 +985,7 @@
 				DB5C7B8819029D0A00E56ECD /* AppLaunchScreen960.png in Resources */,
 				DB169A4C18E5F93400075319 /* contact_icon@2x.png in Resources */,
 				E1C3B77618FFC80800D6FC18 /* kaka.png in Resources */,
+				DB5C7B8C1902E89A00E56ECD /* official_icon.png in Resources */,
 				DBA50A2E18B7C6A0001C8AF1 /* food_icon@2x.png in Resources */,
 				DB9D6E2D18F47CB000D76BA8 /* Refresh@2x.png in Resources */,
 				DBA50A2C18B7C6A0001C8AF1 /* dance_icon@2x.png in Resources */,
