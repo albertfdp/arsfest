@@ -182,9 +182,9 @@
     [self.navigationController.navigationBar.topItem setTitle:@"Årsfest"];
     
     // Info button
-    UIImage *leftImage = [UIImage imageNamed:@"question.png"];
-    UIBarButtonItem *leftItem = [UIBarButtonItem itemWithImage:leftImage target:self action:@selector(showInfo)];
-    [self.navigationItem setLeftBarButtonItem:leftItem];
+//    UIImage *leftImage = [UIImage imageNamed:@"question.png"];
+//    UIBarButtonItem *leftItem = [UIBarButtonItem itemWithImage:leftImage target:self action:@selector(showInfo)];
+//    [self.navigationItem setLeftBarButtonItem:leftItem];
 }
 
 - (void)showInfo

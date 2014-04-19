@@ -14,6 +14,8 @@
 /* Main view outlets */
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *segmentedControlButtonItem;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 
 /* Register with facebook outlets */

@@ -18,6 +18,8 @@
                 <outlet property="noFriendsRegisteredLabel" destination="p1o-A8-313" id="E55-Gr-XXr"/>
                 <outlet property="registerView" destination="JfY-Hc-c02" id="zwc-e3-hEh"/>
                 <outlet property="segmentedControl" destination="b7G-oj-BkJ" id="ceY-Ho-GVg"/>
+                <outlet property="segmentedControlButtonItem" destination="o3r-yF-Rof" id="M1F-ul-lT9"/>
+                <outlet property="toolbar" destination="WO6-7t-MGG" id="mJK-Sj-D40"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="QJe-FB-xVw"/>
             </connections>
         </placeholder>

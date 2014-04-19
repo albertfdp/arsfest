@@ -14,6 +14,9 @@
 
 @property (nonatomic, retain) NSArray *friends;
 @property (nonatomic, retain) UIBarButtonItem *refreshBarButtonItem;
+@property (nonatomic, retain) UIBarButtonItem *locateMeButtonItem;
+@property (nonatomic, retain) UIBarButtonItem *logoutButtonItem;
+@property (nonatomic, retain) UIBarButtonItem *flexibleButtonItem;
 
 //Location indicator on map
 @property (nonatomic, weak) CAShapeLayer *circleLayer;
@@ -32,6 +35,9 @@
 @synthesize friends;
 @synthesize mapImageView;
 @synthesize refreshBarButtonItem;
+@synthesize locateMeButtonItem;
+@synthesize logoutButtonItem;
+@synthesize flexibleButtonItem;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,6 +51,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //Important: initialize these buttons before anything else
+    refreshBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"refresh.png"] target:self action:@selector(dismissMap)];
+    locateMeButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"locateme.png"] target:self action:@selector(locateUser)];
+    logoutButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"logoutbutton.png"] target:self action:@selector(logOut)];
+    flexibleButtonItem = [[UIBarButtonItem alloc]
+                          initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                          target:nil action:nil];
 
     //KVO Registration
     [self.friendListView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:nil];
@@ -64,7 +78,7 @@
     [self.navigationController.navigationBar.topItem setRightBarButtonItem:rightItem];
 
     
-    UIImage *refreshImage = [UIImage imageNamed:@"Refresh.png"];
+
 
 }
 
@@ -106,8 +120,6 @@
     [self.mapScrollView setContentSize:self.mapImageView.image.size];
     
     [self.mapScrollView setZoomScale:0.6];
-    
-    [self locateUser];
 }
 
 - (void)configureViewForSelectedIndex:(NSInteger)index
@@ -121,7 +133,7 @@
             
             [self setTitle:@"Map"];
             
-            [self.navigationController.navigationBar.topItem setLeftBarButtonItem:nil];
+            [self.toolbar setItems:@[flexibleButtonItem, self.segmentedControlButtonItem, flexibleButtonItem, locateMeButtonItem]];
             
             break;
         }
@@ -131,15 +143,17 @@
                 [self.mapView setHidden:YES];
                 [self.registerView setHidden:YES];
                 [self.friendListView setHidden:NO];
+                
+                [self.toolbar setItems:@[logoutButtonItem, flexibleButtonItem, self.segmentedControlButtonItem, flexibleButtonItem, refreshBarButtonItem]];
             } else {
                 [self.mapView setHidden:YES];
                 [self.registerView setHidden:NO];
                 [self.friendListView setHidden:YES];
+                
+                [self.toolbar setItems:@[flexibleButtonItem, self.segmentedControlButtonItem, flexibleButtonItem]];
             }
             
             [self setTitle:@"Friends"];
-            
-            [self.navigationController.navigationBar.topItem setLeftBarButtonItem:refreshBarButtonItem];
             
             break;
         }
@@ -309,6 +323,16 @@
     [cell configureCellWithUser:[friends objectAtIndex:indexPath.row]];
     
     return cell;
+}
+
+#pragma mark - Logout handling
+
+- (void)logOut
+{
+#warning Incomplete
+    //Show alert first
+    [ARSUserController logOutUser];
+    [self configureViewForSelectedIndex:self.segmentedControl.selectedSegmentIndex];
 }
 
 @end

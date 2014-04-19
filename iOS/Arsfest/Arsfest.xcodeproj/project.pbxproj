@@ -40,6 +40,10 @@
 		DB5C7B8D1902E89A00E56ECD /* official_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8B1902E89A00E56ECD /* official_icon@2x.png */; };
 		DB5C7B901902EC2300E56ECD /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8E1902EC2300E56ECD /* location_icon@2x.png */; };
 		DB5C7B911902EC2300E56ECD /* location_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8F1902EC2300E56ECD /* location_icon.png */; };
+		DB5C7B96190304B500E56ECD /* logoutbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B92190304B500E56ECD /* logoutbutton.png */; };
+		DB5C7B97190304B500E56ECD /* locateme@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B93190304B500E56ECD /* locateme@2x.png */; };
+		DB5C7B98190304B500E56ECD /* locateme.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B94190304B500E56ECD /* locateme.png */; };
+		DB5C7B99190304B500E56ECD /* logoutbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B95190304B500E56ECD /* logoutbutton@2x.png */; };
 		DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312418A4337300C3EABB /* Foundation.framework */; };
 		DB6B312718A4337300C3EABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312618A4337300C3EABB /* CoreGraphics.framework */; };
 		DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
@@ -79,8 +83,8 @@
 		DB98729F18AD7EB000A085FE /* ARSEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB98729D18AD7EB000A085FE /* ARSEventViewController.m */; };
 		DB9872A018AD7EB000A085FE /* ARSEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB98729E18AD7EB000A085FE /* ARSEventViewController.xib */; };
 		DB9872A418AD7F7500A085FE /* NSDate+Formatter.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9872A318AD7F7500A085FE /* NSDate+Formatter.m */; };
-		DB9D6E2C18F47CB000D76BA8 /* Refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9D6E2A18F47CB000D76BA8 /* Refresh.png */; };
-		DB9D6E2D18F47CB000D76BA8 /* Refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9D6E2B18F47CB000D76BA8 /* Refresh@2x.png */; };
+		DB9D6E2C18F47CB000D76BA8 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9D6E2A18F47CB000D76BA8 /* refresh.png */; };
+		DB9D6E2D18F47CB000D76BA8 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9D6E2B18F47CB000D76BA8 /* refresh@2x.png */; };
 		DBA50A2B18B7C6A0001C8AF1 /* dance_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA50A2518B7C6A0001C8AF1 /* dance_icon.png */; };
 		DBA50A2C18B7C6A0001C8AF1 /* dance_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA50A2618B7C6A0001C8AF1 /* dance_icon@2x.png */; };
 		DBA50A2D18B7C6A0001C8AF1 /* food_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA50A2718B7C6A0001C8AF1 /* food_icon.png */; };
@@ -195,6 +199,10 @@
 		DB5C7B8B1902E89A00E56ECD /* official_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "official_icon@2x.png"; sourceTree = "<group>"; };
 		DB5C7B8E1902EC2300E56ECD /* location_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@2x.png"; sourceTree = "<group>"; };
 		DB5C7B8F1902EC2300E56ECD /* location_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_icon.png; sourceTree = "<group>"; };
+		DB5C7B92190304B500E56ECD /* logoutbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoutbutton.png; sourceTree = "<group>"; };
+		DB5C7B93190304B500E56ECD /* locateme@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locateme@2x.png"; sourceTree = "<group>"; };
+		DB5C7B94190304B500E56ECD /* locateme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locateme.png; sourceTree = "<group>"; };
+		DB5C7B95190304B500E56ECD /* logoutbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoutbutton@2x.png"; sourceTree = "<group>"; };
 		DB6B312118A4337300C3EABB /* Arsfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arsfest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6B312418A4337300C3EABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB6B312618A4337300C3EABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -248,8 +256,8 @@
 		DB98729E18AD7EB000A085FE /* ARSEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ARSEventViewController.xib; path = ViewControllers/ARSEventViewController/ARSEventViewController.xib; sourceTree = "<group>"; };
 		DB9872A218AD7F7500A085FE /* NSDate+Formatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+Formatter.h"; path = "Utilities/NSDate+Formatter.h"; sourceTree = "<group>"; };
 		DB9872A318AD7F7500A085FE /* NSDate+Formatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Formatter.m"; path = "Utilities/NSDate+Formatter.m"; sourceTree = "<group>"; };
-		DB9D6E2A18F47CB000D76BA8 /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
-		DB9D6E2B18F47CB000D76BA8 /* Refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Refresh@2x.png"; sourceTree = "<group>"; };
+		DB9D6E2A18F47CB000D76BA8 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		DB9D6E2B18F47CB000D76BA8 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
 		DBA50A2518B7C6A0001C8AF1 /* dance_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dance_icon.png; sourceTree = "<group>"; };
 		DBA50A2618B7C6A0001C8AF1 /* dance_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dance_icon@2x.png"; sourceTree = "<group>"; };
 		DBA50A2718B7C6A0001C8AF1 /* food_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food_icon.png; sourceTree = "<group>"; };
@@ -489,8 +497,12 @@
 		DB53D32318AEB86700508DAD /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				DB9D6E2A18F47CB000D76BA8 /* Refresh.png */,
-				DB9D6E2B18F47CB000D76BA8 /* Refresh@2x.png */,
+				DB5C7B92190304B500E56ECD /* logoutbutton.png */,
+				DB5C7B93190304B500E56ECD /* locateme@2x.png */,
+				DB5C7B94190304B500E56ECD /* locateme.png */,
+				DB5C7B95190304B500E56ECD /* logoutbutton@2x.png */,
+				DB9D6E2A18F47CB000D76BA8 /* refresh.png */,
+				DB9D6E2B18F47CB000D76BA8 /* refresh@2x.png */,
 				DB811D7818E6F6E500BB11E6 /* close.png */,
 				DB811D7918E6F6E500BB11E6 /* close@2x.png */,
 				DB169A4B18E5F93400075319 /* contact_icon@2x.png */,
@@ -960,9 +972,10 @@
 				DB811D7B18E6F6E500BB11E6 /* close@2x.png in Resources */,
 				DBA50A2B18B7C6A0001C8AF1 /* dance_icon.png in Resources */,
 				DB811D7718E6E0E800BB11E6 /* buildingmap@2x.png in Resources */,
-				DB9D6E2C18F47CB000D76BA8 /* Refresh.png in Resources */,
+				DB9D6E2C18F47CB000D76BA8 /* refresh.png in Resources */,
 				DB4114A419019FA800740FF8 /* sign-in-with-facebook-highlighted@2x.png in Resources */,
 				E1C3B79318FFD4BD00D6FC18 /* kongsted@2x.png in Resources */,
+				DB5C7B98190304B500E56ECD /* locateme.png in Resources */,
 				DB77EBD718DC56E400452E06 /* BackgroundIntroView-568h@2x.png in Resources */,
 				DB5B3FDE1901D25D000EBB36 /* AppIcon120.png in Resources */,
 				E1C3B78F18FFD4BD00D6FC18 /* carpark@2x.png in Resources */,
@@ -987,8 +1000,9 @@
 				DB169A4C18E5F93400075319 /* contact_icon@2x.png in Resources */,
 				E1C3B77618FFC80800D6FC18 /* kaka.png in Resources */,
 				DB5C7B8C1902E89A00E56ECD /* official_icon.png in Resources */,
+				DB5C7B96190304B500E56ECD /* logoutbutton.png in Resources */,
 				DBA50A2E18B7C6A0001C8AF1 /* food_icon@2x.png in Resources */,
-				DB9D6E2D18F47CB000D76BA8 /* Refresh@2x.png in Resources */,
+				DB9D6E2D18F47CB000D76BA8 /* refresh@2x.png in Resources */,
 				DBA50A2C18B7C6A0001C8AF1 /* dance_icon@2x.png in Resources */,
 				DBE009C918B78E22000B6DFE /* dinner.png in Resources */,
 				DBE009CC18B78E22000B6DFE /* dj@2x.png in Resources */,
@@ -997,6 +1011,7 @@
 				E1C3B79418FFD4BD00D6FC18 /* salsa@2x.png in Resources */,
 				DBC83A6B18E2DE380047D269 /* ARSMapViewController.xib in Resources */,
 				DBF6B0E218EC54CA0048605F /* events.json in Resources */,
+				DB5C7B97190304B500E56ECD /* locateme@2x.png in Resources */,
 				DBE009CE18B78E22000B6DFE /* jazzband@2x.png in Resources */,
 				E147EE0019015C0600C2D8B8 /* ARSInfoViewController.xib in Resources */,
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
@@ -1013,6 +1028,7 @@
 				DB6B313718A4337300C3EABB /* Images.xcassets in Resources */,
 				DB53D32118AE595C00508DAD /* Clock.png in Resources */,
 				E1C3B77C18FFCB3700D6FC18 /* jazz.png in Resources */,
+				DB5C7B99190304B500E56ECD /* logoutbutton@2x.png in Resources */,
 				DBE009CB18B78E22000B6DFE /* dj.png in Resources */,
 				DB5C7B8419025A3500E56ECD /* AppIcon58.png in Resources */,
 				DB4114A61901A26800740FF8 /* registerview@2x.png in Resources */,
