@@ -34,7 +34,7 @@
     
     location.name = [dictionary objectForKey:@"name"];
     location.locationId = [dictionary objectForKey:@"id"];
-    location.type = [[location.locationId substringFromIndex:1] integerValue];
+    location.type = (int)[[location.locationId substringFromIndex:1] integerValue];
     
     NSString *latitude = [dictionary objectForKey:@"latitude"];
     NSString *longitude = [dictionary objectForKey:@"longitude"];

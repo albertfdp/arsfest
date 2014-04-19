@@ -236,7 +236,7 @@
 
 - (void)menuDidSelectMenuItemAtIndex:(NSUInteger)index
 {
-    _currentFilter = kNumberOfLocations - index;
+    _currentFilter = kNumberOfLocations - (int)index;
     NSArray *newData = [[ARSData data] eventsIn:_currentFilter];
     [self sortAndStore:newData];
 }
