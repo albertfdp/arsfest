@@ -329,13 +329,14 @@
 
 - (void)logOut
 {
-    //Show alert first
-    UIAlertView *confirmAlert = [[UIAlertView alloc] initWithTitle:@"Confirmation" message:@"Do you wish to log out of Facebook?" delegate:self cancelButtonTitle:@"CANCEL" otherButtonTitles:@"LOG OUT", nil];
+    //Show confirmation alert first
+    UIAlertView *confirmAlert = [[UIAlertView alloc] initWithTitle:@"Confirmation" message:@"Do you wish to log out of Facebook?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Log Out", nil];
     [confirmAlert show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    //If the user wishes to log out
     switch (buttonIndex) {
         case 1:
         {

@@ -44,6 +44,7 @@
 		DB5C7B97190304B500E56ECD /* locateme@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B93190304B500E56ECD /* locateme@2x.png */; };
 		DB5C7B98190304B500E56ECD /* locateme.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B94190304B500E56ECD /* locateme.png */; };
 		DB5C7B99190304B500E56ECD /* logoutbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B95190304B500E56ECD /* logoutbutton@2x.png */; };
+		DB5C7B9B190326A300E56ECD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B9A190326A300E56ECD /* Default-568h@2x.png */; };
 		DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312418A4337300C3EABB /* Foundation.framework */; };
 		DB6B312718A4337300C3EABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312618A4337300C3EABB /* CoreGraphics.framework */; };
 		DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
@@ -203,6 +204,7 @@
 		DB5C7B93190304B500E56ECD /* locateme@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locateme@2x.png"; sourceTree = "<group>"; };
 		DB5C7B94190304B500E56ECD /* locateme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locateme.png; sourceTree = "<group>"; };
 		DB5C7B95190304B500E56ECD /* logoutbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoutbutton@2x.png"; sourceTree = "<group>"; };
+		DB5C7B9A190326A300E56ECD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DB6B312118A4337300C3EABB /* Arsfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arsfest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6B312418A4337300C3EABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB6B312618A4337300C3EABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -559,6 +561,7 @@
 		DB6B311818A4337300C3EABB = {
 			isa = PBXGroup;
 			children = (
+				DB5C7B9A190326A300E56ECD /* Default-568h@2x.png */,
 				DB6B312A18A4337300C3EABB /* Arsfest */,
 				DB6B314318A4337400C3EABB /* ArsfestTests */,
 				DB6B312318A4337300C3EABB /* Frameworks */,
@@ -1038,6 +1041,7 @@
 				DB5C7B8919029D0A00E56ECD /* AppLaunchScreen1136.png in Resources */,
 				DBE009C818B78E22000B6DFE /* alphabeat@2x.png in Resources */,
 				DBE009D318B78E22000B6DFE /* queenmachine.png in Resources */,
+				DB5C7B9B190326A300E56ECD /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

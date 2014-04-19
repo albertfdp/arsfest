@@ -12,12 +12,7 @@
 
 +(UIBarButtonItem*)itemWithImage:(UIImage*)image target:(id)target action:(SEL)selector
 {
-    UIButton *button = [[UIButton alloc] init];
-    button.frame = CGRectMake(0,0,22,22);
-    [button setBackgroundImage:image forState:UIControlStateNormal];
-    [button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:target action:selector];
     return item;
 }
 
