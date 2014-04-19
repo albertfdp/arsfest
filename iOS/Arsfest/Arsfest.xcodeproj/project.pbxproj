@@ -10,8 +10,6 @@
 		A3C9C2959C23450F907C64EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B51341BED63B4BC580A5958B /* libPods.a */; };
 		DB169A4C18E5F93400075319 /* contact_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB169A4B18E5F93400075319 /* contact_icon@2x.png */; };
 		DB21FD9618BE16B80083F26C /* UIBarButtonItem+RightBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DB21FD9518BE16B80083F26C /* UIBarButtonItem+RightBarItem.m */; };
-		DB21FDA518BE1A680083F26C /* location_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21FDA318BE1A680083F26C /* location_icon.png */; };
-		DB21FDA618BE1A680083F26C /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21FDA418BE1A680083F26C /* location_icon@2x.png */; };
 		DB21FDAA18BE1B6E0083F26C /* ARSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB21FDA918BE1B6E0083F26C /* ARSNavigationController.m */; };
 		DB38A69818E1908F00AA12AE /* ARSAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB38A69718E1908F00AA12AE /* ARSAlertManager.m */; };
 		DB4114A019019E5500740FF8 /* sign-in-with-facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB41149F19019E5500740FF8 /* sign-in-with-facebook@2x.png */; };
@@ -40,6 +38,8 @@
 		DB5C7B8919029D0A00E56ECD /* AppLaunchScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8719029D0A00E56ECD /* AppLaunchScreen1136.png */; };
 		DB5C7B8C1902E89A00E56ECD /* official_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8A1902E89A00E56ECD /* official_icon.png */; };
 		DB5C7B8D1902E89A00E56ECD /* official_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8B1902E89A00E56ECD /* official_icon@2x.png */; };
+		DB5C7B901902EC2300E56ECD /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8E1902EC2300E56ECD /* location_icon@2x.png */; };
+		DB5C7B911902EC2300E56ECD /* location_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8F1902EC2300E56ECD /* location_icon.png */; };
 		DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312418A4337300C3EABB /* Foundation.framework */; };
 		DB6B312718A4337300C3EABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312618A4337300C3EABB /* CoreGraphics.framework */; };
 		DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
@@ -158,8 +158,6 @@
 		DB169A4B18E5F93400075319 /* contact_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_icon@2x.png"; sourceTree = "<group>"; };
 		DB21FD9418BE16B80083F26C /* UIBarButtonItem+RightBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+RightBarItem.h"; path = "Utilities/UIBarButtonItem+RightBarItem.h"; sourceTree = "<group>"; };
 		DB21FD9518BE16B80083F26C /* UIBarButtonItem+RightBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+RightBarItem.m"; path = "Utilities/UIBarButtonItem+RightBarItem.m"; sourceTree = "<group>"; };
-		DB21FDA318BE1A680083F26C /* location_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_icon.png; sourceTree = "<group>"; };
-		DB21FDA418BE1A680083F26C /* location_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@2x.png"; sourceTree = "<group>"; };
 		DB21FDA818BE1B6E0083F26C /* ARSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSNavigationController.h; path = Utilities/ARSNavigationController.h; sourceTree = "<group>"; };
 		DB21FDA918BE1B6E0083F26C /* ARSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSNavigationController.m; path = Utilities/ARSNavigationController.m; sourceTree = "<group>"; };
 		DB38A69618E1908F00AA12AE /* ARSAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSAlertManager.h; path = Controllers/ARSAlertManager/ARSAlertManager.h; sourceTree = "<group>"; };
@@ -195,6 +193,8 @@
 		DB5C7B8719029D0A00E56ECD /* AppLaunchScreen1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppLaunchScreen1136.png; sourceTree = "<group>"; };
 		DB5C7B8A1902E89A00E56ECD /* official_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = official_icon.png; sourceTree = "<group>"; };
 		DB5C7B8B1902E89A00E56ECD /* official_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "official_icon@2x.png"; sourceTree = "<group>"; };
+		DB5C7B8E1902EC2300E56ECD /* location_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@2x.png"; sourceTree = "<group>"; };
+		DB5C7B8F1902EC2300E56ECD /* location_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_icon.png; sourceTree = "<group>"; };
 		DB6B312118A4337300C3EABB /* Arsfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arsfest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6B312418A4337300C3EABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB6B312618A4337300C3EABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -761,12 +761,12 @@
 		DBA50A2418B7C5B8001C8AF1 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				DB5C7B8E1902EC2300E56ECD /* location_icon@2x.png */,
+				DB5C7B8F1902EC2300E56ECD /* location_icon.png */,
 				DB5C7B8A1902E89A00E56ECD /* official_icon.png */,
 				DB5C7B8B1902E89A00E56ECD /* official_icon@2x.png */,
 				E147EE031901902900C2D8B8 /* question@2x.png */,
 				E147EE011901900500C2D8B8 /* question.png */,
-				DB21FDA318BE1A680083F26C /* location_icon.png */,
-				DB21FDA418BE1A680083F26C /* location_icon@2x.png */,
 				DBA50A2518B7C6A0001C8AF1 /* dance_icon.png */,
 				DBA50A2618B7C6A0001C8AF1 /* dance_icon@2x.png */,
 				DBA50A2718B7C6A0001C8AF1 /* food_icon.png */,
@@ -983,6 +983,7 @@
 				DBE009D618B78E22000B6DFE /* veto@2x.png in Resources */,
 				DBE009C718B78E22000B6DFE /* alphabeat.png in Resources */,
 				DB5C7B8819029D0A00E56ECD /* AppLaunchScreen960.png in Resources */,
+				DB5C7B911902EC2300E56ECD /* location_icon.png in Resources */,
 				DB169A4C18E5F93400075319 /* contact_icon@2x.png in Resources */,
 				E1C3B77618FFC80800D6FC18 /* kaka.png in Resources */,
 				DB5C7B8C1902E89A00E56ECD /* official_icon.png in Resources */,
@@ -1001,11 +1002,11 @@
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
 				E1C3B78018FFD07400D6FC18 /* zumba.png in Resources */,
 				DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */,
-				DB21FDA618BE1A680083F26C /* location_icon@2x.png in Resources */,
 				DBE009D518B78E22000B6DFE /* veto.png in Resources */,
 				DBF6B0E018EC548B0048605F /* wifis.json in Resources */,
 				DBA50A2D18B7C6A0001C8AF1 /* food_icon.png in Resources */,
 				E1C3B79018FFD4BD00D6FC18 /* dtudance@2x.png in Resources */,
+				DB5C7B901902EC2300E56ECD /* location_icon@2x.png in Resources */,
 				DBE009D218B78E22000B6DFE /* official@2x.png in Resources */,
 				DBE009CF18B78E22000B6DFE /* leslanciers.png in Resources */,
 				E147EE021901900500C2D8B8 /* question.png in Resources */,
@@ -1016,7 +1017,6 @@
 				DB5C7B8419025A3500E56ECD /* AppIcon58.png in Resources */,
 				DB4114A61901A26800740FF8 /* registerview@2x.png in Resources */,
 				E1C3B79618FFD4BD00D6FC18 /* zumba@2x.png in Resources */,
-				DB21FDA518BE1A680083F26C /* location_icon.png in Resources */,
 				DB9872A018AD7EB000A085FE /* ARSEventViewController.xib in Resources */,
 				DB59F48E18FAC72100348BBF /* ARSCarouselThumbnail.xib in Resources */,
 				DB5C7B8919029D0A00E56ECD /* AppLaunchScreen1136.png in Resources */,
