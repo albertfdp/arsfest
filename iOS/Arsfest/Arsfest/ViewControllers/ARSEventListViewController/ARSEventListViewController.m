@@ -25,7 +25,7 @@
 @end
 
 @implementation ARSEventListViewController
-@synthesize events = _events, currentFilter = _currentFilter, carouselScrollView = _carouselScrollView, pageControl = _pageControl, menuScrollView = _menuScrollView;
+@synthesize events = _events, currentFilter = _currentFilter, pageControl = _pageControl, menuScrollView = _menuScrollView;
 @synthesize menuCategories = _menuCategories;
 
 #pragma mark -
@@ -72,6 +72,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self setupNavigationBar];
+    [self.carouselView configureScrollView];
 }
 
 - (void)dealloc

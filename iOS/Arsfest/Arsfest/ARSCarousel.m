@@ -14,30 +14,18 @@
 
 @implementation ARSCarousel
 
-- (id)initWithFrame:(CGRect)frame
+
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        
+    if (self = [super initWithCoder:aDecoder]) {
+    
     }
+    
     return self;
 }
 
-
 - (void)awakeFromNib
 {
-    ARSCarouselThumbnail *thumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
-    thumbnail.type = ARSCarouselThumbnailTypeTimer;
-    [self addSubview:thumbnail];
-    [self setContentSize:thumbnail.frame.size];
-
-//    // Set up timer
-//    [[NSTimer scheduledTimerWithTimeInterval:5
-//                                      target:self
-//                                    selector:@selector(scrollToPage)
-//                                    userInfo:Nil
-//                                     repeats:YES] fire];
-    
 }
 
 //-(void)scrollToPage:(NSInteger)aPage{
@@ -45,6 +33,16 @@
 //    
 //    thumbnail.labelDescription.text = @"cucu";
 //}
+
+- (void)configureScrollView
+{
+    ARSCarouselThumbnail *thumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
+    thumbnail.type = ARSCarouselThumbnailTypePartyOver;
+    [self.scrollView addSubview:thumbnail];
+    [self.scrollView setContentSize:thumbnail.frame.size];
+    
+    [self.pageControl setHidden:YES];
+}
 
 - (void)timerFinished
 {

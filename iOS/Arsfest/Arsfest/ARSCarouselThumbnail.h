@@ -12,17 +12,21 @@
 
 typedef NS_ENUM(NSInteger, ARSCarouselThumbnailType) {
     ARSCarouselThumbnailTypeTimer,
-    ARSCarouselThumbnailTypeLaunched,
+    ARSCarouselThumbnailTypePartyOver,
     ARSCarouselThumbnailTypeEvent,
     ARSCarouselThumbnailTypeNextEvent
 };
 
 @interface ARSCarouselThumbnail : UIView
 
-@property (weak, nonatomic) IBOutlet UILabel *labelDescription;
+@property (weak, nonatomic) IBOutlet UIView *imageContainerView;
+@property (weak, nonatomic) IBOutlet UIView *descriptionContainerView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *gradientView;
 @property (weak, nonatomic) IBOutlet UILabel *labelSoon;
+@property (weak, nonatomic) IBOutlet UILabel *headerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subHeaderLabel;
 @property (weak, nonatomic) IBOutlet MZTimerLabel *timerLabel;
 
 @property (weak, nonatomic) ARSEvent *event;

@@ -9,10 +9,9 @@
             <connections>
                 <outlet property="backgroundView" destination="egy-bK-VjV" id="y7E-sw-amq"/>
                 <outlet property="bottomView" destination="Hm7-l5-gTz" id="qVC-BW-Akn"/>
-                <outlet property="carouselScrollView" destination="pek-MQ-rVZ" id="wLQ-Iv-Xz7"/>
+                <outlet property="carouselView" destination="Qe7-aa-4vA" id="lJg-VH-pMk"/>
                 <outlet property="eventListTableView" destination="gEH-me-qcF" id="1RW-V5-yQF"/>
                 <outlet property="menuScrollView" destination="veF-Cv-biX" id="roS-fp-UNq"/>
-                <outlet property="pageControl" destination="AHZ-Pt-UVM" id="x9f-g6-XXK"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -33,27 +32,24 @@
                                 <constraint firstAttribute="width" constant="320" id="Vxp-Ro-ecz"/>
                             </constraints>
                         </imageView>
-                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qe7-aa-4vA">
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qe7-aa-4vA" customClass="ARSCarousel">
                             <rect key="frame" x="20" y="26" width="320" height="137"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pek-MQ-rVZ" customClass="ARSCarousel">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X4U-Ae-XiO">
+                                    <rect key="frame" x="0.0" y="1" width="320" height="137"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="AHZ-Pt-UVM">
-                                            <rect key="frame" x="141" y="144" width="39" height="37"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </pageControl>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </scrollView>
+                                <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fgQ-Op-24G">
+                                    <rect key="frame" x="140" y="107" width="39" height="37"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </pageControl>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="pek-MQ-rVZ" secondAttribute="bottom" id="djC-rc-gSg"/>
-                                <constraint firstItem="pek-MQ-rVZ" firstAttribute="top" secondItem="Qe7-aa-4vA" secondAttribute="top" id="l4f-Ba-hkk"/>
-                            </constraints>
+                            <connections>
+                                <outlet property="pageControl" destination="fgQ-Op-24G" id="h3D-QA-tMx"/>
+                                <outlet property="scrollView" destination="X4U-Ae-XiO" id="Duy-6s-ap0"/>
+                            </connections>
                         </view>
                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hm7-l5-gTz">
                             <rect key="frame" x="20" y="164" width="320" height="279.00000407273518"/>
