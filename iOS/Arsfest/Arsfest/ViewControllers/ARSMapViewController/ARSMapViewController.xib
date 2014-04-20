@@ -3,6 +3,7 @@
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARSMapViewController">
@@ -131,8 +132,8 @@
                             <rect key="frame" x="0.0" y="1" width="320" height="371"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="registerview.png" translatesAutoresizingMaskIntoConstraints="NO" id="uCR-oj-7oA">
-                                    <rect key="frame" x="0.0" y="22" width="320" height="73"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="registerview.png" translatesAutoresizingMaskIntoConstraints="NO" id="uCR-oj-7oA">
+                                    <rect key="frame" x="0.0" y="30" width="320" height="73"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBp-1k-Gpo">
@@ -155,11 +156,19 @@
                                         <action selector="loginUser:" destination="-1" eventType="touchUpInside" id="VRn-Wu-uzv"/>
                                     </connections>
                                 </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Find your friends with Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6E7-wR-LKU">
+                                    <rect key="frame" x="37" y="8" width="247" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="jBp-1k-Gpo" firstAttribute="top" secondItem="uCR-oj-7oA" secondAttribute="bottom" multiplier="1.3" constant="8" id="Jbf-FB-FaL"/>
                                 <constraint firstAttribute="centerY" secondItem="jBp-1k-Gpo" secondAttribute="centerY" id="KIe-1v-axw"/>
-                                <constraint firstItem="uCR-oj-7oA" firstAttribute="top" secondItem="JfY-Hc-c02" secondAttribute="top" constant="22" id="lMW-qM-JmB"/>
+                                <constraint firstItem="6E7-wR-LKU" firstAttribute="top" secondItem="JfY-Hc-c02" secondAttribute="top" constant="8" id="gms-JP-v6l"/>
                             </constraints>
                             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                         </view>

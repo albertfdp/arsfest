@@ -190,10 +190,10 @@ typedef NS_ENUM(NSInteger, kService) {
 {
     BOOL shouldRefreshFacebookFriends = [self shouldRefreshUsersFromService:kFacebookService];
     if (!userFriends || shouldRefreshFacebookFriends) {
-        // Issue a Facebook Graph API request to get your user's friend list
+        // Issue a Facebook Graph API request to get the user's friend list
         [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
             if (!error) {
-                // result will contain an array with your user's friends in the "data" key
+                // result will contain an array with the user's friends in the "data" key
                 userFriends = [result objectForKey:@"data"];
                 [self queryUserFriendsWithIds:userFriends delegate:delegate enforceRefresh:refreshCache];
             } else {
