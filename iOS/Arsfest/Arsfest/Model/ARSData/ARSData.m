@@ -80,6 +80,20 @@
     return returnedArray;
 }
 
+- (ARSEvent*)currentEventInTheParty
+{
+#warning Incomplete Implementation
+    
+    
+    return nil;
+}
+
+- (ARSEvent*)nextEventInTheParty
+{
+#warning Incomplete Implementation
+    return nil;
+}
+
 #pragma mark -
 #pragma mark - JSON Parsing and Fetching
 
