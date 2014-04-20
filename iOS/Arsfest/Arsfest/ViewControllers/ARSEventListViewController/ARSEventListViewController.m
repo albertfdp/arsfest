@@ -179,7 +179,7 @@
 
 - (void)setupNavigationBar
 {
-    [self.navigationController.navigationBar.topItem setTitle:@"Årsfest"];
+    [self.navigationController.navigationBar.topItem setTitle:@"DTU Årsfest 2014"];
     
     // Info button
 //    UIImage *leftImage = [UIImage imageNamed:@"question.png"];

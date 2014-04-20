@@ -23,7 +23,6 @@ typedef NS_ENUM(NSInteger, ARSCarouselThumbnailType) {
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *labelSoon;
-@property (weak, nonatomic) IBOutlet UITextView *description;
 @property (weak, nonatomic) IBOutlet MZTimerLabel *timerLabel;
 
 @property (weak, nonatomic) ARSEvent *event;
