@@ -20,10 +20,6 @@
 		DB53D31D18AE352400508DAD /* UIViewController+Edges.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53D31C18AE352400508DAD /* UIViewController+Edges.m */; };
 		DB53D32118AE595C00508DAD /* Clock.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D31F18AE595C00508DAD /* Clock.png */; };
 		DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32018AE595C00508DAD /* Clock@2x.png */; };
-		DB53D32918AEB88800508DAD /* alphabeat.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32518AEB88800508DAD /* alphabeat.png */; };
-		DB53D32A18AEB88800508DAD /* alphabeat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32618AEB88800508DAD /* alphabeat@2x.png */; };
-		DB53D32B18AEB88800508DAD /* veto.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32718AEB88800508DAD /* veto.png */; };
-		DB53D32C18AEB88800508DAD /* veto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32818AEB88800508DAD /* veto@2x.png */; };
 		DB53D33018AEBCD300508DAD /* default_background.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32D18AEBCD300508DAD /* default_background.png */; };
 		DB53D33118AEBCD300508DAD /* default_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32E18AEBCD300508DAD /* default_background@2x.png */; };
 		DB53D33218AEBCD300508DAD /* default_background568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53D32F18AEBCD300508DAD /* default_background568h@2x.png */; };
@@ -34,8 +30,8 @@
 		DB5B3FDE1901D25D000EBB36 /* AppIcon120.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5B3FDD1901D25D000EBB36 /* AppIcon120.png */; };
 		DB5C7B8419025A3500E56ECD /* AppIcon58.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8219025A3500E56ECD /* AppIcon58.png */; };
 		DB5C7B8519025A3500E56ECD /* AppIcon80.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8319025A3500E56ECD /* AppIcon80.png */; };
-		DB5C7B8819029D0A00E56ECD /* AppLaunchScreen960.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8619029D0A00E56ECD /* AppLaunchScreen960.png */; };
-		DB5C7B8919029D0A00E56ECD /* AppLaunchScreen1136.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8719029D0A00E56ECD /* AppLaunchScreen1136.png */; };
+		DB5C7B8819029D0A00E56ECD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8619029D0A00E56ECD /* Default@2x.png */; };
+		DB5C7B8919029D0A00E56ECD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8719029D0A00E56ECD /* Default-568h@2x.png */; };
 		DB5C7B8C1902E89A00E56ECD /* official_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8A1902E89A00E56ECD /* official_icon.png */; };
 		DB5C7B8D1902E89A00E56ECD /* official_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8B1902E89A00E56ECD /* official_icon@2x.png */; };
 		DB5C7B901902EC2300E56ECD /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B8E1902EC2300E56ECD /* location_icon@2x.png */; };
@@ -44,7 +40,6 @@
 		DB5C7B97190304B500E56ECD /* locateme@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B93190304B500E56ECD /* locateme@2x.png */; };
 		DB5C7B98190304B500E56ECD /* locateme.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B94190304B500E56ECD /* locateme.png */; };
 		DB5C7B99190304B500E56ECD /* logoutbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B95190304B500E56ECD /* logoutbutton@2x.png */; };
-		DB5C7B9B190326A300E56ECD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5C7B9A190326A300E56ECD /* Default-568h@2x.png */; };
 		DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312418A4337300C3EABB /* Foundation.framework */; };
 		DB6B312718A4337300C3EABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312618A4337300C3EABB /* CoreGraphics.framework */; };
 		DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
@@ -101,8 +96,6 @@
 		DBC83A6B18E2DE380047D269 /* ARSMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC83A6918E2DE380047D269 /* ARSMapViewController.xib */; };
 		DBCCEA4418A5628200CC87AE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */; };
 		DBCCEA4B18A5723D00CC87AE /* ARSData.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCCEA4A18A5723D00CC87AE /* ARSData.m */; };
-		DBE009C718B78E22000B6DFE /* alphabeat.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009B718B78E22000B6DFE /* alphabeat.png */; };
-		DBE009C818B78E22000B6DFE /* alphabeat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009B818B78E22000B6DFE /* alphabeat@2x.png */; };
 		DBE009C918B78E22000B6DFE /* dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009B918B78E22000B6DFE /* dinner.png */; };
 		DBE009CA18B78E22000B6DFE /* dinner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009BA18B78E22000B6DFE /* dinner@2x.png */; };
 		DBE009CB18B78E22000B6DFE /* dj.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009BB18B78E22000B6DFE /* dj.png */; };
@@ -115,8 +108,6 @@
 		DBE009D218B78E22000B6DFE /* official@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C218B78E22000B6DFE /* official@2x.png */; };
 		DBE009D318B78E22000B6DFE /* queenmachine.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C318B78E22000B6DFE /* queenmachine.png */; };
 		DBE009D418B78E22000B6DFE /* queenmachine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C418B78E22000B6DFE /* queenmachine@2x.png */; };
-		DBE009D518B78E22000B6DFE /* veto.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C518B78E22000B6DFE /* veto.png */; };
-		DBE009D618B78E22000B6DFE /* veto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C618B78E22000B6DFE /* veto@2x.png */; };
 		DBE009E518B79585000B6DFE /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE009E418B79585000B6DFE /* UIView+Borders.m */; };
 		DBF6B0DD18EC316F0048605F /* ARSWifi.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF6B0DC18EC316F0048605F /* ARSWifi.m */; };
 		DBF6B0E018EC548B0048605F /* wifis.json in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B0DF18EC548B0048605F /* wifis.json */; };
@@ -178,10 +169,6 @@
 		DB53D31C18AE352400508DAD /* UIViewController+Edges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Edges.m"; path = "Utilities/UIViewController+Edges.m"; sourceTree = "<group>"; };
 		DB53D31F18AE595C00508DAD /* Clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clock.png; sourceTree = "<group>"; };
 		DB53D32018AE595C00508DAD /* Clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Clock@2x.png"; sourceTree = "<group>"; };
-		DB53D32518AEB88800508DAD /* alphabeat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alphabeat.png; sourceTree = "<group>"; };
-		DB53D32618AEB88800508DAD /* alphabeat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alphabeat@2x.png"; sourceTree = "<group>"; };
-		DB53D32718AEB88800508DAD /* veto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veto.png; sourceTree = "<group>"; };
-		DB53D32818AEB88800508DAD /* veto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "veto@2x.png"; sourceTree = "<group>"; };
 		DB53D32D18AEBCD300508DAD /* default_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_background.png; sourceTree = "<group>"; };
 		DB53D32E18AEBCD300508DAD /* default_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_background@2x.png"; sourceTree = "<group>"; };
 		DB53D32F18AEBCD300508DAD /* default_background568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_background568h@2x.png"; sourceTree = "<group>"; };
@@ -194,8 +181,8 @@
 		DB5B3FDD1901D25D000EBB36 /* AppIcon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon120.png; sourceTree = "<group>"; };
 		DB5C7B8219025A3500E56ECD /* AppIcon58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon58.png; sourceTree = "<group>"; };
 		DB5C7B8319025A3500E56ECD /* AppIcon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon80.png; sourceTree = "<group>"; };
-		DB5C7B8619029D0A00E56ECD /* AppLaunchScreen960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppLaunchScreen960.png; sourceTree = "<group>"; };
-		DB5C7B8719029D0A00E56ECD /* AppLaunchScreen1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppLaunchScreen1136.png; sourceTree = "<group>"; };
+		DB5C7B8619029D0A00E56ECD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DB5C7B8719029D0A00E56ECD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DB5C7B8A1902E89A00E56ECD /* official_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = official_icon.png; sourceTree = "<group>"; };
 		DB5C7B8B1902E89A00E56ECD /* official_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "official_icon@2x.png"; sourceTree = "<group>"; };
 		DB5C7B8E1902EC2300E56ECD /* location_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@2x.png"; sourceTree = "<group>"; };
@@ -204,7 +191,6 @@
 		DB5C7B93190304B500E56ECD /* locateme@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locateme@2x.png"; sourceTree = "<group>"; };
 		DB5C7B94190304B500E56ECD /* locateme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locateme.png; sourceTree = "<group>"; };
 		DB5C7B95190304B500E56ECD /* logoutbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoutbutton@2x.png"; sourceTree = "<group>"; };
-		DB5C7B9A190326A300E56ECD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DB6B312118A4337300C3EABB /* Arsfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arsfest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6B312418A4337300C3EABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB6B312618A4337300C3EABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -281,8 +267,6 @@
 		DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		DBCCEA4918A5723D00CC87AE /* ARSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSData.h; path = Model/ARSData/ARSData.h; sourceTree = "<group>"; };
 		DBCCEA4A18A5723D00CC87AE /* ARSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSData.m; path = Model/ARSData/ARSData.m; sourceTree = "<group>"; };
-		DBE009B718B78E22000B6DFE /* alphabeat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alphabeat.png; sourceTree = "<group>"; };
-		DBE009B818B78E22000B6DFE /* alphabeat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alphabeat@2x.png"; sourceTree = "<group>"; };
 		DBE009B918B78E22000B6DFE /* dinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinner.png; sourceTree = "<group>"; };
 		DBE009BA18B78E22000B6DFE /* dinner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dinner@2x.png"; sourceTree = "<group>"; };
 		DBE009BB18B78E22000B6DFE /* dj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dj.png; sourceTree = "<group>"; };
@@ -295,8 +279,6 @@
 		DBE009C218B78E22000B6DFE /* official@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "official@2x.png"; sourceTree = "<group>"; };
 		DBE009C318B78E22000B6DFE /* queenmachine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = queenmachine.png; sourceTree = "<group>"; };
 		DBE009C418B78E22000B6DFE /* queenmachine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "queenmachine@2x.png"; sourceTree = "<group>"; };
-		DBE009C518B78E22000B6DFE /* veto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veto.png; sourceTree = "<group>"; };
-		DBE009C618B78E22000B6DFE /* veto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "veto@2x.png"; sourceTree = "<group>"; };
 		DBE009E318B79585000B6DFE /* UIView+Borders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Borders.h"; path = "Utilities/UIView+Borders.h"; sourceTree = "<group>"; };
 		DBE009E418B79585000B6DFE /* UIView+Borders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Borders.m"; path = "Utilities/UIView+Borders.m"; sourceTree = "<group>"; };
 		DBF6B0DB18EC316F0048605F /* ARSWifi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSWifi.h; path = Model/ARSWifi/ARSWifi.h; sourceTree = "<group>"; };
@@ -435,8 +417,6 @@
 				E1C3B77718FFC9B800D6FC18 /* carpark.png */,
 				E1C3B77518FFC80800D6FC18 /* kaka.png */,
 				E1C3B77318FD3F3D00D6FC18 /* abbatizers.png */,
-				DBE009B718B78E22000B6DFE /* alphabeat.png */,
-				DBE009B818B78E22000B6DFE /* alphabeat@2x.png */,
 				DBE009B918B78E22000B6DFE /* dinner.png */,
 				DBE009BA18B78E22000B6DFE /* dinner@2x.png */,
 				DBE009BB18B78E22000B6DFE /* dj.png */,
@@ -449,12 +429,6 @@
 				DBE009C218B78E22000B6DFE /* official@2x.png */,
 				DBE009C318B78E22000B6DFE /* queenmachine.png */,
 				DBE009C418B78E22000B6DFE /* queenmachine@2x.png */,
-				DBE009C518B78E22000B6DFE /* veto.png */,
-				DBE009C618B78E22000B6DFE /* veto@2x.png */,
-				DB53D32518AEB88800508DAD /* alphabeat.png */,
-				DB53D32618AEB88800508DAD /* alphabeat@2x.png */,
-				DB53D32718AEB88800508DAD /* veto.png */,
-				DB53D32818AEB88800508DAD /* veto@2x.png */,
 			);
 			name = EventThumbnails;
 			sourceTree = "<group>";
@@ -480,8 +454,8 @@
 		DB53D31E18AE58D000508DAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DB5C7B8619029D0A00E56ECD /* AppLaunchScreen960.png */,
-				DB5C7B8719029D0A00E56ECD /* AppLaunchScreen1136.png */,
+				DB5C7B8619029D0A00E56ECD /* Default@2x.png */,
+				DB5C7B8719029D0A00E56ECD /* Default-568h@2x.png */,
 				DB5C7B8219025A3500E56ECD /* AppIcon58.png */,
 				DB5C7B8319025A3500E56ECD /* AppIcon80.png */,
 				DB5B3FDD1901D25D000EBB36 /* AppIcon120.png */,
@@ -561,7 +535,6 @@
 		DB6B311818A4337300C3EABB = {
 			isa = PBXGroup;
 			children = (
-				DB5C7B9A190326A300E56ECD /* Default-568h@2x.png */,
 				DB6B312A18A4337300C3EABB /* Arsfest */,
 				DB6B314318A4337400C3EABB /* ArsfestTests */,
 				DB6B312318A4337300C3EABB /* Frameworks */,
@@ -919,7 +892,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ARS;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = dtu;
 				TargetAttributes = {
 					DB6B312018A4337300C3EABB = {
@@ -954,7 +927,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB6B312F18A4337300C3EABB /* InfoPlist.strings in Resources */,
-				DB53D32B18AEB88800508DAD /* veto.png in Resources */,
 				DB59F48718FAC63000348BBF /* ARSCarousel.xib in Resources */,
 				DBE009CA18B78E22000B6DFE /* dinner@2x.png in Resources */,
 				DBA50A3018B7C6A0001C8AF1 /* music_icon@2x.png in Resources */,
@@ -988,17 +960,12 @@
 				DB53D33118AEBCD300508DAD /* default_background@2x.png in Resources */,
 				DBE009D118B78E22000B6DFE /* official.png in Resources */,
 				E1C3B78418FFD28400D6FC18 /* dtudance.png in Resources */,
-				DB53D32A18AEB88800508DAD /* alphabeat@2x.png in Resources */,
 				DB53D33218AEBCD300508DAD /* default_background568h@2x.png in Resources */,
 				E1C3B79518FFD4BD00D6FC18 /* waltz@2x.png in Resources */,
-				DB53D32C18AEB88800508DAD /* veto@2x.png in Resources */,
 				DB811D7A18E6F6E500BB11E6 /* close.png in Resources */,
 				DB53D33018AEBCD300508DAD /* default_background.png in Resources */,
 				DBA50A2F18B7C6A0001C8AF1 /* music_icon.png in Resources */,
-				DB53D32918AEB88800508DAD /* alphabeat.png in Resources */,
-				DBE009D618B78E22000B6DFE /* veto@2x.png in Resources */,
-				DBE009C718B78E22000B6DFE /* alphabeat.png in Resources */,
-				DB5C7B8819029D0A00E56ECD /* AppLaunchScreen960.png in Resources */,
+				DB5C7B8819029D0A00E56ECD /* Default@2x.png in Resources */,
 				DB5C7B911902EC2300E56ECD /* location_icon.png in Resources */,
 				DB169A4C18E5F93400075319 /* contact_icon@2x.png in Resources */,
 				E1C3B77618FFC80800D6FC18 /* kaka.png in Resources */,
@@ -1020,7 +987,6 @@
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
 				E1C3B78018FFD07400D6FC18 /* zumba.png in Resources */,
 				DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */,
-				DBE009D518B78E22000B6DFE /* veto.png in Resources */,
 				DBF6B0E018EC548B0048605F /* wifis.json in Resources */,
 				DBA50A2D18B7C6A0001C8AF1 /* food_icon.png in Resources */,
 				E1C3B79018FFD4BD00D6FC18 /* dtudance@2x.png in Resources */,
@@ -1038,10 +1004,8 @@
 				E1C3B79618FFD4BD00D6FC18 /* zumba@2x.png in Resources */,
 				DB9872A018AD7EB000A085FE /* ARSEventViewController.xib in Resources */,
 				DB59F48E18FAC72100348BBF /* ARSCarouselThumbnail.xib in Resources */,
-				DB5C7B8919029D0A00E56ECD /* AppLaunchScreen1136.png in Resources */,
-				DBE009C818B78E22000B6DFE /* alphabeat@2x.png in Resources */,
+				DB5C7B8919029D0A00E56ECD /* Default-568h@2x.png in Resources */,
 				DBE009D318B78E22000B6DFE /* queenmachine.png in Resources */,
-				DB5C7B9B190326A300E56ECD /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1167,7 +1131,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1207,7 +1170,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1286,7 +1248,6 @@
 		DB6B315118A4337400C3EABB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Arsfest.app/Arsfest";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1309,7 +1270,6 @@
 		DB6B315218A4337400C3EABB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Arsfest.app/Arsfest";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
