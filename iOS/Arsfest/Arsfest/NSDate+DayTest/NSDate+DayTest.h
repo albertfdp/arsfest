@@ -13,4 +13,6 @@
 - (BOOL)isOnSameDayAsDate:(NSDate*)date inTimeZone:(NSTimeZone*)timeZone;
 - (BOOL)isEarlierThanDate:(NSDate*)date fromMinutes:(NSInteger)threshold;
 
++ (int)daysLeftBeforeTheParty;
+
 @end

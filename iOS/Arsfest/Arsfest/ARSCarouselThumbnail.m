@@ -29,8 +29,11 @@
             [self.imageView setHidden:YES];
             [self.timerLabel setCountDownToDate:ARSFEST_START_DATE];
             [self.timerLabel setTimerType:MZTimerLabelTypeTimer];
-#warning Adapt to date here
-            [self.timerLabel setTimeFormat:@"dd 'Days Left'"];
+            if ([NSDate daysLeftBeforeTheParty] < 1) {
+                [self.timerLabel setTimeFormat:@"HH : mm : ss"];
+            } else {
+                [self.timerLabel setTimeFormat:@"dd 'Days Left'"];
+            }
             [self.timerLabel start];
             break;
         case ARSCarouselThumbnailTypeLaunched:
