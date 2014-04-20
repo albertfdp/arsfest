@@ -8,11 +8,14 @@
 
 #import "ARSCarousel.h"
 
-//@interface ARSCarousel()
-//- (void)scrollToPage:(NSInteger)aPage;
-//@end
+@interface ARSCarousel()
+
+@property (nonatomic, strong) NSMutableArray *views;
+
+@end
 
 @implementation ARSCarousel
+@synthesize views;
 
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -26,13 +29,18 @@
 
 - (void)awakeFromNib
 {
+
 }
 
-//-(void)scrollToPage:(NSInteger)aPage{
-//    ARSCarouselThumbnail *thumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
-//    
-//    thumbnail.labelDescription.text = @"cucu";
-//}
+- (void)addViews:(NSArray*)newViews
+{
+    //Animate remove views from carousel
+    
+    //Add each view
+    
+    views = [NSMutableArray arrayWithArray:newViews];
+}
+
 
 - (void)configureScrollView
 {
@@ -42,6 +50,14 @@
     [self.scrollView setContentSize:thumbnail.frame.size];
     
     [self.pageControl setHidden:YES];
+    
+    
+    //Get time.
+    //If before the party, set timer (be sure to implement timerfinished)
+    //If after start, get current event and next event, create thumbnails
+    //If after end, get PartyOver thumbnail
+    
+    //Add views
 }
 
 - (void)timerFinished

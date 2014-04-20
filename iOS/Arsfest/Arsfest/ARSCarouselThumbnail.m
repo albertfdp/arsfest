@@ -27,7 +27,10 @@
     switch (newType) {
         case ARSCarouselThumbnailTypeTimer:
             [self.imageContainerView setHidden:YES];
+            [self.subHeaderLabel setHidden:YES];
+            [self.headerLabel setHidden:YES];
             [self.timerLabel setCountDownToDate:ARSFEST_START_DATE];
+            [self.labelSoon setText:@"Get more information about the party"];
             [self.timerLabel setTimerType:MZTimerLabelTypeTimer];
             if ([NSDate daysLeftBeforeTheParty] < 1) {
                 [self.timerLabel setTimeFormat:@"HH : mm : ss"];
@@ -40,8 +43,8 @@
             [self.imageContainerView setHidden:YES];
             [self.timerLabel setHidden:YES];
             [self.labelSoon setHidden:YES];
-            [self.headerLabel setText:@"DTU Årsfest 2014 is over!"];
-            [self.subHeaderLabel setText:@"Thanks for participating!"];
+            [self.headerLabel setText:@"DTU Årsfest 2014 is over"];
+            [self.subHeaderLabel setText:@"Thanks for participating, see you next year!"];
             break;
         case ARSCarouselThumbnailTypeEvent:
             // Get actual time
