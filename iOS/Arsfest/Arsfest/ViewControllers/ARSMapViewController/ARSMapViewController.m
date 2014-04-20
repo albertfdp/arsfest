@@ -258,6 +258,12 @@
     [self configureViewForSelectedIndex:self.segmentedControl.selectedSegmentIndex];
 }
 
+- (void)userErrorDisconnectedFromFacebook
+{
+    [self configureViewForSelectedIndex:self.segmentedControl.selectedSegmentIndex];
+    [ARSAlertManager showErrorWithTitle:@"Facebook Error" message:@"Please login again" cancelTitle:@"OK"];
+}
+
 - (void)refreshFriendsLocation
 {
     [self showFriendListProcessingView:YES];
@@ -347,6 +353,8 @@
             break;
     }
 }
+
+
 
 
 

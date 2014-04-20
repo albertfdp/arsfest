@@ -163,13 +163,14 @@ typedef NS_ENUM(NSInteger, kService) {
         } else if ( ![[PFUser currentUser] objectForKey:@"locationName"] ) {
             [[PFUser currentUser] setObject:@"Unknown Location" forKey:@"locationName"];
         }
-    } else {
-#warning How to handle this?
-        //WiFi not available
-//        if (![self localWiFiAvailable] && ! [ARSUserController isUserLoggedIn]) {
-//            [ARSAlertManager showErrorWithTitle:@"Wi-Fi Not Enabled" message:@"Please enable the Wi-Fi to get your current location" cancelTitle:@"OK"];
-//        }
     }
+//    else {
+//#warning How to handle this?
+//        //WiFi not available
+////        if (![self localWiFiAvailable] && ! [ARSUserController isUserLoggedIn]) {
+////            [ARSAlertManager showErrorWithTitle:@"Wi-Fi Not Enabled" message:@"Please enable the Wi-Fi to get your current location" cancelTitle:@"OK"];
+////        }
+//    }
 }
 
 - (NSString*)userLocation
@@ -197,7 +198,8 @@ typedef NS_ENUM(NSInteger, kService) {
                 userFriends = [result objectForKey:@"data"];
                 [self queryUserFriendsWithIds:userFriends delegate:delegate enforceRefresh:refreshCache];
             } else {
-#warning Implement Facebook Error Mechanism
+                [ARSUserController logOutUser];
+                [delegate userErrorDisconnectedFromFacebook];
             }
         }];
     } else {

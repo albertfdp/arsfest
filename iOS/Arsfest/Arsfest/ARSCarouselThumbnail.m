@@ -26,6 +26,8 @@
 {
     switch (newType) {
         case ARSCarouselThumbnailTypeTimer:
+            
+#warning Add tap handler
             [self.imageContainerView setHidden:YES];
             [self.subHeaderLabel setHidden:YES];
             [self.headerLabel setHidden:YES];

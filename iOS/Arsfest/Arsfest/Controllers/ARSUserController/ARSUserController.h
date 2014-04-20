@@ -23,6 +23,8 @@ typedef NS_ENUM(NSInteger, ARSUserLoginError) {
 - (void)userControllerRetrievedUserFriends:(NSArray*)friends;
 - (void)userControllerFailedToRetrieveFriends;
 
+- (void)userErrorDisconnectedFromFacebook;
+
 @end
 
 /**
