@@ -1201,7 +1201,7 @@
 					$HOME/Documents/FacebookSDK,
 					"$HOME/Documents/Årsfest(i)/iOS/Arsfest",
 					"$HOME/Documents/arsfest-last/iOS/Arsfest",
-					"$(PROJECT_DIR)",
+					$PROJECT_DIR,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Arsfest/Arsfest-Prefix.pch";
@@ -1225,7 +1225,7 @@
 					$HOME/Documents/FacebookSDK,
 					"$HOME/Documents/Årsfest(i)/iOS/Arsfest",
 					"$HOME/Documents/arsfest-last/iOS/Arsfest",
-					"$(PROJECT_DIR)",
+					$PROJECT_DIR,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Arsfest/Arsfest-Prefix.pch";
