@@ -21,7 +21,7 @@
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iz8-0E-j4W" customClass="MZTimerLabel">
                                     <rect key="frame" x="43" y="20" width="234" height="42"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -39,6 +39,22 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BqQ-99-MWp">
+                                    <rect key="frame" x="86" y="86" width="149" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" title="More Information">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="0.86646569293478259" green="0.84957143149258652" blue="0.84672759177934442" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="moreInfoButtonTapped:" destination="p5C-uI-S07" eventType="touchUpInside" id="9BC-qL-8jh"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
@@ -78,6 +94,7 @@
                 <outlet property="imageContainerView" destination="Jec-VJ-Ct3" id="aCt-TM-PaZ"/>
                 <outlet property="imageView" destination="FPD-HQ-pji" id="63B-Ts-XcO"/>
                 <outlet property="labelSoon" destination="h6c-HR-IbO" id="rWn-AI-umu"/>
+                <outlet property="moreInfoButton" destination="BqQ-99-MWp" id="kWc-Zm-uUo"/>
                 <outlet property="subHeaderLabel" destination="dsP-mE-Jb1" id="pga-E9-Bm9"/>
                 <outlet property="timerLabel" destination="iz8-0E-j4W" id="LGA-mN-4CD"/>
             </connections>

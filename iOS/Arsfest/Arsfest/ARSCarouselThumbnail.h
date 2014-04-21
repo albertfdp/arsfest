@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "MZTimerLabel.h"
-#import "ARSEvent.h"
+
+@class ARSEvent;
+
+@protocol ARSCarouselThumbnailDelegate <NSObject>
+
+- (void)thumbnailTimerFinished;
+
+@end
 
 typedef NS_ENUM(NSInteger, ARSCarouselThumbnailType) {
     ARSCarouselThumbnailTypeTimer,
@@ -28,9 +35,11 @@ typedef NS_ENUM(NSInteger, ARSCarouselThumbnailType) {
 @property (weak, nonatomic) IBOutlet UILabel *headerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subHeaderLabel;
 @property (weak, nonatomic) IBOutlet MZTimerLabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UIButton *moreInfoButton;
 
 @property (weak, nonatomic) ARSEvent *event;
 @property (nonatomic, assign) ARSCarouselThumbnailType type;
+@property (nonatomic, assign) id<ARSCarouselThumbnailDelegate> delegate;
 
-
+- (IBAction)moreInfoButtonTapped:(id)sender;
 @end

@@ -16,5 +16,5 @@
 + (NSString*)hourMinuteStringFromDate:(NSDate*)date;
 
 + (NSDate*)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour;
-
++ (NSDate*)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second;
 @end

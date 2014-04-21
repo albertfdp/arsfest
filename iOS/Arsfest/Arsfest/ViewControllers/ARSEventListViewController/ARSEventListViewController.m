@@ -16,7 +16,7 @@
 
 #define kEventCellHeight 78
 
-@interface ARSEventListViewController() <ARSUserControllerDelegate>
+@interface ARSEventListViewController() <ARSUserControllerDelegate, ARSCarouselDelegate>
 
 @property (nonatomic, assign) ARSLocationType currentFilter;
 @property (nonatomic, strong) NSArray *events;
@@ -67,6 +67,9 @@
     
     [self.backgroundView setImage:kBackgroundImage];
     [self setupIntroView];
+    
+    //Initialize the carousel's delegate
+    [self.carouselView setDelegate:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -226,10 +229,6 @@
 #pragma mark -
 #pragma mark - Carousel Initialization
 
-- (void)setupCarousel
-{
-    
-}
 
 
 #pragma mark -
@@ -265,6 +264,21 @@
     } else {
         [self.menuScrollView handleMasterSwipeWithDirection:kSwipeDirectionLeft];
     }
+}
+
+#pragma mark - ARSCarouselDelegate
+
+- (void)carouselTappedForInformation
+{
+    
+}
+
+- (void)carouselTappedForEvent:(ARSEvent *)event
+{
+    ARSEventViewController *eventViewController = [[ARSEventViewController alloc] initWithNibName:@"ARSEventViewController" bundle:[NSBundle mainBundle]];
+    [eventViewController setEvent:event];
+    
+    [self.navigationController pushViewController:eventViewController animated:YES];
 }
 
 @end

@@ -54,4 +54,18 @@
     return date;
 }
 
++ (NSDate*)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second
+{
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    [comps setSecond:second];
+    [comps setMinute:minute];
+    [comps setHour:hour];
+    [comps setDay:day];
+    [comps setMonth:month];
+    [comps setYear:year];
+    
+    NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:comps];
+    return date;
+}
+
 @end

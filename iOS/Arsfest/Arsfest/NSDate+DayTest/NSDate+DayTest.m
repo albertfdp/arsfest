@@ -26,16 +26,8 @@
 
 - (BOOL)isEarlierThanDate:(NSDate*)date fromMinutes:(NSInteger)threshold
 {
-        NSCalendar* calendar = [NSCalendar currentCalendar];
-        unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit;
-        NSDateComponents* comp1 = [calendar components:unitFlags fromDate:self];
-        NSDateComponents* comp2 = [calendar components:unitFlags fromDate:date];
-    
-        return [comp1 minute] + threshold < [comp2 minute] &&
-        [comp1 hour] <= [comp2 hour] &&
-        [comp1 day]  <=  [comp2 day] &&
-        [comp1 month] <= [comp2 month] &&
-        [comp1 year]  <= [comp2 year];
+    int minutesFromDate = [date timeIntervalSinceDate:self] / 60;
+    return (minutesFromDate > threshold);
 }
 
 + (int)daysLeftBeforeTheParty
