@@ -243,7 +243,7 @@ typedef NS_ENUM(NSInteger, kService) {
     NSString *key = (service == kFacebookService)?LAST_FACEBOOK_REFRESH:LAST_PARSE_REFRESH;
     if ([userDefaults objectForKey:key]) {
         NSDate *oldDate = (NSDate*)[userDefaults objectForKey:key];
-        BOOL shouldRefresh = nil;
+        BOOL shouldRefresh;
         if (service == kFacebookService) {
             shouldRefresh = ![oldDate isOnSameDayAsDate:[NSDate date] inTimeZone:[NSTimeZone systemTimeZone]];
         } else {
