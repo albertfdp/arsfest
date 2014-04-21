@@ -226,8 +226,11 @@ typedef NS_ENUM(NSInteger, kService) {
         [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
             if (!error) {
                 if ([delegate respondsToSelector:@selector(userControllerRetrievedUserFriends:)]) {
-                    parseUsers = objects;
-                    [delegate userControllerRetrievedUserFriends:objects];
+                    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"updatedAt"
+                                                                                     ascending:NO];
+                    NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+                    parseUsers = [objects sortedArrayUsingDescriptors:sortDescriptors];
+                    [delegate userControllerRetrievedUserFriends:parseUsers];
                 }
             } else {
                 if ([delegate respondsToSelector:@selector(userControllerFailedToRetrieveFriends)]) {
