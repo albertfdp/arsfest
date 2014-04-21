@@ -221,7 +221,7 @@ typedef NS_ENUM(NSInteger, kService) {
         }
         
         PFQuery *friendQuery = [PFUser query];
-        //    [friendQuery whereKey:@"fbId" containedIn:friendIds];
+        [friendQuery whereKey:@"fbId" containedIn:friendIds];
         
         [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
             if (!error) {
