@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A3C9C2959C23450F907C64EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B51341BED63B4BC580A5958B /* libPods.a */; };
+		DB09A428190545D1000C076C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB09A427190545D1000C076C /* Parse.framework */; };
 		DB169A4C18E5F93400075319 /* contact_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB169A4B18E5F93400075319 /* contact_icon@2x.png */; };
 		DB21FD9618BE16B80083F26C /* UIBarButtonItem+RightBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DB21FD9518BE16B80083F26C /* UIBarButtonItem+RightBarItem.m */; };
 		DB21FDAA18BE1B6E0083F26C /* ARSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB21FDA918BE1B6E0083F26C /* ARSNavigationController.m */; };
@@ -52,7 +53,6 @@
 		DB6B314018A4337400C3EABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B312818A4337300C3EABB /* UIKit.framework */; };
 		DB6B314818A4337400C3EABB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB6B314618A4337400C3EABB /* InfoPlist.strings */; };
 		DB6B314A18A4337400C3EABB /* ArsfestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B314918A4337400C3EABB /* ArsfestTests.m */; };
-		DB6B315818A4343800C3EABB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B315718A4343800C3EABB /* Parse.framework */; };
 		DB6B315A18A4345700C3EABB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B315918A4345700C3EABB /* AudioToolbox.framework */; };
 		DB6B315C18A4346100C3EABB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B315B18A4346100C3EABB /* CFNetwork.framework */; };
 		DB6B315E18A4347300C3EABB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B315D18A4347300C3EABB /* CoreLocation.framework */; };
@@ -151,6 +151,7 @@
 /* Begin PBXFileReference section */
 		79241BB9B33948DDAE553BAF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B51341BED63B4BC580A5958B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB09A427190545D1000C076C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		DB169A4B18E5F93400075319 /* contact_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_icon@2x.png"; sourceTree = "<group>"; };
 		DB21FD9418BE16B80083F26C /* UIBarButtonItem+RightBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+RightBarItem.h"; path = "Utilities/UIBarButtonItem+RightBarItem.h"; sourceTree = "<group>"; };
 		DB21FD9518BE16B80083F26C /* UIBarButtonItem+RightBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+RightBarItem.m"; path = "Utilities/UIBarButtonItem+RightBarItem.m"; sourceTree = "<group>"; };
@@ -207,7 +208,6 @@
 		DB6B314518A4337400C3EABB /* ArsfestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ArsfestTests-Info.plist"; sourceTree = "<group>"; };
 		DB6B314718A4337400C3EABB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB6B314918A4337400C3EABB /* ArsfestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArsfestTests.m; sourceTree = "<group>"; };
-		DB6B315718A4343800C3EABB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		DB6B315918A4345700C3EABB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DB6B315B18A4346100C3EABB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		DB6B315D18A4347300C3EABB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -321,6 +321,7 @@
 				DB6B316818A4349300C3EABB /* StoreKit.framework in Frameworks */,
 				DB6B316618A4348D00C3EABB /* Security.framework in Frameworks */,
 				DB6B316418A4348500C3EABB /* QuartzCore.framework in Frameworks */,
+				DB09A428190545D1000C076C /* Parse.framework in Frameworks */,
 				DB6B316218A4348100C3EABB /* MobileCoreServices.framework in Frameworks */,
 				DB6B316018A4347800C3EABB /* libz.dylib in Frameworks */,
 				DB6B315E18A4347300C3EABB /* CoreLocation.framework in Frameworks */,
@@ -329,7 +330,6 @@
 				DB6B315A18A4345700C3EABB /* AudioToolbox.framework in Frameworks */,
 				DB6B312918A4337300C3EABB /* UIKit.framework in Frameworks */,
 				DBCCEA4418A5628200CC87AE /* FacebookSDK.framework in Frameworks */,
-				DB6B315818A4343800C3EABB /* Parse.framework in Frameworks */,
 				DB6B312518A4337300C3EABB /* Foundation.framework in Frameworks */,
 				A3C9C2959C23450F907C64EF /* libPods.a in Frameworks */,
 			);
@@ -555,6 +555,7 @@
 		DB6B312318A4337300C3EABB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DB09A427190545D1000C076C /* Parse.framework */,
 				DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */,
 				DB6B316918A4349B00C3EABB /* SystemConfiguration.framework */,
 				DB6B316718A4349300C3EABB /* StoreKit.framework */,
@@ -565,7 +566,6 @@
 				DB6B315D18A4347300C3EABB /* CoreLocation.framework */,
 				DB6B315B18A4346100C3EABB /* CFNetwork.framework */,
 				DB6B315918A4345700C3EABB /* AudioToolbox.framework */,
-				DB6B315718A4343800C3EABB /* Parse.framework */,
 				DB6B312418A4337300C3EABB /* Foundation.framework */,
 				DB6B312618A4337300C3EABB /* CoreGraphics.framework */,
 				DB6B312818A4337300C3EABB /* UIKit.framework */,
@@ -1201,6 +1201,7 @@
 					$HOME/Documents/FacebookSDK,
 					"$HOME/Documents/Årsfest(i)/iOS/Arsfest",
 					"$HOME/Documents/arsfest-last/iOS/Arsfest",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Arsfest/Arsfest-Prefix.pch";
@@ -1224,6 +1225,7 @@
 					$HOME/Documents/FacebookSDK,
 					"$HOME/Documents/Årsfest(i)/iOS/Arsfest",
 					"$HOME/Documents/arsfest-last/iOS/Arsfest",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Arsfest/Arsfest-Prefix.pch";
