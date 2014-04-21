@@ -25,6 +25,14 @@
     return self;
 }
 
+- (void)dealloc
+{
+    if (self.type == ARSCarouselThumbnailTypeTimer) {
+        [self.moreInfoButton removeObserver:self forKeyPath:@"highlighted"];        
+    }
+}
+
+#pragma mark - Thumbnail configuration
 
 - (void)setType:(ARSCarouselThumbnailType)newType
 {
@@ -35,10 +43,8 @@
             [self.timerLabel setDelegate:self];
             [self.timerLabel setCountDownToDate:ARSFEST_START_DATE];
             [self.subHeaderLabel setHidden:YES];
-            [self.moreInfoButton.layer setCornerRadius:5.0f];
-            [self.moreInfoButton.layer setBorderWidth:0.6f];
-            [self.moreInfoButton.layer setBorderColor:[[UIColor whiteColor] CGColor]];
-//            [self.moreInfoButton setBackgroundColor:kArsfestColor];
+            [self configureButtonBorders];
+            [self.moreInfoButton addObserver:self forKeyPath:@"highlighted" options:0 context:nil];
             [self.moreInfoButton setClipsToBounds:YES];
             [self.timerLabel setTimerType:MZTimerLabelTypeTimer];
             if ([NSDate daysLeftBeforeTheParty] < 1) {
@@ -52,21 +58,19 @@
             break;
         case ARSCarouselThumbnailTypePartyOver:
             [self.imageContainerView setHidden:YES];
+            [self.moreInfoButton setHidden:YES];
             [self.timerLabel setHidden:YES];
             [self.labelSoon setHidden:YES];
             [self.headerLabel setText:@"DTU Årsfest 2014 is over"];
             [self.subHeaderLabel setText:@"Thanks for participating, see you next year!"];
             break;
         case ARSCarouselThumbnailTypeEvent:
-            [self.descriptionContainerView setHidden:YES];
+            [self setImageForEvent:self.event];
             [self.labelSoon setText:[NSString stringWithFormat:@"Happening now: %@", self.event.name]];
-            [self.imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.event.image]]];
-            
             break;
         case ARSCarouselThumbnailTypeNextEvent:
-            [self.descriptionContainerView setHidden:YES];
+            [self setImageForEvent:self.event];
             [self.labelSoon setText:[NSString stringWithFormat:@"Coming next: %@", self.event.name]];
-            [self.imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.event.image]]];
             break;
         default:
             break;
@@ -75,6 +79,28 @@
     type = newType;
 }
 
+- (void)configureButtonBorders
+{
+    if (self.moreInfoButton.highlighted) {
+        [self.moreInfoButton.layer setCornerRadius:5.0f];
+        [self.moreInfoButton.layer setBorderWidth:0.7f];
+        [self.moreInfoButton.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+        
+    } else {
+        [self.moreInfoButton.layer setCornerRadius:5.0f];
+        [self.moreInfoButton.layer setBorderWidth:0.7f];
+        [self.moreInfoButton.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    }
+}
+
+- (void)setImageForEvent:(ARSEvent*)event
+{
+    [self.descriptionContainerView setHidden:YES];
+    [self.imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", event.image]]];
+}
+
+#pragma mark - Timer delegate
+
 - (void)timerLabel:(MZTimerLabel *)timerLabel finshedCountDownTimerWithTime:(NSTimeInterval)countTime
 {
     if ([self.delegate respondsToSelector:@selector(thumbnailTimerFinished)]) {
@@ -82,9 +108,20 @@
     }
 }
 
-
-
+#pragma mark - Info button handler
 
 - (IBAction)moreInfoButtonTapped:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(thumbnailMoreInfoTapped)]) {
+        [self.delegate thumbnailMoreInfoTapped];
+    }
+}
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"highlighted"]) {
+        [self configureButtonBorders];
+    }
 }
 @end

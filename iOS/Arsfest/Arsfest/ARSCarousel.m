@@ -61,7 +61,6 @@
         thumbnail.type = ARSCarouselThumbnailTypeTimer;
         thumbnail.delegate = self;
         
-        [thumbnail addGestureRecognizer:[self aTapRecognizer]];
         [self addViews:@[thumbnail]];
     }
     else if ([NSDate currentDateIsBetween:ARSFEST_START_DATE and:ARSFEST_END_DATE]) {
@@ -82,6 +81,8 @@
         thumbnail.type = ARSCarouselThumbnailTypePartyOver;
         [self addViews:@[thumbnail]];
     }
+    
+    
 }
 
 - (UITapGestureRecognizer*)aTapRecognizer
@@ -97,6 +98,13 @@
 - (void)thumbnailTimerFinished
 {
     [self configureScrollView];
+}
+
+- (void)thumbnailMoreInfoTapped
+{
+    if ([self.delegate respondsToSelector:@selector(carouselTappedForInformation)]) {
+        [self.delegate carouselTappedForInformation];
+    }
 }
 
 #pragma mark - Scroll view delegate
@@ -115,11 +123,7 @@
     UITapGestureRecognizer *recognizer = (UITapGestureRecognizer*)sender;
     ARSCarouselThumbnail *thumbnailTapped = (ARSCarouselThumbnail*)recognizer.view;
     
-    if (thumbnailTapped.type == ARSCarouselThumbnailTypeTimer) {
-        if ([self.delegate respondsToSelector:@selector(carouselTappedForInformation)]) {
-            [self.delegate carouselTappedForInformation];
-        }
-    } else if (thumbnailTapped.type == ARSCarouselThumbnailTypeEvent || thumbnailTapped.type == ARSCarouselThumbnailTypeNextEvent) {
+    if (thumbnailTapped.type == ARSCarouselThumbnailTypeEvent || thumbnailTapped.type == ARSCarouselThumbnailTypeNextEvent) {
         if ([self.delegate respondsToSelector:@selector(carouselTappedForEvent:)]) {
             [self.delegate carouselTappedForEvent:thumbnailTapped.event];
         }

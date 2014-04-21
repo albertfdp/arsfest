@@ -14,6 +14,7 @@
 @protocol ARSCarouselThumbnailDelegate <NSObject>
 
 - (void)thumbnailTimerFinished;
+- (void)thumbnailMoreInfoTapped;
 
 @end
 

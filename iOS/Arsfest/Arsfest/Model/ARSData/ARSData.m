@@ -83,7 +83,7 @@
 - (ARSEvent*)currentEventInTheParty
 {
 #warning Incomplete Implementation
-    ARSLocation *loc = [_locations objectAtIndex:1];
+    ARSLocation *loc = [_locations objectAtIndex:2];
     ARSEvent *ev = [loc.events objectAtIndex:1];
     
     return ev;
@@ -92,7 +92,7 @@
 - (ARSEvent*)nextEventInTheParty
 {
 #warning Incomplete Implementation
-    ARSLocation *loc = [_locations objectAtIndex:1];
+    ARSLocation *loc = [_locations objectAtIndex:2];
     ARSEvent *ev = [loc.events objectAtIndex:2];
     
     return ev;
