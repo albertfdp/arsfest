@@ -159,9 +159,11 @@ typedef NS_ENUM(NSInteger, kService) {
         NSString *locationName = [self userLocation];
         if (locationName) {
             [[PFUser currentUser] setObject:locationName forKey:@"locationName"];
+            [[PFUser currentUser] setObject:[NSDate date] forKey:@"lastUpdatedAt"];
             [[PFUser currentUser] saveInBackground];   
         } else if ( ![[PFUser currentUser] objectForKey:@"locationName"] ) {
             [[PFUser currentUser] setObject:@"Unknown Location" forKey:@"locationName"];
+            [[PFUser currentUser] saveInBackground];               
         }
     }
 //    else {
