@@ -38,17 +38,17 @@
         self.locationLabel.text = @"Unknown Location";
     }
     
-    
+    if ([NSDate currentDateIsBetween:ARSFEST_START_DATE and:ARSFEST_END_DATE]) {
+        self.timeLabel.text = [NSDate hourMinuteStringFromDate:user.updatedAt];
+    } else {
+        [self.timeLabel setHidden:YES];
+    }
+
     //Picture rounding
     [self.picture setClipsToBounds:YES];
     [self.picture.layer setCornerRadius:25.0f];
     [self.picture.layer setBorderWidth:0.8f];
     [self.picture.layer setBorderColor:kFriendCellColor];
-}
-
-- (NSString*)stringFromUpdateDate:(NSDate*)date
-{
-    return @"";
 }
 
 @end
