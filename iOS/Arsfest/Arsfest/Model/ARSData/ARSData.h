@@ -44,5 +44,14 @@
  */
 - (NSString*)locationNameFromGeoPoint:(PFGeoPoint*)geoPoint;
 
+/**
+ * Gives the "best" current event happening in the party
+ */
+- (ARSEvent*)currentEventInTheParty;
+
+/**
+ * Gives the "best" next event coming in the party
+ */
+- (ARSEvent*)nextEventInTheParty;
 
 @end

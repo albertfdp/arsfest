@@ -36,27 +36,32 @@
                             <rect key="frame" x="20" y="26" width="320" height="137"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X4U-Ae-XiO">
-                                    <rect key="frame" x="0.0" y="1" width="320" height="137"/>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X4U-Ae-XiO">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </scrollView>
-                                <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fgQ-Op-24G">
-                                    <rect key="frame" x="140" y="107" width="39" height="37"/>
+                                <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fgQ-Op-24G">
+                                    <rect key="frame" x="140" y="110" width="39" height="37"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </pageControl>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="X4U-Ae-XiO" secondAttribute="bottom" id="KLY-dK-GFb"/>
+                                <constraint firstAttribute="bottom" secondItem="fgQ-Op-24G" secondAttribute="bottom" constant="-10" id="hYc-w2-YTO"/>
+                                <constraint firstItem="X4U-Ae-XiO" firstAttribute="top" secondItem="Qe7-aa-4vA" secondAttribute="top" id="u1c-hu-eYu"/>
+                            </constraints>
                             <connections>
                                 <outlet property="pageControl" destination="fgQ-Op-24G" id="h3D-QA-tMx"/>
                                 <outlet property="scrollView" destination="X4U-Ae-XiO" id="Duy-6s-ap0"/>
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hm7-l5-gTz">
-                            <rect key="frame" x="20" y="164" width="320" height="279.00000407273518"/>
+                            <rect key="frame" x="20" y="164" width="320" height="279"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gEH-me-qcF">
-                                    <rect key="frame" x="0.0" y="48" width="320" height="232.00000407273518"/>
+                                    <rect key="frame" x="0.0" y="48" width="320" height="232"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" red="0.94144610969999998" green="0.94144610969999998" blue="0.94144610969999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>

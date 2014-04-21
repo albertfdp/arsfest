@@ -83,15 +83,19 @@
 - (ARSEvent*)currentEventInTheParty
 {
 #warning Incomplete Implementation
+    ARSLocation *loc = [_locations objectAtIndex:1];
+    ARSEvent *ev = [loc.events objectAtIndex:1];
     
-    
-    return nil;
+    return ev;
 }
 
 - (ARSEvent*)nextEventInTheParty
 {
 #warning Incomplete Implementation
-    return nil;
+    ARSLocation *loc = [_locations objectAtIndex:1];
+    ARSEvent *ev = [loc.events objectAtIndex:2];
+    
+    return ev;
 }
 
 #pragma mark -

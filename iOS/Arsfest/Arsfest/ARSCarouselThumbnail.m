@@ -49,20 +49,16 @@
             [self.subHeaderLabel setText:@"Thanks for participating, see you next year!"];
             break;
         case ARSCarouselThumbnailTypeEvent:
-            // Get actual time
-            //NSDate *now = [[NSDate alloc] init];
-            // Get user location
-            //NSString *location = [[ARSUserController sharedUserController] userLocation];
-            // Get closer next event
-            
+            [self.descriptionContainerView setHidden:YES];
+            [self.labelSoon setText:[NSString stringWithFormat:@"Happening now: %@", self.event.name]];
+            [self.imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.event.image]]];
             
             break;
         case ARSCarouselThumbnailTypeNextEvent:
-            // Get actual time
-            //NSDate *now = [[NSDate alloc] init];
-            // Get user location
-            //NSLog([[ARSUserController sharedUserController] userLocation]);
-            // Get closer next event
+            [self.descriptionContainerView setHidden:YES];
+            [self.labelSoon setText:[NSString stringWithFormat:@"Coming next: %@", self.event.name]];
+            [self.imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", self.event.image]]];
+
             break;
         default:
             break;

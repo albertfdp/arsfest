@@ -7,6 +7,7 @@
 //
 
 #import "ARSCarousel.h"
+#import "ARSData.h"
 
 @interface ARSCarousel()
 
@@ -45,11 +46,14 @@
 - (void)configureScrollView
 {
     ARSCarouselThumbnail *thumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
-    thumbnail.type = ARSCarouselThumbnailTypePartyOver;
+
+    thumbnail.event = [[ARSData data] currentEventInTheParty];
+    thumbnail.type = ARSCarouselThumbnailTypeEvent;
+
     [self.scrollView addSubview:thumbnail];
     [self.scrollView setContentSize:thumbnail.frame.size];
     
-    [self.pageControl setHidden:YES];
+//    [self.pageControl setHidden:YES];
     
     
     //Get time.
