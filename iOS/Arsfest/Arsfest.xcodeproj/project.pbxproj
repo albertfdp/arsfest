@@ -136,8 +136,6 @@
 		E1C3B79418FFD4BD00D6FC18 /* salsa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B78B18FFD4BD00D6FC18 /* salsa@2x.png */; };
 		E1C3B79518FFD4BD00D6FC18 /* waltz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B78C18FFD4BD00D6FC18 /* waltz@2x.png */; };
 		E1C3B79618FFD4BD00D6FC18 /* zumba@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B78D18FFD4BD00D6FC18 /* zumba@2x.png */; };
-		E1C3B7A21900444200D6FC18 /* ARSCarouselPartyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C3B7A11900444200D6FC18 /* ARSCarouselPartyInfo.m */; };
-		E1C3B7A51900448300D6FC18 /* ARSCarouselPartyInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1C3B7A41900448300D6FC18 /* ARSCarouselPartyInfo.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -312,9 +310,6 @@
 		E1C3B78B18FFD4BD00D6FC18 /* salsa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "salsa@2x.png"; sourceTree = "<group>"; };
 		E1C3B78C18FFD4BD00D6FC18 /* waltz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "waltz@2x.png"; sourceTree = "<group>"; };
 		E1C3B78D18FFD4BD00D6FC18 /* zumba@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zumba@2x.png"; sourceTree = "<group>"; };
-		E1C3B7A01900444200D6FC18 /* ARSCarouselPartyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSCarouselPartyInfo.h; sourceTree = "<group>"; };
-		E1C3B7A11900444200D6FC18 /* ARSCarouselPartyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARSCarouselPartyInfo.m; sourceTree = "<group>"; };
-		E1C3B7A41900448300D6FC18 /* ARSCarouselPartyInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARSCarouselPartyInfo.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -514,7 +509,6 @@
 				DB59F48318FAC62200348BBF /* ARSCarousel.h */,
 				DB59F48418FAC62200348BBF /* ARSCarousel.m */,
 				DB59F48618FAC63000348BBF /* ARSCarousel.xib */,
-				E1C3B7A31900444600D6FC18 /* ARSCarouselPartyInfo */,
 			);
 			name = ARSCarousel;
 			sourceTree = "<group>";
@@ -841,16 +835,6 @@
 			name = ARSInfoViewController;
 			sourceTree = "<group>";
 		};
-		E1C3B7A31900444600D6FC18 /* ARSCarouselPartyInfo */ = {
-			isa = PBXGroup;
-			children = (
-				E1C3B7A01900444200D6FC18 /* ARSCarouselPartyInfo.h */,
-				E1C3B7A11900444200D6FC18 /* ARSCarouselPartyInfo.m */,
-				E1C3B7A41900448300D6FC18 /* ARSCarouselPartyInfo.xib */,
-			);
-			name = ARSCarouselPartyInfo;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -962,7 +946,6 @@
 				E1C3B78F18FFD4BD00D6FC18 /* carpark@2x.png in Resources */,
 				DB80E1CA1903DAE20044FF47 /* gradient@2x.png in Resources */,
 				E1C3B79218FFD4BD00D6FC18 /* kaka@2x.png in Resources */,
-				E1C3B7A51900448300D6FC18 /* ARSCarouselPartyInfo.xib in Resources */,
 				DBE009CD18B78E22000B6DFE /* jazzband.png in Resources */,
 				DB53D33118AEBCD300508DAD /* default_background@2x.png in Resources */,
 				DBE009D118B78E22000B6DFE /* official.png in Resources */,
@@ -1087,7 +1070,6 @@
 				DB21FD9618BE16B80083F26C /* UIBarButtonItem+RightBarItem.m in Sources */,
 				DB21FDAA18BE1B6E0083F26C /* ARSNavigationController.m in Sources */,
 				DBF6B0DD18EC316F0048605F /* ARSWifi.m in Sources */,
-				E1C3B7A21900444200D6FC18 /* ARSCarouselPartyInfo.m in Sources */,
 				DB59F48C18FAC6FF00348BBF /* ARSCarouselThumbnail.m in Sources */,
 				DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */,
 				DBE009E518B79585000B6DFE /* UIView+Borders.m in Sources */,

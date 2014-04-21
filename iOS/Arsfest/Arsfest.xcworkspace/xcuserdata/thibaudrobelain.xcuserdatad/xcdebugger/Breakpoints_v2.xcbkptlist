@@ -660,11 +660,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ARSCarousel.m"
-            timestampString = "419771290.272602"
+            timestampString = "419771913.674654"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-thumbnailTimerFinished"
             landmarkType = "5">
          </BreakpointContent>
@@ -676,11 +676,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ARSCarousel.m"
-            timestampString = "419771290.272602"
+            timestampString = "419771913.674654"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "-tappedView:"
             landmarkType = "5">
          </BreakpointContent>
