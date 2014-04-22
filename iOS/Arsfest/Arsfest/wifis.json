@@ -1,88 +1,143 @@
 {
     "bssids": [
+
         {
-            "bssid": "00:27:0d:5f:17",
-            "locationId": "l1",
-            "locationName": "Library",
-            "latitude": 55.786893,
-            "longitude": 12.523265
+            "bssid": "0:1c:e:42:73:12",
+            "latitude": 55.786983,
+            "longitude": 12523362,
+            "x": ,
+            "y": ,
+            "location name": "Library"
         },
         {
-            "bssid": "00:27:0d:48",
-            "locationId": "l1",
-            "locationName": "Sports Hall",
-            "latitude": 55.785949,
-            "longitude": 12.525475
+            "bssid": "34:a8:4e:ba:92:b2",
+            "latitude": 55.787003,6
+            "longitude": 12.523411,
+            "x": ,
+            "y": ,
+            "location name": "Library"
         },
         {
-            "bssid": "00:27:0d:ed:18",
-            "locationId": "l0",
-            "locationName": "Sports Hall",
-            "latitude": 55.785949,
-            "longitude": 12.525475
+            "bssid": "5c:50:15:5:9f:d2"
+            "latitude": 55.786957,
+            "longitude": 12.524509,
+            "x": ,
+            "y": ,
+            "location name": "Cantine"
         },
         {
-            "bssid": "00:27:0d:ed:1a",
-            "locationId": "l0",
-            "locationName": "Sports Hall",
-            "latitude": 55.785949,
-            "longitude": 12.525475
+               "bssid": "0:1c:e:42:a4:7"
+               "latitude": 55.786705,
+               "longitude": 12.525024,
+               "x": ,
+               "y": ,
+               "location name": "Cantine"
         },
         {
-            "bssid": "00:27:0d:5f:42",
-            "locationId": "l0",
-            "locationName": "Sports Hall",
-            "latitude": 55.785949,
-            "longitude": 12.525475
+               "bssid": "0:1c:e:42:d2:f2"
+               "latitude": 55.786335,
+               "longitude": 12.525487,
+               "x": ,
+               "y": ,
+               "location name": "S-Huset"
         },
         {
-            "bssid": "00:27:0d:5f:4c",
-            "locationId": "l0",
-            "locationName": "Sports Hall",
-            "latitude": 55.785949,
-            "longitude": 12.525475
-        },
-        {
-            "bssid": "00:1c:0e:42:70",
-            "locationId": "l2",
-            "locationName": "Oticon Hall",
-            "latitude": 55.78683,
-            "longitude": 12.525871
-        },
-        {
-            "bssid": "00:1c:0e:42:d4",
-            "locationId": "l2",
-            "locationName": "Oticon Hall",
-            "latitude": 55.78683,
-            "longitude": 12.525871
-        },
-        {
-            "bssid": "00:1a:30:7d:89",
-            "locationId": "l3",
-            "locationName": "Cantine",
-            "latitude": 55.786489,
-            "longitude": 12.524634,
-        },
-        {
-            "bssid": "00:1c:0e:42:7e",
-            "locationId": "l3",
-            "locationName": "Cantine",
-            "latitude": 55.786489,
-            "longitude": 12.524634,
-        },
-        {
-            "bssid": "00:23:5e:1f:20",
-            "locationId": "l3",
-            "locationName": "Cantine",
-            "latitude": 55.786489,
-            "longitude": 12.524634,
-        },
-        {
-            "bssid": "00:1c:0e:42:d4",
-            "locationId": "l3",
-            "locationName": "Cantine",
-            "latitude": 55.786489,
-            "longitude": 12.524634,
-        }
+               "bssid": "34:a8:4e:ba:e0:42"
+               "latitude": 55.785721,
+               "longitude": 12.525164,
+               "x": ,
+               "y": ,
+               "location name": "Faculty Club"
+         },
+         {
+               "bssid": "3c:ce:73:8:17:22"
+               "latitude": 55.785938,
+               "longitude": 12.523712,
+               "x": ,
+               "y": ,
+               "location name": "PHD Cantine"
+         },
+         {
+               "bssid": "a4:56:30:8f:50:a2"
+               "latitude": 55.785923,
+               "longitude": 12.525384,
+               "x": ,
+               "y": ,
+               "location name": "Accommodation"
+         },
+         {
+               "bssid": "34:a8:43:ba:ee:22"
+               "latitude": 55.786251,
+               "longitude": 12.525423,
+               "x": ,
+               "y": ,
+               "location name": "Sports Hall"
+          },
+          {
+               "bssid": "0:1c:e:42:7e:82"
+               "latitude": 55.786716,
+               "longitude": 12.524560,
+               "x": ,
+               "y": ,
+               "location name": "Cantine"
+          },
+          {
+               "bssid": "34:a8:4e:ba:92:b2"
+               "latitude": 55.786983,
+               "longitude": 12.523461,
+               "x": ,
+               "y": ,
+               "location name": "Library"
+          },
+          {
+               "bssid": "0:1a:30:7d:89:12"
+               "latitude": 55.786766,
+               "longitude": 12.524226,
+               "x": ,
+               "y": ,
+               "location name": "Cantine"
+          },
+          {
+               "bssid": "0:1c:e:42:c8:42"
+               "latitude": 55.786751,
+               "longitude": 12.524571,
+               "x": ,
+               "y": ,
+               "location name": "Cantine"
+          },
+          {
+               "bssid": "0:1c:e:42:d4:82"
+               "latitude": 55.786579,
+               "longitude": 12.525086,
+               "x": ,
+               "y": ,
+               "location name": "Cantine"
+          },
+          {
+               "bssid": "0:1c:e:42:77:c2"
+               "latitude": 55.786594,
+               "longitude": 12.525086,
+               "x": ,
+               "y": ,
+               "location name": "S-Huset"
+           },
+           {
+               "bssid": "0:1a:30:7d:89:22"
+               "latitude": 55.786655,
+               "longitude": 12.525155,
+               "x": ,
+               "y": ,
+               "location name": "Cantine"
+            },
+            {
+               "bssid": "64:d9:89:91:a0:42"
+               "latitude": 55.786819,
+               "longitude": 12.525852,
+               "x": ,
+               "y": ,
+               "location name": "Oticon"
+            }
+
+               
     ]
 }
