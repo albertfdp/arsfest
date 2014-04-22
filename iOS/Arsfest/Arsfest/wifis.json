@@ -42,33 +42,65 @@
                "locationName": "S-Huset"
         },
         {
+               "bssid": "54:78:1a:21:cb:f2",
+               "latitude": 55.786106,
+               "longitude": 12.522780,
+               "x": ,
+               "y": ,
+               "locationName": "Accommodation"
+        },
+        {
+               "bssid": "0:1a:30:7d:89:1d",
+               "latitude": 55.786827,
+               "longitude": 12.523748,
+               "x": ,
+               "y": ,
+               "locationName": "Library-Cantine"
+        },
+        {
+               "bssid": "0:1a:30:7d:89:12",
+               "latitude": 55.786716,
+               "longitude": 12.524201,
+               "x": ,
+               "y": ,
+               "locationName": "Library-Cantine"
+        },
+        {
                "bssid": "34:a8:4e:ba:e0:42",
                "latitude": 55.785721,
                "longitude": 12.525164,
                "x": 764,
                "y": 649,
                "locationName": "Faculty Club"
+         } ,
+         {
+               "bssid": "5c:50:15:36:85:ed",
+               "latitude": 55.785801,
+               "longitude": 12.524545,
+               "x": 764,
+               "y": 649,
+               "locationName": "Faculty Club"
          },
          {
-               "bssid": "3c:ce:73:8:17:22",
-               "latitude": 55.785938,
-               "longitude": 12.523712,
+               "bssid": "3c:ce:73:8:17:2d",
+               "latitude": 55.785801,
+               "longitude": 12.524545,
                "x": 383,
                "y": 647,
-               "locationName": "PHD Cantine"
+               "locationName": "Meeting Center"
          },
          {
                "bssid": "a4:56:30:8f:50:a2",
-               "latitude": 55.785923,
-               "longitude": 12.525384,
-               "x": 812,
-               "y": 575,
-               "locationName": "Sports Hall"
+               "latitude": 55.785980,
+               "longitude": 12.523825,
+               "x": ,
+               "y": ,
+               "locationName": "Accommodation Entrance"
          },
          {
-               "bssid": "34:a8:43:ba:ee:22",
-               "latitude": 55.786251,
-               "longitude": 12.525423,
+               "bssid": "34:a8:4e:ba:ee:22",
+               "latitude": 55.785839,
+               "longitude": 12.525450,
                "x": 751,
                "y": 415,
                "locationName": "Sports Hall"
@@ -89,6 +121,46 @@
                "y": 268,
                "locationName": "Library"
           },
+               {
+               "bssid": "34:a8:4e:ba:b7:f2",
+               "latitude": 55.786789,
+               "longitude": 12.524001,
+               "x": 390,
+               "y": 285,
+               "locationName": "Library"
+               },
+               {
+               "bssid": "0:27:d:48:d7:3d",
+               "latitude": 55.786968,
+               "longitude": 12.523398,
+               "x": 390,
+               "y": 285,
+               "locationName": "Library"
+               },
+               {
+               "bssid": "0:27:d:48:d7:32",
+               "latitude": 55.787018,
+               "longitude": 12.523162,
+               "x": 390,
+               "y": 285,
+               "locationName": "Library"
+               },
+               {
+               "bssid": "d8:24:bd:a1:ff:2",
+               "latitude": 55.787006,
+               "longitude": 12.523315,
+               "x": 390,
+               "y": 285,
+               "locationName": "Library"
+               },
+               {
+               "bssid": "0:27:d:48:44:2",
+               "latitude": 55.787976,
+               "longitude": 12.523443,
+               "x": 390,
+               "y": 285,
+               "locationName": "Library"
+               },
           {
                "bssid": "0:1a:30:7d:89:12",
                "latitude": 55.786766,
@@ -133,7 +205,7 @@
                "bssid": "64:d9:89:91:a0:42",
                "latitude": 55.786819,
                "longitude": 12.525852,
-               "x": 388,
+               "x": 785,
                "y": 121,
                "locationName": "Oticon"
             }
