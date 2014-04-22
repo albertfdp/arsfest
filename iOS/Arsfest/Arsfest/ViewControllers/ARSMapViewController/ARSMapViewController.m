@@ -167,19 +167,12 @@
 
 - (void)locateUser
 {
-//    if ([[ARSUserController sharedUserController] localWiFiAvailable]) {
+    if ([[ARSUserController sharedUserController] localWiFiAvailable]) {
         CGPoint coordinates = [[ARSUserController sharedUserController] userLocationAsCGPoint];
-        CGRect zoomRect;
-        zoomRect.size.height = self.mapScrollView.frame.size.height / self.mapScrollView.zoomScale;
-        zoomRect.size.width  = self.mapScrollView.frame.size.width  / self.mapScrollView.zoomScale;
-        zoomRect.origin.x = coordinates.x - (zoomRect.size.width  / 2.0);
-        zoomRect.origin.y = coordinates.y - (zoomRect.size.height / 2.0);
-
-        [self.mapScrollView zoomToRect:zoomRect animated:YES];
         [self addLocationIndicatorToMapAt:coordinates];
-//    } else {
-//        [ARSAlertManager showErrorWithTitle:@"Wi-Fi Not Available" message:@"Please activate the Wi-Fi and try again" cancelTitle:@"OK"];
-//    }
+    } else {
+        [ARSAlertManager showErrorWithTitle:@"Wi-Fi Not Available" message:@"Please activate the Wi-Fi and try again" cancelTitle:@"OK"];
+    }
 }
 
 - (UIBezierPath *)makeCircleAtLocation:(CGPoint)location radius:(CGFloat)radius
@@ -211,6 +204,14 @@
         // Add CAShapeLayer to the view
         [self.mapImageView.layer addSublayer:shapeLayer];
         self.circleLayer = shapeLayer;
+        
+        CGRect zoomRect;
+        zoomRect.size.height = self.mapScrollView.frame.size.height / self.mapScrollView.zoomScale;
+        zoomRect.size.width  = self.mapScrollView.frame.size.width  / self.mapScrollView.zoomScale;
+        zoomRect.origin.x = location.x - (zoomRect.size.width  / 2.0);
+        zoomRect.origin.y = location.y - (zoomRect.size.height / 2.0);
+        
+        [self.mapScrollView zoomToRect:zoomRect animated:YES];
     } else {
         [ARSAlertManager showErrorWithTitle:@"Position Unknown" message:@"We couldn't locate you on the map" cancelTitle:@"OK"];
     }

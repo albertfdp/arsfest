@@ -18,9 +18,9 @@
     
     newWifi.locationName = [dictionary objectForKey:@"locationName"];
     newWifi.bssid = [dictionary objectForKey:@"bssid"];
-    
-#warning Add point on map
-    
+    CGFloat x = [[dictionary objectForKey:@"x"] floatValue];
+    CGFloat y = [[dictionary objectForKey:@"y"] floatValue];
+    newWifi.pointOnMap = CGPointMake(x, y);    
 
     PFGeoPoint *location = [[PFGeoPoint alloc] init];
     location.latitude = [[dictionary objectForKey:@"latitude"] doubleValue];
