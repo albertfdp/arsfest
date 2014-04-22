@@ -8,6 +8,8 @@
             <connections>
                 <outlet property="allowStatisticsSwitch" destination="TBr-Ld-CMi" id="asG-I0-WtG"/>
                 <outlet property="infoView" destination="N4o-Vo-aFO" id="yGc-lv-djp"/>
+                <outlet property="informationsScrollView" destination="dgD-is-OH6" id="gK0-G2-XKh"/>
+                <outlet property="pageControl" destination="sWL-lv-n5D" id="siz-2D-HOU"/>
                 <outlet property="segmentedControl" destination="Mc8-fM-xgM" id="cou-bi-NZT"/>
                 <outlet property="settingsView" destination="orX-7N-xnf" id="VDn-LT-SB6"/>
                 <outlet property="view" destination="IaK-oy-ehP" id="SdZ-wE-qmH"/>
@@ -26,10 +28,10 @@
                         <constraint firstAttribute="height" constant="44" id="jDF-dA-RfF"/>
                     </constraints>
                     <items>
-                        <barButtonItem width="66" style="plain" systemItem="fixedSpace" id="N25-Aw-95y"/>
+                        <barButtonItem width="68" style="plain" systemItem="fixedSpace" id="N25-Aw-95y"/>
                         <barButtonItem style="plain" id="d14-2l-9BN">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" id="Mc8-fM-xgM">
-                                <rect key="frame" x="82" y="7" width="161" height="30"/>
+                                <rect key="frame" x="84" y="7" width="161" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Info"/>
@@ -43,6 +45,18 @@
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4o-Vo-aFO" userLabel="Info view">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgD-is-OH6">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        </scrollView>
+                        <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="sWL-lv-n5D">
+                            <rect key="frame" x="140" y="340" width="39" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </pageControl>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orX-7N-xnf" userLabel="Settings view">

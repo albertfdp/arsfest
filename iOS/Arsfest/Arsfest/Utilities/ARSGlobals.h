@@ -31,9 +31,15 @@
 // Friend list table view constant
 #define FRIEND_CELL_HEIGHT 71
 
+// Location refresh timer
 #define REFRESH_RATE_LOCATION 60
 
+// Dates
 #define ARSFEST_START_DATE [NSDate dateWithYear:2014 month:5 day:9 hour:15]
 #define ARSFEST_REAL_START_DATE [NSDate dateWithYear:2014 month:5 day:9 hour:17]
 #define ARSFEST_END_DATE [NSDate dateWithYear:2014 month:5 day:10 hour:5]
 #define ARSFEST_REAL_END_DATE [NSDate dateWithYear:2014 month:5 day:10 hour:3]
+
+// Informations
+
+#define ARSFEST_WELCOME @"The Commemoration Party is the festive peak of the academic year, where achievements, perspectives and collaborations are celebrated with the students, employees and partners of the university. \nDTU also highlights select achievements of the past year by the awarding academic honours. \nThe Commemoration Party can be divided into three. The official part, followed by dinner and then a large ball. DTU and Polytechnical Association hope you have a fantastic evening."

@@ -10,7 +10,7 @@
 #import "ARSAnalytics.h"
 #import "ARSInfoView.h"
 
-@interface ARSInfoViewController()
+@interface ARSInfoViewController() <UIScrollViewDelegate>
 
 /* Configures the view when the selected index of the segmented control changes */
 - (void)configureViewForSelectedIndex:(NSInteger)index;
@@ -45,7 +45,9 @@
     
     //Init scroll view
     [self initInformationsScrollView];
+    [self configureStatisticsSwitch];
     
+    self.informationsScrollView.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -106,11 +108,40 @@
 
 - (void)initInformationsScrollView
 {
-    NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"ARSInfoView" owner:nil options:nil];
-    ARSInfoView *infoView = [nibContents lastObject];
+    ARSInfoView *infoView = [[[NSBundle mainBundle] loadNibNamed:@"ARSInfoView" owner:nil options:nil] lastObject];
+    [infoView setTitle:@"The Årsfest" description:ARSFEST_WELCOME image:nil];
     
+    ARSInfoView *secondInfoView = [[[NSBundle mainBundle] loadNibNamed:@"ARSInfoView" owner:nil options:nil] lastObject];
+    [secondInfoView setTitle:@"Social Integration" description:@"Facebook blabla" image:nil];
     
+    [self addViewsToScrollView:@[infoView, secondInfoView]];
 }
+
+- (void)addViewsToScrollView:(NSArray*)views
+{
+    //Add each view
+    int i = 0;
+    for (ARSInfoView* infoView in views) {
+        [self.informationsScrollView addSubview:infoView];
+        int yOrigin = self.informationsScrollView.frame.origin.y;
+        [infoView setFrame:CGRectMake(i*self.informationsScrollView.frame.size.width, yOrigin, self.informationsScrollView.frame.size.width, self.informationsScrollView.frame.size.height)];
+        i++;
+    }
+    
+    [self.informationsScrollView setContentSize:CGSizeMake(i * self.informationsScrollView.frame.size.width, self.informationsScrollView.frame.size.height)];
+    [self.pageControl setNumberOfPages:[views count]];
+}
+
+#pragma mark - Scroll view delegate
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    int x = self.informationsScrollView.contentOffset.x;
+    int currentPage = (x / (int)self.informationsScrollView.frame.size.width);
+    [self.pageControl setCurrentPage:currentPage];
+}
+
+#pragma mark - Statistics button and view
 
 - (IBAction)statisticsSwitchTouched:(id)sender {
     UISwitch *switchTouched = (UISwitch*)sender;
@@ -128,4 +159,6 @@
 {
     [self.allowStatisticsSwitch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"allowstatistics"]];
 }
+
+
 @end

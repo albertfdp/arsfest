@@ -13,7 +13,9 @@
 
 + (void)trackViewOpened:(NSString*)name
 {
-    [PFAnalytics trackEvent:name dimensions:nil];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"allowstatistics"]) {
+        [PFAnalytics trackEvent:name dimensions:nil];
+    }
 }
 
 @end

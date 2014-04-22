@@ -12,7 +12,14 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
+/* Info view outlets*/
 @property (weak, nonatomic) IBOutlet UIView *infoView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UIScrollView *informationsScrollView;
+
+
+
+/* Settings view outlets*/
 @property (weak, nonatomic) IBOutlet UIView *settingsView;
 
 @property (weak, nonatomic) IBOutlet UISwitch *allowStatisticsSwitch;
