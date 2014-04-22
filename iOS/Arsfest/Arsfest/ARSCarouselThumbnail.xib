@@ -14,6 +14,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
+                        <view hidden="YES" alpha="0.69999999999999996" tag="12" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPH-At-eI9">
+                            <rect key="frame" x="0.0" y="136" width="320" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zOB-5X-w6w">
                             <rect key="frame" x="0.0" y="-1" width="320" height="139"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -95,6 +100,7 @@
                 <outlet property="imageView" destination="FPD-HQ-pji" id="63B-Ts-XcO"/>
                 <outlet property="labelSoon" destination="h6c-HR-IbO" id="rWn-AI-umu"/>
                 <outlet property="moreInfoButton" destination="BqQ-99-MWp" id="kWc-Zm-uUo"/>
+                <outlet property="separatorView" destination="NPH-At-eI9" id="ahb-je-ugh"/>
                 <outlet property="subHeaderLabel" destination="dsP-mE-Jb1" id="pga-E9-Bm9"/>
                 <outlet property="timerLabel" destination="iz8-0E-j4W" id="LGA-mN-4CD"/>
             </connections>

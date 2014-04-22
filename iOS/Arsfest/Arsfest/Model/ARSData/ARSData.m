@@ -7,6 +7,7 @@
 //
 
 #import "ARSData.h"
+#import "ARSEvent.h"
 
 #define kEventsFileName                @"events"
 #define kWifisFileName                 @"wifis"
@@ -82,20 +83,62 @@
 
 - (ARSEvent*)currentEventInTheParty
 {
-#warning Incomplete Implementation
-    ARSLocation *loc = [_locations objectAtIndex:2];
-    ARSEvent *ev = [loc.events objectAtIndex:1];
+#warning Remove the 1 when over
+    if (1) {
+        ARSLocation *loc = [_locations objectAtIndex:2];
+        ARSEvent *ev = [loc.events objectAtIndex:1];
+        return ev;
+    }
     
-    return ev;
+    NSMutableArray *possibleEvents = [[NSMutableArray alloc] init];
+    for (ARSLocation *location in _locations) {
+        for (ARSEvent *event in location.events) {
+            if ([NSDate currentDateIsBetween:event.startTime and:event.endTime]) {
+                [possibleEvents addObject:event];
+            }
+        }
+    }
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"startTime"
+                                                                     ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+    NSArray *sortedArray = [possibleEvents sortedArrayUsingDescriptors:sortDescriptors];
+    
+    if ([sortedArray lastObject]) {
+        return [sortedArray objectAtIndex:0];
+    } else {
+        return nil;
+    }
 }
 
 - (ARSEvent*)nextEventInTheParty
 {
-#warning Incomplete Implementation
-    ARSLocation *loc = [_locations objectAtIndex:2];
-    ARSEvent *ev = [loc.events objectAtIndex:2];
+    #warning Remove the 1 when over
+    if (1) {
+        ARSLocation *loc = [_locations objectAtIndex:2];
+        ARSEvent *ev = [loc.events objectAtIndex:2];
+        
+        return ev;
+        
+    }
     
-    return ev;
+    NSMutableArray *possibleEvents = [[NSMutableArray alloc] init];
+    for (ARSLocation *location in _locations) {
+        for (ARSEvent *event in location.events) {
+            if ([[NSDate date] isEarlierThanDate:event.startTime fromMinutes:0]) {
+                [possibleEvents addObject:event];
+            }
+        }
+    }
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"startTime"
+                                                                     ascending:NO];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+    NSArray *sortedArray = [possibleEvents sortedArrayUsingDescriptors:sortDescriptors];
+    
+    if ([sortedArray lastObject]) {
+        return [sortedArray objectAtIndex:0];
+    } else {
+        return nil;
+    }
 }
 
 #pragma mark -

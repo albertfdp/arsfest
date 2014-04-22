@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, ARSCarouselThumbnailType) {
 };
 
 @interface ARSCarouselThumbnail : UIView
+@property (weak, nonatomic) IBOutlet UIView *separatorView;
 
 @property (weak, nonatomic) IBOutlet UIView *imageContainerView;
 @property (weak, nonatomic) IBOutlet UIView *descriptionContainerView;

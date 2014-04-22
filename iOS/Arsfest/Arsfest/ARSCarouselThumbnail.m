@@ -39,6 +39,7 @@
 {
     switch (newType) {
         case ARSCarouselThumbnailTypeTimer:
+            [self.separatorView setHidden:NO];
             [self.imageContainerView setHidden:YES];
             [self.headerLabel setHidden:YES];
             [self.timerLabel setDelegate:self];

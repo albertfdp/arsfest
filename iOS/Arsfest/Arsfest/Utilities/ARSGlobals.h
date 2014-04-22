@@ -34,4 +34,6 @@
 #define REFRESH_RATE_LOCATION 60
 
 #define ARSFEST_START_DATE [NSDate dateWithYear:2014 month:5 day:9 hour:15]
+#define ARSFEST_REAL_START_DATE [NSDate dateWithYear:2014 month:5 day:9 hour:17]
 #define ARSFEST_END_DATE [NSDate dateWithYear:2014 month:5 day:10 hour:5]
+#define ARSFEST_REAL_END_DATE [NSDate dateWithYear:2014 month:5 day:10 hour:3]
