@@ -11,7 +11,6 @@
 #import "ARSInfoViewController.h"
 #import "ARSEventCell.h"
 #import "ARSEvent.h"
-#import "EAIntroView.h"
 #import "ARSUserController.h"
 #import "ARSAnalytics.h"
 
@@ -189,9 +188,9 @@
     [self.navigationController.navigationBar.topItem setTitle:@"DTU Årsfest 2014"];
     
     // Info button
-//    UIImage *leftImage = [UIImage imageNamed:@"question.png"];
-//    UIBarButtonItem *leftItem = [UIBarButtonItem itemWithImage:leftImage target:self action:@selector(showInfo)];
-//    [self.navigationItem setLeftBarButtonItem:leftItem];
+    UIImage *leftImage = [UIImage imageNamed:@"question.png"];
+    UIBarButtonItem *leftItem = [UIBarButtonItem itemWithImage:leftImage target:self action:@selector(showInfo)];
+    [self.navigationItem setLeftBarButtonItem:leftItem];
 }
 
 - (void)showInfo

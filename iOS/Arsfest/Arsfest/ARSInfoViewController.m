@@ -45,6 +45,7 @@
     
     //Init scroll view
     [self initInformationsScrollView];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -111,4 +112,20 @@
     
 }
 
+- (IBAction)statisticsSwitchTouched:(id)sender {
+    UISwitch *switchTouched = (UISwitch*)sender;
+    [self storeStatisticsChange:switchTouched.on];
+    [self configureStatisticsSwitch];
+}
+
+- (void)storeStatisticsChange:(BOOL)change
+{
+    [[NSUserDefaults standardUserDefaults] setBool:change forKey:@"allowstatistics"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)configureStatisticsSwitch
+{
+    [self.allowStatisticsSwitch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"allowstatistics"]];
+}
 @end

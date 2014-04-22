@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARSInfoViewController">
             <connections>
+                <outlet property="allowStatisticsSwitch" destination="TBr-Ld-CMi" id="asG-I0-WtG"/>
                 <outlet property="infoView" destination="N4o-Vo-aFO" id="yGc-lv-djp"/>
                 <outlet property="segmentedControl" destination="Mc8-fM-xgM" id="cou-bi-NZT"/>
                 <outlet property="settingsView" destination="orX-7N-xnf" id="VDn-LT-SB6"/>
@@ -44,28 +45,32 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orX-7N-xnf" userLabel="Settings view">
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orX-7N-xnf" userLabel="Settings view">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TBr-Ld-CMi">
-                            <rect key="frame" x="136" y="327" width="51" height="31"/>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TBr-Ld-CMi">
+                            <rect key="frame" x="136" y="329" width="51" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="statisticsSwitchTouched:" destination="-1" eventType="valueChanged" id="OiV-dH-zvE"/>
+                            </connections>
                         </switch>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow the application to gather statistics:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8e-sH-gDZ">
-                            <rect key="frame" x="5" y="303" width="311" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Allow the application to gather statistics:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8e-sH-gDZ">
+                            <rect key="frame" x="5" y="304" width="311" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="61Z-C2-LOb">
-                            <rect key="frame" x="5" y="49" width="311" height="139"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="61Z-C2-LOb">
+                            <rect key="frame" x="5" y="49" width="311" height="147"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <string key="text">This application collects anonymous data such as the events you’ve looked at and the usage that you do of it. 
-It will help the organisers improve the event next year by knowing which events were the most popular!
-You can opt out of this feature at any time.</string>
+                            <string key="text">This application collects anonymous data such as the events you’ve looked at and the features you've used.
+
+It will help the organisers improve the event and the application next year by knowing for example which events were the most popular.
+</string>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -75,23 +80,32 @@ You can opt out of this feature at any time.</string>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qtP-9R-t33">
-                            <rect key="frame" x="39" y="298" width="243" height="1"/>
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qtP-9R-t33">
+                            <rect key="frame" x="39" y="299" width="243" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chart.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lh2-Sy-fUJ">
-                            <rect key="frame" x="40" y="196" width="240" height="96"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="chart.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lh2-Sy-fUJ">
+                            <rect key="frame" x="40" y="197" width="240" height="96"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="61Z-C2-LOb" firstAttribute="top" secondItem="orX-7N-xnf" secondAttribute="top" constant="49" id="0K7-Dl-hSn"/>
+                        <constraint firstAttribute="bottom" secondItem="qtP-9R-t33" secondAttribute="bottom" constant="72" id="OJS-cs-8Kt"/>
+                        <constraint firstAttribute="bottom" secondItem="Lh2-Sy-fUJ" secondAttribute="bottom" constant="79" id="PIu-1r-hxy"/>
+                        <constraint firstAttribute="bottom" secondItem="b8e-sH-gDZ" secondAttribute="bottom" constant="47" id="X0a-nU-CsI"/>
+                        <constraint firstAttribute="bottom" secondItem="TBr-Ld-CMi" secondAttribute="bottom" constant="12" id="ioD-eh-Eu7"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="001-8p-Lkx" secondAttribute="bottom" id="5iB-Rq-An6"/>
+                <constraint firstAttribute="bottom" secondItem="orX-7N-xnf" secondAttribute="bottom" constant="44" id="6P0-Wt-8XG"/>
                 <constraint firstItem="001-8p-Lkx" firstAttribute="leading" secondItem="IaK-oy-ehP" secondAttribute="leading" constant="-5" id="JlP-yI-hAI"/>
+                <constraint firstItem="orX-7N-xnf" firstAttribute="top" secondItem="IaK-oy-ehP" secondAttribute="top" id="Q4o-jv-Dra"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>

@@ -37,6 +37,12 @@
 //     UIRemoteNotificationTypeBadge |
 //     UIRemoteNotificationTypeAlert |
 //     UIRemoteNotificationTypeSound];
+    
+    //Initialize analytics agreement
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"allowstatistics"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"allowstatistics"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 
     
     ARSEventListViewController *eventListViewController = [[ARSEventListViewController alloc] initWithNibName:@"ARSEventListViewController" bundle:nil];

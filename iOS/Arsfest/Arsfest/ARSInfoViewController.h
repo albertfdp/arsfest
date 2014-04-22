@@ -15,4 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIView *infoView;
 @property (weak, nonatomic) IBOutlet UIView *settingsView;
 
+@property (weak, nonatomic) IBOutlet UISwitch *allowStatisticsSwitch;
+
+- (IBAction)statisticsSwitchTouched:(id)sender;
 @end
