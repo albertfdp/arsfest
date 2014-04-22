@@ -185,6 +185,13 @@ typedef NS_ENUM(NSInteger, kService) {
     return locationName;
 }
 
+- (CGPoint)userLocationAsCGPoint
+{
+    NSString *currentBSSID = [self currentWifiBSSID];
+    
+    return [[ARSData data] cgPointForWifiBssid:currentBSSID];
+}
+
 #pragma mark -
 #pragma mark - Friends Handler
 

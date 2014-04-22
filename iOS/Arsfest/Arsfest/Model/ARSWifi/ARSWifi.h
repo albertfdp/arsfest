@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) NSString *bssid;
 @property (strong, nonatomic) PFGeoPoint* location;
+@property (assign, nonatomic) CGPoint pointOnMap;
 @property (strong, nonatomic) NSString *locationName;
 @property (strong, nonatomic) NSString *locationUniqueID;
 

@@ -28,7 +28,8 @@
 - (void)dealloc
 {
     if (self.type == ARSCarouselThumbnailTypeTimer) {
-        [self.moreInfoButton removeObserver:self forKeyPath:@"highlighted"];        
+        [self.moreInfoButton removeObserver:self forKeyPath:@"highlighted"];
+        [self.moreInfoButton removeObserver:self forKeyPath:@"selected"];
     }
 }
 
@@ -45,6 +46,7 @@
             [self.subHeaderLabel setHidden:YES];
             [self configureButtonBorders];
             [self.moreInfoButton addObserver:self forKeyPath:@"highlighted" options:0 context:nil];
+            [self.moreInfoButton addObserver:self forKeyPath:@"selected" options:0 context:nil];
             [self.moreInfoButton setClipsToBounds:YES];
             [self.timerLabel setTimerType:MZTimerLabelTypeTimer];
             if ([NSDate daysLeftBeforeTheParty] < 1) {
@@ -120,7 +122,7 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if ([keyPath isEqualToString:@"highlighted"]) {
+    if ([keyPath isEqualToString:@"highlighted"] || [keyPath isEqualToString:@"selected"]) {
         [self configureButtonBorders];
     }
 }

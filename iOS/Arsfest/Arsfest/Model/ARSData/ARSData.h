@@ -33,6 +33,8 @@
 - (NSArray*)eventsIn:(ARSLocationType)location;
 
 
+- (CGPoint)cgPointForWifiBssid:(NSString*)bssid;
+
 /**
  * Gives the name of the room in which the wi-fi is located
  */

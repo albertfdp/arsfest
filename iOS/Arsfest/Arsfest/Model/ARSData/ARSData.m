@@ -155,6 +155,16 @@
 #pragma mark -
 #pragma mark - Wifi to bssid / Bssid to wifi
 
+- (CGPoint)cgPointForWifiBssid:(NSString*)bssid
+{
+    if ([_wifis objectForKey:bssid] != nil) {
+        ARSWifi *wifi = [[_wifis objectForKey:bssid] lastObject];
+        return wifi.pointOnMap;
+    }
+    
+    return CGPointMake(0, 0);
+}
+
 - (NSString*)locationNameForWifiBssid:(NSString*)bssid
 {
     NSString *locationName = nil;

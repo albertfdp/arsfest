@@ -9,7 +9,7 @@
 #import "ARSWifi.h"
 
 @implementation ARSWifi
-@synthesize location, locationName, locationUniqueID, bssid;
+@synthesize location, locationName, locationUniqueID, bssid, pointOnMap;
 
 
 + (ARSWifi*)wifiFromDictionary:(NSDictionary*)dictionary
@@ -17,8 +17,9 @@
     ARSWifi *newWifi = [[ARSWifi alloc] init];
     
     newWifi.locationName = [dictionary objectForKey:@"locationName"];
-    newWifi.locationUniqueID = [dictionary objectForKey:@"locationId"];
     newWifi.bssid = [dictionary objectForKey:@"bssid"];
+    
+#warning Add point on map
     
 
     PFGeoPoint *location = [[PFGeoPoint alloc] init];

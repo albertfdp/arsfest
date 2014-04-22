@@ -54,6 +54,7 @@ typedef NS_ENUM(NSInteger, ARSUserLoginError) {
  */
 - (void)updateUserLocation;
 - (NSString*)userLocation;
+- (CGPoint)userLocationAsCGPoint;
 
 /* Returns true if the iPhone is on a wifi*/
 - (BOOL)localWiFiAvailable;
