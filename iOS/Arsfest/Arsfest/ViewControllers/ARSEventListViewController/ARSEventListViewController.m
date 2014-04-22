@@ -211,19 +211,19 @@
 {
 //    if (![[[NSUserDefaults standardUserDefaults] objectForKey:INTRO_SHOWN_ONCE] boolValue]) {
     
-//        EAIntroPage *page = [EAIntroPage page];
-//        page.title = @"Register with Facebook";
-//        page.desc = @"Register now with Facebook to share your location with your friends and see them in real-time on the map during the party only.";
-//        page.bgImage = [UIImage imageNamed:@"BackgroundIntroView.png"];
-//    
-//        EAIntroView *introView = [[EAIntroView alloc] initWithFrame:self.navigationController.view.bounds
-//                                                           andPages:[NSArray arrayWithObject:page]];
-//        
-//        [introView showInView:self.navigationController.view animateDuration:0.0f];
-//        
-//        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:INTRO_SHOWN_ONCE];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-//    
+        EAIntroPage *page = [EAIntroPage page];
+        page.title = @"Register with Facebook";
+        page.desc = @"Register now with Facebook to share your location with your friends and see them in real-time on the map during the party only.";
+        page.bgImage = [UIImage imageNamed:@"BackgroundIntroView.png"];
+    
+        EAIntroView *introView = [[EAIntroView alloc] initWithFrame:self.navigationController.view.bounds
+                                                           andPages:[NSArray arrayWithObject:page]];
+        
+        [introView showInView:self.navigationController.view animateDuration:0.0f];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:INTRO_SHOWN_ONCE];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    
 //    }
 }
 #pragma mark -
