@@ -15,14 +15,14 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "162"
             endingLineNumber = "162"
-            landmarkName = "-cgPointForWifiBssid:"
+            landmarkName = "-parseJSONWithFileName:key:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/Model/ARSData/ARSData.m"
@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
             endingLineNumber = "160"
-            landmarkName = "-cgPointForWifiBssid:"
+            landmarkName = "-parseJSONWithFileName:key:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

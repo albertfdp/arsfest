@@ -5,16 +5,16 @@
             "bssid": "0:1c:e:42:73:12",
             "latitude": 55.786983,
             "longitude": 12.523362,
-            "x": 129,
-            "y": 213,
+               "x": 120,
+               "y": 275,
             "locationName": "Library"
         },
         {
             "bssid": "34:a8:4e:ba:92:b2",
             "latitude": 55.787003,
             "longitude": 12.523411,
-            "x": 176,
-            "y": 211,
+               "x": 120,
+               "y": 275,
             "locationName": "Library"
         },
         {
@@ -45,25 +45,25 @@
                "bssid": "54:78:1a:21:cb:f2",
                "latitude": 55.786106,
                "longitude": 12.522780,
-               "x": ,
-               "y": ,
-               "locationName": "Accommodation"
+               "x": 105,
+               "y": 592,
+               "locationName": "Accommodation Office    "
         },
         {
                "bssid": "0:1a:30:7d:89:1d",
                "latitude": 55.786827,
                "longitude": 12.523748,
-               "x": ,
-               "y": ,
-               "locationName": "Library-Cantine"
+               "x": 259,
+               "y": 306,
+               "locationName": "Entrance D"
         },
         {
                "bssid": "0:1a:30:7d:89:12",
                "latitude": 55.786716,
                "longitude": 12.524201,
-               "x": ,
-               "y": ,
-               "locationName": "Library-Cantine"
+               "x": 259,
+               "y": 306,
+               "locationName": "Entrance D"
         },
         {
                "bssid": "34:a8:4e:ba:e0:42",
@@ -93,8 +93,8 @@
                "bssid": "a4:56:30:8f:50:a2",
                "latitude": 55.785980,
                "longitude": 12.523825,
-               "x": ,
-               "y": ,
+               "x": 250,
+               "y": 588,
                "locationName": "Accommodation Entrance"
          },
          {
@@ -117,48 +117,48 @@
                "bssid": "34:a8:4e:ba:92:b2",
                "latitude": 55.786983,
                "longitude": 12.523461,
-               "x": 190,
-               "y": 268,
+               "x": 120,
+               "y": 275,
                "locationName": "Library"
           },
                {
                "bssid": "34:a8:4e:ba:b7:f2",
                "latitude": 55.786789,
                "longitude": 12.524001,
-               "x": 390,
-               "y": 285,
+               "x": 120,
+               "y": 275,
                "locationName": "Library"
                },
                {
                "bssid": "0:27:d:48:d7:3d",
                "latitude": 55.786968,
                "longitude": 12.523398,
-               "x": 390,
-               "y": 285,
+               "x": 120,
+               "y": 275,
                "locationName": "Library"
                },
                {
                "bssid": "0:27:d:48:d7:32",
                "latitude": 55.787018,
                "longitude": 12.523162,
-               "x": 390,
-               "y": 285,
+               "x": 120,
+               "y": 275,
                "locationName": "Library"
                },
                {
                "bssid": "d8:24:bd:a1:ff:2",
                "latitude": 55.787006,
                "longitude": 12.523315,
-               "x": 390,
-               "y": 285,
+               "x": 120,
+               "y": 275,
                "locationName": "Library"
                },
                {
                "bssid": "0:27:d:48:44:2",
                "latitude": 55.787976,
                "longitude": 12.523443,
-               "x": 390,
-               "y": 285,
+               "x": 120,
+               "y": 275,
                "locationName": "Library"
                },
           {
