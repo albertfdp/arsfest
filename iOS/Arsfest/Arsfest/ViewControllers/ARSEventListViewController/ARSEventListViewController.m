@@ -13,6 +13,7 @@
 #import "ARSEvent.h"
 #import "EAIntroView.h"
 #import "ARSUserController.h"
+#import "ARSAnalytics.h"
 
 #define kEventCellHeight 78
 
@@ -66,7 +67,6 @@
     [self menuDidSelectMenuItemAtIndex:0];
     
     [self.backgroundView setImage:kBackgroundImage];
-    [self setupIntroView];
     
     //Initialize the carousel's delegate
     [self.carouselView setDelegate:self];
@@ -74,8 +74,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [self setupNavigationBar];
     [self.carouselView configureScrollView];
+    
+    [ARSAnalytics trackViewOpened:@"Event List"];
 }
 
 - (void)dealloc
@@ -207,25 +210,7 @@
     [_menuScrollView setSelectionDelegate:self];
 }
 
-- (void)setupIntroView
-{
-//    if (![[[NSUserDefaults standardUserDefaults] objectForKey:INTRO_SHOWN_ONCE] boolValue]) {
-    
-        EAIntroPage *page = [EAIntroPage page];
-        page.title = @"Register with Facebook";
-        page.desc = @"Register now with Facebook to share your location with your friends and see them in real-time on the map during the party only.";
-        page.bgImage = [UIImage imageNamed:@"BackgroundIntroView.png"];
-    
-        EAIntroView *introView = [[EAIntroView alloc] initWithFrame:self.navigationController.view.bounds
-                                                           andPages:[NSArray arrayWithObject:page]];
-        
-        [introView showInView:self.navigationController.view animateDuration:0.0f];
-        
-        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:INTRO_SHOWN_ONCE];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    
-//    }
-}
+
 #pragma mark -
 #pragma mark - Carousel Initialization
 

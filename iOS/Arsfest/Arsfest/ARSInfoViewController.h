@@ -11,8 +11,8 @@
 @interface ARSInfoViewController : UIViewController <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-@property (weak, nonatomic) IBOutlet UILabel *header;
-@property (weak, nonatomic) IBOutlet UITextView *info;
-@property (weak, nonatomic) IBOutlet UITextView* ticketSale;
+
+@property (weak, nonatomic) IBOutlet UIView *infoView;
+@property (weak, nonatomic) IBOutlet UIView *settingsView;
 
 @end

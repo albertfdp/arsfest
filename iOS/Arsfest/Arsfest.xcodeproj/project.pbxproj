@@ -10,6 +10,11 @@
 		A3C9C2959C23450F907C64EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B51341BED63B4BC580A5958B /* libPods.a */; };
 		DB09A428190545D1000C076C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB09A427190545D1000C076C /* Parse.framework */; };
 		DB169A4C18E5F93400075319 /* contact_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB169A4B18E5F93400075319 /* contact_icon@2x.png */; };
+		DB17CC6D1906FEB8003CDA8E /* ARSAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = DB17CC6C1906FEB8003CDA8E /* ARSAnalytics.m */; };
+		DB17CC7119070345003CDA8E /* ARSInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB17CC7019070345003CDA8E /* ARSInfoView.m */; };
+		DB17CC73190703B4003CDA8E /* ARSInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB17CC72190703B4003CDA8E /* ARSInfoView.xib */; };
+		DB17CC7719070949003CDA8E /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = DB17CC7519070949003CDA8E /* chart.png */; };
+		DB17CC7819070949003CDA8E /* chart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB17CC7619070949003CDA8E /* chart@2x.png */; };
 		DB21FD9618BE16B80083F26C /* UIBarButtonItem+RightBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DB21FD9518BE16B80083F26C /* UIBarButtonItem+RightBarItem.m */; };
 		DB21FDAA18BE1B6E0083F26C /* ARSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB21FDA918BE1B6E0083F26C /* ARSNavigationController.m */; };
 		DB38A69818E1908F00AA12AE /* ARSAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB38A69718E1908F00AA12AE /* ARSAlertManager.m */; };
@@ -90,8 +95,6 @@
 		DBA50A2F18B7C6A0001C8AF1 /* music_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA50A2918B7C6A0001C8AF1 /* music_icon.png */; };
 		DBA50A3018B7C6A0001C8AF1 /* music_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA50A2A18B7C6A0001C8AF1 /* music_icon@2x.png */; };
 		DBA50A3318B7C6C6001C8AF1 /* UIImage+Icon.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA50A3218B7C6C6001C8AF1 /* UIImage+Icon.m */; };
-		DBA8518D18DB7E86005E352E /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA8518A18DB7E86005E352E /* EAIntroPage.m */; };
-		DBA8518E18DB7E86005E352E /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA8518C18DB7E86005E352E /* EAIntroView.m */; };
 		DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */; };
 		DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */; };
 		DBC83A6A18E2DE380047D269 /* ARSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC83A6818E2DE380047D269 /* ARSMapViewController.m */; };
@@ -153,6 +156,13 @@
 		B51341BED63B4BC580A5958B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB09A427190545D1000C076C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		DB169A4B18E5F93400075319 /* contact_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_icon@2x.png"; sourceTree = "<group>"; };
+		DB17CC6B1906FEB8003CDA8E /* ARSAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSAnalytics.h; path = ARSAnalytics/ARSAnalytics.h; sourceTree = "<group>"; };
+		DB17CC6C1906FEB8003CDA8E /* ARSAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSAnalytics.m; path = ARSAnalytics/ARSAnalytics.m; sourceTree = "<group>"; };
+		DB17CC6F19070345003CDA8E /* ARSInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSInfoView.h; sourceTree = "<group>"; };
+		DB17CC7019070345003CDA8E /* ARSInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARSInfoView.m; sourceTree = "<group>"; };
+		DB17CC72190703B4003CDA8E /* ARSInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARSInfoView.xib; sourceTree = "<group>"; };
+		DB17CC7519070949003CDA8E /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart.png; sourceTree = "<group>"; };
+		DB17CC7619070949003CDA8E /* chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chart@2x.png"; sourceTree = "<group>"; };
 		DB21FD9418BE16B80083F26C /* UIBarButtonItem+RightBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+RightBarItem.h"; path = "Utilities/UIBarButtonItem+RightBarItem.h"; sourceTree = "<group>"; };
 		DB21FD9518BE16B80083F26C /* UIBarButtonItem+RightBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+RightBarItem.m"; path = "Utilities/UIBarButtonItem+RightBarItem.m"; sourceTree = "<group>"; };
 		DB21FDA818BE1B6E0083F26C /* ARSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSNavigationController.h; path = Utilities/ARSNavigationController.h; sourceTree = "<group>"; };
@@ -256,10 +266,6 @@
 		DBA50A2A18B7C6A0001C8AF1 /* music_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music_icon@2x.png"; sourceTree = "<group>"; };
 		DBA50A3118B7C6C6001C8AF1 /* UIImage+Icon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Icon.h"; path = "Utilities/UIImage+Icon.h"; sourceTree = "<group>"; };
 		DBA50A3218B7C6C6001C8AF1 /* UIImage+Icon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Icon.m"; path = "Utilities/UIImage+Icon.m"; sourceTree = "<group>"; };
-		DBA8518918DB7E86005E352E /* EAIntroPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EAIntroPage.h; path = Utilities/EAIntroView/EAIntroPage.h; sourceTree = "<group>"; };
-		DBA8518A18DB7E86005E352E /* EAIntroPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EAIntroPage.m; path = Utilities/EAIntroView/EAIntroPage.m; sourceTree = "<group>"; };
-		DBA8518B18DB7E86005E352E /* EAIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EAIntroView.h; path = Utilities/EAIntroView/EAIntroView.h; sourceTree = "<group>"; };
-		DBA8518C18DB7E86005E352E /* EAIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EAIntroView.m; path = Utilities/EAIntroView/EAIntroView.m; sourceTree = "<group>"; };
 		DBBEC19318A6DAC200212106 /* ARSEventListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSEventListViewController.h; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.h; sourceTree = "<group>"; };
 		DBBEC19418A6DAC200212106 /* ARSEventListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEventListViewController.m; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.m; sourceTree = "<group>"; };
 		DBBEC19518A6DAC200212106 /* ARSEventListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ARSEventListViewController.xib; path = ViewControllers/ARSEventListViewController/ARSEventListViewController.xib; sourceTree = "<group>"; };
@@ -348,6 +354,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB17CC6A1906FEA3003CDA8E /* ARSAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				DB17CC6B1906FEB8003CDA8E /* ARSAnalytics.h */,
+				DB17CC6C1906FEB8003CDA8E /* ARSAnalytics.m */,
+			);
+			name = ARSAnalytics;
+			sourceTree = "<group>";
+		};
+		DB17CC6E19070311003CDA8E /* ARSInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				DB17CC6F19070345003CDA8E /* ARSInfoView.h */,
+				DB17CC7019070345003CDA8E /* ARSInfoView.m */,
+				DB17CC72190703B4003CDA8E /* ARSInfoView.xib */,
+			);
+			name = ARSInfoView;
+			sourceTree = "<group>";
+		};
+		DB17CC741907093D003CDA8E /* Informations Icon */ = {
+			isa = PBXGroup;
+			children = (
+				DB17CC7519070949003CDA8E /* chart.png */,
+				DB17CC7619070949003CDA8E /* chart@2x.png */,
+			);
+			name = "Informations Icon";
+			sourceTree = "<group>";
+		};
 		DB21FDA718BE1AFF0083F26C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +469,7 @@
 		DB43AE3B18DEDE4E00D56B4F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DB17CC6A1906FEA3003CDA8E /* ARSAnalytics */,
 				DB38A69918E1909800AA12AE /* ARSAlertManager */,
 				DB43AE3F18DEDE8100D56B4F /* ARSUserController */,
 			);
@@ -453,6 +488,7 @@
 		DB53D31E18AE58D000508DAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DB17CC741907093D003CDA8E /* Informations Icon */,
 				DB5C7B8619029D0A00E56ECD /* Default@2x.png */,
 				DB5C7B8719029D0A00E56ECD /* Default-568h@2x.png */,
 				DB5C7B8219025A3500E56ECD /* AppIcon58.png */,
@@ -738,7 +774,6 @@
 			children = (
 				DB818D9D18F9A9C5004C3845 /* MZTimerLabel */,
 				DB96086B18E5E12000AC3B8B /* AsyncImageView */,
-				DBA8518818DB7E54005E352E /* EAIntroView */,
 				DB21FDA718BE1AFF0083F26C /* Categories */,
 				DB21FDA818BE1B6E0083F26C /* ARSNavigationController.h */,
 				DB21FDA918BE1B6E0083F26C /* ARSNavigationController.m */,
@@ -763,17 +798,6 @@
 				DBA50A2A18B7C6A0001C8AF1 /* music_icon@2x.png */,
 			);
 			name = Icons;
-			sourceTree = "<group>";
-		};
-		DBA8518818DB7E54005E352E /* EAIntroView */ = {
-			isa = PBXGroup;
-			children = (
-				DBA8518918DB7E86005E352E /* EAIntroPage.h */,
-				DBA8518A18DB7E86005E352E /* EAIntroPage.m */,
-				DBA8518B18DB7E86005E352E /* EAIntroView.h */,
-				DBA8518C18DB7E86005E352E /* EAIntroView.m */,
-			);
-			name = EAIntroView;
 			sourceTree = "<group>";
 		};
 		DBBEC19218A6D9E300212106 /* ViewControllers */ = {
@@ -828,6 +852,7 @@
 		E147EDF919015ABF00C2D8B8 /* ARSInfoViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DB17CC6E19070311003CDA8E /* ARSInfoView */,
 				E147EDFF19015C0600C2D8B8 /* ARSInfoViewController.xib */,
 				E147EDFA19015ADF00C2D8B8 /* ARSInfoViewController.h */,
 				E147EDFB19015ADF00C2D8B8 /* ARSInfoViewController.m */,
@@ -927,6 +952,7 @@
 				DB98729918AD74B500A085FE /* ARSEventCell.xib in Resources */,
 				DB5C7B8D1902E89A00E56ECD /* official_icon@2x.png in Resources */,
 				E1C3B77418FD3F3D00D6FC18 /* abbatizers.png in Resources */,
+				DB17CC7819070949003CDA8E /* chart@2x.png in Resources */,
 				E1C3B77E18FFCD6400D6FC18 /* salsa.png in Resources */,
 				E1C3B78E18FFD4BD00D6FC18 /* abbatizers@2x.png in Resources */,
 				DB96086A18E5D87B00AC3B8B /* ARSFriendListCell.xib in Resources */,
@@ -978,6 +1004,7 @@
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
 				E1C3B78018FFD07400D6FC18 /* zumba.png in Resources */,
 				DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */,
+				DB17CC7719070949003CDA8E /* chart.png in Resources */,
 				DBF6B0E018EC548B0048605F /* wifis.json in Resources */,
 				DBA50A2D18B7C6A0001C8AF1 /* food_icon.png in Resources */,
 				E1C3B79018FFD4BD00D6FC18 /* dtudance@2x.png in Resources */,
@@ -995,6 +1022,7 @@
 				E1C3B79618FFD4BD00D6FC18 /* zumba@2x.png in Resources */,
 				DB9872A018AD7EB000A085FE /* ARSEventViewController.xib in Resources */,
 				DB59F48E18FAC72100348BBF /* ARSCarouselThumbnail.xib in Resources */,
+				DB17CC73190703B4003CDA8E /* ARSInfoView.xib in Resources */,
 				DB5C7B8919029D0A00E56ECD /* Default-568h@2x.png in Resources */,
 				DBE009D318B78E22000B6DFE /* queenmachine.png in Resources */,
 			);
@@ -1058,15 +1086,14 @@
 				DB6B313118A4337300C3EABB /* main.m in Sources */,
 				DB96086E18E5E12000AC3B8B /* AsyncImageView.m in Sources */,
 				DB98729718AD748B00A085FE /* ARSEventCell.m in Sources */,
-				DBA8518E18DB7E86005E352E /* EAIntroView.m in Sources */,
 				DB6B317418A43AD200C3EABB /* ARSLocation.m in Sources */,
 				DB38A69818E1908F00AA12AE /* ARSAlertManager.m in Sources */,
 				DB6B313518A4337300C3EABB /* ARSAppDelegate.m in Sources */,
 				DB9872A418AD7F7500A085FE /* NSDate+Formatter.m in Sources */,
-				DBA8518D18DB7E86005E352E /* EAIntroPage.m in Sources */,
 				DB6B317718A43AE500C3EABB /* ARSEvent.m in Sources */,
 				E147EDFC19015ADF00C2D8B8 /* ARSInfoViewController.m in Sources */,
 				DBC83A6A18E2DE380047D269 /* ARSMapViewController.m in Sources */,
+				DB17CC7119070345003CDA8E /* ARSInfoView.m in Sources */,
 				DB21FD9618BE16B80083F26C /* UIBarButtonItem+RightBarItem.m in Sources */,
 				DB21FDAA18BE1B6E0083F26C /* ARSNavigationController.m in Sources */,
 				DBF6B0DD18EC316F0048605F /* ARSWifi.m in Sources */,
@@ -1074,6 +1101,7 @@
 				DBBEC19618A6DAC200212106 /* ARSEventListViewController.m in Sources */,
 				DBE009E518B79585000B6DFE /* UIView+Borders.m in Sources */,
 				DBCCEA4B18A5723D00CC87AE /* ARSData.m in Sources */,
+				DB17CC6D1906FEB8003CDA8E /* ARSAnalytics.m in Sources */,
 				DB8E941118A78B5900EF214F /* ARSHorizontalScrollingHeader.m in Sources */,
 				DB53D31D18AE352400508DAD /* UIViewController+Edges.m in Sources */,
 			);
@@ -1207,6 +1235,10 @@
 				GCC_PREFIX_HEADER = "Arsfest/Arsfest-Prefix.pch";
 				INFOPLIST_FILE = "Arsfest/Arsfest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -1231,6 +1263,10 @@
 				GCC_PREFIX_HEADER = "Arsfest/Arsfest-Prefix.pch";
 				INFOPLIST_FILE = "Arsfest/Arsfest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

@@ -7,6 +7,8 @@
 //
 
 #import "ARSInfoViewController.h"
+#import "ARSAnalytics.h"
+#import "ARSInfoView.h"
 
 @interface ARSInfoViewController()
 
@@ -40,14 +42,17 @@
     UIImage *rightImage = [UIImage imageNamed:@"close.png"];
     UIBarButtonItem *rightItem = [UIBarButtonItem itemWithImage:rightImage target:self action:@selector(dismissInfo)];
     [self.navigationController.navigationBar.topItem setRightBarButtonItem:rightItem];
-    [self setTitle:@"Info"];
-
+    
+    //Init scroll view
+    [self initInformationsScrollView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
+    [super viewWillAppear:animated];
     [self configureViewForSelectedIndex:self.segmentedControl.selectedSegmentIndex];
+    
+    [ARSAnalytics trackViewOpened:@"Informations"];
 }
 
 - (void)configureViewForSelectedIndex:(NSInteger)index
@@ -55,20 +60,24 @@
     switch (index) {
         case 0:
         {
-            [self.info setHidden:NO];
-            [self.ticketSale setHidden:YES];
-            self.header.text= @"Commemoration Party: 9th of May 2014";
+            [self setViewToSettings:NO];
+            [self setTitle:@"Information"];
             
             break;
         }
         case 1:
         {
-            [self.info setHidden:YES];
-            [self.ticketSale setHidden:NO];
-            self.header.text= @"Ticket Sale";
+            [self setViewToSettings:YES];
+            [self setTitle:@"Settings"];
             break;
         }
     }
+}
+
+- (void)setViewToSettings:(BOOL)yes
+{
+    [self.infoView setHidden:yes];
+    [self.settingsView setHidden:!yes];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -92,13 +101,14 @@
     [self.segmentedControl removeObserver:self forKeyPath:@"selectedSegmentIndex"];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+#pragma mark - Informations scroll view
+
+- (void)initInformationsScrollView
 {
-    // Drawing code
+    NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"ARSInfoView" owner:nil options:nil];
+    ARSInfoView *infoView = [nibContents lastObject];
+    
+    
 }
-*/
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "ARSEventViewController.h"
-
+#import "ARSAnalytics.h"
 
 @interface ARSEventViewController ()
 
@@ -52,9 +52,12 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [self configureView];
     [self setupNavigationBar];
     [self setupScrollView];
+    
+    [ARSAnalytics trackViewOpened:[NSString stringWithFormat:@"Event Viewed: %@", _event.name]];
 }
 
 - (void)didReceiveMemoryWarning

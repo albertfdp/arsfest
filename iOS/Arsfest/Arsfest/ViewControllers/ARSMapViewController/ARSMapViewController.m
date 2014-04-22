@@ -9,6 +9,7 @@
 #import "ARSMapViewController.h"
 #import "ARSAlertManager.h"
 #import "ARSFriendListCell/ARSFriendListCell.h"
+#import "ARSAnalytics.h"
 
 @interface ARSMapViewController ()
 
@@ -81,7 +82,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [self configureViewForSelectedIndex:self.segmentedControl.selectedSegmentIndex];
+    [ARSAnalytics trackViewOpened:@"Map/Friends"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -129,7 +132,6 @@
             [self.friendListView setHidden:YES];
             
             [self setTitle:@"Map"];
-            
             [self.toolbar setItems:@[flexibleButtonItem, self.segmentedControlButtonItem, flexibleButtonItem, locateMeButtonItem]];
             
             break;
@@ -151,7 +153,6 @@
             }
             
             [self setTitle:@"Friends"];
-            
             break;
         }
     }
