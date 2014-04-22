@@ -38,10 +38,10 @@ public class SideNavigation {
 				case R.id.side_navigation_map:
 					intent = new Intent(mContext, MapActivity.class);
 					break;
-				case R.id.side_navigation_old_events:
+				/*case R.id.side_navigation_old_events:
 					intent = new Intent(mContext, MainActivity.class);
 					intent.putExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, true);
-					break;
+					break;*/
 				case R.id.side_navigation_tickets:
 					intent = new Intent(mContext, TicketSaleActivity.class);
 					intent.putExtra(Constants.EXTRA_TICKET_SALE_ACTIVITY, "");

@@ -14,7 +14,7 @@ import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.utils.Constants;
 import dk.dtu.arsfest.utils.Utils;
 
-public class HappenningNowCard extends EventCard{
+public class FinishedEventCard extends EventCard{
 	
 	private String member;
 	private String subtitle;
@@ -25,11 +25,16 @@ public class HappenningNowCard extends EventCard{
 	
 	private Typeface font;
 	
-	public HappenningNowCard(Context context, Event event) {
-		super(context, R.layout.card_event_inner, event);
+	public FinishedEventCard(Context context, Event event) {
+		super(context, R.layout.card_event_finished_inner, event);
 		this.event = event;
 		init();
 		
+	}
+
+	public FinishedEventCard(Context context, int innerLayout, Event event) {
+		super(context, innerLayout, event);
+		init();
 	}
 	
 	private void init() {
@@ -41,10 +46,6 @@ public class HappenningNowCard extends EventCard{
 		font = Typeface.createFromAsset(getContext().getAssets(), Constants.TYPEFONT_NEOSANS);
 	}
 
-	public HappenningNowCard(Context context, int innerLayout, Event event) {
-		super(context, innerLayout, event);
-		init();
-	}
 	
 	public String getMember() {
 		return member;
@@ -75,12 +76,7 @@ public class HappenningNowCard extends EventCard{
 			setTitle(event.getName());
 			this.member = Utils.getEventTime(event.getStartTime());
 			this.community = event.getParent().getName();
-			
-			if (event.hasStarted()) {
-				setSubtitle(getContext().getText(R.string.ends) + DateUtils.getRelativeTimeSpanString(event.getEndTime().getTime()).toString());
-			} else {
-				setSubtitle(getContext().getText(R.string.starts) + DateUtils.getRelativeTimeSpanString(event.getStartTime().getTime()).toString());
-			}
+			setSubtitle(getContext().getText(R.string.finish) + DateUtils.getRelativeTimeSpanString(event.getEndTime().getTime()).toString());
 			
 		}
 	}
@@ -89,6 +85,7 @@ public class HappenningNowCard extends EventCard{
 	public void setupInnerViewElements(ViewGroup parent, View view) {
 
 		if (view != null) {
+
 			TextView title = (TextView) view
 					.findViewById(R.id.carddemo_suggested_title);
 			TextView member = (TextView) view
@@ -119,6 +116,8 @@ public class HappenningNowCard extends EventCard{
 				int color = Color.parseColor(event.getParent().getColor());
 				bgShape.setColor(color);
 			}
+			
+			
 			
 		}
 	}

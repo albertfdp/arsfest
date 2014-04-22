@@ -16,6 +16,7 @@ import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.SideNavigationView.Mode;
 import com.google.analytics.tracking.android.EasyTracker;
 
+import dk.dtu.arsfest.cards.FinishedEventCard;
 import dk.dtu.arsfest.cards.HappenningNowCard;
 import dk.dtu.arsfest.cards.PostEventCard;
 import dk.dtu.arsfest.model.Event;
@@ -33,8 +34,6 @@ public class MainActivity extends BaseActivity {
 	private ArrayList<Location> locations;
 	private ArrayList<Event> events = new ArrayList<Event>();
 	
-	//private HappenningNowCard happeningNowCard;
-	//private CardView happeningNowCardView;
 	private ArrayList<Card> cards;
 	
 	private boolean showFinishedEvents = false;
@@ -64,7 +63,7 @@ public class MainActivity extends BaseActivity {
 //	    if (happeningNow != null)
 //	    	onHappenningNow(happeningNow);
 	    
-	    if (events.isEmpty()) {
+	   if (events.isEmpty()) {
 	    	createArsfestFinishedCard();
 	    } else {
 	    	createCards();
@@ -97,7 +96,7 @@ public class MainActivity extends BaseActivity {
 		Collections.sort(events, Event.START_TIME);
 		
 		// remove finished, if needed
-		if (!showFinishedEvents) {
+		/*if (!showFinishedEvents) {
 			ArrayList<Event> finishedEvents = new ArrayList<Event>();
 			for (Event event : events) {
 				if (event.hasFinished())
@@ -111,13 +110,11 @@ public class MainActivity extends BaseActivity {
 					notFinished.add(event);
 			}
 			events.removeAll(notFinished);
-		}
+		}*/
 		
 	}
 	
 	private void createArsfestFinishedCard() {
-		cards = new ArrayList<Card>();
-		
 		PostEventCard card = new PostEventCard(this);
 		
 		cards.add(0,card);
@@ -130,6 +127,7 @@ public class MainActivity extends BaseActivity {
 	
 	private void createCards() {
 		cards = new ArrayList<Card>();
+		Event ticketEvent = null;
 		
 		for (Event event : events) {
 			
@@ -145,7 +143,13 @@ public class MainActivity extends BaseActivity {
 				
 				cards.add(card);
 			}
+			
+			else 
+				ticketEvent = event;
+			
 		}
+		
+		events.remove(ticketEvent);
 		
 		cardArrayAdapter = new CardArrayAdapter(this,cards);
 		CardListView cardsView = (CardListView) findViewById(R.id.arsfest_events_list);
@@ -205,6 +209,9 @@ public class MainActivity extends BaseActivity {
 	protected void onStart() {
 		super.onStart();
 		EasyTracker.getInstance(this).activityStart(this);		
+		updateView(cards);
+		if (events.isEmpty())
+			createArsfestFinishedCard();
 	}
 		
 	@Override
@@ -216,6 +223,7 @@ public class MainActivity extends BaseActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
+		updateView(cards);
 	}
 
 	@Override
@@ -267,5 +275,64 @@ public class MainActivity extends BaseActivity {
 		    }
 		    return true;
 	}
+	
+	private void updateView(ArrayList<Card> currentCards){
+		ArrayList<Event> outdatedEvents;
+		
+		outdatedEvents = getOutdatedEvents(currentCards);
+		removeOutdatedCards(currentCards);
+		changeCardView(currentCards, outdatedEvents);
+		events.removeAll(outdatedEvents);
+		
+		CardArrayAdapter cardArrayAdapter = new CardArrayAdapter(this, currentCards);
+		CardListView cardsView = (CardListView) findViewById(R.id.arsfest_events_list);
+		
+		if (cardsView != null) cardsView.setAdapter(cardArrayAdapter);
+		
+		return;
+	}
+	
+	private ArrayList<Event> getOutdatedEvents(ArrayList<Card> currentCards){
+		ArrayList<Event> e = new ArrayList<Event>();
+		
+		for(Card c : currentCards){
+			if(((c instanceof HappenningNowCard)) &&((HappenningNowCard) c).getEvent().hasFinished()){
+				e.add(((HappenningNowCard) c).getEvent());
+			}
+		}
+		
+		return e;
+	}
+	
+	private void removeOutdatedCards(ArrayList<Card> currentCards){
+		ArrayList<Card> finishedCards = new ArrayList<Card>();
+		
+		for(Card c : currentCards){
+			if(((c instanceof HappenningNowCard)) &&((HappenningNowCard) c).getEvent().hasFinished()){
+				finishedCards.add(c);
+			}
+		}
+		
+		currentCards.removeAll(finishedCards);
+		
+		return;
+	}
+	
+	private void changeCardView(ArrayList<Card> currentCards,ArrayList<Event> outDatedEvents){
+		
+		for(Event e : outDatedEvents){
+			Card card = new FinishedEventCard(this, e);
+			card.setTitle(e.getName());
+			
+			UniversalImageLoaderThumbnail cardThumbnail = new UniversalImageLoaderThumbnail(this);
+			cardThumbnail.setUrl(e.getImage());
+			card.addCardThumbnail(cardThumbnail);
+			
+			card.setShadow(true);
+			
+			currentCards.add(card);
+		}
+	}
+
 	
 }
