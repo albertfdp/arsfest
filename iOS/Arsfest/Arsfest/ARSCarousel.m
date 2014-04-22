@@ -56,54 +56,36 @@
     });
     
     
-//    if ([[NSDate date] isEarlierThanDate:ARSFEST_REAL_START_DATE fromMinutes:0]) {
-//        ARSCarouselThumbnail *thumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
-//        thumbnail.type = ARSCarouselThumbnailTypeTimer;
-//        thumbnail.delegate = self;
-//        
-//        [self addViews:@[thumbnail]];
-//    }
-//    else if ([NSDate currentDateIsBetween:ARSFEST_REAL_START_DATE and:ARSFEST_END_DATE]) {
-//        ARSCarouselThumbnail *currentEventThumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
-//        currentEventThumbnail.event = [[ARSData data] currentEventInTheParty];
-//        currentEventThumbnail.type = ARSCarouselThumbnailTypeEvent;
-//        [currentEventThumbnail addGestureRecognizer:[self aTapRecognizer]];
-//        
-//        ARSCarouselThumbnail *nextEventThumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
-//        nextEventThumbnail.event = [[ARSData data] nextEventInTheParty];
-//        nextEventThumbnail.type = ARSCarouselThumbnailTypeNextEvent;
-//        
-//        [nextEventThumbnail addGestureRecognizer:[self aTapRecognizer]];
-//        if (currentEventThumbnail.event && nextEventThumbnail.event) {
-//            [self addViews:@[currentEventThumbnail, nextEventThumbnail]];
-//        } else if (currentEventThumbnail.event) {
-//            [self addViews:@[currentEventThumbnail]];
-//        } else {
-//            [self addViews:@[nextEventThumbnail]];
-//        }
-// 
-//    } else if ([ARSFEST_END_DATE isEarlierThanDate:[NSDate date] fromMinutes:0]) {
-//        ARSCarouselThumbnail *thumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
-//        thumbnail.type = ARSCarouselThumbnailTypePartyOver;
-//        [self addViews:@[thumbnail]];
-//    }
-    
-    ARSCarouselThumbnail *currentEventThumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
-    currentEventThumbnail.event = [[ARSData data] currentEventInTheParty];
-    currentEventThumbnail.type = ARSCarouselThumbnailTypeEvent;
-    [currentEventThumbnail addGestureRecognizer:[self aTapRecognizer]];
-    
-    ARSCarouselThumbnail *nextEventThumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
-    nextEventThumbnail.event = [[ARSData data] nextEventInTheParty];
-    nextEventThumbnail.type = ARSCarouselThumbnailTypeNextEvent;
-    
-    [nextEventThumbnail addGestureRecognizer:[self aTapRecognizer]];
-    if (currentEventThumbnail.event && nextEventThumbnail.event) {
-        [self addViews:@[currentEventThumbnail, nextEventThumbnail]];
-    } else if (currentEventThumbnail.event) {
-        [self addViews:@[currentEventThumbnail]];
-    } else {
-        [self addViews:@[nextEventThumbnail]];
+    if ([[NSDate date] isEarlierThanDate:ARSFEST_REAL_START_DATE fromMinutes:0]) {
+        ARSCarouselThumbnail *thumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
+        thumbnail.type = ARSCarouselThumbnailTypeTimer;
+        thumbnail.delegate = self;
+        
+        [self addViews:@[thumbnail]];
+    }
+    else if ([NSDate currentDateIsBetween:ARSFEST_REAL_START_DATE and:ARSFEST_END_DATE]) {
+        ARSCarouselThumbnail *currentEventThumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
+        currentEventThumbnail.event = [[ARSData data] currentEventInTheParty];
+        currentEventThumbnail.type = ARSCarouselThumbnailTypeEvent;
+        [currentEventThumbnail addGestureRecognizer:[self aTapRecognizer]];
+        
+        ARSCarouselThumbnail *nextEventThumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
+        nextEventThumbnail.event = [[ARSData data] nextEventInTheParty];
+        nextEventThumbnail.type = ARSCarouselThumbnailTypeNextEvent;
+        
+        [nextEventThumbnail addGestureRecognizer:[self aTapRecognizer]];
+        if (currentEventThumbnail.event && nextEventThumbnail.event) {
+            [self addViews:@[currentEventThumbnail, nextEventThumbnail]];
+        } else if (currentEventThumbnail.event) {
+            [self addViews:@[currentEventThumbnail]];
+        } else {
+            [self addViews:@[nextEventThumbnail]];
+        }
+ 
+    } else if ([ARSFEST_END_DATE isEarlierThanDate:[NSDate date] fromMinutes:0]) {
+        ARSCarouselThumbnail *thumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
+        thumbnail.type = ARSCarouselThumbnailTypePartyOver;
+        [self addViews:@[thumbnail]];
     }
 }
 
