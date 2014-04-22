@@ -196,7 +196,7 @@
         [self.circleLayer removeFromSuperlayer];
         
         CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-        shapeLayer.path = [[self makeCircleAtLocation:location radius:50] CGPath];
+        shapeLayer.path = [[self makeCircleAtLocation:location radius:75] CGPath];
         shapeLayer.strokeColor = [[UIColor colorWithRed:0.0f green:120/255.f blue:1.0f alpha:0.7f] CGColor];
         shapeLayer.fillColor = [[UIColor colorWithRed:0.0f green:168/255.f blue:1.0f alpha:0.4f] CGColor];
         shapeLayer.lineWidth = 2.0f;

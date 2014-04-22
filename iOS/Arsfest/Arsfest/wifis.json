@@ -7,7 +7,7 @@
             "longitude": 12.523362,
             "x": 129,
             "y": 213,
-            "location name": "Library"
+            "locationName": "Library"
         },
         {
             "bssid": "34:a8:4e:ba:92:b2",
@@ -15,7 +15,7 @@
             "longitude": 12.523411,
             "x": 176,
             "y": 211,
-            "location name": "Library"
+            "locationName": "Library"
         },
         {
             "bssid": "5c:50:15:5:9f:d2",
@@ -23,7 +23,7 @@
             "longitude": 12.524509,
             "x": 394,
             "y": 136,
-            "location name": "Canteen"
+            "locationName": "Canteen"
         },
         {
                "bssid": "0:1c:e:42:a4:7",
@@ -31,7 +31,7 @@
                "longitude": 12.525024,
                "x": 575,
                "y": 230,
-               "location name": "Canteen"
+               "locationName": "Canteen"
         },
         {
                "bssid": "0:1c:e:42:d2:f2",
@@ -39,7 +39,7 @@
                "longitude": 12.525487,
                "x": 749,
                "y": 307,
-               "location name": "S-Huset"
+               "locationName": "S-Huset"
         },
         {
                "bssid": "34:a8:4e:ba:e0:42",
@@ -47,7 +47,7 @@
                "longitude": 12.525164,
                "x": 764,
                "y": 649,
-               "location name": "Faculty Club"
+               "locationName": "Faculty Club"
          },
          {
                "bssid": "3c:ce:73:8:17:22",
@@ -55,7 +55,7 @@
                "longitude": 12.523712,
                "x": 383,
                "y": 647,
-               "location name": "PHD Cantine"
+               "locationName": "PHD Cantine"
          },
          {
                "bssid": "a4:56:30:8f:50:a2",
@@ -63,7 +63,7 @@
                "longitude": 12.525384,
                "x": 812,
                "y": 575,
-               "location name": "Sports Hall"
+               "locationName": "Sports Hall"
          },
          {
                "bssid": "34:a8:43:ba:ee:22",
@@ -71,7 +71,7 @@
                "longitude": 12.525423,
                "x": 751,
                "y": 415,
-               "location name": "Sports Hall"
+               "locationName": "Sports Hall"
           },
           {
                "bssid": "0:1c:e:42:7e:82",
@@ -79,7 +79,7 @@
                "longitude": 12.524560,
                "x": 513,
                "y": 263,
-               "location name": "Canteen"
+               "locationName": "Canteen"
           },
           {
                "bssid": "34:a8:4e:ba:92:b2",
@@ -87,7 +87,7 @@
                "longitude": 12.523461,
                "x": 190,
                "y": 268,
-               "location name": "Library"
+               "locationName": "Library"
           },
           {
                "bssid": "0:1a:30:7d:89:12",
@@ -95,7 +95,7 @@
                "longitude": 12.524226,
                "x": 390,
                "y": 285,
-               "location name": "Canteen"
+               "locationName": "Canteen"
           },
           {
                "bssid": "0:1c:e:42:c8:42",
@@ -103,7 +103,7 @@
                "longitude": 12.524571,
                "x": 459,
                "y": 275,
-               "location name": "Canteen"
+               "locationName": "Canteen"
           },
           {
                "bssid": "0:1c:e:42:d4:82",
@@ -111,7 +111,7 @@
                "longitude": 12.525086,
                "x": 637,
                "y": 282,
-               "location name": "Canteen"
+               "locationName": "Canteen"
           },
           {
                "bssid": "0:1c:e:42:77:c2",
@@ -119,7 +119,7 @@
                "longitude": 12.525086,
                "x": 720,
                "y": 277,
-               "location name": "S-Huset"
+               "locationName": "S-Huset"
            },
            {
                "bssid": "0:1a:30:7d:89:22",
@@ -127,7 +127,7 @@
                "longitude": 12.525155,
                "x": 638,
                "y": 299,
-               "location name": "Canteen"
+               "locationName": "Canteen"
             },
             {
                "bssid": "64:d9:89:91:a0:42",
@@ -135,7 +135,7 @@
                "longitude": 12.525852,
                "x": 388,
                "y": 121,
-               "location name": "Oticon"
+               "locationName": "Oticon"
             }
 
                
