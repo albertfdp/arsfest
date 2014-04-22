@@ -77,16 +77,16 @@
                "bssid": "5c:50:15:36:85:ed",
                "latitude": 55.785801,
                "longitude": 12.524545,
-               "x": ,
-               "y": ,
+               "x": 764,
+               "y": 649,
                "locationName": "Faculty Club"
          },
          {
                "bssid": "3c:ce:73:8:17:2d",
                "latitude": 55.785801,
                "longitude": 12.524545,
-               "x": ,
-               "y": ,
+               "x": 383,
+               "y": 647,
                "locationName": "Meeting Center"
          },
          {
@@ -101,8 +101,8 @@
                "bssid": "34:a8:4e:ba:ee:22",
                "latitude": 55.785839,
                "longitude": 12.525450,
-               "x": ,
-               "y": ,
+               "x": 751,
+               "y": 415,
                "locationName": "Sports Hall"
           },
           {
@@ -125,40 +125,40 @@
                "bssid": "34:a8:4e:ba:b7:f2",
                "latitude": 55.786789,
                "longitude": 12.524001,
-               "x": ,
-               "y": ,
+               "x": 390,
+               "y": 285,
                "locationName": "Library"
                },
                {
                "bssid": "0:27:d:48:d7:3d",
                "latitude": 55.786968,
                "longitude": 12.523398,
-               "x": ,
-               "y": ,
+               "x": 390,
+               "y": 285,
                "locationName": "Library"
                },
                {
                "bssid": "0:27:d:48:d7:32",
                "latitude": 55.787018,
                "longitude": 12.523162,
-               "x": ,
-               "y": ,
+               "x": 390,
+               "y": 285,
                "locationName": "Library"
                },
                {
                "bssid": "d8:24:bd:a1:ff:2",
                "latitude": 55.787006,
                "longitude": 12.523315,
-               "x": ,
-               "y": ,
+               "x": 390,
+               "y": 285,
                "locationName": "Library"
                },
                {
                "bssid": "0:27:d:48:44:2",
                "latitude": 55.787976,
                "longitude": 12.523443,
-               "x": ,
-               "y": ,
+               "x": 390,
+               "y": 285,
                "locationName": "Library"
                },
           {
