@@ -42,4 +42,8 @@
 
 // Informations
 
-#define ARSFEST_WELCOME @"The Commemoration Party is the festive peak of the academic year, where achievements, perspectives and collaborations are celebrated with the students, employees and partners of the university. \nDTU also highlights select achievements of the past year by the awarding academic honours. \nThe Commemoration Party can be divided into three. The official part, followed by dinner and then a large ball. DTU and Polytechnical Association hope you have a fantastic evening."
+#define INFO_ARSFEST_WELCOME @"The Commemoration Party is the festive peak of the academic year, where achievements, perspectives and collaborations are celebrated with the students, employees and partners of the university. \nDTU also highlights select achievements of the past year by the awarding academic honours. \nThe Commemoration Party can be divided into three. The official part, followed by dinner and then a large ball. DTU and Polytechnical Association hope you have a fantastic evening."
+
+#define INFO_FACEBOOK @"Did you know? It’s possible to find your friends during the party. \nSimply connect with Facebook in the Location settings and you will see a list of all your connected friends during the party, along with their location."
+
+#define INFO_WIFI @"You can locate yourself on the map when you are connected to DTU’s Eduroam Wi-Fi. \nPlease note that the service may not be entirely accurate because of the varying signal strength."

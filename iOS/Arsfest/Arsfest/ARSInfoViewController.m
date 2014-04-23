@@ -109,10 +109,10 @@
 - (void)initInformationsScrollView
 {
     ARSInfoView *infoView = [[[NSBundle mainBundle] loadNibNamed:@"ARSInfoView" owner:nil options:nil] lastObject];
-    [infoView setTitle:@"The Årsfest" description:ARSFEST_WELCOME image:nil];
+    [infoView setTitle:@"The Årsfest" description:INFO_ARSFEST_WELCOME image:nil];
     
     ARSInfoView *secondInfoView = [[[NSBundle mainBundle] loadNibNamed:@"ARSInfoView" owner:nil options:nil] lastObject];
-    [secondInfoView setTitle:@"Social Integration" description:@"Facebook blabla" image:nil];
+    [secondInfoView setTitle:@"Social Integration" description:INFO_FACEBOOK image:nil];
     
     [self addViewsToScrollView:@[infoView, secondInfoView]];
 }

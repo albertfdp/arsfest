@@ -23,6 +23,7 @@
 {
     [self.titleLabel setText:title];
     [self.descriptionTextView setText:description];
+    [self.descriptionTextView setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12]];
     [self.imageView setImage:image];
 }
 

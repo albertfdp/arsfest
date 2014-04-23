@@ -87,6 +87,7 @@
         thumbnail.type = ARSCarouselThumbnailTypePartyOver;
         [self addViews:@[thumbnail]];
     }
+
 }
 
 - (UITapGestureRecognizer*)aTapRecognizer
