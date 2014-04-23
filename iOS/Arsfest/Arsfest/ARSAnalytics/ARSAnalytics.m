@@ -15,6 +15,12 @@
 
 @implementation ARSAnalytics
 
++ (void)initializeTracker
+{
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-50262589-1"];
+}
+
 + (void)trackViewOpened:(NSString*)name
 {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"allowstatistics"]) {
@@ -32,11 +38,6 @@
     if ([[ARSUserController sharedUserController] localWiFiAvailable]) {
         [ARSAnalytics trackViewOpened:viewName];
     }
-}
-
-+ (void)initializeTracker
-{
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-50262589-1"];
 }
 
 + (void)trackEventWithCategory:(NSString*)category action:(NSString*)action

@@ -39,7 +39,13 @@
     }
     
     if ([NSDate currentDateIsBetween:ARSFEST_START_DATE and:ARSFEST_END_DATE]) {
-        self.timeLabel.text = [NSDate hourMinuteStringFromDate:user.updatedAt];
+        
+        if (user.updatedAt) {
+            self.timeLabel.text = [NSDate hourMinuteStringFromDate:user.updatedAt];
+            [self.timeLabel setHidden:NO];
+        } else {
+            [self.timeLabel setHidden:YES];
+        }
     } else {
         [self.timeLabel setHidden:YES];
     }
