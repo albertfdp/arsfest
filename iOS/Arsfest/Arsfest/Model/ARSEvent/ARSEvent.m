@@ -29,11 +29,11 @@
     if ([dictionary objectForKey:@"menu"]){
         NSArray *menu = [dictionary objectForKey:@"menu"];
         NSMutableString *menuDescription = [NSMutableString stringWithString:@""];
-        NSString *cofee = @"";
+        NSString *coffee = @"";
         for(NSDictionary *dish in menu) {
             //[menuDescription appendString:@"\t"];
             if ([[dish objectForKey:@"course"] isEqualToString:@"Coffee"]) {
-                cofee = [dish objectForKey:@"name"];
+                coffee = [dish objectForKey:@"name"];
             
             }else if ([[dish objectForKey:@"course"] isEqualToString:@"Drinks"]){
                 [menuDescription appendString:[dish objectForKey:@"course"]];
@@ -42,7 +42,7 @@
                 [menuDescription appendString:[dish objectForKey:@"name"]];
                 [menuDescription appendString:@"\n"];
                 [menuDescription appendString:@"\n"];
-                [menuDescription appendString:cofee];
+                [menuDescription appendString:coffee];
             }else{
                 [menuDescription appendString:[dish objectForKey:@"course"]];
                 [menuDescription appendString:@"\n"];
