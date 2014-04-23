@@ -21,13 +21,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="001-8p-Lkx">
-                    <rect key="frame" x="-5" y="372" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="372" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.74401324728260865" green="0.74401324728260865" blue="0.74401324728260865" alpha="1" colorSpace="calibratedRGB"/>
                     <items>
-                        <barButtonItem width="68" style="plain" systemItem="fixedSpace" id="N25-Aw-95y"/>
+                        <barButtonItem width="63" style="plain" systemItem="fixedSpace" id="N25-Aw-95y"/>
                         <barButtonItem style="plain" id="d14-2l-9BN">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" id="Mc8-fM-xgM">
-                                <rect key="frame" x="84" y="7" width="161" height="30"/>
+                                <rect key="frame" x="79" y="7" width="161" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Infos"/>
@@ -100,7 +101,7 @@ It will help the organisers improve the event and the application next year by k
                             <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </pageControl>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.9814453125" green="0.9814453125" blue="0.9814453125" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
