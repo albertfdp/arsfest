@@ -42,7 +42,7 @@
                         <barButtonItem width="66" style="plain" systemItem="fixedSpace" id="HcK-7M-IsX"/>
                     </items>
                 </toolbar>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orX-7N-xnf" userLabel="Settings view">
+                <view hidden="YES" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orX-7N-xnf" userLabel="Settings view">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
