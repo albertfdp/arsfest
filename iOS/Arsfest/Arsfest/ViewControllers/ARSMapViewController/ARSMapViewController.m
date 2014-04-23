@@ -119,6 +119,10 @@
     [self.mapScrollView addSubview:self.mapImageView];
     [self.mapScrollView setContentSize:self.mapImageView.image.size];
     
+    if ([[UIScreen mainScreen] bounds].size.height > 480.f) {
+        [self.mapScrollView setMinimumZoomScale:0.5];
+    }
+    
     [self.mapScrollView setZoomScale:0.6];
 }
 
