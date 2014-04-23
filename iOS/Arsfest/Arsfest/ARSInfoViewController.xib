@@ -60,7 +60,7 @@
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" selectable="NO" id="61Z-C2-LOb">
                             <rect key="frame" x="5" y="140.00000181579898" width="311" height="153"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <string key="text">This application collects anonymous data such as the events you’ve looked at and the features you've used.
 
 It will help the organisers improve the event and the application next year by knowing which events were the most popular and how we can perfect the application.</string>
@@ -83,7 +83,7 @@ It will help the organisers improve the event and the application next year by k
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.97902513586956519" green="0.97902513586956519" blue="0.97902513586956519" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="N4o-Vo-aFO" userLabel="Info view">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
