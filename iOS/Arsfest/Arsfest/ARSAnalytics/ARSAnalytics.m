@@ -7,6 +7,7 @@
 //
 
 #import "ARSAnalytics.h"
+#import "ARSUserController.h"
 #import "Parse/Parse.h"
 #import "GAI.h"
 #import "GAIDictionaryBuilder.h"
@@ -26,9 +27,29 @@
     }
 }
 
++ (void)trackViewOpenedOnlyIfWifiAvailable:(NSString *)viewName
+{
+    if ([[ARSUserController sharedUserController] localWiFiAvailable]) {
+        [ARSAnalytics trackViewOpened:viewName];
+    }
+}
+
 + (void)initializeTracker
 {
     [[GAI sharedInstance] trackerWithTrackingId:@"UA-50262589-1"];
 }
+
++ (void)trackEventWithCategory:(NSString*)category action:(NSString*)action
+{
+    if ([[ARSUserController sharedUserController] localWiFiAvailable]) {
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:category     // Event category (required)
+                                                              action:action  // Event action (required)
+                                                               label:nil          // Event label
+                                                               value:nil] build]];    // Event value
+    }
+}
+
 
 @end

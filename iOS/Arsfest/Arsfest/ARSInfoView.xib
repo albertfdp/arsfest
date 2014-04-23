@@ -18,7 +18,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BQH-wo-vJ1">
-                    <rect key="frame" x="38" y="58" width="245" height="104"/>
+                    <rect key="frame" x="38" y="57" width="245" height="104"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFC-CH-Ubg">
@@ -38,10 +38,10 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="BQH-wo-vJ1" firstAttribute="top" secondItem="d5w-bf-td7" secondAttribute="top" constant="57" id="5KW-8N-ZXe"/>
                 <constraint firstItem="QMd-14-9wK" firstAttribute="top" secondItem="d5w-bf-td7" secondAttribute="top" constant="20" id="Nuk-BO-IvU"/>
                 <constraint firstAttribute="bottom" secondItem="UFC-CH-Ubg" secondAttribute="bottom" constant="20" id="UBs-AE-yvc"/>
                 <constraint firstItem="UFC-CH-Ubg" firstAttribute="top" secondItem="oTN-NN-e8j" secondAttribute="bottom" constant="-1" id="amO-gp-txc"/>
-                <constraint firstItem="BQH-wo-vJ1" firstAttribute="top" secondItem="d5w-bf-td7" secondAttribute="top" constant="58" id="bez-oD-71f"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

@@ -81,6 +81,7 @@
         {
             [self setViewToSettings:YES];
             [self setTitle:@"Settings"];
+            [ARSAnalytics trackViewOpenedOnlyIfWifiAvailable:@"Settings"];            
             break;
         }
     }
@@ -152,6 +153,24 @@
     int x = self.informationsScrollView.contentOffset.x;
     int currentPage = (x / (int)self.informationsScrollView.frame.size.width);
     [self.pageControl setCurrentPage:currentPage];
+    
+    switch (currentPage) {
+        case 0:
+        {
+            [ARSAnalytics trackViewOpenedOnlyIfWifiAvailable:@"Arsfest Information"];
+        }
+            break;
+        case 1:
+        {
+            [ARSAnalytics trackViewOpenedOnlyIfWifiAvailable:@"Facebook Information"];
+        }
+        case 2:
+        {
+            [ARSAnalytics trackViewOpenedOnlyIfWifiAvailable:@"Wi-Fi Information"];
+        }
+        default:
+            break;
+    }
 }
 
 #pragma mark - Statistics button and view
@@ -166,6 +185,8 @@
 {
     [[NSUserDefaults standardUserDefaults] setBool:change forKey:@"allowstatistics"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [ARSAnalytics trackEventWithCategory:@"Analytics" action:(change)?@"Enabled":@"Disabled"];
 }
 
 - (void)configureStatisticsSwitch

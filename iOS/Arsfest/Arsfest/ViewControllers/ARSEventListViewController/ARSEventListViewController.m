@@ -16,7 +16,7 @@
 
 #define kEventCellHeight 78
 
-@interface ARSEventListViewController() <ARSUserControllerDelegate, ARSCarouselDelegate>
+@interface ARSEventListViewController() <ARSCarouselDelegate>
 
 @property (nonatomic, assign) ARSLocationType currentFilter;
 @property (nonatomic, strong) NSArray *events;
@@ -223,19 +223,6 @@
     _currentFilter = kNumberOfLocations - (int)index;
     NSArray *newData = [[ARSData data] eventsIn:_currentFilter];
     [self sortAndStore:newData];
-}
-
-#pragma mark -
-#pragma mark - User controller delegate
-
-- (void)userLogInCompletedWithSuccess
-{
-    NSLog(@"Success");
-}
-
-- (void)userLogInCompletedWithError:(ARSUserLoginError)error
-{
-    NSLog(@"Error");    
 }
 
 #pragma mark -

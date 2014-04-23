@@ -340,6 +340,7 @@
         {
                 [ARSUserController logOutUser];
                 [self configureViewForSelectedIndex:self.segmentedControl.selectedSegmentIndex];
+                [ARSAnalytics trackEventWithCategory:@"Facebook" action:@"Logged Out"];
         }
         default:
             break;

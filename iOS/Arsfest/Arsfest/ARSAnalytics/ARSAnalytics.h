@@ -12,5 +12,8 @@
 
 + (void)initializeTracker;
 + (void)trackViewOpened:(NSString*)viewName;
++ (void)trackViewOpenedOnlyIfWifiAvailable:(NSString *)viewName;
+
++ (void)trackEventWithCategory:(NSString*)category action:(NSString*)action;
 
 @end
