@@ -10,6 +10,7 @@
 
 @interface ARSAnalytics : NSObject
 
++ (void)initializeTracker;
 + (void)trackViewOpened:(NSString*)viewName;
 
 @end

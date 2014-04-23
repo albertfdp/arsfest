@@ -71,8 +71,6 @@
 		DB6B316A18A4349B00C3EABB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B316918A4349B00C3EABB /* SystemConfiguration.framework */; };
 		DB6B317418A43AD200C3EABB /* ARSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B317318A43AD200C3EABB /* ARSLocation.m */; };
 		DB6B317718A43AE500C3EABB /* ARSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6B317618A43AE500C3EABB /* ARSEvent.m */; };
-		DB77EBD718DC56E400452E06 /* BackgroundIntroView-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB77EBD518DC56E400452E06 /* BackgroundIntroView-568h@2x.png */; };
-		DB77EBD818DC56E400452E06 /* BackgroundIntroView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB77EBD618DC56E400452E06 /* BackgroundIntroView@2x.png */; };
 		DB80E1C91903DAE20044FF47 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = DB80E1C71903DAE20044FF47 /* gradient.png */; };
 		DB80E1CA1903DAE20044FF47 /* gradient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB80E1C81903DAE20044FF47 /* gradient@2x.png */; };
 		DB811D7718E6E0E800BB11E6 /* buildingmap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB811D7618E6E0E800BB11E6 /* buildingmap@2x.png */; };
@@ -122,6 +120,10 @@
 		DBE9786D1907E89100760E6A /* wifi-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE9786C1907E89100760E6A /* wifi-icon.png */; };
 		DBE978701907EA9000760E6A /* facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE9786E1907EA9000760E6A /* facebook-icon.png */; };
 		DBE978711907EA9000760E6A /* facebook-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE9786F1907EA9000760E6A /* facebook-icon@2x.png */; };
+		DBE9787A1908023E00760E6A /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE978791908023E00760E6A /* libGoogleAnalyticsServices.a */; };
+		DBE9787C190803B800760E6A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE9787B190803B800760E6A /* AdSupport.framework */; };
+		DBE9787E190803C800760E6A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE9787D190803C800760E6A /* CoreData.framework */; };
+		DBE978801908041E00760E6A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE9787F1908041E00760E6A /* libsqlite3.dylib */; };
 		DBF6B0DD18EC316F0048605F /* ARSWifi.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF6B0DC18EC316F0048605F /* ARSWifi.m */; };
 		DBF6B0E018EC548B0048605F /* wifis.json in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B0DF18EC548B0048605F /* wifis.json */; };
 		DBF6B0E218EC54CA0048605F /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B0E118EC54CA0048605F /* events.json */; };
@@ -239,8 +241,6 @@
 		DB6B317318A43AD200C3EABB /* ARSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSLocation.m; path = Model/ARSLocation/ARSLocation.m; sourceTree = "<group>"; };
 		DB6B317518A43AE500C3EABB /* ARSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSEvent.h; path = Model/ARSEvent/ARSEvent.h; sourceTree = "<group>"; };
 		DB6B317618A43AE500C3EABB /* ARSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSEvent.m; path = Model/ARSEvent/ARSEvent.m; sourceTree = "<group>"; };
-		DB77EBD518DC56E400452E06 /* BackgroundIntroView-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundIntroView-568h@2x.png"; sourceTree = "<group>"; };
-		DB77EBD618DC56E400452E06 /* BackgroundIntroView@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundIntroView@2x.png"; sourceTree = "<group>"; };
 		DB80E1C71903DAE20044FF47 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient.png; sourceTree = "<group>"; };
 		DB80E1C81903DAE20044FF47 /* gradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient@2x.png"; sourceTree = "<group>"; };
 		DB811D7618E6E0E800BB11E6 /* buildingmap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buildingmap@2x.png"; sourceTree = "<group>"; };
@@ -303,6 +303,16 @@
 		DBE9786C1907E89100760E6A /* wifi-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wifi-icon.png"; sourceTree = "<group>"; };
 		DBE9786E1907EA9000760E6A /* facebook-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-icon.png"; sourceTree = "<group>"; };
 		DBE9786F1907EA9000760E6A /* facebook-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-icon@2x.png"; sourceTree = "<group>"; };
+		DBE978731908023E00760E6A /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		DBE978741908023E00760E6A /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		DBE978751908023E00760E6A /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		DBE978761908023E00760E6A /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		DBE978771908023E00760E6A /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		DBE978781908023E00760E6A /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		DBE978791908023E00760E6A /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		DBE9787B190803B800760E6A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		DBE9787D190803C800760E6A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DBE9787F1908041E00760E6A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		DBF6B0DB18EC316F0048605F /* ARSWifi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSWifi.h; path = Model/ARSWifi/ARSWifi.h; sourceTree = "<group>"; };
 		DBF6B0DC18EC316F0048605F /* ARSWifi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSWifi.m; path = Model/ARSWifi/ARSWifi.m; sourceTree = "<group>"; };
 		DBF6B0DF18EC548B0048605F /* wifis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wifis.json; sourceTree = "<group>"; };
@@ -335,7 +345,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBE978801908041E00760E6A /* libsqlite3.dylib in Frameworks */,
 				DB6B316A18A4349B00C3EABB /* SystemConfiguration.framework in Frameworks */,
+				DBE9787E190803C800760E6A /* CoreData.framework in Frameworks */,
+				DBE9787C190803B800760E6A /* AdSupport.framework in Frameworks */,
+				DBE9787A1908023E00760E6A /* libGoogleAnalyticsServices.a in Frameworks */,
 				DB6B316818A4349300C3EABB /* StoreKit.framework in Frameworks */,
 				DB6B316618A4348D00C3EABB /* Security.framework in Frameworks */,
 				DB6B316418A4348500C3EABB /* QuartzCore.framework in Frameworks */,
@@ -506,19 +520,14 @@
 		DB53D31E18AE58D000508DAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DBE978841908063600760E6A /* Map */,
+				DBE978831908061400760E6A /* Controllers background */,
+				DBE978821908060600760E6A /* AppLaunchScreen */,
+				DBE97881190805FD00760E6A /* AppIcon */,
 				DB17CC741907093D003CDA8E /* Informations Icon */,
-				DB5C7B8619029D0A00E56ECD /* Default@2x.png */,
-				DB5C7B8719029D0A00E56ECD /* Default-568h@2x.png */,
-				DB5C7B8219025A3500E56ECD /* AppIcon58.png */,
-				DB5C7B8319025A3500E56ECD /* AppIcon80.png */,
-				DB5B3FDD1901D25D000EBB36 /* AppIcon120.png */,
-				DBF6B0DE18EC547D0048605F /* JSON Files */,
-				DB811D7618E6E0E800BB11E6 /* buildingmap@2x.png */,
-				DB53D32D18AEBCD300508DAD /* default_background.png */,
-				DB53D32E18AEBCD300508DAD /* default_background@2x.png */,
-				DB53D32F18AEBCD300508DAD /* default_background568h@2x.png */,
 				DB53D32418AEB87100508DAD /* Images */,
 				DB53D32318AEB86700508DAD /* Icons */,
+				DBF6B0DE18EC547D0048605F /* JSON Files */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -526,6 +535,8 @@
 		DB53D32318AEB86700508DAD /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				DB5C7B8F1902EC2300E56ECD /* location_icon.png */,
+				DB5C7B8E1902EC2300E56ECD /* location_icon@2x.png */,
 				DB17CC791907170C003CDA8E /* question.png */,
 				DB17CC7A1907170C003CDA8E /* question@2x.png */,
 				DB5C7B92190304B500E56ECD /* logoutbutton.png */,
@@ -552,8 +563,7 @@
 				DB4114A319019FA800740FF8 /* sign-in-with-facebook-highlighted@2x.png */,
 				DB41149F19019E5500740FF8 /* sign-in-with-facebook@2x.png */,
 				DB43AE3A18DEDDAE00D56B4F /* EventThumbnails */,
-				DB77EBD418DC56D400452E06 /* Intro view */,
-				DBA50A2418B7C5B8001C8AF1 /* Icons */,
+				DBA50A2418B7C5B8001C8AF1 /* Event Categories Icons */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -611,6 +621,10 @@
 		DB6B312318A4337300C3EABB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBE9787F1908041E00760E6A /* libsqlite3.dylib */,
+				DBE9787D190803C800760E6A /* CoreData.framework */,
+				DBE9787B190803B800760E6A /* AdSupport.framework */,
+				DBE978721908023E00760E6A /* GAIHeaders */,
 				DB09A427190545D1000C076C /* Parse.framework */,
 				DBCCEA4318A5628200CC87AE /* FacebookSDK.framework */,
 				DB6B316918A4349B00C3EABB /* SystemConfiguration.framework */,
@@ -635,7 +649,6 @@
 			isa = PBXGroup;
 			children = (
 				DB43AE3B18DEDE4E00D56B4F /* Controllers */,
-				DB77EBD218DC3F7D00452E06 /* Views */,
 				DB53D31E18AE58D000508DAD /* Resources */,
 				DB9872A118AD7F5900A085FE /* Utilities */,
 				DB8E940E18A78ADD00EF214F /* GuiComponents */,
@@ -708,30 +721,6 @@
 			name = ARSEvent;
 			sourceTree = "<group>";
 		};
-		DB77EBD218DC3F7D00452E06 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DB77EBD318DC56CB00452E06 /* IntroView */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		DB77EBD318DC56CB00452E06 /* IntroView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = IntroView;
-			sourceTree = "<group>";
-		};
-		DB77EBD418DC56D400452E06 /* Intro view */ = {
-			isa = PBXGroup;
-			children = (
-				DB77EBD518DC56E400452E06 /* BackgroundIntroView-568h@2x.png */,
-				DB77EBD618DC56E400452E06 /* BackgroundIntroView@2x.png */,
-			);
-			name = "Intro view";
-			sourceTree = "<group>";
-		};
 		DB818D9D18F9A9C5004C3845 /* MZTimerLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -801,11 +790,9 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
-		DBA50A2418B7C5B8001C8AF1 /* Icons */ = {
+		DBA50A2418B7C5B8001C8AF1 /* Event Categories Icons */ = {
 			isa = PBXGroup;
 			children = (
-				DB5C7B8E1902EC2300E56ECD /* location_icon@2x.png */,
-				DB5C7B8F1902EC2300E56ECD /* location_icon.png */,
 				DB5C7B8A1902E89A00E56ECD /* official_icon.png */,
 				DB5C7B8B1902E89A00E56ECD /* official_icon@2x.png */,
 				DBA50A2518B7C6A0001C8AF1 /* dance_icon.png */,
@@ -815,7 +802,7 @@
 				DBA50A2918B7C6A0001C8AF1 /* music_icon.png */,
 				DBA50A2A18B7C6A0001C8AF1 /* music_icon@2x.png */,
 			);
-			name = Icons;
+			name = "Event Categories Icons";
 			sourceTree = "<group>";
 		};
 		DBBEC19218A6D9E300212106 /* ViewControllers */ = {
@@ -847,6 +834,57 @@
 				DBCCEA4A18A5723D00CC87AE /* ARSData.m */,
 			);
 			name = ARSData;
+			sourceTree = "<group>";
+		};
+		DBE978721908023E00760E6A /* GAIHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				DBE978731908023E00760E6A /* GAI.h */,
+				DBE978741908023E00760E6A /* GAIDictionaryBuilder.h */,
+				DBE978751908023E00760E6A /* GAIFields.h */,
+				DBE978761908023E00760E6A /* GAILogger.h */,
+				DBE978771908023E00760E6A /* GAITrackedViewController.h */,
+				DBE978781908023E00760E6A /* GAITracker.h */,
+				DBE978791908023E00760E6A /* libGoogleAnalyticsServices.a */,
+			);
+			path = GAIHeaders;
+			sourceTree = "<group>";
+		};
+		DBE97881190805FD00760E6A /* AppIcon */ = {
+			isa = PBXGroup;
+			children = (
+				DB5C7B8219025A3500E56ECD /* AppIcon58.png */,
+				DB5C7B8319025A3500E56ECD /* AppIcon80.png */,
+				DB5B3FDD1901D25D000EBB36 /* AppIcon120.png */,
+			);
+			name = AppIcon;
+			sourceTree = "<group>";
+		};
+		DBE978821908060600760E6A /* AppLaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DB5C7B8619029D0A00E56ECD /* Default@2x.png */,
+				DB5C7B8719029D0A00E56ECD /* Default-568h@2x.png */,
+			);
+			name = AppLaunchScreen;
+			sourceTree = "<group>";
+		};
+		DBE978831908061400760E6A /* Controllers background */ = {
+			isa = PBXGroup;
+			children = (
+				DB53D32D18AEBCD300508DAD /* default_background.png */,
+				DB53D32E18AEBCD300508DAD /* default_background@2x.png */,
+				DB53D32F18AEBCD300508DAD /* default_background568h@2x.png */,
+			);
+			name = "Controllers background";
+			sourceTree = "<group>";
+		};
+		DBE978841908063600760E6A /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				DB811D7618E6E0E800BB11E6 /* buildingmap@2x.png */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 		DBF6B0DA18EC31300048605F /* ARSWifi */ = {
@@ -976,7 +1014,6 @@
 				E1C3B78E18FFD4BD00D6FC18 /* abbatizers@2x.png in Resources */,
 				DB96086A18E5D87B00AC3B8B /* ARSFriendListCell.xib in Resources */,
 				E1C3B79118FFD4BD00D6FC18 /* jazz@2x.png in Resources */,
-				DB77EBD818DC56E400452E06 /* BackgroundIntroView@2x.png in Resources */,
 				DBE009D018B78E22000B6DFE /* leslanciers@2x.png in Resources */,
 				DB811D7B18E6F6E500BB11E6 /* close@2x.png in Resources */,
 				DBA50A2B18B7C6A0001C8AF1 /* dance_icon.png in Resources */,
@@ -985,7 +1022,6 @@
 				DB4114A419019FA800740FF8 /* sign-in-with-facebook-highlighted@2x.png in Resources */,
 				E1C3B79318FFD4BD00D6FC18 /* kongsted@2x.png in Resources */,
 				DB5C7B98190304B500E56ECD /* locateme.png in Resources */,
-				DB77EBD718DC56E400452E06 /* BackgroundIntroView-568h@2x.png in Resources */,
 				DB5B3FDE1901D25D000EBB36 /* AppIcon120.png in Resources */,
 				E1C3B78F18FFD4BD00D6FC18 /* carpark@2x.png in Resources */,
 				DBE9786D1907E89100760E6A /* wifi-icon.png in Resources */,
@@ -1262,6 +1298,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/GAIHeaders",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1290,6 +1327,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/GAIHeaders",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

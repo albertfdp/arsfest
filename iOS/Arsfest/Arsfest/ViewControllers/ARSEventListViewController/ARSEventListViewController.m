@@ -77,7 +77,7 @@
     [self setupNavigationBar];
     [self.carouselView configureScrollView];
     
-//    [ARSAnalytics trackViewOpened:@"Event List"];
+    [ARSAnalytics trackViewOpened:@"Event List"];
 }
 
 - (void)dealloc

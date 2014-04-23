@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "ARSEventListViewController.h"
 #import "ARSUserController.h"
+#import "ARSAnalytics.h"
 
 @interface ARSAppDelegate ()
 
@@ -32,18 +33,14 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
     
-    // Register for push notifications
-//    [application registerForRemoteNotificationTypes:
-//     UIRemoteNotificationTypeBadge |
-//     UIRemoteNotificationTypeAlert |
-//     UIRemoteNotificationTypeSound];
     
     //Initialize analytics agreement
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"allowstatistics"]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"allowstatistics"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-
+    
+    [ARSAnalytics initializeTracker];
     
     ARSEventListViewController *eventListViewController = [[ARSEventListViewController alloc] initWithNibName:@"ARSEventListViewController" bundle:nil];
     

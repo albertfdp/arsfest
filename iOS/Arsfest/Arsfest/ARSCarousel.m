@@ -56,14 +56,7 @@
     });
     
     
-    if ([[NSDate date] isEarlierThanDate:ARSFEST_REAL_START_DATE fromMinutes:0]) {
-        ARSCarouselThumbnail *thumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
-        thumbnail.type = ARSCarouselThumbnailTypeTimer;
-        thumbnail.delegate = self;
-        
-        [self addViews:@[thumbnail]];
-    }
-    else if ([NSDate currentDateIsBetween:ARSFEST_REAL_START_DATE and:ARSFEST_END_DATE]) {
+    if ([NSDate currentDateIsBetween:ARSFEST_REAL_START_DATE and:ARSFEST_END_DATE]) {
         ARSCarouselThumbnail *currentEventThumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
         currentEventThumbnail.event = [[ARSData data] currentEventInTheParty];
         currentEventThumbnail.type = ARSCarouselThumbnailTypeEvent;
@@ -86,8 +79,14 @@
         ARSCarouselThumbnail *thumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
         thumbnail.type = ARSCarouselThumbnailTypePartyOver;
         [self addViews:@[thumbnail]];
+    } else {
+        ARSCarouselThumbnail *thumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
+        thumbnail.type = ARSCarouselThumbnailTypeTimer;
+        thumbnail.delegate = self;
+        
+        [self addViews:@[thumbnail]];
     }
-
+    
 }
 
 - (UITapGestureRecognizer*)aTapRecognizer
