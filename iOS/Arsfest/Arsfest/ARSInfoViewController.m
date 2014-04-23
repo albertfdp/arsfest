@@ -49,15 +49,22 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self configureViewForSelectedIndex:self.segmentedControl.selectedSegmentIndex];
     
     //Init scroll view
-    [self initInformationsScrollView];
-    [self.informationsScrollView setNeedsDisplay];
     [self configureStatisticsSwitch];
     
     [ARSAnalytics trackViewOpened:@"Informations"];
-    
+ 
+    [self initInformationsScrollView];
+    [self configureViewForSelectedIndex:self.segmentedControl.selectedSegmentIndex];
+    [self.infoView setNeedsDisplay];
+    [self.informationsScrollView setNeedsDisplay];
+    [self.pageControl setNeedsDisplay];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
 }
 
 - (void)configureViewForSelectedIndex:(NSInteger)index
@@ -117,7 +124,7 @@
     [secondInfoView setTitle:@"Social Integration" description:INFO_FACEBOOK image:[UIImage imageNamed:@"facebook-icon.png"]];
 
     ARSInfoView *thirdInfoView = [[[NSBundle mainBundle] loadNibNamed:@"ARSInfoView" owner:nil options:nil] lastObject];
-    [thirdInfoView setTitle:@"Wi-Fi Geolocation" description:INFO_WIFI image:[UIImage imageNamed:@"wifi-icon.png"]];
+    [thirdInfoView setTitle:@"Wi-Fi Geo-Location" description:INFO_WIFI image:[UIImage imageNamed:@"wifi-icon.png"]];
     
     [self addViewsToScrollView:@[infoView, secondInfoView, thirdInfoView]];
 }
