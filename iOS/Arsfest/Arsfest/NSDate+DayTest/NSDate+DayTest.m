@@ -45,7 +45,7 @@
     NSDateComponents *difference = [calendar components:NSDayCalendarUnit
                                                fromDate:fromDate toDate:toDate options:0];
     
-    return [difference day];
+    return (int)[difference day];
 }
 
 @end

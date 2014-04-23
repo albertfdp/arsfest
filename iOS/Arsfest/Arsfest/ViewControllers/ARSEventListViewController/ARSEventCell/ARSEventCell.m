@@ -40,10 +40,6 @@
     if (icon) {
         _imageView.image = icon;
     }
-    
-    if ([NSDate currentDateIsBetween:event.startTime and:event.endTime]) {
-        [_progressView setHidden:NO];
-    }
 }
 
 @end

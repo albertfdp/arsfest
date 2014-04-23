@@ -9,6 +9,7 @@
 #import "ARSUserController.h"
 #import "ARSAlertManager.h"
 #import "ARSData.h"
+#import "ARSAnalytics.h"
 #import <Parse/Parse.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
 
@@ -159,7 +160,8 @@ typedef NS_ENUM(NSInteger, kService) {
         NSString *locationName = [self userLocation];
         if (locationName) {
             [[PFUser currentUser] setObject:locationName forKey:@"locationName"];
-            [[PFUser currentUser] saveInBackground];   
+            [[PFUser currentUser] saveInBackground];
+            [ARSAnalytics trackEventWithCategory:@"Position" action:locationName];
         } else if ( ![[PFUser currentUser] objectForKey:@"locationName"] ) {
             [[PFUser currentUser] setObject:@"Unknown Location" forKey:@"locationName"];
             [[PFUser currentUser] saveInBackground];

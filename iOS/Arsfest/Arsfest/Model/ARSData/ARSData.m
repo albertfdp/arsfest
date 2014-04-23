@@ -83,12 +83,6 @@
 
 - (ARSEvent*)currentEventInTheParty
 {
-#warning Remove the 1 when over
-    if (1) {
-        ARSLocation *loc = [_locations objectAtIndex:2];
-        ARSEvent *ev = [loc.events objectAtIndex:1];
-        return ev;
-    }
     
     NSMutableArray *possibleEvents = [[NSMutableArray alloc] init];
     for (ARSLocation *location in _locations) {
@@ -112,14 +106,6 @@
 
 - (ARSEvent*)nextEventInTheParty
 {
-    #warning Remove the 1 when over
-    if (1) {
-        ARSLocation *loc = [_locations objectAtIndex:2];
-        ARSEvent *ev = [loc.events objectAtIndex:2];
-        
-        return ev;
-        
-    }
     
     NSMutableArray *possibleEvents = [[NSMutableArray alloc] init];
     for (ARSLocation *location in _locations) {

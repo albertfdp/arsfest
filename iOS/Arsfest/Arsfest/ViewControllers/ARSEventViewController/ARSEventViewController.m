@@ -11,6 +11,8 @@
 
 @interface ARSEventViewController ()
 
+@property (nonatomic, strong) NSDate *analyticsStartDate;
+
 @end
 
 @implementation ARSEventViewController
@@ -26,6 +28,7 @@
 @synthesize whenView = _whenView;
 @synthesize whereView = _whereView;
 @synthesize labelEventTheme = _labelEventTheme;
+@synthesize analyticsStartDate;
 
 #pragma mark -
 #pragma mark - View
@@ -58,6 +61,20 @@
     [self setupScrollView];
     
     [ARSAnalytics trackViewOpened:[NSString stringWithFormat:@"Event Viewed: %@", _event.name]];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    analyticsStartDate = [NSDate date];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:analyticsStartDate];
+    [ARSAnalytics trackSpentTime:interval onScreen:_event.name];
 }
 
 - (void)didReceiveMemoryWarning
