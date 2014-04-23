@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "BSSFJSON.h"
 
 @interface BSSFMasterViewController : UITableViewController <CLLocationManagerDelegate> {
     CLLocationManager *locationManager;
@@ -18,4 +19,5 @@
     @property (strong, nonatomic) NSString *bssid;
     @property  float   latitude;
     @property  float   longitude;
+    @property NSArray* locations;
 @end

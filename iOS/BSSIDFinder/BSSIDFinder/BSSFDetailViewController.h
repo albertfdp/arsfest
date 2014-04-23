@@ -7,13 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 #import "BSSFMasterViewController.h"
+#import "BSSFJSON.h"
 
-@interface BSSFDetailViewController : UIViewController
+@interface BSSFDetailViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) LocationObject *location;
 
 @property (weak, nonatomic) IBOutlet UILabel *bssid;
 @property (weak, nonatomic) IBOutlet UILabel *latitude;
 @property (weak, nonatomic) IBOutlet UILabel *longitude;
+@property (weak, nonatomic) IBOutlet UITextField *locationName;
+
+-(IBAction) appendNewLocation:(id)sender;
+
+-(IBAction) saveJSON:(id)sender;
+
 @end

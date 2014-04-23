@@ -7,6 +7,7 @@
             "name": "Sports Hall",
             "color": "#2ecc71",
             "description": "The Hall, Building 101B",
+            "danishDescription": "",
             "events": [
                 {
                     "id": "e0",
@@ -16,6 +17,7 @@
                     "endTime": "09-05-2014:19:00",
                     "location": "l0",
                     "description": "In addition to speeches by the Rector and the President of PF the official part includes the awarding of academic honors.\n\nProfessor Thomas Lars Andresen, DTU Nanotech, will give a talk on the use of nanotechnology to combat diseases and the art of programming in chemical codes.\n\nThe program alternates with musical performances by soloist Stine Louise Henriksen and conductor Andreas Vetö.\n\nTicket information: Admission is free, but there is limited seating.\n\nThe doors will be closed at 16:50 or when the hall is full.\n\nIf you require translation, headsets are available free of charge. For more information, please ask the staff standing at the sides of the hall near the headsets.",
+                       "danishDescription": "Udover taler af rektor og af formanden for PF indeholder den officielle del uddeling af akademiske hædersbevisninger.\n\nProfessor Thomas Lars Andresen, DTU Nanotech, holder festforedrag om brugen af nanoteknologi til bekæmpelse af sygdomme samt kunsten at programmere i kemiske koder.\n\nProgrammet veksler med musikalske indslag ved solist Stine Louise Henriksen og kapelmester Andreas Vetö.\n\nBilletinfo: Der er gratis entré, men et begrænset antal pladser.\n\nDørene lukkes senest 16.50 eller når den maksimale personbelastning er nået.",
                     "type": "official",
                     "theme": "official"
                 },
@@ -27,6 +29,7 @@
                     "endTime": "09-05-2014:22:24",
                     "location": "l0",
                     "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers. \n\nIntroductory dance classes are available before the Commemoration Party, if Les Lanciers is a new acquaintance or if you just like to refresh your steps.\nClasses (in English) in Les Lanciers in the Oticon Hall Tuesday May 6th (at 16.30) and Thursday May 8th (at 17.15). Free access.",
+                       "danishDescription": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester.\n\nLes lanciers består af fem ture:La Dorset, La Victoria; også kendt som komplimentturen, Les Moulinets; også kendt som damemøllen, Les Visites; også kendt som visitturen, Les Lanciers, også kendt som herremøllen\n\nEn hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
                     "type": "official",
                     "theme": "dance"
                 },
@@ -38,6 +41,8 @@
                     "endTime": "09-05-2014:23:19",
                     "location": "l0",
                     "description": "There is DJ playing in the Sports Hall. Come and enjoy the music!",
+                    "danishDescription": "",
+                    "danishDescription": "",
                     "type": "official",
                     "theme": "music"
                 },
@@ -49,6 +54,7 @@
                     "endTime": "09-05-2014:23:34",
                     "location": "l0",
                     "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers. \n\nIntroductory dance classes are available before the Commemoration Party, if Les Lanciers is a new acquaintance or if you just like to refresh your steps.\nClasses (in English) in Les Lanciers in the Oticon Hall Tuesday May 6th (at 16.30) and Thursday May 8th (at 17.15). Free access.",
+                       "danishDescription": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester.\n\nLes lanciers består af fem ture:La Dorset, La Victoria; også kendt som komplimentturen, Les Moulinets; også kendt som damemøllen, Les Visites; også kendt som visitturen, Les Lanciers, også kendt som herremøllen\n\nEn hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
                     "type": "official",
                     "theme": "dance"
                 },
@@ -60,6 +66,7 @@
                     "endTime": "10-05-2014:00:29",
                     "location": "l0",
                     "description": "Carpark North is probably Denmark's best and most energetic electro-rockband. Carpark North offers powerful, catchy and present numbers from three very thorough records, the latest of which is called 'Grateful'. Most of you probably do not remember when Carpark North kicked the door in to the Danish music scene with the hit 'Transparent And Glasslike' back in 2003, but they have been part of the Danish music scene for a while.\n\nAdditionally Carpark North also has plenty to offer live and anyone who has seen them can attest to this. It is simply an amazing experience to witness Carpark North and the unique energy and passion that the band takes with them onstage every time. And the experience is certainly not reduced by the fact that Carpark North is the source of many hits that the audience can sing along to at concerts.\n\nIn 2013 the newest material from Carpark North was released, in the shape of a fourth album, where the song '32' featuring Stine Bramsen is rising in the charts. There are lots of things to look forward to.",
+                       "danishDescription": "Carpark North er nok Danmarks bedste og mest energiske electro-rockband. Carpark North byder på stærke, iørefaldende og nærværende numre fra tre meget gennemførte plader, hvor det seneste hedder ”Grateful”. De fleste husker sikkert, da Carpark North sparkede døren ind til den danske musikscene med storhittet “Transparent And Glasslike” tilbage i 2003. Et hit, som Carpark North i dag kan notere som ét blandt fire andre uundgåelige hits på P3 gennem tiden.\n\nCarpark North har også masser at byde på live. Det kan alle, der har oplevet dem, skrive under på. Det er ganske enkelt bare en fantastisk oplevelse at overvære Carpark North og den helt enestående energi og passion, bandet tager med på scenen hver eneste gang. Og så trækker det jo bestemt ikke ned, at bandet står bag så mange store hits, at publikum kan synge med til koncerterne.\n\nI 2013 kom der nyt materiale fra Carpark North, da det fjerde album kom på gaden. Lige nu storhitter de med ”32” feat. Stine Bramsen. Der er masser at glæde sig til.",
                     "type": "nonofficial",
                     "theme": "music",
                     "remark": true
@@ -72,6 +79,7 @@
                     "endTime": "10-05-2014:00:59",
                     "location": "l0",
                     "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers. \n\nIntroductory dance classes are available before the Commemoration Party, if Les Lanciers is a new acquaintance or if you just like to refresh your steps.\nClasses (in English) in Les Lanciers in the Oticon Hall Tuesday May 6th (at 16.30) and Thursday May 8th (at 17.15). Free access.",
+                       "danishDescription": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester.\n\nLes lanciers består af fem ture:La Dorset, La Victoria; også kendt som komplimentturen, Les Moulinets; også kendt som damemøllen, Les Visites; også kendt som visitturen, Les Lanciers, også kendt som herremøllen\n\nEn hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
                     "type": "official",
                     "theme": "dance"
                 },
@@ -83,6 +91,7 @@
                     "endTime": "10-05-2014:03:00",
                     "location": "l0",
                     "description": "There is DJ playing in the Sports Hall. Come and enjoy the music!",
+                    "danishDescription": "",
                     "type": "nonofficial",
                     "theme": "music"
                 }
@@ -94,6 +103,7 @@
             "longitude": 12.523265,
             "name": "Library",
             "description": "",
+            "danishDescription": "",
             "color": "#2980b9",
             "events": [
                 {
@@ -133,6 +143,7 @@
                     "endTime": "09-05-2014:23:29",
                     "location": "l1",
                     "description": "Short intro to Waltz & Standard/Latin and Tango Argentino",
+                    "danishDescription": "",
                     "type": "nonofficial",
                     "theme": "dance"
                 },
@@ -144,6 +155,7 @@
                     "endTime": "10-05-2014:00:59",
                     "location": "l1",
                     "description": "Short intro to Salsa & short intro to Bachata",
+                    "danishDescription": "",
                     "type": "nonofficial",
                     "theme": "dance"
                 },
@@ -155,6 +167,7 @@
                     "endTime": "10-05-2014:01:29",
                     "location": "l1",
                     "description": "Zumba & short intro to Jitterbug",
+                    "danishDescription": "",
                     "type": "nonofficial",
                     "theme": "dance"
                 },
@@ -166,6 +179,7 @@
                     "endTime": "10-05-2014:02:57",
                     "location": "l1",
                     "description": "Special style mix with surprises and social dancing.",
+                    "danishDescription": "",
                     "type": "nonofficial",
                     "theme": "dance"
                 }
@@ -187,6 +201,7 @@
                     "endTime": "09-05-2014:22:44",
                     "location": "l2",
                     "description": "There is DJ playing in the Oticon Hall. Come and enjoy the music!",
+                    "danishDescription": "",
                     "type": "nonofficial",
                     "theme": "music"
                 },
@@ -209,6 +224,7 @@
                     "endTime": "10-05-2014:00:59",
                     "location": "l2",
                     "description": "There is DJ playing in the Oticon Hall. Come and enjoy the music!",
+                    "danishDescription": "",
                     "type": "nonofficial",
                     "theme": "music"
                 },
@@ -220,6 +236,7 @@
                     "endTime": "10-05-2014:01:59",
                     "location": "l2",
                     "description": "Andreas Kongsted, better known as KONGSTED, Danmarks new star on the DJ, has been nominated for the award 'Best Danish Club DJ Of The Year' for four years in a row, as the first Dane ever, and has won in 2010 and 2011. In 2013 KONGSTED was nominated as 'Danish DeeJay of the Year', a title that is not to be mistaken.\n\nOver the last 4 years KONGSTED has produced a sea of solid singles, for example: 'Mardi Gras', 'The Spirit', 'Good Times' and 'Live Your Life'. His latest achievement is first a gold and later a platinum certification of his latest single 'Chuck Norris'.\n\nWith his unique ability to understand an audience, KONGSTED creates an euphoric mood, a mood that is supported by a wide choice of music with a foundation in the house genre and delivered with sublime technical skills ready for the dance floor.\n\nKONGSTED is at this time the tenth most streamed artist in Denmark.",
+                    "danishDescription": "",
                     "type": "nonofficial",
                     "theme": "music"
                 },
@@ -281,6 +298,8 @@
                     "endTime": "09-05-2014:22:39",
                     "location": "l3",
                     "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers. \n\nIntroductory dance classes are available before the Commemoration Party, if Les Lanciers is a new acquaintance or if you just like to refresh your steps.\nClasses (in English) in Les Lanciers in the Oticon Hall Tuesday May 6th (at 16.30) and Thursday May 8th (at 17.15). Free access.",
+                       "danishDescription": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester.\n\nLes lanciers består af fem ture:La Dorset, La Victoria; også kendt som komplimentturen, Les Moulinets; også kendt som damemøllen, Les Visites; også kendt som visitturen, Les Lanciers, også kendt som herremøllen\n\nEn hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
+                       "danishDescription": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester.\n\nLes lanciers består af fem ture:La Dorset, La Victoria; også kendt som komplimentturen, Les Moulinets; også kendt som damemøllen, Les Visites; også kendt som visitturen, Les Lanciers, også kendt som herremøllen\n\nEn hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
                     "type": "official",
                     "theme": "dance"
                 },
@@ -292,6 +311,7 @@
                     "endTime": "09-05-2014:23:39",
                     "location": "l3",
                     "description": "The ABBAtizers is composed of 6 dedicated members who, with a twinkle in their eye, have devoted their life to stopping time and beaming us all back to the 70s and ABBAs heyday.\n\nIn The ABBAtizers fantastic universe, it is a world where Agnethas eyes have never been bluer and the plateau boots have never been as tight. The ABBAtizers celebrate disco and challenge anyone with even a modicum of rhythm. They play the seats out of their tight fitting satin pants with humor, style and great respect for the originals.\n\nThe ABBAtizers will take their audience on a musical journey through all of ABBAs great compositions, and they hold nothing back. The show is performed with great attention to detail, so both ABBA lovers and previously uninitiated will get the best experience.\n\nFlower Power Rules...",
+                    "danishDescription": "",
                     "type": "nonofficial",
                     "theme": "music"
                 },
@@ -303,6 +323,7 @@
                     "endTime": "09-05-2014:23:59",
                     "location": "l3",
                     "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers. \n\nIntroductory dance classes are available before the Commemoration Party, if Les Lanciers is a new acquaintance or if you just like to refresh your steps.\nClasses (in English) in Les Lanciers in the Oticon Hall Tuesday May 6th (at 16.30) and Thursday May 8th (at 17.15). Free access.",
+                       "danishDescription": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester.\n\nLes lanciers består af fem ture:La Dorset, La Victoria; også kendt som komplimentturen, Les Moulinets; også kendt som damemøllen, Les Visites; også kendt som visitturen, Les Lanciers, også kendt som herremøllen\n\nEn hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
                     "type": "official",
                     "theme": "dance"
                 },
@@ -314,6 +335,7 @@
                     "endTime": "10-05-2014:00:59",
                     "location": "l3",
                     "description": "The ABBAtizers is composed of 6 dedicated members who, with a twinkle in their eye, have devoted their life to stopping time and beaming us all back to the 70s and ABBAs heyday.\n\nIn The ABBAtizers fantastic universe, it is a world where Agnethas eyes have never been bluer and the plateau boots have never been as tight. The ABBAtizers celebrate disco and challenge anyone with even a modicum of rhythm. They play the seats out of their tight fitting satin pants with humor, style and great respect for the originals.\n\nThe ABBAtizers will take their audience on a musical journey through all of ABBAs great compositions, and they hold nothing back. The show is performed with great attention to detail, so both ABBA lovers and previously uninitiated will get the best experience.\n\nFlower Power Rules...",
+                    "danishDescription": "",
                     "type": "nonofficial",
                     "theme": "music"
                 },
@@ -325,6 +347,7 @@
                     "endTime": "10-05-2014:01:20",
                     "location": "l3",
                     "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers. \n\nIntroductory dance classes are available before the Commemoration Party, if Les Lanciers is a new acquaintance or if you just like to refresh your steps.\nClasses (in English) in Les Lanciers in the Oticon Hall Tuesday May 6th (at 16.30) and Thursday May 8th (at 17.15). Free access.",
+                       "danishDescription": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester.\n\nLes lanciers består af fem ture:La Dorset, La Victoria; også kendt som komplimentturen, Les Moulinets; også kendt som damemøllen, Les Visites; også kendt som visitturen, Les Lanciers, også kendt som herremøllen\n\nEn hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
                     "type": "official",
                     "theme": "dance"
                 }
@@ -375,6 +398,7 @@
                     "endTime": "09-05-2014:23:59",
                     "location": "l4",
                     "description": "Blå Mandag is the name of a seven membered Jazzband, who has played together for 28 years. They write on their homepage that they sing and play to please others, and enjoy it very much themselves.\n\nThey enjoy including a bit playfulness in their music, and having played together for many years. They believe they are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\n\nTheir motto is: 'We are there for you', so their most distinguished purpose is to play in honour of their audience and guests so they will have a tremendous experience.",
+                    "danishDescription": "",
                     "type": "nonofficial",
                     "theme": "music"
                 },
@@ -386,6 +410,7 @@
                     "endTime": "10-05-2014:01:00",
                     "location": "l4",
                     "description": "Blå Mandag is the name of a seven membered Jazzband, who has played together for 28 years. They write on their homepage that they sing and play to please others, and enjoy it very much themselves.\n\nThey enjoy including a bit playfulness in their music, and having played together for many years. They believe they are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\n\nTheir motto is: 'We are there for you', so their most distinguished purpose is to play in honour of their audience and guests so they will have a tremendous experience.",
+                    "danishDescription": "",
                     "type": "nonofficial",
                     "theme": "music"
                 }

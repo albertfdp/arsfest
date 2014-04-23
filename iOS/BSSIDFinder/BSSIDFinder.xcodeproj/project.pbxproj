@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E12568B41907C74600B2CB10 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12568B31907C74600B2CB10 /* CoreData.framework */; };
+		E12568B71907C7B000B2CB10 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E12568B51907C7B000B2CB10 /* Model.xcdatamodeld */; };
+		E12568BA1907E50F00B2CB10 /* BSSFJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E12568B91907E50F00B2CB10 /* BSSFJSON.m */; };
 		E13EBC2F19056BFA00C948E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13EBC2E19056BFA00C948E5 /* Foundation.framework */; };
 		E13EBC3119056BFA00C948E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13EBC3019056BFA00C948E5 /* CoreGraphics.framework */; };
 		E13EBC3319056BFA00C948E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13EBC3219056BFA00C948E5 /* UIKit.framework */; };
@@ -36,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E12568B31907C74600B2CB10 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E12568B61907C7B000B2CB10 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E12568B81907E50F00B2CB10 /* BSSFJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSFJSON.h; sourceTree = "<group>"; };
+		E12568B91907E50F00B2CB10 /* BSSFJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSFJSON.m; sourceTree = "<group>"; };
 		E13EBC2B19056BFA00C948E5 /* BSSIDFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSSIDFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13EBC2E19056BFA00C948E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E13EBC3019056BFA00C948E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12568B41907C74600B2CB10 /* CoreData.framework in Frameworks */,
 				E13EBC3119056BFA00C948E5 /* CoreGraphics.framework in Frameworks */,
 				E13EBC3319056BFA00C948E5 /* UIKit.framework in Frameworks */,
 				E13EBC2F19056BFA00C948E5 /* Foundation.framework in Frameworks */,
@@ -107,6 +115,7 @@
 		E13EBC2D19056BFA00C948E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E12568B31907C74600B2CB10 /* CoreData.framework */,
 				E13EBC2E19056BFA00C948E5 /* Foundation.framework */,
 				E13EBC3019056BFA00C948E5 /* CoreGraphics.framework */,
 				E13EBC3219056BFA00C948E5 /* UIKit.framework */,
@@ -129,6 +138,9 @@
 				E13EBC4719056BFA00C948E5 /* BSSFDetailViewController.m */,
 				E13EBC4919056BFA00C948E5 /* Images.xcassets */,
 				E13EBC3519056BFA00C948E5 /* Supporting Files */,
+				E12568B51907C7B000B2CB10 /* Model.xcdatamodeld */,
+				E12568B81907E50F00B2CB10 /* BSSFJSON.h */,
+				E12568B91907E50F00B2CB10 /* BSSFJSON.m */,
 			);
 			path = BSSIDFinder;
 			sourceTree = "<group>";
@@ -263,11 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12568BA1907E50F00B2CB10 /* BSSFJSON.m in Sources */,
 				E13EBC3F19056BFA00C948E5 /* BSSFAppDelegate.m in Sources */,
 				E13EBC4819056BFA00C948E5 /* BSSFDetailViewController.m in Sources */,
 				E13EBC681905756C00C948E5 /* ARSUserController.m in Sources */,
 				E13EBC4519056BFA00C948E5 /* BSSFMasterViewController.m in Sources */,
 				E13EBC3B19056BFA00C948E5 /* main.m in Sources */,
+				E12568B71907C7B000B2CB10 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +492,7 @@
 				E13EBC6219056BFA00C948E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E13EBC6319056BFA00C948E5 /* Build configuration list for PBXNativeTarget "BSSIDFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -486,8 +501,22 @@
 				E13EBC6519056BFA00C948E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E12568B51907C7B000B2CB10 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E12568B61907C7B000B2CB10 /* Model.xcdatamodel */,
+			);
+			currentVersion = E12568B61907C7B000B2CB10 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E13EBC2319056BFA00C948E5 /* Project object */;
 }

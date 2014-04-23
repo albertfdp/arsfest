@@ -13,26 +13,55 @@
 
 + (ARSEvent*)eventFromDictionary:(NSDictionary*)dictionary
 {
+    // Get prefer language
+    NSUserDefaults* defs = [NSUserDefaults standardUserDefaults];
+    NSArray* languages = [defs objectForKey:@"AppleLanguages"];
+    NSString* preferredLang = [languages objectAtIndex:0];
+    
     ARSEvent *event = [[ARSEvent alloc] init];
     
-    event.name = [dictionary objectForKey:@"name"];
-    
-    
+    if ([preferredLang isEqualToString:@"dk"]) {
+        event.name = [dictionary objectForKey:@"danishName"];
+    }else{
+        event.name = [dictionary objectForKey:@"name"];
+    }
+
     if ([dictionary objectForKey:@"menu"]){
         NSArray *menu = [dictionary objectForKey:@"menu"];
         NSMutableString *menuDescription = [NSMutableString stringWithString:@""];
+        NSString *cofee = @"";
         for(NSDictionary *dish in menu) {
-            [menuDescription appendString:@"\t"];
-            [menuDescription appendString:[dish objectForKey:@"course"]];
-            [menuDescription appendString:@"\n"];
-            [menuDescription appendString:@"\n"];
-            [menuDescription appendString:[dish objectForKey:@"name"]];
-            [menuDescription appendString:@"\n"];
-            [menuDescription appendString:@"\n"];
+            //[menuDescription appendString:@"\t"];
+            if ([[dish objectForKey:@"course"] isEqualToString:@"Coffee"]) {
+                cofee = [dish objectForKey:@"name"];
+            
+            }else if ([[dish objectForKey:@"course"] isEqualToString:@"Drinks"]){
+                [menuDescription appendString:[dish objectForKey:@"course"]];
+                [menuDescription appendString:@"\n"];
+                [menuDescription appendString:@"\n"];
+                [menuDescription appendString:[dish objectForKey:@"name"]];
+                [menuDescription appendString:@"\n"];
+                [menuDescription appendString:@"\n"];
+                [menuDescription appendString:cofee];
+            }else{
+                [menuDescription appendString:[dish objectForKey:@"course"]];
+                [menuDescription appendString:@"\n"];
+                [menuDescription appendString:@"\n"];
+                [menuDescription appendString:[dish objectForKey:@"name"]];
+                [menuDescription appendString:@"\n"];
+                [menuDescription appendString:@"\n"];
+            }
+            
+            
         }
         event.description = menuDescription;
     }else{
-        event.description = [dictionary objectForKey:@"description"];
+        if ([preferredLang isEqualToString:@"dk"]) {
+            event.description = [dictionary objectForKey:@"danishDescription"];
+        }else{
+            event.description = [dictionary objectForKey:@"description"];
+        }
+        
     }
     event.image = [dictionary objectForKey:@"image"];
     event.theme = [dictionary objectForKey:@"theme"];

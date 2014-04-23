@@ -55,7 +55,7 @@
     
     // Create de timer
     
-    [NSTimer scheduledTimerWithTimeInterval:2.0
+    [NSTimer scheduledTimerWithTimeInterval:0.5
                                      target:self
                                    selector:@selector(targetMethod)
                                    userInfo:nil
@@ -71,8 +71,6 @@
     
     NSString *bssid = [sharedController currentWifiBSSID];
 
-
-    
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
