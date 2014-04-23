@@ -50,10 +50,7 @@
 
 - (void)configureScrollView
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [self.scrollView setDelegate:self];
-    });
+    [self.scrollView setDelegate:self];
     
     
     if ([NSDate currentDateIsBetween:ARSFEST_REAL_START_DATE and:ARSFEST_END_DATE]) {

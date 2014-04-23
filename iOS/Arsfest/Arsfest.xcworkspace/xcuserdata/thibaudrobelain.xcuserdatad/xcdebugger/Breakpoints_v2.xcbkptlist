@@ -569,52 +569,6 @@
             timestampString = "419766697.48388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "-configureScrollView"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ARSCarousel configureScrollView]"
-                  moduleName = "Arsfest"
-                  urlString = "file:///Users/thibaudrobelain/Documents/DTU/Mobile_Prototyping/Dev/arsfest/iOS/Arsfest/Arsfest/ARSCarousel.m"
-                  timestampString = "419766053.848606"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "58">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[ARSCarousel configureScrollView]_block_invoke"
-                  moduleName = "Arsfest"
-                  urlString = "file:///Users/thibaudrobelain/Documents/DTU/Mobile_Prototyping/Dev/arsfest/iOS/Arsfest/Arsfest/ARSCarousel.m"
-                  timestampString = "419766053.848941"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arsfest/ARSCarousel.m"
-            timestampString = "419766697.48388"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
             landmarkName = "-addViews:"
