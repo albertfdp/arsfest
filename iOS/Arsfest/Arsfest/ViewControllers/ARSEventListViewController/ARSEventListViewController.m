@@ -254,7 +254,7 @@
 
 - (void)carouselTappedForInformation
 {
-    
+    [self showInfo];
 }
 
 - (void)carouselTappedForEvent:(ARSEvent *)event
