@@ -43,10 +43,6 @@
     UIBarButtonItem *rightItem = [UIBarButtonItem itemWithImage:rightImage target:self action:@selector(dismissInfo)];
     [self.navigationController.navigationBar.topItem setRightBarButtonItem:rightItem];
     
-    //Init scroll view
-    [self initInformationsScrollView];
-    [self configureStatisticsSwitch];
-    
     self.informationsScrollView.delegate = self;
 }
 
@@ -55,7 +51,13 @@
     [super viewWillAppear:animated];
     [self configureViewForSelectedIndex:self.segmentedControl.selectedSegmentIndex];
     
+    //Init scroll view
+    [self initInformationsScrollView];
+    [self.informationsScrollView setNeedsDisplay];
+    [self configureStatisticsSwitch];
+    
     [ARSAnalytics trackViewOpened:@"Informations"];
+    
 }
 
 - (void)configureViewForSelectedIndex:(NSInteger)index
@@ -109,27 +111,33 @@
 - (void)initInformationsScrollView
 {
     ARSInfoView *infoView = [[[NSBundle mainBundle] loadNibNamed:@"ARSInfoView" owner:nil options:nil] lastObject];
-    [infoView setTitle:@"The Årsfest" description:INFO_ARSFEST_WELCOME image:nil];
+    [infoView setTitle:@"The Annual Party" description:INFO_ARSFEST_WELCOME image:nil];
     
     ARSInfoView *secondInfoView = [[[NSBundle mainBundle] loadNibNamed:@"ARSInfoView" owner:nil options:nil] lastObject];
     [secondInfoView setTitle:@"Social Integration" description:INFO_FACEBOOK image:nil];
+
+    ARSInfoView *thirdInfoView = [[[NSBundle mainBundle] loadNibNamed:@"ARSInfoView" owner:nil options:nil] lastObject];
+    [thirdInfoView setTitle:@"Wi-Fi Geolocation" description:INFO_WIFI image:[UIImage imageNamed:@"wifi-icon.png"]];
     
-    [self addViewsToScrollView:@[infoView, secondInfoView]];
+    [self addViewsToScrollView:@[infoView, secondInfoView, thirdInfoView]];
 }
 
 - (void)addViewsToScrollView:(NSArray*)views
 {
+//    CGFloat height = ([UIScreen mainScreen].bounds.size.height > 480.0f)?460:372;
+//    [self.informationsScrollView setFrame:CGRectMake(self.informationsScrollView.frame.origin.x, self.informationsScrollView.frame.origin.y, 320, height)];
     //Add each view
     int i = 0;
-    for (ARSInfoView* infoView in views) {
-        [self.informationsScrollView addSubview:infoView];
+    for (ARSInfoView* informationView in views) {
+        [self.informationsScrollView addSubview:informationView];
         int yOrigin = self.informationsScrollView.frame.origin.y;
-        [infoView setFrame:CGRectMake(i*self.informationsScrollView.frame.size.width, yOrigin, self.informationsScrollView.frame.size.width, self.informationsScrollView.frame.size.height)];
+        [informationView setFrame:CGRectMake(i*self.informationsScrollView.bounds.size.width, yOrigin, self.informationsScrollView.bounds.size.width, self.informationsScrollView.bounds.size.height)];
         i++;
     }
     
-    [self.informationsScrollView setContentSize:CGSizeMake(i * self.informationsScrollView.frame.size.width, self.informationsScrollView.frame.size.height)];
+    [self.informationsScrollView setContentSize:CGSizeMake(i * self.informationsScrollView.bounds.size.width, self.informationsScrollView.bounds.size.height)];
     [self.pageControl setNumberOfPages:[views count]];
+    
 }
 
 #pragma mark - Scroll view delegate

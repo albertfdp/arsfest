@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="64" width="320" height="416"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="001-8p-Lkx">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="001-8p-Lkx">
                     <rect key="frame" x="-5" y="372" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <constraints>
@@ -42,28 +42,6 @@
                         <barButtonItem width="66" style="plain" systemItem="fixedSpace" id="HcK-7M-IsX"/>
                     </items>
                 </toolbar>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4o-Vo-aFO" userLabel="Info view">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgD-is-OH6">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        </scrollView>
-                        <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="sWL-lv-n5D">
-                            <rect key="frame" x="140" y="340" width="39" height="37"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </pageControl>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="sWL-lv-n5D" secondAttribute="bottom" constant="-5" id="HTb-Nh-Pga"/>
-                        <constraint firstAttribute="bottom" secondItem="dgD-is-OH6" secondAttribute="bottom" id="LV2-nf-2DW"/>
-                        <constraint firstItem="dgD-is-OH6" firstAttribute="top" secondItem="N4o-Vo-aFO" secondAttribute="top" id="yVd-Tg-HRb"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orX-7N-xnf" userLabel="Settings view">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -115,15 +93,37 @@ It will help the organisers improve the event and the application next year by k
                         <constraint firstAttribute="bottom" secondItem="TBr-Ld-CMi" secondAttribute="bottom" constant="12" id="ioD-eh-Eu7"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4o-Vo-aFO" userLabel="Info view">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgD-is-OH6">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </scrollView>
+                        <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="sWL-lv-n5D">
+                            <rect key="frame" x="140" y="340" width="39" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </pageControl>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="sWL-lv-n5D" secondAttribute="bottom" constant="-5" id="GJg-Nb-gWJ"/>
+                        <constraint firstItem="dgD-is-OH6" firstAttribute="top" secondItem="N4o-Vo-aFO" secondAttribute="top" id="uyW-oh-3wC"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="001-8p-Lkx" secondAttribute="bottom" id="5iB-Rq-An6"/>
-                <constraint firstAttribute="bottom" secondItem="orX-7N-xnf" secondAttribute="bottom" constant="44" id="6P0-Wt-8XG"/>
-                <constraint firstItem="001-8p-Lkx" firstAttribute="leading" secondItem="IaK-oy-ehP" secondAttribute="leading" constant="-5" id="JlP-yI-hAI"/>
-                <constraint firstItem="orX-7N-xnf" firstAttribute="top" secondItem="IaK-oy-ehP" secondAttribute="top" id="Q4o-jv-Dra"/>
-                <constraint firstAttribute="bottom" secondItem="N4o-Vo-aFO" secondAttribute="bottom" constant="44" id="YiG-3m-4Ut"/>
-                <constraint firstItem="N4o-Vo-aFO" firstAttribute="top" secondItem="IaK-oy-ehP" secondAttribute="top" id="r78-Xu-rqf"/>
+                <constraint firstItem="N4o-Vo-aFO" firstAttribute="top" secondItem="IaK-oy-ehP" secondAttribute="top" id="EsP-GX-78Q"/>
+                <constraint firstItem="orX-7N-xnf" firstAttribute="top" secondItem="IaK-oy-ehP" secondAttribute="top" id="FkD-K6-27W"/>
+                <constraint firstItem="001-8p-Lkx" firstAttribute="top" secondItem="N4o-Vo-aFO" secondAttribute="bottom" id="MGH-G5-0nU"/>
+                <constraint firstItem="001-8p-Lkx" firstAttribute="top" secondItem="orX-7N-xnf" secondAttribute="bottom" id="Ooe-IM-RC0"/>
+                <constraint firstItem="001-8p-Lkx" firstAttribute="top" secondItem="dgD-is-OH6" secondAttribute="bottom" id="WBI-mj-0WM"/>
+                <constraint firstAttribute="bottom" secondItem="001-8p-Lkx" secondAttribute="bottom" id="XTz-e8-fAt"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
