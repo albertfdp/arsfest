@@ -740,11 +740,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ARSInfoViewController.m"
-            timestampString = "419939410.450697"
+            timestampString = "419950482.836523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "-storeStatisticsChange:"
             landmarkType = "5">
          </BreakpointContent>
@@ -756,11 +756,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ARSInfoViewController.m"
-            timestampString = "419939410.450697"
+            timestampString = "419950482.836523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "-addViewsToScrollView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -772,11 +772,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ARSInfoViewController.m"
-            timestampString = "419938668.070852"
+            timestampString = "419950482.836523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "-addViewsToScrollView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -788,11 +788,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/ARSInfoViewController.m"
-            timestampString = "419939410.450697"
+            timestampString = "419950482.836523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "-addViewsToScrollView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -803,13 +803,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Arsfest/ARSInfoViewController.m"
-            timestampString = "419940180.574079"
+            filePath = "Arsfest/ARSInfoView.m"
+            timestampString = "419950347.605399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "-addViewsToScrollView:"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "-setTitle:description:image:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

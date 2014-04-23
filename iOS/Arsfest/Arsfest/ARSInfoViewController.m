@@ -66,7 +66,7 @@
         case 0:
         {
             [self setViewToSettings:NO];
-            [self setTitle:@"Information"];
+            [self setTitle:@"Informations"];
             
             break;
         }
@@ -111,10 +111,10 @@
 - (void)initInformationsScrollView
 {
     ARSInfoView *infoView = [[[NSBundle mainBundle] loadNibNamed:@"ARSInfoView" owner:nil options:nil] lastObject];
-    [infoView setTitle:@"The Annual Party" description:INFO_ARSFEST_WELCOME image:nil];
+    [infoView setTitle:@"The Annual Party" description:INFO_ARSFEST_WELCOME image:[UIImage imageNamed:@"dtu-icon.png"]];
     
     ARSInfoView *secondInfoView = [[[NSBundle mainBundle] loadNibNamed:@"ARSInfoView" owner:nil options:nil] lastObject];
-    [secondInfoView setTitle:@"Social Integration" description:INFO_FACEBOOK image:nil];
+    [secondInfoView setTitle:@"Social Integration" description:INFO_FACEBOOK image:[UIImage imageNamed:@"facebook-icon.png"]];
 
     ARSInfoView *thirdInfoView = [[[NSBundle mainBundle] loadNibNamed:@"ARSInfoView" owner:nil options:nil] lastObject];
     [thirdInfoView setTitle:@"Wi-Fi Geolocation" description:INFO_WIFI image:[UIImage imageNamed:@"wifi-icon.png"]];
@@ -124,8 +124,6 @@
 
 - (void)addViewsToScrollView:(NSArray*)views
 {
-//    CGFloat height = ([UIScreen mainScreen].bounds.size.height > 480.0f)?460:372;
-//    [self.informationsScrollView setFrame:CGRectMake(self.informationsScrollView.frame.origin.x, self.informationsScrollView.frame.origin.y, 320, height)];
     //Add each view
     int i = 0;
     for (ARSInfoView* informationView in views) {

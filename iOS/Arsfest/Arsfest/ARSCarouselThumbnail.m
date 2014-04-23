@@ -43,7 +43,7 @@
             [self.imageContainerView setHidden:YES];
             [self.headerLabel setHidden:YES];
             [self.timerLabel setDelegate:self];
-            [self.timerLabel setCountDownToDate:ARSFEST_START_DATE];
+            [self.timerLabel setCountDownToDate:ARSFEST_REAL_START_DATE];
             [self.subHeaderLabel setHidden:YES];
             [self configureButtonBorders];
             [self.moreInfoButton addObserver:self forKeyPath:@"highlighted" options:0 context:nil];

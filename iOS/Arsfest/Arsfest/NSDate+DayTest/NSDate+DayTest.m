@@ -40,7 +40,7 @@
     [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
                  interval:NULL forDate:[NSDate date]];
     [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
-                 interval:NULL forDate:ARSFEST_END_DATE];
+                 interval:NULL forDate:ARSFEST_REAL_START_DATE];
     
     NSDateComponents *difference = [calendar components:NSDayCalendarUnit
                                                fromDate:fromDate toDate:toDate options:0];

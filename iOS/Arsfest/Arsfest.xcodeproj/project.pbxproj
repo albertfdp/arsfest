@@ -116,8 +116,12 @@
 		DBE009D318B78E22000B6DFE /* queenmachine.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C318B78E22000B6DFE /* queenmachine.png */; };
 		DBE009D418B78E22000B6DFE /* queenmachine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE009C418B78E22000B6DFE /* queenmachine@2x.png */; };
 		DBE009E518B79585000B6DFE /* UIView+Borders.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE009E418B79585000B6DFE /* UIView+Borders.m */; };
-		DBE9785A1907D6B700760E6A /* wifi-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE978581907D6B700760E6A /* wifi-icon.png */; };
-		DBE9785B1907D6B700760E6A /* wifi-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE978591907D6B700760E6A /* wifi-icon@2x.png */; };
+		DBE978661907E87F00760E6A /* dtu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE978601907E87F00760E6A /* dtu-icon.png */; };
+		DBE978671907E87F00760E6A /* dtu-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE978611907E87F00760E6A /* dtu-icon@2x.png */; };
+		DBE9786B1907E87F00760E6A /* wifi-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE978651907E87F00760E6A /* wifi-icon@2x.png */; };
+		DBE9786D1907E89100760E6A /* wifi-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE9786C1907E89100760E6A /* wifi-icon.png */; };
+		DBE978701907EA9000760E6A /* facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE9786E1907EA9000760E6A /* facebook-icon.png */; };
+		DBE978711907EA9000760E6A /* facebook-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE9786F1907EA9000760E6A /* facebook-icon@2x.png */; };
 		DBF6B0DD18EC316F0048605F /* ARSWifi.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF6B0DC18EC316F0048605F /* ARSWifi.m */; };
 		DBF6B0E018EC548B0048605F /* wifis.json in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B0DF18EC548B0048605F /* wifis.json */; };
 		DBF6B0E218EC54CA0048605F /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B0E118EC54CA0048605F /* events.json */; };
@@ -293,8 +297,12 @@
 		DBE009C418B78E22000B6DFE /* queenmachine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "queenmachine@2x.png"; sourceTree = "<group>"; };
 		DBE009E318B79585000B6DFE /* UIView+Borders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Borders.h"; path = "Utilities/UIView+Borders.h"; sourceTree = "<group>"; };
 		DBE009E418B79585000B6DFE /* UIView+Borders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Borders.m"; path = "Utilities/UIView+Borders.m"; sourceTree = "<group>"; };
-		DBE978581907D6B700760E6A /* wifi-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wifi-icon.png"; sourceTree = "<group>"; };
-		DBE978591907D6B700760E6A /* wifi-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wifi-icon@2x.png"; sourceTree = "<group>"; };
+		DBE978601907E87F00760E6A /* dtu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dtu-icon.png"; sourceTree = "<group>"; };
+		DBE978611907E87F00760E6A /* dtu-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dtu-icon@2x.png"; sourceTree = "<group>"; };
+		DBE978651907E87F00760E6A /* wifi-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wifi-icon@2x.png"; sourceTree = "<group>"; };
+		DBE9786C1907E89100760E6A /* wifi-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wifi-icon.png"; sourceTree = "<group>"; };
+		DBE9786E1907EA9000760E6A /* facebook-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-icon.png"; sourceTree = "<group>"; };
+		DBE9786F1907EA9000760E6A /* facebook-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-icon@2x.png"; sourceTree = "<group>"; };
 		DBF6B0DB18EC316F0048605F /* ARSWifi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSWifi.h; path = Model/ARSWifi/ARSWifi.h; sourceTree = "<group>"; };
 		DBF6B0DC18EC316F0048605F /* ARSWifi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSWifi.m; path = Model/ARSWifi/ARSWifi.m; sourceTree = "<group>"; };
 		DBF6B0DF18EC548B0048605F /* wifis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wifis.json; sourceTree = "<group>"; };
@@ -380,8 +388,12 @@
 		DB17CC741907093D003CDA8E /* Informations Icon */ = {
 			isa = PBXGroup;
 			children = (
-				DBE978581907D6B700760E6A /* wifi-icon.png */,
-				DBE978591907D6B700760E6A /* wifi-icon@2x.png */,
+				DBE9786E1907EA9000760E6A /* facebook-icon.png */,
+				DBE9786F1907EA9000760E6A /* facebook-icon@2x.png */,
+				DBE9786C1907E89100760E6A /* wifi-icon.png */,
+				DBE978601907E87F00760E6A /* dtu-icon.png */,
+				DBE978611907E87F00760E6A /* dtu-icon@2x.png */,
+				DBE978651907E87F00760E6A /* wifi-icon@2x.png */,
 				DB17CC7519070949003CDA8E /* chart.png */,
 				DB17CC7619070949003CDA8E /* chart@2x.png */,
 			);
@@ -951,8 +963,8 @@
 				DB59F48718FAC63000348BBF /* ARSCarousel.xib in Resources */,
 				DBE009CA18B78E22000B6DFE /* dinner@2x.png in Resources */,
 				DBA50A3018B7C6A0001C8AF1 /* music_icon@2x.png in Resources */,
-				DBE9785A1907D6B700760E6A /* wifi-icon.png in Resources */,
 				E1C3B77818FFC9B800D6FC18 /* carpark.png in Resources */,
+				DBE978711907EA9000760E6A /* facebook-icon@2x.png in Resources */,
 				E1C3B77A18FFCA5400D6FC18 /* kongsted.png in Resources */,
 				DBE009D418B78E22000B6DFE /* queenmachine@2x.png in Resources */,
 				DB4114A019019E5500740FF8 /* sign-in-with-facebook@2x.png in Resources */,
@@ -976,6 +988,7 @@
 				DB77EBD718DC56E400452E06 /* BackgroundIntroView-568h@2x.png in Resources */,
 				DB5B3FDE1901D25D000EBB36 /* AppIcon120.png in Resources */,
 				E1C3B78F18FFD4BD00D6FC18 /* carpark@2x.png in Resources */,
+				DBE9786D1907E89100760E6A /* wifi-icon.png in Resources */,
 				DB80E1CA1903DAE20044FF47 /* gradient@2x.png in Resources */,
 				E1C3B79218FFD4BD00D6FC18 /* kaka@2x.png in Resources */,
 				DBE009CD18B78E22000B6DFE /* jazzband.png in Resources */,
@@ -983,7 +996,6 @@
 				DBE009D118B78E22000B6DFE /* official.png in Resources */,
 				E1C3B78418FFD28400D6FC18 /* dtudance.png in Resources */,
 				DB53D33218AEBCD300508DAD /* default_background568h@2x.png in Resources */,
-				DBE9785B1907D6B700760E6A /* wifi-icon@2x.png in Resources */,
 				E1C3B79518FFD4BD00D6FC18 /* waltz@2x.png in Resources */,
 				DB811D7A18E6F6E500BB11E6 /* close.png in Resources */,
 				DB53D33018AEBCD300508DAD /* default_background.png in Resources */,
@@ -1003,6 +1015,7 @@
 				DB5C7B8519025A3500E56ECD /* AppIcon80.png in Resources */,
 				E1C3B78218FFD19D00D6FC18 /* waltz.png in Resources */,
 				E1C3B79418FFD4BD00D6FC18 /* salsa@2x.png in Resources */,
+				DBE978661907E87F00760E6A /* dtu-icon.png in Resources */,
 				DBC83A6B18E2DE380047D269 /* ARSMapViewController.xib in Resources */,
 				DBF6B0E218EC54CA0048605F /* events.json in Resources */,
 				DB5C7B97190304B500E56ECD /* locateme@2x.png in Resources */,
@@ -1020,15 +1033,18 @@
 				DBE009D218B78E22000B6DFE /* official@2x.png in Resources */,
 				DBE009CF18B78E22000B6DFE /* leslanciers.png in Resources */,
 				DB6B313718A4337300C3EABB /* Images.xcassets in Resources */,
+				DBE978701907EA9000760E6A /* facebook-icon.png in Resources */,
 				DB53D32118AE595C00508DAD /* Clock.png in Resources */,
 				DB17CC7C1907170C003CDA8E /* question@2x.png in Resources */,
 				E1C3B77C18FFCB3700D6FC18 /* jazz.png in Resources */,
 				DB5C7B99190304B500E56ECD /* logoutbutton@2x.png in Resources */,
 				DBE009CB18B78E22000B6DFE /* dj.png in Resources */,
+				DBE9786B1907E87F00760E6A /* wifi-icon@2x.png in Resources */,
 				DB5C7B8419025A3500E56ECD /* AppIcon58.png in Resources */,
 				DB4114A61901A26800740FF8 /* registerview@2x.png in Resources */,
 				E1C3B79618FFD4BD00D6FC18 /* zumba@2x.png in Resources */,
 				DB9872A018AD7EB000A085FE /* ARSEventViewController.xib in Resources */,
+				DBE978671907E87F00760E6A /* dtu-icon@2x.png in Resources */,
 				DB59F48E18FAC72100348BBF /* ARSCarouselThumbnail.xib in Resources */,
 				DB17CC73190703B4003CDA8E /* ARSInfoView.xib in Resources */,
 				DB5C7B8919029D0A00E56ECD /* Default-568h@2x.png in Resources */,
