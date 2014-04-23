@@ -255,13 +255,12 @@ public class MapActivity extends BaseActivity {
 					uCantHandleThat.removeCallbacks(runForYourLife);
 					mProgressBar.setVisibility(View.INVISIBLE);
 
-					Toast.makeText(
-							getApplicationContext(),
-							"Accuracy: " + mAccuracy + "; Latitude: "
-									+ mLatitude + "; Longitude " + mLongitude
-									+ "; Azimuth: " + mAzimuth,
-							Toast.LENGTH_LONG).show();
-
+					/*
+					 * Toast.makeText( getApplicationContext(), "Accuracy: " +
+					 * mAccuracy + "; Latitude: " + mLatitude + "; Longitude " +
+					 * mLongitude + "; Azimuth: " + mAzimuth,
+					 * Toast.LENGTH_LONG).show();
+					 */
 					// Testing: Oticon
 					// double mLatitude = 55.786907;
 					// double mLongitude = 12.525935;

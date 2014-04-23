@@ -319,12 +319,18 @@
                     "startTime": "25-04-2014:09:00",
                     "endTime": "25-04-2014:09:00",
                     "location": "l5",
-                    "description": "Igennem �rene er der blevet tradition for at k�en til billetsalget starter allerede dagen f�r, torsdag. Du kan l�se mere om denne k�-fest p� PF�s facebook side eller www.pf.dk. Det er kun tilladt at tage ophold inden for de afm�rkede omr�der, og f�rst efter kl. 17.00 torsdag d. 24. april 2014. Hele aftenen vil der v�re brandvagter til stede. Henvisninger og retningslinjer fra brandvagterne skal im�dekommes. Brandvagterne er der for din sikkerheds skyld. I l�bet af natten vil der blive uddelt k�-numre. Dit nummer er din plads i k�en n�r billetsalget starter fredag d. 25. april kl. 09.00. Der serveres morgenmad ca. kl. 07.00, inden billetsalget starter. Medarbejdere har mulighed for at k�be billetter i forsalg gennem instituttet/afdelingen. Benyttes denne mulighed er billetpriserne: 375,- (middag og bal) og 175,- (bal)",
+                    "description": "Igennem årene er der blevet tradition for at køen til billetsalget starter allerede dagen før, torsdag. Du kan læse mere om denne kø-fest på PF’s facebook side eller www.pf.dk.\n
+Det er kun tilladt at tage ophold inden for de afmærkede områder, og først efter kl. 17.00 torsdag d. 24. april 2014.\n
+Hele aftenen vil der være brandvagter til stede. Henvisninger og retningslinjer fra brandvagterne skal imødekommes. Brandvagterne er der for din sikkerheds skyld. 
+I løbet af natten vil der blive uddelt kø-numre. Dit nummer er din plads i køen når billetsalget starter fredag d. 25. april kl. 09.00.\n
+Der serveres morgenmad ca. kl. 07.00, inden billetsalget starter.   
+\n
+Medarbejdere har mulighed for at købe billetter i forsalg gennem instituttet/afdelingen. Benyttes denne mulighed er billetpriserne: 375,- (middag og bal) og 175,- (bal) ",
                     "type": "ticket sale",
                     "theme": "Priser",
                     "price": [
                         "Middag og bal: 250",
-                        "Bal (entr� efter kl. 21.00): 175",
+                        "Bal (entré efter kl. 21.00): 175",
                         "Max 4 billetter pr. person, kontant betaling."
                     ]
                 }

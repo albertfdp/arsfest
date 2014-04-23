@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="splash_title">DTU \u00C5rsfest</string>
+    <string name="splash_subtitle">Næste 9 maj 2014</string>
+    <string name="splash_json_error">Kunne ikke hente det opdaterede program.</string>
+    <string name="app_name">DTU \u00C5rsfest</string>
+    <string name="action_settings">Indstillinger</string>
+    <string name="loading">Loading&#8230;</string>
+    <string name="activity_main">Begivenhed</string>
+    <string name="events">Begivenhed</string>
+    <string name="ends">Slutter&#160;</string>
+    <string name="starts">Starter&#160;</string>
+    <string name="finish">SLUT&#160;</string>
+    <string name="library">Bibliotek</string>
+    <string name="sportshall">Sportshallen</string>
+    <string name="oticon">Oticon</string>
+    <string name="canteen">Kantinen</string>
+    <string name="tent">Teltet</string>
+    <string name="dinnerlocation">Bibliotek - Kantinen - Teltet</string>
+    <string name="enable">Aktiver</string>
+    <string name="cancel">Annuller</string>
+    <string name="stopasking">Stop med at spørge</string>
+    <string name="networkoff">Netværket er deaktiveret på den enhed</string>
+    <string name="gpsoff">GPS funktionen er deaktiveret på din enhed</string>
+    <string name="unsuccessfullocatization">Vi kan ikke lokalisere dig</string>
+    <string name="card_finished_message">The \u00C5rsfest 2014 er slut</string>
+    <string name="card_finished_submessage">Tak for din deltagelse</string>
+    <string name="action_save">Gem</string>
+    <string name="action_search">Søg</string>
+    <string name="action_map">Kort</string>
+    <string name="action_events">Program</string>
+    <string name="action_old_events">Afsluttede begivenheder</string>
+    <string name="action_tickets">Billetsalg</string>
+    <string name="showmylocation">Vis hvor jeg er </string>
+    <string name="about_tracking">Sporing</string>
+    <string name="about_tracking_info">Dele af denne app bruges i undervisningssammenhæng. For at lære om brugeroplevelsen er app en sat op til at spore visse brugerinteraktioner, såsom antallet af visninger af skærmbilleder på denne app. Al data indsamles anonymt.</string>
+    <string name="splash_button_program">Program</string>
+    <string name="splash_button_tickets">Billetter</string>
+    <string name="title_activity_ticket_sale">TicketSaleActivity</string>
+    <string name="card_price_suggested_title">Middag og bal: 250 kr</string>
+    <string name="card_price_suggested_member">Bal</string>
+    <string name="card_price_suggested_member2">Indgang efter kl. 21.00</string>
+    <string name="card_price_suggested_community">Kun 4 billetter pr. person/kø-nummer, kontant betaling</string>
+    <string name="card_price_header">Pris</string>
+    <string name="notification_header">DTU \u00C5rsfest</string>
+    <string name="notification_subtext">I dag kl. 17.00</string>
+    <string name="json">"dk.json"</string>
+
+</resources>
