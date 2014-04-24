@@ -30,7 +30,7 @@
     //Parse setup
     [Parse setApplicationId:kParseApplicationId
                   clientKey:kParseClientKey];
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     [PFFacebookUtils initializeFacebook];
     
     
@@ -41,6 +41,7 @@
     }
     
     [ARSAnalytics initializeTracker];
+    [ARSAnalytics trackViewOpenedOnlyIfWifiAvailable:@"AppOpened"];
     
     ARSEventListViewController *eventListViewController = [[ARSEventListViewController alloc] initWithNibName:@"ARSEventListViewController" bundle:nil];
     
