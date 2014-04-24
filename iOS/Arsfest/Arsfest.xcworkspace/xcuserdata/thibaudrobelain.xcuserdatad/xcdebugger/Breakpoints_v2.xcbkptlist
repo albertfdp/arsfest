@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Arsfest/Model/ARSEvent/ARSEvent.m"
-            timestampString = "414109124.646661"
+            timestampString = "420059620.754574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "+eventFromDictionary:"
             landmarkType = "5">
          </BreakpointContent>
