@@ -99,7 +99,7 @@
                 {
                     "id": "e8",
                     "name": "Dans med mig! Ballroom",
-                    "image": "",
+                    "image": "dancewithme",
                     "startTime": "09-05-2014:22:00",
                     "endTime": "09-05-2014:23:29",
                     "location": "l1",
@@ -110,7 +110,7 @@
                 {
                     "id": "e9",
                     "name": "Dans med mig! Caribbean Heat",
-                    "image": "",
+                    "image": "dancewithme",
                     "startTime": "09-05-2014:22:30",
                     "endTime": "10-05-2014:00:59",
                     "location": "l1",
@@ -121,7 +121,7 @@
                 {
                     "id": "e10",
                     "name": "Dans med mig! Turn it up!",
-                    "image": "",
+                    "image": "dancewithme",
                     "startTime": "10-05-2014:01:00",
                     "endTime": "10-05-2014:01:29",
                     "location": "l1",
@@ -132,7 +132,7 @@
                 {
                     "id": "e11",
                     "name": "Dans med mig! Club DTU DancIng",
-                    "image": "",
+                    "image": "dancewithme",
                     "startTime": "10-05-2014:01:30",
                     "endTime": "10-05-2014:02:57",
                     "location": "l1",
