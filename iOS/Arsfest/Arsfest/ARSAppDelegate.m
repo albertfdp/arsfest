@@ -41,7 +41,7 @@
     }
     
     [ARSAnalytics initializeTracker];
-    [ARSAnalytics trackViewOpenedOnlyIfWifiAvailable:@"AppOpened"];
+    [ARSAnalytics trackViewOpenedOnlyIfWifiAvailable:@"App opened from scratch"];
     
     ARSEventListViewController *eventListViewController = [[ARSEventListViewController alloc] initWithNibName:@"ARSEventListViewController" bundle:nil];
     
