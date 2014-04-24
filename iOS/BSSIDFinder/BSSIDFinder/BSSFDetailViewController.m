@@ -79,29 +79,32 @@
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"new_wifis" ofType:@"json"];
     NSMutableArray *answer = [[NSMutableArray alloc] init];
-    for (BSSFJSON*location in locations) {
+    for (BSSFJSON *location in locations) {
+        NSLog(@"%@", location.bssid);
+        NSLog(@"%@", location.latitude);
+        NSLog(@"%@", location.location);
+        NSLog(@"%@", location.longitude);
+        //NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:
+                           //  @"bssid",location.bssid,nil];
         NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:
-                             @"bssid",location.bssid,
-                             @"latitude",location.latitude,
-                             @"longitude",location.longitude,
-                             @"x","",
-                             @"y","",
-                             @"locationName",location.location,nil];
+                             location.bssid, @"bssid",
+                             location.latitude, @"latitude",
+                             location.longitude,@"longitude",
+                             @"", @"x",
+                             @"", @"y",
+                             location.location, @"locationName",nil];
         
 
         [answer addObject: dic];
+        
     }
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:answer
+                                                       options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
-//
-//    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:locations];
-//    
-//    
-    NSOutputStream *os = [[NSOutputStream alloc] initToFileAtPath:filePath append:NO];
-//
-    [os open];
-    [NSJSONSerialization writeJSONObject:answer toStream:os options:0 error:nil];
-    [os close];
-//
+    self.json.text = jsonString;
+    
 }
 
 - (NSManagedObjectContext *)managedObjectContext {
@@ -134,5 +137,6 @@
     
     return YES;
 }
+
 
 @end

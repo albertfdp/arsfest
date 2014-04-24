@@ -94,7 +94,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DGP-e5-HBR">
-                                <rect key="frame" x="20" y="222" width="280" height="30"/>
+                                <rect key="frame" x="20" y="206" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -103,15 +103,22 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbM-Hr-I5P">
-                                <rect key="frame" x="137" y="483" width="72" height="30"/>
+                                <rect key="frame" x="137" y="483" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save Json">
+                                <state key="normal" title="Get Json">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="saveJSON:" destination="Ah7-4n-0Wa" eventType="touchDown" id="YMf-SM-Rdf"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="SVP-Pu-1Vl">
+                                <rect key="frame" x="29" y="260" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -123,6 +130,7 @@
                     <navigationItem key="navigationItem" title="BSSID Info" id="cra-N8-TIN"/>
                     <connections>
                         <outlet property="bssid" destination="HeB-YY-ctB" id="epA-9M-Vb5"/>
+                        <outlet property="json" destination="SVP-Pu-1Vl" id="R2h-uW-472"/>
                         <outlet property="latitude" destination="PFw-JY-SXm" id="bhb-OO-Gki"/>
                         <outlet property="locationName" destination="DGP-e5-HBR" id="F2p-df-C9j"/>
                         <outlet property="longitude" destination="0V9-Nn-4Ei" id="ur2-J4-ZmV"/>

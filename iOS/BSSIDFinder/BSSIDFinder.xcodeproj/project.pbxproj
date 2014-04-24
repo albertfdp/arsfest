@@ -10,6 +10,7 @@
 		E12568B41907C74600B2CB10 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12568B31907C74600B2CB10 /* CoreData.framework */; };
 		E12568B71907C7B000B2CB10 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E12568B51907C7B000B2CB10 /* Model.xcdatamodeld */; };
 		E12568BA1907E50F00B2CB10 /* BSSFJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E12568B91907E50F00B2CB10 /* BSSFJSON.m */; };
+		E12568BC1908F9A800B2CB10 /* new_wifis.json in Resources */ = {isa = PBXBuildFile; fileRef = E12568BB1908F9A800B2CB10 /* new_wifis.json */; };
 		E13EBC2F19056BFA00C948E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13EBC2E19056BFA00C948E5 /* Foundation.framework */; };
 		E13EBC3119056BFA00C948E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13EBC3019056BFA00C948E5 /* CoreGraphics.framework */; };
 		E13EBC3319056BFA00C948E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13EBC3219056BFA00C948E5 /* UIKit.framework */; };
@@ -43,6 +44,7 @@
 		E12568B61907C7B000B2CB10 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E12568B81907E50F00B2CB10 /* BSSFJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSFJSON.h; sourceTree = "<group>"; };
 		E12568B91907E50F00B2CB10 /* BSSFJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSFJSON.m; sourceTree = "<group>"; };
+		E12568BB1908F9A800B2CB10 /* new_wifis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = new_wifis.json; sourceTree = "<group>"; };
 		E13EBC2B19056BFA00C948E5 /* BSSIDFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSSIDFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13EBC2E19056BFA00C948E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E13EBC3019056BFA00C948E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -141,6 +143,7 @@
 				E12568B51907C7B000B2CB10 /* Model.xcdatamodeld */,
 				E12568B81907E50F00B2CB10 /* BSSFJSON.h */,
 				E12568B91907E50F00B2CB10 /* BSSFJSON.m */,
+				E12568BB1908F9A800B2CB10 /* new_wifis.json */,
 			);
 			path = BSSIDFinder;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E13EBC4A19056BFA00C948E5 /* Images.xcassets in Resources */,
+				E12568BC1908F9A800B2CB10 /* new_wifis.json in Resources */,
 				E13EBC3919056BFA00C948E5 /* InfoPlist.strings in Resources */,
 				E13EBC4219056BFA00C948E5 /* Main.storyboard in Resources */,
 			);
