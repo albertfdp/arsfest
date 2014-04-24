@@ -85,24 +85,15 @@
     [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
     
     [self startLocationUpdateTimer];
+    if ([ARSFEST_END_DATE isEarlierThanDate:[NSDate date] fromMinutes:0]) {
+        [ARSUserController logOutUser];
+    }
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-- (void)application:(UIApplication *)application
-didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
-    // Store the deviceToken in the current installation and save it to Parse.
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation setDeviceTokenFromData:newDeviceToken];
-    [currentInstallation saveInBackground];
-}
-
-- (void)application:(UIApplication *)application
-didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [PFPush handlePush:userInfo];
 }
 
 #pragma mark -

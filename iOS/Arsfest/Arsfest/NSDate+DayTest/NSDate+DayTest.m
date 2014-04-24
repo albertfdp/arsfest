@@ -39,6 +39,7 @@
     
     [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
                  interval:NULL forDate:[NSDate date]];
+    
     [calendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate
                  interval:NULL forDate:ARSFEST_REAL_START_DATE];
     

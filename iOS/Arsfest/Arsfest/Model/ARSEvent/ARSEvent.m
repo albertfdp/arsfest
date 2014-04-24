@@ -25,7 +25,10 @@
     }else{
         event.name = [dictionary objectForKey:@"name"];
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> FETCH_HEAD
     if ([dictionary objectForKey:@"menu"] && ![preferredLang isEqualToString:@"da"]){
         NSArray *menu = [dictionary objectForKey:@"menu"];
         NSMutableString *menuDescription = [NSMutableString stringWithString:@""];

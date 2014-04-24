@@ -26,10 +26,7 @@
     [self.descriptionTextView setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:14]];
     [self.descriptionTextView setTextAlignment:NSTextAlignmentLeft];
     [self.imageView setImage:image];
-    
-    if ([UIScreen mainScreen].bounds.size.height > 480.f) {
-        [self.descriptionTextView setFrame:CGRectMake(self.descriptionTextView.frame.origin.x, self.descriptionTextView.frame.origin.y, self.descriptionTextView.frame.size.width, self.descriptionTextView.frame.size.height+88.f)];
-    }
+
 }
 
 

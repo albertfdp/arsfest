@@ -39,7 +39,6 @@
 {
     switch (newType) {
         case ARSCarouselThumbnailTypeTimer:
-//            [self.separatorView setHidden:NO];
             [self.imageContainerView setHidden:YES];
             [self.headerLabel setHidden:YES];
             [self.timerLabel setDelegate:self];
@@ -50,12 +49,13 @@
             [self.moreInfoButton addObserver:self forKeyPath:@"selected" options:0 context:nil];
             [self.moreInfoButton setClipsToBounds:YES];
             [self.timerLabel setTimerType:MZTimerLabelTypeTimer];
-            if ([NSDate daysLeftBeforeTheParty] < 1) {
+            int daysLeft = [NSDate daysLeftBeforeTheParty];
+            if (daysLeft < 1) {
                 [self.timerLabel setTimeFormat:@"HH : mm : ss"];
+                [self.timerLabel start];
             } else {
-                [self.timerLabel setTimeFormat:@"dd 'Days Left'"];
+                [self.timerLabel setText:[NSString stringWithFormat:@"%d Days Left", daysLeft]];
             }
-            [self.timerLabel start];
             
             
             break;

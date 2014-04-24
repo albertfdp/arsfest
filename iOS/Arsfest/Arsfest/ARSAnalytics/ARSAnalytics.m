@@ -54,14 +54,14 @@
 
 + (void)trackSpentTime:(NSTimeInterval)interval onScreen:(NSString*)screen
 {
-    if ([[ARSUserController sharedUserController] localWiFiAvailable]) {
-        id tracker = [[GAI sharedInstance] defaultTracker];
-        NSNumber *intervalNumber = [NSNumber numberWithDouble:interval];
-        [tracker send:[[GAIDictionaryBuilder createTimingWithCategory:@"Event"    // Timing category (required)
-                                                            interval:intervalNumber        // Timing interval (required)
-                                                                name:screen  // Timing name
-                                                               label:nil] build]];    // Timing label
-    }
+//    if ([[ARSUserController sharedUserController] localWiFiAvailable]) {
+//        id tracker = [[GAI sharedInstance] defaultTracker];
+//        NSNumber *intervalNumber = [NSNumber numberWithDouble:interval];
+//        [tracker send:[[GAIDictionaryBuilder createTimingWithCategory:@"Event"    // Timing category (required)
+//                                                            interval:intervalNumber        // Timing interval (required)
+//                                                                name:screen  // Timing name
+//                                                               label:nil] build]];    // Timing label
+//    }
 }
 
 
