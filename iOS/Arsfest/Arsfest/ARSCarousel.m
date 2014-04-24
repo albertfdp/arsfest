@@ -54,6 +54,7 @@
     
     
     if ([NSDate currentDateIsBetween:ARSFEST_REAL_START_DATE and:ARSFEST_END_DATE]) {
+
         ARSCarouselThumbnail *currentEventThumbnail = [[[NSBundle mainBundle] loadNibNamed:@"ARSCarouselThumbnail" owner:self options:nil] lastObject];
         currentEventThumbnail.event = [[ARSData data] currentEventInTheParty];
         currentEventThumbnail.type = ARSCarouselThumbnailTypeEvent;

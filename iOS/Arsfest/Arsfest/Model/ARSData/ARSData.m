@@ -83,7 +83,6 @@
 
 - (ARSEvent*)currentEventInTheParty
 {
-    
     NSMutableArray *possibleEvents = [[NSMutableArray alloc] init];
     for (ARSLocation *location in _locations) {
         for (ARSEvent *event in location.events) {
