@@ -188,9 +188,10 @@
     [self.navigationController.navigationBar.topItem setTitle:@"DTU Årsfest 2014"];
     
     // Info button
-    UIImage *leftImage = [UIImage imageNamed:@"question.png"];
-    UIBarButtonItem *leftItem = [UIBarButtonItem itemWithImage:leftImage target:self action:@selector(showInfo)];
-    [self.navigationItem setLeftBarButtonItem:leftItem];
+    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+	[infoButton addTarget:self action:@selector(showInfo) forControlEvents:UIControlEventTouchUpInside];
+	UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+	[self.navigationItem setLeftBarButtonItem:modalButton animated:YES];
 }
 
 - (void)showInfo

@@ -15,8 +15,6 @@
 		DB17CC73190703B4003CDA8E /* ARSInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB17CC72190703B4003CDA8E /* ARSInfoView.xib */; };
 		DB17CC7719070949003CDA8E /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = DB17CC7519070949003CDA8E /* chart.png */; };
 		DB17CC7819070949003CDA8E /* chart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB17CC7619070949003CDA8E /* chart@2x.png */; };
-		DB17CC7B1907170C003CDA8E /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = DB17CC791907170C003CDA8E /* question.png */; };
-		DB17CC7C1907170C003CDA8E /* question@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB17CC7A1907170C003CDA8E /* question@2x.png */; };
 		DB21FD9618BE16B80083F26C /* UIBarButtonItem+RightBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DB21FD9518BE16B80083F26C /* UIBarButtonItem+RightBarItem.m */; };
 		DB21FDAA18BE1B6E0083F26C /* ARSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB21FDA918BE1B6E0083F26C /* ARSNavigationController.m */; };
 		DB38A69818E1908F00AA12AE /* ARSAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB38A69718E1908F00AA12AE /* ARSAlertManager.m */; };
@@ -124,6 +122,8 @@
 		DBE9787C190803B800760E6A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE9787B190803B800760E6A /* AdSupport.framework */; };
 		DBE9787E190803C800760E6A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE9787D190803C800760E6A /* CoreData.framework */; };
 		DBE978801908041E00760E6A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE9787F1908041E00760E6A /* libsqlite3.dylib */; };
+		DBE9788B1908529D00760E6A /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE978891908529D00760E6A /* question.png */; };
+		DBE9788C1908529D00760E6A /* question@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE9788A1908529D00760E6A /* question@2x.png */; };
 		DBF6B0DD18EC316F0048605F /* ARSWifi.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF6B0DC18EC316F0048605F /* ARSWifi.m */; };
 		DBF6B0E018EC548B0048605F /* wifis.json in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B0DF18EC548B0048605F /* wifis.json */; };
 		DBF6B0E218EC54CA0048605F /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B0E118EC54CA0048605F /* events.json */; };
@@ -171,8 +171,6 @@
 		DB17CC72190703B4003CDA8E /* ARSInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARSInfoView.xib; sourceTree = "<group>"; };
 		DB17CC7519070949003CDA8E /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart.png; sourceTree = "<group>"; };
 		DB17CC7619070949003CDA8E /* chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chart@2x.png"; sourceTree = "<group>"; };
-		DB17CC791907170C003CDA8E /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
-		DB17CC7A1907170C003CDA8E /* question@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "question@2x.png"; sourceTree = "<group>"; };
 		DB21FD9418BE16B80083F26C /* UIBarButtonItem+RightBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+RightBarItem.h"; path = "Utilities/UIBarButtonItem+RightBarItem.h"; sourceTree = "<group>"; };
 		DB21FD9518BE16B80083F26C /* UIBarButtonItem+RightBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+RightBarItem.m"; path = "Utilities/UIBarButtonItem+RightBarItem.m"; sourceTree = "<group>"; };
 		DB21FDA818BE1B6E0083F26C /* ARSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSNavigationController.h; path = Utilities/ARSNavigationController.h; sourceTree = "<group>"; };
@@ -313,6 +311,8 @@
 		DBE9787B190803B800760E6A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		DBE9787D190803C800760E6A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DBE9787F1908041E00760E6A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		DBE978891908529D00760E6A /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
+		DBE9788A1908529D00760E6A /* question@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "question@2x.png"; sourceTree = "<group>"; };
 		DBF6B0DB18EC316F0048605F /* ARSWifi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARSWifi.h; path = Model/ARSWifi/ARSWifi.h; sourceTree = "<group>"; };
 		DBF6B0DC18EC316F0048605F /* ARSWifi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSWifi.m; path = Model/ARSWifi/ARSWifi.m; sourceTree = "<group>"; };
 		DBF6B0DF18EC548B0048605F /* wifis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wifis.json; sourceTree = "<group>"; };
@@ -535,10 +535,10 @@
 		DB53D32318AEB86700508DAD /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				DBE978891908529D00760E6A /* question.png */,
+				DBE9788A1908529D00760E6A /* question@2x.png */,
 				DB5C7B8F1902EC2300E56ECD /* location_icon.png */,
 				DB5C7B8E1902EC2300E56ECD /* location_icon@2x.png */,
-				DB17CC791907170C003CDA8E /* question.png */,
-				DB17CC7A1907170C003CDA8E /* question@2x.png */,
 				DB5C7B92190304B500E56ECD /* logoutbutton.png */,
 				DB5C7B93190304B500E56ECD /* locateme@2x.png */,
 				DB5C7B94190304B500E56ECD /* locateme.png */,
@@ -1009,6 +1009,7 @@
 				DB98729918AD74B500A085FE /* ARSEventCell.xib in Resources */,
 				DB5C7B8D1902E89A00E56ECD /* official_icon@2x.png in Resources */,
 				E1C3B77418FD3F3D00D6FC18 /* abbatizers.png in Resources */,
+				DBE9788C1908529D00760E6A /* question@2x.png in Resources */,
 				DB17CC7819070949003CDA8E /* chart@2x.png in Resources */,
 				E1C3B77E18FFCD6400D6FC18 /* salsa.png in Resources */,
 				E1C3B78E18FFD4BD00D6FC18 /* abbatizers@2x.png in Resources */,
@@ -1016,6 +1017,7 @@
 				E1C3B79118FFD4BD00D6FC18 /* jazz@2x.png in Resources */,
 				DBE009D018B78E22000B6DFE /* leslanciers@2x.png in Resources */,
 				DB811D7B18E6F6E500BB11E6 /* close@2x.png in Resources */,
+				DBE9788B1908529D00760E6A /* question.png in Resources */,
 				DBA50A2B18B7C6A0001C8AF1 /* dance_icon.png in Resources */,
 				DB811D7718E6E0E800BB11E6 /* buildingmap@2x.png in Resources */,
 				DB9D6E2C18F47CB000D76BA8 /* refresh.png in Resources */,
@@ -1058,7 +1060,6 @@
 				DBE009CE18B78E22000B6DFE /* jazzband@2x.png in Resources */,
 				E147EE0019015C0600C2D8B8 /* ARSInfoViewController.xib in Resources */,
 				DBBEC19718A6DAC200212106 /* ARSEventListViewController.xib in Resources */,
-				DB17CC7B1907170C003CDA8E /* question.png in Resources */,
 				E1C3B78018FFD07400D6FC18 /* zumba.png in Resources */,
 				DB53D32218AE595C00508DAD /* Clock@2x.png in Resources */,
 				DB17CC7719070949003CDA8E /* chart.png in Resources */,
@@ -1071,7 +1072,6 @@
 				DB6B313718A4337300C3EABB /* Images.xcassets in Resources */,
 				DBE978701907EA9000760E6A /* facebook-icon.png in Resources */,
 				DB53D32118AE595C00508DAD /* Clock.png in Resources */,
-				DB17CC7C1907170C003CDA8E /* question@2x.png in Resources */,
 				E1C3B77C18FFCB3700D6FC18 /* jazz.png in Resources */,
 				DB5C7B99190304B500E56ECD /* logoutbutton@2x.png in Resources */,
 				DBE009CB18B78E22000B6DFE /* dj.png in Resources */,
