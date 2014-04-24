@@ -101,7 +101,9 @@ typedef NS_ENUM(NSInteger, kService) {
 
 + (void)logOutUser
 {
-    [PFUser logOut];
+    if ([ARSUserController isUserLoggedIn]) {
+        [PFUser logOut];        
+    }
 }
 
 + (BOOL)isUserLoggedIn
