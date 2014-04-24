@@ -20,13 +20,13 @@
     
     ARSEvent *event = [[ARSEvent alloc] init];
     
-    if ([preferredLang isEqualToString:@"dk"]) {
+    if ([preferredLang isEqualToString:@"da"]) {
         event.name = [dictionary objectForKey:@"danishName"];
     }else{
         event.name = [dictionary objectForKey:@"name"];
     }
-
-    if ([dictionary objectForKey:@"menu"]){
+    NSLog(@"%@", preferredLang);
+    if ([dictionary objectForKey:@"menu"] && ![preferredLang isEqualToString:@"da"]){
         NSArray *menu = [dictionary objectForKey:@"menu"];
         NSMutableString *menuDescription = [NSMutableString stringWithString:@""];
         NSString *coffee = @"";
@@ -55,8 +55,37 @@
             
         }
         event.description = menuDescription;
+    }else if ([dictionary objectForKey:@"menuDK"]){
+        NSArray *menu = [dictionary objectForKey:@"menuDK"];
+        NSMutableString *menuDescription = [NSMutableString stringWithString:@""];
+        NSString *coffee = @"";
+        for(NSDictionary *dish in menu) {
+            //[menuDescription appendString:@"\t"];
+            if ([[dish objectForKey:@"course"] isEqualToString:@"Kaffe"]) {
+                coffee = [dish objectForKey:@"name"];
+                
+            }else if ([[dish objectForKey:@"course"] isEqualToString:@"Drikkevarer"]){
+                [menuDescription appendString:[dish objectForKey:@"course"]];
+                [menuDescription appendString:@"\n"];
+                [menuDescription appendString:@"\n"];
+                [menuDescription appendString:[dish objectForKey:@"name"]];
+                [menuDescription appendString:@"\n"];
+                [menuDescription appendString:@"\n"];
+                [menuDescription appendString:coffee];
+            }else{
+                [menuDescription appendString:[dish objectForKey:@"course"]];
+                [menuDescription appendString:@"\n"];
+                [menuDescription appendString:@"\n"];
+                [menuDescription appendString:[dish objectForKey:@"name"]];
+                [menuDescription appendString:@"\n"];
+                [menuDescription appendString:@"\n"];
+            }
+            
+            
+        }
+        event.description = menuDescription;
     }else{
-        if ([preferredLang isEqualToString:@"dk"]) {
+        if ([preferredLang isEqualToString:@"da"]) {
             event.description = [dictionary objectForKey:@"danishDescription"];
         }else{
             event.description = [dictionary objectForKey:@"description"];

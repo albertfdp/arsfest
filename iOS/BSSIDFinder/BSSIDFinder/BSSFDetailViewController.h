@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *latitude;
 @property (weak, nonatomic) IBOutlet UILabel *longitude;
 @property (weak, nonatomic) IBOutlet UITextField *locationName;
+@property (weak, nonatomic) IBOutlet UITextView *json;
 
 -(IBAction) appendNewLocation:(id)sender;
 
