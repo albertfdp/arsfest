@@ -46,5 +46,5 @@
     <string name="notification_header">DTU \u00C5rsfest</string>
     <string name="notification_subtext">I dag kl. 17.00</string>
     <string name="json">"dk.json"</string>
-
+	<string name="list_card_undo_title">Undo</string>
 </resources>
