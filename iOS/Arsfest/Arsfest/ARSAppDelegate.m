@@ -85,10 +85,10 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
     
-    [self startLocationUpdateTimer];
     if ([ARSFEST_END_DATE isEarlierThanDate:[NSDate date] fromMinutes:0]) {
         [ARSUserController logOutUser];
     }
+    [self startLocationUpdateTimer];
     
 }
 
