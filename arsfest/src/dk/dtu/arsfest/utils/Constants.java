@@ -29,7 +29,7 @@ public class Constants {
 	public static final String SharedPreferences = "SharedPreferences";
 	public static final String GPSRequest = "SharedPreferencesGPS";
 	public static final String NetworkRequest = "SharedPreferencesNetwork";
-	public static final double AzimuthTreshold = 25;
+	public static final double AzimuthTreshold = 5;
 	// Change below with scripts/generate_coordinates.py
 	public static final double aLeftCoefficientMap = 5.80162601623;
 	public static final double bLeftCoefficientMap = -16.8665276907;
