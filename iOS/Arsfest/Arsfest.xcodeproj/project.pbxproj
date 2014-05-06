@@ -1282,8 +1282,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 79241BB9B33948DDAE553BAF /* Pods.xcconfig */;
 			buildSettings = {
+<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+=======
+				CODE_SIGN_IDENTITY = "iPhone Distribution: DTU Informatics (JD4KMD4VG6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: DTU Informatics (JD4KMD4VG6)";
+>>>>>>> FETCH_HEAD
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					$HOME/Documents/DTU/Mobile_Prototyping/Dev/arsfest/iOS/Arsfest,
@@ -1303,6 +1308,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1311,8 +1317,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 79241BB9B33948DDAE553BAF /* Pods.xcconfig */;
 			buildSettings = {
+<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+=======
+				CODE_SIGN_IDENTITY = "iPhone Distribution: DTU Informatics (JD4KMD4VG6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: DTU Informatics (JD4KMD4VG6)";
+>>>>>>> FETCH_HEAD
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					$HOME/Documents/DTU/Mobile_Prototyping/Dev/arsfest/iOS/Arsfest,
@@ -1332,6 +1343,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
