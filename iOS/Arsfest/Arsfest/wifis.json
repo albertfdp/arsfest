@@ -1,6 +1,14 @@
 {
     "bssids": [
                {
+               "bssid": "0:1c:e:42:7e:82",
+               "locationName": "Canteen",
+               "latitude": 55.78669,
+               "longitude": 55.78669,
+               "x": 314,
+               "y": 380
+               },
+               {
                "y": 506,
                "bssid": "34:a8:4e:ba:fb:f2",
                "locationName": "Sports Hall",
@@ -108,8 +116,8 @@
                "y": 585,
                "bssid": "3c:ce:73:8:17:2d",
                "locationName": "Meeting Center",
-               "latitude": "55.786018",
-               "longitude": "55.786018",
+               "latitude": 55.786018,
+               "longitude": 55.786018,
                "x": 374
                },
                {
@@ -124,8 +132,8 @@
                "y": 588,
                "bssid": "0:1c:e:42:d1:92",
                "locationName": "Meeting Center",
-               "latitude": 55.786030,
-               "longitude": 55.786030,
+               "latitude": 55.78603,
+               "longitude": 55.78603,
                "x": 305
                },
                {
@@ -139,7 +147,7 @@
                {
                "y": 589,
                "bssid": "a4:56:30:8f:50:ad",
-               "locationName": "AccommodationEntrance",
+               "locationName": "Accommodation Entrance",
                "latitude": 55.786118,
                "longitude": 55.786118,
                "x": 258
@@ -147,7 +155,7 @@
                {
                "y": 256,
                "bssid": "64:ae:c:90:f3:b2",
-               "locationName": "AccommodationEntrance",
+               "locationName": "Accommodation Entrance",
                "latitude": 55.785984,
                "longitude": 55.785984,
                "x": 256
@@ -163,7 +171,7 @@
                {
                "y": 436,
                "bssid": "54:78:1a:21:cb:f2",
-               "locationName": "AccommodationOffice",
+               "locationName": "Accommodation Office",
                "latitude": 55.786129,
                "longitude": 55.786129,
                "x": 186
@@ -331,8 +339,8 @@
                {
                "bssid": "34:a8:4e:ba:b7:f2",
                "locationName": "Library",
-               "latitude": "55.786869",
-               "longitude": "55.786869",
+               "latitude": 55.786869,
+               "longitude": 55.786869,
                "x": 120,
                "y": 275
                },
@@ -347,8 +355,8 @@
                {
                "bssid": "d8:24:bd:b5:98:c2",
                "locationName": "Library",
-               "latitude": 55.787010,
-               "longitude": 55.787010,
+               "latitude": 55.78701,
+               "longitude": 55.78701,
                "x": 120,
                "y": 275
                },
@@ -363,7 +371,7 @@
                {
                "bssid": "d8:24:bd:b5:98:cd",
                "locationName": "Library",
-               "latitude": 55.786850,
+               "latitude": 55.78685,
                "longitude": 55.78685,
                "x": 120,
                "y": 275
@@ -371,8 +379,8 @@
                {
                "bssid": "d8:24:bd:b5:98:cd",
                "locationName": "Library",
-               "latitude": 55.786850,
-               "longitude": 55.786850,
+               "latitude": 55.78685,
+               "longitude": 55.78685,
                "x": 120,
                "y": 275
                },
@@ -459,8 +467,8 @@
                {
                "bssid": "d8:24:bd:d4:2c:cd",
                "locationName": "Library",
-               "latitude": 55.786980,
-               "longitude": 55.786980,
+               "latitude": 55.78698,
+               "longitude": 55.78698,
                "x": 120,
                "y": 275
                },
@@ -471,6 +479,190 @@
                "x": 785,
                "y": 121,
                "locationName": "Oticon"
+               },
+               {
+               "bssid": "34:a8:4e:ba:92:b2",
+               "locationName": "Library",
+               "latitude": 55.78701,
+               "longitude": 55.78701,
+               "x": 120,
+               "y": 275
+               },
+               {
+               "bssid": "0:1c:e:42:73:12",
+               "locationName": "Library",
+               "latitude": 55.78701,
+               "longitude": 55.78701,
+               "x": 120,
+               "y": 275
+               },
+               {
+               "bssid": "0:23:5e:95:a1:92",
+               "locationName": "Library",
+               "latitude": 55.786934,
+               "longitude": 55.786934,
+               "x": 120,
+               "y": 275
+               },
+               {
+               "bssid": "0:27:d:48:39:ad",
+               "locationName": "Library",
+               "latitude": 55.78701,
+               "longitude": 55.78701,
+               "x": 120,
+               "y": 275
+               },
+               {
+               "bssid": "34:a8:4e:ba:92:bd",
+               "locationName": "Library",
+               "latitude": 55.787006,
+               "longitude": 55.787006,
+               "x": 120,
+               "y": 275
+               },
+               {
+               "y": 299,
+               "x": 810,
+               "bssid": "0:1c:e:42:d2:e2",
+               "locationName": "S-huset",
+               "latitude": 55.786434,
+               "longitude": 55.786434
+               },
+               {
+               "y": 299,
+               "x": 810,
+               "bssid": "0:1c:e:42:d2:cd",
+               "locationName": "S-Huset",
+               "latitude": 55.786526,
+               "longitude": 55.786526
+               },
+               {
+               "y": 299,
+               "x": 810,
+               "bssid": "0:1c:e:42:d2:c2",
+               "locationName": "S-Huset",
+               "latitude": 55.786465,
+               "longitude": 55.786465
+               },
+               {
+               "y": 450,
+               "x": 773,
+               "bssid": "34:a8:4e:ba:fb:fd",
+               "locationName": "Sports Hall",
+               "latitude": 55.785728,
+               "longitude": 55.785728
+               },
+               {
+               "bssid": "34:a8:4e:ba:b8:a2",
+               "locationName": "Oticon",
+               "latitude": 55.787125,
+               "longitude": 55.787125,
+               "x": 785,
+               "y": 121
+               },
+               {
+               "bssid": "34:a8:4e:ba:b9:32",
+               "locationName": "Oticon",
+               "latitude": 55.787041,
+               "longitude": 55.787041,
+               "x": 785,
+               "y": 121
+               },
+               {
+               "bssid": "34:a8:4e:ba:92:b2",
+               "locationName": "Library",
+               "latitude": 55.78701,
+               "longitude": 55.78701,
+               "x": 120,
+               "y": 275
+               },
+               {
+               "bssid": "0:1c:e:42:73:12",
+               "locationName": "Library",
+               "latitude": 5.78701,
+               "longitude": 55.78701,
+               "x": 120,
+               "y": 275
+               },
+               {
+               "bssid": "0: 23: 5e: 95: a1: 92",
+               "locationName": "Library",
+               "latitude": 55.786934,
+               "longitude": 55.786934,
+               "x": 120,
+               "y": 275
+               },
+               {
+               "bssid": "0: 27: d: 48: 39: ad",
+               "locationName": "Library",
+               "latitude": 55.78701,
+               "longitude": 55.78701,
+               "x": 120,
+               "y": 275
+               },
+               {
+               "bssid": "34: a8: 4e: ba: 92: bd",
+               "locationName": "Library",
+               "latitude": 55.787006,
+               "longitude": 55.787006,
+               "x": 120,
+               "y": 275
+               },
+               {
+               "bssid": "34: a8: 4e: ba: 92: b2",
+               "locationName": "Library",
+               "latitude": 55.786884,
+               "longitude": 55.786884,
+               "x": 120,
+               "y": 275
+               },
+               {
+               "y": 299,
+               "x": 810,
+               "bssid": "0: 1c: e: 42: d2: e2",
+               "locationName": "S-huset",
+               "latitude": 55.786434,
+               "longitude": 55.786434
+               },
+               {
+               "y": 299,
+               "x": 810,
+               "bssid": "0: 1c: e: 42: d2: cd",
+               "locationName": "S-Huset",
+               "latitude": 55.786526,
+               "longitude": 55.786526
+               },
+               {
+               "y": 299,
+               "x": 810,
+               "bssid": "0: 1c: e: 42: d2: c2",
+               "locationName": "S-Huset",
+               "latitude": 55.786465,
+               "longitude": 55.786465
+               },
+               {
+               "y": 450,
+               "x": 773,
+               "bssid": "34: a8: 4e: ba: fb: fd",
+               "locationName": "SportsHall",
+               "latitude": 55.785728,
+               "longitude": 55.785728
+               },
+               {
+               "bssid": "34: a8: 4e: ba: b8: a2",
+               "locationName": "Oticon",
+               "latitude": 55.787125,
+               "longitude": 55.787125,
+               "x": 785,
+               "y": 121
+               },
+               {
+               "bssid": "34: a8: 4e: ba: b9: 32",
+               "locationName": "Oticon",
+               "latitude": 55.787041,
+               "longitude": 55.787041,
+               "x": 785,
+               "y": 121
                }
                ]
 }

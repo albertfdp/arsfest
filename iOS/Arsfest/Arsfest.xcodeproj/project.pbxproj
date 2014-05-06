@@ -1283,7 +1283,7 @@
 			baseConfigurationReference = 79241BB9B33948DDAE553BAF /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: DTU Informatics (JD4KMD4VG6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					$HOME/Documents/DTU/Mobile_Prototyping/Dev/arsfest/iOS/Arsfest,
@@ -1312,7 +1312,7 @@
 			baseConfigurationReference = 79241BB9B33948DDAE553BAF /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: DTU Informatics (JD4KMD4VG6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					$HOME/Documents/DTU/Mobile_Prototyping/Dev/arsfest/iOS/Arsfest,
