@@ -87,7 +87,7 @@ public class SplashActivity extends SherlockActivity {
 
 		// update fonts
 		Typeface font = Typeface.createFromAsset(getAssets(),
-				Constants.TYPEFONT_NEOSANS);
+				Constants.TYPEFONT_ROBOTO);
 		splashTitle.setTypeface(font);
 		splashSubtitle.setTypeface(font);
 		programButton.setTypeface(font);

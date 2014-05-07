@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class PostEventCard extends Card{
 
 	public PostEventCard(Context context) {
-		super(context, R.layout.card_event_inner_content);
+		super(context, R.layout.card_postevent_inner);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -19,8 +19,8 @@ public class PostEventCard extends Card{
 		
 		if (view != null) {
 			
-			TextView title = (TextView) view.findViewById(R.id.card_event_inner_content_title);
-			TextView location = (TextView) view.findViewById(R.id.card_event_inner_content_location);
+			TextView title = (TextView) view.findViewById(R.id.card_postevent_title);
+			TextView location = (TextView) view.findViewById(R.id.card_postevent_subtitle);
 			
 			if (title != null)
 				title.setText(R.string.card_finished_message);

@@ -2,7 +2,9 @@ package dk.dtu.arsfest.utils;
 
 public class Constants {
 
-	public final static String TYPEFONT_NEOSANS = "fonts/NeoSans.ttf";
+	public final static String TYPEFONT_NEOSANS = "fonts/Roboto-Regular.ttf";
+	public final static String TYPEFONT_ROBOTO = "fonts/Roboto-Regular.ttf";
+	
 	public static final String TAG = "ARSFEST";
 	public static final String IMG_CONTENT_PROVIDER_URL = "https://dl.dropboxusercontent.com/u/3792125/arsfest2014/assets/img/";
 	public static final String JSON_URL = "https://dl.dropboxusercontent.com/u/3792125/arsfest2014/assets/data/data.json";

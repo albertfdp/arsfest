@@ -26,7 +26,7 @@
         android:gravity="center"
         android:text="@string/splash_subtitle"
         android:textColor="@android:color/white"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/splash_button_tickets"
@@ -43,7 +43,7 @@
         android:paddingRight="26dip"
         android:text="@string/splash_button_tickets"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="22sp" />
 
     <Button
         android:id="@+id/splash_button_program"
@@ -61,6 +61,6 @@
         android:paddingRight="26dip"
         android:text="@string/splash_button_program"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="22sp" />
 
 </RelativeLayout>
