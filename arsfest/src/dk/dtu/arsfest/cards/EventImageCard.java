@@ -4,6 +4,7 @@ import it.gmariotti.cardslib.library.internal.Card;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -31,6 +32,9 @@ public class EventImageCard extends Card {
 			ImageView eventImage = (ImageView) view.findViewById(R.id.carddemo_inside_image);
 		
 			imageLoader.displayImage(Constants.IMG_CONTENT_PROVIDER_URL + this.event.getImage() + ".jpg", (ImageView) eventImage);
+			
+			view.getLayoutParams().width = LayoutParams.MATCH_PARENT;
+			view.getLayoutParams().height = 250;
 		}
     }
 
