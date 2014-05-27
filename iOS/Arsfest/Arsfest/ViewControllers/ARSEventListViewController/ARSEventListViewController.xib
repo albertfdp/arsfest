@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARSEventListViewController">
+            <connections>
+                <outlet property="backgroundView" destination="egy-bK-VjV" id="y7E-sw-amq"/>
+                <outlet property="bottomView" destination="Hm7-l5-gTz" id="qVC-BW-Akn"/>
+                <outlet property="carouselView" destination="Qe7-aa-4vA" id="lJg-VH-pMk"/>
+                <outlet property="eventListTableView" destination="gEH-me-qcF" id="1RW-V5-yQF"/>
+                <outlet property="menuScrollView" destination="veF-Cv-biX" id="roS-fp-UNq"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ldB-GE-Mba">
+                    <rect key="frame" x="-20" y="-25" width="360" height="608"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="egy-bK-VjV">
+                            <rect key="frame" x="20" y="20" width="320" height="568"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="568" id="7je-mp-cGI"/>
+                                <constraint firstAttribute="width" constant="320" id="Vxp-Ro-ecz"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qe7-aa-4vA" customClass="ARSCarousel">
+                            <rect key="frame" x="20" y="26" width="320" height="137"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4U-Ae-XiO">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </scrollView>
+                                <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fgQ-Op-24G">
+                                    <rect key="frame" x="140" y="110" width="39" height="37"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </pageControl>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="X4U-Ae-XiO" secondAttribute="bottom" id="KLY-dK-GFb"/>
+                                <constraint firstAttribute="bottom" secondItem="fgQ-Op-24G" secondAttribute="bottom" constant="-10" id="hYc-w2-YTO"/>
+                                <constraint firstItem="X4U-Ae-XiO" firstAttribute="top" secondItem="Qe7-aa-4vA" secondAttribute="top" id="u1c-hu-eYu"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="pageControl" destination="fgQ-Op-24G" id="h3D-QA-tMx"/>
+                                <outlet property="scrollView" destination="X4U-Ae-XiO" id="Duy-6s-ap0"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hm7-l5-gTz">
+                            <rect key="frame" x="20" y="164.00000599250984" width="320" height="279"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gEH-me-qcF">
+                                    <rect key="frame" x="0.0" y="48" width="320" height="232"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" red="0.94144610969999998" green="0.94144610969999998" blue="0.94144610969999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="p0q-2R-IZV"/>
+                                        <outlet property="delegate" destination="-1" id="dhf-Zf-H8m"/>
+                                    </connections>
+                                </tableView>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veF-Cv-biX" customClass="ARSHorizontalScrollingHeader">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </scrollView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="gEH-me-qcF" firstAttribute="top" secondItem="veF-Cv-biX" secondAttribute="bottom" id="2Px-Mx-WQc"/>
+                                <constraint firstAttribute="bottom" secondItem="gEH-me-qcF" secondAttribute="bottom" constant="-1" id="A5u-xQ-eC8"/>
+                                <constraint firstItem="gEH-me-qcF" firstAttribute="top" secondItem="Hm7-l5-gTz" secondAttribute="top" constant="48" id="HhN-mu-Zfd"/>
+                                <constraint firstItem="veF-Cv-biX" firstAttribute="top" secondItem="Hm7-l5-gTz" secondAttribute="top" id="ILY-Fd-Xit"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Qe7-aa-4vA" firstAttribute="top" secondItem="ldB-GE-Mba" secondAttribute="top" constant="26" id="7Nh-GJ-70p"/>
+                        <constraint firstItem="Hm7-l5-gTz" firstAttribute="top" secondItem="ldB-GE-Mba" secondAttribute="top" constant="164" id="8Vb-4i-7K1"/>
+                        <constraint firstItem="Hm7-l5-gTz" firstAttribute="top" secondItem="Qe7-aa-4vA" secondAttribute="bottom" constant="1" id="Ajj-Hp-Lje"/>
+                        <constraint firstAttribute="bottom" secondItem="Hm7-l5-gTz" secondAttribute="bottom" constant="165" id="fQY-XK-ad7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ldB-GE-Mba" secondAttribute="bottom" constant="-167" id="UU7-oM-k3A"/>
+                <constraint firstItem="ldB-GE-Mba" firstAttribute="top" secondItem="1" secondAttribute="top" constant="-25" id="xgx-H3-esB"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARSMapViewController">
+            <connections>
+                <outlet property="containerView" destination="cXB-8z-KiR" id="kNV-Ej-k5Z"/>
+                <outlet property="friendListDataView" destination="ThE-h3-afp" id="9GI-OY-tgg"/>
+                <outlet property="friendListLoadingView" destination="pNY-2q-qLg" id="c3E-9W-fzr"/>
+                <outlet property="friendListView" destination="MCM-Au-LQo" id="htB-0y-ZFr"/>
+                <outlet property="friendsListTableView" destination="0cO-gu-pWo" id="c1r-uR-Jsf"/>
+                <outlet property="loginButton" destination="V4p-ZE-WKo" id="Qxf-mj-efh"/>
+                <outlet property="mapScrollView" destination="buj-a9-vFs" id="DDs-kN-F9C"/>
+                <outlet property="mapView" destination="MVB-ju-hh4" id="rTM-gg-iYQ"/>
+                <outlet property="noFriendsRegisteredLabel" destination="p1o-A8-313" id="E55-Gr-XXr"/>
+                <outlet property="registerView" destination="JfY-Hc-c02" id="zwc-e3-hEh"/>
+                <outlet property="segmentedControl" destination="b7G-oj-BkJ" id="ceY-Ho-GVg"/>
+                <outlet property="segmentedControlButtonItem" destination="o3r-yF-Rof" id="M1F-ul-lT9"/>
+                <outlet property="toolbar" destination="WO6-7t-MGG" id="mJK-Sj-D40"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="QJe-FB-xVw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WO6-7t-MGG">
+                    <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="b18-zC-yT4"/>
+                        <constraint firstAttribute="height" constant="44" id="tK9-rv-BT0"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem style="plain" id="o3r-yF-Rof">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" id="b7G-oj-BkJ">
+                                <rect key="frame" x="16" y="7" width="161" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="Friends"/>
+                                </segments>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXB-8z-KiR" userLabel="Container view">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVB-ju-hh4" userLabel="Map view">
+                            <rect key="frame" x="0.0" y="1" width="320" height="371"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" minimumZoomScale="0.40000000000000002" maximumZoomScale="1.5" translatesAutoresizingMaskIntoConstraints="NO" id="buj-a9-vFs">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="371"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </scrollView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="buj-a9-vFs" secondAttribute="bottom" id="JEF-m5-WAx"/>
+                                <constraint firstItem="buj-a9-vFs" firstAttribute="top" secondItem="MVB-ju-hh4" secondAttribute="top" id="MBk-jJ-SPb"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCM-Au-LQo" userLabel="Friend list view">
+                            <rect key="frame" x="0.0" y="1" width="320" height="371"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ThE-h3-afp" userLabel="View - Data">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="371"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0cO-gu-pWo">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="371"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <inset key="separatorInset" minX="80" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="-1" id="3h1-tV-Qfr"/>
+                                                <outlet property="delegate" destination="-1" id="iLs-1L-CI5"/>
+                                            </connections>
+                                        </tableView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="None of your friends are currently registered in the app.                     Come back later to check!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1o-A8-313">
+                                            <rect key="frame" x="40" y="166" width="240" height="80"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="p1o-A8-313" secondAttribute="bottom" constant="125" id="OHL-5H-Wsx"/>
+                                        <constraint firstItem="p1o-A8-313" firstAttribute="top" secondItem="ThE-h3-afp" secondAttribute="top" constant="166" id="Oze-ga-IjR"/>
+                                        <constraint firstItem="0cO-gu-pWo" firstAttribute="top" secondItem="ThE-h3-afp" secondAttribute="top" id="SPY-B5-xqc"/>
+                                        <constraint firstAttribute="bottom" secondItem="0cO-gu-pWo" secondAttribute="bottom" id="sQt-0r-Fah"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pNY-2q-qLg" userLabel="View - Loading">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="371"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wn8-Zj-LLv">
+                                            <rect key="frame" x="45" y="176" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Refreshing friends data..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mnf-e6-VF5">
+                                            <rect key="frame" x="80" y="175" width="187" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="Mnf-e6-VF5" secondAttribute="centerY" id="7nC-fa-TDy"/>
+                                        <constraint firstAttribute="centerY" secondItem="wn8-Zj-LLv" secondAttribute="centerY" id="Pff-su-s68"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="ThE-h3-afp" firstAttribute="top" secondItem="MCM-Au-LQo" secondAttribute="top" id="9Vg-fC-QC5"/>
+                                <constraint firstItem="pNY-2q-qLg" firstAttribute="top" secondItem="MCM-Au-LQo" secondAttribute="top" id="DxT-Ys-YK8"/>
+                                <constraint firstAttribute="bottom" secondItem="ThE-h3-afp" secondAttribute="bottom" id="Z31-nH-T6s"/>
+                                <constraint firstAttribute="bottom" secondItem="pNY-2q-qLg" secondAttribute="bottom" id="o9Y-BN-Vq7"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JfY-Hc-c02" userLabel="Register view">
+                            <rect key="frame" x="0.0" y="1" width="320" height="371"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="registerview.png" translatesAutoresizingMaskIntoConstraints="NO" id="uCR-oj-7oA">
+                                    <rect key="frame" x="0.0" y="30" width="320" height="73"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBp-1k-Gpo">
+                                    <rect key="frame" x="17" y="111" width="287" height="150"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <string key="text">Registering with Facebook enables you to find your friends during the party. 
+By registering, you agree to share your location with your friends for the duration of the party. 
+
+You will be able to unregister at any time and the application will automatically log you out when the party is over. </string>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4p-ZE-WKo">
+                                    <rect key="frame" x="37" y="297" width="246" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="sign-in-with-facebook.png">
+                                        <color key="titleColor" red="0.75409731660000001" green="0.7527842146" blue="0.74687875739999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" image="sign-in-with-facebook-highlighted.png"/>
+                                    <connections>
+                                        <action selector="loginUser:" destination="-1" eventType="touchUpInside" id="VRn-Wu-uzv"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Find your friends with Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6E7-wR-LKU">
+                                    <rect key="frame" x="37" y="8" width="247" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="jBp-1k-Gpo" firstAttribute="top" secondItem="uCR-oj-7oA" secondAttribute="bottom" constant="6" id="Jbf-FB-FaL"/>
+                                <constraint firstAttribute="centerY" secondItem="jBp-1k-Gpo" secondAttribute="centerY" id="KIe-1v-axw"/>
+                                <constraint firstItem="uCR-oj-7oA" firstAttribute="top" secondItem="6E7-wR-LKU" secondAttribute="bottom" constant="1" id="RM7-Vz-PLg"/>
+                            </constraints>
+                            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="MVB-ju-hh4" firstAttribute="top" secondItem="cXB-8z-KiR" secondAttribute="top" constant="1" id="5Ys-l3-OjT"/>
+                        <constraint firstAttribute="bottom" secondItem="JfY-Hc-c02" secondAttribute="bottom" id="8Ft-UJ-bFb"/>
+                        <constraint firstItem="MCM-Au-LQo" firstAttribute="top" secondItem="cXB-8z-KiR" secondAttribute="top" constant="1" id="GW4-oo-g7T"/>
+                        <constraint firstAttribute="width" constant="320" id="Rhm-rq-VwL"/>
+                        <constraint firstAttribute="bottom" secondItem="MVB-ju-hh4" secondAttribute="bottom" id="cbo-dM-G4I"/>
+                        <constraint firstAttribute="bottom" secondItem="MCM-Au-LQo" secondAttribute="bottom" id="nSp-MP-rA7"/>
+                        <constraint firstItem="JfY-Hc-c02" firstAttribute="top" secondItem="cXB-8z-KiR" secondAttribute="top" constant="1" id="uIz-ju-6Pp"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="WO6-7t-MGG" firstAttribute="top" secondItem="cXB-8z-KiR" secondAttribute="bottom" id="IQO-Vf-8VM"/>
+                <constraint firstAttribute="bottom" secondItem="WO6-7t-MGG" secondAttribute="bottom" id="OB8-2J-Ofq"/>
+                <constraint firstItem="WO6-7t-MGG" firstAttribute="top" secondItem="V4p-ZE-WKo" secondAttribute="bottom" constant="20" id="PHM-8f-2rt"/>
+                <constraint firstItem="cXB-8z-KiR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bwr-Mq-Sdd"/>
+                <constraint firstAttribute="trailing" secondItem="cXB-8z-KiR" secondAttribute="trailing" id="g5C-wm-Bcm"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="registerview.png" width="320" height="73"/>
+        <image name="sign-in-with-facebook-highlighted.png" width="246" height="54"/>
+        <image name="sign-in-with-facebook.png" width="246" height="54"/>
+    </resources>
+</document>
