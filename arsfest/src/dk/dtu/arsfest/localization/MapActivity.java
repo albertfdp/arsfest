@@ -314,9 +314,9 @@ public class MapActivity extends BaseActivity {
 				super.onPageFinished(v, url);
 				mMapWebView.getSettings().setUseWideViewPort(true);
 				mMapWebView.getSettings().setLoadWithOverviewMode(true);
-				mMapWebView.getSettings().setBuiltInZoomControls(false);
+				mMapWebView.getSettings().setBuiltInZoomControls(true);
 				mMapWebView.getSettings().setDisplayZoomControls(false);
-				mMapWebView.getSettings().setSupportZoom(false);
+				//mMapWebView.getSettings().setSupportZoom(false);
 				mMapWebView.setInitialScale(100);
 			}
 		});
@@ -327,7 +327,7 @@ public class MapActivity extends BaseActivity {
 			@Deprecated
 			public void onNewPicture(WebView view, Picture picture) {
 				mMapWebView.setWebViewClient(null);
-				mMapWebView.getSettings().setUseWideViewPort(false);
+				//mMapWebView.getSettings().setUseWideViewPort(false);
 				mMapScroll = new ScrollHelper(mLocalization
 						.getScroll(mInitialLocation), new int[] {
 						view.getMeasuredWidth(), view.getMeasuredHeight() },

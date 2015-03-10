@@ -32,7 +32,7 @@ public class GenerateHTML {
 	public GenerateHTML(int[] pinPosition, boolean showPIN) {
 		mHTML += "<html>"
 				+ "<head>"
-				+ "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" />"
+				+ "<meta name=\"viewport\" content=\"width=device-width\" />"
 				+ "<script>" + mScripts5 + mScripts4 + mScripts + mScripts2
 				+ mScripts3 + "</script>" + "<style type='text/css'>";
 		if (showPIN) {
