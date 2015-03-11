@@ -17,3 +17,7 @@ About the team
 ---
 
 We are a group of 5 students from DTU that collaborate with [PF](http://www.pf.dk/en/) and the administration of [DTU](http://dtu.dk) to code this apps.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/albertfdp/arsfest/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
