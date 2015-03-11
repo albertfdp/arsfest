@@ -59,10 +59,6 @@ public class MainActivity extends BaseActivity {
 	    
 	    readProgramme();
 	    
-//	    Event happeningNow = getHappenningNow();
-//	    if (happeningNow != null)
-//	    	onHappenningNow(happeningNow);
-	    
 	   if (events.isEmpty()) {
 	    	createArsfestFinishedCard();
 	    } else {
@@ -95,29 +91,14 @@ public class MainActivity extends BaseActivity {
 		// sort events by start time
 		Collections.sort(events, Event.START_TIME);
 		
-		// remove finished, if needed
-		/*if (!showFinishedEvents) {
-			ArrayList<Event> finishedEvents = new ArrayList<Event>();
-			for (Event event : events) {
-				if (event.hasFinished())
-					finishedEvents.add(event);
-			}
-			events.removeAll(finishedEvents);
-		} else { // remove not finished
-			ArrayList<Event> notFinished = new ArrayList<Event>();
-			for (Event event : events) {
-				if (!event.hasFinished())
-					notFinished.add(event);
-			}
-			events.removeAll(notFinished);
-		}*/
-		
 	}
 	
 	private void createArsfestFinishedCard() {
 		PostEventCard card = new PostEventCard(this);
 		
-		cards.add(0,card);
+		
+		if(!(cards.get(0) instanceof PostEventCard))
+			cards.add(0,card);
 		
 		CardArrayAdapter cardArrayAdapter = new CardArrayAdapter(this, cards);
 		CardListView cardsView = (CardListView) findViewById(R.id.arsfest_events_list);
@@ -157,53 +138,6 @@ public class MainActivity extends BaseActivity {
 		if (cardsView != null) cardsView.setAdapter(cardArrayAdapter);
 		
 	}
-	
-//	private void onHappenningNow(Event event) {
-//		happeningNowCard = new HappenningNowCard(this, event);
-//		
-//		CardHeader cardHeader = new HappeningNowHeader(this);
-//		cardHeader.setTitle("Happening now");
-//		happeningNowCard.addCardHeader(cardHeader);
-//		
-//		UniversalImageLoaderThumbnail cardThumbnail = new UniversalImageLoaderThumbnail(this);
-//		cardThumbnail.setUrl(event.getImage());
-//		happeningNowCard.addCardThumbnail(cardThumbnail);
-//		
-//		happeningNowCard.setShadow(true);
-//		
-//		happeningNowCardView = (CardView) findViewById(R.id.card_happening_now);
-//		happeningNowCardView.setCard(happeningNowCard);
-//		
-//		
-//	}
-	
-//	private void createCards() {
-//		cards = new ArrayList<Card>();
-//		
-//		for (Event event : events) {
-//			Card card = new Card(this, R.layout.card_event_inner);
-//			card.setTitle(event.getStartTime().toString());
-//			
-//			CardHeader cardHeader = new CardHeader(this);
-//			cardHeader.setTitle(event.getName());
-//			
-//			//PicassoThumbnail cardThumbnail = new PicassoThumbnail(this);
-//			UniversalImageLoaderThumbnail cardThumbnail = new UniversalImageLoaderThumbnail(this, options);
-//			cardThumbnail.setUrl(event.getImage());
-//			
-//			card.addCardHeader(cardHeader);
-//			card.addCardThumbnail(cardThumbnail);
-//			
-//			card.setSwipeable(true);
-//			
-//			cards.add(card);
-//		}
-//		
-//		CardArrayAdapter cardArrayAdapter = new CardArrayAdapter(this, cards);
-//		CardListView cardsView = (CardListView) findViewById(R.id.event_list);
-//		if (cardsView != null) cardsView.setAdapter(cardArrayAdapter);
-//		
-//	}
 
 	@Override
 	protected void onStart() {

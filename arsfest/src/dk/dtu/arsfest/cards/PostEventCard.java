@@ -31,6 +31,12 @@ public class PostEventCard extends Card{
 		}
 
     }
+	
+	@Override
+	public String toString(){
+		return this.getTitle();
+	}
+
 
 	
 }
