@@ -169,7 +169,7 @@ public class MainActivity extends BaseActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		
-		final SearchView searchView = new SearchView(getSupportActionBar().getThemedContext());
+		/*final SearchView searchView = new SearchView(getSupportActionBar().getThemedContext());
 		searchView.setQueryHint("Search");
 		
 		menu.add(R.string.action_search)
@@ -193,7 +193,7 @@ public class MainActivity extends BaseActivity {
 			}
 		};
 		
-		searchView.setOnQueryTextListener(queryTextListener);
+		searchView.setOnQueryTextListener(queryTextListener);*/
 		
 		return super.onCreateOptionsMenu(menu);
 	}
