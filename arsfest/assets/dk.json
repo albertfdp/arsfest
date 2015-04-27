@@ -6,83 +6,116 @@
             "longitude": 12.525475,
             "name": "Sportshallen",
             "color": "#2ecc71",
-            "description": "",
+            "description": "The Hall, Building 101B",
             "events": [
                 {
                     "id": "e0",
                     "name": "Officiel del",
                     "image": "official",
-                    "startTime": "09-05-2014:17:00",
-                    "endTime": "09-05-2014:19:00",
+                    "startTime": "08-05-2015:16:50",
+                    "endTime": "08-05-2015:18:30",
                     "location": "l0",
-                    "description": "Udover taler af rektor og af formanden for PF indeholder den officielle del uddeling af akademiske hædersbevisninger. Professor Thomas Lars Andresen, DTU Nanotech, holder festforedrag om brugen af nanoteknologi til bekæmpelse af sygdomme samt kunsten at programmere i kemiske koder.\n\nProgrammet veksler med musikalske indslag ved solist Stine Louise Henriksen og kapelmester Andreas Vetö.\n\nBilletinfo: Der er gratis entré, men et begrænset antal pladser.\n\nDørene lukkes senest 16.50 eller når den maksimale personbelastning er nået.",
-                    "type": "official",
+                    "description": "Åbningen af årsfesten finder sted fra kl. 17.00 , hvor programmet - udover taler af rektor og formanden for PF - indeholder uddeling af akademiske hædersbevisninger og professor Karsten Arnbjerg-Nielsen, DTU Miljø, holder festforedrag om Vandets vej gennem byen – til hverdag og fest. Programmet suppleres med afvekslende musikindslag i anledning af Carl Nielsen-året.\n\nDer er fri adgang til Festsalen, så længe pladsen tillader.\n\nBemærk! Dørene lukkes kl. 16.50, og der er kun undtagelsesvis adgang efter dette tidspunkt. Der er tolkning og head-sets til rådighed for internationale medarbejdere og gæster.",
+		    "type": "official",
                     "theme": "official"
                 },
-                {
+		{
                     "id": "e1",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
-                    "startTime": "09-05-2014:22:00",
-                    "endTime": "09-05-2014:22:24",
-                    "location": "l0",
-                    "description": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede. I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester. \n\nLes lanciers består af fem ture: La Dorset, La Victoria (også kendt som komplimentturen), Les Moulinets (også kendt som damemøllen), Les Visites (også kendt som visitturen), Les Lanciers (også kendt som herremøllen). \n\n En hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
-                    "type": "official",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e2",
                     "name": "DJ",
                     "image": "dj",
-                    "startTime": "09-05-2014:22:25",
-                    "endTime": "09-05-2014:23:19",
+                    "startTime": "08-05-2015:22:00",
+                    "endTime": "08-05-2015:22:09",
                     "location": "l0",
-                    "description": "There is DJ playing in the Sports Hall. Come and enjoy the music!",
+                    "description": "There is a DJ playing in the Sports Hall. Come and enjoy the music!",
                     "type": "official",
                     "theme": "music"
                 },
                 {
-                    "id": "e3",
+                    "id": "e2",
                     "name": "Les Lanciers",
                     "image": "leslanciers",
-                    "startTime": "09-05-2014:23:20",
-                    "endTime": "09-05-2014:23:34",
+                    "startTime": "08-05-2015:22:10",
+                    "endTime": "08-05-2015:22:24",
                     "location": "l0",
-                    "description": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede. I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester. \n\nLes lanciers består af fem ture: La Dorset, La Victoria (også kendt som komplimentturen), Les Moulinets (også kendt som damemøllen), Les Visites (også kendt som visitturen), Les Lanciers (også kendt som herremøllen). \n\n En hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
+                    "description": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede. I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester. \n\nLes lanciers består af fem ture: La Dorset, La Victoria (også kendt som komplimentturen), Les Moulinets (også kendt som damemøllen), Les Visites (også kendt som visitturen), Les Lanciers (også kendt som herremøllen).",
                     "type": "official",
                     "theme": "dance"
                 },
                 {
-                    "id": "e4",
-                    "name": "Carpark North",
-                    "image": "carpark_north",
-                    "startTime": "09-05-2014:23:35",
-                    "endTime": "10-05-2014:00:29",
+                    "id": "e3",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "08-05-2015:22:25",
+                    "endTime": "08-05-2015:22:59",
                     "location": "l0",
-                    "description": "Carpark North er nok Danmarks bedste og mest energiske electro-rockband. Carpark North byder på stærke, iørefaldende og nærværende numre fra tre meget gennemførte plader, hvor det seneste hedder ”Grateful”. De fleste husker sikkert, da Carpark North sparkede døren ind til den danske musikscene med storhittet “Transparent And Glasslike” tilbage i 2003. Et hit, som Carpark North i dag kan notere som ét blandt fire andre uundgåelige hits på P3 gennem tiden.\n\nCarpark North har også masser at byde på live. Det kan alle, der har oplevet dem, skrive under på. Det er ganske enkelt bare en fantastisk oplevelse at overvære Carpark North og den helt enestående energi og passion, bandet tager med på scenen hver eneste gang. Og så trækker det jo bestemt ikke ned, at bandet står bag så mange store hits, at publikum kan synge med til koncerterne.\n\nI 2013 kom der nyt materiale fra Carpark North, da det fjerde album kom på gaden. Lige nu storhitter de med ”32” feat. Stine Bramsen. Der er masser at glæde sig til.",
+                    "description": "There is a DJ playing in the Sports Hall. Come and enjoy the music!",
+                    "type": "official",
+                    "theme": "music"
+                },
+                {
+                    "id": "e4",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "08-05-2015:23:00",
+                    "endTime": "08-05-2015:23:14",
+                    "location": "l0",
+                    "description": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede. I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester. \n\nLes lanciers består af fem ture: La Dorset, La Victoria (også kendt som komplimentturen), Les Moulinets (også kendt som damemøllen), Les Visites (også kendt som visitturen), Les Lanciers (også kendt som herremøllen).",
+		   "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e5",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "08-05-2015:23:15",
+                    "endTime": "08-05-2015:23:59",
+                    "location": "l0",
+                    "description": "There is a DJ playing in the Sports Hall. Come and enjoy the music!",
+                    "type": "official",
+                    "theme": "music"
+                },
+		{
+                    "id": "e6",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "09-05-2015:00:00",
+                    "endTime": "09-05-2015:00:14",
+                    "location": "l0",
+                     "description": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede. I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester. \n\nLes lanciers består af fem ture: La Dorset, La Victoria (også kendt som komplimentturen), Les Moulinets (også kendt som damemøllen), Les Visites (også kendt som visitturen), Les Lanciers (også kendt som herremøllen).",
+                    "type": "official",
+                    "theme": "dance"
+                },
+		{
+                    "id": "e7",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "09-05-2015:00:15",
+                    "endTime": "09-05-2015:00:29",
+                    "location": "l0",
+                    "description": "There is a DJ playing in the Sports Hall. Come and enjoy the music!",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e8",
+                    "name": "Hej Matematik",
+                    "image": "hej_matematik",
+                    "startTime": "09-05-2015:00:30",
+                    "endTime": "09-05-2015:01:29",
+                    "location": "l0",
+                    "description": "Hej Matematik (literally 'Hi Mathematics' and also the title of a Danish primary school math book) is a Danish pop band, consisting of the Aqua-member Søren Rasted and his nephew Nicolaj Rasted. On live shows, they are accompanied by Nikolaj Teinvig on guitar, Nicholas Findsen on bass, Mads Storm on keyboards and Peter Düring on drums.\n\nHej Matematik has done well on the Danish charts. Their debut album was Vi burde ses noget mere. The single 'Walkmand' won the Danish 'Hit of the Year' at Zulu Awards 2009 — an annual award-ceremony held by Denmark's largest commercial television station TV 2. after the song made it to #3 in the Danish Singles Chart. The 11-track album was released in a special edition that included 'Walkmand' as a 12th track as an additional bonus.\n\nHej Matematik's release of 'Party i provinsen', the lead single of their second album, reached #2 in the Danish Singles Chart. The album Alt går op i 6 was released in Denmark on 25 January 2010.",
                     "type": "nonofficial",
                     "theme": "music",
                     "remark": true
                 },
                 {
-                    "id": "e5",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
-                    "startTime": "10-05-2014:00:30",
-                    "endTime": "10-05-2014:00:59",
-                    "location": "l0",
-                    "description": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede. I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester. \n\nLes lanciers består af fem ture: La Dorset, La Victoria (også kendt som komplimentturen), Les Moulinets (også kendt som damemøllen), Les Visites (også kendt som visitturen), Les Lanciers (også kendt som herremøllen). \n\n En hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
-                    "type": "official",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e6",
+                    "id": "e9",
                     "name": "DJ",
                     "image": "dj",
-                    "startTime": "10-05-2014:01:00",
-                    "endTime": "10-05-2014:03:00",
+                    "startTime": "09-05-2015:01:30",
+                    "endTime": "09-05-2015:03:00",
                     "location": "l0",
-                    "description": "There is DJ playing in the Sports Hall. Come and enjoy the music!",
+                    "description": "There is a DJ playing in the Sports Hall. Come and enjoy the music!",
                     "type": "nonofficial",
                     "theme": "music"
                 }
@@ -92,52 +125,63 @@
             "id": "l1",
             "latitude": 55.786893,
             "longitude": 12.523265,
-            "name": "Bibliotek",
+            "name": "Library",
             "description": "",
             "color": "#2980b9",
             "events": [
                 {
-                    "id": "e8",
-                    "name": "Dans med mig! Ballroom",
-                    "image": "dancewithme",
-                    "startTime": "09-05-2014:22:00",
-                    "endTime": "09-05-2014:23:29",
-                    "location": "l1",
-                    "description": "Kort intro til Vals & Standard/Latin og Tango Argentino",
-                    "type": "nonofficial",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e9",
-                    "name": "Dans med mig! Caribbean Heat",
-                    "image": "dancewithme",
-                    "startTime": "09-05-2014:22:30",
-                    "endTime": "10-05-2014:00:59",
-                    "location": "l1",
-                    "description": "Kort intro til Salsa & Kort intro til Bachata",
-                    "type": "nonofficial",
-                    "theme": "dance"
-                },
-                {
                     "id": "e10",
-                    "name": "Dans med mig! Turn it up!",
-                    "image": "dancewithme",
-                    "startTime": "10-05-2014:01:00",
-                    "endTime": "10-05-2014:01:29",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "08-05-2015:23:00",
+                    "endTime": "08-05-2015:23:14",
                     "location": "l1",
-                    "description": "Zumba & Kort intro til Jitterbug",
-                    "type": "nonofficial",
+                    "description": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede. I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester. \n\nLes lanciers består af fem ture: La Dorset, La Victoria (også kendt som komplimentturen), Les Moulinets (også kendt som damemøllen), Les Visites (også kendt som visitturen), Les Lanciers (også kendt som herremøllen).",
+                    "type": "official",
                     "theme": "dance"
                 },
                 {
                     "id": "e11",
-                    "name": "Dans med mig! Club DTU DancIng",
-                    "image": "dancewithme",
-                    "startTime": "10-05-2014:01:30",
-                    "endTime": "10-05-2014:02:57",
+                    "name": "Blå Mandag Jazzband",
+                    "image": "bla_mandag_jazzband",
+                    "startTime": "08-05-2015:23:15",
+                    "endTime": "08-05-2015:23:59",
                     "location": "l1",
-                    "description": "Vores særlige miks af stilarter med overraskelser og social dans.",
+                    "description": "Blå Mandag is the name of a seven membered Jazzband, who has played together for 28 years. We sing and play to please others, and we, ourselves, enjoy it very much.\n\nWe love making jokes while playing, and having played together for many years, we think we are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\n\nOur motto is: 'We are there for you', so our most distinguished purpose is. 'To play in the honour of our audience and guests' so they will have a tremendous experience.",
                     "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e12",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "09-05-2015:00:00",
+                    "endTime": "09-05-2015:00:14",
+                    "location": "l1",
+                    "description": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede. I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester. \n\nLes lanciers består af fem ture: La Dorset, La Victoria (også kendt som komplimentturen), Les Moulinets (også kendt som damemøllen), Les Visites (også kendt som visitturen), Les Lanciers (også kendt som herremøllen).",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e13",
+                    "name": "Blå Mandag Jazzband",
+                    "image": "bla_mandag_jazzband",
+                    "startTime": "09-05-2015:00:15",
+                    "endTime": "09-05-2015:00:59",
+                    "location": "l1",
+                    "description": "Blå Mandag is the name of a seven membered Jazzband, who has played together for 28 years. We sing and play to please others, and we, ourselves, enjoy it very much.\n\nWe love making jokes while playing, and having played together for many years, we think we are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\n\nOur motto is: 'We are there for you', so our most distinguished purpose is. 'To play in the honour of our audience and guests' so they will have a tremendous experience.",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e14",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "09-05-2015:01:00",
+                    "endTime": "09-05-2015:01:15",
+                    "location": "l1",
+                    "description": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede. I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester. \n\nLes lanciers består af fem ture: La Dorset, La Victoria (også kendt som komplimentturen), Les Moulinets (også kendt som damemøllen), Les Visites (også kendt som visitturen), Les Lanciers (også kendt som herremøllen).",
+                    "type": "official",
                     "theme": "dance"
                 }
             ]
@@ -146,62 +190,62 @@
             "id": "l2",
             "latitude": 55.78683,
             "longitude": 12.525871,
-            "name": "Oticon",
+            "name": "Oticon Hall",
             "description": "",
-            "color": "#c0392b",
+            "color": "#1abc9c",
             "events": [
                 {
-                    "id": "e12",
-                    "name": "DJ",
-                    "image": "dj",
-                    "startTime": "09-05-2014:21:00",
-                    "endTime": "09-05-2014:22:44",
-                    "location": "l2",
-                    "description": "There is DJ playing in the Oticon Hall. Come and enjoy the music!",
-                    "type": "nonofficial",
-                    "theme": "music"
-                },
-                {
-                    "id": "e13",
-                    "name": "Kaka",
-                    "image": "kaka",
-                    "startTime": "09-05-2014:22:45",
-                    "endTime": "09-05-2014:23:44",
-                    "location": "l2",
-                    "description": "Kaka er Danmarks nyeste up-and-coming dancehall stjerne. Kaka brugte al sin tid som barn på at høre musik, og som 10-årig skrev han sin første sang. Kaka er godt i gang med at erobre Danmark med sit karakteristiske flow, hans positive energi, smittende smil og legende lette tilgang til livet.\n\nI 2007 fik Kaka sin debut på musikscenen, live og på nettet med stærkt populære YouTube klip. Han har samarbejdet med flere velkendte artister før han valgte at gå solo.\n\nStor efterspørgsel på Kakas navn i undergrunden varslede at et nyt talent snart ville komme frem til overfladen. 2011 blev året hvor Danmark rigtig fik øjnene op for den nye stjerne. Det var også året hvor Kaka havde sin første solo udgivelse ’Mere Energi’ som en del af Pharfar og Fresh-I’s Alis Riddim.\n\nI slutningen af maj 2012 udkom Kaka’s første rigtige single ’Bang Bang (Reggaejam)’, som første udgivelse på Donkey Recs! Sangen blev super godt modtaget og blev straks Ugens Uundgåelige på P3, MAMAs kæledægge på DR Mama og MTV Fresh (powerplay) og steg højt på streaming og download listerne.\n\nKakas debut EP ramte gaden i August 2012, med sommer singlen 'DanskDancehall'. Har du tændt din radio i 2013/2014 har du hørt ’En sidste Sang’ med Kaka. ",
-                    "type": "nonofficial",
-                    "theme": "music"
-                },
-                {
-                    "id": "e14",
-                    "name": "DJ",
-                    "image": "dj",
-                    "startTime": "09-05-2014:23:45",
-                    "endTime": "10-05-2014:00:59",
-                    "location": "l2",
-                    "description": "There is DJ playing in the Oticon Hall. Come and enjoy the music!",
-                    "type": "nonofficial",
-                    "theme": "music"
-                },
-                {
                     "id": "e15",
-                    "name": "Kongsted",
-                    "image": "kongsted",
-                    "startTime": "10-05-2014:01:00",
-                    "endTime": "10-05-2014:01:59",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "08-05-2015:21:00",
+                    "endTime": "08-05-2015:22:29",
                     "location": "l2",
-                    "description": "Andreas Kongsted, nærmere kendt som KONGSTED, Danmarks nye stjerneskud på DJ scenen, har som den første danske DJ nogensinde formået at blive nomineret til prisen som Årets Danske Mainstream DeeJay fire år i træk og har vundet i 2010 og 2011. I 2013 var Kongsted nomineret til Årets Danske Deejay - en titel, som ikke er til at tage fejl af!\n\nIgennem de sidste fire år har han KONGSTED produceret et hav af solide singler, bla.: 'Mardi Gras',  'The Spirit', 'Good Times' og 'Live Your Life' .\nNyeste præstationer fra Kongsted er først en guld og senest en platin certificering af hans nyeste single 'Chuck Norris'.\n\nMed sin unikke evne til at forstå et publikum, skaber Kongsted en euforisk stemning, en stemning der er underbygget af et bredt musikvalg med fundamentet i house genren og leveret med sublime tekniske færdigheder for dansegulvet.\n\nKongsted er på nuværende tidspunkt den 10. mest streamede artist i Danmark.",
+                    "description": "There is a DJ playing in the Oticon Hall. Come and enjoy the music!",
                     "type": "nonofficial",
                     "theme": "music"
                 },
                 {
                     "id": "e16",
+                    "name": "Scarlet Pleasure",
+                    "image": "scarlet_pleasure",
+                    "startTime": "08-05-2015:22:30",
+                    "endTime": "08-05-2015:23:29",
+                    "location": "l2",
+                    "description": "Scarlet Pleasure is a Danish R&B, soul, funk and pop musical trio made up of Emil Goll as lead vocals, Alexander Malone on bass and Joachim Dencker on drums. The formative years of the all-Danish trio was in New York City. They released 22 September, 2014 their EP 'Mirage' on 22 September 2014 charting in Tracklisten, the official Danish Albums Chart. The single 'Windy' was prereleased in February 2014 and was chosen as P3s Uundgåelige for a week. It was followed by 'Under the Palm Trees'. The band is signed to Copenhagen Records.",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e17",
                     "name": "DJ",
                     "image": "dj",
-                    "startTime": "10-05-2014:02:00",
-                    "endTime": "10-05-2014:05:00",
+                    "startTime": "08-05-2015:23:30",
+                    "endTime": "09-05-2015:01:29",
                     "location": "l2",
-                    "description": "There will be DJ playing in the Oticon Hall during the night. Come and enjoy the music!",
+                    "description": "There is a DJ playing in the Oticon Hall. Come and enjoy the music!",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e18",
+                    "name": "Svenstrup og Vendelboe",
+                    "image": "svenstruup_og_vendelboe",
+                    "startTime": "09-05-2015:01:30",
+                    "endTime": "09-05-2015:02:29",
+                    "location": "l2",
+                    "description": "Svenstrup & Vendelboe is an electro / dance / house producer team from Denmark, consisting of Kasper Svenstrup and Thomas Vendelboe.\n\nSvenstrup and Vendelboe, produced music together for several years under various names. But in 2007 they decided to focus entirely on the commercial house scene under the name Svenstrup & Vendelboe. They became famous for the single 'I Nat' with singer Karen. But their big breakthrough came with their remix of Medina's single 'Kun for mig' winning two Danish DeeJay Awards in 2010 for their mix of the song. In 2011, they also released 'Dybt vand featuring Danish singer Nadia Malm on vocals. They have remixed hits by Robyn, Basim, Burhan G, Brinck, Emma, Medina, Outlandish and many others.",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e19",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "09-05-2015:02:30",
+                    "endTime": "09-05-2015:05:00",
+                    "location": "l2",
+                    "description": "There is a DJ playing in the Oticon Hall. Come and enjoy the music!",
                     "type": "nonofficial",
                     "theme": "music"
                 }
@@ -209,167 +253,59 @@
         },
         {
             "id": "l3",
-            "latitude": 55.785496,
-            "longitude": 12.525008,
-            "name": "Teltet",
+            "latitude": 55.786451, 
+            "longitude": 12.525694,
+            "name": "S-huset",
             "description": "",
             "color": "#c0392b",
             "events": [
                 {
-                    "id": "e18",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
-                    "startTime": "09-05-2014:22:15",
-                    "endTime": "09-05-2014:22:39",
-                    "location": "l3",
-                    "description": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede. I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester. \n\nLes lanciers består af fem ture: La Dorset, La Victoria (også kendt som komplimentturen), Les Moulinets (også kendt som damemøllen), Les Visites (også kendt som visitturen), Les Lanciers (også kendt som herremøllen). \n\n En hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
-                    "type": "official",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e19",
-                    "name": "ABBAtizers",
-                    "image": "Abbatizers",
-                    "startTime": "09-05-2014:22:40",
-                    "endTime": "09-05-2014:23:39",
-                    "location": "l3",
-                    "description": "The ABBAtizers består af 6 dedikerede personer der med et glimt i øjet har viet deres liv til at standse tiden og beame os alle tilbage til 70ernes guldalder og ABBAs storhedstid. \n\nI The ABBAtizers fantastiske univers møder man en verden hvor Agnethas øjne har aldrig været mere blå og plateaustøvlerne strammer de helt rigtige steder.\nThe ABBAtizers hylder discoen og udfordrer alle med bare et minimum af rytmesans. Med humor, stil og stor respekt for originalen spiller de kort sagt r….ud deres lidt for tætsiddende satinbukser.\n\nThe ABBAtizers tager publikum på en musikalsk rejse gennem alle de store ABBA kompositioner og de holder sig ikke tilbage: showet gennemføres helt ud i detaljen så både ABBA elskere og hidtil uindviede får en maksimal oplevelse.\n\nFlower Power Rules...",
-                    "type": "nonofficial",
-                    "theme": "music"
-                },
-                {
                     "id": "e20",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
-                    "startTime": "09-05-2014:23:40",
-                    "endTime": "09-05-2014:23:59",
+                    "name": "Det Ny Big Band feat. Anna David og Mark Linn",
+                    "image": "ny_big_band",
+                    "startTime": "08-05-2015:22:30",
+                    "endTime": "08-05-2015:23:29",
                     "location": "l3",
-                    "description": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede. I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester. \n\nLes lanciers består af fem ture: La Dorset, La Victoria (også kendt som komplimentturen), Les Moulinets (også kendt som damemøllen), Les Visites (også kendt som visitturen), Les Lanciers (også kendt som herremøllen). \n\n En hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
-                    "type": "official",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e21",
-                    "name": "ABBAtizers",
-                    "image": "Abbatizers",
-                    "startTime": "10-05-2014:00:00",
-                    "endTime": "10-05-2014:00:59",
-                    "location": "l3",
-                    "description": "The ABBAtizers består af 6 dedikerede personer der med et glimt i øjet har viet deres liv til at standse tiden og beame os alle tilbage til 70ernes guldalder og ABBAs storhedstid. \n\nI The ABBAtizers fantastiske univers møder man en verden hvor Agnethas øjne har aldrig været mere blå og plateaustøvlerne strammer de helt rigtige steder.\nThe ABBAtizers hylder discoen og udfordrer alle med bare et minimum af rytmesans. Med humor, stil og stor respekt for originalen spiller de kort sagt r….ud deres lidt for tætsiddende satinbukser.\n\nThe ABBAtizers tager publikum på en musikalsk rejse gennem alle de store ABBA kompositioner og de holder sig ikke tilbage: showet gennemføres helt ud i detaljen så både ABBA elskere og hidtil uindviede får en maksimal oplevelse.\n\nFlower Power Rules...",
+                    "description": "",
                     "type": "nonofficial",
                     "theme": "music"
-                },
-                {
-                    "id": "e22",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
-                    "startTime": "10-05-2014:01:00",
-                    "endTime": "10-05-2014:01:20",
-                    "location": "l3",
-                    "description": "Lanciers bliver danset flere gange i løbet af aftenen, både i Hallen og Teltet.\n\nLes Lanciers danses i en kvadrille, d.v.s. som en dans udført af 4 par. Les Lanciers er en sammensmeltning af en række kontradanse til én dansesuite, med 5 ture i alt. Les Lanciers findes mange forskellige steder i mange forskellige afskygninger, men dansens poplaritet faldt i begyndelsen af det 20. århundrede. I Danmark har dansen overlevet i 140 år med sin egen musik og koreografi.\n\nI Danmark danses Les Lanciers ved hoffet, ved mange universiteter og gymnasier og private fester. \n\nLes lanciers består af fem ture: La Dorset, La Victoria (også kendt som komplimentturen), Les Moulinets (også kendt som damemøllen), Les Visites (også kendt som visitturen), Les Lanciers (også kendt som herremøllen). \n\n En hurtig opfriskning af dansen kan klares (på engelsk) i Oticon Salen tirsdag 6. maj (kl. 16:30) og torsdag 8. maj (17:15). Gratis entré.",
-                    "type": "official",
-                    "theme": "dance"
                 }
             ]
         },
         {
             "id": "l4",
-            "latitude": 55.786489,
-            "longitude": 12.524634,
-            "name": "Kantinen",
-            "description": "",
-            "color": "#c0392b",
-            "events": [
-                {
-                    "id": "e24",
-                    "name": "Blå Mandag Jazzband, 1. set",
-                    "image": "blaa_mandag",
-                    "startTime": "09-05-2014:23:15",
-                    "endTime": "09-05-2014:23:59",
-                    "location": "l4",
-                    "description": "Blå Mandag er navnet på jazzband med syv medlemmer som har spillet sammen i 28 år. Som de skriver på deres hjemmeside, så synger og spiller de for at glæde andre, og nyder det også selv rigtig meget. De elsker at lege mens de spiller, og har spillet sammen i mange år. Blå Mandag Jazzband mener selv de er ret gode til at lave gammel, sjov og traditionel New Orleans Jazz, som er nem at danse til.\n\nDeres motto er 'Vi er der for dig' så deres mål er at spille i ære for vores publikum og gæster, så de får en fanstastisk oplevelse.",
-                    "type": "nonofficial",
-                    "theme": "music"
-                },
-                {
-                    "id": "e24",
-                    "name": "Blå Mandag Jazzband, 2. set",
-                    "image": "blaa_mandag",
-                    "startTime": "10-05-2014:00:15",
-                    "endTime": "10-05-2014:01:00",
-                    "location": "l4",
-                    "description": "Blå Mandag er navnet på jazzband med syv medlemmer som har spillet sammen i 28 år. Som de skriver på deres hjemmeside, så synger og spiller de for at glæde andre, og nyder det også selv rigtig meget. De elsker at lege mens de spiller, og har spillet sammen i mange år. Blå Mandag Jazzband mener selv de er ret gode til at lave gammel, sjov og traditionel New Orleans Jazz, som er nem at danse til.\n\nDeres motto er 'Vi er der for dig' så deres mål er at spille i ære for vores publikum og gæster, så de får en fanstastisk oplevelse.",
-                    "type": "nonofficial",
-                    "theme": "music"
-                }
-            ]
-        },
-        {
-            "id": "l5",
-            "latitude": 55.786489,
-            "longitude": 12.524634,
-            "name": "Administrationshallen bygn. 101A DTU Lyngby Campus",
-            "description": "",
-            "color": "#c0392b",
-            "events": [
-                {
-                    "id": "e24",
-                    "name": "Ticket sale",
-                    "image": "dinner",
-                    "startTime": "25-04-2014:09:00",
-                    "endTime": "25-04-2014:09:00",
-                    "location": "l5",
-                    "description": "Igennem årene er der blevet tradition for at køen til billetsalget starter allerede dagen før, torsdag. Du kan læse mere om denne kø-fest på PF’s facebook side eller www.pf.dk.\n
-Det er kun tilladt at tage ophold inden for de afmærkede områder, og først efter kl. 17.00 torsdag d. 24. april 2014.\n
-Hele aftenen vil der være brandvagter til stede. Henvisninger og retningslinjer fra brandvagterne skal imødekommes. Brandvagterne er der for din sikkerheds skyld. 
-I løbet af natten vil der blive uddelt kø-numre. Dit nummer er din plads i køen når billetsalget starter fredag d. 25. april kl. 09.00.\n
-Der serveres morgenmad ca. kl. 07.00, inden billetsalget starter.   
-\n
-Medarbejdere har mulighed for at købe billetter i forsalg gennem instituttet/afdelingen. Benyttes denne mulighed er billetpriserne: 375,- (middag og bal) og 175,- (bal) ",
-                    "type": "ticket sale",
-                    "theme": "Priser",
-                    "price": [
-                        "Middag og bal: 250",
-                        "Bal (entré efter kl. 21.00): 175",
-                        "Max 4 billetter pr. person, kontant betaling."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "l6",
             "latitude": 55.785949,
             "longitude": 12.525475,
-            "name": "Bibliotek - Kantinen - Teltet",
+            "name": "Library - Canteen",
             "color": "#f1c40f",
-            "description": "Bibliotek - Kantinen - Teltet",
+            "description": "Library - Canteen",
             "events": [
                 {
-                    "id": "e24",
-                    "name": "Middag",
+                    "id": "e21",
+                    "name": "Dinner",
                     "image": "dinner",
-                    "startTime": "09-05-2014:19:15",
-                    "endTime": "09-05-2014:21:30",
-                    "location": "l6",
+                    "startTime": "08-05-2015:19:15",
+                    "endTime": "08-05-2015:21:30",
+                    "location": "l4",
                     "description": "",
                     "type": "official",
                     "theme": "food",
                     "menu": [
                         {
-                            "course": "Forret",
-                            "name": "Lakserillette toppet med lime marinerede rejer med friske krydderurter. Salat med hele cherrytomater og friske grønne asparges, hertil chili/ingefær dressing. Hertil græskar bolle."
+                            "course": "Starter",
+                            "name": "Salmon"
                         },
                         {
-                            "course": "Hovedret",
-                            "name": "Helstegt oksefilet med rosin sauce. Bagte grøntsager med bolchebeder og gulbeder. Små bagte kartofler med krydderurter. Stegte blommer med vanilje."
+                            "course": "Main",
+                            "name": "Duck"
                         },
                         {
-                            "course": "Kaffe",
-                            "name": "Kaffe/the og petit fours."
+                            "course": "Coffee",
+                            "name": "Coffee/tea and petit fours."
                         },
                         {
                             "course": "Drinks",
-                            "name": "Til forretten serveres et glas hvidvin, og til hovedretten serveres et glas rødvin. Der kan bestilles ekstra vin i S-huset. 1 flaske koster 95,- i forsalg. Vinen vil blive leveret under forretten. Drikkevarer kan også købes i barerne på aftenen. På aftenen koster 1 flaske vin 120,-. Hvidvin: 2013 Chardonnay, William Cole – Casablanca Valley (Chile). Rødvin: 2012 Comte de Roc Oval – Costieres de Nîmes (Frankrig)"
+                            "name": "Wine (white and/or red) is served at the table. Additional wine is on sale."
                         }
                     ]
                 }
