@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import android.content.Context;
-
 import dk.dtu.arsfest.R;
 
 public class LocalizationHelper {
@@ -23,6 +22,7 @@ public class LocalizationHelper {
 				new int[] { 1610, 980 });
 		mMap.put(mContext.getString(R.string.oticon), new int[] { 1560, 130 });
 		mMap.put(mContext.getString(R.string.canteen), new int[] { 870, 520 });
+		mMap.put("S-huset", new int[] { 1560, 520 });
 		mMap.put(mContext.getString(R.string.tent), new int[] { 1720, 1460 });
 		mMap.put(null, new int[] { 0, 0 });
 	}

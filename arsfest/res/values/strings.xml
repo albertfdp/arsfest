@@ -2,7 +2,7 @@
 <resources>
 
     <string name="splash_title">DTU \u00C5rsfest</string>
-    <string name="splash_subtitle">Coming next 9th May 2014</string>
+    <string name="splash_subtitle">Coming next 8th May 2015</string>
     <string name="splash_json_error">Could not fetch updated programme.</string>
     <string name="app_name">DTU \u00C5rsfest</string>
     <string name="action_settings">Settings</string>
@@ -17,7 +17,7 @@
     <string name="oticon">Oticon Hall</string>
     <string name="canteen">Canteen</string>
     <string name="tent">The Tent</string>
-    <string name="dinnerlocation">Library - Canteen - Tent</string>
+    <string name="dinnerlocation">Library - Canteen</string>
     <string name="enable">Enable</string>
     <string name="cancel">Cancel</string>
     <string name="stopasking">Stop Asking</string>

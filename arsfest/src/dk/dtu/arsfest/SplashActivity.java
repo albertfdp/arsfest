@@ -37,16 +37,11 @@ public class SplashActivity extends SherlockActivity {
 
 	private AsyncHttpClient client;
 	private Context mContext;
-
-	// private ProgressBar progressBar;
 	private ProgressDialog dialog;
-
 	private TextView splashTitle;
 	private TextView splashSubtitle;
-
 	private Button programButton;
-	private Button ticketButton;
-
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);		
@@ -58,7 +53,6 @@ public class SplashActivity extends SherlockActivity {
 		splashSubtitle = (TextView) findViewById(R.id.splash_arsfest_subtitle);
 
 		programButton = (Button) findViewById(R.id.splash_button_program);
-		ticketButton = (Button) findViewById(R.id.splash_button_tickets);
 
 		programButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -70,28 +64,12 @@ public class SplashActivity extends SherlockActivity {
 			}
 		});
 
-		ticketButton.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				Intent intent = new Intent(SplashActivity.this,
-						TicketSaleActivity.class);
-				intent.putExtra(Constants.EXTRA_EVENT_SHOW_FINISHED, false);
-				startActivity(intent);
-				finish();
-			}
-		});
-
-		/*
-		 * progressBar = (ProgressBar) findViewById(R.id.splash_progress_bar);
-		 * progressBar.setVisibility(View.GONE);
-		 */
-
 		// update fonts
 		Typeface font = Typeface.createFromAsset(getAssets(),
 				Constants.TYPEFONT_ROBOTO);
 		splashTitle.setTypeface(font);
 		splashSubtitle.setTypeface(font);
 		programButton.setTypeface(font);
-		ticketButton.setTypeface(font);
 
 	    ArsfestNotification mNotification = new ArsfestNotification();
 	    mNotification.setAlarm(getApplicationContext());

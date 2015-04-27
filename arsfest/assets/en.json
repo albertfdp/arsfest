@@ -12,77 +12,110 @@
                     "id": "e0",
                     "name": "The Official Part",
                     "image": "official",
-                    "startTime": "09-05-2014:17:00",
-                    "endTime": "09-05-2014:19:00",
+                    "startTime": "08-05-2015:16:50",
+                    "endTime": "08-05-2015:18:30",
                     "location": "l0",
-                    "description": "In addition to speeches by the Rector and the President of PF the official part includes the awarding of academic honors.\n\nProfessor Thomas Lars Andresen, DTU Nanotech, will give a talk on the use of nanotechnology to combat diseases and the art of programming in chemical codes.\n\nThe program alternates with musical performances by soloist Stine Louise Henriksen and conductor Andreas Vetö.\n\nTicket information: Admission is free, but there is limited seating.\n\nThe doors will be closed at 16:50 or when the hall is full.\n\nIf you require translation, headsets are available free of charge. For more information, please ask the staff standing at the sides of the hall near the headsets.",
+                    "description": "Speeches by the President and by the chairman of the student union, an invited lecture by Professor Karsten Arnbjerg Nielsen, DTU Environment, and academic awards. There will be music by the Danish composer Carl Nielsen celebrating the 150 years since his birth.\n\nThere is free access but a limited number of seats are available (the doors will be closed at 16:50 or earlier if the Hall is full).\n\nHeadsets are available (free of charge).",
                     "type": "official",
                     "theme": "official"
                 },
-                {
+		{
                     "id": "e1",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
-                    "startTime": "09-05-2014:22:00",
-                    "endTime": "09-05-2014:22:24",
-                    "location": "l0",
-                    "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers. \n\nIntroductory dance classes are available before the Commemoration Party, if Les Lanciers is a new acquaintance or if you just like to refresh your steps.\nClasses (in English) in Les Lanciers in the Oticon Hall Tuesday May 6th (at 16.30) and Thursday May 8th (at 17.15). Free access.",
-                    "type": "official",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e2",
                     "name": "DJ",
                     "image": "dj",
-                    "startTime": "09-05-2014:22:25",
-                    "endTime": "09-05-2014:23:19",
+                    "startTime": "08-05-2015:22:00",
+                    "endTime": "08-05-2015:22:09",
                     "location": "l0",
-                    "description": "There is DJ playing in the Sports Hall. Come and enjoy the music!",
+                    "description": "There is a DJ playing in the Sports Hall. Come and enjoy the music!",
                     "type": "official",
                     "theme": "music"
                 },
                 {
-                    "id": "e3",
+                    "id": "e2",
                     "name": "Les Lanciers",
                     "image": "leslanciers",
-                    "startTime": "09-05-2014:23:20",
-                    "endTime": "09-05-2014:23:34",
+                    "startTime": "08-05-2015:22:10",
+                    "endTime": "08-05-2015:22:24",
+                    "location": "l0",
+                    "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers.",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e3",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "08-05-2015:22:25",
+                    "endTime": "08-05-2015:22:59",
+                    "location": "l0",
+                    "description": "There is a DJ playing in the Sports Hall. Come and enjoy the music!",
+                    "type": "official",
+                    "theme": "music"
+                },
+                {
+                    "id": "e4",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "08-05-2015:23:00",
+                    "endTime": "08-05-2015:23:14",
                     "location": "l0",
                     "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers. \n\nIntroductory dance classes are available before the Commemoration Party, if Les Lanciers is a new acquaintance or if you just like to refresh your steps.\nClasses (in English) in Les Lanciers in the Oticon Hall Tuesday May 6th (at 16.30) and Thursday May 8th (at 17.15). Free access.",
                     "type": "official",
                     "theme": "dance"
                 },
                 {
-                    "id": "e4",
-                    "name": "Carpark North",
-                    "image": "carpark_north",
-                    "startTime": "09-05-2014:23:35",
-                    "endTime": "10-05-2014:00:29",
+                    "id": "e5",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "08-05-2015:23:15",
+                    "endTime": "08-05-2015:23:59",
                     "location": "l0",
-                    "description": "Carpark North is probably Denmark's best and most energetic electro-rockband. Carpark North offers powerful, catchy and present numbers from three very thorough records, the latest of which is called 'Grateful'. Most of you probably do not remember when Carpark North kicked the door in to the Danish music scene with the hit 'Transparent And Glasslike' back in 2003, but they have been part of the Danish music scene for a while.\n\nAdditionally Carpark North also has plenty to offer live and anyone who has seen them can attest to this. It is simply an amazing experience to witness Carpark North and the unique energy and passion that the band takes with them onstage every time. And the experience is certainly not reduced by the fact that Carpark North is the source of many hits that the audience can sing along to at concerts.\n\nIn 2013 the newest material from Carpark North was released, in the shape of a fourth album, where the song '32' featuring Stine Bramsen is rising in the charts. There are lots of things to look forward to.",
+                    "description": "There is a DJ playing in the Sports Hall. Come and enjoy the music!",
+                    "type": "official",
+                    "theme": "music"
+                },
+		{
+                    "id": "e6",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "09-05-2015:00:00",
+                    "endTime": "09-05-2015:00:14",
+                    "location": "l0",
+                    "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers.",
+                    "type": "official",
+                    "theme": "dance"
+                },
+		{
+                    "id": "e7",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "09-05-2015:00:15",
+                    "endTime": "09-05-2015:00:29",
+                    "location": "l0",
+                    "description": "There is a DJ playing in the Sports Hall. Come and enjoy the music!",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e8",
+                    "name": "Hej Matematik",
+                    "image": "hej_matematik",
+                    "startTime": "09-05-2015:00:30",
+                    "endTime": "09-05-2015:01:29",
+                    "location": "l0",
+                    "description": "Hej Matematik (literally 'Hi Mathematics' and also the title of a Danish primary school math book) is a Danish pop band, consisting of the Aqua-member Søren Rasted and his nephew Nicolaj Rasted. On live shows, they are accompanied by Nikolaj Teinvig on guitar, Nicholas Findsen on bass, Mads Storm on keyboards and Peter Düring on drums.\n\nHej Matematik has done well on the Danish charts. Their debut album was Vi burde ses noget mere. The single 'Walkmand' won the Danish 'Hit of the Year' at Zulu Awards 2009 — an annual award-ceremony held by Denmark's largest commercial television station TV 2. after the song made it to #3 in the Danish Singles Chart. The 11-track album was released in a special edition that included 'Walkmand' as a 12th track as an additional bonus.\n\nHej Matematik's release of 'Party i provinsen', the lead single of their second album, reached #2 in the Danish Singles Chart. The album Alt går op i 6 was released in Denmark on 25 January 2010.",
                     "type": "nonofficial",
                     "theme": "music",
                     "remark": true
                 },
                 {
-                    "id": "e5",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
-                    "startTime": "10-05-2014:00:30",
-                    "endTime": "10-05-2014:00:59",
-                    "location": "l0",
-                    "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers. \n\nIntroductory dance classes are available before the Commemoration Party, if Les Lanciers is a new acquaintance or if you just like to refresh your steps.\nClasses (in English) in Les Lanciers in the Oticon Hall Tuesday May 6th (at 16.30) and Thursday May 8th (at 17.15). Free access.",
-                    "type": "official",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e6",
+                    "id": "e9",
                     "name": "DJ",
                     "image": "dj",
-                    "startTime": "10-05-2014:01:00",
-                    "endTime": "10-05-2014:03:00",
+                    "startTime": "09-05-2015:01:30",
+                    "endTime": "09-05-2015:03:00",
                     "location": "l0",
-                    "description": "There is DJ playing in the Sports Hall. Come and enjoy the music!",
+                    "description": "There is a DJ playing in the Sports Hall. Come and enjoy the music!",
                     "type": "nonofficial",
                     "theme": "music"
                 }
@@ -97,47 +130,58 @@
             "color": "#2980b9",
             "events": [
                 {
-                    "id": "e7",
-                    "name": "Dance with me! Ballroom",
-                    "image": "dancewithme",
-                    "startTime": "09-05-2014:22:00",
-                    "endTime": "09-05-2014:23:29",
-                    "location": "l1",
-                    "description": "Short intro to Waltz & Standard/Latin and Tango Argentino",
-                    "type": "nonofficial",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e8",
-                    "name": "Dance with me! Caribbean Heat",
-                    "image": "dancewithme",
-                    "startTime": "09-05-2014:22:30",
-                    "endTime": "10-05-2014:00:59",
-                    "location": "l1",
-                    "description": "Short intro to Salsa & short intro to Bachata",
-                    "type": "nonofficial",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e9",
-                    "name": "Dance with me! Turn it up!",
-                    "image": "dancewithme",
-                    "startTime": "10-05-2014:01:00",
-                    "endTime": "10-05-2014:01:29",
-                    "location": "l1",
-                    "description": "Zumba & short intro to Jitterbug",
-                    "type": "nonofficial",
-                    "theme": "dance"
-                },
-                {
                     "id": "e10",
-                    "name": "Dance with me! Club DTU DancIng",
-                    "image": "dancewithme",
-                    "startTime": "10-05-2014:01:30",
-                    "endTime": "10-05-2014:02:57",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "08-05-2015:23:00",
+                    "endTime": "08-05-2015:23:14",
                     "location": "l1",
-                    "description": "Special style mix with surprises and social dancing.",
+                    "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers.",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e11",
+                    "name": "Blå Mandag Jazzband",
+                    "image": "bla_mandag_jazzband",
+                    "startTime": "08-05-2015:23:15",
+                    "endTime": "08-05-2015:23:59",
+                    "location": "l1",
+                    "description": "Blå Mandag is the name of a seven membered Jazzband, who has played together for 28 years. We sing and play to please others, and we, ourselves, enjoy it very much.\n\nWe love making jokes while playing, and having played together for many years, we think we are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\n\nOur motto is: 'We are there for you', so our most distinguished purpose is. 'To play in the honour of our audience and guests' so they will have a tremendous experience.",
                     "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e12",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "09-05-2015:00:00",
+                    "endTime": "09-05-2015:00:14",
+                    "location": "l1",
+                    "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers.",
+                    "type": "official",
+                    "theme": "dance"
+                },
+                {
+                    "id": "e13",
+                    "name": "Blå Mandag Jazzband",
+                    "image": "bla_mandag_jazzband",
+                    "startTime": "09-05-2015:00:15",
+                    "endTime": "09-05-2015:00:59",
+                    "location": "l1",
+                    "description": "Blå Mandag is the name of a seven membered Jazzband, who has played together for 28 years. We sing and play to please others, and we, ourselves, enjoy it very much.\n\nWe love making jokes while playing, and having played together for many years, we think we are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\n\nOur motto is: 'We are there for you', so our most distinguished purpose is. 'To play in the honour of our audience and guests' so they will have a tremendous experience.",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e14",
+                    "name": "Les Lanciers",
+                    "image": "leslanciers",
+                    "startTime": "09-05-2015:01:00",
+                    "endTime": "09-05-2015:01:15",
+                    "location": "l1",
+                    "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers.",
+                    "type": "official",
                     "theme": "dance"
                 }
             ]
@@ -151,57 +195,57 @@
             "color": "#1abc9c",
             "events": [
                 {
-                    "id": "e11",
-                    "name": "DJ",
-                    "image": "dj",
-                    "startTime": "09-05-2014:21:00",
-                    "endTime": "09-05-2014:22:44",
-                    "location": "l2",
-                    "description": "There is DJ playing in the Oticon Hall. Come and enjoy the music!",
-                    "type": "nonofficial",
-                    "theme": "music"
-                },
-                {
-                    "id": "e12",
-                    "name": "Kaka",
-                    "image": "kaka",
-                    "startTime": "09-05-2014:22:45",
-                    "endTime": "09-05-2014:23:44",
-                    "location": "l2",
-                    "description": "Kaka is Denmarks up and coming dancehall star. Kaka listened to music throughout his child and wrote his first song at the age of 10.  Kaka is well on his way to conquer Denmark with his distinctive flow, his positive energy and a contagious smile and playful approach to life.\n\nKaka had his debut on the music scene in 2007, live and on Youtube with some very popular clips. He had cooperated with several well-known artists before he chose to go solo.\n\nA large demand for Kakas name on the underground scene announced that soon a new talent would surface. It was in 2011 that Denmark realised a new star had arrived, the same year that Kaka released his first solo  'Mere Energi' (More Energy), as a part of Pharfar and Fresh-I’s Alis Riddim.\n\nAt the end of May 2012 Kaka’s first real single ’Bang Bang (Reggaejam)’ was released, as the first release from Donkey Recs. The song was very well received and was played on multiple radiostations in Denmark while rising on both the download and streaming charts.\n\nKakas debut EP hit the streets in August 2012, with the summer single 'Dansk Dancehall' (Danish Dancehall). If you have listened to the Danish radio in 2013/2014 you have heard ”En sidste Sang” (One Last Song) with Kaka.",
-                    "type": "nonofficial",
-                    "theme": "music"
-                },
-                {
-                    "id": "e13",
-                    "name": "DJ",
-                    "image": "dj",
-                    "startTime": "09-05-2014:23:45",
-                    "endTime": "10-05-2014:00:59",
-                    "location": "l2",
-                    "description": "There is DJ playing in the Oticon Hall. Come and enjoy the music!",
-                    "type": "nonofficial",
-                    "theme": "music"
-                },
-                {
-                    "id": "e14",
-                    "name": "Kongsted",
-                    "image": "kongsted",
-                    "startTime": "10-05-2014:01:00",
-                    "endTime": "10-05-2014:01:59",
-                    "location": "l2",
-                    "description": "Andreas Kongsted, better known as KONGSTED, Danmarks new star on the DJ, has been nominated for the award 'Best Danish Club DJ Of The Year' for four years in a row, as the first Dane ever, and has won in 2010 and 2011. In 2013 KONGSTED was nominated as 'Danish DeeJay of the Year', a title that is not to be mistaken.\n\nOver the last 4 years KONGSTED has produced a sea of solid singles, for example: 'Mardi Gras', 'The Spirit', 'Good Times' and 'Live Your Life'. His latest achievement is first a gold and later a platinum certification of his latest single 'Chuck Norris'.\n\nWith his unique ability to understand an audience, KONGSTED creates an euphoric mood, a mood that is supported by a wide choice of music with a foundation in the house genre and delivered with sublime technical skills ready for the dance floor.\n\nKONGSTED is at this time the tenth most streamed artist in Denmark.",
-                    "type": "nonofficial",
-                    "theme": "music"
-                },
-                {
                     "id": "e15",
                     "name": "DJ",
                     "image": "dj",
-                    "startTime": "10-05-2014:02:00",
-                    "endTime": "10-05-2014:05:00",
+                    "startTime": "08-05-2015:21:00",
+                    "endTime": "08-05-2015:22:29",
                     "location": "l2",
-                    "description": "There is DJ playing in the Oticon Hall. Come and enjoy the music!",
+                    "description": "There is a DJ playing in the Oticon Hall. Come and enjoy the music!",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e16",
+                    "name": "Scarlet Pleasure",
+                    "image": "scarlet_pleasure",
+                    "startTime": "08-05-2015:22:30",
+                    "endTime": "08-05-2015:23:29",
+                    "location": "l2",
+                    "description": "Scarlet Pleasure is a Danish R&B, soul, funk and pop musical trio made up of Emil Goll as lead vocals, Alexander Malone on bass and Joachim Dencker on drums. The formative years of the all-Danish trio was in New York City. They released 22 September, 2014 their EP 'Mirage' on 22 September 2014 charting in Tracklisten, the official Danish Albums Chart. The single 'Windy' was prereleased in February 2014 and was chosen as P3s Uundgåelige for a week. It was followed by 'Under the Palm Trees'. The band is signed to Copenhagen Records.",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e17",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "08-05-2015:23:30",
+                    "endTime": "09-05-2015:01:29",
+                    "location": "l2",
+                    "description": "There is a DJ playing in the Oticon Hall. Come and enjoy the music!",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e18",
+                    "name": "Svenstrup og Vendelboe",
+                    "image": "svenstruup_og_vendelboe",
+                    "startTime": "09-05-2015:01:30",
+                    "endTime": "09-05-2015:02:29",
+                    "location": "l2",
+                    "description": "Svenstrup & Vendelboe is an electro / dance / house producer team from Denmark, consisting of Kasper Svenstrup and Thomas Vendelboe.\n\nSvenstrup and Vendelboe, produced music together for several years under various names. But in 2007 they decided to focus entirely on the commercial house scene under the name Svenstrup & Vendelboe. They became famous for the single 'I Nat' with singer Karen. But their big breakthrough came with their remix of Medina's single 'Kun for mig' winning two Danish DeeJay Awards in 2010 for their mix of the song. In 2011, they also released 'Dybt vand featuring Danish singer Nadia Malm on vocals. They have remixed hits by Robyn, Basim, Burhan G, Brinck, Emma, Medina, Outlandish and many others.",
+                    "type": "nonofficial",
+                    "theme": "music"
+                },
+                {
+                    "id": "e19",
+                    "name": "DJ",
+                    "image": "dj",
+                    "startTime": "09-05-2015:02:30",
+                    "endTime": "09-05-2015:05:00",
+                    "location": "l2",
+                    "description": "There is a DJ playing in the Oticon Hall. Come and enjoy the music!",
                     "type": "nonofficial",
                     "theme": "music"
                 }
@@ -209,167 +253,51 @@
         },
         {
             "id": "l3",
-            "latitude": 55.785496,
-            "longitude": 12.525008,
-            "name": "The Tent",
+            "latitude": 55.786451, 
+            "longitude": 12.525694,
+            "name": "S-huset",
             "description": "",
-            "color": "#7f8c8d",
+            "color": "#c0392b",
             "events": [
                 {
-                    "id": "e16",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
-                    "startTime": "09-05-2014:22:15",
-                    "endTime": "09-05-2014:22:39",
-                    "location": "l3",
-                    "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers. \n\nIntroductory dance classes are available before the Commemoration Party, if Les Lanciers is a new acquaintance or if you just like to refresh your steps.\nClasses (in English) in Les Lanciers in the Oticon Hall Tuesday May 6th (at 16.30) and Thursday May 8th (at 17.15). Free access.",
-                    "type": "official",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e17",
-                    "name": "ABBAtizers",
-                    "image": "Abbatizers",
-                    "startTime": "09-05-2014:22:40",
-                    "endTime": "09-05-2014:23:39",
-                    "location": "l3",
-                    "description": "The ABBAtizers is composed of 6 dedicated members who, with a twinkle in their eye, have devoted their life to stopping time and beaming us all back to the 70s and ABBAs heyday.\n\nIn The ABBAtizers fantastic universe, it is a world where Agnethas eyes have never been bluer and the plateau boots have never been as tight. The ABBAtizers celebrate disco and challenge anyone with even a modicum of rhythm. They play the seats out of their tight fitting satin pants with humor, style and great respect for the originals.\n\nThe ABBAtizers will take their audience on a musical journey through all of ABBAs great compositions, and they hold nothing back. The show is performed with great attention to detail, so both ABBA lovers and previously uninitiated will get the best experience.\n\nFlower Power Rules...",
-                    "type": "nonofficial",
-                    "theme": "music"
-                },
-                {
-                    "id": "e18",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
-                    "startTime": "09-05-2014:23:40",
-                    "endTime": "09-05-2014:23:59",
-                    "location": "l3",
-                    "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers. \n\nIntroductory dance classes are available before the Commemoration Party, if Les Lanciers is a new acquaintance or if you just like to refresh your steps.\nClasses (in English) in Les Lanciers in the Oticon Hall Tuesday May 6th (at 16.30) and Thursday May 8th (at 17.15). Free access.",
-                    "type": "official",
-                    "theme": "dance"
-                },
-                {
-                    "id": "e19",
-                    "name": "ABBAtizers",
-                    "image": "Abbatizers",
-                    "startTime": "10-05-2014:00:00",
-                    "endTime": "10-05-2014:00:59",
-                    "location": "l3",
-                    "description": "The ABBAtizers is composed of 6 dedicated members who, with a twinkle in their eye, have devoted their life to stopping time and beaming us all back to the 70s and ABBAs heyday.\n\nIn The ABBAtizers fantastic universe, it is a world where Agnethas eyes have never been bluer and the plateau boots have never been as tight. The ABBAtizers celebrate disco and challenge anyone with even a modicum of rhythm. They play the seats out of their tight fitting satin pants with humor, style and great respect for the originals.\n\nThe ABBAtizers will take their audience on a musical journey through all of ABBAs great compositions, and they hold nothing back. The show is performed with great attention to detail, so both ABBA lovers and previously uninitiated will get the best experience.\n\nFlower Power Rules...",
-                    "type": "nonofficial",
-                    "theme": "music"
-                },
-                {
                     "id": "e20",
-                    "name": "Les Lanciers",
-                    "image": "leslanciers",
-                    "startTime": "10-05-2014:01:00",
-                    "endTime": "10-05-2014:01:20",
+                    "name": "Det Ny Big Band feat. Anna David og Mark Linn",
+                    "image": "ny_big_band",
+                    "startTime": "08-05-2015:22:30",
+                    "endTime": "08-05-2015:23:29",
                     "location": "l3",
-                    "description": "Les Lanciers is danced several times during the evening, both in the Hall and in the Tent.\n\nLes Lanciers is a Square, or a Quadrille, which is the term for a set dance performed by four couples. It is a composite dance made up of five figures of tours, each performed four times so that all couples will dance the lead part. We find Les Lanciers in many variants in several countries, though its popularity waned at the beginning of the twentieth century. It has survived as a popular dance only in Denmark, where it has now been danced in an unbroken tradition of almost 140 years, with its own distinctive music and choreography.\n\nIn Denmark, Les Lanciers is danced at court, at many university and school graduations, and at countless private functions. Les Lanciers is also taught in most Danish high schools.\n\nThe five tours of the Danish dance are: La Dorset, La Victoria, Les Moulinets, Les Visites, Les Lanciers. \n\nIntroductory dance classes are available before the Commemoration Party, if Les Lanciers is a new acquaintance or if you just like to refresh your steps.\nClasses (in English) in Les Lanciers in the Oticon Hall Tuesday May 6th (at 16.30) and Thursday May 8th (at 17.15). Free access.",
-                    "type": "official",
-                    "theme": "dance"
+                    "description": "",
+                    "type": "nonofficial",
+                    "theme": "music"
                 }
             ]
         },
         {
             "id": "l4",
-            "latitude": 55.786489,
-            "longitude": 12.524634,
-            "name": "Canteen",
-            "description": "",
-            "color": "#c0392b",
+            "latitude": 55.785949,
+            "longitude": 12.525475,
+            "name": "Library - Canteen",
+            "color": "#f1c40f",
+            "description": "Library - Canteen",
             "events": [
                 {
                     "id": "e21",
-                    "name": "Blå Mandag Jazzband, 1. set",
-                    "image": "blaa_mandag",
-                    "startTime": "09-05-2014:23:15",
-                    "endTime": "09-05-2014:23:59",
-                    "location": "l4",
-                    "description": "Blå Mandag is the name of a seven membered Jazzband, who has played together for 28 years. They write on their homepage that they sing and play to please others, and enjoy it very much themselves.\n\nThey enjoy including a bit playfulness in their music, and having played together for many years. They believe they are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\n\nTheir motto is: 'We are there for you', so their most distinguished purpose is to play in honour of their audience and guests so they will have a tremendous experience.",
-                    "type": "nonofficial",
-                    "theme": "music"
-                },
-                {
-                    "id": "e22",
-                    "name": "Blå Mandag Jazzband, 2. set",
-                    "image": "blaa_mandag",
-                    "startTime": "10-05-2014:00:15",
-                    "endTime": "10-05-2014:01:00",
-                    "location": "l4",
-                    "description": "Blå Mandag is the name of a seven membered Jazzband, who has played together for 28 years. They write on their homepage that they sing and play to please others, and enjoy it very much themselves.\n\nThey enjoy including a bit playfulness in their music, and having played together for many years. They believe they are rather good at making old, funny and traditional New Orleans Jazz, which is easy to dance to.\n\nTheir motto is: 'We are there for you', so their most distinguished purpose is to play in honour of their audience and guests so they will have a tremendous experience.",
-                    "type": "nonofficial",
-                    "theme": "music"
-                }
-            ]
-        },
-        {
-            "id": "l5",
-            "latitude": 55.786489,
-            "longitude": 12.524634,
-            "name": "DTU 101",
-            "description": "",
-            "color": "#c0392b",
-            "events": [
-                {
-                    "id": "e23",
-                    "name": "Ticket sale - Kø-fest",
-                    "image": "kofest",
-                    "startTime": "25-04-2014:09:00",
-                    "endTime": "25-04-2014:09:00",
-                    "location": "l5",
-                    "description": "Over the years there has been a tradition of the queue for ticket sales to begin the day before, on Thursday. You can read more about this queue-party on the PF facebook page or on www.pf.dk.\n\nYou must stay within the designated areas, and only after 17 o'clock Thursday the 24th of April 2014. During the whole evening there will be fire guards present. Requests made by the fire guards must be met, as they are present for you safety. During the night, queue numbers will be distributed. Your number is you place in the queue when the ticket sales start at 9 o'clock on Friday the 25th of April. Breakfast will be served around 07:00, before the tickets sales start.\n\nEmployees have the opportunity to buy tickets in the advance sale through their department. If this option is chosen tickets are 375 kr. (dinner and ball) and 175 dkk (ball).",
-                    "type": "ticket sale",
-                    "theme": "Price",
-                    "prices": [
-                        {
-                            "name": "Dinner and Dance",
-                            "price": 250,
-                            "currency": "DKK"
-                        },
-                        {
-                            "name": "Dance",
-                            "price": 175,
-                            "currency": "DKK",
-                            "extra": "Admission after 21:00"
-                        },
-                        {
-                            "name": "Note",
-                            "price": 0,
-                            "currency": "DKK",
-                            "extra": "Only 4 tickets per person. Payment in cash."
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "l6",
-            "latitude": 55.785949,
-            "longitude": 12.525475,
-            "name": "Library - Canteen - Tent",
-            "color": "#f1c40f",
-            "description": "Library - Canteen - Tent",
-            "events": [
-                {
-                    "id": "e24",
                     "name": "Dinner",
                     "image": "dinner",
-                    "startTime": "09-05-2014:19:15",
-                    "endTime": "09-05-2014:21:30",
-                    "location": "l6",
+                    "startTime": "08-05-2015:19:15",
+                    "endTime": "08-05-2015:21:30",
+                    "location": "l4",
                     "description": "",
                     "type": "official",
                     "theme": "food",
                     "menu": [
                         {
                             "course": "Starter",
-                            "name": "Salmon rillette topped with lime marinated shrimp with fresh herbs. Salad with whole cherry tomatoes and fresh green asparagus, served with chili or ginger dressing. Served with pumpkin bun."
+                            "name": "Salmon"
                         },
                         {
                             "course": "Main",
-                            "name": "Roasted fillet of beef with raisin sauce. Baked vegetables with sweet beets and golden beets. Small baked potatoes with herbs. Fried plums with vanilla."
+                            "name": "Duck"
                         },
                         {
                             "course": "Coffee",
@@ -377,7 +305,7 @@
                         },
                         {
                             "course": "Drinks",
-                            "name": "A glass of white wine will be served with the starter, and a glass of red wine will be served with the main course. Extra wine can be ordered in the S-house. 1 bottle costs 95 kr in presale and 120 kr on the night. The wine will be delivered during the starter. Drinks can also be bought at the bar on the night. White wine: 2013 Chardonnay, William Cole – Casablanca Valley (Chile). Red wine: 2012 Comte de Roc Oval – Costieres de Nîmes (France)"
+                            "name": "Wine (white and/or red) is served at the table. Additional wine is on sale."
                         }
                     ]
                 }

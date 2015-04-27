@@ -14,7 +14,7 @@ public class Constants {
 	public static final String EXTRA_EVENT_SHOW_FINISHED = "dk.dtu.arsfest.event.show.finished";
 	public static final String EXTRA_TICKET_SALE_ACTIVITY = "dk.dtu.arsfest.event";
 	public static final String PREFS_LAST_UPDATED_KEY = "PREFS_LAST_UPDATED_KEY";
-	public static final String NotificationTime = "09-05-2014:15:00";
+	public static final String NotificationTime = "08-05-2015:15:00";
 	public static final String LocationActionTag = "ArsfestLocationRequest";
 	public static final String LocationFlagLatitude = "ArsfestLatitude";
 	public static final String LocationFlagLongitude = "ArsfestLongitude";

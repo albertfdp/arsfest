@@ -43,7 +43,7 @@ public class EventMapCard extends Card {
 
 		if (view != null) {
 			this.mWebView = (WebView) view.findViewById(R.id.card_inside_map);
-
+			
 			GenerateHTML mHTML = new GenerateHTML(
 					mLocalization.getScroll(mLocation), true);
 			mWebView.loadDataWithBaseURL("file:///android_asset/images/",
