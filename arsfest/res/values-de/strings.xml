@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="splash_title">DTU \u00C5rsfest</string>
+    <string name="splash_subtitle">Coming next 8th May 2015</string>
+    <string name="splash_json_error">Could not fetch updated programme.</string>
+    <string name="app_name">DTU \u00C5rsfest</string>
+    <string name="action_settings">Settings</string>
+    <string name="loading">Loading&#8230;</string>
+    <string name="activity_main">Events</string>
+    <string name="events">Events</string>
+    <string name="ends">Ends&#160;</string>
+    <string name="starts">Starts&#160;</string>
+    <string name="finish">FINISHED&#160;</string>
+    <string name="library">Library</string>
+    <string name="sportshall">Sports Hall</string>
+    <string name="oticon">Oticon Hall</string>
+    <string name="canteen">Canteen</string>
+    <string name="tent">The Tent</string>
+    <string name="dinnerlocation">Library - Canteen</string>
+    <string name="enable">Enable</string>
+    <string name="cancel">Cancel</string>
+    <string name="stopasking">Stop Asking</string>
+    <string name="networkoff">Network is disabled in your device</string>
+    <string name="gpsoff">GPS is disabled in your device</string>
+    <string name="unsuccessfullocatization">We cannot localize you in the area of 101</string>
+    <string name="card_finished_message">The \u00C5rsfest 2014 is over</string>
+    <string name="card_finished_submessage">Thank you for your attendance</string>
+    <string name="action_save">Save</string>
+    <string name="action_search">Search</string>
+    <string name="action_map">Map</string>
+    <string name="action_events">Programme</string>
+    <string name="action_old_events">Finished events</string>
+    <string name="action_tickets">Tickets Sale</string>
+    <string name="showmylocation">Show My Location</string>
+    <string name="about_tracking">Tracking</string>
+    <string name="about_tracking_info">Due to academical reasons and for learning about user experience, the app is anonymously tracking certain user interactions, such as the number of visualizations of each screen of the app.</string>
+    <string name="splash_button_program">Programme</string>
+    <string name="splash_button_tickets">Tickets Sale</string>
+    <string name="title_activity_ticket_sale">TicketSaleActivity</string>
+    <string name="card_price_suggested_title">Dinner and Dance</string>
+    <string name="card_price_suggested_member">Dance</string>
+    <string name="card_price_suggested_member2">Admission after 21.00</string>
+    <string name="card_price_suggested_community">Only 4 tickets per person, payment in cash.</string>
+    <string name="card_price_header">Price</string>
+    <string name="notification_header">Commencement Party</string>
+    <string name="notification_subtext">Today at 17:00</string>
+    <string name="json">"en.json"</string>
+
+</resources>

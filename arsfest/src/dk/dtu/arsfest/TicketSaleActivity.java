@@ -19,15 +19,13 @@ import dk.dtu.arsfest.model.Event;
 import dk.dtu.arsfest.model.Location;
 import dk.dtu.arsfest.navigation.SideNavigation;
 import android.os.Bundle;
-import android.widget.ScrollView;
 
 import dk.dtu.arsfest.utils.*;
 
 
 public class TicketSaleActivity extends BaseActivity {
 
-	private SideNavigationView sideNavigationView;	
-	private ScrollView  mScrollView;
+	private SideNavigationView sideNavigationView;
 
 	private Event saleEvent;
 	
@@ -47,10 +45,7 @@ public class TicketSaleActivity extends BaseActivity {
 	    getSupportActionBar().setTitle("Ticket Sale Information");
 	    
 	    saleEvent = findSaleEvent(Utils.getProgramme(TicketSaleActivity.this));
-	    
-	    mScrollView = (ScrollView) findViewById(R.id.sale_scrollview);
 	    createCards();
-	    
 	}
 	
 	private Event findSaleEvent(ArrayList<Location> programme) {		
@@ -130,7 +125,6 @@ public class TicketSaleActivity extends BaseActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// TODO Auto-generated method stub
 		return super.onCreateOptionsMenu(menu);
 	}
 	

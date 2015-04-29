@@ -18,9 +18,12 @@ public class LocalizationHelper {
 
 	private void populateMap() {
 		mMap.put(mContext.getString(R.string.library), new int[] { 320, 470 });
+		mMap.put("Library - Canteen", new int[] { 320, 470 });
+		mMap.put("Library", new int[] { 320, 470 });
 		mMap.put(mContext.getString(R.string.sportshall),
 				new int[] { 1610, 980 });
 		mMap.put(mContext.getString(R.string.oticon), new int[] { 1560, 130 });
+		mMap.put("Oticon Hall", new int[] { 1560, 130 });
 		mMap.put(mContext.getString(R.string.canteen), new int[] { 870, 520 });
 		mMap.put("S-huset", new int[] { 1560, 520 });
 		mMap.put(mContext.getString(R.string.tent), new int[] { 1720, 1460 });
